@@ -1,0 +1,49 @@
+baseURL = 'https://blog.nicola.strappazzon.me/'
+languageCode = 'es-es'
+title = 'Nicola Strappazzon'
+theme = 'terminal'
+pagination.pagerSize = 10
+copyright = '© 2025 Nicola Strappazzon'
+
+[params]
+	centerTheme = true
+#	showMenuItems = 4
+	Toc = true
+
+[params.logo]
+    logoText = "Nicola Strappazzon"
+
+[[menu.main]]
+	name   = "Cultura"
+	url    = "/cultura/"
+	weight = 9
+
+[[menu.main]]
+	name   = "Aplicaciones"
+	url    = "/apps/"
+	weight = 10
+
+[[menu.main]]
+	name   = "Electronica"
+	url    = "/electronica/"
+	weight = 20
+
+[[menu.main]]
+	name   = "Herramientas"
+	url    = "/herramientas/"
+	weight = 30
+
+[[menu.main]]
+	name   = "Proveedores"
+	url    = "/proveedores/"
+	weight = 40
+
+[[menu.main]]
+	name   = "About"
+	url    = "/about/"
+	weight = 50
+
+[[menu.main]]
+	name   = "Wiki"
+	url    = "/wiki/"
+	weight = 50

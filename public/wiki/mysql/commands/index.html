@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>MySQL commands for DBA :: Nicola Strappazzon</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MySQL commands for DBA Show progress of load script pv -e -p -t updates.sql | mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD --batch --silent Kill all MySQL process The command m is a alias from mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD.
+m -se &#34;SHOW PROCESSLIST&#34; | awk &#39;{print &#34;KILL &#34;$1&#34;;&#34;}&#39; | m For RDS use the follow commands, and in this example kill the all sleep process:
+m -se &#34;SHOW PROCESSLIST&#34; | grep Sleep | awk &#39;{print &#34;CALL mysql.rds_kill(&#34;$1&#34;);&#34;}&#39; | m -f Dump users and privileges mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -BNe &#34;SELECT DISTINCT CONCAT(&#39;SHOW GRANTS FOR &#39;&#39;&#39;, user, &#39;&#39;&#39;@&#39;&#39;&#39;, host, &#39;&#39;&#39;;&#39;) AS query FROM mysql.user&#34; \ | \ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD \ | \ sed &#39;s/\(GRANT .*\)/\1;/;s/^\(Grants for .*\)/--\1--/;//{x;p;x;}&#39; Modify many tables in many databases mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -Bse &#34;SELECT DISTINCT CONCAT(\&#34;ALTER TABLE \&#34;, TABLE_SCHEMA,\&#34;.foo ADD created_at datetime NOT NULL;\&#34;) AS sql_text FROM information_schema.TABLES WHERE TABLE_TYPE = &#39;BASE TABLE&#39; AND TABLE_SCHEMA LIKE &#39;site\_%&#39; AND TABLE_NAME = &#39;foo&#39;;&#34; \ | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD " />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/wiki/mysql/commands/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.a3670726bb66927824e4c3fa3f20388aacc1e7aa65014ae144e350ce59593b78.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.e24bf84cafb9e94502324a0c4264d65e9ed1870838db3e47393dfaa83dd5abb4.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="MySQL commands for DBA">
+<meta property="og:description" content="MySQL commands for DBA Show progress of load script pv -e -p -t updates.sql | mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD --batch --silent Kill all MySQL process The command m is a alias from mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD.
+m -se &#34;SHOW PROCESSLIST&#34; | awk &#39;{print &#34;KILL &#34;$1&#34;;&#34;}&#39; | m For RDS use the follow commands, and in this example kill the all sleep process:
+m -se &#34;SHOW PROCESSLIST&#34; | grep Sleep | awk &#39;{print &#34;CALL mysql.rds_kill(&#34;$1&#34;);&#34;}&#39; | m -f Dump users and privileges mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -BNe &#34;SELECT DISTINCT CONCAT(&#39;SHOW GRANTS FOR &#39;&#39;&#39;, user, &#39;&#39;&#39;@&#39;&#39;&#39;, host, &#39;&#39;&#39;;&#39;) AS query FROM mysql.user&#34; \ | \ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD \ | \ sed &#39;s/\(GRANT .*\)/\1;/;s/^\(Grants for .*\)/--\1--/;//{x;p;x;}&#39; Modify many tables in many databases mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -Bse &#34;SELECT DISTINCT CONCAT(\&#34;ALTER TABLE \&#34;, TABLE_SCHEMA,\&#34;.foo ADD created_at datetime NOT NULL;\&#34;) AS sql_text FROM information_schema.TABLES WHERE TABLE_TYPE = &#39;BASE TABLE&#39; AND TABLE_SCHEMA LIKE &#39;site\_%&#39; AND TABLE_NAME = &#39;foo&#39;;&#34; \ | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD " />
+<meta property="og:url" content="http://localhost:1313/wiki/mysql/commands/" />
+<meta property="og:site_name" content="Nicola Strappazzon" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-05-09 10:56:29 &#43;0200 CEST" />
+
+
+
+
+  <link href="/wiki/mysql/commands/index.xml" rel="alternate" type="application/rss+xml" title="Nicola Strappazzon" />
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+  <div class="logo">
+    Nicola Strappazzon
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/cultura/">Cultura</a></li>
+        
+      
+        
+          <li><a href="/apps/">Aplicaciones</a></li>
+        
+      
+        
+          <li><a href="/electronica/">Electronica</a></li>
+        
+      
+        
+          <li><a href="/herramientas/">Herramientas</a></li>
+        
+      
+        
+          <li><a href="/proveedores/">Proveedores</a></li>
+        
+      
+        
+          <li><a href="/about/">About</a></li>
+        
+      
+        
+          <li><a href="/wiki/">Wiki</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/cultura/" >Cultura</a></li>
+        
+      
+        
+          <li><a href="/apps/" >Aplicaciones</a></li>
+        
+      
+        
+          <li><a href="/electronica/" >Electronica</a></li>
+        
+      
+        
+          <li><a href="/herramientas/" >Herramientas</a></li>
+        
+      
+        
+          <li><a href="/proveedores/" >Proveedores</a></li>
+        
+      
+        
+          <li><a href="/about/" >About</a></li>
+        
+      
+        
+          <li><a href="/wiki/" >Wiki</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+  
+    <div class="index-content">
+      <h1 id="mysql-commands-for-dba">MySQL commands for DBA</h1>
+<h2 id="show-progress-of-load-script">Show progress of load script</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pv -e -p -t updates.sql | mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD --batch --silent
+</span></span></code></pre></div><h2 id="kill-all-mysql-process">Kill all MySQL process</h2>
+<p>The command <code>m</code> is a alias from <code>mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>m -se <span style="color:#e6db74">&#34;SHOW PROCESSLIST&#34;</span> | awk <span style="color:#e6db74">&#39;{print &#34;KILL &#34;$1&#34;;&#34;}&#39;</span> | m
+</span></span></code></pre></div><p>For RDS use the follow commands, and in this example kill the all sleep process:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>m -se <span style="color:#e6db74">&#34;SHOW PROCESSLIST&#34;</span> | grep Sleep | awk <span style="color:#e6db74">&#39;{print &#34;CALL mysql.rds_kill(&#34;$1&#34;);&#34;}&#39;</span> | m -f
+</span></span></code></pre></div><h2 id="dump-users-and-privileges">Dump users and privileges</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -BNe <span style="color:#e6db74">&#34;SELECT DISTINCT CONCAT(&#39;SHOW GRANTS FOR &#39;&#39;&#39;, user, &#39;&#39;&#39;@&#39;&#39;&#39;, host, &#39;&#39;&#39;;&#39;) AS query FROM mysql.user&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>sed <span style="color:#e6db74">&#39;s/\(GRANT .*\)/\1;/;s/^\(Grants for .*\)/--\1--/;//{x;p;x;}&#39;</span>
+</span></span></code></pre></div><h2 id="modify-many-tables-in-many-databases">Modify many tables in many databases</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -Bse <span style="color:#e6db74">&#34;SELECT DISTINCT CONCAT(\&#34;ALTER TABLE \&#34;, TABLE_SCHEMA,\&#34;.foo ADD created_at datetime NOT NULL;\&#34;) AS sql_text FROM information_schema.TABLES WHERE TABLE_TYPE = &#39;BASE TABLE&#39; AND TABLE_SCHEMA LIKE &#39;site\_%&#39; AND TABLE_NAME = &#39;foo&#39;;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">\ </span>|
+</span></span><span style="display:flex;"><span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD
+</span></span></code></pre></div>
+    </div>
+  
+  <div class="posts">
+    
+
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+    
+  </div>
+</div>
+
+  </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2025 Nicola Strappazzon</span>
+    
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
