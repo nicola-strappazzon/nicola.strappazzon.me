@@ -59,12 +59,11 @@ cat demo.json | jq -r 'select(.score == 4)'
 Filtra que el campo `label` tenga un valor, muestra las columnas `name` y `label` y lo convierte a `csv`.
 
 ```bash
-Desktop$ cat demo.json | jq -r 'select(.items[].label != null) | [.name, .items[].label] | @csv'
+cat demo.json | jq -r '[.name, .score] | @csv'
 ```
 
 ```csv
-"Foo Bar Baz",,"foo","bar"
-"Foo Bar Baz",,"foo","bar"
+"Foo Bar Baz",4
 ```
 
 Minify, hacerlo mas compacto:
