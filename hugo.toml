@@ -10,5 +10,9 @@ copyright = '© 2025 Nicola Strappazzon'
 #	showMenuItems = 4
 	Toc = true
 
+[params.meta]
+    favicon = false
+
+
 [params.logo]
     logoText = "Nicola Strappazzon"
