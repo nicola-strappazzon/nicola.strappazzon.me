@@ -45,6 +45,19 @@ EOF
 
 En [esta URL](https://keys.openpgp.org) puedes validar la identidad de una persona buscando su clave publica, por lo que se recomienda subir la propia.
 
+
+### Importar un respaldo de los certificados
+
+Supongamos que tiene una copia de seguridad de la clave prublica y privada, use los siguientes comandos para importarlos y por último veridique:
+
+```
+gpg --import myprivatekeys.asc
+gpg --import mypubkeys.asc
+gpg --import-ownertrust otrust.txt
+gpg --list-secret-keys
+gpg --list-keys
+```
+
 ### Exportar los certificados a la Security Key
 
 Al insertar la Security Key podrá ejecutar el siguiente comando para listar los detalles.
