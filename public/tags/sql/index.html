@@ -308,8 +308,8 @@
 </span></span><span style="display:flex;"><span>  	<span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">c</span>.<span style="color:#66d9ef">collation_name</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;utf8mb4%&#39;</span>
 </span></span><span style="display:flex;"><span>  	<span style="color:#66d9ef">OR</span> t.table_collation <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;utf8mb4%&#39;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#66d9ef">c</span>.<span style="color:#66d9ef">table_name</span>, <span style="color:#66d9ef">c</span>.<span style="color:#66d9ef">column_name</span>;
-</span></span></code></pre></div><h1 id="performance-schema">Performance Schema</h1>
-<h2 id="list-all-tables-with-dml-operations">List all tables with DML operations</h2>
+</span></span></code></pre></div><h2 id="performance-schema">Performance Schema</h2>
+<h3 id="list-all-tables-with-dml-operations">List all tables with DML operations</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> object_schema,
 </span></span><span style="display:flex;"><span>       object_name,
 </span></span><span style="display:flex;"><span>       count_read,

@@ -214,7 +214,7 @@
             
             #<a href="http://localhost:1313/tags/jq/">jq</a>&nbsp;
             
-            #<a href="http://localhost:1313/tags/da/">DA</a>&nbsp;
+            #<a href="http://localhost:1313/tags/json/">json</a>&nbsp;
             
           </span>
         
@@ -225,7 +225,7 @@
         <div class="post-content">
           
             <h1 id="wiki--jq">Wiki / JQ</h1>
-<p>Es una tool que permite manipular el JSON en el bash.</p>
+<p><a href="https://jqlang.org">jq</a> es una tool que permite manipular el JSON en la terminal.</p>
 <h2 id="imprimir-un-campo">Imprimir un campo</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jq -r <span style="color:#e6db74">&#39;.Query&#39;</span>
 </span></span></code></pre></div><h2 id="imprimir-un-campo-dentro-una-lista">Imprimir un campo dentro una lista</h2>
@@ -241,6 +241,58 @@
         
           <div>
             <a class="read-more button inline" href="/wiki/jq/">[]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="http://localhost:1313/wiki/mysql/commands/">MySQL commands for DBA</a>
+        </h1>
+        <div class="post-meta"><time class="post-date">2025-05-09</time></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="http://localhost:1313/tags/mysql/">mysql</a>&nbsp;
+            
+            #<a href="http://localhost:1313/tags/bash/">bash</a>&nbsp;
+            
+            #<a href="http://localhost:1313/tags/dba/">dba</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <h1 id="mysql-commands-for-dba">MySQL commands for DBA</h1>
+<h2 id="show-progress-of-load-script">Show progress of load script</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pv -e -p -t updates.sql | mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD --batch --silent
+</span></span></code></pre></div><h2 id="kill-all-mysql-process">Kill all MySQL process</h2>
+<p>The command <code>m</code> is a alias from <code>mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>m -se <span style="color:#e6db74">&#34;SHOW PROCESSLIST&#34;</span> | awk <span style="color:#e6db74">&#39;{print &#34;KILL &#34;$1&#34;;&#34;}&#39;</span> | m
+</span></span></code></pre></div><p>For RDS use the follow commands, and in this example kill the all sleep process:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>m -se <span style="color:#e6db74">&#34;SHOW PROCESSLIST&#34;</span> | grep Sleep | awk <span style="color:#e6db74">&#39;{print &#34;CALL mysql.rds_kill(&#34;$1&#34;);&#34;}&#39;</span> | m -f
+</span></span></code></pre></div><h2 id="dump-users-and-privileges">Dump users and privileges</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -BNe <span style="color:#e6db74">&#34;SELECT DISTINCT CONCAT(&#39;SHOW GRANTS FOR &#39;&#39;&#39;, user, &#39;&#39;&#39;@&#39;&#39;&#39;, host, &#39;&#39;&#39;;&#39;) AS query FROM mysql.user&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>sed <span style="color:#e6db74">&#39;s/\(GRANT .*\)/\1;/;s/^\(Grants for .*\)/--\1--/;//{x;p;x;}&#39;</span>
+</span></span></code></pre></div><h2 id="modify-many-tables-in-many-databases">Modify many tables in many databases</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -Bse <span style="color:#e6db74">&#34;SELECT DISTINCT CONCAT(\&#34;ALTER TABLE \&#34;, TABLE_SCHEMA,\&#34;.foo ADD created_at datetime NOT NULL;\&#34;) AS sql_text FROM information_schema.TABLES WHERE TABLE_TYPE = &#39;BASE TABLE&#39; AND TABLE_SCHEMA LIKE &#39;site\_%&#39; AND TABLE_NAME = &#39;foo&#39;;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">\ </span>|
+</span></span><span style="display:flex;"><span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD
+</span></span></code></pre></div>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/wiki/mysql/commands/">[]</a>
           </div>
         
       </article>

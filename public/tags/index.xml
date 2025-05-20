@@ -30,5 +30,47 @@
       <guid>http://localhost:1313/tags/electronic/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Bash</title>
+      <link>http://localhost:1313/tags/bash/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/tags/bash/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dba</title>
+      <link>http://localhost:1313/tags/dba/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/tags/dba/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jq</title>
+      <link>http://localhost:1313/tags/jq/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/tags/jq/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Json</title>
+      <link>http://localhost:1313/tags/json/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/tags/json/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mysql</title>
+      <link>http://localhost:1313/tags/mysql/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/tags/mysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/tags/sql/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

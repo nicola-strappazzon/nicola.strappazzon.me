@@ -32,14 +32,46 @@
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-05-11T14:07:22+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/wiki/mysql/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/bash/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dba/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/electronic/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/wiki/jq/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/</loc>
+    <loc>http://localhost:1313/tags/jq/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/json/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mysql/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/wiki/mysql/commands/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/wiki/mysql/queries/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sql/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/electronic/tools/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/electronic/hand-tools/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url>
