@@ -66,3 +66,13 @@ Desktop$ cat demo.json | jq -r 'select(.items[].label != null) | [.name, .items[
 "Foo Bar Baz",,"foo","bar"
 "Foo Bar Baz",,"foo","bar"
 ```
+
+Minify, hacerlo mas compacto:
+
+```bash
+cat demo.json | jq -r tostring
+```
+
+```
+{"name":"Foo Bar Baz","score":4,"color":"red","options":["red","green","blue"],"items":[{"id":0},{"id":1,"label":"foo"},{"id":2,"label":"bar"}]}
+```
