@@ -9,26 +9,60 @@ tags = ["bash", "jq", "json"]
 
 [jq](https://jqlang.org) es una tool que permite manipular el JSON en la terminal.
 
-## Imprimir un campo
 
-```bash
-jq -r '.Query'
+```json
+{
+  "name":"Foo Bar Baz",
+  "score": 4,
+  "color":"red",
+  "options":[
+    "red",
+    "green",
+    "blue"
+  ],
+  "items": [
+    {"id": 0},
+    {"id": 1, "label": "foo"},
+    {"id": 2, "label": "bar"}
+  ]
+}
 ```
 
-## Imprimir un campo dentro una lista
+Imprimir un campo llamado `name`:
 
 ```bash
-jq -r '.CacheClusters[].CacheNodeType'
+cat demo.json | jq -r '.name'
 ```
 
-## Filtrar
-
-```bash
-jq -r 'select( .duration != null )'
+```
+Foo Bar Baz
 ```
 
-## Convertir a CSV
+Imprimir todos los campos llamados `label` dentro una lista:
 
 ```bash
-jq -r 'select( .duration != null ) | [.duration,.status, .url] | @csv' > log.csv
+cat demo.json | jq -r '.items[].label'
+```
+
+```
+null
+foo
+bar
+```
+
+Ejemplos de como filtrar que el campo `score` sea igual al valor `4`:
+
+```bash
+cat demo.json | jq -r 'select(.score == 4)'
+```
+
+Filtra que el campo `label` tenga un valor, muestra las columnas `name` y `label` y lo convierte a `csv`.
+
+```bash
+Desktop$ cat demo.json | jq -r 'select(.items[].label != null) | [.name, .items[].label] | @csv'
+```
+
+```csv
+"Foo Bar Baz",,"foo","bar"
+"Foo Bar Baz",,"foo","bar"
 ```
