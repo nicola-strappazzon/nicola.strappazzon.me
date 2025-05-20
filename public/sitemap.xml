@@ -2,36 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nicola.strappazzon.me/posts/baz/</loc>
-    <lastmod>2025-05-11T14:08:35+02:00</lastmod>
-  </url><url>
-    <loc>https://nicola.strappazzon.me/</loc>
-    <lastmod>2025-05-11T14:08:35+02:00</lastmod>
-  </url><url>
-    <loc>https://nicola.strappazzon.me/posts/</loc>
-    <lastmod>2025-05-11T14:08:35+02:00</lastmod>
-  </url><url>
-    <loc>https://nicola.strappazzon.me/posts/bar/</loc>
-    <lastmod>2025-05-11T14:08:34+02:00</lastmod>
-  </url><url>
-    <loc>https://nicola.strappazzon.me/posts/foo/</loc>
-    <lastmod>2025-05-11T14:08:29+02:00</lastmod>
-  </url><url>
-    <loc>https://nicola.strappazzon.me/tags/avr/</loc>
-    <lastmod>2025-05-11T14:07:22+02:00</lastmod>
-  </url><url>
-    <loc>https://nicola.strappazzon.me/tags/da/</loc>
-    <lastmod>2025-05-11T14:07:22+02:00</lastmod>
-  </url><url>
-    <loc>https://nicola.strappazzon.me/tags/electronic/</loc>
-    <lastmod>2025-05-11T14:07:22+02:00</lastmod>
-  </url><url>
-    <loc>https://nicola.strappazzon.me/posts/my-first-post/</loc>
-    <lastmod>2025-05-11T14:07:22+02:00</lastmod>
-  </url><url>
-    <loc>https://nicola.strappazzon.me/tags/</loc>
-    <lastmod>2025-05-11T14:07:22+02:00</lastmod>
-  </url><url>
     <loc>https://nicola.strappazzon.me/wiki/mysql/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
@@ -62,7 +32,13 @@
     <loc>https://nicola.strappazzon.me/wiki/mysql/queries/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
+    <loc>https://nicola.strappazzon.me/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
     <loc>https://nicola.strappazzon.me/tags/sql/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>https://nicola.strappazzon.me/tags/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>https://nicola.strappazzon.me/electronic/tools/</loc>
