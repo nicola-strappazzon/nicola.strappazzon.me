@@ -2,77 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/baz/</loc>
+    <loc>https://nicola.strappazzon.me/posts/baz/</loc>
     <lastmod>2025-05-11T14:08:35+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://nicola.strappazzon.me/</loc>
     <lastmod>2025-05-11T14:08:35+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://nicola.strappazzon.me/posts/</loc>
     <lastmod>2025-05-11T14:08:35+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/bar/</loc>
+    <loc>https://nicola.strappazzon.me/posts/bar/</loc>
     <lastmod>2025-05-11T14:08:34+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/foo/</loc>
+    <loc>https://nicola.strappazzon.me/posts/foo/</loc>
     <lastmod>2025-05-11T14:08:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/avr/</loc>
+    <loc>https://nicola.strappazzon.me/tags/avr/</loc>
     <lastmod>2025-05-11T14:07:22+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/da/</loc>
+    <loc>https://nicola.strappazzon.me/tags/da/</loc>
     <lastmod>2025-05-11T14:07:22+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/electronic/</loc>
+    <loc>https://nicola.strappazzon.me/tags/electronic/</loc>
     <lastmod>2025-05-11T14:07:22+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/my-first-post/</loc>
+    <loc>https://nicola.strappazzon.me/posts/my-first-post/</loc>
     <lastmod>2025-05-11T14:07:22+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://nicola.strappazzon.me/tags/</loc>
     <lastmod>2025-05-11T14:07:22+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/wiki/mysql/</loc>
+    <loc>https://nicola.strappazzon.me/wiki/mysql/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bash/</loc>
+    <loc>https://nicola.strappazzon.me/tags/bash/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dba/</loc>
+    <loc>https://nicola.strappazzon.me/tags/dba/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/electronic/</loc>
+    <loc>https://nicola.strappazzon.me/electronic/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/wiki/jq/</loc>
+    <loc>https://nicola.strappazzon.me/wiki/jq/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/jq/</loc>
+    <loc>https://nicola.strappazzon.me/tags/jq/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/json/</loc>
+    <loc>https://nicola.strappazzon.me/tags/json/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mysql/</loc>
+    <loc>https://nicola.strappazzon.me/tags/mysql/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/wiki/mysql/commands/</loc>
+    <loc>https://nicola.strappazzon.me/wiki/mysql/commands/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/wiki/mysql/queries/</loc>
+    <loc>https://nicola.strappazzon.me/wiki/mysql/queries/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sql/</loc>
+    <loc>https://nicola.strappazzon.me/tags/sql/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/electronic/tools/</loc>
+    <loc>https://nicola.strappazzon.me/electronic/tools/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/wiki/</loc>
+    <loc>https://nicola.strappazzon.me/wiki/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/electronic/hand-tools/</loc>
+    <loc>https://nicola.strappazzon.me/electronic/hand-tools/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://nicola.strappazzon.me/categories/</loc>
   </url>
 </urlset>

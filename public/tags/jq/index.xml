@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jq on Nicola Strappazzon</title>
-    <link>http://localhost:1313/tags/jq/</link>
+    <link>https://nicola.strappazzon.me/tags/jq/</link>
     <description>Recent content in Jq on Nicola Strappazzon</description>
     <generator>Hugo</generator>
     <language>es-es</language>
     <copyright>© 2025 Nicola Strappazzon</copyright>
     <lastBuildDate>Fri, 09 May 2025 10:56:29 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/jq/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nicola.strappazzon.me/tags/jq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>jq</title>
-      <link>http://localhost:1313/wiki/jq/</link>
+      <link>https://nicola.strappazzon.me/wiki/jq/</link>
       <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
-      <guid>http://localhost:1313/wiki/jq/</guid>
+      <guid>https://nicola.strappazzon.me/wiki/jq/</guid>
       <description>&lt;h1 id=&#34;wiki--jq&#34;&gt;Wiki / JQ&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://jqlang.org&#34;&gt;jq&lt;/a&gt; es una tool que permite manipular el JSON en la terminal.&lt;/p&gt;&#xA;&lt;h2 id=&#34;imprimir-un-campo&#34;&gt;Imprimir un campo&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jq -r &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.Query&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;imprimir-un-campo-dentro-una-lista&#34;&gt;Imprimir un campo dentro una lista&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jq -r &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.CacheClusters[].CacheNodeType&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;filtrar&#34;&gt;Filtrar&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jq -r &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;select( .duration != null )&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;convertir-a-csv&#34;&gt;Convertir a CSV&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jq -r &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;select( .duration != null ) | [.duration,.status, .url] | @csv&amp;#39;&lt;/span&gt; &amp;gt; log.csv&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>

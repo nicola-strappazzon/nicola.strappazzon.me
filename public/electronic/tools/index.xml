@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on Nicola Strappazzon</title>
-    <link>http://localhost:1313/electronic/tools/</link>
+    <link>https://nicola.strappazzon.me/electronic/tools/</link>
     <description>Recent content in Tools on Nicola Strappazzon</description>
     <generator>Hugo</generator>
     <language>es-es</language>
     <copyright>© 2025 Nicola Strappazzon</copyright>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/electronic/tools/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nicola.strappazzon.me/electronic/tools/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
