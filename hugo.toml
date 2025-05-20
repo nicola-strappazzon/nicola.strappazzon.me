@@ -1,4 +1,4 @@
-baseURL = 'nicola.strappazzon.me'
+baseURL = 'http://nicola.strappazzon.me/'
 languageCode = 'es-es'
 title = 'Nicola Strappazzon'
 theme = 'terminal'
