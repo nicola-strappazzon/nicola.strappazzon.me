@@ -10,6 +10,8 @@ tags = ["bash", "jq", "json"]
 [jq](https://jqlang.org) es una tool que permite manipular el JSON en la terminal.
 
 
+Usaremos el siguiente JSON de ejemplo:
+
 ```json
 {
   "name":"Foo Bar Baz",
@@ -27,6 +29,8 @@ tags = ["bash", "jq", "json"]
   ]
 }
 ```
+
+## Recuperar
 
 Imprimir un campo llamado `name`:
 
@@ -50,13 +54,19 @@ foo
 bar
 ```
 
+## Filtra
+
 Ejemplos de como filtrar que el campo `score` sea igual al valor `4`:
 
 ```bash
 cat demo.json | jq -r 'select(.score == 4)'
 ```
 
-Filtra que el campo `label` tenga un valor, muestra las columnas `name` y `label` y lo convierte a `csv`.
+## Transformar
+
+## CSV
+
+Lista las columnas `name` y `label` y convierte la salida en `csv`.
 
 ```bash
 cat demo.json | jq -r '[.name, .score] | @csv'
@@ -66,7 +76,9 @@ cat demo.json | jq -r '[.name, .score] | @csv'
 "Foo Bar Baz",4
 ```
 
-Minify, hacerlo más compacto:
+### Minify
+
+Es una técnica para hacerlo más compacto quitando de la estructura espacios, tabs, nuevas líneas sin modificar los datos:
 
 ```bash
 cat demo.json | jq -r tostring
