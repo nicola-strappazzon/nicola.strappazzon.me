@@ -66,7 +66,7 @@ cat demo.json | jq -r '[.name, .score] | @csv'
 "Foo Bar Baz",4
 ```
 
-Minify, hacerlo mas compacto:
+Minify, hacerlo más compacto:
 
 ```bash
 cat demo.json | jq -r tostring
