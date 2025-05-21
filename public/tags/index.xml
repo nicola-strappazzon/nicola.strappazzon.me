@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Nicola Strappazzon</title>
-    <link>https://nicola.strappazzon.me/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Nicola Strappazzon</description>
     <generator>Hugo</generator>
     <language>es-es</language>
     <copyright>© 2025 Nicola Strappazzon</copyright>
     <lastBuildDate>Fri, 09 May 2025 10:56:29 +0200</lastBuildDate>
-    <atom:link href="https://nicola.strappazzon.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bash</title>
-      <link>https://nicola.strappazzon.me/tags/bash/</link>
+      <link>http://localhost:1313/tags/bash/</link>
       <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
-      <guid>https://nicola.strappazzon.me/tags/bash/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Dba</title>
-      <link>https://nicola.strappazzon.me/tags/dba/</link>
-      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
-      <guid>https://nicola.strappazzon.me/tags/dba/</guid>
+      <guid>http://localhost:1313/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Jq</title>
-      <link>https://nicola.strappazzon.me/tags/jq/</link>
+      <link>http://localhost:1313/tags/jq/</link>
       <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
-      <guid>https://nicola.strappazzon.me/tags/jq/</guid>
+      <guid>http://localhost:1313/tags/jq/</guid>
       <description></description>
     </item>
     <item>
       <title>Json</title>
-      <link>https://nicola.strappazzon.me/tags/json/</link>
+      <link>http://localhost:1313/tags/json/</link>
       <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
-      <guid>https://nicola.strappazzon.me/tags/json/</guid>
+      <guid>http://localhost:1313/tags/json/</guid>
       <description></description>
     </item>
     <item>
-      <title>Mysql</title>
-      <link>https://nicola.strappazzon.me/tags/mysql/</link>
+      <title>Openpgp</title>
+      <link>http://localhost:1313/tags/openpgp/</link>
       <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
-      <guid>https://nicola.strappazzon.me/tags/mysql/</guid>
+      <guid>http://localhost:1313/tags/openpgp/</guid>
       <description></description>
     </item>
     <item>
-      <title>Sql</title>
-      <link>https://nicola.strappazzon.me/tags/sql/</link>
+      <title>Security</title>
+      <link>http://localhost:1313/tags/security/</link>
       <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
-      <guid>https://nicola.strappazzon.me/tags/sql/</guid>
+      <guid>http://localhost:1313/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Yubikey</title>
+      <link>http://localhost:1313/tags/yubikey/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/tags/yubikey/</guid>
       <description></description>
     </item>
   </channel>

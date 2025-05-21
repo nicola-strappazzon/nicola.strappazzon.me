@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenPGP on Nicola Strappazzon</title>
+    <link>http://localhost:1313/wiki/openpgp/</link>
+    <description>Recent content in OpenPGP on Nicola Strappazzon</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <copyright>© 2025 Nicola Strappazzon</copyright>
+    <lastBuildDate>Fri, 09 May 2025 10:56:29 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/wiki/openpgp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Importar desde un USB Security Key</title>
+      <link>http://localhost:1313/wiki/openpgp/import/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/wiki/openpgp/import/</guid>
+      <description>&lt;h2 id=&#34;openpgp&#34;&gt;OpenPGP&lt;/h2&gt;&#xA;&lt;p&gt;En &lt;a href=&#34;https://keys.openpgp.org&#34;&gt;esta URL&lt;/a&gt; puedes validar la identidad de una persona buscando su clave publica, por lo que se recomienda subir la propia.&lt;/p&gt;&#xA;&lt;h2 id=&#34;importar-desde-security-key-al-local&#34;&gt;Importar desde Security Key al local&lt;/h2&gt;&#xA;&lt;p&gt;La clave privada se queda dentro de la Security Key y es imposible extraerla, lo que se hace es importar la clave publica e indicar que la clave privada está dentro de una Security Key.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Obtener la clave directamente desde la Security Key:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg --card-status&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Esto debería mostrar información sobre la Security Key, incluyendo el Keygrip y el Key ID.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OpenPGP / Import backup files</title>
+      <link>http://localhost:1313/wiki/openpgp/restore/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/wiki/openpgp/restore/</guid>
+      <description>&lt;h3 id=&#34;importar-un-respaldo-de-los-certificados&#34;&gt;Importar un respaldo de los certificados&lt;/h3&gt;&#xA;&lt;p&gt;Supongamos que tiene una copia de seguridad de la clave prublica y privada, use los siguientes comandos para importarlos y por último veridique:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gpg --import myprivatekeys.asc&#xA;gpg --import mypubkeys.asc&#xA;gpg --import-ownertrust otrust.txt&#xA;gpg --list-secret-keys&#xA;gpg --list-keys&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>OpenPGP / Security Key</title>
+      <link>http://localhost:1313/wiki/openpgp/security-key/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/wiki/openpgp/security-key/</guid>
+      <description>&lt;h3 id=&#34;exportar-los-certificados-a-la-security-key&#34;&gt;Exportar los certificados a la Security Key&lt;/h3&gt;&#xA;&lt;p&gt;Al insertar la Security Key podrá ejecutar el siguiente comando para listar los detalles.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ gpg --card-status&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Al ser nueva, observará algo como esto:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Reader ...........: Yubico YubiKey OTP FIDO CCID&#xA;Application ID ...: A0123456789012345678901234567890&#xA;Application type .: OpenPGP&#xA;Version ..........: 3.4&#xA;Manufacturer .....: Yubico&#xA;Serial number ....: 12345678&#xA;Name of cardholder: [not set]&#xA;Language prefs ...: [not set]&#xA;Salutation .......:&#xA;URL of public key : [not set]&#xA;Login data .......: [not set]&#xA;Signature PIN ....: not forced&#xA;Key attributes ...: rsa2048 rsa2048 rsa2048&#xA;Max. PIN lengths .: 127 127 127&#xA;PIN retry counter : 3 0 3&#xA;Signature counter : 0&#xA;KDF setting ......: off&#xA;UIF setting ......: Sign=off Decrypt=off Auth=off&#xA;Signature key ....: [none]&#xA;Encryption key....: [none]&#xA;Authentication key: [none]&#xA;General key info..: [none]&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ahora vamos a configurarla, y vamos hacer todo esto antes de exportar la clave privada.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>YubiKey</title>
+      <link>http://localhost:1313/wiki/openpgp/yubikey/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/wiki/openpgp/yubikey/</guid>
+      <description>&lt;h2 id=&#34;yubikey&#34;&gt;YubiKey&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/Yubico/yubikey-manager&#34;&gt;YubiKey Manager CLI&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;reiniciar&#34;&gt;Reiniciar&lt;/h3&gt;&#xA;&lt;p&gt;Con el siguiente comando, podra borrar la información importante guardada en la Yubikey.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gpg-connect-agent &amp;lt;&amp;lt;EOF&#xA;/hex&#xA;scd serialno&#xA;scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40&#xA;scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40&#xA;scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40&#xA;scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40&#xA;scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40&#xA;scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40&#xA;scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40&#xA;scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40&#xA;scd apdu 00 e6 00 00&#xA;scd apdu 00 44 00 00&#xA;/echo Yubikey has been successfully reset.&#xA;/echo The factory default PINs are 123456 (user) and 12345678 (admin).&#xA;EOF&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

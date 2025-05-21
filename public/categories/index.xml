@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Nicola Strappazzon</title>
-    <link>https://nicola.strappazzon.me/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Nicola Strappazzon</description>
     <generator>Hugo</generator>
     <language>es-es</language>
     <copyright>© 2025 Nicola Strappazzon</copyright>
-    <atom:link href="https://nicola.strappazzon.me/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>YubiKey :: Nicola Strappazzon</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="YubiKey YubiKey Manager CLI
+Reiniciar Con el siguiente comando, podra borrar la información importante guardada en la Yubikey.
+gpg-connect-agent &lt;&lt;EOF /hex scd serialno scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40 scd apdu 00 e6 00 00 scd apdu 00 44 00 00 /echo Yubikey has been successfully reset. /echo The factory default PINs are 123456 (user) and 12345678 (admin). EOF " />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/wiki/openpgp/yubikey/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.a3670726bb66927824e4c3fa3f20388aacc1e7aa65014ae144e350ce59593b78.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.4981dda6081958c87609117a198c2c7fe573f29c232705d33861c57399c39c42.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.e24bf84cafb9e94502324a0c4264d65e9ed1870838db3e47393dfaa83dd5abb4.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="YubiKey">
+<meta property="og:description" content="YubiKey YubiKey Manager CLI
+Reiniciar Con el siguiente comando, podra borrar la información importante guardada en la Yubikey.
+gpg-connect-agent &lt;&lt;EOF /hex scd serialno scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40 scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40 scd apdu 00 e6 00 00 scd apdu 00 44 00 00 /echo Yubikey has been successfully reset. /echo The factory default PINs are 123456 (user) and 12345678 (admin). EOF " />
+<meta property="og:url" content="http://localhost:1313/wiki/openpgp/yubikey/" />
+<meta property="og:site_name" content="Nicola Strappazzon" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-05-09 10:56:29 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+  <div class="logo">
+    Nicola Strappazzon
+  </div>
+</a>
+
+    </div>
+    
+    
+  </div>
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/wiki/openpgp/yubikey/">YubiKey</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-05-09</time></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="http://localhost:1313/tags/bash/">bash</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/security/">security</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/yubikey/">yubikey</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/openpgp/">openpgp</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+    <div class="table-of-contents">
+      <h2>
+        Table of Contents
+      </h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#yubikey">YubiKey</a>
+      <ul>
+        <li><a href="#reiniciar">Reiniciar</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  
+
+  <div class="post-content"><div>
+        <h2 id="yubikey">YubiKey<a href="#yubikey" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><a href="https://github.com/Yubico/yubikey-manager">YubiKey Manager CLI</a></p>
+<h3 id="reiniciar">Reiniciar<a href="#reiniciar" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Con el siguiente comando, podra borrar la información importante guardada en la Yubikey.</p>
+<pre tabindex="0"><code>gpg-connect-agent &lt;&lt;EOF
+/hex
+scd serialno
+scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+scd apdu 00 e6 00 00
+scd apdu 00 44 00 00
+/echo Yubikey has been successfully reset.
+/echo The factory default PINs are 123456 (user) and 12345678 (admin).
+EOF
+</code></pre>
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2025 Nicola Strappazzon</span>
+    
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
