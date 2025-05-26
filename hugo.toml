@@ -1,13 +1,3 @@
 baseURL = 'https://nicola.strappazzon.me/'
 languageCode = 'es-es'
 title = 'Nicola Strappazzon'
-theme = 'terminal'
-pagination.pagerSize = 10
-copyright = '© 2025 Nicola Strappazzon'
-
-[params]
-	centerTheme = true
-	Toc = true
-
-[params.logo]
-    logoText = "Nicola Strappazzon"

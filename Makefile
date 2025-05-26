@@ -12,3 +12,6 @@ save: ## Save changes into repository automatically.
 	@git add .
 	@git commit -m "Save changes at: $$(date +%s)"
 	@git push
+
+run: ## Run hugo server in local.
+	@hugo server --disableFastRender --noHTTPCache --ignoreCache --cleanDestinationDir

@@ -2,10 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/wiki/mysql/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+    <loc>http://localhost:1313/posts/mi-primer-post/</loc>
+    <lastmod>2025-05-26T17:04:40+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-26T17:04:40+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-05-26T17:04:40+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/electronic/applications/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/backup/</loc>
@@ -14,13 +20,19 @@
     <loc>http://localhost:1313/tags/bash/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/electronic/</loc>
+    <loc>http://localhost:1313/wiki/security/yubikey/configure/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dba/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/export/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/git/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/electronic/hand-tools/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/import/</loc>
@@ -35,13 +47,22 @@
     <loc>http://localhost:1313/tags/json/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/tags/mysql/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/wiki/mysql/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/wiki/mysql/queries/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/openpgp/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/wiki/security/yubikey/restart/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/restore/</loc>
@@ -53,13 +74,13 @@
     <loc>http://localhost:1313/tags/security/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/wiki/security/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sql/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/electronic/tools/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/yubikey/</loc>
@@ -67,8 +88,6 @@
   </url><url>
     <loc>http://localhost:1313/wiki/security/yubikey/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/electronic/hand-tools/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url>

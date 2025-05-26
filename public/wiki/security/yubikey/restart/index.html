@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Restart | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+</head>
+<body>
+<div class="container center">
+<header>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+</header>
+<div class="content">
+
+  <article>
+    <div class="content-header">
+      <h2 class="title">Restart</h2>
+      <span class="date"><em>09/05/2025</em></span>
+    </div>
+    <p>Con el siguiente comando, podra borrar la información importante guardada en la Yubikey.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg-connect-agent <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/hex
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">scd serialno
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">scd apdu 00 e6 00 00
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">scd apdu 00 44 00 00
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/echo Yubikey has been successfully reset.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/echo The factory default PINs are 123456 (user) and 12345678 (admin).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div>
+  </article>
+
+</div>
+<footer class="footer">
+<span>Copyright 2025. All rights reserved.</span>
+</footer>
+</div>
+</body>
+</html>

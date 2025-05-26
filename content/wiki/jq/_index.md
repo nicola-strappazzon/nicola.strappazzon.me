@@ -5,8 +5,6 @@ title = 'jq'
 tags = ["bash", "jq", "json"]
 +++
 
-# Wiki / JQ
-
 [jq](https://jqlang.org) es una herramienta que permite manipular el JSON en la terminal.
 
 

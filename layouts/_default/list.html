@@ -1,0 +1,14 @@
+{{ define "main" }}
+  {{ if not .IsHome }}
+    <div class="content-header">
+      <h2 class="title">{{ .Title }}</h2>
+      <span class="date"><em>{{ .Date.Format "02/01/2006" }}</em></span>
+    </div>
+  {{ end }}
+  {{ .Content }}
+  <ul>
+    {{ range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+{{ end }}

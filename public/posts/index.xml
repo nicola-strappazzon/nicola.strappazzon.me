@@ -2,39 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Nicola Strappazzon</title>
-    <link>https://nicola.strappazzon.me/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Nicola Strappazzon</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <copyright>© 2025 Nicola Strappazzon</copyright>
-    <lastBuildDate>Sun, 11 May 2025 14:08:35 +0200</lastBuildDate>
-    <atom:link href="https://nicola.strappazzon.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 May 2025 17:04:40 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Baz</title>
-      <link>https://nicola.strappazzon.me/posts/baz/</link>
-      <pubDate>Sun, 11 May 2025 14:08:35 +0200</pubDate>
-      <guid>https://nicola.strappazzon.me/posts/baz/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bar</title>
-      <link>https://nicola.strappazzon.me/posts/bar/</link>
-      <pubDate>Sun, 11 May 2025 14:08:34 +0200</pubDate>
-      <guid>https://nicola.strappazzon.me/posts/bar/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Foo</title>
-      <link>https://nicola.strappazzon.me/posts/foo/</link>
-      <pubDate>Sun, 11 May 2025 14:08:29 +0200</pubDate>
-      <guid>https://nicola.strappazzon.me/posts/foo/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>My First Post</title>
-      <link>https://nicola.strappazzon.me/posts/my-first-post/</link>
-      <pubDate>Sun, 11 May 2025 14:07:22 +0200</pubDate>
-      <guid>https://nicola.strappazzon.me/posts/my-first-post/</guid>
+      <title>Mi Primer Post</title>
+      <link>http://localhost:1313/posts/mi-primer-post/</link>
+      <pubDate>Mon, 26 May 2025 17:04:40 +0200</pubDate>
+      <guid>http://localhost:1313/posts/mi-primer-post/</guid>
       <description></description>
     </item>
   </channel>

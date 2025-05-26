@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Configuración | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+</head>
+<body>
+<div class="container center">
+<header>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+</header>
+<div class="content">
+
+  <article>
+    <div class="content-header">
+      <h2 class="title">Configuración</h2>
+      <span class="date"><em>09/05/2025</em></span>
+    </div>
+    <p>Antes, deberá verificar que reconoce el dispositivo y conocer las funcionalidades que ofrece:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ykman list
+</span></span><span style="display:flex;"><span>YubiKey 5C <span style="color:#f92672">(</span>5.7.4<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>OTP+FIDO+CCID<span style="color:#f92672">]</span> Serial: <span style="color:#ae81ff">12345678</span>
+</span></span></code></pre></div><p>Tenga en cuenta que dependiendo del modelo del dispositivos, puede que la funcionalidad del <code>NFC</code>, o <code>OpenPGP</code> no este soportada. Ejecute los siguientes comandos para configurarlo a gusto y por último verifique el resultado:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ykman config usb --disable OTP
+</span></span><span style="display:flex;"><span>ykman config usb --disable U2F
+</span></span><span style="display:flex;"><span>ykman config usb --enable FIDO2
+</span></span><span style="display:flex;"><span>ykman config usb --disable OATH
+</span></span><span style="display:flex;"><span>ykman config usb --disable PIV
+</span></span><span style="display:flex;"><span>ykman config usb --disable HSMAUTH
+</span></span><span style="display:flex;"><span>ykman config usb --enable OpenPGP
+</span></span><span style="display:flex;"><span>ykman info
+</span></span></code></pre></div><p>Por último, configuro el <code>OpenPGP</code> para usar el touch que es bastante práctico:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ykman openpgp keys set-touch aut on
+</span></span><span style="display:flex;"><span>ykman openpgp keys set-touch sig on
+</span></span><span style="display:flex;"><span>ykman openpgp keys set-touch enc on
+</span></span><span style="display:flex;"><span>ykman openpgp info
+</span></span></code></pre></div>
+  </article>
+
+</div>
+<footer class="footer">
+<span>Copyright 2025. All rights reserved.</span>
+</footer>
+</div>
+</body>
+</html>
