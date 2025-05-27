@@ -167,9 +167,6 @@ a {
   color: #666;
 }
 
-
-
-
 .footer {
   padding: 40px 0;
   flex-grow: 0;
@@ -183,8 +180,6 @@ a {
   display: block; 
   text-align: center;
 }
-
-
 
 blockquote {
   position: relative;
@@ -209,9 +204,6 @@ blockquote p:first-child {
 blockquote p:last-child {
   margin-bottom: 0;
 }
-
-
-
 
 pre {
   background-color: #272822;
