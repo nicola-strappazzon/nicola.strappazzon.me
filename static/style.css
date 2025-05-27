@@ -137,7 +137,9 @@ a {
   padding: 5px 5px;
 }
 
-
+.content {
+  min-height: 80vh;
+}
 
 .content-header {
   display: flex;

@@ -6,15 +6,8 @@
     <description>Recent content on Nicola Strappazzon</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Mon, 26 May 2025 17:04:40 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 09 May 2025 10:56:29 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Mi Primer Post</title>
-      <link>http://localhost:1313/posts/mi-primer-post/</link>
-      <pubDate>Mon, 26 May 2025 17:04:40 +0200</pubDate>
-      <guid>http://localhost:1313/posts/mi-primer-post/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Backup</title>
       <link>http://localhost:1313/wiki/security/openpgp/backup/</link>
