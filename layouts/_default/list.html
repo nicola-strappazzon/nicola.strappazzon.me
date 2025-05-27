@@ -2,7 +2,9 @@
   {{ if not .IsHome }}
     <div class="content-header">
       <h2 class="title">{{ .Title }}</h2>
+      {{ if .Date }}
       <span class="date"><em>{{ .Date.Format "02/01/2006" }}</em></span>
+      {{ end }}
     </div>
   {{ end }}
   {{ .Content }}
