@@ -6,21 +6,58 @@
       </a>
     </div>
   </div>
-  <div class="header__social">
-    <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
-      <i class="fab fa-stack-overflow"></i>
-    </a>
-    <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
-      <i class="fab fa-medium"></i>
-    </a>
-    <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
+  <div class="header__social__navigation">
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="header__navigation">
+      <nav class="navigation-menu">
+        <ul class="navigation-menu__inner menu--desktop">
+          {{ if or $.Site.Params.showMenuItems ( eq .Site.Params.showMenuItems 0 ) }}
+            {{ range first $.Site.Params.showMenuItems $.Site.Menus.main }}
+              {{ if not .HasChildren }}
+                <li><a href="{{ .URL }}" {{ if .Params.NewTab -}} target="_blank" {{- end }}>{{ .Name }}</a></li>
+              {{ end }}
+            {{ end }}
+            {{ if gt (len $.Site.Menus.main) $.Site.Params.showMenuItems }}
+              <li>
+                <ul class="menu">
+                  <li class="menu__trigger">{{ $.Site.Params.menuMore }}&nbsp;▾</li>
+                  <li>
+                    <ul class="menu__dropdown">
+                      {{ range last (sub (len $.Site.Menus.main) $.Site.Params.showMenuItems) $.Site.Menus.main }}
+                        {{ if not .HasChildren }}
+                          <li><a href="{{ .URL }}" {{ if .Params.NewTab -}} target="_blank" {{- end }}>{{ .Name }}</a></li>
+                        {{ end }}
+                      {{ end }}
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            {{ end }}
+          {{ else }}
+            {{ range $.Site.Menus.main }}
+              {{ if not .HasChildren }}
+                <li><a href="{{ .URL }}" {{ if .Params.NewTab -}} target="_blank" {{- end }}>{{ .Name }}</a></li>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>

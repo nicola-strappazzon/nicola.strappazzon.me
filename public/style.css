@@ -221,3 +221,45 @@ code {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
+.header__social__navigation {
+  display: flex;
+  justify-content: space-between; /* Opcional: separa extremos */
+  align-items: center;            /* Centrado vertical */
+}
+
+.header__social,
+.header__navigation {
+  /*padding: 1rem;*/
+}
+
+.header__navigation {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 6px 1px;
+}
+
+.navigation-menu__inner {
+  display: flex;
+  flex: 1;
+  /*flex-wrap: wrap;*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-menu__inner > li {
+  /*flex: 0 0 auto;*/
+  /*margin-bottom: 10px;*/
+  /*white-space: nowrap;*/
+}
+
+.navigation-menu__inner > li:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+/*.navigation-menu .spacer {
+  flex-grow: 1 !important;
+}
+*/
