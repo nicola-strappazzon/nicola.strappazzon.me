@@ -183,16 +183,21 @@ a {
 
 blockquote {
   position: relative;
-  border-top: 1px solid var(--accent);
-  border-bottom: 1px solid var(--accent);
-  margin: 0;
-  padding: 25px;
+  /*margin-left: 32px;*/
+  padding: 16px;
+  background-color: #272822;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.warning {
+  border-left: 4px solid yellow;
+  /*border-left: 1px var(--foreground);*/
 }
 
 blockquote::before {
-  content: ">";
-  display: block;
-  position: absolute;
+  content: "WARNING";
+  display: flex;
   left: 0;
   color: var(--accent);
 }

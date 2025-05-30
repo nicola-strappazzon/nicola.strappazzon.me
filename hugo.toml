@@ -27,3 +27,6 @@ title = 'Nicola Strappazzon'
 #     name = "Acerca de mí"
 #     url = "/about/"
 #     weight = 5
+
+[markup.goldmark.parser.attribute]
+	block = true
