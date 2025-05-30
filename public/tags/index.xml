@@ -71,5 +71,12 @@
       <guid>http://localhost:1313/tags/yubikey/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Postgresql</title>
+      <link>http://localhost:1313/tags/postgresql/</link>
+      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/postgresql/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

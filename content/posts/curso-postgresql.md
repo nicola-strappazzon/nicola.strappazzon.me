@@ -2,6 +2,7 @@
 title = 'Curso de SQL en PostgreSQL'
 date = '2011-11-17'
 draft = false
+tags = ["postgresql"]
 +++
 
 - [Lección 1](https://github.com/nicola-strappazzon/blog/blob/main/assets/postgresql/PostgreSQL01.pdf) Presenta una lección sobre el uso de la sentencia SELECT en SQL. Explica cómo se puede usar SELECT para recuperar datos de una tabla, incluyendo todas las filas y columnas o solo columnas específicas. También cubre cómo agregar alias a las columnas, realizar cálculos aritméticos, concatenar cadenas y evitar filas duplicadas usando DISTINCT. El objetivo es enseñar los conceptos básicos detrás de la consulta de datos en una base de datos usando el lenguaje SQL.

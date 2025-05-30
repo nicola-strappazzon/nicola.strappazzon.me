@@ -77,6 +77,9 @@
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/wiki/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/yubikey/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
@@ -87,6 +90,9 @@
     <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/curso-postgresql/</loc>
+    <lastmod>2011-11-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/postgresql/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>

@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Backup | Nicola Strappazzon</title>
+<title>Postgresql | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -56,30 +56,22 @@
 </header>
 <div class="content">
 
-  <article>
+  
     <div class="content-header">
-      <h2 class="title">Backup</h2>
+      <h2 class="title">Postgresql</h2>
       
-      <span class="date"><em>09/05/2025</em></span>
+      <span class="date"><em>17/11/2011</em></span>
       
     </div>
-    <p>Existen varias formas de respaldar la clave publica y privada.</p>
-<ol>
-<li>Copiarlos en un pendrive + cifrar la unidad con <a href="https://veracrypt.io/en/Home.html">VeraCrypt</a>.</li>
-<li>Imprimir el contenido la clave publica y privada.</li>
-<li>Genarar un una serie de codigos QR para luego imprimirlos y guardarlos en un lugar seguro.</li>
-</ol>
-<h2 id="codigos-qr">Codigos QR</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --export-secret-key user@example.me | base64 &gt; pk.base64
-</span></span><span style="display:flex;"><span>split -d -C <span style="color:#ae81ff">2500</span> pk.base64
-</span></span><span style="display:flex;"><span>qrencode -r x00 -o x00.png
-</span></span><span style="display:flex;"><span>qrencode -r x01 -o x01.png
-</span></span><span style="display:flex;"><span>qrencode -r x02 -o x02.png
-</span></span><span style="display:flex;"><span>qrencode -r x03 -o x03.png
-</span></span><span style="display:flex;"><span>qrencode -r x04 -o x04.png
-</span></span><span style="display:flex;"><span>convert *.png pk.pdf
-</span></span></code></pre></div>
-  </article>
+  
+  
+  
+  <ul>
+    
+      <li><a href="/posts/curso-postgresql/">Curso de SQL en PostgreSQL</a></li>
+    
+  </ul>
+  
 
 </div>
 <footer class="footer">

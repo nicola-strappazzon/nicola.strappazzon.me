@@ -8,7 +8,7 @@
     </div>
   {{ end }}
   {{ .Content }}
-  {{ if gt (len .Pages) 1 }}
+  {{ if not .IsHome }}
   <ul>
     {{ range .Pages }}
       <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
