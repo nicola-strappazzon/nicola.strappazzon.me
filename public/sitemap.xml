@@ -2,12 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-05-30T12:05:04+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-05-30T12:05:04+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/electronic/applications/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
@@ -53,6 +47,9 @@
     <loc>http://localhost:1313/wiki/mysql/queries/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/openpgp/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
@@ -85,6 +82,12 @@
   </url><url>
     <loc>http://localhost:1313/wiki/security/yubikey/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/curso-postgresql/</loc>
+    <lastmod>2011-11-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2011-11-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url>
