@@ -1,7 +1,7 @@
 +++
 title = "El teorema CAP"
 date = "2016-06-12"
-draft = true
+draft = false
 tags = ["database"]
 +++
 
@@ -13,7 +13,7 @@ El teorema CAP, también llamado formalmente Teorema de Brewer, dice que un **si
 - La disponibilidad (Availability), Cada petición en un nodo debe recibir y garantizar una confirmación si ha sido resuelta satisfactoriamente. En pocas palabras, se debe leer y escribir en todos los nodos.
 - La tolerancia al particionado (Partition Tolerance), El sistema debe funcionar a pesar de que haya sido dividido por un fallo de comunicación, garantizando la disponibilidad a pesar que un nodo se separe del grupo sin importar la causa.
 
-![El teorema CAP]("../assets/CAPTheorem.png")
+![El teorema CAP](image.png)
 
 El teorema solo nos puede garantizar las siguientes combinaciones:
 

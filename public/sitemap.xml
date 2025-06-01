@@ -89,6 +89,12 @@
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/database/</loc>
+    <lastmod>2016-06-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/teorema-cap/</loc>
+    <lastmod>2016-06-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/curso-postgresql/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
   </url><url>
