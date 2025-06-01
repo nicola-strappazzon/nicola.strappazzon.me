@@ -181,6 +181,12 @@ a {
   text-align: center;
 }
 
+article p > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 blockquote {
   position: relative;
   /*margin-left: 32px;*/
