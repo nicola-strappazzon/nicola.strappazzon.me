@@ -272,7 +272,8 @@ code {
   margin-right: 20px;
 }
 
-/*.navigation-menu .spacer {
-  flex-grow: 1 !important;
+@media (max-width: 550px) {
+  .navigation-menu {
+    display: none;
+  }
 }
-*/
