@@ -13,15 +13,15 @@ title = 'Nicola Strappazzon'
 #     url = "/wiki/"
 #     weight = 2
 
-#   [[menu.main]]
-#     name = "Cultura"
-#     url = "/cultura/"
-#     weight = 3
+  [[menu.main]]
+    name = "Cultura"
+    url = "/cultura/"
+    weight = 3
 
-#   [[menu.main]]
-#     name = "Diccionario"
-#     url = "/diccionary/"
-#     weight = 4
+  [[menu.main]]
+    name = "Diccionario"
+    url = "/diccionary/"
+    weight = 4
 
 #   [[menu.main]]
 #     name = "Acerca de mí"

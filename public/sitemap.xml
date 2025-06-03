@@ -86,13 +86,13 @@
     <loc>http://localhost:1313/wiki/security/yubikey/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/database/</loc>
     <lastmod>2016-06-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/teorema-cap/</loc>
+    <lastmod>2016-06-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2016-06-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/curso-postgresql/</loc>
@@ -101,6 +101,12 @@
     <loc>http://localhost:1313/tags/postgresql/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/electronic/digital/</loc>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/cultura/</loc>
+  </url><url>
+    <loc>http://localhost:1313/diccionary/</loc>
   </url>
 </urlset>

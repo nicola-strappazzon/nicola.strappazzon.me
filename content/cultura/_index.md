@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 title = 'Cultura Informática'
 +++
 
@@ -15,15 +15,15 @@ Cualquier material que sirva de inspiración o conocimiento.
 - [Databases at Scale: Operations Engineering: Designing and Operating Resilient Database Systems](https://www.amazon.es/Databases-at-Scale-Operations-Engineering/dp/1491925949)
 - [Database Reliability Engineering](https://www.amazon.es/Database-Reliability-Engineering-Designing-Operating-ebook/dp/B076VXPXND)
 - [The Unicorn Project: A Novel about Developers, Digital Disruption, and Thriving in the Age of Data](https://www.amazon.es/Unicorn-Project-Developers-Disruption-Thriving/dp/1942788762)
-- [Hábitos atómicos: Cambios pequeños, resultados extraordinarios (Autoconocimiento)](https://www.amazon.es/H%C3%A1bitos-at%C3%B3micos-Autoconocimiento-James-Clear/dp/8418118032)
+- [Hábitos atómicos: Cambios pequeños, resultados extraordinarios (Autoconocimiento)](https://www.amazon.es/habitos-atomicos-autoconocimiento-james-clear/dp/8418118032)
 
 ### Ciencia Ficción
 
 - [Armada](https://www.amazon.es/Armada-Ernest-Cline-ebook/dp/B01C79FXQW)
 - [Ready Player One](https://www.amazon.es/Ready-Player-One-Ernest-Cline/dp/0099560437)
 - [El marciano](https://www.amazon.es/El-marciano-NOVA-Andy-Weir/dp/8466655050)
-- [La vieja guardia](https://www.amazon.es/vieja-guardia-Ciencia-Ficci%C3%B3n/dp/844500008X)
-- [Neuromante](https://www.amazon.es/Neuromante-n%C2%BA-01-Minotauro-Esenciales-ebook/dp/B08W2HQ83Y)
+- [La vieja guardia](https://www.amazon.es/vieja-guardia-ciencia-ficcion/dp/844500008X)
+- [Neuromante](https://www.amazon.es/Neuromante-n-01-Minotauro-Esenciales-ebook/dp/B08W2HQ83Y)
 
 ## Películas y Series
 
