@@ -63,6 +63,8 @@ Estas son las puntas que recomiendo:
 
 ## Consumibles para soldar y desoldar
 
+Esta parte es importante por temas de salud, evite usar químicos plomo. Suelde en un sitio ventilado, evite en todo lo posible inhalar los humos que desprende el proceso de soldar y desoldar. La siguiente combinación de estaño 96.5/3/0.5 es bastante limpia y no deja residuos.
+
 - [Estaño](https://www.digikey.es/en/products/detail/chip-quik-inc/RASWLF-015-1OZ/9682011) RASWLF.015 1OZ, 96.5/3/0.5 TIN/SI, Diametro: 0.015" (0.38mm). Su punto de fusión es de 220 °C.
 - [Flux](https://www.digikey.es/en/products/detail/chip-quik-inc/CQ4LF-0-5/9558133) CQ4LF-0.5, No Clean, Liquid.
 - [Malla para desoldar](https://www.mouser.es/ProductDetail/Aven/17541?qs=uwxL4vQweFMwWqGr0IUxLQ%3D%3D) Tamaño 2 mm / 0.08 in.
