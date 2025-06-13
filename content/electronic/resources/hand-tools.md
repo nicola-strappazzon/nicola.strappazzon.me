@@ -20,6 +20,8 @@ La marca [engineer](https://www.engineertools-jp.com) de Japón tiene un corte i
 
 ## Pelacables
 
+Te permite pelar un cable de 22 AWG sin dejar marcas en la camisa, incluso es más manejable para cables de menos de 2cm de largo, por eso este modelo considero que es el mejor.
+
 [Knipex 12-80-040 SB](https://www.amazon.es/dp/B003EA04FO).
 
 ## Cable
