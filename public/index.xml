@@ -65,11 +65,46 @@
       <description>&lt;p&gt;$ gpg &amp;ndash;output revoke.asc &amp;ndash;gen-revoke &lt;a href=&#34;mailto:nicola@strappazzon.me&#34;&gt;nicola@strappazzon.me&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;sec  rsa4096/8E97CAEEEE861364 2024-02-17 Nicola Strappazzon &lt;a href=&#34;mailto:nicola@strappazzon.me&#34;&gt;nicola@strappazzon.me&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Create a revocation certificate for this key? (y/N) y&#xA;Please select the reason for the revocation:&#xA;0 = No reason specified&#xA;1 = Key has been compromised&#xA;2 = Key is superseded&#xA;3 = Key is no longer used&#xA;Q = Cancel&#xA;(Probably you want to select 1 here)&#xA;Your decision? 0&#xA;Enter an optional description; end it with an empty line:&lt;/p&gt;</description>
     </item>
     <item>
+      <title>MySQL y los emojis</title>
+      <link>http://localhost:1313/posts/mysql-emojis/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mysql-emojis/</guid>
+      <description>&lt;p&gt;Esta es la típica tontería inútil que da problemas, veamos como se implementa y donde puede haber problemas, al grano, vemos todo lo que hace falta para que funcione, y los ejemplos que trataremos están hechos para saber investigar el problema y poder resolverlo:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Debes utilizar el encoding &lt;code&gt;utf8mb4&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;El encoding debe estar configurado en varios sitios; en las tablas a usar, en la conexión de la aplicación y en las variables de entorno. En este punto es donde suele haber problemas.&lt;/li&gt;&#xA;&lt;li&gt;Debes asegurarte de que los datos se guardan y se recuperan bien.&lt;/li&gt;&#xA;&lt;li&gt;Realiza pruebas en un entorno seguro y controlado.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Si ya estas utilizando el encoding &lt;code&gt;utf8&lt;/code&gt; no es problema que implementes &lt;code&gt;utf8mb4&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MySQL y los Timeouts</title>
+      <link>http://localhost:1313/posts/mysql-timeouts/</link>
+      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mysql-timeouts/</guid>
+      <description>&lt;p&gt;Suele pasar mucho con los de &lt;strong&gt;business intelligence, data science y sus variantes&lt;/strong&gt;, puede deberse a varias razones, vamos al grano:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Si te conectas desde tu casa u oficina al cloud para traer información, la realidad es que la intermitencia no la puedes controlar, puede ser por el ISP, o por la VPN o quien sabe que.&lt;/li&gt;&#xA;&lt;li&gt;Volúmenes de datos muy grandes. Haz que la query retorne volúmenes más pequeños, en vez de todo el mes, que sea por día.&lt;/li&gt;&#xA;&lt;li&gt;Tiempos de respuesta muy elevados, te falta un indice ó por la misma razón debes hacer lo anterior, traerte trozos pequeños y razonables de datos, o algún bloqueo.&lt;/li&gt;&#xA;&lt;li&gt;Estas tratando con una ddbb transaccional por lo que los tiempos están ajustados para ello y más si es una aplicación web que no debe tardar más de 30s en responder por ejemplo porque sino el hilo de ejecución del web server muere.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Se podría configurar el cliente o tu script o programa para que cambie esos tiempos a la hora de establecer la conexión y recibir los datos, pero antes debes saber que hay definido y luego ver que ajustas. Haz la siguiente query:&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>El teorema CAP</title>
       <link>http://localhost:1313/posts/teorema-cap/</link>
       <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/teorema-cap/</guid>
       <description>&lt;p&gt;Éste post me parece muy importante para poder entender como funcionan y hacer grandes sistemas pensados para escalar, sea por tráfico, por multi-sitio, multi-país, y más… todos estos sistemas distribuidos presentan la misma particularidad, y en el año 2000 un señor llamado &lt;a href=&#34;https://en.wikipedia.org/wiki/CAP_theorem&#34;&gt;Eric Brewer&lt;/a&gt;, pudo definir tres importantes propiedades y desarrollo un teorema. El se dio cuenta que mientras más aplicaciones basadas en la WEB existan, menos debemos preocuparnos por la consistencia de los datos, si queremos alta disponibilidad de nuestras aplicaciones entonces no podemos garantizar la consistencia de los datos.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MySQL y los Niveles de aislamiento</title>
+      <link>http://localhost:1313/posts/niveles-aislamiento/</link>
+      <pubDate>Sat, 24 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/niveles-aislamiento/</guid>
+      <description>&lt;p&gt;El aislamiento es una parte importante de la propiedad ACID que garantiza que las transacciones sean fiables. Esto permite que las transacciones que se ejecutan simultáneamente no interfieran con otras, &lt;strong&gt;garantizando la integridad de los datos&lt;/strong&gt;, al no existir aislamiento en una transacción podría modificar los datos que otra transacción está leyendo, por lo que se crea una inconsistencia cuando se crean datos.&lt;/p&gt;&#xA;&lt;p&gt;Ahora que entendemos que es el aislamiento en términos generales, vamos a conocer cuales son los niveles de aislamiento, estos determinan como las transacciones se comportan con otras transacciones, es como ser más o menos restrictivo. Escoger cual es el mejor nivel depende de las necesidades de la aplicación, primero debe entender cuales son los beneficios y consecuencias de cada una de ellas.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rol de un DBA</title>
+      <link>http://localhost:1313/posts/rol-dba/</link>
+      <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/rol-dba/</guid>
+      <description>&lt;p&gt;Puede que este papel hoy en día se este perdiendo, y se haya mezclado con los de Operaciones o con algún Desarrollador, está mal!, en proyectos grandes es muy importante dedicarle todo el tiempo posible, llega un momento que el volumen de datos y el tráfico se vuelve insostenible, a este punto, &lt;strong&gt;cuando algo falla es catastrófico y no suele arreglarse rápidamente&lt;/strong&gt;, la prevención es bastante crucial y se vuelve una eterna lucha.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Trabajando con largas listas de procesos en MySQL</title>
+      <link>http://localhost:1313/posts/trabajando-largas-listas-procesos-mysql/</link>
+      <pubDate>Wed, 07 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/trabajando-largas-listas-procesos-mysql/</guid>
+      <description>&lt;p&gt;Los fans de la terminal nos encontramos frecuentemente con algunas limitaciones por el tamaño del monitor y todo el contenido, en este caso hablo de listar y filtrar entre muchos rows en MySQL sin la opción WHERE como; &lt;strong&gt;&amp;ldquo;SHOW PROCESSLIST;&amp;rdquo;&lt;/strong&gt; y &lt;strong&gt;&amp;ldquo;SHOW TABLES;&amp;rdquo;&lt;/strong&gt;. Generalmente necesitamos buscar algo en largas listas para; matar procesos, verificar conexiones, consultas, etc&amp;hellip; y como podemos hacer para mostrar los que nos interesa?.&lt;/p&gt;&#xA;&lt;p&gt;Lo podemos cambiar estando dentro de la consola de MySQL, por ejemplo; Necesito listar todas las conexiones que sean distintas al estado &lt;strong&gt;Sleep&lt;/strong&gt;:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Curso de SQL en PostgreSQL</title>

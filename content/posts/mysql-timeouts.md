@@ -1,7 +1,7 @@
 +++
 title = "MySQL y los Timeouts"
 date = "2020-05-16"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

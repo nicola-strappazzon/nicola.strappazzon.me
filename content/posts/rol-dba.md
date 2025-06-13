@@ -1,7 +1,7 @@
 +++
 title = "Rol de un DBA"
 date = "2015-01-14"
-draft = true
+draft = false
 tags = ["database"]
 +++
 
@@ -9,7 +9,7 @@ Puede que este papel hoy en día se este perdiendo, y se haya mezclado con los d
 
 Ser Administrador de Bases de Datos es algo bastante exigente, **porqué debes saber un poco de todo**; de programación, de sistemas y mucho de Bases de Datos. El dominio de cada una de ellas es bastante crucial para entender como gestionar bien los recursos, prevenir incidencias e incluso resolverlas.
 
-![DBA]({{ "/assets/DBA01.png" | absolute_url }})
+![DBA](image.png)
 
 Debes trabajar codo a codo con los Desarrolladores, antes que ellos se pongan a programar, debes estar diseñando nuevos modelos de datos, pensando principalmente como influye en el rendimiento y mantener la integridad, una vez terminada la parte de programación, debes hacer un Code Review de la Pull Request, luego es enviada al equipo de Quality Assurance, de ellos te puedes esperar de todo, es la idea no? Una vez que todo está listo, pasa a producción y aún no puedes quedarte tranquilo, debes seguir vigilando.
 

@@ -1,7 +1,7 @@
 +++
 title = "MySQL y los emojis"
 date = "2020-05-18"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

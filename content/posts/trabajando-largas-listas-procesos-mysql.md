@@ -1,7 +1,7 @@
 +++
 title = "Trabajando con largas listas de procesos en MySQL"
 date = "2015-01-07"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

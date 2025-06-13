@@ -15,5 +15,12 @@
       <guid>http://localhost:1313/posts/teorema-cap/</guid>
       <description>&lt;p&gt;Éste post me parece muy importante para poder entender como funcionan y hacer grandes sistemas pensados para escalar, sea por tráfico, por multi-sitio, multi-país, y más… todos estos sistemas distribuidos presentan la misma particularidad, y en el año 2000 un señor llamado &lt;a href=&#34;https://en.wikipedia.org/wiki/CAP_theorem&#34;&gt;Eric Brewer&lt;/a&gt;, pudo definir tres importantes propiedades y desarrollo un teorema. El se dio cuenta que mientras más aplicaciones basadas en la WEB existan, menos debemos preocuparnos por la consistencia de los datos, si queremos alta disponibilidad de nuestras aplicaciones entonces no podemos garantizar la consistencia de los datos.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Rol de un DBA</title>
+      <link>http://localhost:1313/posts/rol-dba/</link>
+      <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/rol-dba/</guid>
+      <description>&lt;p&gt;Puede que este papel hoy en día se este perdiendo, y se haya mezclado con los de Operaciones o con algún Desarrollador, está mal!, en proyectos grandes es muy importante dedicarle todo el tiempo posible, llega un momento que el volumen de datos y el tráfico se vuelve insostenible, a este punto, &lt;strong&gt;cuando algo falla es catastrófico y no suele arreglarse rápidamente&lt;/strong&gt;, la prevención es bastante crucial y se vuelve una eterna lucha.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

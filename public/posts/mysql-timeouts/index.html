@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>MySQL y los Timeouts | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+</head>
+<body>
+<div class="container center">
+<header>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+  </div>
+  <div class="header__social__navigation">
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="header__navigation">
+      <nav class="navigation-menu">
+        <ul class="navigation-menu__inner menu--desktop">
+          
+            
+              
+                <li><a href="/posts/" >Posts</a></li>
+              
+            
+              
+                <li><a href="/cultura/" >Cultura</a></li>
+              
+            
+              
+                <li><a href="/diccionary/" >Diccionario</a></li>
+              
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+</header>
+<div class="content">
+
+  <article>
+    <div class="content-header">
+      <h2 class="title">MySQL y los Timeouts</h2>
+      
+      <span class="date"><em>16/05/2020</em></span>
+      
+    </div>
+    <p>Suele pasar mucho con los de <strong>business intelligence, data science y sus variantes</strong>, puede deberse a varias razones, vamos al grano:</p>
+<ul>
+<li>Si te conectas desde tu casa u oficina al cloud para traer información, la realidad es que la intermitencia no la puedes controlar, puede ser por el ISP, o por la VPN o quien sabe que.</li>
+<li>Volúmenes de datos muy grandes. Haz que la query retorne volúmenes más pequeños, en vez de todo el mes, que sea por día.</li>
+<li>Tiempos de respuesta muy elevados, te falta un indice ó por la misma razón debes hacer lo anterior, traerte trozos pequeños y razonables de datos, o algún bloqueo.</li>
+<li>Estas tratando con una ddbb transaccional por lo que los tiempos están ajustados para ello y más si es una aplicación web que no debe tardar más de 30s en responder por ejemplo porque sino el hilo de ejecución del web server muere.</li>
+</ul>
+<p>Se podría configurar el cliente o tu script o programa para que cambie esos tiempos a la hora de establecer la conexión y recibir los datos, pero antes debes saber que hay definido y luego ver que ajustas. Haz la siguiente query:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">@@</span>net_write_timeout, <span style="color:#f92672">@@</span>wait_timeout;
+</span></span></code></pre></div><p>Cada vez que el cliente se conecta hereda una serie de configuraciones globales, pero también puedes ajustar algunas de ellas en tu sesión, como lo vamos hacer ahora. Cada una de esas variables significa algo:</p>
+<ul>
+<li><strong>net_write_timeout:</strong> Indica la cantidad de segundos en que el servidor escribe al cliente y debe esperar para abortar la conexión.</li>
+<li><strong>wait_timeout:</strong> Indica la cantidad de segundos sin actividad que debe esperar para abortar la conexión.
+Como ajustas wait_timeout:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">SESSION</span> wait_timeout <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> book <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">year</span> <span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">2000</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">2001</span>;
+</span></span></code></pre></div><p>Esto es bastante de probar y ajustar hasta conseguir los valores adecuados, recuerda que la cache y el buffer pool también pueden jugartela con los tiempos de respuesta.</p>
+<p>Las variables las puedes cambiar en su conexión / session de MySQL sin perjudicar el resto del comportamiento del cluster.</p>
+<p>Adicionalmente, recomiendo hacer lecturas de datos sin generar bloqueos que pueda comprometer la replicación o una transacción entre otras cosas, para ello debes definir el nivel de aislamiento transaccional:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">SESSION</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">ISOLATION</span> <span style="color:#66d9ef">LEVEL</span> <span style="color:#66d9ef">READ</span> <span style="color:#66d9ef">UNCOMMITTED</span> ;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> book <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">year</span> <span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">2000</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">2001</span>;
+</span></span></code></pre></div><p>Fin.</p>
+
+  </article>
+
+</div>
+<footer class="footer">
+<span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+</html>

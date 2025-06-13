@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Trabajando con largas listas de procesos en MySQL | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+</head>
+<body>
+<div class="container center">
+<header>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+  </div>
+  <div class="header__social__navigation">
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="header__navigation">
+      <nav class="navigation-menu">
+        <ul class="navigation-menu__inner menu--desktop">
+          
+            
+              
+                <li><a href="/posts/" >Posts</a></li>
+              
+            
+              
+                <li><a href="/cultura/" >Cultura</a></li>
+              
+            
+              
+                <li><a href="/diccionary/" >Diccionario</a></li>
+              
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+</header>
+<div class="content">
+
+  <article>
+    <div class="content-header">
+      <h2 class="title">Trabajando con largas listas de procesos en MySQL</h2>
+      
+      <span class="date"><em>07/01/2015</em></span>
+      
+    </div>
+    <p>Los fans de la terminal nos encontramos frecuentemente con algunas limitaciones por el tamaño del monitor y todo el contenido, en este caso hablo de listar y filtrar entre muchos rows en MySQL sin la opción WHERE como; <strong>&ldquo;SHOW PROCESSLIST;&rdquo;</strong> y <strong>&ldquo;SHOW TABLES;&rdquo;</strong>. Generalmente necesitamos buscar algo en largas listas para; matar procesos, verificar conexiones, consultas, etc&hellip; y como podemos hacer para mostrar los que nos interesa?.</p>
+<p>Lo podemos cambiar estando dentro de la consola de MySQL, por ejemplo; Necesito listar todas las conexiones que sean distintas al estado <strong>Sleep</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#960050;background-color:#1e0010">\</span>P grep <span style="color:#f92672">-</span>v Sleep
+</span></span><span style="display:flex;"><span>PAGER <span style="color:#66d9ef">set</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;grep -v Sleep&#39;</span>
+</span></span><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">SHOW</span> PROCESSLIST;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">--------+---------+-----------+------+---------+-------+-------+------------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Id     <span style="color:#f92672">|</span> <span style="color:#66d9ef">User</span>    <span style="color:#f92672">|</span> <span style="color:#66d9ef">Host</span>      <span style="color:#f92672">|</span> db   <span style="color:#f92672">|</span> Command <span style="color:#f92672">|</span> Time  <span style="color:#f92672">|</span> <span style="color:#66d9ef">State</span> <span style="color:#f92672">|</span> Info             <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">--------+---------+-----------+------+---------+-------+-------+------------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> <span style="color:#ae81ff">109530</span> <span style="color:#f92672">|</span> root    <span style="color:#f92672">|</span> localhost <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span> Query   <span style="color:#f92672">|</span>     <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>  <span style="color:#f92672">|</span> <span style="color:#66d9ef">show</span> processlist <span style="color:#f92672">|</span>
+</span></span></code></pre></div><p>Listo, así de simple o lo hacemos más complejo? ahora necesito saber cuales son las conexiones dormidas, y lo ordenamos de forma descendente, nos quedaría así:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#960050;background-color:#1e0010">\</span>P grep Sleep <span style="color:#f92672">|</span> sort <span style="color:#f92672">-</span>t <span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">|</span> <span style="color:#f92672">-</span>k <span style="color:#ae81ff">7</span> <span style="color:#f92672">-</span>n <span style="color:#f92672">-</span>r
+</span></span><span style="display:flex;"><span>PAGER <span style="color:#66d9ef">set</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;grep Sleep | sort -t \| -k 7 -n -r&#39;</span>
+</span></span><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">SHOW</span> PROCESSLIST;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7550471</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">65</span>.<span style="color:#ae81ff">54</span>.<span style="color:#ae81ff">110</span>:<span style="color:#ae81ff">53481</span>   <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span> <span style="color:#ae81ff">9559</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7550429</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">65</span>.<span style="color:#ae81ff">54</span>.<span style="color:#ae81ff">110</span>:<span style="color:#ae81ff">53479</span>   <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span> <span style="color:#ae81ff">8877</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7560240</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">33</span>.<span style="color:#ae81ff">181</span>.<span style="color:#ae81ff">84</span>:<span style="color:#ae81ff">57960</span>   <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span> <span style="color:#ae81ff">2029</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7560214</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">33</span>.<span style="color:#ae81ff">181</span>.<span style="color:#ae81ff">84</span>:<span style="color:#ae81ff">57955</span>   <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span> <span style="color:#ae81ff">1058</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7560993</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">33</span>.<span style="color:#ae81ff">181</span>.<span style="color:#ae81ff">84</span>:<span style="color:#ae81ff">58083</span>   <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span>  <span style="color:#ae81ff">616</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7548835</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">36</span>.<span style="color:#ae81ff">142</span>.<span style="color:#ae81ff">140</span>:<span style="color:#ae81ff">39371</span>  <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span>  <span style="color:#ae81ff">225</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7548697</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">36</span>.<span style="color:#ae81ff">142</span>.<span style="color:#ae81ff">140</span>:<span style="color:#ae81ff">39350</span>  <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span>  <span style="color:#ae81ff">211</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7555321</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">65</span>.<span style="color:#ae81ff">19</span>.<span style="color:#ae81ff">225</span>:<span style="color:#ae81ff">45810</span>   <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span>  <span style="color:#ae81ff">208</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7562608</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">65</span>.<span style="color:#ae81ff">19</span>.<span style="color:#ae81ff">225</span>:<span style="color:#ae81ff">47517</span>   <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span>  <span style="color:#ae81ff">109</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">5517613</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> localhost:<span style="color:#ae81ff">25380</span>      <span style="color:#f92672">|</span> mysql <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span>    <span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7562775</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">250</span>.<span style="color:#ae81ff">249</span>.<span style="color:#ae81ff">182</span>:<span style="color:#ae81ff">42425</span> <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span>    <span style="color:#ae81ff">5</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7562774</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">250</span>.<span style="color:#ae81ff">249</span>.<span style="color:#ae81ff">182</span>:<span style="color:#ae81ff">42424</span> <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span>    <span style="color:#ae81ff">5</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">7562679</span> <span style="color:#f92672">|</span> app <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">250</span>.<span style="color:#ae81ff">249</span>.<span style="color:#ae81ff">182</span>:<span style="color:#ae81ff">42370</span> <span style="color:#f92672">|</span> demo  <span style="color:#f92672">|</span> Sleep <span style="color:#f92672">|</span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span>      <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span>
+</span></span></code></pre></div><p>El ejemplo habla por si solo, y como podemos observar, simplemente estamos usando los comandos básicos de Linux, no hay mayor cosa. Un ejemplo más, si queremos listar cuales tablas quedan de respaldo cuando se hace un alter table con las <a href="http://www.percona.com/software/percona-toolkit/">Percona Tools</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#960050;background-color:#1e0010">\</span>P egrep <span style="color:#e6db74">&#34;_*_(new|old)&#34;</span>;
+</span></span><span style="display:flex;"><span>PAGER <span style="color:#66d9ef">set</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;egrep &#34;_*_(new|old)&#34;;&#39;</span>
+</span></span><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">SHOW</span> TABLES;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> _users_old                         <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> _acl_new                           <span style="color:#f92672">|</span>
+</span></span></code></pre></div><p>Si queremos quitar el filtro y ponerlo como antes, tenemos dos formas;</p>
+<ul>
+<li><strong>La primera:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#960050;background-color:#1e0010">\</span>P
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Default</span> pager wasn<span style="color:#e6db74">&#39;t set, using stdout.
+</span></span></span></code></pre></div><ul>
+<li><strong>La segunda:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> NOPAGER;
+</span></span><span style="display:flex;"><span>PAGER <span style="color:#66d9ef">set</span> <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">stdout</span>
+</span></span></code></pre></div><p>Listo, ya somos un poco más hábiles con el comando <strong>mysql</strong>.</p>
+
+  </article>
+
+</div>
+<footer class="footer">
+<span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+</html>
