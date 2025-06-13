@@ -277,3 +277,24 @@ code {
     display: none;
   }
 }
+
+article table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+  border-color: var(--accent);
+}
+
+table th {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+table th, td {
+  padding-left: 6px;
+  padding-right: 6px;
+}

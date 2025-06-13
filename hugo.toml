@@ -8,10 +8,10 @@ title = 'Nicola Strappazzon'
     url = "/posts/"
     weight = 1
 
-#   [[menu.main]]
-#     name = "Wiki"
-#     url = "/wiki/"
-#     weight = 2
+  [[menu.main]]
+    name = "Electrónica"
+    url = "/electronic/"
+    weight = 2
 
   [[menu.main]]
     name = "Cultura"

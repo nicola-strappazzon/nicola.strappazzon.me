@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recursos on Nicola Strappazzon</title>
+    <link>http://localhost:1313/electronic/resources/</link>
+    <description>Recent content in Recursos on Nicola Strappazzon</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <lastBuildDate>Fri, 09 May 2025 10:56:29 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/electronic/resources/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cálculo y simulación</title>
+      <link>http://localhost:1313/electronic/resources/sim/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/electronic/resources/sim/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.digikey.es/en/resources/online-conversion-calculators&#34;&gt;Online Conversion and Calculators&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html&#34;&gt;LTspice&lt;/a&gt; Powerful, fast, and free SPICE simulator software.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Conocimiento</title>
+      <link>http://localhost:1313/electronic/resources/knowledge/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/electronic/resources/knowledge/</guid>
+      <description>&lt;p&gt;Estos son los sitios de confianza para documentarse e ir obteniendo buenas ideas:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://learn.adafruit.com&#34;&gt;adafruit learn&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://learn.sparkfun.com&#34;&gt;sparkfun learn&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hackaday.com&#34;&gt;HACKADAY&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://www.technoblogy.com&#34;&gt;Electronics and microcontroller projects&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.electronicwings.com&#34;&gt;ElectronicWings&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.avrfreaks.net&#34;&gt;AVR Freaks&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.digikey.es/en/maker&#34;&gt;Maker.io&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Diseño</title>
+      <link>http://localhost:1313/electronic/resources/design/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/electronic/resources/design/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://easyeda.com&#34;&gt;EasyEDA&lt;/a&gt; Online PCB Design Software.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.freecad.org&#34;&gt;FreeCAD&lt;/a&gt; Opensource multiplatform 3D parametric modeler.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.kicad.org&#34;&gt;KiCad EDA&lt;/a&gt; A Cross Platform and Open Source Electronics Design Automation Suite.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://saturnpcb.com/saturn-pcb-toolkit/&#34;&gt;Saturn PCB Design Toolkit&lt;/a&gt; Freeware resource for PCB-related calculations you can find.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.snapeda.com&#34;&gt;SnapMagic&lt;/a&gt; Download free symbols, footprints, &amp;amp; 3D models for millions of electronic components.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Fabricación</title>
+      <link>http://localhost:1313/electronic/resources/pcb/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/electronic/resources/pcb/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.digikey.es/en/resources/dkred&#34;&gt;DigiKey PCB&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jlcpcb.com&#34;&gt;JLCPCB&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://oshpark.com&#34;&gt;OSH Park&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.pcbway.com&#34;&gt;PCBWay&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Herramientas</title>
+      <link>http://localhost:1313/electronic/resources/hand-tools/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/electronic/resources/hand-tools/</guid>
+      <description>&lt;p&gt;Usar herramientas de buena calidad te permite obtener mejores resultados en un entorno agradable.&lt;/p&gt;&#xA;&lt;p&gt;En lo personal tengo una muy fuerte críticas negativas con muchas herramientas del mercado, por eso en esta recomendación, dejo una recopilación de excelencia:&lt;/p&gt;&#xA;&lt;h2 id=&#34;alicates-y-pinzas&#34;&gt;Alicates y Pinzas&lt;/h2&gt;&#xA;&lt;p&gt;La marca &lt;a href=&#34;https://www.engineertools-jp.com&#34;&gt;engineer&lt;/a&gt; de Japón tiene un corte impecable para ocultar el mayor detalle, son de muy buena calidad y un precio rasonable.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.engineertools-jp.com/product-page/ns-04-esd-micro-nippers&#34;&gt;NS-04&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.engineertools-jp.com/product-page/ps-03-miniature-needle-nose-pliers&#34;&gt;PS-03&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.engineertools-jp.com/product-page/ptz-62-black-coated-esd-tweezers&#34;&gt;PTZ-62&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.engineertools-jp.com/product-page/ptz-64-black-coated-esd-tweezers&#34;&gt;PTZ-64&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.engineertools-jp.com/product-page/ptz-43-esd-plastic-tipped-tweezers&#34;&gt;PTZ-43&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;pelacables&#34;&gt;Pelacables&lt;/h2&gt;&#xA;&lt;h2 id=&#34;destornilladores&#34;&gt;Destornilladores&lt;/h2&gt;&#xA;&lt;h2 id=&#34;lentes-de-aumento&#34;&gt;Lentes de aumento&lt;/h2&gt;&#xA;&lt;h2 id=&#34;soporte&#34;&gt;Soporte&lt;/h2&gt;&#xA;&lt;h2 id=&#34;estación-de-soldadura&#34;&gt;Estación de soldadura&lt;/h2&gt;&#xA;&lt;p&gt;La &lt;a href=&#34;https://www.hakko.com/english/products/hakko_fx888dx.html&#34;&gt;Hakko FX-888DX&lt;/a&gt; permite ajustar la temperatura y utilizar una gran cantidad de puntas y la calidad es insuperable. Se pueden encontrar todos los recambios necesarios. Esta hecho en Japón.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tiendas</title>
+      <link>http://localhost:1313/electronic/resources/sellers/</link>
+      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
+      <guid>http://localhost:1313/electronic/resources/sellers/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.adafruit.com&#34;&gt;adafruit&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.digikey.es&#34;&gt;DigiKey&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://eleshop.eu&#34;&gt;Eleshop&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://es.farnell.com&#34;&gt;Farnell&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://lcsc.com&#34;&gt;LCSC Electronics&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.mouser.es&#34;&gt;Mouser Electronics&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.sparkfun.com&#34;&gt;sparkfun&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.tme.eu/es/&#34;&gt;TME&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

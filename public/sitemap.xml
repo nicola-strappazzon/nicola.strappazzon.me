@@ -2,28 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/electronic/applications/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/backup/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/bash/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/electronic/resources/sim/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/wiki/security/yubikey/configure/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/electronic/resources/knowledge/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/dba/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/electronic/resources/design/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/electronic/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/export/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/electronic/resources/pcb/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/git/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/electronic/hand-tools/</loc>
+    <loc>http://localhost:1313/electronic/resources/hand-tools/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/import/</loc>
@@ -56,6 +68,9 @@
     <loc>http://localhost:1313/wiki/security/openpgp/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/electronic/resources/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/wiki/security/yubikey/restart/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
@@ -75,6 +90,9 @@
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/electronic/resources/sellers/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/</loc>
@@ -116,9 +134,11 @@
     <loc>http://localhost:1313/tags/postgresql/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/electronic/digital/</loc>
-  </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/capacitor/</loc>
   </url><url>
     <loc>http://localhost:1313/cultura/</loc>
   </url><url>
