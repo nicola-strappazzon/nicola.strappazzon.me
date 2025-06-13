@@ -24,6 +24,8 @@ La marca [engineer](https://www.engineertools-jp.com) de Japón tiene un corte i
 
 ## Lentes de aumento
 
+[Aven Tools 26224](https://www.digikey.es/en/products/detail/aven-tools/26224/5306726)
+
 ## Base para soldar.
 
 [OF - M4.4](https://omnifixo.com) Este modelo tiene cuatro pinzas sobre una base magnética, completamente ajustable.
@@ -43,3 +45,11 @@ Estas son las puntas que recomiendo:
 - [Estaño](https://www.digikey.es/en/products/detail/chip-quik-inc/RASWLF-015-1OZ/9682011) RASWLF.015 1OZ, 96.5/3/0.5 TIN/SI, Diametro: 0.015" (0.38mm).
 - [Flux](https://www.digikey.es/en/products/detail/chip-quik-inc/CQ4LF-0-5/9558133) CQ4LF-0.5, No Clean, Liquid.
 - [Malla para desoldar](https://www.mouser.es/ProductDetail/Aven/17541?qs=uwxL4vQweFMwWqGr0IUxLQ%3D%3D) Tamaño 2 mm / 0.08 in.
+
+## Protoboard
+
+También llamada Breadboards, es donde armamos nuestros prototipos.
+
+[Global Specialties PB-83M](https://www.digikey.es/en/products/detail/global-specialties/PB-83M/8134127)
+
+La marca Global Specialties la recomiendo bastante, la inserción de componentes tiene la presión suficiente para no dañarlos y sujetarlos. He probado otras que se venden en Amazon y son muy duras.
