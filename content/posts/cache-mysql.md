@@ -1,8 +1,7 @@
 +++
 title = "¿Cómo funciona y se configura la Cache de MySQL?"
-url = "/como-funciona-configura-cache-mysql/"
 date = "2014-02-26"
-draft = true
+draft = false
 tags = ["mysql", "cache"]
 +++
 

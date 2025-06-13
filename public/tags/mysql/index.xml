@@ -30,6 +30,34 @@
       <description>&lt;p&gt;Suele pasar mucho con los de &lt;strong&gt;business intelligence, data science y sus variantes&lt;/strong&gt;, puede deberse a varias razones, vamos al grano:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Si te conectas desde tu casa u oficina al cloud para traer información, la realidad es que la intermitencia no la puedes controlar, puede ser por el ISP, o por la VPN o quien sabe que.&lt;/li&gt;&#xA;&lt;li&gt;Volúmenes de datos muy grandes. Haz que la query retorne volúmenes más pequeños, en vez de todo el mes, que sea por día.&lt;/li&gt;&#xA;&lt;li&gt;Tiempos de respuesta muy elevados, te falta un indice ó por la misma razón debes hacer lo anterior, traerte trozos pequeños y razonables de datos, o algún bloqueo.&lt;/li&gt;&#xA;&lt;li&gt;Estas tratando con una ddbb transaccional por lo que los tiempos están ajustados para ello y más si es una aplicación web que no debe tardar más de 30s en responder por ejemplo porque sino el hilo de ejecución del web server muere.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Se podría configurar el cliente o tu script o programa para que cambie esos tiempos a la hora de establecer la conexión y recibir los datos, pero antes debes saber que hay definido y luego ver que ajustas. Haz la siguiente query:&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Actualizar datos de una tabla sin bloquearla desde un archivo</title>
+      <link>http://localhost:1313/posts/actualizar-sin-bloquear/</link>
+      <pubDate>Mon, 11 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/actualizar-sin-bloquear/</guid>
+      <description>&lt;p&gt;Hay muchas formas de hacerlo, para variar quise buscar una alternativa rápida y eficaz para evitar escribir un nuevo script, y se me ocurrió usar los comandos de linux, la verdad que resulto muy bien, aquí les dejo un ejemplo:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat tokens.csv &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;| &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;awk -F &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{ print &amp;#34;UPDATE users SET token = \&amp;#34;&amp;#34; $2 &amp;#34;\&amp;#34; WHERE token IS NULL AND email = \&amp;#34;&amp;#34; $1 &amp;#34;\&amp;#34;;&amp;#34;; system(&amp;#34;sleep 0.1&amp;#34;);}&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;| &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;mysql --login-path&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;foo &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;      --safe-updates &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;      --batch &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;      --silent &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;      --database&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;foo&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Explico un poco, básicamente se lee el archivo con cat, luego se crea la sentencia UPDATE usando el awk, por cada update hacemos una pausa de 100 milisegundo para no saturar, y se lo mandamos al cliente de MySQL.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Buscar registros huérfanos</title>
+      <link>http://localhost:1313/posts/buscar-registros-huerfanos/</link>
+      <pubDate>Fri, 12 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/buscar-registros-huerfanos/</guid>
+      <description>&lt;p&gt;Los registros huérfanos son aquellos que se almacenan en un modelo relacional padre-hijo, los registros padres hacen referencia a filas primarias, y los registros hijos hacen referencia a filas secundarías, esto puede pasar por varias razones en una DDBB, básicamente sino existe claves foráneas definidas, o alguien desactivo de forma momentánea el check &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_foreign_key_checks&#34;&gt;foreign_key_checks&lt;/a&gt;, y para mantener la integridad de los datos debemos de vez en cuando identificar estos registros huérfanos, podríamos eliminarlos o asignarlos a un padre de forma provisional. Yo opto más por lo segundo, conservar los datos es nuestra prioridad.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Collation, diferencias entre utf8_general_ci y utf8_unicode_ci</title>
+      <link>http://localhost:1313/posts/collation-diferencias-utf8_general_ci-utf8_unicode_ci/</link>
+      <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/collation-diferencias-utf8_general_ci-utf8_unicode_ci/</guid>
+      <description>&lt;p&gt;Para los que estamos acostumbrados a trabajar en Linux es normal usar el formato de codificación UTF-8, y en mi opinión personal es lo que se debería de usar para todo. En el caso de MySQL se puede definir en una base de datos, tabla y columna el formato de codificación como CHARSET y un sub formato llamado COLLATE. La intención del COLLATION es poder ayudar en la Presición vs Rendimiento con los carácteres especiales.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bloqueos en MySQL</title>
+      <link>http://localhost:1313/posts/bloqueos-optimistas-pesimistas-mysql/</link>
+      <pubDate>Tue, 17 Nov 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bloqueos-optimistas-pesimistas-mysql/</guid>
+      <description>&lt;p&gt;El bloqueo es la esencia de cualquier manejador de bases de datos relacional (RDBMS), para el caso de MySQL es importante destacar que el engine &lt;strong&gt;InnoDB&lt;/strong&gt; lo gestiona de forma óptima, hasta la fecha no hay otro que lo haga mejor.&lt;/p&gt;&#xA;&lt;p&gt;No podemos confundir bloqueos con &lt;a href=&#34;https://www.swapbytes.com/niveles-aislamiento-base-de-datos/&#34;&gt;niveles de aislamiento&lt;/a&gt;, ya que el bloqueo se hace a nivel de registros usando una instrucción específica, mientras el nivel de aislamiento es el comportamiento por defecto para cualquier otra instrucción normal que manipule los registros.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>MySQL y los Niveles de aislamiento</title>
       <link>http://localhost:1313/posts/niveles-aislamiento/</link>
       <pubDate>Sat, 24 Jan 2015 00:00:00 +0000</pubDate>
@@ -42,6 +70,13 @@
       <pubDate>Wed, 07 Jan 2015 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/trabajando-largas-listas-procesos-mysql/</guid>
       <description>&lt;p&gt;Los fans de la terminal nos encontramos frecuentemente con algunas limitaciones por el tamaño del monitor y todo el contenido, en este caso hablo de listar y filtrar entre muchos rows en MySQL sin la opción WHERE como; &lt;strong&gt;&amp;ldquo;SHOW PROCESSLIST;&amp;rdquo;&lt;/strong&gt; y &lt;strong&gt;&amp;ldquo;SHOW TABLES;&amp;rdquo;&lt;/strong&gt;. Generalmente necesitamos buscar algo en largas listas para; matar procesos, verificar conexiones, consultas, etc&amp;hellip; y como podemos hacer para mostrar los que nos interesa?.&lt;/p&gt;&#xA;&lt;p&gt;Lo podemos cambiar estando dentro de la consola de MySQL, por ejemplo; Necesito listar todas las conexiones que sean distintas al estado &lt;strong&gt;Sleep&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>¿Cómo funciona y se configura la Cache de MySQL?</title>
+      <link>http://localhost:1313/posts/cache-mysql/</link>
+      <pubDate>Wed, 26 Feb 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/cache-mysql/</guid>
+      <description>&lt;blockquote class=&#34;warning&#34;&gt;&lt;p&gt;Función deprecada en MySQL 8 en adelante, este post queda cómo registro histórico.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Luego de mucho investigar y probar, me consigo que la cache de MySQL no es tan maravillosa como se cree, por lo que hay que probarla con algo de escepticismo y paciencia, en mi caso, resulta que en el Master puede ser perjudicial, y en los Slaves es beneficiosa.&lt;/p&gt;&#xA;&lt;p&gt;Algunos DBA&amp;rsquo;s comentan lo siguiente para no usarla:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

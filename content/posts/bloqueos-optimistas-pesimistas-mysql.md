@@ -1,7 +1,7 @@
 +++
 title = "Bloqueos en MySQL"
 date = "2015-11-17"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

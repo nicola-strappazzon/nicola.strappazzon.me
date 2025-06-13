@@ -1,7 +1,7 @@
 +++
 title = "Actualizar datos de una tabla sin bloquearla desde un archivo"
 date = "2016-04-11"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

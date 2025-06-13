@@ -1,7 +1,7 @@
 +++
 title = "Collation, diferencias entre utf8_general_ci y utf8_unicode_ci"
 date = "2016-02-08"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

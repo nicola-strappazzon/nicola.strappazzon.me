@@ -1,7 +1,7 @@
 +++
 title = "El mito del 'código debe ser agnóstico a la base de datos'"
 date = "2020-06-27"
-draft = true
+draft = false
 tags = ["database"]
 +++
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cache on Nicola Strappazzon</title>
+    <link>http://localhost:1313/tags/cache/</link>
+    <description>Recent content in Cache on Nicola Strappazzon</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <lastBuildDate>Wed, 26 Feb 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cache/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¿Cómo funciona y se configura la Cache de MySQL?</title>
+      <link>http://localhost:1313/posts/cache-mysql/</link>
+      <pubDate>Wed, 26 Feb 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/cache-mysql/</guid>
+      <description>&lt;blockquote class=&#34;warning&#34;&gt;&lt;p&gt;Función deprecada en MySQL 8 en adelante, este post queda cómo registro histórico.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Luego de mucho investigar y probar, me consigo que la cache de MySQL no es tan maravillosa como se cree, por lo que hay que probarla con algo de escepticismo y paciencia, en mi caso, resulta que en el Master puede ser perjudicial, y en los Slaves es beneficiosa.&lt;/p&gt;&#xA;&lt;p&gt;Algunos DBA&amp;rsquo;s comentan lo siguiente para no usarla:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

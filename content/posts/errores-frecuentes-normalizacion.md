@@ -1,8 +1,7 @@
 +++
 title = "Errores frecuentes en la normalización de una Base de Datos"
-url = "/normalizacion-base-de-datos-5-fallas-mas-frecuentes/"
 date = "2010-08-05"
-draft = true
+draft = false
 tags = ["database"]
 +++
 

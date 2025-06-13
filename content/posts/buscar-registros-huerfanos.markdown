@@ -1,7 +1,7 @@
 +++
 title = "Buscar registros huérfanos"
 date = "2016-02-12"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

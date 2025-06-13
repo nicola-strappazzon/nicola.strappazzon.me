@@ -6,8 +6,15 @@
     <description>Recent content in Database on Nicola Strappazzon</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Sun, 12 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>El mito del &#39;código debe ser agnóstico a la base de datos&#39;</title>
+      <link>http://localhost:1313/posts/codigo-agnostico-base-datos/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/codigo-agnostico-base-datos/</guid>
+      <description>&lt;p&gt;Muchas veces nos dicen que &lt;strong&gt;el código debe ser agnóstico a la base de datos&lt;/strong&gt; y esto se debería de interpretarse de una forma, pero lo cierto es que es ambiguo y cada quien lo entiende a su forma y necesidad, vamos a explicar esta filosofía tan compleja y a su vez &lt;em&gt;conflictiva&lt;/em&gt;:&lt;/p&gt;&#xA;&lt;p&gt;El término &lt;a href=&#34;https://es.wikipedia.org/wiki/Agnosticismo&#34;&gt;agnóstico&lt;/a&gt; significa del griego &amp;ldquo;sin conocimiento&amp;rdquo;, y se cree que su origen surge cuando se crearon los primeros software intermedios llamados &lt;a href=&#34;https://en.wikipedia.org/wiki/Database_abstraction_layer&#34;&gt;DBAL/DAL&lt;/a&gt; que son librerías que ayudaban a la comunicación entre aplicación y base de datos, una &lt;a href=&#34;https://en.wikipedia.org/wiki/Application_programming_interface#Libraries_and_frameworks&#34;&gt;API&lt;/a&gt; más y no la del HTTP. De esta forma se puede abstraer el funcionamiento y crear compatibilidad con múltiples gestores de bases de datos usando el mismo código. Existen muchas variantes de este tipo de software, y pueden ser cualquiera de las siguientes variantes de nombres; DBAL, ODBC, ORM, ADO, PDO, DAL, Active Record, etc&amp;hellip; En este post no hablaremos qué hace cada una, sino filosofar.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>El teorema CAP</title>
       <link>http://localhost:1313/posts/teorema-cap/</link>
@@ -21,6 +28,13 @@
       <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/rol-dba/</guid>
       <description>&lt;p&gt;Puede que este papel hoy en día se este perdiendo, y se haya mezclado con los de Operaciones o con algún Desarrollador, está mal!, en proyectos grandes es muy importante dedicarle todo el tiempo posible, llega un momento que el volumen de datos y el tráfico se vuelve insostenible, a este punto, &lt;strong&gt;cuando algo falla es catastrófico y no suele arreglarse rápidamente&lt;/strong&gt;, la prevención es bastante crucial y se vuelve una eterna lucha.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Errores frecuentes en la normalización de una Base de Datos</title>
+      <link>http://localhost:1313/posts/errores-frecuentes-normalizacion/</link>
+      <pubDate>Thu, 05 Aug 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/errores-frecuentes-normalizacion/</guid>
+      <description>&lt;p&gt;En los trabajos que me e envuelto con base de datos, e visto un gran número de ellas, muchas echas por empresas pequeñas y medianas especializadas en el desarrollo, de cualquier sector; comercial, educativo o independientes, al final de todo, existe algo en común, y me llevo a una  conclusión, &amp;ldquo;&lt;strong&gt;Será que NO tienen la mas mínima y remota idea de ¿Cómo hacer un modelo físico y aprovechar todas las bondades de un manejador de base de datos?&lt;/strong&gt;&amp;rdquo;, y lo peor del caso, es que eso funciona milagrosamente y para ellos es indispensable toda su información &lt;em&gt;(obviamente)&lt;/em&gt;, pero tienen un problema en común, &lt;strong&gt;el sistema no funciona bien&lt;/strong&gt;, ¿Por qué será?&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
