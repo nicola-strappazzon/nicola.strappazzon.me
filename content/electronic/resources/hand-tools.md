@@ -24,10 +24,15 @@ La marca [engineer](https://www.engineertools-jp.com) de Japón tiene un corte i
 
 ## Cable
 
-Recomiendo usar cable 22 AWG de un solo núcleo para cablear protoboard, tener más de dos colores es recomendable.
+Tenemos dos formas de cablear nuestro circuito, usando cable a medida de un solo nucleo o los de tipo Jumper. Ambos son necesarios.
+
+Recomiendo usar cable 22 AWG de un solo núcleo para cablear protoboard, y tener más de dos colores:
 
 - [Hook-up Wire Spool Set - 22AWG Solid Core - 6 x 25 ft](https://www.adafruit.com/product/1311)
 - [Hook-up Wire Spool Set - 22AWG Solid Core - 10 x 25ft](https://www.adafruit.com/product/3174)
+- [Jumper Wires Premium 6" M/M Pack of 10](https://www.sparkfun.com/jumper-wires-premium-6-m-m-pack-of-10.html)
+- [Jumper Wires Premium 6" F/F Pack of 10](https://www.sparkfun.com/jumper-wires-premium-6-f-f-pack-of-10.html)
+- [Jumper Wires Premium 6" Mixed Pack of 100](https://www.sparkfun.com/jumper-wires-premium-6-mixed-pack-of-100.html)
 
 ## Destornilladores
 
