@@ -24,7 +24,9 @@ La marca [engineer](https://www.engineertools-jp.com) de Japón tiene un corte i
 
 ## Lentes de aumento
 
-## Soporte
+## Base para soldar.
+
+[OF - M4.4](https://omnifixo.com) Este modelo tiene cuatro pinzas sobre una base magnética, completamente ajustable.
 
 ## Estación de soldadura
 
@@ -38,6 +40,6 @@ Estas son las puntas que recomiendo:
 
 ## Consumibles para soldar y desoldar
 
-- [Estaño]()
-- [Flux]()
-- [Malla para desoldar]()
+- [Estaño](https://www.digikey.es/en/products/detail/chip-quik-inc/RASWLF-015-1OZ/9682011) RASWLF.015 1OZ, 96.5/3/0.5 TIN/SI, Diametro: 0.015" (0.38mm).
+- [Flux](https://www.digikey.es/en/products/detail/chip-quik-inc/CQ4LF-0-5/9558133) CQ4LF-0.5, No Clean, Liquid.
+- [Malla para desoldar](https://www.mouser.es/ProductDetail/Aven/17541?qs=uwxL4vQweFMwWqGr0IUxLQ%3D%3D) Tamaño 2 mm / 0.08 in.
