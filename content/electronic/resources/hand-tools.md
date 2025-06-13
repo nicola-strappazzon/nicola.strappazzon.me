@@ -20,7 +20,23 @@ La marca [engineer](https://www.engineertools-jp.com) de Japón tiene un corte i
 
 ## Pelacables
 
+[Knipex 12-80-040 SB](https://www.amazon.es/dp/B003EA04FO).
+
+## Cable
+
+Recomiendo usar cable 22 AWG de un solo núcleo para cablear protoboard, tener más de dos colores es recomendable.
+
+- [Hook-up Wire Spool Set - 22AWG Solid Core - 6 x 25 ft](https://www.adafruit.com/product/1311)
+- [Hook-up Wire Spool Set - 22AWG Solid Core - 10 x 25ft](https://www.adafruit.com/product/3174)
+
 ## Destornilladores
+
+Los de la marca Wera son muy cómodos y de muy buena calidad:
+
+- [Phillips - PH0](https://products.wera.de/es/destornilladores_serie_kraftform_micro_2050_ph_micro.html)
+- [Phillips - PH1](https://products.wera.de/es/destornilladores_serie_kraftform_micro_2050_ph_micro.html)
+- [Plano - 2.0](https://products.wera.de/es/destornilladores_serie_kraftform_micro_2035_micro.html)
+- [Plano - 3.0](https://products.wera.de/es/destornilladores_serie_kraftform_micro_2035_micro.html)
 
 ## Lentes de aumento
 
