@@ -16,7 +16,6 @@ La marca [engineer](https://www.engineertools-jp.com) de Japón tiene un corte i
 - [PS-03](https://www.engineertools-jp.com/product-page/ps-03-miniature-needle-nose-pliers)
 - [PTZ-62](https://www.engineertools-jp.com/product-page/ptz-62-black-coated-esd-tweezers)
 - [PTZ-64](https://www.engineertools-jp.com/product-page/ptz-64-black-coated-esd-tweezers)
-- [PTZ-43](https://www.engineertools-jp.com/product-page/ptz-43-esd-plastic-tipped-tweezers)
 
 ## Pelacables
 
@@ -68,6 +67,7 @@ Estas son las puntas que recomiendo:
 - [Estaño](https://www.digikey.es/en/products/detail/chip-quik-inc/RASWLF-015-1OZ/9682011) RASWLF.015 1OZ, 96.5/3/0.5 TIN/SI, Diametros: 0.015" (0.38mm) y 0.031" (0.79mm). Su punto de fusión es a partir de 220 °C. La combinación de estaño que tiene es bastante limpia y deja un mínimo de residuos.
 - [Flux](https://www.digikey.es/en/products/detail/chip-quik-inc/CQ4LF-0-5/9558133) CQ4LF-0.5, No Clean, Liquid.
 - [Malla para desoldar](https://www.mouser.es/ProductDetail/Aven/17541?qs=uwxL4vQweFMwWqGr0IUxLQ%3D%3D) Tamaño 2 mm / 0.08 in.
+- [SS-03 Solder Sucker](https://www.engineertools-jp.com/product-page/ss-03-solder-sucker) Este extractor de estaño con una punta de goma cambiable es muy útil y eficiente.
 
 ## Protoboard
 
