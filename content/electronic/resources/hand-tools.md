@@ -29,6 +29,7 @@ Tenemos dos formas de cablear nuestro circuito, la primera es usando cable a med
 
 - [Hook-up Wire Spool Set - 22AWG Solid Core - 6 x 25 ft](https://www.adafruit.com/product/1311)
 - [Hook-up Wire Spool Set - 22AWG Solid Core - 10 x 25ft](https://www.adafruit.com/product/3174)
+- [Jumper Wires Premium 6" M/F Pack of 10](https://www.sparkfun.com/jumper-wires-premium-6-m-f-pack-of-10.html)
 - [Jumper Wires Premium 6" M/M Pack of 10](https://www.sparkfun.com/jumper-wires-premium-6-m-m-pack-of-10.html)
 - [Jumper Wires Premium 6" F/F Pack of 10](https://www.sparkfun.com/jumper-wires-premium-6-f-f-pack-of-10.html)
 - [Jumper Wires Premium 6" Mixed Pack of 100](https://www.sparkfun.com/jumper-wires-premium-6-mixed-pack-of-100.html)
