@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Tags | Nicola Strappazzon</title>
+<title>Paginar en la consola de MySQL | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -68,46 +68,25 @@
 </header>
 <div class="content">
 
-  
+  <article>
     <div class="content-header">
-      <h2 class="title">Tags</h2>
+      <h2 class="title">Paginar en la consola de MySQL</h2>
       
-      <span class="date"><em>09/05/2025</em></span>
+      <span class="date"><em>01/01/2015</em></span>
       
     </div>
-  
-  
-  
-  <ul>
-    
-      <li><a href="/tags/bash/">Bash</a></li>
-    
-      <li><a href="/tags/dba/">Dba</a></li>
-    
-      <li><a href="/tags/jq/">Jq</a></li>
-    
-      <li><a href="/tags/json/">Json</a></li>
-    
-      <li><a href="/tags/mysql/">Mysql</a></li>
-    
-      <li><a href="/tags/openpgp/">Openpgp</a></li>
-    
-      <li><a href="/tags/security/">Security</a></li>
-    
-      <li><a href="/tags/sql/">Sql</a></li>
-    
-      <li><a href="/tags/yubikey/">Yubikey</a></li>
-    
-      <li><a href="/tags/database/">Database</a></li>
-    
-      <li><a href="/tags/errors/">Errors</a></li>
-    
-      <li><a href="/tags/cache/">Cache</a></li>
-    
-      <li><a href="/tags/postgresql/">Postgresql</a></li>
-    
-  </ul>
-  
+    <p>Yo uso mucho la consola de MySQL, la verdad que es muy útil, pero muchas veces ejecutamos una Query que nos arroja un gran número de rows y columns que no caben en nuestra pantalla, y terminamos recurriendo a usar el scroll de la terminal para explorar los datos, ahora podemos implementar la paginación en la consola de una forma muy fácil.</p>
+<p>Solo debemos editar o modificar un fichero de configuración, el que usa <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql.html">MySQL Command Line</a>, manos a la obra:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim ~/.my.cnf
+</span></span></code></pre></div><p>Agregamos estas líneas al final:</p>
+<pre tabindex="0"><code>pager = less -RSFXin
+</code></pre><p>Debe quedar así:</p>
+<pre tabindex="0"><code>[mysql]
+user = root
+pager = less -RSFXin
+</code></pre><p>Podemos observar que hay un parámetro de configuración llamado <strong>pager</strong> que se encarga de pasar por STDOUT los datos a otro programa de la terminal de Linux para que haga su magia, en este caso usamos el comando <strong>less</strong> para paginar el resultado que es retornado por STDIN.</p>
+
+  </article>
 
 </div>
 <footer class="footer">

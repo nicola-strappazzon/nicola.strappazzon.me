@@ -1,7 +1,7 @@
 +++
 title = "Query review"
 date = "2020-06-27"
-draft = true
+draft = false
 tags = ["database"]
 +++
 

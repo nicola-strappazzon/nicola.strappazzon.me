@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Errors on Nicola Strappazzon</title>
+    <link>http://localhost:1313/tags/errors/</link>
+    <description>Recent content in Errors on Nicola Strappazzon</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <lastBuildDate>Fri, 26 Dec 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/errors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interpretar los mensajes de error de MySQL</title>
+      <link>http://localhost:1313/posts/interpretar-mensajes-error-mysql/</link>
+      <pubDate>Fri, 26 Dec 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/interpretar-mensajes-error-mysql/</guid>
+      <description>&lt;p&gt;Cuando trabajas en un equipo de desarrollo y eres responsable de la base de datos, te preguntan frecuentemente por los errores que van apareciendo y su posible relación con MySQL. De todo puede pasar, desde problemas de configuración, de conexión, de lógica y sintaxis, en fin&amp;hellip; en estos casos hay que orientarlos y quiero explicarles de que va todo esto.&lt;/p&gt;&#xA;&lt;p&gt;Lo primero es reconocer un mensaje de error oficial de MySQL y no confundirnos con uno generado por una librería, en algunos esta leve diferencia genera confusión.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

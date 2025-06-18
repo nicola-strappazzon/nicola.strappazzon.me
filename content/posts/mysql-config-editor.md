@@ -1,7 +1,7 @@
 +++
 title = "Seguridad en MySQL con mysql_config_editor"
 date = "2015-07-23"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

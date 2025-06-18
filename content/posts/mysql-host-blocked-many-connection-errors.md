@@ -1,7 +1,7 @@
 +++
 title = "Host is blocked because of many connection errors MySQL"
 date = "2025-01-20"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 
@@ -9,7 +9,7 @@ En algún momento MySQL decide bloquear una IP por haber tenido problemas con la
 
 En la siguiente gráfica se puede apreciar un ejemplo:
 
-![DBA]({{ "/assets/incident20250120_02.png" | absolute_url }})
+![DBA](incident20250120_02.png)
 
 En la gráfica se puede apreciar una secuencia ideal del problema, hay un pico en el contador [Connection_errors_max_connections](https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Connection_errors_max_connections) (Rojo), a partir de allí empieza una secuencia de [Aborted_connects](https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Aborted_connects) (Amarillo) hasta que termia al hacer un `FLUSH HOSTS` y se modifica la variable [max_connect_errors](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_connect_errors) (Violeta) para aumentar la tolerancia. Se destaca que la linea Roja supera a la Violeta y la Amarilla indica acceso denegado al host.
 

@@ -79,6 +79,13 @@
       <description></description>
     </item>
     <item>
+      <title>Errors</title>
+      <link>http://localhost:1313/tags/errors/</link>
+      <pubDate>Fri, 26 Dec 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/errors/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Cache</title>
       <link>http://localhost:1313/tags/cache/</link>
       <pubDate>Wed, 26 Feb 2014 00:00:00 +0000</pubDate>

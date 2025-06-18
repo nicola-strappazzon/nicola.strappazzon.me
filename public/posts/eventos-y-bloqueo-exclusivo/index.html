@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Eventos y bloqueo exclusivo en MySQL | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+</head>
+<body>
+<div class="container center">
+<header>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+  </div>
+  <div class="header__social__navigation">
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="header__navigation">
+      <nav class="navigation-menu">
+        <ul class="navigation-menu__inner menu--desktop">
+          
+            
+              
+                <li><a href="/posts/" >Posts</a></li>
+              
+            
+              
+                <li><a href="/electronic/" >Electrónica</a></li>
+              
+            
+              
+                <li><a href="/cultura/" >Cultura</a></li>
+              
+            
+              
+                <li><a href="/diccionary/" >Diccionario</a></li>
+              
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+</header>
+<div class="content">
+
+  <article>
+    <div class="content-header">
+      <h2 class="title">Eventos y bloqueo exclusivo en MySQL</h2>
+      
+      <span class="date"><em>31/03/2015</em></span>
+      
+    </div>
+    <p>Puede pasar que la ejecución de un procedimiento almacenado tarde más tiempo de lo previsto, y como hay un evento que lo ejecuta cada X tiempo, estos empiezan a verse amontonados en la lista de procesos, como podemos imaginar es muy malo. Afortunadamente MySQL tiene unas funciones que nos permite hacer un bloqueo exclusivo, así garantizamos que se ejecute solo uno a la vez.</p>
+<p>En el siguiente ejemplo, tenemos un evento que se ejecuta cada 1 segundo y llama a un procedimiento almacenado que tarda 5 segundos en ejecutarse. Lo ideal de este caso, es que podremos observar en la lista de procesos 5 eventos ejecutando al mismo tiempo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">PROCEDURE</span> sp_wait()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> SLEEP(<span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">END</span><span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> EVENT <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> ev_wait;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> EVENT ev_wait <span style="color:#66d9ef">ON</span> SCHEDULE <span style="color:#66d9ef">EVERY</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">SECOND</span> <span style="color:#66d9ef">DO</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CALL</span> sp_wait();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">END</span><span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> ;
+</span></span></code></pre></div><p>Una vez creado el procedimiento almacenado y el evento, ya podremos observar como se amontonan en la lista de procesos usando el comando &ldquo;SHOW PROCESSLIST;&rdquo;:</p>
+<p><img src="event_lock1.png" alt="Lock Example 1"></p>
+<p>La solución es muy simple, vamos a implementar dos funciones; <!-- raw HTML omitted -->GET_LOCK<!-- raw HTML omitted --> y <!-- raw HTML omitted -->RELEASE_LOCK<!-- raw HTML omitted --> para hacer el bloqueo exclusivo, en el ejemplo siguiente podemos ver como lo implementamos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> EVENT <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> ev_wait;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> EVENT ev_wait <span style="color:#66d9ef">ON</span> SCHEDULE <span style="color:#66d9ef">EVERY</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">SECOND</span> <span style="color:#66d9ef">DO</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span> GET_LOCK(<span style="color:#e6db74">&#39;temp.sp_wait&#39;</span>, <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">@</span>got_lock;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">IF</span> <span style="color:#f92672">@</span>got_lock <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">THEN</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CALL</span> sp_wait();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> RELEASE_LOCK(<span style="color:#e6db74">&#39;temp.sp_wait&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">END</span> <span style="color:#66d9ef">IF</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">END</span><span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> ;
+</span></span></code></pre></div><p>Ahora podremos observar en la lista de procesos que siempre hay un único proceso en ejecución y no 5 como antes:</p>
+<p><img src="event_lock2.png" alt="Lock Example 2"></p>
+
+  </article>
+
+</div>
+<footer class="footer">
+<span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+</html>

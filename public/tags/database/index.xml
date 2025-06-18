@@ -16,11 +16,25 @@
       <description>&lt;p&gt;Muchas veces nos dicen que &lt;strong&gt;el código debe ser agnóstico a la base de datos&lt;/strong&gt; y esto se debería de interpretarse de una forma, pero lo cierto es que es ambiguo y cada quien lo entiende a su forma y necesidad, vamos a explicar esta filosofía tan compleja y a su vez &lt;em&gt;conflictiva&lt;/em&gt;:&lt;/p&gt;&#xA;&lt;p&gt;El término &lt;a href=&#34;https://es.wikipedia.org/wiki/Agnosticismo&#34;&gt;agnóstico&lt;/a&gt; significa del griego &amp;ldquo;sin conocimiento&amp;rdquo;, y se cree que su origen surge cuando se crearon los primeros software intermedios llamados &lt;a href=&#34;https://en.wikipedia.org/wiki/Database_abstraction_layer&#34;&gt;DBAL/DAL&lt;/a&gt; que son librerías que ayudaban a la comunicación entre aplicación y base de datos, una &lt;a href=&#34;https://en.wikipedia.org/wiki/Application_programming_interface#Libraries_and_frameworks&#34;&gt;API&lt;/a&gt; más y no la del HTTP. De esta forma se puede abstraer el funcionamiento y crear compatibilidad con múltiples gestores de bases de datos usando el mismo código. Existen muchas variantes de este tipo de software, y pueden ser cualquiera de las siguientes variantes de nombres; DBAL, ODBC, ORM, ADO, PDO, DAL, Active Record, etc&amp;hellip; En este post no hablaremos qué hace cada una, sino filosofar.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Query review</title>
+      <link>http://localhost:1313/posts/query-review/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/query-review/</guid>
+      <description>&lt;p&gt;Lo complicado de hacer revisión de modelos de datos, es que venden un concepto acompañado del modelo en vez de ser objetivos y formular de forma abstracta el requerimiento sin tener un modelo para evitar prejuicios.&lt;/p&gt;&#xA;&lt;p&gt;Con una &lt;em&gt;Pull Request&lt;/em&gt;, lo que buscamos con estas &lt;strong&gt;buenas prácticas&lt;/strong&gt; es evaluar la propuesta de cambios con la finalidad de enterarnos, validar, estandarizar, y reducir problemas a futuro, de la misma forma que se hace con un codigo de backend o de frontend.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>El teorema CAP</title>
       <link>http://localhost:1313/posts/teorema-cap/</link>
       <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/teorema-cap/</guid>
       <description>&lt;p&gt;Éste post me parece muy importante para poder entender como funcionan y hacer grandes sistemas pensados para escalar, sea por tráfico, por multi-sitio, multi-país, y más… todos estos sistemas distribuidos presentan la misma particularidad, y en el año 2000 un señor llamado &lt;a href=&#34;https://en.wikipedia.org/wiki/CAP_theorem&#34;&gt;Eric Brewer&lt;/a&gt;, pudo definir tres importantes propiedades y desarrollo un teorema. El se dio cuenta que mientras más aplicaciones basadas en la WEB existan, menos debemos preocuparnos por la consistencia de los datos, si queremos alta disponibilidad de nuestras aplicaciones entonces no podemos garantizar la consistencia de los datos.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Origen de la palabra NoSQL</title>
+      <link>http://localhost:1313/posts/origen-nosql/</link>
+      <pubDate>Mon, 08 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/origen-nosql/</guid>
+      <description>&lt;p&gt;Ya desde los los años 1960s grandes empresas que ofrecían servicios y tenían múltiples de clientes, en consecuencia una gran fragmentación de datos y con inmensos volúmenes de datos para la época, se utilizaban base de datos al estilo del NoSQL, pero el nombre nace con el desarrollador Carlo Strozzi creó la base de datos relacional de código abierto Strozzi NoSQL en 1998, ligera, que no ofrecía una interface SQL, pero sí seguía el modelo ligeramente relacional. Strozzi sugiere que el actual movimiento NoSQL &amp;ldquo;Se sale completamente del modelo relacional, debería, por tanto, haberse llamado &amp;lsquo;NoREL&amp;rsquo;, o algo así.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rol de un DBA</title>

@@ -1,7 +1,7 @@
 +++
 title = "Monitorizar y resolver problemas de replicación en MySQL"
 date = "2016-03-05"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

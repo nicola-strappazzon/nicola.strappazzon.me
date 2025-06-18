@@ -1,7 +1,7 @@
 +++
 title = "Origen de la palabra NoSQL"
 date = "2015-06-08"
-draft = true
+draft = false
 tags = ["database"]
 +++
 

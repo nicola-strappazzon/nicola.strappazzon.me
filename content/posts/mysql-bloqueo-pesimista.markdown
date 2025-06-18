@@ -1,7 +1,7 @@
 +++
 title = "Ejemplo del bloqueo pesimista"
 date = "2018-07-08"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

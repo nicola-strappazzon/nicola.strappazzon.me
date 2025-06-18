@@ -1,7 +1,7 @@
 +++
-title = "Eventos y bloqueo exclusivo"
+title = "Eventos y bloqueo exclusivo en MySQL"
 date = "2015-03-31"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 
@@ -28,7 +28,7 @@ DELIMITER ;
 
 Una vez creado el procedimiento almacenado y el evento, ya podremos observar como se amontonan en la lista de procesos usando el comando "SHOW PROCESSLIST;":
 
-![Lock Example 1]({{ "event_lock1.png" | absolute_url }})
+![Lock Example 1](event_lock1.png)
 
 La solución es muy simple, vamos a implementar dos funciones; <a href="http://dev.mysql.com/doc/refman/5.6/en/miscellaneous-functions.html#function_get-lock" target="_blank">GET_LOCK</a> y <a href="http://dev.mysql.com/doc/refman/5.6/en/miscellaneous-functions.html#function_release-lock" target="_blank">RELEASE_LOCK</a> para hacer el bloqueo exclusivo, en el ejemplo siguiente podemos ver como lo implementamos:
 
@@ -50,4 +50,4 @@ DELIMITER ;
 
 Ahora podremos observar en la lista de procesos que siempre hay un único proceso en ejecución y no 5 como antes:
 
-![Lock Example 2]({{ "event_lock2.png" | absolute_url }})
+![Lock Example 2](event_lock2.png)

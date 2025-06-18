@@ -6,14 +6,28 @@
     <description>Recent content in Posts on Nicola Strappazzon</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Host is blocked because of many connection errors MySQL</title>
+      <link>http://localhost:1313/posts/mysql-host-blocked-many-connection-errors/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mysql-host-blocked-many-connection-errors/</guid>
+      <description>&lt;p&gt;En algún momento MySQL decide bloquear una IP por haber tenido problemas con las conexiones provenientes de un host. Te explico una forma simple, nativa, rápida y eficiente de controlar esta situación sin hacer sobre ingeniería.&lt;/p&gt;&#xA;&lt;p&gt;En la siguiente gráfica se puede apreciar un ejemplo:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;incident20250120_02.png&#34; alt=&#34;DBA&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;En la gráfica se puede apreciar una secuencia ideal del problema, hay un pico en el contador &lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Connection_errors_max_connections&#34;&gt;Connection_errors_max_connections&lt;/a&gt; (Rojo), a partir de allí empieza una secuencia de &lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Aborted_connects&#34;&gt;Aborted_connects&lt;/a&gt; (Amarillo) hasta que termia al hacer un &lt;code&gt;FLUSH HOSTS&lt;/code&gt; y se modifica la variable &lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_connect_errors&#34;&gt;max_connect_errors&lt;/a&gt; (Violeta) para aumentar la tolerancia. Se destaca que la linea Roja supera a la Violeta y la Amarilla indica acceso denegado al host.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>El mito del &#39;código debe ser agnóstico a la base de datos&#39;</title>
       <link>http://localhost:1313/posts/codigo-agnostico-base-datos/</link>
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/codigo-agnostico-base-datos/</guid>
       <description>&lt;p&gt;Muchas veces nos dicen que &lt;strong&gt;el código debe ser agnóstico a la base de datos&lt;/strong&gt; y esto se debería de interpretarse de una forma, pero lo cierto es que es ambiguo y cada quien lo entiende a su forma y necesidad, vamos a explicar esta filosofía tan compleja y a su vez &lt;em&gt;conflictiva&lt;/em&gt;:&lt;/p&gt;&#xA;&lt;p&gt;El término &lt;a href=&#34;https://es.wikipedia.org/wiki/Agnosticismo&#34;&gt;agnóstico&lt;/a&gt; significa del griego &amp;ldquo;sin conocimiento&amp;rdquo;, y se cree que su origen surge cuando se crearon los primeros software intermedios llamados &lt;a href=&#34;https://en.wikipedia.org/wiki/Database_abstraction_layer&#34;&gt;DBAL/DAL&lt;/a&gt; que son librerías que ayudaban a la comunicación entre aplicación y base de datos, una &lt;a href=&#34;https://en.wikipedia.org/wiki/Application_programming_interface#Libraries_and_frameworks&#34;&gt;API&lt;/a&gt; más y no la del HTTP. De esta forma se puede abstraer el funcionamiento y crear compatibilidad con múltiples gestores de bases de datos usando el mismo código. Existen muchas variantes de este tipo de software, y pueden ser cualquiera de las siguientes variantes de nombres; DBAL, ODBC, ORM, ADO, PDO, DAL, Active Record, etc&amp;hellip; En este post no hablaremos qué hace cada una, sino filosofar.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Query review</title>
+      <link>http://localhost:1313/posts/query-review/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/query-review/</guid>
+      <description>&lt;p&gt;Lo complicado de hacer revisión de modelos de datos, es que venden un concepto acompañado del modelo en vez de ser objetivos y formular de forma abstracta el requerimiento sin tener un modelo para evitar prejuicios.&lt;/p&gt;&#xA;&lt;p&gt;Con una &lt;em&gt;Pull Request&lt;/em&gt;, lo que buscamos con estas &lt;strong&gt;buenas prácticas&lt;/strong&gt; es evaluar la propuesta de cambios con la finalidad de enterarnos, validar, estandarizar, y reducir problemas a futuro, de la misma forma que se hace con un codigo de backend o de frontend.&lt;/p&gt;</description>
     </item>
     <item>
       <title>MySQL y los emojis</title>
@@ -30,6 +44,13 @@
       <description>&lt;p&gt;Suele pasar mucho con los de &lt;strong&gt;business intelligence, data science y sus variantes&lt;/strong&gt;, puede deberse a varias razones, vamos al grano:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Si te conectas desde tu casa u oficina al cloud para traer información, la realidad es que la intermitencia no la puedes controlar, puede ser por el ISP, o por la VPN o quien sabe que.&lt;/li&gt;&#xA;&lt;li&gt;Volúmenes de datos muy grandes. Haz que la query retorne volúmenes más pequeños, en vez de todo el mes, que sea por día.&lt;/li&gt;&#xA;&lt;li&gt;Tiempos de respuesta muy elevados, te falta un indice ó por la misma razón debes hacer lo anterior, traerte trozos pequeños y razonables de datos, o algún bloqueo.&lt;/li&gt;&#xA;&lt;li&gt;Estas tratando con una ddbb transaccional por lo que los tiempos están ajustados para ello y más si es una aplicación web que no debe tardar más de 30s en responder por ejemplo porque sino el hilo de ejecución del web server muere.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Se podría configurar el cliente o tu script o programa para que cambie esos tiempos a la hora de establecer la conexión y recibir los datos, pero antes debes saber que hay definido y luego ver que ajustas. Haz la siguiente query:&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Ejemplo del bloqueo pesimista</title>
+      <link>http://localhost:1313/posts/mysql-bloqueo-pesimista/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mysql-bloqueo-pesimista/</guid>
+      <description>&lt;p&gt;El bloqueo pesimista es algo que &lt;strong&gt;NO DEBEMOS USAR&lt;/strong&gt;, incluso su nombre lo deja muy claro, pero debemos &lt;strong&gt;saber ¿porque?&lt;/strong&gt;, y la verdad es que es bastante interesante, hay que tener en cuenta varios detalles; el engine de la tabla debe ser InnoDB, toda &lt;strong&gt;modificación&lt;/strong&gt; del registro se debe hacer dentro de una declaración de transacción (BEGIN / COMMIT), usar el nivel de aislamiento adecuado, y por último, recordar que cada transacción tiene un timeout, si abusamos del tiempo de espera se aborta la transacción.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>El teorema CAP</title>
       <link>http://localhost:1313/posts/teorema-cap/</link>
       <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
@@ -42,6 +63,13 @@
       <pubDate>Mon, 11 Apr 2016 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/actualizar-sin-bloquear/</guid>
       <description>&lt;p&gt;Hay muchas formas de hacerlo, para variar quise buscar una alternativa rápida y eficaz para evitar escribir un nuevo script, y se me ocurrió usar los comandos de linux, la verdad que resulto muy bien, aquí les dejo un ejemplo:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat tokens.csv &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;| &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;awk -F &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{ print &amp;#34;UPDATE users SET token = \&amp;#34;&amp;#34; $2 &amp;#34;\&amp;#34; WHERE token IS NULL AND email = \&amp;#34;&amp;#34; $1 &amp;#34;\&amp;#34;;&amp;#34;; system(&amp;#34;sleep 0.1&amp;#34;);}&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;| &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;mysql --login-path&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;foo &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;      --safe-updates &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;      --batch &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;      --silent &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;      --database&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;foo&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Explico un poco, básicamente se lee el archivo con cat, luego se crea la sentencia UPDATE usando el awk, por cada update hacemos una pausa de 100 milisegundo para no saturar, y se lo mandamos al cliente de MySQL.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Monitorizar y resolver problemas de replicación en MySQL</title>
+      <link>http://localhost:1313/posts/monitorizar-resolver-problemas-replicacion-mysql/</link>
+      <pubDate>Sat, 05 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/monitorizar-resolver-problemas-replicacion-mysql/</guid>
+      <description>&lt;p&gt;La replicación de datos con slaves es algo muy fácil de configurar y aporta muchos beneficios, pero aveces trae sus grandes problemas si no tenemos en cuenta algunos aspectos de configuración, hardware y red entre otras cosas, vamos a comentar un buen grupo de ellos y ayudarte a saber donde puede estar el problema, se que es muy largo el POST, hay mucho que cubrir, pero tratare de dar la idea.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Buscar registros huérfanos</title>
@@ -65,6 +93,34 @@
       <description>&lt;p&gt;El bloqueo es la esencia de cualquier manejador de bases de datos relacional (RDBMS), para el caso de MySQL es importante destacar que el engine &lt;strong&gt;InnoDB&lt;/strong&gt; lo gestiona de forma óptima, hasta la fecha no hay otro que lo haga mejor.&lt;/p&gt;&#xA;&lt;p&gt;No podemos confundir bloqueos con &lt;a href=&#34;https://www.swapbytes.com/niveles-aislamiento-base-de-datos/&#34;&gt;niveles de aislamiento&lt;/a&gt;, ya que el bloqueo se hace a nivel de registros usando una instrucción específica, mientras el nivel de aislamiento es el comportamiento por defecto para cualquier otra instrucción normal que manipule los registros.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Seguridad en MySQL con mysql_config_editor</title>
+      <link>http://localhost:1313/posts/mysql-config-editor/</link>
+      <pubDate>Thu, 23 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mysql-config-editor/</guid>
+      <description>&lt;p&gt;En la versión 5.6.6 se incluyo una nueva herramienta llamada &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.6/en/mysql-config-editor.html&#34;&gt;mysql_config_editor&lt;/a&gt;, la cual permite almacenar las credenciales de autenticación de una forma segura y otros datos básicos en un archivo llamado &amp;lsquo;.mylogin.cnf&amp;rsquo; en el directorio home del usuario, luego estas credenciales pueden ser recuperadas para conectarse al servidor de MySQL deseado.&lt;/p&gt;&#xA;&lt;p&gt;A simple vista no parece, pero es muy importante que considere que &lt;strong&gt;el archivo &amp;lsquo;.mylogin.cnf&amp;rsquo; no está cifrado&lt;/strong&gt;, y no es completamente seguro, pero añade una capa más de seguridad ocultando los datos sensibles por la línea de comandos. Por ejemplo, ocultamos la contraseña en el; historial, alias, logs, scripts, etc&amp;hellip; donde puede ser visible de muchas formas.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Origen de la palabra NoSQL</title>
+      <link>http://localhost:1313/posts/origen-nosql/</link>
+      <pubDate>Mon, 08 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/origen-nosql/</guid>
+      <description>&lt;p&gt;Ya desde los los años 1960s grandes empresas que ofrecían servicios y tenían múltiples de clientes, en consecuencia una gran fragmentación de datos y con inmensos volúmenes de datos para la época, se utilizaban base de datos al estilo del NoSQL, pero el nombre nace con el desarrollador Carlo Strozzi creó la base de datos relacional de código abierto Strozzi NoSQL en 1998, ligera, que no ofrecía una interface SQL, pero sí seguía el modelo ligeramente relacional. Strozzi sugiere que el actual movimiento NoSQL &amp;ldquo;Se sale completamente del modelo relacional, debería, por tanto, haberse llamado &amp;lsquo;NoREL&amp;rsquo;, o algo así.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eventos y bloqueo exclusivo en MySQL</title>
+      <link>http://localhost:1313/posts/eventos-y-bloqueo-exclusivo/</link>
+      <pubDate>Tue, 31 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/eventos-y-bloqueo-exclusivo/</guid>
+      <description>&lt;p&gt;Puede pasar que la ejecución de un procedimiento almacenado tarde más tiempo de lo previsto, y como hay un evento que lo ejecuta cada X tiempo, estos empiezan a verse amontonados en la lista de procesos, como podemos imaginar es muy malo. Afortunadamente MySQL tiene unas funciones que nos permite hacer un bloqueo exclusivo, así garantizamos que se ejecute solo uno a la vez.&lt;/p&gt;&#xA;&lt;p&gt;En el siguiente ejemplo, tenemos un evento que se ejecuta cada 1 segundo y llama a un procedimiento almacenado que tarda 5 segundos en ejecutarse. Lo ideal de este caso, es que podremos observar en la lista de procesos 5 eventos ejecutando al mismo tiempo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Processes, Threads &amp; Connections</title>
+      <link>http://localhost:1313/posts/mysql-processes-threads-connections/</link>
+      <pubDate>Sun, 15 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mysql-processes-threads-connections/</guid>
+      <description>&lt;p&gt;Suele pasar mucho que nos confundimos con estos tres términos; procesos, hilos y conexiones (Processes, Threads &amp;amp; Connections), les quiero explicar un poco de que va cada uno y como están relacionados:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;MySQL Server es un proceso de aplicación.&lt;/li&gt;&#xA;&lt;li&gt;MySQL Server es multi hilo (multithreaded).&lt;/li&gt;&#xA;&lt;li&gt;MySQL Server acepta multiples conexiones por TCP/IP.&lt;/li&gt;&#xA;&lt;li&gt;MySQL Server dedica por cada conexión un hilo (thread).&lt;/li&gt;&#xA;&lt;li&gt;Un hilo se puede llamar de vez en cuando proceso, y un proceso puede hacer referencia a una conexión.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;La última parte suena confuso, y me explico; MySQL Server (mysqld) es solo un proceso que se está ejecutando en el Sistema Operativo, el cual éste proceso permite tener muchos hilos de ejecución, un hilo por cada conexión realizada con el servidor, cuando se cierra la conexión se destruye el hilo.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>MySQL y los Niveles de aislamiento</title>
       <link>http://localhost:1313/posts/niveles-aislamiento/</link>
       <pubDate>Sat, 24 Jan 2015 00:00:00 +0000</pubDate>
@@ -84,6 +140,20 @@
       <pubDate>Wed, 07 Jan 2015 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/trabajando-largas-listas-procesos-mysql/</guid>
       <description>&lt;p&gt;Los fans de la terminal nos encontramos frecuentemente con algunas limitaciones por el tamaño del monitor y todo el contenido, en este caso hablo de listar y filtrar entre muchos rows en MySQL sin la opción WHERE como; &lt;strong&gt;&amp;ldquo;SHOW PROCESSLIST;&amp;rdquo;&lt;/strong&gt; y &lt;strong&gt;&amp;ldquo;SHOW TABLES;&amp;rdquo;&lt;/strong&gt;. Generalmente necesitamos buscar algo en largas listas para; matar procesos, verificar conexiones, consultas, etc&amp;hellip; y como podemos hacer para mostrar los que nos interesa?.&lt;/p&gt;&#xA;&lt;p&gt;Lo podemos cambiar estando dentro de la consola de MySQL, por ejemplo; Necesito listar todas las conexiones que sean distintas al estado &lt;strong&gt;Sleep&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Paginar en la consola de MySQL</title>
+      <link>http://localhost:1313/posts/paginar-consola-mysql/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/paginar-consola-mysql/</guid>
+      <description>&lt;p&gt;Yo uso mucho la consola de MySQL, la verdad que es muy útil, pero muchas veces ejecutamos una Query que nos arroja un gran número de rows y columns que no caben en nuestra pantalla, y terminamos recurriendo a usar el scroll de la terminal para explorar los datos, ahora podemos implementar la paginación en la consola de una forma muy fácil.&lt;/p&gt;&#xA;&lt;p&gt;Solo debemos editar o modificar un fichero de configuración, el que usa &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.6/en/mysql.html&#34;&gt;MySQL Command Line&lt;/a&gt;, manos a la obra:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Interpretar los mensajes de error de MySQL</title>
+      <link>http://localhost:1313/posts/interpretar-mensajes-error-mysql/</link>
+      <pubDate>Fri, 26 Dec 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/interpretar-mensajes-error-mysql/</guid>
+      <description>&lt;p&gt;Cuando trabajas en un equipo de desarrollo y eres responsable de la base de datos, te preguntan frecuentemente por los errores que van apareciendo y su posible relación con MySQL. De todo puede pasar, desde problemas de configuración, de conexión, de lógica y sintaxis, en fin&amp;hellip; en estos casos hay que orientarlos y quiero explicarles de que va todo esto.&lt;/p&gt;&#xA;&lt;p&gt;Lo primero es reconocer un mensaje de error oficial de MySQL y no confundirnos con uno generado por una librería, en algunos esta leve diferencia genera confusión.&lt;/p&gt;</description>
     </item>
     <item>
       <title>¿Cómo funciona y se configura la Cache de MySQL?</title>

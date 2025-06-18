@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Host is blocked because of many connection errors MySQL | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+</head>
+<body>
+<div class="container center">
+<header>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+  </div>
+  <div class="header__social__navigation">
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="header__navigation">
+      <nav class="navigation-menu">
+        <ul class="navigation-menu__inner menu--desktop">
+          
+            
+              
+                <li><a href="/posts/" >Posts</a></li>
+              
+            
+              
+                <li><a href="/electronic/" >Electrónica</a></li>
+              
+            
+              
+                <li><a href="/cultura/" >Cultura</a></li>
+              
+            
+              
+                <li><a href="/diccionary/" >Diccionario</a></li>
+              
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+</header>
+<div class="content">
+
+  <article>
+    <div class="content-header">
+      <h2 class="title">Host is blocked because of many connection errors MySQL</h2>
+      
+      <span class="date"><em>20/01/2025</em></span>
+      
+    </div>
+    <p>En algún momento MySQL decide bloquear una IP por haber tenido problemas con las conexiones provenientes de un host. Te explico una forma simple, nativa, rápida y eficiente de controlar esta situación sin hacer sobre ingeniería.</p>
+<p>En la siguiente gráfica se puede apreciar un ejemplo:</p>
+<p><img src="incident20250120_02.png" alt="DBA"></p>
+<p>En la gráfica se puede apreciar una secuencia ideal del problema, hay un pico en el contador <a href="https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Connection_errors_max_connections">Connection_errors_max_connections</a> (Rojo), a partir de allí empieza una secuencia de <a href="https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Aborted_connects">Aborted_connects</a> (Amarillo) hasta que termia al hacer un <code>FLUSH HOSTS</code> y se modifica la variable <a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_connect_errors">max_connect_errors</a> (Violeta) para aumentar la tolerancia. Se destaca que la linea Roja supera a la Violeta y la Amarilla indica acceso denegado al host.</p>
+<p>Para revisar el contador de conexiones fallidas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">GLOBAL</span> STATUS <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;Connection_errors_max_connections&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">GLOBAL</span> STATUS <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;Aborted_connects&#39;</span>;
+</span></span></code></pre></div><p>Y la variable <a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_connect_errors">max_connect_errors</a> que define el número máximo de conexiones fallidas para bloquear la IP del host.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">GLOBAL</span> VARIABLES <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;max_connect_errors&#39;</span>;
+</span></span></code></pre></div><p>Para tener detalles de los errores de conexión a futuro, se debe modificar la variable <a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_log_error_verbosity">log_error_verbosity</a> con el siguiente valor a tres:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>log_error_verbosity <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span></code></pre></div><p>Considere que este nivel de verbosity es para uso temporal con el fin de detectar problemas recurrentes.</p>
+<h2 id="causas">Causas:</h2>
+<p>MySQL tiene un mecanismo de protección para las conexiones que se malforman del lado del cliente, o problemas de red. Al detectarlas se bloquea la IP, para tener más detalles debe hacer uso de la variable <code>log_error_verbosity</code> y verificar el <code>error_log</code>.</p>
+<p>En MySQL 5.6 en adelante puedes obtener información básica de los host&rsquo;s bloqueados haciendo la siguiente consulta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> performance_schema.host_cache;
+</span></span></code></pre></div><p>Para conocer un poco más de la tabla <a href="https://dev.mysql.com/doc/refman/8.0/en/host-cache.html">host_cache</a>, consulta la documentación.</p>
+<p>El log de errores lo puedes revisar de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> performance_schema.error_log;
+</span></span></code></pre></div><p>Es normal que pase una vez al año con uso medio.</p>
+<h2 id="solución-inmediata">Solución inmediata:</h2>
+<p>La solución que se describe a continuación es de tipo reactiva, ideal para una situación de intervención ante una incidencia.</p>
+<p>Ejecutar el siguiente comando para versiones inferiores a MySQL 8.0:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>FLUSH HOSTS;
+</span></span></code></pre></div><p>Ejecuta el siguiente comando para la version de MySQL 8.0 en adelante:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">TRUNCATE</span> <span style="color:#66d9ef">TABLE</span> performance_schema.host_cache;
+</span></span></code></pre></div><p>También puedes usar el comando <code>mysqladmin</code> de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysqladmin -h &lt;HOST&gt; -P &lt;PORT&gt; -u &lt;USER&gt; -p flush-hosts
+</span></span></code></pre></div><h2 id="solución-preventiva">Solución preventiva:</h2>
+<p>La siguiente forma es automatizar el proceso indicado en la solución anterior, de esta forma es más de uso preventivo y aprovecha las características propias de MySQL.</p>
+<p>Primero deberá incrementar el valor de la variable <code>max_connect_errors</code> a un valor muy alto, por defecto es 100, y la incrementamos a 1000000, con el fin de crear un umbral de tolerancia entre la ejecución del evento <code>mysql.ev_flush_hosts</code>.</p>
+<p>Luego deberá crear un evento, el cual es la versión de un cronjob dentro del servicio de MySQL, con el fin de ejecutar el comando cada cierto tiempo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> EVENT mysql.ev_flush_hosts <span style="color:#66d9ef">ON</span>
+</span></span><span style="display:flex;"><span>SCHEDULE <span style="color:#66d9ef">EVERY</span> <span style="color:#ae81ff">24</span> HOUR STARTS <span style="color:#e6db74">&#39;2024-01-01 00:00:00&#39;</span> <span style="color:#66d9ef">ON</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">COMPLETION</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">PRESERVE</span> ENABLE <span style="color:#66d9ef">DO</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">TRUNCATE</span> <span style="color:#66d9ef">TABLE</span> performance_schema.host_cache;
+</span></span></code></pre></div><p>Para este ejemplo se crea el evento dentro de la base de datos MySQL, no hay un criterio definido si es correcto o no, si tiene dudas cree su propia base de datos <code>dba</code> y cree allí su evento.</p>
+<p>Se puede ajustar el intervalo de ejecución del evento <code>mysql.ev_flush_hosts</code> para ir reduciendo los tiempos y controlar la incidencia.</p>
+<p>No te preocupes que el evento y el comando no supone ningún peligro.</p>
+<p>Por último, debera verificar si los eventos estan activos (el valor debe estar en ON) y en su defecto activarlos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">GLOBAL</span> VARIABLES <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;event_scheduler&#39;</span>;
+</span></span></code></pre></div><p>De esta forma, ya tienes un mecanismo automático y preventivo para controlar este tipo de error.</p>
+
+  </article>
+
+</div>
+<footer class="footer">
+<span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+</html>
