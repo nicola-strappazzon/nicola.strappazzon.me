@@ -111,75 +111,75 @@ Los fabricantes crean las resistencias de muchos valores, aquí listamos los má
 | 7.5KΩ | 752        | {{< colorband "violet" >}}{{< colorband "green" >}}{{< colorband "red" >}}     |
 | 8.2KΩ | 822        | {{< colorband "grey" >}}{{< colorband "red" >}}{{< colorband "red" >}}         |
 | 9.1KΩ | 912        | {{< colorband "white" >}}{{< colorband "brown" >}}{{< colorband "red" >}}      |
-| 10KΩ  |
-| 11KΩ  |
-| 12KΩ  |
-| 13KΩ  |
-| 14KΩ  |
-| 15KΩ  |
-| 16KΩ  |
-| 18KΩ  |
-| 20KΩ  |
-| 22KΩ  |
-| 24KΩ  |
-| 27KΩ  |
-| 30KΩ  |
-| 33KΩ  |
-| 36KΩ  |
-| 39KΩ  |
-| 43KΩ  |
-| 47KΩ  |
-| 51KΩ  |
-| 62KΩ  |
-| 68KΩ  |
-| 75KΩ  |
-| 82KΩ  |
-| 91KΩ  |
-| 100KΩ |
-| 110KΩ |
-| 120KΩ |
-| 130KΩ |
-| 140KΩ |
-| 150KΩ |
-| 160KΩ |
-| 180KΩ |
-| 200KΩ |
-| 220KΩ |
-| 240KΩ |
-| 270KΩ |
-| 300KΩ |
-| 330KΩ |
-| 360KΩ |
-| 390KΩ |
-| 430KΩ |
-| 470KΩ |
-| 510KΩ |
-| 620KΩ |
-| 680KΩ |
-| 750KΩ |
-| 820KΩ |
-| 910KΩ |
-| 1.0MΩ |
-| 1.1MΩ |
-| 1.2MΩ |
-| 1.3MΩ |
-| 1.4MΩ |
-| 1.5MΩ |
-| 1.6MΩ |
-| 1.8MΩ |
-| 2.0MΩ |
-| 2.2MΩ |
-| 2.4MΩ |
-| 2.7MΩ |
-| 3.0MΩ |
-| 3.3MΩ |
-| 3.6MΩ |
-| 3.9MΩ |
-| 4.3MΩ |
-| 4.7MΩ |
-| 5.1MΩ |
-| 6.2MΩ |
-| 6.8MΩ |
-| 7.5MΩ |
-| 8.2MΩ |
-| 9.1MΩ |
+| 10KΩ  | 103        | {{< colorband "brown" >}}{{< colorband "black" >}}{{< colorband "orange" >}}   |
+| 11KΩ  | 113        | {{< colorband "brown" >}}{{< colorband "brown" >}}{{< colorband "orange" >}}   |
+| 12KΩ  | 123        | {{< colorband "brown" >}}{{< colorband "red" >}}{{< colorband "orange" >}}     |
+| 13KΩ  | 133        | {{< colorband "brown" >}}{{< colorband "orange" >}}{{< colorband "orange" >}}  |
+| 14KΩ  | 143        | {{< colorband "brown" >}}{{< colorband "yellow" >}}{{< colorband "orange" >}}  |
+| 15KΩ  | 153        | {{< colorband "brown" >}}{{< colorband "green" >}}{{< colorband "orange" >}}   |
+| 16KΩ  | 163        | {{< colorband "brown" >}}{{< colorband "blue" >}}{{< colorband "orange" >}}    |
+| 18KΩ  | 183        | {{< colorband "brown" >}}{{< colorband "grey" >}}{{< colorband "orange" >}}    |
+| 20KΩ  | 203        | {{< colorband "red" >}}{{< colorband "black" >}}{{< colorband "orange" >}}     |
+| 22KΩ  | 223        | {{< colorband "red" >}}{{< colorband "red" >}}{{< colorband "orange" >}}       |
+| 24KΩ  | 243        | {{< colorband "red" >}}{{< colorband "yellow" >}}{{< colorband "orange" >}}    |
+| 27KΩ  | 273        | {{< colorband "red" >}}{{< colorband "violet" >}}{{< colorband "orange" >}}    |
+| 30KΩ  | 303        | {{< colorband "orange" >}}{{< colorband "black" >}}{{< colorband "orange" >}}  |
+| 33KΩ  | 333        | {{< colorband "orange" >}}{{< colorband "orange" >}}{{< colorband "orange" >}} |
+| 36KΩ  | 363        | {{< colorband "orange" >}}{{< colorband "blue" >}}{{< colorband "orange" >}}   |
+| 39KΩ  | 393        | {{< colorband "orange" >}}{{< colorband "white" >}}{{< colorband "orange" >}}  |
+| 43KΩ  | 433        | {{< colorband "yellow" >}}{{< colorband "orange" >}}{{< colorband "orange" >}} |
+| 47KΩ  | 473        | {{< colorband "yellow" >}}{{< colorband "violet" >}}{{< colorband "orange" >}} |
+| 51KΩ  | 513        | {{< colorband "green" >}}{{< colorband "brown" >}}{{< colorband "orange" >}}   |
+| 62KΩ  | 623        | {{< colorband "blue" >}}{{< colorband "red" >}}{{< colorband "orange" >}}      |
+| 68KΩ  | 683        | {{< colorband "blue" >}}{{< colorband "grey" >}}{{< colorband "orange" >}}     |
+| 75KΩ  | 753        | {{< colorband "violet" >}}{{< colorband "green" >}}{{< colorband "orange" >}}  |
+| 82KΩ  | 823        | {{< colorband "grey" >}}{{< colorband "red" >}}{{< colorband "orange" >}}      |
+| 91KΩ  | 913        | {{< colorband "white" >}}{{< colorband "brown" >}}{{< colorband "orange" >}}   |
+| 100KΩ | 104        | {{< colorband "brown" >}}{{< colorband "black" >}}{{< colorband "yellow" >}}   |
+| 110KΩ | 114        | {{< colorband "brown" >}}{{< colorband "brown" >}}{{< colorband "yellow" >}}   |
+| 120KΩ | 124        | {{< colorband "brown" >}}{{< colorband "red" >}}{{< colorband "yellow" >}}     |
+| 130KΩ | 134        | {{< colorband "brown" >}}{{< colorband "orange" >}}{{< colorband "yellow" >}}  |
+| 140KΩ | 144        | {{< colorband "brown" >}}{{< colorband "yellow" >}}{{< colorband "yellow" >}}  |
+| 150KΩ | 154        | {{< colorband "brown" >}}{{< colorband "green" >}}{{< colorband "yellow" >}}   |
+| 160KΩ | 164        | {{< colorband "brown" >}}{{< colorband "blue" >}}{{< colorband "yellow" >}}    |
+| 180KΩ | 184        | {{< colorband "brown" >}}{{< colorband "grey" >}}{{< colorband "yellow" >}}    |
+| 200KΩ | 204        | {{< colorband "red" >}}{{< colorband "black" >}}{{< colorband "yellow" >}}     |
+| 220KΩ | 224        | {{< colorband "red" >}}{{< colorband "red" >}}{{< colorband "yellow" >}}       |
+| 240KΩ | 244        | {{< colorband "red" >}}{{< colorband "yellow" >}}{{< colorband "yellow" >}}    |
+| 270KΩ | 274        | {{< colorband "red" >}}{{< colorband "violet" >}}{{< colorband "yellow" >}}    |
+| 300KΩ | 304        | {{< colorband "orange" >}}{{< colorband "black" >}}{{< colorband "yellow" >}}  |
+| 330KΩ | 334        | {{< colorband "orange" >}}{{< colorband "orange" >}}{{< colorband "yellow" >}} |
+| 360KΩ | 364        | {{< colorband "orange" >}}{{< colorband "blue" >}}{{< colorband "yellow" >}}   |
+| 390KΩ | 394        | {{< colorband "orange" >}}{{< colorband "white" >}}{{< colorband "yellow" >}}  |
+| 430KΩ | 434        | {{< colorband "yellow" >}}{{< colorband "orange" >}}{{< colorband "yellow" >}} |
+| 470KΩ | 474        | {{< colorband "yellow" >}}{{< colorband "violet" >}}{{< colorband "yellow" >}} |
+| 510KΩ | 514        | {{< colorband "green" >}}{{< colorband "brown" >}}{{< colorband "yellow" >}}   |
+| 620KΩ | 624        | {{< colorband "blue" >}}{{< colorband "red" >}}{{< colorband "yellow" >}}      |
+| 680KΩ | 684        | {{< colorband "blue" >}}{{< colorband "grey" >}}{{< colorband "yellow" >}}     |
+| 750KΩ | 754        | {{< colorband "violet" >}}{{< colorband "green" >}}{{< colorband "yellow" >}}  |
+| 820KΩ | 824        | {{< colorband "grey" >}}{{< colorband "red" >}}{{< colorband "yellow" >}}      |
+| 910KΩ | 914        | {{< colorband "white" >}}{{< colorband "brown" >}}{{< colorband "yellow" >}}   |
+| 1.0MΩ | 105        | {{< colorband "brown" >}}{{< colorband "black" >}}{{< colorband "green" >}}    |
+| 1.1MΩ | 115        | {{< colorband "brown" >}}{{< colorband "brown" >}}{{< colorband "green" >}}    |
+| 1.2MΩ | 125        | {{< colorband "brown" >}}{{< colorband "red" >}}{{< colorband "green" >}}      |
+| 1.3MΩ | 135        | {{< colorband "brown" >}}{{< colorband "orange" >}}{{< colorband "green" >}}   |
+| 1.4MΩ | 145        | {{< colorband "brown" >}}{{< colorband "yellow" >}}{{< colorband "green" >}}   |
+| 1.5MΩ | 155        | {{< colorband "brown" >}}{{< colorband "green" >}}{{< colorband "green" >}}    |
+| 1.6MΩ | 165        | {{< colorband "brown" >}}{{< colorband "blue" >}}{{< colorband "green" >}}     |
+| 1.8MΩ | 185        | {{< colorband "brown" >}}{{< colorband "grey" >}}{{< colorband "green" >}}     |
+| 2.0MΩ | 205        | {{< colorband "red" >}}{{< colorband "black" >}}{{< colorband "green" >}}      |
+| 2.2MΩ | 225        | {{< colorband "red" >}}{{< colorband "red" >}}{{< colorband "green" >}}        |
+| 2.4MΩ | 245        | {{< colorband "red" >}}{{< colorband "yellow" >}}{{< colorband "green" >}}     |
+| 2.7MΩ | 275        | {{< colorband "red" >}}{{< colorband "violet" >}}{{< colorband "green" >}}     |
+| 3.0MΩ | 305        | {{< colorband "orange" >}}{{< colorband "black" >}}{{< colorband "green" >}}   |
+| 3.3MΩ | 335        | {{< colorband "orange" >}}{{< colorband "orange" >}}{{< colorband "green" >}}  |
+| 3.6MΩ | 365        | {{< colorband "orange" >}}{{< colorband "blue" >}}{{< colorband "green" >}}    |
+| 3.9MΩ | 395        | {{< colorband "orange" >}}{{< colorband "white" >}}{{< colorband "green" >}}   |
+| 4.3MΩ | 435        | {{< colorband "yellow" >}}{{< colorband "orange" >}}{{< colorband "green" >}}  |
+| 4.7MΩ | 475        | {{< colorband "yellow" >}}{{< colorband "violet" >}}{{< colorband "green" >}}  |
+| 5.1MΩ | 515        | {{< colorband "green" >}}{{< colorband "brown" >}}{{< colorband "green" >}}    |
+| 6.2MΩ | 625        | {{< colorband "blue" >}}{{< colorband "red" >}}{{< colorband "green" >}}       |
+| 6.8MΩ | 685        | {{< colorband "blue" >}}{{< colorband "grey" >}}{{< colorband "green" >}}      |
+| 7.5MΩ | 755        | {{< colorband "violet" >}}{{< colorband "green" >}}{{< colorband "green" >}}   |
+| 8.2MΩ | 825        | {{< colorband "grey" >}}{{< colorband "red" >}}{{< colorband "green" >}}       |
+| 9.1MΩ | 915        | {{< colorband "white" >}}{{< colorband "brown" >}}{{< colorband "green" >}}    |
