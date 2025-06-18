@@ -3,6 +3,8 @@ draft = false
 title = 'Transistores'
 +++
 
+Los fabricantes crean casi una infinidad de transistores, pero aquí listamos los más comunes para un laboratorio.
+
 - Current Gain: β
 - Collector-Emitter Voltage: V{{<sub CEO>}}
 - Emitter-Base Voltage: V{{<sub EBO>}}
