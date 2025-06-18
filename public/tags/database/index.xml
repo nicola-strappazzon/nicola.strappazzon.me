@@ -37,11 +37,25 @@
       <description>&lt;p&gt;Ya desde los los años 1960s grandes empresas que ofrecían servicios y tenían múltiples de clientes, en consecuencia una gran fragmentación de datos y con inmensos volúmenes de datos para la época, se utilizaban base de datos al estilo del NoSQL, pero el nombre nace con el desarrollador Carlo Strozzi creó la base de datos relacional de código abierto Strozzi NoSQL en 1998, ligera, que no ofrecía una interface SQL, pero sí seguía el modelo ligeramente relacional. Strozzi sugiere que el actual movimiento NoSQL &amp;ldquo;Se sale completamente del modelo relacional, debería, por tanto, haberse llamado &amp;lsquo;NoREL&amp;rsquo;, o algo así.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Bases de datos relacionales y no relacionales</title>
+      <link>http://localhost:1313/posts/relacionales-vs-no-relacionales/</link>
+      <pubDate>Sat, 24 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/relacionales-vs-no-relacionales/</guid>
+      <description>&lt;p&gt;El gran dilema, bases de datos relacionales (&lt;a href=&#34;http://en.wikipedia.org/wiki/Relational_database_management_system&#34;&gt;RDBMS&lt;/a&gt;) y no relacionales (&lt;a href=&#34;http://martinfowler.com/bliki/NosqlDefinition.html&#34;&gt;NoSQL&lt;/a&gt;), todos preguntan, todos hablan de ello, estamos comparando cual es mejor, en fin, hay una gran incertidumbre en el tema, muchos apuntan a un extremo o al otro, cometen errores y nos olvidamos de ver con objetividad. Quiero explicar de que va todo esto de una forma simple para entendernos. Quiero recordar que grandes volúmenes de datos no son un simple millón de rows, son mucho más, billones por ejemplo, ahora imagina billones de rows que interactúan con otros billones de rows para generar información más significativa, cuando hay grandes volúmenes de información se aprecia todo de una forma diferente, esto impacta en tiempo y dinero.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Rol de un DBA</title>
       <link>http://localhost:1313/posts/rol-dba/</link>
       <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/rol-dba/</guid>
       <description>&lt;p&gt;Puede que este papel hoy en día se este perdiendo, y se haya mezclado con los de Operaciones o con algún Desarrollador, está mal!, en proyectos grandes es muy importante dedicarle todo el tiempo posible, llega un momento que el volumen de datos y el tráfico se vuelve insostenible, a este punto, &lt;strong&gt;cuando algo falla es catastrófico y no suele arreglarse rápidamente&lt;/strong&gt;, la prevención es bastante crucial y se vuelve una eterna lucha.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>El modelo Atributos &amp; Tipos (EAV) o List of Values (LOV)</title>
+      <link>http://localhost:1313/posts/eav-lof/</link>
+      <pubDate>Sat, 30 Oct 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/eav-lof/</guid>
+      <description>&lt;p&gt;Durante el diseño de un correcto modelo relacional de una base de datos, no cabe la duda la implementación de un modelo genérico de tablas llamado “Atributos &amp;amp; Tipos” u otros lo llaman (EAV, Entity Attribute Value) en sus siglas en ingles, el cual aumenta la flexibilidad y robustez del mismo.&lt;/p&gt;&#xA;&lt;p&gt;La intención de este tipo de “patrón” de diseño por llamarlo de alguna forma, es que permite tener un dominio detallado sobre todos los atributos que podamos asignarle a cualquier elemento que es almacenado, en pocas palabras, cada registro habla por si solo y no tendrá libre interpretación, las aplicaciones que hacen uso de estos valores serán dominados directamente por el manejador de base de datos, y al final todo este proceso conlleva a una simple solución de auto-documentación e integridad de los datos.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Errores frecuentes en la normalización de una Base de Datos</title>

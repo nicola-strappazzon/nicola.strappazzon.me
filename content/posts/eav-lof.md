@@ -1,7 +1,7 @@
 +++
 title = "El modelo Atributos & Tipos (EAV) o List of Values (LOV)"
 date = "2010-10-30"
-draft = true
+draft = false
 tags = ["database", "model"]
 +++
 
@@ -13,11 +13,11 @@ Implementar este patrón conlleva una serie de pasos, en primer lugar; tenemos l
 
 Manos a la obra!, observemos el siguiente modelo físico:
 
-![EAV1]({{ "/assets/EAV01.png" | absolute_url }})
+![EAV1](EAV01.png)
 
 Este tipo de modelo genérico consiste en dos tablas relacionadas, la primera es llamada “Tipos” la segunda se encuentra relacionada a está con el nombre “Atributos”, esto existe con la razón de que un tipo de entidad tiene una serie de atributos, por ejemplo; si hablamos de un tipo de estado civil, se esta haciendo referencia a 4 atributos: Soltero(a), Casado(a), Viudo(a) y Concubinato, a continuación mostramos la instancias de las tablas mencionadas.
 
-![EAV2]({{ "/assets/EAV02.png" | absolute_url }})
+![EAV2](EAV02.png)
 
 Este tipo de modelo evita crear una tabla por cada “Tipo” implementado en la Base de Datos, ya que pueden existir muchos, pero si se debe crear una vista por cada tipo para obtener los posibles atributos de forma obligatoria, por otro lado se evita la asignación de valores que solo tienen significado ambiguo, el cual puede conllevar a una incorrecta interpretación, por ejemplo:
 
@@ -30,10 +30,12 @@ Con la creación de las tablas atributos & tipos y las respectivas vistas por ca
 
 Ilustramos la instancia de la tabla “usuarios”, con fines didácticos solamente se mostraran las columnas básicas para poder explicar y simplificar la problemática planteada, observe el valores de las claves foráneas y comparelas con las claves primarias definidas anteriormente en la tabla atributos:
 
-![EAV3]({{ "/assets/EAV03.png" | absolute_url }})
+![EAV3](EAV03.png)
 
 En la tabla se ubican cuatro (4) recuadros con el borde de color rojo, cada uno de ellos tiene valores que no corresponden al significado de la columna, por ejemplo: en la columna “fk_nacionalidad” están las clave foráneas 1 y 6, donde el valor 1 hace referencia al atributo Femenino y el 6 al Concubinato, como podemos apreciar no existe ninguna relación conceptual con la Nacionalidad.
 
 A continuación realizaremos un ejemplo básico pero completo, explicado pasos a paso para ir entendiendo, utilizando un modelo simple que casi todo sistema debería utilizar. Primero debemos conocer el modelo físico de la pequeña base de datos que vamos a construir.
 
-![EAV4]({{ "/assets/EAV04.png" | absolute_url }})
+![EAV4](EAV04.png)
+
+Fin.

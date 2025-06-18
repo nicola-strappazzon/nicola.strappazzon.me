@@ -1,7 +1,7 @@
 +++
 title = "Bases de datos relacionales y no relacionales"
 date = "2015-01-24"
-draft = true
+draft = false
 tags = ["database"]
 +++
 

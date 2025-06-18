@@ -1,7 +1,7 @@
 +++
 title = "Darle un poco de color a la consola de MySQL"
 date = "2015-01-13"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 
@@ -38,4 +38,6 @@ default-character-set = utf8
 
 Una ves que hayas configurado el fichero de **.my.cnf** accede a MySQL y ejecuta varios comandos para que notes la diferencia, tienes que ver algo como en la siguiente imagen:
 
-![grcat]({{ "/assets/MysqlColors01.png" | absolute_url }})
+![grcat](MysqlColors01.png)
+
+Fin.

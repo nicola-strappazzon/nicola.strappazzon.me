@@ -1,7 +1,7 @@
 +++
 title = "¿Por qué no debes usar relaciones polimórficas?"
 date = "2015-02-15"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

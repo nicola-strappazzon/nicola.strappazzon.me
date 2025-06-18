@@ -44,6 +44,13 @@
       <description>&lt;p&gt;El bloqueo pesimista es algo que &lt;strong&gt;NO DEBEMOS USAR&lt;/strong&gt;, incluso su nombre lo deja muy claro, pero debemos &lt;strong&gt;saber ¿porque?&lt;/strong&gt;, y la verdad es que es bastante interesante, hay que tener en cuenta varios detalles; el engine de la tabla debe ser InnoDB, toda &lt;strong&gt;modificación&lt;/strong&gt; del registro se debe hacer dentro de una declaración de transacción (BEGIN / COMMIT), usar el nivel de aislamiento adecuado, y por último, recordar que cada transacción tiene un timeout, si abusamos del tiempo de espera se aborta la transacción.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Restaurar rápido un dump de MySQL</title>
+      <link>http://localhost:1313/posts/restaurar-rapido-dump-mysql/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/restaurar-rapido-dump-mysql/</guid>
+      <description>&lt;p&gt;Hay situaciones que necesitan restaurar una Base de Datos de MySQL &lt;strong&gt;rápido&lt;/strong&gt;, comento una serie de trucos que puede ayudar en ahorrarnos casi un 40% del tiempo. Lo divido en varios pasos.&lt;/p&gt;&#xA;&lt;h3 id=&#34;configurar-el-servidor-local-de-mysql&#34;&gt;Configurar el servidor local de MySQL:&lt;/h3&gt;&#xA;&lt;p&gt;Lo que hacemos aquí para no entrar con muchos detalles, es ampliar el uso de memoria para cargar los datos más rápido, como desactivar algunas funciones de consistencia a nivel de disco, y más.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Actualizar datos de una tabla sin bloquearla desde un archivo</title>
       <link>http://localhost:1313/posts/actualizar-sin-bloquear/</link>
       <pubDate>Mon, 11 Apr 2016 00:00:00 +0000</pubDate>
@@ -93,6 +100,13 @@
       <description>&lt;p&gt;Puede pasar que la ejecución de un procedimiento almacenado tarde más tiempo de lo previsto, y como hay un evento que lo ejecuta cada X tiempo, estos empiezan a verse amontonados en la lista de procesos, como podemos imaginar es muy malo. Afortunadamente MySQL tiene unas funciones que nos permite hacer un bloqueo exclusivo, así garantizamos que se ejecute solo uno a la vez.&lt;/p&gt;&#xA;&lt;p&gt;En el siguiente ejemplo, tenemos un evento que se ejecuta cada 1 segundo y llama a un procedimiento almacenado que tarda 5 segundos en ejecutarse. Lo ideal de este caso, es que podremos observar en la lista de procesos 5 eventos ejecutando al mismo tiempo.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>¿Por qué no debes usar relaciones polimórficas?</title>
+      <link>http://localhost:1313/posts/relaciones-polimorficas/</link>
+      <pubDate>Sun, 15 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/relaciones-polimorficas/</guid>
+      <description>&lt;p&gt;La verdad no se como empezar este post, ya que el tema es muy delicado en el mundo de RubyOnRails y algo en Java, no quiero ofender a la comunidad, sino ayudarlos hacer un buen modelo de datos dentro de un Manejador de Bases de Datos Relacionales (&lt;a href=&#34;http://en.wikipedia.org/wiki/Relational_database_management_system&#34;&gt;RDBMS&lt;/a&gt;). Considero que primero debemos enterarnos que son las relaciones polimórficas, luego hablar de los problemas que conlleva y por último como podemos evitarlos.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Processes, Threads &amp; Connections</title>
       <link>http://localhost:1313/posts/mysql-processes-threads-connections/</link>
       <pubDate>Sun, 15 Feb 2015 00:00:00 +0000</pubDate>
@@ -105,6 +119,13 @@
       <pubDate>Sat, 24 Jan 2015 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/niveles-aislamiento/</guid>
       <description>&lt;p&gt;El aislamiento es una parte importante de la propiedad ACID que garantiza que las transacciones sean fiables. Esto permite que las transacciones que se ejecutan simultáneamente no interfieran con otras, &lt;strong&gt;garantizando la integridad de los datos&lt;/strong&gt;, al no existir aislamiento en una transacción podría modificar los datos que otra transacción está leyendo, por lo que se crea una inconsistencia cuando se crean datos.&lt;/p&gt;&#xA;&lt;p&gt;Ahora que entendemos que es el aislamiento en términos generales, vamos a conocer cuales son los niveles de aislamiento, estos determinan como las transacciones se comportan con otras transacciones, es como ser más o menos restrictivo. Escoger cual es el mejor nivel depende de las necesidades de la aplicación, primero debe entender cuales son los beneficios y consecuencias de cada una de ellas.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Darle un poco de color a la consola de MySQL</title>
+      <link>http://localhost:1313/posts/color-consola-mysql/</link>
+      <pubDate>Tue, 13 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/color-consola-mysql/</guid>
+      <description>&lt;p&gt;Con el comando &lt;code&gt;grcat&lt;/code&gt; de Linux podemos darle color al texto; números, direcciones IP, fechas, etc&amp;hellip; así deja de ser aburrida la consola de MySQL.&lt;/p&gt;&#xA;&lt;p&gt;Ejecutamos el siguiente comando para instalar la nueva tool:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt-get install grc&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ahora nos bajamos el fichero de configuración del grcat, aquí es donde están definidas las reglas de colores:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget https://raw.githubusercontent.com/nicola-strappazzon/myterm/master/bash/dotfiles/grcat -O ~/.grcat&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Nos queda un último paso, y es editar este fichero para decirle al &lt;strong&gt;pager&lt;/strong&gt; que use el grcat:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Trabajando con largas listas de procesos en MySQL</title>

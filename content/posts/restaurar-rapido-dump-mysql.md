@@ -1,7 +1,7 @@
 +++
 title = "Restaurar rápido un dump de MySQL"
 date = "2018-07-08"
-draft = true
+draft = false
 tags = ["mysql"]
 +++
 

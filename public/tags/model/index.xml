@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Model on Nicola Strappazzon</title>
+    <link>http://localhost:1313/tags/model/</link>
+    <description>Recent content in Model on Nicola Strappazzon</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <lastBuildDate>Sat, 30 Oct 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>El modelo Atributos &amp; Tipos (EAV) o List of Values (LOV)</title>
+      <link>http://localhost:1313/posts/eav-lof/</link>
+      <pubDate>Sat, 30 Oct 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/eav-lof/</guid>
+      <description>&lt;p&gt;Durante el diseño de un correcto modelo relacional de una base de datos, no cabe la duda la implementación de un modelo genérico de tablas llamado “Atributos &amp;amp; Tipos” u otros lo llaman (EAV, Entity Attribute Value) en sus siglas en ingles, el cual aumenta la flexibilidad y robustez del mismo.&lt;/p&gt;&#xA;&lt;p&gt;La intención de este tipo de “patrón” de diseño por llamarlo de alguna forma, es que permite tener un dominio detallado sobre todos los atributos que podamos asignarle a cualquier elemento que es almacenado, en pocas palabras, cada registro habla por si solo y no tendrá libre interpretación, las aplicaciones que hacen uso de estos valores serán dominados directamente por el manejador de base de datos, y al final todo este proceso conlleva a una simple solución de auto-documentación e integridad de los datos.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

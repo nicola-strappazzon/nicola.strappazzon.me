@@ -149,6 +149,13 @@
       <description>&lt;p&gt;El bloqueo pesimista es algo que &lt;strong&gt;NO DEBEMOS USAR&lt;/strong&gt;, incluso su nombre lo deja muy claro, pero debemos &lt;strong&gt;saber ¿porque?&lt;/strong&gt;, y la verdad es que es bastante interesante, hay que tener en cuenta varios detalles; el engine de la tabla debe ser InnoDB, toda &lt;strong&gt;modificación&lt;/strong&gt; del registro se debe hacer dentro de una declaración de transacción (BEGIN / COMMIT), usar el nivel de aislamiento adecuado, y por último, recordar que cada transacción tiene un timeout, si abusamos del tiempo de espera se aborta la transacción.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Restaurar rápido un dump de MySQL</title>
+      <link>http://localhost:1313/posts/restaurar-rapido-dump-mysql/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/restaurar-rapido-dump-mysql/</guid>
+      <description>&lt;p&gt;Hay situaciones que necesitan restaurar una Base de Datos de MySQL &lt;strong&gt;rápido&lt;/strong&gt;, comento una serie de trucos que puede ayudar en ahorrarnos casi un 40% del tiempo. Lo divido en varios pasos.&lt;/p&gt;&#xA;&lt;h3 id=&#34;configurar-el-servidor-local-de-mysql&#34;&gt;Configurar el servidor local de MySQL:&lt;/h3&gt;&#xA;&lt;p&gt;Lo que hacemos aquí para no entrar con muchos detalles, es ampliar el uso de memoria para cargar los datos más rápido, como desactivar algunas funciones de consistencia a nivel de disco, y más.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>El teorema CAP</title>
       <link>http://localhost:1313/posts/teorema-cap/</link>
       <pubDate>Sun, 12 Jun 2016 00:00:00 +0000</pubDate>
@@ -212,11 +219,25 @@
       <description>&lt;p&gt;Puede pasar que la ejecución de un procedimiento almacenado tarde más tiempo de lo previsto, y como hay un evento que lo ejecuta cada X tiempo, estos empiezan a verse amontonados en la lista de procesos, como podemos imaginar es muy malo. Afortunadamente MySQL tiene unas funciones que nos permite hacer un bloqueo exclusivo, así garantizamos que se ejecute solo uno a la vez.&lt;/p&gt;&#xA;&lt;p&gt;En el siguiente ejemplo, tenemos un evento que se ejecuta cada 1 segundo y llama a un procedimiento almacenado que tarda 5 segundos en ejecutarse. Lo ideal de este caso, es que podremos observar en la lista de procesos 5 eventos ejecutando al mismo tiempo.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>¿Por qué no debes usar relaciones polimórficas?</title>
+      <link>http://localhost:1313/posts/relaciones-polimorficas/</link>
+      <pubDate>Sun, 15 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/relaciones-polimorficas/</guid>
+      <description>&lt;p&gt;La verdad no se como empezar este post, ya que el tema es muy delicado en el mundo de RubyOnRails y algo en Java, no quiero ofender a la comunidad, sino ayudarlos hacer un buen modelo de datos dentro de un Manejador de Bases de Datos Relacionales (&lt;a href=&#34;http://en.wikipedia.org/wiki/Relational_database_management_system&#34;&gt;RDBMS&lt;/a&gt;). Considero que primero debemos enterarnos que son las relaciones polimórficas, luego hablar de los problemas que conlleva y por último como podemos evitarlos.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Processes, Threads &amp; Connections</title>
       <link>http://localhost:1313/posts/mysql-processes-threads-connections/</link>
       <pubDate>Sun, 15 Feb 2015 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/mysql-processes-threads-connections/</guid>
       <description>&lt;p&gt;Suele pasar mucho que nos confundimos con estos tres términos; procesos, hilos y conexiones (Processes, Threads &amp;amp; Connections), les quiero explicar un poco de que va cada uno y como están relacionados:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;MySQL Server es un proceso de aplicación.&lt;/li&gt;&#xA;&lt;li&gt;MySQL Server es multi hilo (multithreaded).&lt;/li&gt;&#xA;&lt;li&gt;MySQL Server acepta multiples conexiones por TCP/IP.&lt;/li&gt;&#xA;&lt;li&gt;MySQL Server dedica por cada conexión un hilo (thread).&lt;/li&gt;&#xA;&lt;li&gt;Un hilo se puede llamar de vez en cuando proceso, y un proceso puede hacer referencia a una conexión.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;La última parte suena confuso, y me explico; MySQL Server (mysqld) es solo un proceso que se está ejecutando en el Sistema Operativo, el cual éste proceso permite tener muchos hilos de ejecución, un hilo por cada conexión realizada con el servidor, cuando se cierra la conexión se destruye el hilo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bases de datos relacionales y no relacionales</title>
+      <link>http://localhost:1313/posts/relacionales-vs-no-relacionales/</link>
+      <pubDate>Sat, 24 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/relacionales-vs-no-relacionales/</guid>
+      <description>&lt;p&gt;El gran dilema, bases de datos relacionales (&lt;a href=&#34;http://en.wikipedia.org/wiki/Relational_database_management_system&#34;&gt;RDBMS&lt;/a&gt;) y no relacionales (&lt;a href=&#34;http://martinfowler.com/bliki/NosqlDefinition.html&#34;&gt;NoSQL&lt;/a&gt;), todos preguntan, todos hablan de ello, estamos comparando cual es mejor, en fin, hay una gran incertidumbre en el tema, muchos apuntan a un extremo o al otro, cometen errores y nos olvidamos de ver con objetividad. Quiero explicar de que va todo esto de una forma simple para entendernos. Quiero recordar que grandes volúmenes de datos no son un simple millón de rows, son mucho más, billones por ejemplo, ahora imagina billones de rows que interactúan con otros billones de rows para generar información más significativa, cuando hay grandes volúmenes de información se aprecia todo de una forma diferente, esto impacta en tiempo y dinero.&lt;/p&gt;</description>
     </item>
     <item>
       <title>MySQL y los Niveles de aislamiento</title>
@@ -231,6 +252,13 @@
       <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/rol-dba/</guid>
       <description>&lt;p&gt;Puede que este papel hoy en día se este perdiendo, y se haya mezclado con los de Operaciones o con algún Desarrollador, está mal!, en proyectos grandes es muy importante dedicarle todo el tiempo posible, llega un momento que el volumen de datos y el tráfico se vuelve insostenible, a este punto, &lt;strong&gt;cuando algo falla es catastrófico y no suele arreglarse rápidamente&lt;/strong&gt;, la prevención es bastante crucial y se vuelve una eterna lucha.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Darle un poco de color a la consola de MySQL</title>
+      <link>http://localhost:1313/posts/color-consola-mysql/</link>
+      <pubDate>Tue, 13 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/color-consola-mysql/</guid>
+      <description>&lt;p&gt;Con el comando &lt;code&gt;grcat&lt;/code&gt; de Linux podemos darle color al texto; números, direcciones IP, fechas, etc&amp;hellip; así deja de ser aburrida la consola de MySQL.&lt;/p&gt;&#xA;&lt;p&gt;Ejecutamos el siguiente comando para instalar la nueva tool:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt-get install grc&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ahora nos bajamos el fichero de configuración del grcat, aquí es donde están definidas las reglas de colores:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget https://raw.githubusercontent.com/nicola-strappazzon/myterm/master/bash/dotfiles/grcat -O ~/.grcat&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Nos queda un último paso, y es editar este fichero para decirle al &lt;strong&gt;pager&lt;/strong&gt; que use el grcat:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Trabajando con largas listas de procesos en MySQL</title>
@@ -266,6 +294,13 @@
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/curso-postgresql/</guid>
       <description>&lt;p&gt;Hace unas décadas, cuando daba clases en la &lt;a href=&#34;https://une.edu.ve&#34;&gt;UNE&lt;/a&gt; sobre bases de datos, impartía este curso de SQL.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/nicola-strappazzon/blog/blob/main/assets/postgresql/PostgreSQL01.pdf&#34;&gt;Lección 1&lt;/a&gt; Usando la sentencia SELECT.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/nicola-strappazzon/blog/blob/main/assets/postgresql/PostgreSQL02.pdf&#34;&gt;Lección 2&lt;/a&gt; Restringiendo y ordenando los datos retornados por el comando SELECT.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/nicola-strappazzon/blog/blob/main/assets/postgresql/PostgreSQL03.pdf&#34;&gt;Lección 3&lt;/a&gt; Usando funciones simples para manipular la salida de los registros.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/nicola-strappazzon/blog/blob/main/assets/postgresql/PostgreSQL04.pdf&#34;&gt;Lección 4&lt;/a&gt; Usando funciones para manipular grupo de datos.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/nicola-strappazzon/blog/blob/main/assets/postgresql/PostgreSQL05.pdf&#34;&gt;Lección 5&lt;/a&gt; Recibiendo datos desde múltiples tablas.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/nicola-strappazzon/blog/blob/main/assets/postgresql/PostgreSQL06.pdf&#34;&gt;Lección 6&lt;/a&gt; Subconsultas.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/nicola-strappazzon/blog/blob/main/assets/postgresql/PostgreSQL07.pdf&#34;&gt;Lección 7&lt;/a&gt; Usando los operadores de conjunto.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/nicola-strappazzon/blog/blob/main/assets/postgresql/PostgreSQL08.pdf&#34;&gt;Lección 8&lt;/a&gt; Manipulando datos y transacciones.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/nicola-strappazzon/blog/blob/main/assets/postgresql/PostgreSQL01.pdf&#34;&gt;Lección 9&lt;/a&gt; Tablas.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/nicola-strappazzon/blog/blob/main/assets/postgresql/PostgreSQL10.pdf&#34;&gt;Lección 10&lt;/a&gt; Vistas.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>El modelo Atributos &amp; Tipos (EAV) o List of Values (LOV)</title>
+      <link>http://localhost:1313/posts/eav-lof/</link>
+      <pubDate>Sat, 30 Oct 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/eav-lof/</guid>
+      <description>&lt;p&gt;Durante el diseño de un correcto modelo relacional de una base de datos, no cabe la duda la implementación de un modelo genérico de tablas llamado “Atributos &amp;amp; Tipos” u otros lo llaman (EAV, Entity Attribute Value) en sus siglas en ingles, el cual aumenta la flexibilidad y robustez del mismo.&lt;/p&gt;&#xA;&lt;p&gt;La intención de este tipo de “patrón” de diseño por llamarlo de alguna forma, es que permite tener un dominio detallado sobre todos los atributos que podamos asignarle a cualquier elemento que es almacenado, en pocas palabras, cada registro habla por si solo y no tendrá libre interpretación, las aplicaciones que hacen uso de estos valores serán dominados directamente por el manejador de base de datos, y al final todo este proceso conlleva a una simple solución de auto-documentación e integridad de los datos.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Errores frecuentes en la normalización de una Base de Datos</title>
