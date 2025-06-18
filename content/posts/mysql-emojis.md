@@ -139,6 +139,4 @@ UPDATE demo.foo SET `text` = "🚌" WHERE id = 1;
 
 Es muy importante que en la conexión de nuestro código que usa la base de datos y dicha tabla se le especifique el `CHARACTER_SET` para evitar algún problema, este es un ejemplo en python, consulta tu lenguaje y/o framework.
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fswapbyt3s%2FMyScripts%2Fblob%2Fmaster%2Fexamples%2Fpython%2Fmysql_emoji.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
-
 Fin.

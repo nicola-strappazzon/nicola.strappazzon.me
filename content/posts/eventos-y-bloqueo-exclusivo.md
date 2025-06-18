@@ -30,7 +30,7 @@ Una vez creado el procedimiento almacenado y el evento, ya podremos observar com
 
 ![Lock Example 1](event_lock1.png)
 
-La solución es muy simple, vamos a implementar dos funciones; <a href="http://dev.mysql.com/doc/refman/5.6/en/miscellaneous-functions.html#function_get-lock" target="_blank">GET_LOCK</a> y <a href="http://dev.mysql.com/doc/refman/5.6/en/miscellaneous-functions.html#function_release-lock" target="_blank">RELEASE_LOCK</a> para hacer el bloqueo exclusivo, en el ejemplo siguiente podemos ver como lo implementamos:
+La solución es muy simple, vamos a implementar dos funciones; [GET_LOCK](http://dev.mysql.com/doc/refman/5.6/en/miscellaneous-functions.html#function_get-lock) y [RELEASE_LOCK](http://dev.mysql.com/doc/refman/5.6/en/miscellaneous-functions.html#function_release-lock) para hacer el bloqueo exclusivo, en el ejemplo siguiente podemos ver como lo implementamos:
 
 ```SQL
 DROP EVENT IF EXISTS ev_wait;

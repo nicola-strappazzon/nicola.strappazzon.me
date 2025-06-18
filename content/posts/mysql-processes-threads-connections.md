@@ -15,7 +15,7 @@ Suele pasar mucho que nos confundimos con estos tres términos; procesos, hilos 
 
 La última parte suena confuso, y me explico; MySQL Server (mysqld) es solo un proceso que se está ejecutando en el Sistema Operativo, el cual éste proceso permite tener muchos hilos de ejecución, un hilo por cada conexión realizada con el servidor, cuando se cierra la conexión se destruye el hilo.
 
-Crear y eliminar conexiones es una tarea costosa, porque se requiere administrar de forma dinámica una serie de recursos físicos, en especial la Memoria RAM, por eso existe la cache de hilos para optimizar las conexiones no persistentes, recuerda ver las variables: <a href="https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_thread_cache_size" target="_blank">thread_cache_size</a> y <a href="https://dev.mysql.com/doc/refman/5.6/en/server-status-variables.html#statvar_Threads_cached" target="_blank">Threads_cached</a>.
+Crear y eliminar conexiones es una tarea costosa, porque se requiere administrar de forma dinámica una serie de recursos físicos, en especial la Memoria RAM, por eso existe la cache de hilos para optimizar las conexiones no persistentes, recuerda ver las variables: [thread_cache_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_cache_size) y [Threads_cached](https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Threads_cached).
 
 Si pensamos en todo esto, nos preguntamos porque el comando "**SHOW PROCESSLIST**" se llama así y no "**SHOW THREADLIST**"? Debe ser que es más fácil asociar proceso que hilo, una respuesta acertada no la sé.
 
@@ -80,4 +80,4 @@ mysql> SHOW GLOBAL STATUS LIKE 'Threads%';
 
 ## Variables
 
-Hay un par de [variables](https://dev.mysql.com/doc/refman/5.6/en/connection-threads.html) que son para gestionar los recursos de conexión, es bueno revisarlas y asegurarse que todo está bien configurado en el servidor.
+Hay un par de [variables](https://dev.mysql.com/doc/refman/8.0/en/connection-threads.html) que son para gestionar los recursos de conexión, es bueno revisarlas y asegurarse que todo está bien configurado en el servidor.

@@ -84,7 +84,7 @@
 <li>Un hilo se puede llamar de vez en cuando proceso, y un proceso puede hacer referencia a una conexión.</li>
 </ul>
 <p>La última parte suena confuso, y me explico; MySQL Server (mysqld) es solo un proceso que se está ejecutando en el Sistema Operativo, el cual éste proceso permite tener muchos hilos de ejecución, un hilo por cada conexión realizada con el servidor, cuando se cierra la conexión se destruye el hilo.</p>
-<p>Crear y eliminar conexiones es una tarea costosa, porque se requiere administrar de forma dinámica una serie de recursos físicos, en especial la Memoria RAM, por eso existe la cache de hilos para optimizar las conexiones no persistentes, recuerda ver las variables: <!-- raw HTML omitted -->thread_cache_size<!-- raw HTML omitted --> y <!-- raw HTML omitted -->Threads_cached<!-- raw HTML omitted -->.</p>
+<p>Crear y eliminar conexiones es una tarea costosa, porque se requiere administrar de forma dinámica una serie de recursos físicos, en especial la Memoria RAM, por eso existe la cache de hilos para optimizar las conexiones no persistentes, recuerda ver las variables: <a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_cache_size">thread_cache_size</a> y <a href="https://dev.mysql.com/doc/refman/8.0/en/server-status-variables.html#statvar_Threads_cached">Threads_cached</a>.</p>
 <p>Si pensamos en todo esto, nos preguntamos porque el comando &ldquo;<strong>SHOW PROCESSLIST</strong>&rdquo; se llama así y no &ldquo;<strong>SHOW THREADLIST</strong>&rdquo;? Debe ser que es más fácil asociar proceso que hilo, una respuesta acertada no la sé.</p>
 <p>Vamos a demostrar que todo esto tiene sentido en el servidor, lo primero es que debemos crear varias conexiones y las mandamos al background, cada una de las conexión ejecutas es una sentencia SQL SLEEP para esperar 120 segundos y evitar que se cierre, al terminar el tiempo de espera se cierran y así lo hacemos más divertido:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..4<span style="color:#f92672">}</span>
@@ -126,7 +126,7 @@
 </span></span><span style="display:flex;"><span>| Threads_running   | <span style="color:#ae81ff">1</span>     |
 </span></span><span style="display:flex;"><span>+-------------------+-------+
 </span></span></code></pre></div><h2 id="variables">Variables</h2>
-<p>Hay un par de <a href="https://dev.mysql.com/doc/refman/5.6/en/connection-threads.html">variables</a> que son para gestionar los recursos de conexión, es bueno revisarlas y asegurarse que todo está bien configurado en el servidor.</p>
+<p>Hay un par de <a href="https://dev.mysql.com/doc/refman/8.0/en/connection-threads.html">variables</a> que son para gestionar los recursos de conexión, es bueno revisarlas y asegurarse que todo está bien configurado en el servidor.</p>
 
   </article>
 
