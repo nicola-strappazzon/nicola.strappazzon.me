@@ -220,5 +220,7 @@
     <loc>http://localhost:1313/diccionary/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/transistor/</loc>
   </url>
 </urlset>
