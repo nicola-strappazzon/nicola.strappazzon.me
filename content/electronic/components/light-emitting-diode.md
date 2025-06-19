@@ -14,7 +14,9 @@ Los diodos LED es la forma más habitual de indicar estados en los circuitos ele
 | Verde    | 2   - 3.1                    |
 | Azul     | 3   - 3.7                    |
 
-Generalmente, los valores están entre 10mA y 30mA, por lo general se usa un valor medio `20mA` (0,02A) con el cuál se logra un buen brillo con una larga vida útil, mientras usemos los valores mínimos alargamos la vida del componente. La forma de limitar la corriente que circula por el LED es colocando una resistencia en serie antes o después del componente.
+Generalmente, los valores están entre 10mA y 30mA, por lo general se usa un valor medio `20mA` (0,02A) con el cual se logra un buen brillo con una larga vida útil, mientras usemos los valores mínimos alargamos la vida del componente. La forma para limitar la corriente que circula por el LED es colocando una resistencia en serie antes o después del componente.
+
+A continuación explicaremos cómo calcular los ohms y los watts necesarios para la resistencia que acompaña el LED.
 
 > Recuerde consultar el datasheet para tener el valor exacto.
 
