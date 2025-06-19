@@ -16,7 +16,7 @@ Estos son los sitios de confianza para documentarse e ir obteniendo buenas ideas
 
 ## Radio Shack Basic Electronics
 
-Cuando existia Radio Shack, publicaron una serie de mini notebook con ejercicios practivos e interesantes para empezar en el mundo de la electronica, de niño han sido una inspuración.
+Cuando existía Radio Shack, publicaron una serie de mini notebook con ejercicios prácticos e interesantes para empezar en el mundo de la electrónica, de niño han sido una inspiración.
 
 - [555 Timer Circuits](RadioShack_Engineers_MiniNotebook_555TimerCircuits.pdf)
 - [Op-Amp IC Circuits](RadioShack_Engineers_MiniNotebook_OpAmpICCircuits.pdf)
