@@ -1,0 +1,6 @@
+{{- $style := .Get "style" | safeCSS -}}
+{{- $resourcePath :=  printf "%s.svg" (.Get "name") -}}
+{{- $resourcePath  =  path.Join "static" .Page.File.Dir .Page.File.BaseFileName $resourcePath -}}
+<div style="{{ $style }}">
+{{ readFile $resourcePath | safeHTML }}
+</div>

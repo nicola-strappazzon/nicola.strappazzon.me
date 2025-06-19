@@ -298,3 +298,8 @@ table th, td {
   padding-left: 6px;
   padding-right: 6px;
 }
+
+article div {
+  margin-left: auto;
+  margin-right: auto;
+}
