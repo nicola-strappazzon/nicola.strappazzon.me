@@ -73,14 +73,17 @@
       <h2 class="title">Transistores</h2>
       
     </div>
-    <p>Los fabricantes crean casi una infinidad de transistores, pero aquí listamos los más comunes para un laboratorio.</p>
+    <p>Para entender los transistores y hacerlos funcionar, debemos saber que significan sus valores, aquí una breve descripción de los más importantes:</p>
 <ul>
-<li>Current Gain: β</li>
-<li>Collector-Emitter Voltage: V<sub>CEO</sub></li>
-<li>Emitter-Base Voltage: V<sub>EBO</sub></li>
-<li>Collector-Base Voltage: V<sub>CBO</sub></li>
-<li>Collector current: L<sub>C</sub></li>
+<li><strong>Current Gain (β):</strong> En cualquier circuito, la ganancia de corriente de un transistor es un parámetro importante, se suele denominar β o hfe. La corriente es la relación entre la corriente de base y la corriente de colector y una medida de la capacidad de amplificación del transistor. Si desea utilizar el transistor como amplificador, elija un transistor con mayor ganancia de corriente.</li>
+<li><strong>Collector-Emitter Voltage (V<sub>CEO</sub>):</strong> El VCEO es el voltaje máximo que la unión colector-emisor de un transistor puede soportar. En la mayoría de los transistores, el V<sub>CEO</sub> suele ser de 30V o más, medido con la base en circuito abierto.</li>
+<li><strong>Emitter-Base Voltage (V<sub>EBO</sub>):</strong> El voltaje V<sub>EBO</sub> es el voltaje máximo que se puede aplicar a través de la unión emisor-base. <strong>Es el responsable para activar o desactivar el transistor</strong> controlando el paso de la corriente del Emitter. El V<sub>EBO</sub> es relativamente menor que el V<sub>CEO</sub>. El V<sub>EBO</sub> máximo suele ser de 6V o más para la mayoría de los transistores y se mide con el colector abierto.</li>
+<li><strong>Collector-Base Voltage (V<sub>CBO</sub>):</strong> El V<sub>CBO</sub> es el voltaje máximo que se puede aplicar a través de la unión colector-base y se mide con el circuito abierto del emisor. El V<sub>CBO</sub> suele ser de 50V o más. El V<sub>CBO</sub> es relativamente más alto que el V<sub>CEO</sub> porque el voltaje colector-base suele ser mayor que el voltaje colector-emisor.</li>
+<li><strong>Collector current (L<sub>C</sub>):</strong> La corriente del colector es la corriente máxima que puede circular por el colector. Generalmente se define en miliamperios, pero para transistores de alta potencia, se define en amperios.</li>
 </ul>
+<blockquote>
+<p>Aplicar un voltaje o corriente superior al maximo definido puede dañar el transistor. Se puede usar una resistencia para limitar la corriente. Verifique siempre los datos en el datasheet.</p></blockquote>
+<p>Los fabricantes crean casi una infinidad de transistores, pero aquí listamos los más comunes para un laboratorio.</p>
 <table>
   <thead>
       <tr>
@@ -124,68 +127,71 @@
       <tr>
           <td><a href="BC557.pdf" download>BC557</a></td>
           <td>PNP</td>
-          <td></td>
-          <td></td>
+          <td>800 h<sub>FE</sub></td>
+          <td>45V</td>
           <td>5V</td>
-          <td></td>
-          <td></td>
+          <td>50V</td>
+          <td>100mA</td>
       </tr>
       <tr>
           <td><a href="BC558.pdf" download>BC558</a></td>
           <td>PNP</td>
-          <td></td>
-          <td></td>
+          <td>800 h<sub>FE</sub></td>
+          <td>30V</td>
           <td>5V</td>
-          <td></td>
-          <td></td>
+          <td>30V</td>
+          <td>100mA</td>
       </tr>
       <tr>
           <td><a href="BC559.pdf" download>BC559</a></td>
           <td>PNP</td>
-          <td></td>
-          <td></td>
+          <td>800 h<sub>FE</sub></td>
+          <td>30V</td>
           <td>5V</td>
-          <td></td>
-          <td></td>
+          <td>30V</td>
+          <td>100mA</td>
       </tr>
       <tr>
           <td><a href="2N3904.pdf" download>2N3904</a></td>
           <td>NPN</td>
-          <td></td>
-          <td></td>
+          <td>200 h<sub>FE</sub></td>
+          <td>40V</td>
           <td>6V</td>
-          <td></td>
-          <td></td>
+          <td>60V</td>
+          <td>200mA</td>
       </tr>
       <tr>
           <td><a href="2N3906.pdf" download>2N3906</a></td>
           <td>PNP</td>
-          <td></td>
-          <td></td>
+          <td>200 h<sub>FE</sub></td>
+          <td>40V</td>
           <td>5V</td>
-          <td></td>
-          <td></td>
+          <td>40V</td>
+          <td>200mA</td>
       </tr>
       <tr>
           <td><a href="2N4401.pdf" download>2N4401</a></td>
           <td>NPN</td>
-          <td></td>
-          <td></td>
+          <td>200 h<sub>FE</sub></td>
+          <td>40V</td>
           <td>6V</td>
-          <td></td>
-          <td></td>
+          <td>60V</td>
+          <td>600mA</td>
       </tr>
       <tr>
           <td><a href="2N4403.pdf" download>2N4403</a></td>
           <td>PNP</td>
-          <td></td>
-          <td></td>
+          <td>300 h<sub>FE</sub></td>
+          <td>40V</td>
           <td>5V</td>
-          <td></td>
-          <td></td>
+          <td>40V</td>
+          <td>600mA</td>
       </tr>
   </tbody>
 </table>
+<h2 id="pinout">Pinout</h2>
+<p>Todos los transistores que están definidos en la tabla tienen el mismo pinout estándar:</p>
+<p><img src="pinout.png" alt=""></p>
 
   </article>
 
