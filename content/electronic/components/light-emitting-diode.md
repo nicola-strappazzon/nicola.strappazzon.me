@@ -8,13 +8,13 @@ Los diodos LED es la forma más habitual de indicar estados en los circuitos ele
 | Color    | Forward Voltage F{{<sub f>}} |
 |----------|------------------------------|
 | Rojo     | 1.8 - 2.1                    |
-| Ambar    | 2   - 2.2                    |
+| Ámbar    | 2   - 2.2                    |
 | Naranja  | 1.9 - 2.2                    |
 | Amarillo | 1.9 - 2.2                    |
 | Verde    | 2   - 3.1                    |
 | Azul     | 3   - 3.7                    |
 
-Generalmente los valores están entre 10mA y 30mA, por lo general se usa un valor medio `20mA` (0,02A) con el cuál se logra un buen brillo con una larga vida útil, mientras usemos los valores minimos alargamos la vida del componente. La forma de limitar la corriente que circula por el LED es colocando una resistencia en serie antes o despues del componente.
+Generalmente, los valores están entre 10mA y 30mA, por lo general se usa un valor medio `20mA` (0,02A) con el cuál se logra un buen brillo con una larga vida útil, mientras usemos los valores mínimos alargamos la vida del componente. La forma de limitar la corriente que circula por el LED es colocando una resistencia en serie antes o después del componente.
 
 > Recuerde consultar el datasheet para tener el valor exacto.
 
@@ -22,11 +22,9 @@ El cálculo del valor de esta resistencia es muy simple, y solo implica el uso d
 
 {{< svg name="formula" style="width: 200px; padding: 4px; background-color: white;">}}
 
-<!-- Supongamos una tensión de alimentación de 5v y un diodo led de color naranja que va a 2v y tiene un consumo de 20mA por lo tanto en la resistencia caerán `5-2v=3v`. -->
-
 Supongamos que tenemos un LED de color rojo, que según su hoja de datos, necesita para funcionar correctamente una corriente de `18 mA` y una tensión entre ánodo y cátodo de `1,9v`, y queremos alimentarlo con una batería de `9V` ¿Cuál será el valor de la resistencia limitadora?
 
-Aplicando la formula anterior, obtenemos que:
+Aplicando la fórmula anterior, obtenemos que:
 
 {{< svg name="example01" style="width: 700px; padding: 4px; background-color: white;">}}
 
@@ -34,4 +32,4 @@ Como puede observar, el valor para la resistencia es `394,44 Ohms`, y no existe 
 
 Puedes hacer los calculos usando esta [calculadora](https://www.digikey.es/en/resources/conversion-calculators/conversion-calculator-led-series-resistor).
 
-Formula en LaTex: `R={\frac{{{V}_{s}}-{{V}_{f}}}{{I}_{f}}}=\frac{9v-1,9v}{0.018A}=\frac{7,1v}{18mA}=394,44\Omega`.
+Fórmula en LaTex: `R={\frac{{{V}_{s}}-{{V}_{f}}}{{I}_{f}}}=\frac{9v-1,9v}{0.018A}=\frac{7,1v}{18mA}=394,44\Omega`.
