@@ -297,6 +297,7 @@ table th {
 table th, td {
   padding-left: 6px;
   padding-right: 6px;
+  font-size: 12px;
 }
 
 article div {
