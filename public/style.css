@@ -181,6 +181,10 @@ a {
   text-align: center;
 }
 
+article p {
+  text-align: justify;
+}
+
 article p > img {
   display: block;
   margin-left: auto;
