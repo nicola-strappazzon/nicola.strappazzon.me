@@ -14,7 +14,7 @@ La intensidad y el voltaje son dos aspectos importantes de los circuitos. El ter
 
 Imagina a alguien pisando una manguera por la que pasa agua. La presión del agua tiene una fuerza, y una parte del agua consigue salir al otro extremo, por lo que el flujo de agua sufre una resistencia y baja la presión. Con la corriente eléctrica pasa lo mismo.
 
-{{< svg name="resistor01" style="width: 396px; padding: 4px; background-color: white;">}}
+{{< svg name="resistor01" >}}
 
 Todos los componentes ofrecen cierto grado de resistencia a la corriente eléctrica, pero existen unos componentes denominados resistencias, cuya función es reducir la corriente. Se usan para controlar la intensidad y el voltaje de otro componente o para prevenir que un componente delicado sufra por recibir demasiada corriente. Muchas resistencias contienen carbón, que es un producto que no conduce bien la electricidad.
 
@@ -24,7 +24,7 @@ Los resistores se utilizan en los circuitos para limitar el valor de la corrient
 
 Se le denomina resistencia a la oposición al flujo de corriente eléctrica a través de un conductor. La unidad de resistencia en el Sistema Internacional es el ohmio, que se representa con la letra griega Ω, en honor al físico alemán Georg Simon Ohm, quien descubrió el principio que ahora lleva su nombre.
 
-{{< svg name="resistor02" style="width: 210px; padding: 4px; background-color: white;">}}
+{{< svg name="resistor02" >}}
 
 Existen muchos tipos de encapsulados para resistencias y con diferentes materiales de construcción. Para este libro solo trataremos los encapsulados de tipo axial como se observa en la figura \ref{fig:resistor-axial} que es ideal para el uso didáctico y de prototipado.
 
@@ -38,7 +38,7 @@ Para identificar una resistencia hacen falta entender el código de colores que 
 
 En los casos más comunes, las de cuatro franjas de colores, se lee de la siguiente forma: de izquierda a derecha, la primera y segunda indican el valor de la resistencia, la tercera el multiplicador, y la cuarta la tolerancia.
 
-{{< svg name="resistor03" style="width: 235px; padding: 4px; background-color: white;">}}
+{{< svg name="resistor03" >}}
 
 El valor de la resistencia se obtiene leyendo las dos primeras cifras, luego se multiplica y se obtiene el resultado en ohmios Ω, veamos un ejemplo usando la figura anterior y la siguiente tabla:
 
@@ -111,7 +111,7 @@ Los fabricantes crean las resistencias de muchos valores, aquí listamos en una 
 
 Con un multímetro podemos leer el valor real de una resistencia y comprobar si está en buen estado comparando el resultado obtenido con el código de colores y la tolerancia. También debe tener en cuenta que el componente se debe medir fuera del circuito, de lo contrario la medición está influenciada por otros componentes y el resultado será incorrecto. Recuerde que la polaridad no importa.
 
-{{< svg name="resistor04" style="width: 450px; padding: 4px; background-color: white;">}}
+{{< svg name="resistor04" >}}
 
 Para calcular el rango válido usamos la tolerancia ±5% de 1000 ohm, la cual es 50 ohm. Ahora calculamos el rango restando y sumando al valor obtenido por el código de colores y nos queda un rango entre 950 ohm y 1050 ohm. Si el valor real está fuera del rango o no hay valor, entonces deberá descartar el componente. En este caso el valor real es de 994 ohm y está dentro del rango, por lo que está bien la resistencia.
 
@@ -123,11 +123,11 @@ La carga ficticia disipa la energía en forma de calor y permite verificar el co
 
 Para este simple ejemplo, vamos a usar una resistencia con un valor de potencia alta, como por ejemplo una resistencia de 10Ω que soporta una potencia por encima de 2.5W y con una precisión de ±5%, esta resistencia será conectada a una fuente de voltaje ajustable que proporcionara 5V y 0.5A. Deberá ajustar los valores de la fuente usando un multímetro.
 
-{{< svg name="resistor05" style="width: 150px; padding: 4px; background-color: white;">}}
+{{< svg name="resistor05" >}}
 
 Para calcular la corriente a través de la resistencia R{{< sub "L">}}:
 
-{{< svg name="formula01" style="width: 200px; padding: 4px; background-color: white;">}}
+{{< svg name="formula01" >}}
 
 La disipación de potencia en la resistencia se calcula usando: 
 

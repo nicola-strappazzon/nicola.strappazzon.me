@@ -1,19 +1,10 @@
 \documentclass[dvisvgm,tikz]{standalone}
 \usepackage{circuitikz}
-\usepackage{tabularray}
-\renewcommand{\familydefault}{\sfdefault}
 \begin{document}
-\begin{table}[ht]
-  \centering
-  \begin{tblr}{}
-    \begin{circuitikz}[european]
-      \draw (0,0) to [R,o-o] (2,0);
-    \end{circuitikz}
-    & CEI (Internacional) \\
-    \begin{circuitikz}
-      \draw (0,0) to [R,o-o] (2,0);
-    \end{circuitikz}
-    & ANSI (EE. UU.) \\
-  \end{tblr}
-\end{table}
+\begin{circuitikz}[european]
+  \draw (0,0) to [R,o-o] (2,0);
+\end{circuitikz}
+\begin{circuitikz}
+  \draw (0,0) to [R,o-o] (2,0);
+\end{circuitikz}
 \end{document}

@@ -24,13 +24,13 @@ A continuación explicaremos cómo calcular los ohms y los watts necesarios para
 
 El cálculo del valor de esta resistencia es muy simple, y solo implica el uso de la ley de ohm. Debemos restar la tensión de la fuente y tensión del LED, y dividir el resultado por la corriente que deseamos atraviese el componente. Si usamos las unidades correctas (tensiones en Volts y corrientes en Amperes), el resultado estará expresado en Ohms.
 
-{{< svg name="formula01" style="width: 200px; padding: 4px; background-color: white;">}}
+{{< svg name="formula01" >}}
 
 Supongamos que tenemos un LED de color rojo, que según su hoja de datos, necesita para funcionar correctamente una corriente de `18mA` y una tensión entre ánodo y cátodo de `1,9V`, y queremos alimentarlo con una batería de `9V` ¿Cuál será el valor de la resistencia limitadora?
 
 Aplicando la fórmula anterior, obtenemos que:
 
-{{< svg name="example01" style="width: 700px; padding: 4px; background-color: white;">}}
+{{< svg name="example01" >}}
 
 Como puede observar, el valor para la resistencia es `394,44Ohms`, y no existe una resistencia comercial de ese valor, utilizaremos el más cercano: `390Ohms`.
 
@@ -40,11 +40,11 @@ Además de hayar el valor en ohms, debemos saber el tamaño de la resistencia en
 
 La potencia se calcula con la siguiente fórmula:
 
-{{< svg name="formula02" style="width: 200px; padding: 4px; background-color: white;">}}
+{{< svg name="formula02" >}}
 
 Aplicando la fórmula anterior, obtenemos que:
 
-{{< svg name="example02" style="width: 850px; padding: 4px; background-color: white;">}}
+{{< svg name="example02" >}}
 
 > Debemos seleccionar siempre una resistencia con una potencia superior al cálculo para evitar que se queme.
 
