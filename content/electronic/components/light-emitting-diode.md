@@ -26,7 +26,7 @@ El cálculo del valor de esta resistencia es muy simple, y solo implica el uso d
 
 {{< svg name="formula01" style="width: 200px; padding: 4px; background-color: white;">}}
 
-Supongamos que tenemos un LED de color rojo, que según su hoja de datos, necesita para funcionar correctamente una corriente de `18mA` y una tensión entre ánodo y cátodo de `1,9v`, y queremos alimentarlo con una batería de `9V` ¿Cuál será el valor de la resistencia limitadora?
+Supongamos que tenemos un LED de color rojo, que según su hoja de datos, necesita para funcionar correctamente una corriente de `18mA` y una tensión entre ánodo y cátodo de `1,9V`, y queremos alimentarlo con una batería de `9V` ¿Cuál será el valor de la resistencia limitadora?
 
 Aplicando la fórmula anterior, obtenemos que:
 

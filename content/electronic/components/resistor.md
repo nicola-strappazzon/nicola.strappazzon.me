@@ -1,6 +1,7 @@
 +++
 draft = false
 title = 'Resistencias'
+katex = true
 +++
 
 El componente en sí no tiene una fecha exacta de creación, ni un personaje asociado, se puede decir que fue inventado a lo largo del siglo XIX (1800 hasta 1900) por diversos científicos interesados por la electricidad, donde la resistencia va evolucionando desde experimentos rudimentarios hasta ser un componente estandarizado según las necesidades de cada época.
@@ -67,12 +68,12 @@ Las primeras dos bandas representa una cifra, si unimos la primera banda de colo
 
 La unidad de las resistencias Ω están sujetos al prefijo del sistema internacional, por lo que se anteponen al nombre de la unidad para indicar el múltiplo o submúltiplo decimal de la misma; del mismo modo, los símbolos de los prefijos se anteponen a los símbolos de las unidades.
 
-| Nombre      | Símbolo | Conversión    | Valor    | Ejemplo |
-|-------------|---------|---------------|----------|---------|
-| mili-ohmios | mΩ      | 1mΩ = $10^-3Ω | 0.010Ω   | R0=10mΩ |
-| ohmios      | Ω       | -             | 10Ω      | R1=10Ω  |
-| kilo-ohmios | kΩ      | 1kΩ = $10^3Ω  | 1000Ω    | R2=1kΩ  |
-| mega-ohmios | MΩ      | 1MΩ = $10^-3Ω | 1000000Ω | R3=1MΩ  |
+| Nombre      | Símbolo | Conversión               | Valor    | Ejemplo              |
+|-------------|---------|--------------------------|----------|----------------------|
+| mili-ohmios | mΩ      | 1mΩ = 10{{< sup "-3">}}Ω | 0.010Ω   | R{{< sub "0">}}=10mΩ |
+| ohmios      | Ω       | -                        | 10Ω      | R{{< sub "1">}}=10Ω  |
+| kilo-ohmios | kΩ      | 1kΩ = 10{{< sup "3">}}Ω  | 1000Ω    | R{{< sub "2">}}=1kΩ  |
+| mega-ohmios | MΩ      | 1MΩ = 10{{< sup "-3">}}Ω | 1000000Ω | R{{< sub "3">}}=1MΩ  |
 
 ## Lista de resistencias comerciales
 
@@ -120,24 +121,13 @@ Una carga ficticia (dummy load) o carga fantasma, es un dispositivo o una forma 
 
 La carga ficticia disipa la energía en forma de calor y permite verificar el comportamiento del circuito bajo condiciones controladas, el componente principal es una o varias resistencias, dependiento de la tolerancia exigida (watt) pueden ser de una forma tradicional o bobinadas de montaje sobre chasis, ya que son mas robustas y resistentes, utilizando una o varias con una combiacion ideal se puede obtener una cantidad de ohms y watios (watt) deseada, las resistecas se suelen fijar sobre disipadores de calor.
 
-Para este simple ejemplo, vamos a usar una resistencia con un valor de potencia alta, como por ejemplo una resistencia de 10\si{\ohm} que soporta una potencia por encima de 2.5W y con una precisión de ±5%, esta resistencia será conectada a una fuente de voltaje ajustable que proporcionara 5V y 0.5A. Deberá ajustar los valores de la fuente usando un multímetro.
+Para este simple ejemplo, vamos a usar una resistencia con un valor de potencia alta, como por ejemplo una resistencia de 10Ω que soporta una potencia por encima de 2.5W y con una precisión de ±5%, esta resistencia será conectada a una fuente de voltaje ajustable que proporcionara 5V y 0.5A. Deberá ajustar los valores de la fuente usando un multímetro.
 
-<!-- \begin{figure}[h!]
-  \begin{center}
-    \begin{circuitikz}[american]
-      \draw (0,0)
-      to[V,v=$V$] (0,2) % The voltage source
-      to[short] (2,2)
-      to[R=$R_L$] (2,0) % The resistor
-      to[short] (0,0);
-    \end{circuitikz}
-    \caption{Carga ficticia.}
-  \end{center}
-\end{figure} -->
+{{< svg name="resistor05" style="width: 150px; padding: 4px; background-color: white;">}}
 
-Para calcular la corriente a través de la resistencia R\textsubscript{L}:
+Para calcular la corriente a través de la resistencia R{{< sub "L">}}:
 
-<!-- \[I=\frac{V}{R\textsubscript{L}}=\frac{5V}{10\si{\ohm}}=0.5A\] -->
+{{< svg name="formula01" style="width: 200px; padding: 4px; background-color: white;">}}
 
 La disipación de potencia en la resistencia se calcula usando: 
 
