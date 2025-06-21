@@ -24,13 +24,13 @@ A continuación explicaremos cómo calcular los ohms y los watts necesarios para
 
 El cálculo del valor de esta resistencia es muy simple, y solo implica el uso de la ley de ohm. Debemos restar la tensión de la fuente y tensión del LED, y dividir el resultado por la corriente que deseamos atraviese el componente. Si usamos las unidades correctas (tensiones en Volts y corrientes en Amperes), el resultado estará expresado en Ohms.
 
-{{< svg name="formula01" >}}
+{{< mathjax "R={\frac{{{V}_{s}}-{{V}_{f}}}{{I}_{f}}}" >}}
 
 Supongamos que tenemos un LED de color rojo, que según su hoja de datos, necesita para funcionar correctamente una corriente de `18mA` y una tensión entre ánodo y cátodo de `1,9V`, y queremos alimentarlo con una batería de `9V` ¿Cuál será el valor de la resistencia limitadora?
 
 Aplicando la fórmula anterior, obtenemos que:
 
-{{< svg name="example01" >}}
+{{< mathjax "R={\frac{{{V}_{s}}-{{V}_{f}}}{{I}_{f}}}=\frac{9v-1,9v}{0.018A}=\frac{7,1v}{18mA}=394,44\Omega" >}}
 
 Como puede observar, el valor para la resistencia es `394,44Ohms`, y no existe una resistencia comercial de ese valor, utilizaremos el más cercano: `390Ohms`.
 
@@ -40,11 +40,11 @@ Además de hayar el valor en ohms, debemos saber el tamaño de la resistencia en
 
 La potencia se calcula con la siguiente fórmula:
 
-{{< svg name="formula02" >}}
+{{< mathjax "P=V\times I" >}}
 
 Aplicando la fórmula anterior, obtenemos que:
 
-{{< svg name="example02" >}}
+{{< mathjax "P=V\times I=\left(9v-1,9v\right)\times0.018A=0,1278W\sim127,8mW" >}}
 
 > Debemos seleccionar siempre una resistencia con una potencia superior al cálculo para evitar que se queme.
 
@@ -62,8 +62,3 @@ Potencias comerciales:
 - 15W
 
 Puedes usar esta [calculadora](https://www.digikey.es/en/resources/conversion-calculators/conversion-calculator-led-series-resistor).
-
-Fórmulas en LaTex:
-
-- `R={\frac{{{V}_{s}}-{{V}_{f}}}{{I}_{f}}}=\frac{9v-1,9v}{0.018A}=\frac{7,1v}{18mA}=394,44\Omega`.
-- `P=V\times I=\left(9v-1,9v\right)\times0.018A=0,1278W\sim127,8mW`.

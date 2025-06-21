@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>MySQL y los Niveles de aislamiento | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+</head>
+<body>
+<div class="container center">
+<header>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+  </div>
+  <div class="header__social__navigation">
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="header__navigation">
+      <nav class="navigation-menu">
+        <ul class="navigation-menu__inner menu--desktop">
+          
+            
+              
+                <li><a href="/posts/" >Posts</a></li>
+              
+            
+              
+                <li><a href="/electronic/" >Electrónica</a></li>
+              
+            
+              
+                <li><a href="/cultura/" >Cultura</a></li>
+              
+            
+              
+                <li><a href="/diccionary/" >Diccionario</a></li>
+              
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+</header>
+<div class="content">
+
+  <article>
+    <div class="content-header">
+      <h2 class="title">MySQL y los Niveles de aislamiento</h2>
+      
+      <span class="date"><em>24/01/2015</em></span>
+      
+    </div>
+    <p>El aislamiento es una parte importante de la propiedad ACID que garantiza que las transacciones sean fiables. Esto permite que las transacciones que se ejecutan simultáneamente no interfieran con otras, <strong>garantizando la integridad de los datos</strong>, al no existir aislamiento en una transacción podría modificar los datos que otra transacción está leyendo, por lo que se crea una inconsistencia cuando se crean datos.</p>
+<p>Ahora que entendemos que es el aislamiento en términos generales, vamos a conocer cuales son los niveles de aislamiento, estos determinan como las transacciones se comportan con otras transacciones, es como ser más o menos restrictivo. Escoger cual es el mejor nivel depende de las necesidades de la aplicación, primero debe entender cuales son los beneficios y consecuencias de cada una de ellas.</p>
+<p>InnoDB soporta los cuatro niveles de aislamiento estándar, a continuación se describen los estándares usados en muchos maneadores de bases de datos relacionales, no solo se aplica para MySQL, sino para Oracle, SQL Server y PostgreSQL.</p>
+<ul>
+<li><strong>READ-UNCOMMITTED (LECTURA NO CONFIRMADA):</strong> La ejecución de la instrucciones SELECT se llevan a cabo sin bloqueo, puede utilizar una versión antigua de una fila que ya no existe. Por lo tanto, el uso de este nivel no tiene aislamiento y no garantiza la trasacción, tales lecturas no son consistentes. Esto también se le llama una <strong>lectura sucia</strong>. De lo contrario, este nivel de aislamiento funciona igual que &ldquo;READ COMMITTED&rdquo;.</li>
+<li><strong>READ-COMMITTED (LECTURA CONFIRMADA):</strong> Está es la opción favorita de Oracle y la que se recomienda para muchos casos. Con éste nivel de aislamiento se evita el fenómeno de la <strong>lectura sucia</strong>, porque los cambios no confirmados no son visibles para cualquier otra transacción, hasta que se confirme el cambio. Dentro de este nivel de aislamiento, cada SELECT utiliza su propia instantánea de los datos que se confirmo (commit) antes de la ejecución de la instrucción SELECT. Ahora, ya que cada SELECT tiene su propia instantánea, por lo que el mismo SELECT cuando se ejecuta varias veces durante la misma transacción podría regresar diferentes conjuntos de resultados. Este fenómeno se le llama <strong>lectura no repetible</strong>.</li>
+<li><strong>REPEATABLE-READ (LECTURA REPETIBLE):</strong> Lee todos los datos de forma coherente dentro de la misma transacción, es como hacer una foto instantánea de los datos desde la primera lectura. Con este nivel de aislamiento se evita el fenómeno de la <strong>lectura no repetible</strong>. Este nivel de aislamiento devuelve el mismo conjunto de resultados para diferentes SELECT dentro de una misma transacción. Una instantánea de la SELECT se toma la primera vez que se ejecuta durante la transacción y la misma instantánea se utiliza dentro de la transacción cada vez que se ejecuta el mismo SELECT. Una transacción que se ejecuta en este nivel de aislamiento no tiene en cuenta los cambios de los datos realizados por otras transacciones, independientemente de si los cambios se han confirmado (commit) o no. Esto asegura que las lecturas siempre son consistentes (repetible). Este nivel de aislamiento es el predeterminado para InnoDB. Aunque este nivel de aislamiento <strong>resuelve el problema de lectura no repetible</strong>, pero hay otro <strong>fenómeno fantasma</strong>.</li>
+<li><strong>SERIALIZABLE:</strong> Con éste nivel de aislamiento se evita el <strong>fenómeno de fantasma</strong>. Coloca un bloqueo de rango en el conjunto de datos, cuando las transacciones se ejecuta en este nivel de aislamiento se bloquean todos los registros y recursos que se tiene acceso, así bloquea todo cambio, impidiendo que otros usuarios actualizar o insertar filas en el conjunto de datos hasta que la transacción se ha completado. Este nivel de aislamiento es el más fuerte posible.</li>
+</ul>
+<p>Cada uno de estos niveles de aislamiento tienen sus beneficios y consecuencias, vamos a explicar cada situación:</p>
+<h2 id="se-puede-evitar-el-nivel-de-aislamiento-serializable">Se puede evitar el nivel de aislamiento SERIALIZABLE</h2>
+<p>Si, Como vemos es el más restrictivo sacrificando consistencia por rendimiento, un nivel de aislamiento parecido es REPEATABLE-READ, tiene una forma de bloqueo especial que ayuda a evitar los fenómenos fantasmas, podemos asegurarnos de hacer un buen bloqueo sin fenómenos fantasmas usando la estructura SELECT con FOR UPDATE o LOCK IN SHARE MODE. El bloqueo compartido permite a otras transacciones leer los registros examinados, pero no actualizar o borrar mientras que otra transacción esté interviniendo.</p>
+<h2 id="realicación-y-niveles-de-aislamiento">Realicación y Niveles de aislamiento</h2>
+<p>El tipo de replicación predeterminada en MySQL es la replicación basada en declaraciones [Statement Based Replication (SBR)], mantiene los cambios de los datos por la re-ejecución de las sentencias SQL ejecutadas en el maestro a los esclavos. Esto requiere que el nivel de aislamiento sea más estricto, de modo que los cambios de datos deben ser consistentes, de tal manera que el mismo SQL debe garantizar los mismos cambios en el esclavo. Cuando usamos este tipo de replicación puedes configurar el nivel de aislamiento en SERIALIZABLE o REPEATABLE-READ. Si usas la versión 5.1 o superior de MySQL debes usar el nivel de aislamiento READ-COMMITTED para garantizar la consistencia de datos.</p>
+<h2 id="los-niveles-de-rendimiento-y-aislamiento">Los niveles de rendimiento y aislamiento</h2>
+<p>Como hemos podido ver, mientras más bloqueos menos rendimiento y mayor consistencia, la intención es buscar un equilibrio según nuestras necesidades, ya que los extremos son perjudiciales. Usar el nivel de aislamiento SERIALIZABLE no es para nada favorable a nivel de rendimiento, pero usar READ-UNCOMMITTED mejora mucho el rendimiento pero no garantiza la integridad de los datos, por lo que nos quedan las dos opciones del medio.</p>
+
+  </article>
+
+</div>
+<footer class="footer">
+<span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+</html>

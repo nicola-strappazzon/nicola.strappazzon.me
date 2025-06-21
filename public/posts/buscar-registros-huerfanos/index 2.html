@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Buscar registros huérfanos | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+</head>
+<body>
+<div class="container center">
+<header>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+  </div>
+  <div class="header__social__navigation">
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="header__navigation">
+      <nav class="navigation-menu">
+        <ul class="navigation-menu__inner menu--desktop">
+          
+            
+              
+                <li><a href="/posts/" >Posts</a></li>
+              
+            
+              
+                <li><a href="/electronic/" >Electrónica</a></li>
+              
+            
+              
+                <li><a href="/cultura/" >Cultura</a></li>
+              
+            
+              
+                <li><a href="/diccionary/" >Diccionario</a></li>
+              
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+</header>
+<div class="content">
+
+  <article>
+    <div class="content-header">
+      <h2 class="title">Buscar registros huérfanos</h2>
+      
+      <span class="date"><em>12/02/2016</em></span>
+      
+    </div>
+    <p>Los registros huérfanos son aquellos que se almacenan en un modelo relacional padre-hijo, los registros padres hacen referencia a filas primarias, y los registros hijos hacen referencia a filas secundarías, esto puede pasar por varias razones en una DDBB, básicamente sino existe claves foráneas definidas, o alguien desactivo de forma momentánea el check <a href="http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_foreign_key_checks">foreign_key_checks</a>, y para mantener la integridad de los datos debemos de vez en cuando identificar estos registros huérfanos, podríamos eliminarlos o asignarlos a un padre de forma provisional. Yo opto más por lo segundo, conservar los datos es nuestra prioridad.</p>
+<p>Los registros huérfanos pueden tener un <strong>Foreign Key igual a NULL o tener un ID de un registro primario que no exista</strong>, pero debemos tener bastante cuidado con el NULL, ya que puede hacer referencia a una relación &ldquo;PUEDE&rdquo; y no &ldquo;DEBE&rdquo;, lo cual eliminamos algo que no debemos.</p>
+<p>Hay varias formas de hacer esta consulta, pero solo una es la más apropiada por temas de rendimiento, seguramente la condición que pensamos de primero es <strong>NOT IN</strong>, pues esa no, ni tampoco usar un <strong>LEFT OUTER JOIN</strong>, deberías de usar <strong>NOT EXISTS</strong> que es mucho más eficiente, a continuación muestro los tres ejemplos, el último es el bueno:</p>
+<p><strong>A) Primer ejemplo incorrecto:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment <span style="color:#66d9ef">AS</span> child
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> rental_id <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">IN</span> (<span style="color:#66d9ef">SELECT</span> rental_id <span style="color:#66d9ef">FROM</span> rental);
+</span></span></code></pre></div><p><strong>B) Segundo ejemplo incorrecto:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment <span style="color:#66d9ef">AS</span> child
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">OUTER</span> <span style="color:#66d9ef">JOIN</span> rental <span style="color:#66d9ef">AS</span> parent <span style="color:#66d9ef">ON</span> parent.rental_id <span style="color:#f92672">=</span> child.rental_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> child.rental_id <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">AND</span> parent.rental_id <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NULL</span>;
+</span></span></code></pre></div><p><strong>C) Primer ejemplo correcto:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment <span style="color:#66d9ef">AS</span> child
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> rental_id <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">AND</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">FROM</span> rental <span style="color:#66d9ef">AS</span> parent <span style="color:#66d9ef">WHERE</span> parent.rental_id <span style="color:#f92672">=</span> child.rental_id
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>Hay algo curioso en el ejemplo A y C, a ver si se dan cuenta? La única pista, es que tiene que ver con los NULL.</p>
+<p>Ahora que los hemos identificado, que hacemos con ellos? bueno, la forma correcta sería la siguiente:</p>
+<ul>
+<li>Agregar un registro primario (padre) para agrupar los registros secundarios (hijos) que están huérfanos.</li>
+<li>Hacer un update en el Foreign Key de todos los registros secundarios con el valor correspondiente al registro primario.</li>
+<li>Verificar que todo este bien.</li>
+</ul>
+<p>Espero que les haya sido útil.</p>
+
+  </article>
+
+</div>
+<footer class="footer">
+<span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+</html>
