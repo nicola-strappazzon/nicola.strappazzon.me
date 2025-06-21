@@ -1,0 +1,23 @@
+\documentclass[dvisvgm,tikz]{standalone}
+\usepackage{circuitikz}
+\begin{document} {
+\begin{circuitikz}[american]
+  \draw (0,0)
+  to[V,v=$V$] (0,2) % The voltage source
+  to[short] (2,2)
+  to[R, l={\shortstack[l]{30 ohm \\ 50 watt}}] (2,0) % The resistor #1
+  to[short] (0,0);
+  \draw (2,2)
+  to[short] (4,2)
+  to[R, l={\shortstack[l]{30 ohm \\ 50 watt}}] (4,0) % The resistor #2
+  to[short] (0,0);
+  \draw (4,2)
+  to[short] (6,2)
+  to[R, l={\shortstack[l]{33 ohm \\ 50 watt}}] (6,0) % The resistor #3
+  to[short] (0,0);
+  \draw (6,2)
+  to[short] (8,2)
+  to[R, l={\shortstack[l]{33 ohm \\ 50 watt}}] (8,0) % The resistor #3
+  to[short] (0,0);
+\end{circuitikz}
+\end{document}

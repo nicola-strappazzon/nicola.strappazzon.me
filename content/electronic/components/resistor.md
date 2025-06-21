@@ -131,42 +131,13 @@ Para calcular la corriente a través de la resistencia R{{< sub "L">}}:
 
 La disipación de potencia en la resistencia se calcula usando: 
 
-<!-- \[P=V x I=5V x 0.5A = 2.5W\] -->
+{{< svg name="formula02" >}}
 
 Por lo tanto, se debe utilizar una resistencia por encima de 2.5W para evitar daños, por ejemplo una de 3W.
 
 Otro ejemplo de uso, es la de conectar una carga ficticia en la saliad de un amplificador de audio para realizar pruebas o mediciones sin necesidad de conectar un Altavoz evitando diversos problemas, como por ejemplo: ruidos molestos, daños, o molestias a los vecinos.
 
-<!-- \begin{figure}[h]
-\centering
-\begin{tikzpicture}
-  %\draw[step=0.5,gray,very thin, dotted] (0,0) grid (12,2.5);
-  %\draw[step=1.0,gray!50,very thin] (0,0) grid (12,2.5);
-  
-  \draw[line width=0.1mm] (1,0) rectangle (3,1) node[pos=.5] {\shortstack{\tiny Generador \\ \tiny de señales}};
-  \draw[line width=0.1mm] (5,0) rectangle (7,1) node[pos=.5] {\shortstack{\tiny Amplificador \\ \tiny de audio}};
-  \draw[line width=0.1mm] (7,2.5) rectangle (9,1.5) node[pos=.5] {\tiny Osciloscopio};
-  \draw[line width=0.1mm] (9,0) rectangle (11,1) node[pos=.5] {\shortstack{\tiny Carga \\ \tiny ficticia}};
-
-  \draw[red,   line width=0.1mm] (3.0,0.7) -- (5.0,0.7);
-  \draw[black, line width=0.1mm] (3.0,0.3) -- (5.0,0.3);
-  
-  \draw[red,   line width=0.1mm] (7.0,0.7) -- (9.0,0.7);
-  \draw[black, line width=0.1mm] (7.0,0.3) -- (9.0,0.3);
-  
-  \draw[red,   line width=0.1mm] (7.75,0.7) -- (7.75,1.5);
-  \draw[black, line width=0.1mm] (8.25,0.3) -- (8.25,1.5);
-  
-  \node at (3.2,0.9) {\tiny +};
-  \node at (3.2,0.1) {\tiny -};
-  \node at (4.8,0.9) {\tiny In};
-  \node at (7.3,0.9) {\tiny Out};
-  \node at (8.8,0.9) {\tiny +};
-  \node at (8.8,0.1) {\tiny -};
-\end{tikzpicture}
-\caption{Conexion entre un amplificador de audio y una carga ficticia a un solo canal de salida.}
-\label{fig:resistor-dummy-load-audio}
-\end{figure} -->
+{{< svg name="resistor06" >}}
 
 En este caso tenemos un amplificador de audio con una salida de 8 ohms y 70 watt por canal. Entonces la carga ficticia debe ser de la mism imperacia (8 ohm) y un valor superior de 70 watt, esto ultimo para aumentar la resistencia del componente y reducir el calor disipado.
 
@@ -174,71 +145,17 @@ Para la construccion de este dispositivo depende de los componentes disponibles 
 
 Este es el caso en que un solo componente hace de carga ficticia.
 
-<!-- \begin{figure}[h!]
-  \begin{center}
-    \begin{circuitikz}[american]
-	  \draw (0,0)
-	  to[V,v=$V$] (0,2) % The voltage source
-	  to[short] (2,2)
-	  to[R, l=$8\,\Omega$] (2,0) % The resistor
-	  to[short] (0,0);
-	  \node[below] at (3,0.8) {$150\,watt$};
-	\end{circuitikz}
-	\captionof{figure}{xx}
-  \end{center}
-\end{figure} -->
+{{< svg name="formula03" >}}
 
-<!-- caso 2
+La siguiente combinación de resistencias en paralelo nos permite tener una carga ficticia de 8 ohms y 150 watt.
 
-\begin{figure}[h!]
-  \begin{center}
-	\begin{circuitikz}[american]
-	  \draw (0,0)
-	  to[V,v=$V$] (0,2) % The voltage source
-	  to[short] (2,2)
-	  to[R, l={\shortstack[l]{24 ohm \\ 50 watt}}] (2,0) % The resistor #1
-	  to[short] (0,0);
-      \draw (2,2)
-      to[short] (4,2)
-      to[R, l={\shortstack[l]{24 ohm \\ 50 watt}}] (4,0) % The resistor #2
-      to[short] (0,0);
-      \draw (4,2)
-      to[short] (6,2)
-      to[R, l={\shortstack[l]{24 ohm \\ 50 watt}}] (6,0) % The resistor #3
-      to[short] (0,0);
-	\end{circuitikz}
-    \captionof{figure}{xx}
-  \end{center}
-\end{figure} -->
+{{< svg name="formula04" >}}
 
-<!-- caso 3... -->
+Para esta combinación de resistencias en paralelo nos permite tener una carga ficticia de 7.86 ohms y 200 watt.
 
-<!-- \begin{figure}[h!]
-  \begin{center}
-	\begin{circuitikz}[american]
-	  \draw (0,0)
-	  to[V,v=$V$] (0,2) % The voltage source
-	  to[short] (2,2)
-	  to[R, l={\shortstack[l]{30 ohm \\ 50 watt}}] (2,0) % The resistor #1
-	  to[short] (0,0);
-      \draw (2,2)
-      to[short] (4,2)
-      to[R, l={\shortstack[l]{30 ohm \\ 50 watt}}] (4,0) % The resistor #2
-      to[short] (0,0);
-      \draw (4,2)
-      to[short] (6,2)
-      to[R, l={\shortstack[l]{33 ohm \\ 50 watt}}] (6,0) % The resistor #3
-      to[short] (0,0);
-      \draw (6,2)
-      to[short] (8,2)
-      to[R, l={\shortstack[l]{33 ohm \\ 50 watt}}] (8,0) % The resistor #3
-      to[short] (0,0);
-	\end{circuitikz}
-    \captionof{figure}{xx}
-  \end{center}
-\end{figure} -->
+{{< svg name="formula05" >}}
 
-> Como calcular los watts o RMS del amplificador.
+<!-- Como calcular los watts o RMS del amplificador. -->
 
 ## Divisor de voltaje
 
