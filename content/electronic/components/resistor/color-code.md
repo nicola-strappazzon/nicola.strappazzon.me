@@ -19,7 +19,7 @@ El valor de la resistencia se obtiene leyendo las dos primeras cifras, luego se 
 |Rojo   | 3     | 100   |
 |Oro    | 4     | ±5%   |
 
-Las primeras dos bandas representa una cifra, si unimos la primera banda de color marrón que vale 1 y la segunda banda de color negro que vale 0 tenemos el número 10, ahora lo multiplicamos por el valor de la tercera banda de color rojo que vale 100 quedando 1000Ω y así quedaría la ecuación: `10 x 100 = 1000Ω`. La cuarta banda de color oro que vale 5% indica la tolerancia.
+Las primeras dos bandas representa una cifra, si unimos la primera banda de color marrón que vale `1` y la segunda banda de color negro que vale `0` tenemos el número `10`, ahora lo multiplicamos por el valor de la tercera banda de color rojo que vale `100` quedando `1000Ω` y así quedaría la ecuación: `10 x 100 = 1000Ω`. La cuarta banda de color oro que vale 5% indica la tolerancia.
 
 |          | Color                      | Banda 1 | Banda 2 | Multiplicador | Toleranci |
 |----------|----------------------------|---------|---------|---------------|-----------|

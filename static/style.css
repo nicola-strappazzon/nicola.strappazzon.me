@@ -311,3 +311,22 @@ table th, td {
   justify-content: center;
   border: 4px solid var(--accent);
 }
+
+#breadcrumbs {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1rem 0;
+}
+#breadcrumbs li::after {
+  content: "›";
+  margin-left: 0.5rem;
+}
+#breadcrumbs li:last-child::after {
+  content: "";
+}
+#breadcrumbs .active {
+  font-weight: bold;
+}
