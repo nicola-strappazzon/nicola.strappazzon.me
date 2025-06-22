@@ -127,15 +127,11 @@ Para este simple ejemplo, vamos a usar una resistencia con un valor de potencia 
 
 Para calcular la corriente a través de la resistencia R{{< sub "L">}}:
 
-<!-- {{< svg name="formula01" >}} -->
-
 {{< mathjax "I=\frac{V}{R_{L}}=\frac{5V}{10\Omega}=0,5A" >}}
 
 La disipación de potencia en la resistencia se calcula usando: 
 
 {{< mathjax "P=V x I=5V x 0.5A = 2.5W" >}}
-
-<!-- {{< svg name="formula02" >}} -->
 
 Por lo tanto, se debe utilizar una resistencia por encima de 2.5W para evitar daños, por ejemplo una de 3W.
 
@@ -149,101 +145,45 @@ Para la construccion de este dispositivo depende de los componentes disponibles 
 
 Este es el caso en que un solo componente hace de carga ficticia.
 
-{{< svg name="formula03" >}}
-
-<!-- {{< tikzpicture >}} -->
-
-<!-- {{< mathjax "P=V x I=5V x 0.5A = 2.5W" >}} -->
+{{< svg name="resistor07" >}}
 
 La siguiente combinación de resistencias en paralelo nos permite tener una carga ficticia de 8 ohms y 150 watt.
 
-{{< svg name="formula04" >}}
+{{< svg name="resistor08" >}}
 
 Para esta combinación de resistencias en paralelo nos permite tener una carga ficticia de 7.86 ohms y 200 watt.
 
-{{< svg name="formula05" >}}
+{{< svg name="resistor09" >}}
 
 <!-- Como calcular los watts o RMS del amplificador. -->
 
 ## Divisor de voltaje
 
-Un divisor de voltaje es un circuito simple que convierte un voltaje grande en uno más pequeño usando únicamente dos resistencias en serie R\textsubscript{1} y R\textsubscript{2}, de esta forma puede crear un voltaje de salida V\textsubscript{out} exacto que es una fracción del voltaje de entrada.
+Un divisor de voltaje es un circuito simple que convierte un voltaje grande en uno más pequeño usando únicamente dos resistencias en serie R{{< sub "1">}} y R{{< sub "2">}}, de esta forma puede crear un voltaje de salida V{{< sub "out">}} exacto que es una fracción del voltaje de entrada.
 
-<!-- \begin{table}[h]
-  \centering
-  \begin{tabular}{cc}
-    \begin{minipage}[b]{0.45\textwidth}
-		\begin{circuitikz}[american]
-	      \draw (0,0)
-	      to[V,v=$V_{in}$,invert] (0,4) % The voltage source
-	      to[short] (2,4)
-	      to[R=$R_1$] (2,2) % The resistor R1
-	      to[R=$R_2$] (2,0) % The resistor R2
-	      to[short] (0,0);
-	      \draw
-	      (2,2) to[short, -o] (3,2)
-	      node[right] {$V_{out}$};
-	      \draw
-	      (2,0) to[short, -o] (3,0);
-	    \end{circuitikz}
-	    \captionof{figure}{Circuito.}
-	    \label{tbl:resistor-voltage-divider-schematic}
-    \end{minipage} &
-    \begin{minipage}[b]{0.45\textwidth}
-		  \centering
-		  \small
-		  \begin{tblr}{
-		  column{1-4} = {r},
-		  row{1}      = {font=\boldmath\bfseries},
-		  hline{1-2}  = {-}{black,0.4mm},
-		  hline{7}    = {-}{black,0.1mm},
-		  }
-		  V\textsubscript{in} & R\textsubscript{1} & R\textsubscript{2} & V\textsubscript{out} \\
-		  12V                 & 6.8k\si{\ohm}      & 4.7k\si{\ohm}      & 4.9V                 \\
-		  12V                 & 9.1k\si{\ohm}      & 3.6k\si{\ohm}      & 3.4V                 \\
-		  9V                  & 3.9k\si{\ohm}      & 4.7k\si{\ohm}      & 4.9V                 \\
-		  9V                  & 5.7k\si{\ohm}      & 3.3k\si{\ohm}      & 3.3V                 \\
-		  5V                  & 1k\si{\ohm}        & 2k\si{\ohm}        & 3.3V                 \\
-		  \end{tblr}
-		  \caption{Combinaciones}
-		  \label{tbl:resistor-voltage-divider-example}
-    \end{minipage} \\
-  \end{tabular}
-\end{table} -->
+{{< svg name="resistor10" >}}
 
 Para calcular el divisor de voltaje de 5V a 3.3V:
 
-<!-- \[V\textsubscript{out}=V\textsubscript{in}\frac{R\textsubscript{2}}{(R\textsubscript{1} + R\textsubscript{2})}=5V\frac{2000\si{\ohm}}{(1000\si{\ohm} + 2000\si{\ohm})}=3.33V\] -->
+{{< mathjax "{V}_{out}={V}_{In}\frac{{R}_{2}}{\left({R}_{1}+{R}_{2}\right)}=5V\frac{2000\Omega}{\left(1000\Omega+2000\Omega\right)}=3,33V" >}}
 
 Recuerde que el resultado matemático será levemente diferente al valor real obtenido con un multímetro a consecuencia del porcentaje de tolerancia de la resistencia.
 
-<!-- \noindent\fbox{
-  \parbox{\textwidth}{
-		Un componente que hace de divisor de voltaje es un potenciómetro, el cual es una resistencia variable que se puede usar para crear un divisor de voltaje ajustable. Internamente hay una resistencia única y un bloque deslizante, que corta la resistencia en dos y se mueve para ajustar la relación entre ambas mitades.
-  }
-}
--->
+| V{{< sub "In">}} | R{{< sub "1">}} | R{{< sub "2">}} | V{{< sub "out">}} |
+|------------------|-----------------|-----------------|-------------------|
+| 12V              | 6.8kΩ           | 4.7kΩ           | 4.9V              |
+| 12V              | 9.1kΩ           | 3.6kΩ           | 3.4V              |
+| 9V               | 3.9kΩ           | 4.7kΩ           | 4.9V              |
+| 9V               | 5.7kΩ           | 3.3kΩ           | 3.3V              |
+| 5V               | 1kΩ             | 2kΩ             | 3.3V              |
+
+> Un componente que hace de divisor de voltaje es un potenciómetro, el cual es una resistencia variable que se puede usar para crear un divisor de voltaje ajustable. Internamente hay una resistencia única y un bloque deslizante, que corta la resistencia en dos y se mueve para ajustar la relación entre ambas mitades.
 
 ## Divisor de corriente
 
 Un divisor de corriente o divisor de intensidad, es un circuito simple formado por dos o más resistencias en paralelo. Según la ley de Ohm, en un circuito paralelo, la corriente total se divide entre las diferentes resistencias en función de su resistencia relativa. Cuanto menor sea la resistencia, mayor será la corriente que fluya a través de ella.
 
-<!-- \begin{figure}[h!]
-  \begin{center}
-    \begin{circuitikz}[american]
-      \draw (0,0)
-      to[I,i=$I_t$] (0,2)
-      to[short] (2,2)
-      to[R=$R_1$,i=$I_1$] (2,0)
-      to[short] (0,0);
-      \draw (2,2)
-      to[short] (4,2)
-      to[R=$R_2$,i=$I_2$] (4,0)
-      to[short] (0,0);
-    \end{circuitikz}
-    \captionof{figure}{Ejemplo con dos resistencias}
-  \end{center}
-\end{figure} -->
+{{< svg name="resistor11" >}}
 
 Para calcular la intensidad solo de dos resistencias en paralelo usaremos las siguientes fórmulas, una por cada resistencia:
 
@@ -265,22 +205,7 @@ Es importante recordar algunas limitaciones y consideraciones de esta teoría. P
 
 El siguiente ejemplo demuestra la aplicación de las fórmulas.
 
-<!-- \begin{figure}[h!]
-  \begin{center}
-	\begin{circuitikz}[american]
-	      \draw (0,0)
-	      to[I,i=$3A$] (0,2)
-	      to[short] (2,2)
-	      to[R=$R_11\si{\ohm}$,i=$I_1$] (2,0)
-	      to[short] (0,0);
-	      \draw (2,2)
-	      to[short] (4,2)
-	      to[R=$R_22\si{\ohm}$,i=$I_2$] (4,0)
-	      to[short] (0,0);
-	\end{circuitikz}
-  \end{center}
-\end{figure}
- -->
+{{< svg name="resistor12" >}}
 
 Conociento la Intencidad total It que son 3A y los valores de ambas resistencia R\textsubscript{1}1\si{\ohm} y R\textsubscript{2}2\si{\ohm} podemos hacer uso de las formulas I\textsubscript{1} y I\textsubscript{2} para allar su respectiva Intencidad.
 
@@ -302,30 +227,7 @@ Conseguir o usar una resistencia de alto valor en watt (W) puede ser costoso o c
 
 La resistencia equivalente es aquella resistencia que puede sustituir todas las resistencias de un circuito eléctrico. Por lo tanto, es aquella que absorbe la misma intensidad de corriente que todas las resistencias del circuito juntas.
 
-<!-- \begin{figure}[h!]
-  \begin{center}
-	\begin{circuitikz}[american]
-	  \draw (0,-2)
-	  to[short] (0,0)
-	  to[R=$R_1$] (2,0)
-	  to[R=$R_2$] (2,-2);
-	  \draw (0,-4)
-	  to[V,v=$V_{in}$,invert] (0,-2)
-	  to[R=$R_3$] (2,-2)
-	  to[R=$R_4$] (4,-2)
-	  to[R=$R_5$] (4,-4)
-	  to[short] (0,-4);
-      \draw (2,-2)
-      to[R=$R_6$] (2,-4);
-      \node at (5.3,-3) {\textbf{\huge =}};
-      \draw (7,-4)
-      to[V,v=$V_{in}$,invert] (7,-2)
-      to[short] (9,-2)
-      to[R=$R_{eq}$] (9,-4)
-      to[short] (7,-4);
-    \end{circuitikz}
-  \end{center}
-\end{figure} -->
+{{< svg name="resistor13" >}}
 
 Una resistencia equivalente (R\textsubscript{eq}) reemplaza todas las resistencias y las intensidades por una sola. En la práctica, es común encontrarse con una red compleja de resistencias que se deben analizar. Para simplificar el análisis, es posible calcular una resistencia equivalente que represente toda la red. Aquí describiremos cómo calcular esta resistencia en diferentes configuraciones.
 

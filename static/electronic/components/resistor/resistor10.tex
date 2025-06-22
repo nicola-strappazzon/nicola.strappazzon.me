@@ -1,0 +1,17 @@
+\documentclass[dvisvgm,tikz]{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\begin{tikzpicture}
+  \draw (0,0)
+  to[V,v=$V_{in}$,invert] (0,4) % The voltage source
+  to[short] (2,4)
+  to[R=$R_1$] (2,2) % The resistor R1
+  to[R=$R_2$] (2,0) % The resistor R2
+  to[short] (0,0);
+  \draw
+  (2,2) to[short, -o] (3,2)
+  node[right] {$V_{out}$};
+  \draw
+  (2,0) to[short, -o] (3,0);
+\end{tikzpicture}
+\end{document}

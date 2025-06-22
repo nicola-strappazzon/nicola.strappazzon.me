@@ -1,0 +1,15 @@
+\documentclass[dvisvgm,tikz]{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\begin{tikzpicture}
+  \draw (0,0)
+  to[I,i=$3A$] (0,2)
+  to[short] (2,2)
+  to[R=$R_1$,i=$I_1$] (2,0)
+  to[short] (0,0);
+  \draw (2,2)
+  to[short] (4,2)
+  to[R=$R_2$,i=$I_2$] (4,0)
+  to[short] (0,0);
+\end{tikzpicture}
+\end{document}
