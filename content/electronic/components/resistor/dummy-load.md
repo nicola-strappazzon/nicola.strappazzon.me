@@ -38,8 +38,15 @@ La siguiente combinación de resistencias en paralelo nos permite tener una carg
 
 {{< svg name="draw04" >}}
 
+{{< mathjax "{R}_T=\frac{1}{\left(\frac{1}{{R}_{1}}+\frac{1}{{R}_{2}}+\frac{1}{{R}_{n}}\right)}=\frac{1}{\left(\frac{1}{24\Omega}+\frac{1}{24\Omega}+\frac{1}{24\Omega}\right)}=8\Omega" >}}
+{{< mathjax "{I}_T={I}_1+{I}_2+{I}_n=50W+50W+50W=150W" >}}
+
 Para esta combinación de resistencias en paralelo nos permite tener una carga ficticia de 7.86 ohms y 200 watt.
 
 {{< svg name="draw05" >}}
+
+
+{{< mathjax "{R}_T=\frac{1}{\left(\frac{1}{{R}_{1}}+\frac{1}{{R}_{2}}+\frac{1}{{R}_{n}}\right)}=\frac{1}{\left(\frac{1}{30\Omega}+\frac{1}{30\Omega}+\frac{1}{33\Omega}+\frac{1}{33\Omega}\right)}=7.8571\Omega" >}}
+{{< mathjax "{I}_T={I}_1+{I}_2+{I}_n=50W+50W+50W+50W=200W" >}}
 
 <!-- Como calcular los watts o RMS del amplificador. -->
