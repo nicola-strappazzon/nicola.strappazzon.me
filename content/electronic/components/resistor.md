@@ -127,11 +127,15 @@ Para este simple ejemplo, vamos a usar una resistencia con un valor de potencia 
 
 Para calcular la corriente a través de la resistencia R{{< sub "L">}}:
 
-{{< svg name="formula01" >}}
+<!-- {{< svg name="formula01" >}} -->
+
+{{< mathjax "I=\frac{V}{R_{L}}=\frac{5V}{10\Omega}=0,5A" >}}
 
 La disipación de potencia en la resistencia se calcula usando: 
 
-{{< svg name="formula02" >}}
+{{< mathjax "P=V x I=5V x 0.5A = 2.5W" >}}
+
+<!-- {{< svg name="formula02" >}} -->
 
 Por lo tanto, se debe utilizar una resistencia por encima de 2.5W para evitar daños, por ejemplo una de 3W.
 
@@ -146,6 +150,8 @@ Para la construccion de este dispositivo depende de los componentes disponibles 
 Este es el caso en que un solo componente hace de carga ficticia.
 
 {{< svg name="formula03" >}}
+
+<!-- {{< mathjax "P=V x I=5V x 0.5A = 2.5W" >}} -->
 
 La siguiente combinación de resistencias en paralelo nos permite tener una carga ficticia de 8 ohms y 150 watt.
 
