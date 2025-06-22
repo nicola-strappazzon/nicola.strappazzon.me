@@ -209,7 +209,11 @@
     <loc>http://localhost:1313/posts/errores-frecuentes-normalizacion/</loc>
     <lastmod>2010-08-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/electronic/components/resistor/dummy-load/</loc>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/resistor/color-code/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/</loc>
   </url><url>
@@ -221,7 +225,23 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/light-emitting-diode/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/components/resistor/current-divider/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/resistor/voltage-divider/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/resistor/values/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/resistor/measurement/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/resistor/esr/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/resistor/series-parallel/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/resistor/parallel-resistors/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/resistor/series-resistors/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/transistor/</loc>
   </url>

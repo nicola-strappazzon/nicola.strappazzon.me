@@ -15,3 +15,14 @@ save: ## Save changes into repository automatically.
 
 run: ## Run hugo server in local.
 	@hugo server --disableFastRender --noHTTPCache --ignoreCache --cleanDestinationDir
+
+svg: ## Create svg file from LaTex file.
+	@if [ -z "$(FILE)" ]; then \
+		echo "Usage: make svg FILE=formula01"; \
+		exit 1; \
+	fi
+	@latex $(FILE).tex
+	@dvisvgm --no-fonts --exact --bbox=min --scale=1.5 $(FILE).dvi
+
+clean: ## Remove build files.
+	rm -f *.aux *.log *.dvi
