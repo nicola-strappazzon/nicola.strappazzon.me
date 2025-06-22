@@ -1,12 +1,10 @@
 \documentclass[dvisvgm,tikz]{standalone}
 \usepackage{circuitikz}
-\renewcommand{\familydefault}{\sfdefault}
 \begin{document}
-\begin{circuitikz}[american]
-  \draw (0,0)
-  to[V,v=$V$] (0,2) % The voltage source
-  to[short] (2,2)
-  to[R=$R_L$] (2,0) % The resistor
-  to[short] (0,0);
-\end{circuitikz}
+\begin{tikzpicture}
+  \draw (0.75, -0) to[american voltage source, l={$V$}, label distance=0.02cm] (0.75, 2);
+  \draw (2.75, 2) to[american resistor, l=$R_L$, label distance=0.02cm] (2.75, -0);
+  \draw (0.75, 2) -- (2.75, 2);
+  \draw (2.75, 0) |- (0.75, 0);
+\end{tikzpicture}
 \end{document}

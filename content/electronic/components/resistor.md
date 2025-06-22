@@ -151,6 +151,8 @@ Este es el caso en que un solo componente hace de carga ficticia.
 
 {{< svg name="formula03" >}}
 
+<!-- {{< tikzpicture >}} -->
+
 <!-- {{< mathjax "P=V x I=5V x 0.5A = 2.5W" >}} -->
 
 La siguiente combinación de resistencias en paralelo nos permite tener una carga ficticia de 8 ohms y 150 watt.

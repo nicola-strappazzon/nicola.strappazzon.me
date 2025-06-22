@@ -14,7 +14,7 @@ svg: ## Create svg file from LaTex file.
 		exit 1; \
 	fi
 	@latex $(FILE).tex
-	@dvisvgm --no-fonts --exact --bbox=min $(FILE).dvi
+	@dvisvgm --no-fonts --exact --bbox=min --scale=1.5 $(FILE).dvi
 
 clean: ## Remove build files.
 	rm -f *.aux *.log *.dvi *.svg
