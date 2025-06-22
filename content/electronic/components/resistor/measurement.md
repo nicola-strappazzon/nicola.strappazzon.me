@@ -1,6 +1,7 @@
 +++
-draft = false
-title = 'Medición'
+draft  = false
+title  = 'Medición'
+weight = 3
 +++
 
 Con un multímetro podemos leer el valor real de una resistencia y comprobar si está en buen estado comparando el resultado obtenido con el código de colores y la tolerancia. También debe tener en cuenta que el componente se debe medir fuera del circuito, de lo contrario la medición está influenciada por otros componentes y el resultado será incorrecto. Recuerde que la polaridad no importa.

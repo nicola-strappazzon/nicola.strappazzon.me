@@ -1,6 +1,7 @@
 +++
-draft = false
-title = 'Lista de resistencias comerciales'
+draft  = false
+title  = 'Lista de resistencias comerciales'
+weight = 2
 +++
 
 Los fabricantes crean las resistencias de muchos valores, aquí listamos en una tabla las más comunes con su respectivo código SMD y de colores:

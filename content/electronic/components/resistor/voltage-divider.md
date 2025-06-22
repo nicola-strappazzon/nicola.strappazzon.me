@@ -1,6 +1,7 @@
 +++
-draft = false
-title = 'Divisor de voltaje'
+draft  = false
+title  = 'Divisor de voltaje'
+weight = 5
 +++
 
 Un divisor de voltaje es un circuito simple que convierte un voltaje grande en uno más pequeño usando únicamente dos resistencias en serie R{{< sub "1">}} y R{{< sub "2">}}, de esta forma puede crear un voltaje de salida V{{< sub "out">}} exacto que es una fracción del voltaje de entrada.

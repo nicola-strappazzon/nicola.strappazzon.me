@@ -1,6 +1,7 @@
 +++
-draft = false
-title = 'Divisor de corriente'
+draft  = false
+title  = 'Divisor de corriente'
+weight = 6
 +++
 
 Un divisor de corriente o divisor de intensidad, es un circuito simple formado por dos o más resistencias en paralelo. Según la ley de Ohm, en un circuito paralelo, la corriente total se divide entre las diferentes resistencias en función de su resistencia relativa. Cuanto menor sea la resistencia, mayor será la corriente que fluya a través de ella.

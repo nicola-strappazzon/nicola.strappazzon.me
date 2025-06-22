@@ -1,6 +1,7 @@
 +++
-draft = false
-title = 'Carga ficticia'
+draft  = false
+title  = 'Carga ficticia'
+weight = 4
 +++
 
 Una carga ficticia (dummy load) o carga fantasma, es un dispositivo o una forma alternativa que se utiliza en lugar de una carga real para simular las condiciones de carga en un circuito. Se usa frecuentemente para probar fuentes de alimentación, amplificadores y otros equipos electrónicos sin necesidad de conectar la carga final prevista. También se utiliza para representar una carga en un circuito esquemático sin entrar en detalles. Sin este tipo de carga el circuito no realiza lo esperado.

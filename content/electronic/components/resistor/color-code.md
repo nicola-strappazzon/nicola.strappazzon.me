@@ -1,7 +1,7 @@
 +++
-draft = false
-title = 'Código de colores'
-katex = true
+draft  = false
+title  = 'Código de colores'
+weight = 1
 +++
 
 Para identificar una resistencia hacen falta entender el código de colores que nos permite identificar el valor de la resistencia eléctrica y su tolerancia.
