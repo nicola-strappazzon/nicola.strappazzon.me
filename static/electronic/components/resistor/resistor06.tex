@@ -1,29 +1,18 @@
 \documentclass[dvisvgm,tikz]{standalone}
 \usepackage{circuitikz}
 \begin{document}
-\begin{tikzpicture}[scale=2, every node/.style={transform shape}]
-  %\draw[step=0.5,gray,very thin, dotted] (0,0) grid (12,2.5);
-  %\draw[step=1.0,gray!50,very thin] (0,0) grid (12,2.5);
-
-  \draw[line width=0.1mm] (1,0) rectangle (3,1) node[pos=.5] {\shortstack{Generador \\ de señales}};
-  \draw[line width=0.1mm] (5,0) rectangle (7,1) node[pos=.5] {\shortstack{Amplificador \\ de audio}};
-  \draw[line width=0.1mm] (7,2.5) rectangle (9,1.5) node[pos=.5] {Osciloscopio};
-  \draw[line width=0.1mm] (9,0) rectangle (11,1) node[pos=.5] {\shortstack{Carga \\ ficticia}};
-
-  \draw[red,   line width=0.1mm] (3.0,0.7) -- (5.0,0.7);
-  \draw[black, line width=0.1mm] (3.0,0.3) -- (5.0,0.3);
-
-  \draw[red,   line width=0.1mm] (7.0,0.7) -- (9.0,0.7);
-  \draw[black, line width=0.1mm] (7.0,0.3) -- (9.0,0.3);
-
-  \draw[red,   line width=0.1mm] (7.75,0.7) -- (7.75,1.5);
-  \draw[black, line width=0.1mm] (8.25,0.3) -- (8.25,1.5);
-
-  \node at (3.2,0.9) {+};
-  \node at (3.2,0.1) {-};
-  \node at (4.7,0.9) {In};
-  \node at (7.4,0.9) {Out};
-  \node at (8.8,0.9) {+};
-  \node at (8.8,0.1) {-};
+\begin{tikzpicture}
+  \node[shape=rectangle, draw, line width=1pt, inner sep=0, minimum width=2.965cm, minimum height=1.965cm] at (1.5, 1){} node [anchor=center, align=center, text width=2.577cm, inner sep=5.5pt] at (1.5, 1){Generador de señales};
+  \node[shape=rectangle, draw, line width=1pt, inner sep=0, minimum width=2.965cm, minimum height=1.965cm] at (7.5, 1){} node [anchor=center, align=center, text width=2.577cm, inner sep=5.5pt] at (7.5, 1){Amplificador};
+  \node[shape=rectangle, draw, line width=1pt, inner sep=0, minimum width=2.965cm, minimum height=1.965cm] at (13.5, 1){} node [anchor=center, align=center, text width=2.577cm, inner sep=5.5pt] at (13.5, 1){Carga ficticia};
+  \node[shape=rectangle, draw, line width=1pt, inner sep=0, minimum width=2.965cm, minimum height=0.965cm] at (10.5, 3.5){} node [anchor=center, align=center, text width=2.577cm, inner sep=5.5pt] at (10.5, 3.5){Osciloscopio};
+  \draw[draw={rgb,255:red,255;green,0;blue,0}, line width=1pt] (3, 1.5) -- (6, 1.5);
+  \draw[draw={rgb,255:red,0;green,0;blue,0}, line width=1pt] (3, 0.5) -- (6, 0.5);
+  \draw[draw={rgb,255:red,255;green,0;blue,0}, line width=1pt] (9, 1.5) -- (12, 1.5);
+  \draw[draw={rgb,255:red,0;green,0;blue,0}, line width=1pt] (9, 0.5) -- (12, 0.5);
+  \draw[draw={rgb,255:red,255;green,0;blue,0}, line width=1pt] (10, 1.5) -| (10, 3);
+  \draw[draw={rgb,255:red,0;green,0;blue,0}, line width=1pt] (11, 0.5) -| (11, 3);
+  \node[shape=rectangle, draw, line width=0pt, inner sep=0, minimum width=0.75cm, minimum height=0.75cm] at (5.625, 1.875){} node [anchor=north east, align=right, text width=0.397cm, inner sep=5pt] at (6, 2.25){In};
+  \node[shape=rectangle, draw, line width=0pt, inner sep=0, minimum width=1cm, minimum height=0.75cm] at (9.5, 1.875){} node [anchor=north west, align=left, text width=0.647cm, inner sep=5pt] at (9, 2.25){Out};
 \end{tikzpicture}
 \end{document}
