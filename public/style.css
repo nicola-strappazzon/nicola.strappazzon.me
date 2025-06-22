@@ -91,6 +91,7 @@ a {
   display: flex;
   flex-direction: column;
   position: relative;
+  padding-bottom: 2em;
 }
 
 .header__inner {
@@ -153,7 +154,6 @@ a {
   border-bottom: 1px solid var(--accent);
   padding-bottom: 0.5em;
   margin-bottom: 1em;
-  padding-top: 2em;
 }
 
 .title {
@@ -321,7 +321,7 @@ table th, td {
   margin: 1rem 0;
 }
 #breadcrumbs li::after {
-  content: "›";
+  content: "\\";
   margin-left: 0.5rem;
 }
 #breadcrumbs li:last-child::after {

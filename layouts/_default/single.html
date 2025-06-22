@@ -1,17 +1,17 @@
 {{ define "main" }}
   <article>
+    <ul id="breadcrumbs">
+    {{- range .Ancestors.Reverse }}
+      <li><a href="{{ .RelPermalink }}">
+      {{- if .IsHome -}}
+        Inicio
+      {{- else -}}
+        {{ .Title }}
+      {{- end -}}
+      </a></li>
+    {{- end }}
+    </ul>
     <div class="content-header">
-      <ul id="breadcrumbs">
-      {{- range .Ancestors.Reverse }}
-        <li><a href="{{ .RelPermalink }}">
-        {{- if .IsHome -}}
-          Inicio
-        {{- else -}}
-          {{ .Title }}
-        {{- end -}}
-        </a></li>
-      {{- end }}
-      </ul>
       <h2 class="title">{{ .Title }}</h2>
       {{ if .Date }}
       <span class="date"><em>{{ .Date.Format "02/01/2006" }}</em></span>
