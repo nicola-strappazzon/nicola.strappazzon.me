@@ -26,7 +26,7 @@ Se le denomina resistencia a la oposición al flujo de corriente eléctrica a tr
 
 {{< svg name="resistor02" >}}
 
-Existen muchos tipos de encapsulados para resistencias y con diferentes materiales de construcción. Para este libro solo trataremos los encapsulados de tipo axial como se observa en la figura anterior que es ideal para el uso didáctico y de prototipado.
+Existen muchos tipos de encapsulados para resistencias y con diferentes materiales de construcción. Para este libro solo trataremos los encapsulados de tipo axial como se observa en la siguiente figura que es ideal para el uso didáctico y de prototipado.
 
 > Existen resistencias cuyo valor es de 0Ω y son utilizadas para configurar un circuito, actuando como un puente. Es un excelente ejemplo de un componente cuya función parece innecesaria al principio, y quizás incluso inútil. Sin embargo, es bastante útil para los diseñadores que la conocen y entienden cómo puede ayudar a resolver problemas de circuitos y diseños a un muy bajo coste con complicaciones mínimas o nulas.
 
