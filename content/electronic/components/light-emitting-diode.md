@@ -3,6 +3,8 @@ draft = false
 title = 'Diodo emisor de luz (LED)'
 +++
 
+{{< svg name="draw01" >}}
+
 Los diodos LED es la forma más habitual de indicar estados en los circuitos electrónicos. Para que funcione un LED necesitamos que una corriente lo atraviese, la intensidad de esta corriente debe ser cuidadosamente calculada, dado que si excedemos los límites especificados en el datasheet, este se destruirá. La siguiente lista nos da una idea de la tensión aproximada que se necesita:
 
 | Color    | Forward Voltage F{{<sub f>}} |
@@ -15,6 +17,8 @@ Los diodos LED es la forma más habitual de indicar estados en los circuitos ele
 | Azul     | 3   - 3.7                    |
 
 Generalmente, los valores están entre 10mA y 30mA, por lo general se usa un valor medio `20mA` (0,02A) con el cual se logra un buen brillo con una larga vida útil, mientras usemos los valores mínimos alargamos la vida del componente. La forma para limitar la corriente que circula por el LED es colocando una resistencia en serie antes o después del componente.
+
+{{< svg name="draw02" >}}
 
 A continuación explicaremos cómo calcular los ohms y los watts necesarios para la resistencia que acompaña el LED.
 
