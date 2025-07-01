@@ -5,7 +5,7 @@ title = 'Breadboard'
 
 Para aprender a construir un circuito o verificar su funcionamiento, debe usar primero una placa de pruebas, es una de las herramientas más básicas y sencillas que existe. Gracias a sus numerosos conectores pequeños, se pueden insertar o quitar diversos componentes electrónicos según sea necesario, eliminando la necesidad de soldar y ahorrando tiempo de montaje. Los componentes se pueden reutilizar, lo que la hace ideal para el desarrollo de circuitos electrónicos.
 
-![](breadboard03.png)
+![](breadboard01.png)
 
 Si hubieras querido construir un circuito antes de la década de 1960, probablemente usarías una técnica llamada "wire-wrap", que consiste en envolver cables alrededor de; postes, tornillos, clavos o pines conductores conectados a la misma placa de pruebas (protoboard). Esta técnica es compleja y engorrosa. Todavía se utiliza hoy en día.
 
