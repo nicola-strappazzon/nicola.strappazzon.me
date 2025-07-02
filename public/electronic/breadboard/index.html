@@ -84,14 +84,29 @@
 <p>Las placas de pruebas vienen en diferentes tamaños, la mayoría de las placas de pruebas tiene protuberancias y ranuras en los cuatro lados, de modo que se pueden unir placas de pruebas del mismo tamaño, aumentando el espacio disponible. Algunas otras tienen un adhesivo para facilitar su fijación a diferentes instrumentos.</p>
 <h2 id="estructura">Estructura</h2>
 <p>Toda la placa está hecha de plástico resistente, con una tira metálica en la parte inferior. Se perforan orificios en las posiciones correspondientes de la placa para que los componentes entren en contacto con la tira metálica al insertarse, logrando así la conductividad. Suele haber una ranura en el centro de la placa, diseñada para pruebas de circuitos integrados y chips. Hay dos filas de conectores verticales llamadas rieles de alimentación a ambos lados de la placa para alimentar los componentes.</p>
+<table style="margin: 0px auto; border: none;">
+<tr>
+<td style="border: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><img src="breadboard02.png" alt="" style="max-width: 100%; height: auto; display: block; background-color: white;"></td>
+<td style="border: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><img src="breadboard03.png" alt="" style="max-width: 100%; height: auto; display: block; background-color: white;"></td>
+</tr>
+</tbody>
+</table>
 <h3 id="1-rieles-de-potencia">1. Rieles de potencia</h3>
 <p>Hay dos columnas de conectores en la parte superior e inferior de la placa de pruebas, que generalmente se utilizan para alimentar la placa. La primera fila, marcada con &ldquo;+&rdquo; y con una línea roja representa el positivo. La segunda fila, marcada con &ldquo;-&rdquo; y con una línea azul representa el negativo. La primera y la segunda fila, en la parte inferior de la placa de pruebas, tienen la misma estructura que las anteriores. Si necesita usar toda la placa de pruebas, normalmente conecta los conectores &ldquo;+&rdquo; y &ldquo;+&rdquo; con un cable, y los conectores &ldquo;-&rdquo; y &ldquo;-&rdquo; con otro cable.</p>
 <h3 id="2-riel-de-cableado">2. Riel de cableado</h3>
 <p>Los orificios de conexión se dividen en partes superior e inferior, que constituyen nuestra principal área de trabajo para conectar piezas y puentes. Los cinco conectores de la misma columna (es decir, abcde, fghij) están interconectados; las columnas (es decir, 1-30) y las partes superior e inferior de la ranura (es decir, e-f) no están conectadas.</p>
-<h3 id="3-ranuras">3. Ranuras</h3>
+<h3 id="3-ranura">3. Ranura</h3>
 <p>Hay una ranura larga en el medio de la placa de pruebas, que cumple dos funciones. La primera es separar la parte superior de la inferior con el fin de poder insertar un circuito integrado estándar de pines DIP. La segunda razón es que los circuitos integrados tienen muchos pines, no suelen ser fáciles de extraer. Si se extraen con fuerza, es fácil doblarlos o incluso romperlos. Esta ranura permite usar pinzas o algo similar para acceder a la parte inferior del circuito integrado y facilitar su extracción.</p>
 <h2 id="breakout-pcb">Breakout PCB</h2>
 <p>En la actualidad existen muchos componentes que su encapsulado es de tipo SMD (Surface Mount Device) y al no tener pines no se pueden usar directamente en la placa de pruebas, por lo que se debe usar de una PCB con pines DIP que tenga el footprint del componente SMD a soldar.</p>
+<table style="margin: 0px auto; border: none;">
+<tr>
+<td style="border: none;"><img src="SOIC1601.png" alt="" style="max-width: 100%; height: auto; display: block; background-color: white;"></td>
+<td style="border: none;"><img src="SOIC1602.png" alt="" style="max-width: 100%; height: auto; display: block; background-color: white;"></td>
+<td style="border: none;"><img src="SOIC1603.png" alt="" style="max-width: 100%; height: auto; display: block; background-color: white;"></td>
+</tr>
+</tbody>
+</table>
 <h2 id="uso-y-precauciones">Uso y precauciones</h2>
 <ol>
 <li>Al instalar componentes discretos, debe poder ver su polaridad y marcas. Enderece los pines del componente y dóblelos donde sea necesario. Para evitar cortocircuitos en los cables expuestos, utilice cables con fundas. Generalmente, los pines del componente no se cortan para facilitar su reutilización. Por lo general, no inserte componentes con un diámetro de pin superior a 0,8 mm para evitar dañar la elasticidad de la pieza de contacto dentro del zócalo.</li>

@@ -1,4 +1,4 @@
-\documentclass[margin=2mm]{standalone}
+\documentclass[tikz,margin=2mm]{standalone}
 \usepackage{tikz}
 \tikzset{
   hole/.style = {fill = #1, circle, minimum width = 2.5mm, inner sep = 0mm},
@@ -9,9 +9,9 @@
 \begin{tikzpicture}[x=5mm,y=5mm]
   \draw[fill=black!05!white] (-1,-4) rectangle (32,17);
   \draw[wire=red]  (1.5,-3.6) -- (30.5,-3.6);
-  \draw[wire=blue] (1.5,-1.5) -- (30.5,-1.5);
-  \draw[wire=red]  (1.5,14.5) -- (30.5,14.5);
-  \draw[wire=blue] (1.5,16.5) -- (30.5,16.5);
+  \draw[wire=blue] (1.5,-1.4) -- (30.5,-1.4);
+  \draw[wire=red]  (1.5,14.4) -- (30.5,14.4);
+  \draw[wire=blue] (1.5,16.6) -- (30.5,16.6);
   \draw[wire=gray!50] (-1,6) -- (32,6);
   \draw[wire=gray!50] (-1,7) -- (32,7);
   \draw[wire=gray!50, line width = 0.5] (-1,14) -- (32,14);

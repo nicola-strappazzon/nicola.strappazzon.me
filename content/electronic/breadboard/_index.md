@@ -21,6 +21,8 @@ Las placas de pruebas vienen en diferentes tamaños, la mayoría de las placas d
 
 Toda la placa está hecha de plástico resistente, con una tira metálica en la parte inferior. Se perforan orificios en las posiciones correspondientes de la placa para que los componentes entren en contacto con la tira metálica al insertarse, logrando así la conductividad. Suele haber una ranura en el centro de la placa, diseñada para pruebas de circuitos integrados y chips. Hay dos filas de conectores verticales llamadas rieles de alimentación a ambos lados de la placa para alimentar los componentes.
 
+{{< img1x2 img1="breadboard02.png" img2="breadboard03.png">}}
+
 ### 1. Rieles de potencia
 
 Hay dos columnas de conectores en la parte superior e inferior de la placa de pruebas, que generalmente se utilizan para alimentar la placa. La primera fila, marcada con "+" y con una línea roja representa el positivo. La segunda fila, marcada con "-" y con una línea azul representa el negativo. La primera y la segunda fila, en la parte inferior de la placa de pruebas, tienen la misma estructura que las anteriores. Si necesita usar toda la placa de pruebas, normalmente conecta los conectores "+" y "+" con un cable, y los conectores "-" y "-" con otro cable.
@@ -29,13 +31,15 @@ Hay dos columnas de conectores en la parte superior e inferior de la placa de pr
 
 Los orificios de conexión se dividen en partes superior e inferior, que constituyen nuestra principal área de trabajo para conectar piezas y puentes. Los cinco conectores de la misma columna (es decir, abcde, fghij) están interconectados; las columnas (es decir, 1-30) y las partes superior e inferior de la ranura (es decir, e-f) no están conectadas.
 
-### 3. Ranuras
+### 3. Ranura
 
 Hay una ranura larga en el medio de la placa de pruebas, que cumple dos funciones. La primera es separar la parte superior de la inferior con el fin de poder insertar un circuito integrado estándar de pines DIP. La segunda razón es que los circuitos integrados tienen muchos pines, no suelen ser fáciles de extraer. Si se extraen con fuerza, es fácil doblarlos o incluso romperlos. Esta ranura permite usar pinzas o algo similar para acceder a la parte inferior del circuito integrado y facilitar su extracción.
 
 ## Breakout PCB
 
 En la actualidad existen muchos componentes que su encapsulado es de tipo SMD (Surface Mount Device) y al no tener pines no se pueden usar directamente en la placa de pruebas, por lo que se debe usar de una PCB con pines DIP que tenga el footprint del componente SMD a soldar.
+
+{{< img1x3 img1="SOIC1601.png" img2="SOIC1602.png" img3="SOIC1603.png">}}
 
 ## Uso y precauciones
 
