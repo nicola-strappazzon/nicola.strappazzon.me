@@ -1,0 +1,21 @@
+{{ $params := .Inner | transform.Unmarshal }}
+<table style="margin: 0px auto; border: none; table-layout: fixed; width: 100%;">
+<tbody>
+<tr>
+{{ range $params.files }}
+<td style="border: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+<img src="{{ . }}" alt="" style="max-width: 100%; height: auto; display: block; background-color: white; margin: 0 auto;">
+</td>
+{{ end }}
+</tr>
+{{ with $params.footer }}
+<tr>
+{{ range $params.footer }}
+<td style="border: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; vertical-align: top;">
+{{ . }}
+</td>
+{{ end }}
+</tr>
+{{ end }}
+</tbody>
+</table>

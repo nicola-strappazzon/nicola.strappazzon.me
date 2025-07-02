@@ -21,7 +21,14 @@ Las placas de pruebas vienen en diferentes tamaños, la mayoría de las placas d
 
 Toda la placa está hecha de plástico resistente, con una tira metálica en la parte inferior. Se perforan orificios en las posiciones correspondientes de la placa para que los componentes entren en contacto con la tira metálica al insertarse, logrando así la conductividad. Suele haber una ranura en el centro de la placa, diseñada para pruebas de circuitos integrados y chips. Hay dos filas de conectores verticales llamadas rieles de alimentación a ambos lados de la placa para alimentar los componentes.
 
-{{< img1x2 img1="breadboard02.png" img2="breadboard03.png">}}
+{{% images %}}
+files:
+  - breadboard02.png
+  - breadboard03.png
+footer:
+  - Las líneas largas horizontales de color azul y rojo en la parte superior e inferior representan los rieles de potencia. Las líneas verticales de color verde representa los rieles de cableado.
+  - Esta es la parte trasera de la placa de pruebas que muestra los rieles. Posiblemente no sea visible porque hay adhesivo.
+{{% /images %}}
 
 ### 1. Rieles de potencia
 
@@ -39,7 +46,12 @@ Hay una ranura larga en el medio de la placa de pruebas, que cumple dos funcione
 
 En la actualidad existen muchos componentes que su encapsulado es de tipo SMD (Surface Mount Device) y al no tener pines no se pueden usar directamente en la placa de pruebas, por lo que se debe usar de una PCB con pines DIP que tenga el footprint del componente SMD a soldar.
 
-{{< img1x3 img1="SOIC1601.png" img2="SOIC1602.png" img3="SOIC1603.png">}}
+{{% images %}}
+files:
+  - SOIC1601.png
+  - SOIC1602.png
+  - SOIC1603.png
+{{% /images %}}
 
 ## Uso y precauciones
 
