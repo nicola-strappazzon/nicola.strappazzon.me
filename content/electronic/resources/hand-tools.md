@@ -70,9 +70,9 @@ Estas son las puntas que recomiendo:
 - [Malla para desoldar](https://www.mouser.es/ProductDetail/Aven/17541?qs=uwxL4vQweFMwWqGr0IUxLQ%3D%3D) Tamaño 2 mm / 0.08 in.
 - [SS-03 Solder Sucker](https://www.engineertools-jp.com/product-page/ss-03-solder-sucker) Este extractor de estaño con una punta de goma cambiable es muy útil y eficiente.
 
-## Protoboard
+## Breadboards
 
-También llamada Breadboards, es donde armamos nuestros prototipos.
+Es donde armamos nuestros prototipos.
 
 [Global Specialties PB-83M](https://www.digikey.es/en/products/detail/global-specialties/PB-83M/8134127)
 
