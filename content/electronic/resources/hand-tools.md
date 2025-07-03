@@ -79,5 +79,6 @@ Esta parte es importante por temas de salud, evite usar químicos con plomo. Sue
 Es donde armamos nuestros prototipos.
 
 [Global Specialties PB-83M](https://www.digikey.es/en/products/detail/global-specialties/PB-83M/8134127)
+[Global Specialties GS-400](https://www.digikey.es/en/products/detail/global-specialties/GS-400/5231305)
 
 La marca Global Specialties la recomiendo bastante, la inserción con suavidad de componentes tiene la presión suficiente para no doblar los pines.
