@@ -11,7 +11,10 @@ Hay situaciones que necesitan restaurar una Base de Datos de MySQL **rápido**, 
 
 Lo que hacemos aquí para no entrar con muchos detalles, es ampliar el uso de memoria para cargar los datos más rápido, como desactivar algunas funciones de consistencia a nivel de disco, y más.
 
-**IMPORTANTE: No usar estos valores en producción.**
+{{% blockquote type="important" %}}
+No usar estos valores en producción.
+{{% /blockquote %}}
+
 
 ```bash
 vim /etc/mysql/my.cnf

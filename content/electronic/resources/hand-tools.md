@@ -6,7 +6,9 @@ title = 'Herramientas'
 
 Usar herramientas de buena calidad te permite obtener mejores resultados en un entorno agradable.
 
-> En lo personal tengo una muy fuerte críticas negativas con muchas herramientas del mercado, por eso en esta recomendación, dejo una recopilación de excelencia:
+{{% blockquote type="note" %}}
+En lo personal tengo una muy fuerte críticas negativas con muchas herramientas del mercado, por eso en esta recomendación, dejo una recopilación de excelencia:
+{{% /blockquote %}}
 
 ## Alicates y Pinzas
 
@@ -63,7 +65,9 @@ Estas son las puntas que recomiendo:
 
 ## Consumibles para soldar y desoldar
 
-> Esta parte es importante por temas de salud, evite usar químicos con plomo. Suelde en un sitio ventilado, evite en todo lo posible inhalar los humos que desprende durante el proceso de soldar y desoldar.
+{{% blockquote type="caution" %}}
+Esta parte es importante por temas de salud, evite usar químicos con plomo. Suelde en un sitio ventilado, evite en todo lo posible inhalar los humos que desprende durante el proceso de soldar y desoldar.
+{{% /blockquote %}}
 
 - [Estaño](https://www.digikey.es/en/products/detail/chip-quik-inc/RASWLF-015-1OZ/9682011) RASWLF.015 1OZ, 96.5/3/0.5 TIN/SI, Diametros: 0.015" (0.38mm) y 0.031" (0.79mm). Su punto de fusión es a partir de 220 °C. La combinación de estaño que tiene es bastante limpia y deja un mínimo de residuos.
 - [Flux](https://www.digikey.es/en/products/detail/chip-quik-inc/CQ4LF-0-5/9558133) CQ4LF-0.5, No Clean, Liquid.

@@ -22,7 +22,9 @@ Generalmente, los valores están entre 10mA y 30mA, por lo general se usa un val
 
 A continuación explicaremos cómo calcular los ohms y los watts necesarios para la resistencia que acompaña el LED.
 
-> Recuerde consultar el datasheet para tener el valor exacto.
+{{% blockquote type="note" %}}
+Recuerde consultar el datasheet para tener el valor exacto.
+{{% /blockquote %}}
 
 ## Calcular el valor de la resistencia
 
@@ -50,7 +52,9 @@ Aplicando la fórmula anterior, obtenemos que:
 
 {{< mathjax "P=V\times I=\left(9v-1,9v\right)\times0.018A=0,1278W\sim127,8mW" >}}
 
-> Debemos seleccionar siempre una resistencia con una potencia superior al cálculo para evitar que se queme.
+{{% blockquote type="important" %}}
+Debemos seleccionar siempre una resistencia con una potencia superior al cálculo para evitar que se queme.
+{{% /blockquote %}}
 
 Potencias comerciales:
 

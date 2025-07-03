@@ -206,24 +206,84 @@ blockquote {
   margin-inline-end: 0px;
 }
 
-.warning {
-  border-left: 4px solid yellow;
-  /*border-left: 1px var(--foreground);*/
-}
-
 blockquote::before {
-  content: "WARNING";
+  content: "";
   display: flex;
   left: 0;
   color: var(--accent);
 }
 
-blockquote p:first-child {
-  margin-top: 0;
+blockquote p {
+  margin: 0;
+  margin-top: 6px;
 }
 
-blockquote p:last-child {
-  margin-bottom: 0;
+blockquote svg {
+  margin-right: 6px;
+}
+
+blockquote .title {
+  font-size: large;
+}
+
+blockquote.note {
+  border-left: 4px solid #0969da;
+}
+
+blockquote.note .title {
+  color: #0969da;
+}
+
+blockquote.note .title svg {
+  fill: #0969da;
+}
+
+blockquote.tip {
+  border-left: 4px solid #1a7f37;
+}
+
+blockquote.tip .title {
+  color: #1a7f37;
+}
+
+blockquote.tip .title svg {
+  fill: #1a7f37;
+}
+
+blockquote.important {
+  border-left: 4px solid #8250df;
+}
+
+blockquote.important .title {
+  color: #8250df;
+}
+
+blockquote.important .title svg {
+  fill: #8250df;
+}
+
+blockquote.caution {
+  border-left: 4px solid #d1242f;
+}
+
+blockquote.caution .title {
+  color: #d1242f;
+}
+
+blockquote.caution .title svg {
+  fill: #d1242f;
+}
+
+blockquote.warning {
+  border-left: 4px solid #9a6700;
+}
+
+blockquote.warning .title {
+  color: #9a6700;
+}
+
+blockquote.warning .title svg {
+  fill: #9a6700;
 }
 
 pre {
