@@ -299,10 +299,10 @@
 <blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Recuerde consultar el datasheet para tener el valor exacto.</p></blockquote>
 <h2 id="calcular-el-valor-de-la-resistencia">Calcular el valor de la resistencia</h2>
 <p>El cálculo del valor de esta resistencia es muy simple, y solo implica el uso de la ley de ohm. Debemos restar la tensión de la fuente y tensión del LED, y dividir el resultado por la corriente que deseamos atraviese el componente. Si usamos las unidades correctas (tensiones en Volts y corrientes en Amperes), el resultado estará expresado en Ohms.</p>
-<div>$$ R={\frac{{{V}_{s}}-{{V}_{f}}}{{I}_{f}}} $$</div>
+<div>$$ R={\frac{{V_{s}}-{V_{f}}}{I_{f}}} $$</div>
 <p>Supongamos que tenemos un LED de color rojo, que según su hoja de datos, necesita para funcionar correctamente una corriente de <code>18mA</code> y una tensión entre ánodo y cátodo de <code>1,9V</code>, y queremos alimentarlo con una batería de <code>9V</code> ¿Cuál será el valor de la resistencia limitadora?</p>
 <p>Aplicando la fórmula anterior, obtenemos que:</p>
-<div>$$ R={\frac{{{V}_{s}}-{{V}_{f}}}{{I}_{f}}}=\frac{9v-1,9v}{0.018A}=\frac{7,1v}{18mA}=394,44\Omega $$</div>
+<div>$$ R={\frac{{V_{s}}-{V_{f}}}{I_{f}}}=\frac{9v-1,9v}{0.018A}=\frac{7,1v}{18mA}=394,44\Omega $$</div>
 <p>Como puede observar, el valor para la resistencia es <code>394,44Ohms</code>, y no existe una resistencia comercial de ese valor, utilizaremos el más cercano: <code>390Ohms</code>.</p>
 <h2 id="calcular-la-potencia-limitadora-de-la-resistencia">Calcular la potencia limitadora de la resistencia</h2>
 <p>Además de hayar el valor en ohms, debemos saber el tamaño de la resistencia en valores comerciales, por lo que debemos calcular la potencia que debe disipar en forma de calor por si misma.</p>

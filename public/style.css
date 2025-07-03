@@ -199,7 +199,6 @@ article p > img,
 
 blockquote {
   position: relative;
-  /*margin-left: 32px;*/
   padding: 16px;
   background-color: #272822;
   margin-inline-start: 0px;
@@ -328,12 +327,6 @@ code {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.navigation-menu__inner > li {
-  /*flex: 0 0 auto;*/
-  /*margin-bottom: 10px;*/
-  /*white-space: nowrap;*/
 }
 
 .navigation-menu__inner > li:not(:last-of-type) {

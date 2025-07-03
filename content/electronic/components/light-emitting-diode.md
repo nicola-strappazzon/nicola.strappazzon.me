@@ -30,13 +30,13 @@ Recuerde consultar el datasheet para tener el valor exacto.
 
 El cálculo del valor de esta resistencia es muy simple, y solo implica el uso de la ley de ohm. Debemos restar la tensión de la fuente y tensión del LED, y dividir el resultado por la corriente que deseamos atraviese el componente. Si usamos las unidades correctas (tensiones en Volts y corrientes en Amperes), el resultado estará expresado en Ohms.
 
-{{< mathjax "R={\frac{{{V}_{s}}-{{V}_{f}}}{{I}_{f}}}" >}}
+{{< mathjax "R={\frac{{V_{s}}-{V_{f}}}{I_{f}}}" >}}
 
 Supongamos que tenemos un LED de color rojo, que según su hoja de datos, necesita para funcionar correctamente una corriente de `18mA` y una tensión entre ánodo y cátodo de `1,9V`, y queremos alimentarlo con una batería de `9V` ¿Cuál será el valor de la resistencia limitadora?
 
 Aplicando la fórmula anterior, obtenemos que:
 
-{{< mathjax "R={\frac{{{V}_{s}}-{{V}_{f}}}{{I}_{f}}}=\frac{9v-1,9v}{0.018A}=\frac{7,1v}{18mA}=394,44\Omega" >}}
+{{< mathjax "R={\frac{{V_{s}}-{V_{f}}}{I_{f}}}=\frac{9v-1,9v}{0.018A}=\frac{7,1v}{18mA}=394,44\Omega" >}}
 
 Como puede observar, el valor para la resistencia es `394,44Ohms`, y no existe una resistencia comercial de ese valor, utilizaremos el más cercano: `390Ohms`.
 
