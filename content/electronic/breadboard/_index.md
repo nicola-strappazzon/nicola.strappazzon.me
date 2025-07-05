@@ -80,3 +80,7 @@ files:
 2. Evite conectar y desconectar bruscamente los circuitos integrados para evitar que los pines se doblen en los zócalos; no rompa los cables metálicos en los zócalos.
 3. No inserte cables gruesos, sondas o alfileres en los orificios.
 4. No fuerce la inserción de componentes.
+
+## Cableado
+
+En las siguientes páginas indico cómo suelo cablear, construir o reparar tus cables, etc.

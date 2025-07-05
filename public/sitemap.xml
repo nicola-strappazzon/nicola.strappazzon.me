@@ -237,8 +237,12 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/light-emitting-diode/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/transistor/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/breadboard/wire-bundle/</loc>
   </url>
 </urlset>
