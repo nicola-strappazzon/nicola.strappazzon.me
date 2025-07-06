@@ -16,13 +16,21 @@ save: ## Save changes into repository automatically.
 run: ## Run hugo server in local.
 	@hugo server --disableFastRender --noHTTPCache --ignoreCache --cleanDestinationDir
 
-svg: ## Create svg file from LaTex file.
+tikz-svg: ## Create svg file from LaTex file using package tikz.
 	@if [ -z "$(FILE)" ]; then \
 		echo "Usage: make svg FILE=formula01"; \
 		exit 1; \
 	fi
 	@latex $(FILE).tex
 	@dvisvgm --no-fonts --exact --bbox=min --scale=1.5 $(FILE).dvi
+
+circuitikz-svg: ## Create svg file from LaTex file using package circuitikz.
+	@if [ -z "$(FILE)" ]; then \
+		echo "Usage: make svg FILE=formula01"; \
+		exit 1; \
+	fi
+	@pdflatex $(FILE).tex
+	@pdf2svg $(FILE).pdf $(FILE).svg
 
 clean: ## Remove build files.
 	rm -f *.aux *.log *.dvi

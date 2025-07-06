@@ -239,6 +239,10 @@
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/basic-lessons/lesson01/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/basic-lessons/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/transistor/</loc>
