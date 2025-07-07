@@ -14,8 +14,11 @@ Esta lección la vamos a dividir en dos partes, porque hay dos formas de conecta
 
 Un circuito en serie es una configuración de conexión en la que los terminales de los componentes se conectan sucesivamente uno detrás de otro, es decir, el terminal de salida de un componente se conecta a la terminal de entrada del componente siguiente.
 
+{{< svg name="schematic01" >}}
 
 
 ## Paralelo
 
 Un circuito paralelo es una configuración de conexión de componentes en la que los bornes o terminales de entrada de todos los componentes conectados coinciden entre sí, al igual que sus terminales de salida.
+
+{{< svg name="schematic02" >}}
