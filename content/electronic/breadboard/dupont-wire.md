@@ -10,11 +10,11 @@ Pero luego de más de una década de uso presentaban desgaste en sus terminales,
 
 ## Materiales
 
-- Conector tipo hembra [Part Number: 16020086](https://www.molex.com/en-us/products/part-detail/16020086)
-- Conector tipo macho [Part Number: 16020107](https://www.molex.com/en-us/products/part-detail/16020107)
+- Conector tipo hembra [Amphenol ICC (FCI) 47750-000LF](https://www.digikey.es/en/products/detail/amphenol-cs-fci/47750-000LF/1485743) o [47715-000LF](https://www.digikey.es/en/products/detail/amphenol-cs-fci/47715-000LF/1485793)
+- Conector tipo macho [Amphenol ICC (FCI) 75653-002LF](https://www.digikey.es/en/products/detail/amphenol-cs-fci/75653-002LF/2096098)
 - Herramienta crimpadora: [ENGINEER PA-24](https://www.engineertools-jp.com/product-page/pa-24-micro-connector-crimping-pliers), me parece excelente opción por sus prestaciones, calidad y precio.
 
-Me pareció entender que los de la marca Molex son los originales, son los que suelen recomendar, y la verdad que la calidad se aprecia al usarlos.
+Me pareció entender que los de la marca Amphenol son los originales.
 
 ## Mis inventos
 
