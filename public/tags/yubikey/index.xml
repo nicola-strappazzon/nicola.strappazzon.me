@@ -37,13 +37,6 @@
       <description>&lt;h1 id=&#34;importar-desde-un-usb-security-key&#34;&gt;Importar desde un USB Security Key&lt;/h1&gt;&#xA;&lt;blockquote class=&#34;important&#34;&gt;&lt;p class=&#34;title&#34;&gt;&lt;svg viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;Important&lt;/p&gt;</description>
     </item>
     <item>
-      <title>OpenPGP</title>
-      <link>http://localhost:1313/wiki/security/openpgp/</link>
-      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
-      <guid>http://localhost:1313/wiki/security/openpgp/</guid>
-      <description>&lt;p&gt;Que podemos hacer con OpenPGP, muchas cosas, yo lo uso para cifrar mis respaldos, claves, auth en github y firmar mis commits.&lt;/p&gt;&#xA;&lt;p&gt;A la hora de escoger una Security Key debe verificar que soporte openpgp y también se debe asegurar que también soporte la longitud RSA del cifrado deseado. Dejo una lista de proveedores que soportan openpgp y su longitud máxima hasta la fecha de este documento.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.token2.eu/&#34;&gt;token2&lt;/a&gt; Hasta 2048&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.yubico.com/&#34;&gt;yubico&lt;/a&gt; Hasta 4096&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.nitrokey.com/&#34;&gt;Nitrokey&lt;/a&gt; Hasta 4096&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;En &lt;a href=&#34;https://keys.openpgp.org&#34;&gt;esta páginia&lt;/a&gt; puedes validar la identidad de una persona buscando por su clave pública, es recomendable que subas tu clave pública para que puedan verificar tu identidad ó recibir mensajes cifrados que solo tú puedes leer usando la clave privada.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Restore</title>
       <link>http://localhost:1313/wiki/security/openpgp/restore/</link>
       <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
@@ -56,13 +49,6 @@
       <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
       <guid>http://localhost:1313/wiki/security/openpgp/revoke/</guid>
       <description>&lt;p&gt;$ gpg &amp;ndash;output revoke.asc &amp;ndash;gen-revoke &lt;a href=&#34;mailto:nicola@strappazzon.me&#34;&gt;nicola@strappazzon.me&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;sec  rsa4096/8E97CAEEEE861364 2024-02-17 Nicola Strappazzon &lt;a href=&#34;mailto:nicola@strappazzon.me&#34;&gt;nicola@strappazzon.me&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Create a revocation certificate for this key? (y/N) y&#xA;Please select the reason for the revocation:&#xA;0 = No reason specified&#xA;1 = Key has been compromised&#xA;2 = Key is superseded&#xA;3 = Key is no longer used&#xA;Q = Cancel&#xA;(Probably you want to select 1 here)&#xA;Your decision? 0&#xA;Enter an optional description; end it with an empty line:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>YubiKey</title>
-      <link>http://localhost:1313/wiki/security/yubikey/</link>
-      <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
-      <guid>http://localhost:1313/wiki/security/yubikey/</guid>
-      <description>&lt;p&gt;En mi caso personal, &lt;a href=&#34;https://www.yubico.com/products/yubikey-5-overview/&#34;&gt;escogi esta marca y la serie 5&lt;/a&gt; porque soporta un cifrado RSA hasta 4096 que es lo mas seguro hasta el momento y tiene soporte para OpenPGP, por último tiene soporte con USB C el cual es bastante practico hoy en día.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;tip&#34;&gt;&lt;p class=&#34;title&#34;&gt;&lt;svg viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;Tip&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -58,15 +58,6 @@
     <loc>http://localhost:1313/wiki/security/openpgp/import/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/wiki/jq/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/jq/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/json/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/mysql/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
@@ -77,9 +68,6 @@
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/openpgp/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/electronic/resources/</loc>
@@ -113,9 +101,6 @@
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/yubikey/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/security/yubikey/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/mysql-host-blocked-many-connection-errors/</loc>
@@ -238,6 +223,14 @@
     <loc>http://localhost:1313/electronic/components/light-emitting-diode/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/jq/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/jq/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/json/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/k8/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/basic-lessons/lesson01/</loc>
   </url><url>

@@ -24,4 +24,5 @@ Para hacer una anécdota histórica, en los años 80 cuando empezó mi curiosida
 
 ![](breadboard.png)
 
-## 
+## Análisis
+
