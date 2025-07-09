@@ -32,20 +32,14 @@ Usaremos el siguiente JSON de ejemplo:
 Imprimir un campo llamado `name`:
 
 ```bash
-cat demo.json | jq -r '.name'
-```
-
-```
+$ cat demo.json | jq -r '.name'
 Foo Bar Baz
 ```
 
 Imprimir todos los campos llamados `label` dentro una lista:
 
 ```bash
-cat demo.json | jq -r '.items[].label'
-```
-
-```
+$ cat demo.json | jq -r '.items[].label'
 null
 foo
 bar
@@ -56,7 +50,7 @@ bar
 Ejemplos de como filtrar que el campo `score` sea igual al valor `4`:
 
 ```bash
-cat demo.json | jq -r 'select(.score == 4)'
+$ cat demo.json | jq -r 'select(.score == 4)'
 ```
 
 ## Transformar
@@ -66,10 +60,7 @@ cat demo.json | jq -r 'select(.score == 4)'
 Lista las columnas `name` y `label` y convierte la salida en `csv`.
 
 ```bash
-cat demo.json | jq -r '[.name, .score] | @csv'
-```
-
-```csv
+$ cat demo.json | jq -r '[.name, .score] | @csv'
 "Foo Bar Baz",4
 ```
 
@@ -78,9 +69,6 @@ cat demo.json | jq -r '[.name, .score] | @csv'
 Es una técnica para hacerlo más compacto quitando de la estructura espacios, tabs, nuevas líneas sin modificar los datos:
 
 ```bash
-cat demo.json | jq -r tostring
-```
-
-```
+$ cat demo.json | jq -r tostring
 {"name":"Foo Bar Baz","score":4,"color":"red","options":["red","green","blue"],"items":[{"id":0},{"id":1,"label":"foo"},{"id":2,"label":"bar"}]}
 ```

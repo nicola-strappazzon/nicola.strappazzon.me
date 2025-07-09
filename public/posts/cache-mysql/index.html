@@ -118,10 +118,19 @@
 <li>query_cache_limit: Indica el tamaño máximo que puede ser usado para guardar el resultado de una consulta en la cache.</li>
 </ul>
 <p>Ejemplo de como activar la cache:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">GLOBAL</span> query_cache_type<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">GLOBAL</span> query_cache_type<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">GLOBAL</span> query_cache_size<span style="color:#f92672">=</span><span style="color:#ae81ff">33554432</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">GLOBAL</span> query_cache_limit<span style="color:#f92672">=</span><span style="color:#ae81ff">1048576</span>;
-</span></span></code></pre></div><p><strong>Como saber si funciona:</strong></p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Como saber si funciona:</strong></p>
 <p>Uno de los mejores métodos para saber el beneficio de la cache es examinar el porcentaje de acierto, este valor es la cantidad de consultas que se sirven desde la cache en lugar de ejecutarse, cuando el servidor recibe una sentencia de tipo SELECT, se incrementa la variable Qcache_hits si es almacenada en cache y el de Com_select por ser una nueva ejecución. Por lo tanto, el porcentaje de acierto de la cache de consultas se calcula con la formula:
 <code>Qcache_hits / (Qcache_hits + Com_select)</code> Un buen porcentaje de acierto no existe, incluso un 30% puede ser útil.</p>
 <p><strong>Comandos para administrar la cache:</strong></p>

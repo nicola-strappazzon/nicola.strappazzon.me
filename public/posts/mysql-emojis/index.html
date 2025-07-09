@@ -93,7 +93,20 @@
 </ul>
 <p>Si ya estas utilizando el encoding <code>utf8</code> no es problema que implementes <code>utf8mb4</code>.</p>
 <p>Vamos a crear primero una tabla como debe ser, luego modificar una tabla existente y luego agregamos varios registros de ejemplo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> foo;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> foo;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>foo<span style="color:#f92672">`</span> (
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> bigint(<span style="color:#ae81ff">20</span>) UNSIGNED <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> AUTO_INCREMENT,
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>text<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">2000</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
@@ -102,8 +115,22 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> foo (<span style="color:#f92672">`</span>text<span style="color:#f92672">`</span>) <span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#34;test case&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> foo (<span style="color:#f92672">`</span>text<span style="color:#f92672">`</span>) <span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#34;🚌&#34;</span>);
-</span></span></code></pre></div><p>Podemos modificar una tabla existente para que use <code>utf8mb4</code>, en el ejemplo pongo como crear la tabla y luego como modificarla:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> foo;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Podemos modificar una tabla existente para que use <code>utf8mb4</code>, en el ejemplo pongo como crear la tabla y luego como modificarla:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> foo;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>foo<span style="color:#f92672">`</span> (
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> bigint(<span style="color:#ae81ff">20</span>) UNSIGNED <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> AUTO_INCREMENT,
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>text<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">2000</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
@@ -111,11 +138,21 @@
 </span></span><span style="display:flex;"><span>) ENGINE<span style="color:#f92672">=</span>InnoDB <span style="color:#66d9ef">DEFAULT</span> CHARSET<span style="color:#f92672">=</span>utf8;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> foo <span style="color:#66d9ef">CONVERT</span> <span style="color:#66d9ef">TO</span> CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4;
-</span></span></code></pre></div><p><strong>ADVERTENCIA:</strong> Cuidado con el tamano de la tabla a la hora de modificarla, y el encoding diferente al <code>utf8</code>.</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>ADVERTENCIA:</strong> Cuidado con el tamano de la tabla a la hora de modificarla, y el encoding diferente al <code>utf8</code>.</p>
 <p>Ahora insertamos varios registros y vemos que pasa:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> foo (<span style="color:#f92672">`</span>text<span style="color:#f92672">`</span>) <span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#34;test case&#34;</span>);
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> foo (<span style="color:#f92672">`</span>text<span style="color:#f92672">`</span>) <span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#34;test case&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> foo (<span style="color:#f92672">`</span>text<span style="color:#f92672">`</span>) <span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#34;🚌&#34;</span>);
-</span></span></code></pre></div><p>Posiblemente se te genere la siguiente salida, donde el primer registro se agrego perfectamente pero en el segundo registro tienes <strong>2 warnings</strong>, hay que prestar mucho a esa información que suele ser ignorada.</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Posiblemente se te genere la siguiente salida, donde el primer registro se agrego perfectamente pero en el segundo registro tienes <strong>2 warnings</strong>, hay que prestar mucho a esa información que suele ser ignorada.</p>
 <pre tabindex="0"><code>mysql&gt; INSERT INTO foo (`text`) VALUES (&#34;test case&#34;);
 Query OK, 1 row affected (0.01 sec)
 
@@ -142,10 +179,33 @@ mysql&gt; SELECT * FROM foo;
 
 mysql&gt;
 </code></pre><p>Como puedes ver, usando el comando <code>SHOW WARNINGS</code> te lista los mensajes, aquí podemos observar no hay compatibilidad con el emoji y sobre escribe el valor de dicho emoji para hacerlo compatible al <code>CHARACTER_SET</code> actual, también puedes observar que hiciste <code>SELECT</code> del contenido de la tabla y no está el emoji sino una serie de símbolos,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> id, <span style="color:#f92672">`</span>text<span style="color:#f92672">`</span>, HEX(<span style="color:#f92672">`</span>text<span style="color:#f92672">`</span>) <span style="color:#66d9ef">FROM</span> foo <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> id, <span style="color:#f92672">`</span>text<span style="color:#f92672">`</span>, HEX(<span style="color:#f92672">`</span>text<span style="color:#f92672">`</span>) <span style="color:#66d9ef">FROM</span> foo <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> HEX(<span style="color:#e6db74">&#34;🚌&#34;</span>);
-</span></span></code></pre></div><p>Es cierto que se creo antes la tabla con el soporte a <code>utf8mb4</code> y aún así esta dando problemas, debemos revisar las variables del servidor relacionadas a este tipo de configuración, posiblemente nos falta algo, hagamos la siguiente consulta para averiguarlo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">@@</span>collation_connection,
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Es cierto que se creo antes la tabla con el soporte a <code>utf8mb4</code> y aún así esta dando problemas, debemos revisar las variables del servidor relacionadas a este tipo de configuración, posiblemente nos falta algo, hagamos la siguiente consulta para averiguarlo:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">@@</span>collation_connection,
 </span></span><span style="display:flex;"><span>       <span style="color:#f92672">@@</span>collation_database,
 </span></span><span style="display:flex;"><span>       <span style="color:#f92672">@@</span>collation_server,
 </span></span><span style="display:flex;"><span>       <span style="color:#f92672">@@</span>character_set_client,
@@ -156,7 +216,9 @@ mysql&gt;
 </span></span><span style="display:flex;"><span>       <span style="color:#f92672">@@</span>character_set_server,
 </span></span><span style="display:flex;"><span>       <span style="color:#f92672">@@</span>character_set_system,
 </span></span><span style="display:flex;"><span>       <span style="color:#f92672">@@</span>init_connect<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#66d9ef">G</span>
-</span></span></code></pre></div><p>Por ejemplo no usamos la sentencia <code>SHOW VARIABLES LIKE 'character%';</code> y su variante porque debes ejecutarla por cada tipo de variables [collation|character] o una variable en específico, es cosa tuya. De la query anterior posiblemente obtengamos el siguiente resultado:</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Por ejemplo no usamos la sentencia <code>SHOW VARIABLES LIKE 'character%';</code> y su variante porque debes ejecutarla por cada tipo de variables [collation|character] o una variable en específico, es cosa tuya. De la query anterior posiblemente obtengamos el siguiente resultado:</p>
 <pre tabindex="0"><code>*************************** 1. row ***************************
     @@collation_connection: utf8_general_ci
       @@collation_database: latin1_swedish_ci
@@ -172,11 +234,26 @@ mysql&gt;
 1 row in set (0.00 sec)
 </code></pre><p>Ya podemos ver que tenemos un desorden en las variables, toda una ensalada de opciones, deberíamos unificar el mayor número de opciones. Como hemos dicho, necesitamos tener definida la opción <code>utf8mb4</code></p>
 <p>Tampoco está demás verificar el collation de la tabla:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> table_collation <span style="color:#66d9ef">FROM</span> information_schema.tables <span style="color:#66d9ef">WHERE</span> table_schema <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;demo&#39;</span> <span style="color:#66d9ef">AND</span> <span style="color:#66d9ef">table_name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;foo&#39;</span>;
-</span></span></code></pre></div><p>Como la creamos nosotros desde el principio, y no te olvidaste de hacer el ALTER, seguramente todo está bien, ahora cambiamos la configuración en la sesión actual de la conexión y actualizamos el registro problemático y verificamos que todo está bien:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> character_set_client <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf8mb4&#39;</span>; <span style="color:#66d9ef">SET</span> character_set_connection <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf8mb4&#39;</span>; <span style="color:#66d9ef">SET</span> character_set_results <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf8mb4&#39;</span>;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> table_collation <span style="color:#66d9ef">FROM</span> information_schema.tables <span style="color:#66d9ef">WHERE</span> table_schema <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;demo&#39;</span> <span style="color:#66d9ef">AND</span> <span style="color:#66d9ef">table_name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;foo&#39;</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Como la creamos nosotros desde el principio, y no te olvidaste de hacer el ALTER, seguramente todo está bien, ahora cambiamos la configuración en la sesión actual de la conexión y actualizamos el registro problemático y verificamos que todo está bien:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> character_set_client <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf8mb4&#39;</span>; <span style="color:#66d9ef">SET</span> character_set_connection <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf8mb4&#39;</span>; <span style="color:#66d9ef">SET</span> character_set_results <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf8mb4&#39;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> demo.foo <span style="color:#66d9ef">SET</span> <span style="color:#f92672">`</span>text<span style="color:#f92672">`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;🚌&#34;</span> <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-</span></span></code></pre></div><p>Es muy importante que en la conexión de nuestro código que usa la base de datos y dicha tabla se le especifique el <code>CHARACTER_SET</code> para evitar algún problema, este es un ejemplo en python, consulta tu lenguaje y/o framework.</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Es muy importante que en la conexión de nuestro código que usa la base de datos y dicha tabla se le especifique el <code>CHARACTER_SET</code> para evitar algún problema, este es un ejemplo en python, consulta tu lenguaje y/o framework.</p>
 <p>Fin.</p>
 
   </article>
