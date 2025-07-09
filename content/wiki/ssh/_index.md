@@ -66,9 +66,7 @@ scp -C -o CompressionLevel=9 bastion.stg.corp.com:/path/to/file.log .
 
 **CUIDADO:** Esta técnica hace que la CPU del servidor incremente.
 
-## Configurar el servidor
-
-...
+<!-- ## Configurar el servidor -->
 
 ## Configurar una conexión
 
@@ -199,9 +197,7 @@ vim .ssh/known_hosts +"2d|x"
 
 El comando anterior lo que hace es eliminar directamente la línea 2 del fichero `~/.ssh/known_hosts` y guardar los cambios con una sola operación.
 
-### Permission denied (publickey gssapi-keyex gssapi-with-mic)
-
-
+<!-- ### Permission denied (publickey gssapi-keyex gssapi-with-mic) -->
 
 ### Claves de tipo PEM
 
