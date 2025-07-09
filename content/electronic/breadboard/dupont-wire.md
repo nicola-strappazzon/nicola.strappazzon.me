@@ -9,10 +9,14 @@ Pero luego de más de una década de uso presentaban desgaste en sus terminales,
 
 El Mini-PV fue el primer diseño de este tipo de 0,1" (2,54mm), probablemente introducido en la década de 1950 por Berg Connectors, una empresa que parece haber pasado gran parte de su vida como una división de E. I. du Pont de Nemours and Co. La familia Mini-PV original aún se fabrica hoy en día por [Amphenol](https://amphenolltw.com) en EE.UU., como cabría de esperar es un producto que ha sido fabricado por el Tío Sam con las mismas especificaciones durante más de 70 años. En las décadas posteriores, su diseño fue copiado y modificado por terceros.
 
-## Materiales
+{{% blockquote type="note" %}}
+Hoy en día, por más que busque en la página web de [Amphenol](https://amphenolltw.com) o en cualquier otro proveedor, no consigo el modelo exacto, solo en [Aliexpress](https://es.aliexpress.com/item/33007044375.html).
+{{% /blockquote %}}
 
-- Conector tipo hembra [Amphenol ICC (FCI) 47649-000LF](https://www.digikey.es/en/products/detail/amphenol-cs-fci/47649-000LF/1486039)
-- Conector tipo macho [Amphenol ICC (FCI) 75653-005LF](https://www.digikey.es/en/products/detail/amphenol-cs-fci/75653-005LF/1487453)
+<!-- ## Materiales -->
+<!-- - Conector tipo hembra [Amphenol ICC (FCI) 47649-000LF](https://www.digikey.es/en/products/detail/amphenol-cs-fci/47649-000LF/1486039) -->
+<!-- - Conector tipo macho/pin [Amphenol ICC (FCI) 75653-002LF](https://www.digikey.es/en/products/detail/amphenol-cs-fci/75653-002LF/2096098) -->
+
 - Herramienta crimpadora: [ENGINEER PA-24](https://www.engineertools-jp.com/product-page/pa-24-micro-connector-crimping-pliers), me parece excelente opción por sus prestaciones, calidad y precio.
 
 ## Mis inventos

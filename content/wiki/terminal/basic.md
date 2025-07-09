@@ -4,7 +4,7 @@ title = 'Básico'
 tags = ["bash"]
 +++
 
-Para ir entendiendo todo lo que esta escrito a lo largo del documento, sería bueno conocer y/o repasar todos estos puntos:
+Para ir entendiendo todo lo que esta escrito a lo largo del documento, será útil conocer y/o repasar estos puntos:
 
 - **Prompt:** Es el carácter o conjunto de caracteres que se muestran en una línea de comandos para indicar que está a la espera de órdenes. Este puede variar dependiendo del intérprete de comandos y suele ser configurable.
 
@@ -25,12 +25,9 @@ Para ir entendiendo todo lo que esta escrito a lo largo del documento, sería bu
 
 Existen diferentes símbolos para el cursor y también pueden parpadear; | _ &#9609;
 
-
-
-
-- Fichero: Ó en su defecto Archivo,
-- Directorio: Algunos también lo llaman Carpeta, pero es un termino más de MS Windows, pero su forma correcta es directorio, esta es una unidad organizativa que permite contener Directorios y Ficheros de cualquier tipo.
-- Ruta:
-- Separador: /
-
-comentar lo de la ruta absoluta y relativa
+- **Fichero:** (o archivo) es un contenedor de datos, es cualquier cosa que puedes leer o escribir. En los sistemas operativos basados en Linux y derivados son ficheros; discos, terminales, dispositivos, procesos, etc.
+- **Directorio:** Algunos también lo llaman Carpeta, pero es un término más de MS Windows, pero su forma correcta es directorio, esta es una unidad organizativa que permite contener Directorios y Ficheros de cualquier tipo.
+- **Ruta:** (o path) es la dirección única que indica el sistema dónde está un fichero o directorio. Existen dos sub-grupos de la ruta; la absoluta y la relativa:
+    - **Absoluta:**
+    - **Relativa:**
+- **Separador:** En una ruta hay un símbolo `/` llamado barra normal o slash, que permite separar los niveles del sistema de archivos y directorios. En sistemas operativos como MS Windows usa un separador diferente `\` llamado barra invertida.

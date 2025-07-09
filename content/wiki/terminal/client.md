@@ -11,9 +11,10 @@ Si estás dentro de un SO con Interfaz Grafica, cómo Gnome, KDE, o el de Mac OS
 - [iTerm2](https://iterm2.com)
 - Terminal, Es nativo nativo del Mac OS X.
 
-### ¿Cómo acceder en Linux?
+<!-- ### ¿Cómo acceder en Linux?
 
 Por desarrollar...
+ -->
 
 ### ¿Cómo acceder en Mac OS X?
 

@@ -20,4 +20,9 @@ Solo trataremos sobre el `bash` y lo que hay en su entorno, por la simple razón
 
 También podrás conectarte a terminales remotas, subir o bajar ficheros, virtualizar terminales dentro de una terminal, dejar ejecutando procesos y retomarlos más adelante. No hay limites.
 
-Hay que aclarar la diferencia entre terminal, consola, shell, linea de comandos,
+Cómo anecdota, suele haber mucha confusión con los terminos: terminal, consola, shell, y línea de comandos. Vamos explicar que significa cada uno:
+
+1. **Terminal:** Una interfaz que permite al usuario interactuar con el sistema operativo, usualmente a través de texto. Hoy en día es normal que sea una aplicación gráfica como gnome-terminal, konsole, alacritty, xterm, iTerm, etc. Antiguamente, era un dispositivo físico conectado a un mainframe como él [VT100](https://en.wikipedia.org/wiki/VT100).
+2. **Consola:** Originalmente era la principal pantalla física del sistema. En sistemas modernos, suele referirse a la TTY (teletipo), accesible con Ctrl+Alt+F1 a F6 en Linux. O genéricamente a cualquier terminal textual del sistema. Toda consola puede ser una terminal, pero no toda terminal es una consola en el sentido estricto.
+3. **Shell:** Es un programa que interpreta comandos, es la entrada de la Terminal. Por ejemplo son; bash, zsh, fish, sh, csh, etc.
+4. **Línea de comandos:** También llamada CLI (Command Line Interface) Es la interfaz textual donde escribes comandos. Es la línea donde interactúas con el shell, básicamente es como una entrada de texto única.
