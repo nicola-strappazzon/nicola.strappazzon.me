@@ -64,7 +64,9 @@ En caso de que el fichero es muy grante, y comprimirlo mejorará el tiempo de de
 scp -C -o CompressionLevel=9 bastion.stg.corp.com:/path/to/file.log .
 ```
 
-**CUIDADO:** Esta técnica hace que la CPU del servidor incremente.
+{{% blockquote type="caution" %}}
+Esta técnica hace que la CPU del servidor incremente.
+{{% /blockquote %}}
 
 <!-- ## Configurar el servidor -->
 
@@ -213,7 +215,7 @@ En caso que haya un problema de conexión, se aconseja explorar los siguientes f
 
 - /var/log/secure
 - /var/log/auth.log
-- /var/log/audit/audit.lo
+- /var/log/audit/audit.log
 
 ## Herramientas alternativas:
 
