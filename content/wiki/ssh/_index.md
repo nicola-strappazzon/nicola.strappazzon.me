@@ -78,9 +78,13 @@ Para guardar una o varias conexiones de ssh en cliente, editamos el fichero `~/.
 touch ~/.ssh/config && chmod 600 ~/.ssh/config
 ```
 
+Ahora editamos el fichero con nuestro editor favorito:
+
 ```bash
 vim ~/.ssh/config
 ```
+
+Dentro del fichero poner lo siguiente:
 
 ```bash
 Host stg-bastion
