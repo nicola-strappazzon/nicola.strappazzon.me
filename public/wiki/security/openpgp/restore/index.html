@@ -78,22 +78,31 @@
       <li><a href="/">Inicio</a></li>
       <li><a href="/wiki/">Wiki</a></li>
       <li><a href="/wiki/security/">Security</a></li>
-      <li><a href="">OpenPGP</a></li>
+      <li><a href="/wiki/security/openpgp/">OpenPGP</a></li>
     </ul>
     <div class="content-header">
       <h2 class="title">Restore</h2>
       
-      <span class="date"><em>09/05/2025</em></span>
-      
     </div>
     <h1 id="restaura-los-certificados">Restaura los certificados</h1>
 <p>Supongamos que tiene una copia de seguridad de la clave prublica y privada en un Pendrive, use los siguientes comandos para importarlos y por último no olvide verificar:</p>
-<pre tabindex="0"><code>gpg --import myprivatekeys.asc
-gpg --import mypubkeys.asc
-gpg --import-ownertrust otrust.txt
-gpg --list-secret-keys
-gpg --list-keys
-</code></pre>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --import myprivatekeys.asc
+</span></span><span style="display:flex;"><span>gpg --import mypubkeys.asc
+</span></span><span style="display:flex;"><span>gpg --import-ownertrust otrust.txt
+</span></span><span style="display:flex;"><span>gpg --list-secret-keys
+</span></span><span style="display:flex;"><span>gpg --list-keys
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
   </article>
 
 </div>

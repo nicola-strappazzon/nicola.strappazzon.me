@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Configuración | Nicola Strappazzon</title>
+<title>MySQL commands for DBA | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -73,29 +73,43 @@
 </header>
 <div class="content">
 
-  <article>
-    <ul id="breadcrumbs">
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/wiki/">Wiki</a></li>
-      <li><a href="/wiki/security/">Security</a></li>
-      <li><a href="/wiki/security/yubikey/">YubiKey</a></li>
-    </ul>
+  
     <div class="content-header">
-      <h2 class="title">Configuración</h2>
+      <h2 class="title">MySQL commands for DBA</h2>
+      
+      <span class="date"><em>09/05/2025</em></span>
       
     </div>
-    <p>Antes, deberá verificar que reconoce el dispositivo y conocer las funcionalidades que ofrece:</p>
+  
+  <h2 id="show-progress-of-load-script">Show progress of load script</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ykman list
-</span></span><span style="display:flex;"><span>YubiKey 5C <span style="color:#f92672">(</span>5.7.4<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>OTP+FIDO+CCID<span style="color:#f92672">]</span> Serial: <span style="color:#ae81ff">12345678</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pv -e -p -t updates.sql | mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD --batch --silent
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Tenga en cuenta que dependiendo del modelo del dispositivos, puede que la funcionalidad del <code>NFC</code>, o <code>OpenPGP</code> no este soportada. Ejecute los siguientes comandos para configurarlo a gusto y por último verifique el resultado:</p>
+</div><h2 id="kill-all-mysql-process">Kill all MySQL process</h2>
+<p>The command <code>m</code> is a alias from <code>mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>m -se <span style="color:#e6db74">&#34;SHOW PROCESSLIST&#34;</span> | awk <span style="color:#e6db74">&#39;{print &#34;KILL &#34;$1&#34;;&#34;}&#39;</span> | m
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>For RDS use the follow commands, and in this example kill the all sleep process:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>m -se <span style="color:#e6db74">&#34;SHOW PROCESSLIST&#34;</span> | grep Sleep | awk <span style="color:#e6db74">&#39;{print &#34;CALL mysql.rds_kill(&#34;$1&#34;);&#34;}&#39;</span> | m -f
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dump-users-and-privileges">Dump users and privileges</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -103,38 +117,34 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ykman config usb --disable OTP
-</span></span><span style="display:flex;"><span>ykman config usb --disable U2F
-</span></span><span style="display:flex;"><span>ykman config usb --enable FIDO2
-</span></span><span style="display:flex;"><span>ykman config usb --disable OATH
-</span></span><span style="display:flex;"><span>ykman config usb --disable PIV
-</span></span><span style="display:flex;"><span>ykman config usb --disable HSMAUTH
-</span></span><span style="display:flex;"><span>ykman config usb --enable OpenPGP
-</span></span><span style="display:flex;"><span>ykman info
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -BNe <span style="color:#e6db74">&#34;SELECT DISTINCT CONCAT(&#39;SHOW GRANTS FOR &#39;&#39;&#39;, user, &#39;&#39;&#39;@&#39;&#39;&#39;, host, &#39;&#39;&#39;;&#39;) AS query FROM mysql.user&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>sed <span style="color:#e6db74">&#39;s/\(GRANT .*\)/\1;/;s/^\(Grants for .*\)/--\1--/;//{x;p;x;}&#39;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Por último, configuro el <code>OpenPGP</code> para usar el touch que es bastante práctico:</p>
+</div><h2 id="modify-many-tables-in-many-databases">Modify many tables in many databases</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ykman openpgp keys set-touch aut on
-</span></span><span style="display:flex;"><span>ykman openpgp keys set-touch sig on
-</span></span><span style="display:flex;"><span>ykman openpgp keys set-touch enc on
-</span></span><span style="display:flex;"><span>ykman openpgp info
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -Bse <span style="color:#e6db74">&#34;SELECT DISTINCT CONCAT(\&#34;ALTER TABLE \&#34;, TABLE_SCHEMA,\&#34;.foo ADD created_at datetime NOT NULL;\&#34;) AS sql_text FROM information_schema.TABLES WHERE TABLE_TYPE = &#39;BASE TABLE&#39; AND TABLE_SCHEMA LIKE &#39;site\_%&#39; AND TABLE_NAME = &#39;foo&#39;;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">\ </span>|
+</span></span><span style="display:flex;"><span>mysql -u $MYSQL_USER -p$MYSQL_PASSWORD
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
-  </article>
+  
+  <ul>
+    
+  </ul>
+  
 
 </div>
 <footer class="footer">

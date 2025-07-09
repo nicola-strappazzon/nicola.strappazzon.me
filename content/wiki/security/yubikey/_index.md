@@ -1,6 +1,5 @@
 +++
-date = '2025-05-09T10:56:29+02:00'
-draft = true
+draft = false
 title = 'YubiKey'
 tags = ["bash", "security", "yubikey", "openpgp"]
 +++

@@ -1,11 +1,8 @@
 +++
-date = '2025-05-09T10:56:29+02:00'
 draft = false
 title = 'GitHub'
 tags = ["bash", "security", "yubikey", "openpgp"]
 +++
-
-# GitHUB
 
 Para usar [GPG con GitHub](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key), hacer lo siguiente:
 

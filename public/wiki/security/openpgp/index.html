@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Wiki | Nicola Strappazzon</title>
+<title>OpenPGP | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -75,26 +75,34 @@
 
   
     <div class="content-header">
-      <h2 class="title">Wiki</h2>
-      
-      <span class="date"><em>09/05/2025</em></span>
+      <h2 class="title">OpenPGP</h2>
       
     </div>
   
-  <p>Bienvenido a la wiki de mi proyecto. Aquí encontrarás documentación técnica.</p>
+  <p>Que podemos hacer con OpenPGP, muchas cosas, yo lo uso para cifrar mis respaldos, claves, auth en github y firmar mis commits.</p>
+<p>A la hora de escoger una Security Key debe verificar que soporte openpgp y también se debe asegurar que también soporte la longitud RSA del cifrado deseado. Dejo una lista de proveedores que soportan openpgp y su longitud máxima hasta la fecha de este documento.</p>
+<ul>
+<li><a href="https://www.token2.eu/">token2</a> Hasta 2048</li>
+<li><a href="https://www.yubico.com/">yubico</a> Hasta 4096</li>
+<li><a href="https://www.nitrokey.com/">Nitrokey</a> Hasta 4096</li>
+</ul>
+<p>En <a href="https://keys.openpgp.org">esta páginia</a> puedes validar la identidad de una persona buscando por su clave pública, es recomendable que subas tu clave pública para que puedan verificar tu identidad ó recibir mensajes cifrados que solo tú puedes leer usando la clave privada.</p>
+<p>Dividimos el documento en múltiples secciones:</p>
 
   
   <ul>
     
-      <li><a href="/wiki/mysql/">MySQL</a></li>
+      <li><a href="/wiki/security/openpgp/backup/">Backup</a></li>
     
-      <li><a href="/wiki/jq/">jq</a></li>
+      <li><a href="/wiki/security/openpgp/export/">Export</a></li>
     
-      <li><a href="/wiki/k8/">kubernetes (k8)</a></li>
+      <li><a href="/wiki/security/openpgp/git/">GitHub</a></li>
     
-      <li><a href="/wiki/security/">Security</a></li>
+      <li><a href="/wiki/security/openpgp/import/">Import</a></li>
     
-      <li><a href="/wiki/ssh/">SSH</a></li>
+      <li><a href="/wiki/security/openpgp/restore/">Restore</a></li>
+    
+      <li><a href="/wiki/security/openpgp/revoke/">Revoke</a></li>
     
   </ul>
   

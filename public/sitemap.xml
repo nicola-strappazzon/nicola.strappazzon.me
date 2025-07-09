@@ -22,16 +22,10 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-07-01T23:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/backup/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/bash/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/electronic/resources/sim/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/security/yubikey/configure/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/electronic/resources/knowledge/</loc>
@@ -43,19 +37,10 @@
     <loc>http://localhost:1313/electronic/resources/design/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/export/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/electronic/resources/pcb/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/git/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/electronic/resources/hand-tools/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/import/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/mysql/</loc>
@@ -64,28 +49,13 @@
     <loc>http://localhost:1313/wiki/mysql/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/wiki/mysql/commands/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/wiki/mysql/queries/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/openpgp/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/electronic/resources/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/security/yubikey/restart/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/restore/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/revoke/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/security/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/security/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/sql/</loc>
@@ -98,9 +68,6 @@
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/yubikey/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/mysql-host-blocked-many-connection-errors/</loc>
@@ -208,6 +175,8 @@
     <loc>http://localhost:1313/posts/errores-frecuentes-normalizacion/</loc>
     <lastmod>2010-08-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/wiki/security/openpgp/backup/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/breadboard/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
@@ -216,6 +185,8 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/capacitor/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/security/yubikey/configure/</loc>
+  </url><url>
     <loc>http://localhost:1313/cultura/</loc>
   </url><url>
     <loc>http://localhost:1313/diccionary/</loc>
@@ -223,6 +194,12 @@
     <loc>http://localhost:1313/electronic/components/light-emitting-diode/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/security/openpgp/export/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/security/openpgp/git/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/security/openpgp/import/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/jq/</loc>
   </url><url>
@@ -238,10 +215,32 @@
   </url><url>
     <loc>http://localhost:1313/electronic/basic-lessons/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/openpgp/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/security/openpgp/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/security/yubikey/restart/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/security/openpgp/restore/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/security/openpgp/revoke/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/security/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/security/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/ssh/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/ssh/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/transistor/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/wire-bundle/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/yubikey/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/security/yubikey/</loc>
   </url>
 </urlset>

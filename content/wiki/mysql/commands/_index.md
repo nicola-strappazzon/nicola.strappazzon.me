@@ -1,11 +1,9 @@
 +++
 date = '2025-05-09T10:56:29+02:00'
-draft = true
+draft = false
 title = 'MySQL commands for DBA'
 tags = ["mysql", "bash", "dba"]
 +++
-
-# MySQL commands for DBA
 
 ## Show progress of load script
 
