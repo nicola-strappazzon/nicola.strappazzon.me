@@ -2,6 +2,7 @@
 draft = false
 title = 'GitHub'
 tags = ["bash", "security", "yubikey", "openpgp"]
+weight = 6
 +++
 
 Para usar [GPG con GitHub](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key), hacer lo siguiente:

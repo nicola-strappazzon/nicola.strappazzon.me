@@ -2,6 +2,7 @@
 draft = false
 title = 'Import'
 tags = ["bash", "security", "yubikey", "openpgp"]
+weight = 1
 +++
 
 # Importar desde un USB Security Key
@@ -10,7 +11,7 @@ tags = ["bash", "security", "yubikey", "openpgp"]
 La clave privada se queda dentro del USB Security Key y es imposible extraerla
 {{% /blockquote %}}
 
-El proceso que se sigue a continuación permite importar la clave publica e indicar que la clave privada está dentro de una USB Security Key de confianza.
+El proceso que se sigue a continuación permite importar la clave pública e indicar que la clave privada está dentro de una USB Security Key de confianza.
 
 1. Conecta el USB Security Key y verifica la información:
 

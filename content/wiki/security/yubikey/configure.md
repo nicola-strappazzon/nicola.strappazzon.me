@@ -9,7 +9,7 @@ $ ykman list
 YubiKey 5C (5.7.4) [OTP+FIDO+CCID] Serial: 12345678
 ```
 
-Tenga en cuenta que dependiendo del modelo del dispositivos, puede que la funcionalidad del `NFC`, o `OpenPGP` no este soportada. Ejecute los siguientes comandos para configurarlo a gusto y por último verifique el resultado:
+Tenga en cuenta que dependiendo del modelo del dispositivo, puede que la funcionalidad del `NFC`, o `OpenPGP` no esté soportada. Ejecute los siguientes comandos para configurarlo a gusto y por último verifique el resultado:
 
 ```bash
 ykman config usb --disable OTP

@@ -2,11 +2,15 @@
 draft = false
 title = 'Revoke'
 tags = ["bash", "security", "yubikey", "openpgp"]
+weight = 5
 +++
 
-$ gpg --output revoke.asc --gen-revoke nicola@strappazzon.me
+Ejecute el siguiente comando para crear el certificado para revocar, durante el proceso se hacen varias preguntas.
 
-sec  rsa4096/8E97CAEEEE861364 2024-02-17 Nicola Strappazzon <nicola@strappazzon.me>
+```bash
+$ gpg --output revoke.asc --gen-revoke user@example.me
+
+sec  rsa4096/8E97CAEEEE861362 2024-01-31 User Example <user@example.me>
 
 Create a revocation certificate for this key? (y/N) y
 Please select the reason for the revocation:
@@ -26,3 +30,4 @@ Is this okay? (y/N) y
 ASCII armored output forced.
 File 'revoke.asc' exists. Overwrite? (y/N) y
 Revocation certificate created.
+```

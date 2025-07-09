@@ -12,6 +12,6 @@ A la hora de escoger una Security Key debe verificar que soporte openpgp y tambi
 - [yubico](https://www.yubico.com/) Hasta 4096
 - [Nitrokey](https://www.nitrokey.com/) Hasta 4096
 
-En [esta páginia](https://keys.openpgp.org) puedes validar la identidad de una persona buscando por su clave pública, es recomendable que subas tu clave pública para que puedan verificar tu identidad ó recibir mensajes cifrados que solo tú puedes leer usando la clave privada.
+En [esta página](https://keys.openpgp.org) puedes validar la identidad de una persona buscando por su clave pública, es recomendable que subas tu clave pública para que puedan verificar tu identidad ó recibir mensajes cifrados que solo tú puedes leer usando la clave privada.
 
 Dividimos el documento en múltiples secciones:

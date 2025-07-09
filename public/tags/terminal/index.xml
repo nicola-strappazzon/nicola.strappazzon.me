@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terminal on Nicola Strappazzon</title>
+    <link>http://localhost:1313/tags/terminal/</link>
+    <description>Recent content in Terminal on Nicola Strappazzon</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <atom:link href="http://localhost:1313/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cliente</title>
+      <link>http://localhost:1313/wiki/terminal/client/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/client/</guid>
+      <description>&lt;p&gt;Si estás dentro de un SO con Interfaz Grafica, cómo Gnome, KDE, o el de Mac OS X, necesitas un cliente para acceder a la terminal, y este abrir el bash y poder ser el todo poderoso, está claro que sin eso no podemos ir avanzando, existen muchos clientes, pero listo algunos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://gnometerminator.blogspot.com/p/introduction.html&#34;&gt;Terminator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/alacritty/alacritty&#34;&gt;Alacritty&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://iterm2.com&#34;&gt;iTerm2&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Terminal, Es nativo nativo del Mac OS X.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;cómo-acceder-en-linux&#34;&gt;¿Cómo acceder en Linux?&lt;/h3&gt;&#xA;&lt;p&gt;Por desarrollar&amp;hellip;&lt;/p&gt;&#xA;&lt;h3 id=&#34;cómo-acceder-en-mac-os-x&#34;&gt;¿Cómo acceder en Mac OS X?&lt;/h3&gt;&#xA;&lt;p&gt;Con abrir el Spotlight combinando al mismo tiempo las teclas Command + Space bar aparece una ventana emergente par escribir, ponga el nombre &amp;ldquo;Terminal&amp;rdquo; ó &amp;ldquo;iTerm&amp;rdquo; por ejemplo, recuerde tener por lo menos iTerm instalado, sino no podrá conseguirlo.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

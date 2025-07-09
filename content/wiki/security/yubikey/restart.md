@@ -2,7 +2,7 @@
 title = 'Restart'
 +++
 
-Con el siguiente comando, podra borrar la información importante guardada en la Yubikey.
+Con el siguiente comando, podrá borrar la información importante guardada en la Yubikey.
 
 ```bash
 gpg-connect-agent <<EOF

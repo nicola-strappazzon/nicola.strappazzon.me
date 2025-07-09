@@ -2,11 +2,10 @@
 draft = false
 title = 'Restore'
 tags = ["bash", "security", "yubikey", "openpgp"]
+weight = 4
 +++
 
-# Restaura los certificados
-
-Supongamos que tiene una copia de seguridad de la clave prublica y privada en un Pendrive, use los siguientes comandos para importarlos y por último no olvide verificar:
+Supongamos que tiene una copia de seguridad de la clave pública y privada en un Pendrive, use los siguientes comandos para importarlos y por último no olvide verificar:
 
 ```bash
 gpg --import myprivatekeys.asc

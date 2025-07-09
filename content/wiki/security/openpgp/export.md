@@ -2,6 +2,7 @@
 draft = false
 title = 'Export'
 tags = ["bash", "security", "yubikey", "openpgp"]
+weight = 2
 +++
 
 Explicamos cómo exportar los certificados al USB Security Key.
@@ -52,8 +53,6 @@ El `PIN` no tiene nada que ver con el passphrase de la clave privada.
 
 ```bash
 gpg --card-edit
-
-
 gpg/card> admin
 Admin commands are allowed
 
@@ -80,16 +79,11 @@ gpg/card> name
 Cardholder's surname: Strappazzon
 Cardholder's given name: Nicola
 
-gpg/card>
-
 gpg/card> login
 Login data (account name): user@example.me
 
 gpg/card> url
 URL to retrieve public key: https://keys.openpgp.org/vks/v1/by-fingerprint/9186C4129FFD3D2500B35FA18E97CAEEEE861364
-
-gpg/card>
-
 
 gpg/card> list
 
@@ -117,9 +111,6 @@ Authentication key: [none]
 General key info..: [none]
 
 gpg/card>
-
-
-
 gpg --edit-key user@example.me
 
 gpg (GnuPG) 2.4.7; Copyright (C) 2024 g10 Code GmbH
@@ -165,10 +156,15 @@ ssb  rsa4096/DB9D56A1864BF103
 [ultimate] (1). User Example <user@example.me>
 
 Note: the local copy of the secret key will only be deleted with "save".
+```
 
-
-
+```bash
 ~$ gpg --card-status
+```
+
+Es importante que revise el resultado:
+
+```
 Reader ...........: Yubico YubiKey OTP FIDO CCID
 Application ID ...: A0123456789012345678901234567890
 Application type .: OpenPGP
@@ -196,3 +192,4 @@ General key info..: pub  rsa4096/8E97CAEEEE861364 2024-02-17 User Example <user@
 sec>  rsa4096/8E97CAEEEE861364  created: 2024-02-17  expires: never
                                 card-no: 0006 12345678
 ssb   rsa4096/DB9D56A1864BF103  created: 2024-02-17  expires: never
+```

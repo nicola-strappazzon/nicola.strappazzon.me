@@ -90,7 +90,7 @@
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pv -e -p -t updates.sql | mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD --batch --silent
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="kill-all-mysql-process">Kill all MySQL process</h2>
+</div><h2 id="kill-all-mysql-processes">Kill all MySQL processes</h2>
 <p>The command <code>m</code> is a alias from <code>mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD</code>.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -100,7 +100,7 @@
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>m -se <span style="color:#e6db74">&#34;SHOW PROCESSLIST&#34;</span> | awk <span style="color:#e6db74">&#39;{print &#34;KILL &#34;$1&#34;;&#34;}&#39;</span> | m
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>For RDS use the follow commands, and in this example kill the all sleep process:</p>
+</div><p>For RDS use the follow commands, and in this example kill the all sleep processes:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1

@@ -2,15 +2,18 @@
 draft = false
 title = 'Backup'
 tags = ["bash", "security", "yubikey", "openpgp"]
+weight = 3
 +++
 
-Existen varias formas de respaldar la clave publica y privada.
+Existen varias formas de respaldar la clave pública y privada.
 
 1. Copiarlos en un pendrive + cifrar la unidad con [VeraCrypt](https://veracrypt.io/en/Home.html).
-2. Imprimir el contenido la clave publica y privada.
-3. Genarar un una serie de codigos QR para luego imprimirlos y guardarlos en un lugar seguro.
+2. Imprimir el contenido la clave pública y privada.
+3. Generar una serie de códigos QR para luego imprimirlos y guardarlos en un lugar seguro.
 
-## Codigos QR
+## Códigos QR
+
+Lo más interesante del código QR es que tiene niveles de redundancia, se puede configurar del 7% hasta el 30%, en caso de que la imagen o papel se deteriore, el algoritmo intentará recuperarlo con la redundancia disponible.
 
 ```bash
 gpg --export-secret-key user@example.me | base64 > pk.base64

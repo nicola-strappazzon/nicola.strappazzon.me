@@ -4,15 +4,15 @@ title = 'SSH'
 tags = ["ssh", "bash"]
 +++
 
-El [SSH](https://es.wikipedia.org/wiki/Secure_Shell) significa Secure Shell, en mi opinión es un servicio, un protocolo cifrado de comunicación y un conjunto de herramientas de las más usada para trabajar en remoto (servidor), básicamente si en local (cliente) usamos una Terminal para hacer de todo, pues con el SSH podemos hacer lo mismo pero estando en remoto, no hay límites, puedes ejecutar comandos, bajar y subir ficheros, redirigir trafico de red a travez de este protocolo, conectarte a multiples servidores en cascada, compartir variables de entorno entre el cliente y el servidor y mucho más.
+Él [SSH](https://es.wikipedia.org/wiki/Secure_Shell) significa Secure Shell, en mi opinión es un servicio, un protocolo cifrado de comunicación y un conjunto de herramientas de el más usado para trabajar en remoto (servidor), básicamente si en local (cliente) usamos una Terminal para hacer de todo, pues con el SSH podemos hacer lo mismo, pero estando en remoto, no hay límites, puedes ejecutar comandos, bajar y subir ficheros, redirigir tráfico de red a través de este protocolo, conectarte a múltiples servidores en cascada, compartir variables de entorno entre el cliente y el servidor y mucho más.
 
-La única desventaja relevante que tiene el SSH es cuando se pierde la conexion entre el cliente y el servidor, lamentablemente se pierde por completo la sessión que se estaba ejecutando en el servidor y no la podemos recuperar, incluso comandos que habiamos dejado ejecutando (no en background como los servicios) se cierran, pero para eso usamos una herramienta llamada tmux que conpensa, ahora la solución es perfecta.
+La única desventaja relevante que tiene el SSH es cuando se pierde la conexión entre el cliente y el servidor, lamentablemente se pierde por completo la sesión que se estaba ejecutando en el servidor y no la podemos recuperar, incluso comandos que habíamos dejado ejecutando (no en background como los servicios) se cierran, pero para eso usamos una herramienta llamada tmux que compensa, ahora la solución es perfecta.
 
-El SSH es tan usado, que incluso forma parte en las herramientas cómo; git, vim y rsync entre otras. Por eso saber usarla nos habre un mundo inlimitado de posibilidades.
+El SSH es tan usado, que incluso forma parte en las herramientas cómo; git, vim y rsync entre otras. Por eso saber usarla nos habré un mundo ilimitado de posibilidades.
 
-Auqí hay que poner un grafico para orientar
+<!-- Auqí hay que poner un grafico para orientar -->
 
-Hay varias formas de autentificarnos con el servicio SSH, una es que nos pida una clave de acceso, la otra es usar un par de claves (pública y privada) para acceder de forma más segura, incluso podemos usar ambas formas para aumentar el nivel de seguridad al maximo.
+Hay varias formas de autentificarnos con el servicio SSH, una es que nos pida una clave de acceso, la otra es usar un par de claves (pública y privada) para acceder de forma más segura, incluso podemos usar ambas formas para aumentar el nivel de seguridad al máximo.
 
 ## Crear par de claves
 
@@ -22,7 +22,7 @@ Esta es la forma más segura de generar el par de claves.
 ssh-keygen -t rsa -b 4096 -o -a 100
 ```
 
-Pero, la forma tradicional y mas compatible es la siguiente:
+Pero, la forma tradicional y más compatible es la siguiente:
 
 ```bash
 ssh-keygen
@@ -30,7 +30,9 @@ ssh-keygen
 
 Estas formas generan dos ficheros, uno llamado `id_rsa` que es la clave privada, y por último el `id_rsa.pub` que es la clave pública.
 
-**IMPORTANTE** La clave privada no se comparte, se queda en tu ordenador.
+{{% blockquote type="important" %}}
+La clave privada no se comparte, se queda en tu ordenador.
+{{% /blockquote %}}
 
 ## Establecer una conexión
 
@@ -125,7 +127,7 @@ kill 9987
 
 ## Port Forward
 
-El SSH tiene la funcionalidad de compartir un puerto remoto en tu cliente local, es muy útil para saltarse algún firewall. Por ejemplo, no tenemos acceso local al puerto `8001`, entonces hacemos una conexion con un servidor que si puede verlo, y redirigimos ese puerto en nuestro cliente para acceder de la forma `localhost:8001`, solo debemos hacer la conexion de la con el siguiente comando:
+El SSH tiene la funcionalidad de compartir un puerto remoto en tu cliente local, es muy útil para saltarse algún firewall. Por ejemplo, no tenemos acceso local al puerto `8001`, entonces hacemos una conexión con un servidor que si puede verlo, y redirigimos ese puerto en nuestro cliente para acceder de la forma `localhost:8001`, solo debemos hacer la conexión de la con el siguiente comando:
 
 ```bash
 ssh -i key.pem ec2-user@bastion.stg.corp.com -L 8001:localhost:8001
@@ -137,19 +139,19 @@ Para verificar la existencia del puerto 8001 desde el cliente:
 netstat -tunelp | grep 8001
 ```
 
-Supongamos que necesitamos un acceso desde nuestro ordenador (local) a un servidor MySQL que se encuentra en AWS (remoto) y no tiene acceso público y/o directo desde el exterior (Internet).Esta practica se suele usar para ejecutar scripts en local o algún entorno de desarrollo con una base de datos de desarrollo.
+Supongamos que necesitamos un acceso desde nuestro ordenador (local) a un servidor MySQL que se encuentra en AWS (remoto) y no tiene acceso público y/o directo desde el exterior (Internet). Esta práctica se suele usar para ejecutar scripts en local o algún entorno de desarrollo con una base de datos de desarrollo.
 
 ```bash
 ssh ec2-user@bastion.stg.corp.com -i </path/to/private.key> -fNg -L 3306:mysql.cluster-ro-xxxx.eu-west-1.rds.amazonaws.com:3306
 ```
 
-Si usamos los parametros `-fNg` ejecuta el comando en segundo plano y no se abre la terminal.
+Si usamos los parámetros `-fNg` ejecuta el comando en segundo plano y no se abre la terminal.
 
 ## Variables de entorno
 
-El SSH tiene la funcionalidad de compartir un grupo de variables de entorno locales y enviarlas automaticamente al establecer la conexion del cliente al servidor conectado, pero para lograrlo hay que especificar tanto del lado del cliente cómo del servidor cuales variables podemos enviar, es seguro ya que al cerrar la conexion se pierde la variable y no queda rastro en el servidor.
+El SSH tiene la funcionalidad de compartir un grupo de variables de entorno locales y enviarlas automáticamente al establecer la conexión del cliente al servidor conectado, pero para lograrlo hay que especificar tanto del lado del cliente cómo del servidor cuáles variables podemos enviar, es seguro, ya que al cerrar la conexión se pierde la variable y no queda rastro en el servidor.
 
-Un caso practico para compartir variable de entorno, es la clave de MySQL llamada por ejemplo `MYSQL_PWD`, la definimos en nuestro cliente u ordenador una vez y nos olvidamos de su valor.
+Un caso práctico para compartir variable de entorno, es la clave de MySQL llamada por ejemplo `MYSQL_PWD`, la definimos en nuestro cliente u ordenador una vez y nos olvidamos de su valor.
 
 En el fichero de configuración del servidor `/etc/ssh/sshd_config` indicamos que variables queremos permitir recibir:
 
@@ -157,7 +159,7 @@ En el fichero de configuración del servidor `/etc/ssh/sshd_config` indicamos qu
 AcceptEnv MYSQL_PWD
 ```
 
-Puede definir varias tambien
+Puede definir varias también
 
 ```
 AcceptEnv MYSQL_PWD AWS_REGION AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
@@ -169,7 +171,7 @@ Una vez aplicado los cambios, debe reiniciar el servidor sshd para que tenga efe
 service ssh reload
 ```
 
-En el cliente, puede configurar la conexión de la siguiente forma para indicar que variable obtendrá:
+En el cliente, puede configurar la conexión de la siguiente forma para indicar qué variable obtendrá:
 
 ```
 Host stg-bastion
@@ -187,7 +189,7 @@ Con SetEnv definimos una variable de entorno y se puede definir una vez, pero co
 
 ## Troubleshooting
 
-### Remover la clave publica de un host
+### Remover la clave pública de un host
 
 Hay varias forma de hacerlo, esta es una de ellas.
 
@@ -195,7 +197,7 @@ Hay varias forma de hacerlo, esta es una de ellas.
 ssh-keygen -R 54.217.60.180
 ```
 
-Que es lo que pasa cuando ejecutamos el siguiente comando, básicamente busca en el fichero `~/.ssh/known_hosts` la línea que contiene el host en cuestion y elimina la linea entera, esta operación la podemos hacer de forma manual usando el comando `vim` de la siguiente forma:
+Que es lo que pasa cuando ejecutamos el siguiente comando, básicamente busca en el fichero `~/.ssh/known_hosts` la línea que contiene el host en cuestion y elimina la línea entera, esta operación la podemos hacer de forma manual usando el comando `vim` de la siguiente forma:
 
 ```
 vim .ssh/known_hosts +"2d|x"
@@ -207,7 +209,7 @@ El comando anterior lo que hace es eliminar directamente la línea 2 del fichero
 
 ### Claves de tipo PEM
 
-Cuando el cliente nos dice que una clave privada es invalida, posiblemente se deba a que esta esperando una de tipo .pem, entonces lo que debemos hacer es una conversión de la siguiente forma:
+Cuando el cliente nos dice que una clave privada es inválida, posiblemente se deba a que está esperando una de tipo .pem, entonces lo que debemos hacer es una conversión de la siguiente forma:
 
 ```bash
 ssh-keygen -p -m PEM -f ~/.ssh/id_rsa
@@ -215,7 +217,7 @@ ssh-keygen -p -m PEM -f ~/.ssh/id_rsa
 
 ### Logs
 
-En caso que haya un problema de conexión, se aconseja explorar los siguientes ficheros para encontrar alguna pista:
+En caso de que haya un problema de conexión, se aconseja explorar los siguientes ficheros para encontrar alguna pista:
 
 - /var/log/secure
 - /var/log/auth.log

@@ -84,27 +84,58 @@
       <h2 class="title">Revoke</h2>
       
     </div>
-    <p>$ gpg &ndash;output revoke.asc &ndash;gen-revoke <a href="mailto:nicola@strappazzon.me">nicola@strappazzon.me</a></p>
-<p>sec  rsa4096/8E97CAEEEE861364 2024-02-17 Nicola Strappazzon <a href="mailto:nicola@strappazzon.me">nicola@strappazzon.me</a></p>
-<p>Create a revocation certificate for this key? (y/N) y
-Please select the reason for the revocation:
-0 = No reason specified
-1 = Key has been compromised
-2 = Key is superseded
-3 = Key is no longer used
-Q = Cancel
-(Probably you want to select 1 here)
-Your decision? 0
-Enter an optional description; end it with an empty line:</p>
-<blockquote>
-<p>This is a backup revocation certificate in case the key has been compromised.</p></blockquote>
-<p>Reason for revocation: No reason specified
-This is a backup revocation certificate in case the key has been compromised.
-Is this okay? (y/N) y
-ASCII armored output forced.
-File &lsquo;revoke.asc&rsquo; exists. Overwrite? (y/N) y
-Revocation certificate created.</p>
-
+    <p>Ejecute el siguiente comando para crear el certificado para revocar, durante el proceso se hacen varias preguntas.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gpg --output revoke.asc --gen-revoke user@example.me
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sec  rsa4096/8E97CAEEEE861362 2024-01-31 User Example &lt;user@example.me&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Create a revocation certificate <span style="color:#66d9ef">for</span> this key? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span><span style="display:flex;"><span>Please <span style="color:#66d9ef">select</span> the reason <span style="color:#66d9ef">for</span> the revocation:
+</span></span><span style="display:flex;"><span>  0 <span style="color:#f92672">=</span> No reason specified
+</span></span><span style="display:flex;"><span>  1 <span style="color:#f92672">=</span> Key has been compromised
+</span></span><span style="display:flex;"><span>  2 <span style="color:#f92672">=</span> Key is superseded
+</span></span><span style="display:flex;"><span>  3 <span style="color:#f92672">=</span> Key is no longer used
+</span></span><span style="display:flex;"><span>  Q <span style="color:#f92672">=</span> Cancel
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>Probably you want to <span style="color:#66d9ef">select</span> <span style="color:#ae81ff">1</span> here<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Your decision? <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Enter an optional description; end it with an empty line:
+</span></span><span style="display:flex;"><span>&gt; This is a backup revocation certificate in <span style="color:#66d9ef">case</span> the key has been compromised.
+</span></span><span style="display:flex;"><span>&gt;
+</span></span><span style="display:flex;"><span>Reason <span style="color:#66d9ef">for</span> revocation: No reason specified
+</span></span><span style="display:flex;"><span>This is a backup revocation certificate in <span style="color:#66d9ef">case</span> the key has been compromised.
+</span></span><span style="display:flex;"><span>Is this okay? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span><span style="display:flex;"><span>ASCII armored output forced.
+</span></span><span style="display:flex;"><span>File <span style="color:#e6db74">&#39;revoke.asc&#39;</span> exists. Overwrite? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span><span style="display:flex;"><span>Revocation certificate created.
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
   </article>
 
 </div>
