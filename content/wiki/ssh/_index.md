@@ -165,7 +165,7 @@ AcceptEnv MYSQL_PWD AWS_REGION AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
 
 Una vez aplicado los cambios, debe reiniciar el servidor sshd para que tenga efecto los cambios, por ejemplo:
 
-```
+```bash
 service ssh reload
 ```
 

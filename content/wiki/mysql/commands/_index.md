@@ -11,7 +11,7 @@ tags = ["mysql", "bash", "dba"]
 pv -e -p -t updates.sql | mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD --batch --silent
 ```
 
-## Kill all MySQL process
+## Kill all MySQL processes
 
 The command `m` is a alias from `mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD`.
 
@@ -19,7 +19,7 @@ The command `m` is a alias from `mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASS
 m -se "SHOW PROCESSLIST" | awk '{print "KILL "$1";"}' | m
 ```
 
-For RDS use the follow commands, and in this example kill the all sleep process:
+For RDS use the follow commands, and in this example kill the all sleep processes:
 
 ```bash
 m -se "SHOW PROCESSLIST" | grep Sleep | awk '{print "CALL mysql.rds_kill("$1");"}' | m -f
