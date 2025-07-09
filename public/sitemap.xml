@@ -187,6 +187,16 @@
     <loc>http://localhost:1313/posts/errores-frecuentes-normalizacion/</loc>
     <lastmod>2010-08-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/wiki/terminal/config/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/terminal/env/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/terminal/functions/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/terminal/prompt/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/terminal/streams/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/terminal/basic/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/</loc>

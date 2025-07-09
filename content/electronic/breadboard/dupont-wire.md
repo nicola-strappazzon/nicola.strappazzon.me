@@ -21,4 +21,11 @@ Hoy en día, por más que busque en la página web de [Amphenol](https://ampheno
 
 ## Mis inventos
 
-Este es un caso que voy a usar de ejemplo, generalmente las baterías usan un conector de tipo JST-PH-2, o si usas un conector para pilas de 9V los cables están sueltos, y estos son incompatibles para usarse en un breadboard, por los que es mejor cambiarlos por los Dupont.
+Este es un caso que voy a usar de ejemplo, generalmente las baterías usan un conector de tipo JST-PH-2, o si usas un conector para pilas de 9V los cables están sueltos, y estos son incompatibles para usarse en un breadboard, por los que es mejor cambiarlos, se me ocurrió utilizar los siguientes terminales:
+
+## Materiales
+
+- Conector tipo hembra [Molex 0016020096](https://www.digikey.es/en/products/detail/molex/0016020096/115060)
+- Conector tipo macho/pin [Molex 0016020108](https://www.digikey.es/en/products/detail/molex/0016020108/171962)
+- Housing para el conector tipo hembra [Molex 0050579402](https://www.digikey.es/en/products/detail/molex/0050579402/115029)
+- Housing para el conector tipo macho/pin [Molex 0705530001](https://www.digikey.es/en/products/detail/molex/0705530001/114951)

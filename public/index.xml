@@ -345,6 +345,41 @@
       <description>&lt;p&gt;En los trabajos que me e envuelto con base de datos, e visto un gran número de ellas, muchas echas por empresas pequeñas y medianas especializadas en el desarrollo, de cualquier sector; comercial, educativo o independientes, al final de todo, existe algo en común, y me llevo a una  conclusión, &amp;ldquo;&lt;strong&gt;Será que NO tienen la mas mínima y remota idea de ¿Cómo hacer un modelo físico y aprovechar todas las bondades de un manejador de base de datos?&lt;/strong&gt;&amp;rdquo;, y lo peor del caso, es que eso funciona milagrosamente y para ellos es indispensable toda su información &lt;em&gt;(obviamente)&lt;/em&gt;, pero tienen un problema en común, &lt;strong&gt;el sistema no funciona bien&lt;/strong&gt;, ¿Por qué será?&lt;/p&gt;</description>
     </item>
     <item>
+      <title></title>
+      <link>http://localhost:1313/wiki/terminal/config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/config/</guid>
+      <description>&lt;h2 id=&#34;configuración&#34;&gt;Configuración&lt;/h2&gt;&#xA;&lt;p&gt;La configuración de la terminal se hace principalmente en el fichero &lt;code&gt;.bash_profile&lt;/code&gt; ubicado en la ráiz de la home del usuario, por ejemplo si tu usuario es &lt;strong&gt;nsc&lt;/strong&gt;, entonces la ruta en MAX OS X será &lt;code&gt;/Users/nsc/&lt;/code&gt; y si estás en Linux la ruta será &lt;code&gt;/home/nsc/&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Se puede especificar un fichero para que acceda directamente a la home de la siguiente forma, por ejemplo aquí queremos mostrar el contenido de &lt;code&gt;.bash_profile&lt;/code&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/wiki/terminal/env/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/env/</guid>
+      <description>&lt;h2 id=&#34;variables&#34;&gt;Variables&lt;/h2&gt;&#xA;&lt;p&gt;Aquí hablaremos de las variables de entorno, que son, donde se definen y para que se usan. Hay varios tipos de variables a pesar que no se definen cómo tal, algunas son propias del Sistema Operativo, otras son para las aplicaciones o para nuestros propositos, la idea es que el usuario las pueda ir definiendo a su gusto, una de las muchas utilidades que tiene, es la forma de definir parámetros de configuración en el despliegue de una aplicación.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/wiki/terminal/functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/functions/</guid>
+      <description>&lt;h2 id=&#34;funciones&#34;&gt;Funciones&lt;/h2&gt;&#xA;&lt;p&gt;hablar que son, para que se usan y poner ejemplos y donde se pueden poner.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/wiki/terminal/prompt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/prompt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/wiki/terminal/streams/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/streams/</guid>
+      <description>&lt;h2 id=&#34;entradas-salidas-y-error&#34;&gt;Entradas, salidas y error&lt;/h2&gt;&#xA;&lt;p&gt;standard&lt;/p&gt;&#xA;&lt;p&gt;stdin&lt;/p&gt;&#xA;&lt;p&gt;stdout&lt;/p&gt;&#xA;&lt;p&gt;stderr&lt;/p&gt;&#xA;&lt;h3 id=&#34;redirigir-las-salidas&#34;&gt;Redirigir las salidas&lt;/h3&gt;&#xA;&lt;h3 id=&#34;combinar-salidas&#34;&gt;Combinar salidas&lt;/h3&gt;&#xA;&lt;p&gt;con los comandos&lt;/p&gt;&#xA;&lt;p&gt;Esto hace referencia a los pipes | del bash&lt;/p&gt;&#xA;&lt;p&gt;sera que aquí hay un limite en estas variables?&lt;/p&gt;&#xA;&lt;h2 id=&#34;limitaciones&#34;&gt;Limitaciones&lt;/h2&gt;&#xA;&lt;p&gt;Los clientes, por alguna razón, tienen un limite de caracteres, en el caso de linux es 4k, en Mac 1K, hay que averiguar que es exactamente.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/643777/is-there-any-limit-on-line-length-when-pasting-to-a-terminal-in-linux&#34;&gt;https://unix.stackexchange.com/questions/643777/is-there-any-limit-on-line-length-when-pasting-to-a-terminal-in-linux&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;configurar-el-input&#34;&gt;Configurar el input&lt;/h3&gt;&#xA;&lt;p&gt;Para habilitar alfunas funciones importantes y configurar algunos keymaps básicos para aumentar la cómodidad a gusto, debemos editar el siguiente fichero &lt;code&gt;~/.inputrc&lt;/code&gt; y agregar las siguientes líneas:&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Básico</title>
       <link>http://localhost:1313/wiki/terminal/basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
