@@ -10,7 +10,7 @@ Para hacer una anécdota histórica, en los años 80 cuando empezó mi curiosida
 ## Componentes
 
 - Una placa de pruebas.
-- Una pilas de 9V con su conector.
+- Dos pilas de 1.5V con su base.
 - Un pulsador.
 - Una resistencia de 1kΩ.
 - Un LED del color deseado.
