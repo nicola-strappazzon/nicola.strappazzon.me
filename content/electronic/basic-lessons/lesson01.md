@@ -10,7 +10,7 @@ Para hacer una anécdota histórica, en los años 80 cuando empezó mi curiosida
 ## Componentes
 
 - Una placa de pruebas.
-- Dos pilas de 1.5V con su base.
+- Dos pilas de 1.5V para sumar 3V y con su base.
 - Un pulsador.
 - Una resistencia de 1kΩ.
 - Un LED del color deseado.
@@ -26,3 +26,4 @@ Para hacer una anécdota histórica, en los años 80 cuando empezó mi curiosida
 
 ## Análisis
 
+Al presionar el pulsador se enciende el LED. Al no presionar el pulsador no se enciende el LED.
