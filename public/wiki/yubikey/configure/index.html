@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Backup | Nicola Strappazzon</title>
+<title>Configuración | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -77,21 +77,24 @@
     <ul id="breadcrumbs">
       <li><a href="/">Inicio</a></li>
       <li><a href="/wiki/">Wiki</a></li>
-      <li><a href="/wiki/security/">Security</a></li>
-      <li><a href="/wiki/security/openpgp/">OpenPGP</a></li>
+      <li><a href="/wiki/yubikey/">YubiKey</a></li>
     </ul>
     <div class="content-header">
-      <h2 class="title">Backup</h2>
+      <h2 class="title">Configuración</h2>
       
     </div>
-    <p>Existen varias formas de respaldar la clave pública y privada.</p>
-<ol>
-<li>Copiarlos en un pendrive + cifrar la unidad con <a href="https://veracrypt.io/en/Home.html">VeraCrypt</a>.</li>
-<li>Imprimir el contenido la clave pública y privada.</li>
-<li>Generar una serie de códigos QR para luego imprimirlos y guardarlos en un lugar seguro.</li>
-</ol>
-<h2 id="códigos-qr">Códigos QR</h2>
-<p>Lo más interesante del código QR es que tiene niveles de redundancia, se puede configurar del 7% hasta el 30%, en caso de que la imagen o papel se deteriore, el algoritmo intentará recuperarlo con la redundancia disponible.</p>
+    <p>Antes, deberá verificar que reconoce el dispositivo y conocer las funcionalidades que ofrece:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ykman list
+</span></span><span style="display:flex;"><span>YubiKey 5C <span style="color:#f92672">(</span>5.7.4<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>OTP+FIDO+CCID<span style="color:#f92672">]</span> Serial: <span style="color:#ae81ff">12345678</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Tenga en cuenta que dependiendo del modelo del dispositivo, puede que la funcionalidad del <code>NFC</code>, o <code>OpenPGP</code> no esté soportada. Ejecute los siguientes comandos para configurarlo a gusto y por último verifique el resultado:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -104,14 +107,29 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg --export-secret-key user@example.me | base64 &gt; pk.base64
-</span></span><span style="display:flex;"><span>split -d -C <span style="color:#ae81ff">2500</span> pk.base64
-</span></span><span style="display:flex;"><span>qrencode -r x00 -o x00.png
-</span></span><span style="display:flex;"><span>qrencode -r x01 -o x01.png
-</span></span><span style="display:flex;"><span>qrencode -r x02 -o x02.png
-</span></span><span style="display:flex;"><span>qrencode -r x03 -o x03.png
-</span></span><span style="display:flex;"><span>qrencode -r x04 -o x04.png
-</span></span><span style="display:flex;"><span>convert *.png pk.pdf
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ykman config usb --disable OTP
+</span></span><span style="display:flex;"><span>ykman config usb --disable U2F
+</span></span><span style="display:flex;"><span>ykman config usb --enable FIDO2
+</span></span><span style="display:flex;"><span>ykman config usb --disable OATH
+</span></span><span style="display:flex;"><span>ykman config usb --disable PIV
+</span></span><span style="display:flex;"><span>ykman config usb --disable HSMAUTH
+</span></span><span style="display:flex;"><span>ykman config usb --enable OpenPGP
+</span></span><span style="display:flex;"><span>ykman info
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Por último, configuro el <code>OpenPGP</code> para usar el touch que es bastante práctico:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ykman openpgp keys set-touch aut on
+</span></span><span style="display:flex;"><span>ykman openpgp keys set-touch sig on
+</span></span><span style="display:flex;"><span>ykman openpgp keys set-touch enc on
+</span></span><span style="display:flex;"><span>ykman openpgp info
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

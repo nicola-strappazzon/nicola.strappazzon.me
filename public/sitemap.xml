@@ -6,15 +6,15 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/color-code/</loc>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/import/</loc>
+    <loc>http://localhost:1313/wiki/openpgp/import/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/terminal/client/</loc>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/export/</loc>
+    <loc>http://localhost:1313/wiki/openpgp/export/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/values/</loc>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/backup/</loc>
+    <loc>http://localhost:1313/wiki/openpgp/backup/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/measurement/</loc>
   </url><url>
@@ -22,17 +22,17 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/dummy-load/</loc>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/restore/</loc>
+    <loc>http://localhost:1313/wiki/openpgp/restore/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/terminal/config/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/voltage-divider/</loc>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/revoke/</loc>
+    <loc>http://localhost:1313/wiki/openpgp/revoke/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/current-divider/</loc>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/git/</loc>
+    <loc>http://localhost:1313/wiki/openpgp/git/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/esr/</loc>
   </url><url>
@@ -203,7 +203,7 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/capacitor/</loc>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/yubikey/configure/</loc>
+    <loc>http://localhost:1313/wiki/yubikey/configure/</loc>
   </url><url>
     <loc>http://localhost:1313/cultura/</loc>
   </url><url>
@@ -229,15 +229,13 @@
   </url><url>
     <loc>http://localhost:1313/tags/openpgp/</loc>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/openpgp/</loc>
+    <loc>http://localhost:1313/wiki/openpgp/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/</loc>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/yubikey/restart/</loc>
+    <loc>http://localhost:1313/wiki/yubikey/restart/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/security/</loc>
-  </url><url>
-    <loc>http://localhost:1313/wiki/security/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/ssh/</loc>
   </url><url>
@@ -253,6 +251,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/yubikey/</loc>
   </url><url>
-    <loc>http://localhost:1313/wiki/security/yubikey/</loc>
+    <loc>http://localhost:1313/wiki/yubikey/</loc>
   </url>
 </urlset>

@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Configuración | Nicola Strappazzon</title>
+<title>GitHub | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -77,25 +77,13 @@
     <ul id="breadcrumbs">
       <li><a href="/">Inicio</a></li>
       <li><a href="/wiki/">Wiki</a></li>
-      <li><a href="/wiki/security/">Security</a></li>
-      <li><a href="/wiki/security/yubikey/">YubiKey</a></li>
+      <li><a href="/wiki/openpgp/">OpenPGP</a></li>
     </ul>
     <div class="content-header">
-      <h2 class="title">Configuración</h2>
+      <h2 class="title">GitHub</h2>
       
     </div>
-    <p>Antes, deberá verificar que reconoce el dispositivo y conocer las funcionalidades que ofrece:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ykman list
-</span></span><span style="display:flex;"><span>YubiKey 5C <span style="color:#f92672">(</span>5.7.4<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>OTP+FIDO+CCID<span style="color:#f92672">]</span> Serial: <span style="color:#ae81ff">12345678</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Tenga en cuenta que dependiendo del modelo del dispositivo, puede que la funcionalidad del <code>NFC</code>, o <code>OpenPGP</code> no esté soportada. Ejecute los siguientes comandos para configurarlo a gusto y por último verifique el resultado:</p>
+    <p>Para usar <a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key">GPG con GitHub</a>, hacer lo siguiente:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -108,29 +96,14 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ykman config usb --disable OTP
-</span></span><span style="display:flex;"><span>ykman config usb --disable U2F
-</span></span><span style="display:flex;"><span>ykman config usb --enable FIDO2
-</span></span><span style="display:flex;"><span>ykman config usb --disable OATH
-</span></span><span style="display:flex;"><span>ykman config usb --disable PIV
-</span></span><span style="display:flex;"><span>ykman config usb --disable HSMAUTH
-</span></span><span style="display:flex;"><span>ykman config usb --enable OpenPGP
-</span></span><span style="display:flex;"><span>ykman info
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Por último, configuro el <code>OpenPGP</code> para usar el touch que es bastante práctico:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ykman openpgp keys set-touch aut on
-</span></span><span style="display:flex;"><span>ykman openpgp keys set-touch sig on
-</span></span><span style="display:flex;"><span>ykman openpgp keys set-touch enc on
-</span></span><span style="display:flex;"><span>ykman openpgp info
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global --unset gpg.format
+</span></span><span style="display:flex;"><span>git config --global user.signingkey 9186C4129FFD3D2500B35FA18E97CAEEEE861364
+</span></span><span style="display:flex;"><span>git config --global commit.gpgsign true
+</span></span><span style="display:flex;"><span>git config --global tag.gpgSign true
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -r ~/.bash_profile <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo -e <span style="color:#e6db74">&#39;\nexport GPG_TTY=$(tty)&#39;</span> &gt;&gt; ~/.bash_profile;   <span style="color:#66d9ef">else</span> echo -e <span style="color:#e6db74">&#39;\nexport GPG_TTY=$(tty)&#39;</span> &gt;&gt; ~/.profile; <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>brew install pinentry-mac
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;pinentry-program </span><span style="color:#66d9ef">$(</span>which pinentry-mac<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; ~/.gnupg/gpg-agent.conf
+</span></span><span style="display:flex;"><span>killall gpg-agent
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
