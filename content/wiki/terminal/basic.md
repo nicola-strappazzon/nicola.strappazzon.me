@@ -1,7 +1,8 @@
 +++
-draft = false
-title = 'Básico'
-tags = ["bash"]
+draft  = false
+title  = 'Básico'
+tags   = ["bash"]
+weight = 1
 +++
 
 Para ir entendiendo todo lo que esta escrito a lo largo del documento, será útil conocer y/o repasar estos puntos:
@@ -28,6 +29,6 @@ Existen diferentes símbolos para el cursor y también pueden parpadear; | _ &#9
 - **Fichero:** (o archivo) es un contenedor de datos, es cualquier cosa que puedes leer o escribir. En los sistemas operativos basados en Linux y derivados son ficheros; discos, terminales, dispositivos, procesos, etc.
 - **Directorio:** Algunos también lo llaman Carpeta, pero es un término más de MS Windows, pero su forma correcta es directorio, esta es una unidad organizativa que permite contener Directorios y Ficheros de cualquier tipo.
 - **Ruta:** (o path) es la dirección única que indica el sistema dónde está un fichero o directorio. Existen dos sub-grupos de la ruta; la absoluta y la relativa:
-    - **Absoluta:**
-    - **Relativa:**
+    - **Absoluta:** Es la dirección completa desde la raíz del sistema (/) hasta el archivo o directorio.
+    - **Relativa:** Es la dirección desde el lugar donde estás ahora (tu directorio actual) al que quieres ir.
 - **Separador:** En una ruta hay un símbolo `/` llamado barra normal o slash, que permite separar los niveles del sistema de archivos y directorios. En sistemas operativos como MS Windows usa un separador diferente `\` llamado barra invertida.

@@ -1,4 +1,9 @@
-## Variables
++++
+draft  = true
+title  = 'Variables de entorno'
+tags   = ["terminal", "bash"]
+weight = 6
++++
 
 Aquí hablaremos de las variables de entorno, que son, donde se definen y para que se usan. Hay varios tipos de variables a pesar que no se definen cómo tal, algunas son propias del Sistema Operativo, otras son para las aplicaciones o para nuestros propositos, la idea es que el usuario las pueda ir definiendo a su gusto, una de las muchas utilidades que tiene, es la forma de definir parámetros de configuración en el despliegue de una aplicación.
 

@@ -2,9 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/wiki/terminal/basic/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/color-code/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/import/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/terminal/client/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/export/</loc>
   </url><url>
@@ -14,9 +18,13 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/measurement/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/terminal/prompt/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/dummy-load/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/security/openpgp/restore/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/terminal/config/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/voltage-divider/</loc>
   </url><url>
@@ -187,23 +195,9 @@
     <loc>http://localhost:1313/posts/errores-frecuentes-normalizacion/</loc>
     <lastmod>2010-08-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/wiki/terminal/config/</loc>
-  </url><url>
-    <loc>http://localhost:1313/wiki/terminal/env/</loc>
-  </url><url>
-    <loc>http://localhost:1313/wiki/terminal/functions/</loc>
-  </url><url>
-    <loc>http://localhost:1313/wiki/terminal/prompt/</loc>
-  </url><url>
-    <loc>http://localhost:1313/wiki/terminal/streams/</loc>
-  </url><url>
-    <loc>http://localhost:1313/wiki/terminal/basic/</loc>
-  </url><url>
     <loc>http://localhost:1313/electronic/breadboard/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/wiki/terminal/client/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/</loc>
   </url><url>
@@ -250,6 +244,8 @@
     <loc>http://localhost:1313/wiki/ssh/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/terminal/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/terminal/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/transistor/</loc>
   </url><url>

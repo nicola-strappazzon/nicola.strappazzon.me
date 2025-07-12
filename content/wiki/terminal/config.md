@@ -1,5 +1,9 @@
-
-## Configuración
++++
+draft  = false
+title  = 'Configuración'
+tags   = ["terminal", "bash"]
+weight = 5
++++
 
 La configuración de la terminal se hace principalmente en el fichero `.bash_profile` ubicado en la ráiz de la home del usuario, por ejemplo si tu usuario es **nsc**, entonces la ruta en MAX OS X será `/Users/nsc/` y si estás en Linux la ruta será `/home/nsc/`.
 
@@ -21,7 +25,7 @@ Aquí podra ver si hay algún error, si todo está bien, no verá ningún mensaj
 
 **NOTA:** Por otro lado, los ficheros que tienen un nombre que empieza por punto como en este caso, indican que son ficheros "ocultos" y que no se pueden ver a simple vista, generalmente son usados para guardar configuración, de estos existen varios cómo por ejemplo: `.gitignore`.
 
-### Cambiar el tipo de terminal
+## Cambiar el tipo de terminal
 
 Desde la version de MAC OS X Catalina en adelante viene por defecto zsh, para hacer el cambio a bash debemos hacer lo siguiente:
 

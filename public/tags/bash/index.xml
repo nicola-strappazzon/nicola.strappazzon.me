@@ -9,11 +9,25 @@
     <lastBuildDate>Fri, 09 May 2025 10:56:29 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Básico</title>
+      <link>http://localhost:1313/wiki/terminal/basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/basic/</guid>
+      <description>&lt;p&gt;Para ir entendiendo todo lo que esta escrito a lo largo del documento, será útil conocer y/o repasar estos puntos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Prompt:&lt;/strong&gt; Es el carácter o conjunto de caracteres que se muestran en una línea de comandos para indicar que está a la espera de órdenes. Este puede variar dependiendo del intérprete de comandos y suele ser configurable.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;user@host:~$&#xA;root@host:~#&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;La primera línea indica el &lt;em&gt;Prompt&lt;/em&gt; de un usuario normal, y la segunda línea indica el &lt;em&gt;Prompt&lt;/em&gt; de un super usuario cómo el &lt;code&gt;root&lt;/code&gt; o el que se accede usando &lt;code&gt;sudo&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Import</title>
       <link>http://localhost:1313/wiki/security/openpgp/import/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wiki/security/openpgp/import/</guid>
       <description>&lt;h1 id=&#34;importar-desde-un-usb-security-key&#34;&gt;Importar desde un USB Security Key&lt;/h1&gt;&#xA;&lt;blockquote class=&#34;important&#34;&gt;&lt;p class=&#34;title&#34;&gt;&lt;svg viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;Important&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cliente</title>
+      <link>http://localhost:1313/wiki/terminal/client/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/client/</guid>
+      <description>&lt;p&gt;Si estás dentro de un SO con Interfaz Grafica, cómo Gnome, KDE, o el de Mac OS X, necesitas un cliente para acceder a la terminal, y este abrir el bash y poder ser el todo poderoso, está claro que sin eso no podemos ir avanzando, existen muchos clientes, pero listo algunos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://gnometerminator.blogspot.com/p/introduction.html&#34;&gt;Terminator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/alacritty/alacritty&#34;&gt;Alacritty&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://iterm2.com&#34;&gt;iTerm2&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Terminal, Es nativo nativo del Mac OS X.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- ### ¿Cómo acceder en Linux?&#xA;&#xA;Por desarrollar...&#xA; --&gt;&#xA;&lt;h3 id=&#34;cómo-acceder-en-mac-os-x&#34;&gt;¿Cómo acceder en Mac OS X?&lt;/h3&gt;&#xA;&lt;p&gt;Con abrir el Spotlight combinando al mismo tiempo las teclas Command + Space bar aparece una ventana emergente par escribir, ponga el nombre &amp;ldquo;Terminal&amp;rdquo; ó &amp;ldquo;iTerm&amp;rdquo; por ejemplo, recuerde tener por lo menos iTerm instalado, sino no podrá conseguirlo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Export</title>
@@ -30,11 +44,25 @@
       <description>&lt;p&gt;Existen varias formas de respaldar la clave pública y privada.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Copiarlos en un pendrive + cifrar la unidad con &lt;a href=&#34;https://veracrypt.io/en/Home.html&#34;&gt;VeraCrypt&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Imprimir el contenido la clave pública y privada.&lt;/li&gt;&#xA;&lt;li&gt;Generar una serie de códigos QR para luego imprimirlos y guardarlos en un lugar seguro.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;códigos-qr&#34;&gt;Códigos QR&lt;/h2&gt;&#xA;&lt;p&gt;Lo más interesante del código QR es que tiene niveles de redundancia, se puede configurar del 7% hasta el 30%, en caso de que la imagen o papel se deteriore, el algoritmo intentará recuperarlo con la redundancia disponible.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Prompt</title>
+      <link>http://localhost:1313/wiki/terminal/prompt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/prompt/</guid>
+      <description>&lt;p&gt;Es el símbolo del sistema, incluso configurable, y también mediante una simbología básica te indica tus privilegios y donde estás.&lt;/p&gt;&#xA;&lt;p&gt;El prompt es un grupo de símbolos que indican que ya puedes escribir un comando, y su primera aparición suele ser así, indicando que eres un usuario normal:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; $ _&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;En el caso de que tienes permisos máximos, como el del usuario todo poderoso &lt;strong&gt;root&lt;/strong&gt;, entonces te aparecerá de la siguiente forma:&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Restore</title>
       <link>http://localhost:1313/wiki/security/openpgp/restore/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wiki/security/openpgp/restore/</guid>
       <description>&lt;p&gt;Supongamos que tiene una copia de seguridad de la clave pública y privada en un Pendrive, use los siguientes comandos para importarlos y por último no olvide verificar:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg --import myprivatekeys.asc&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg --import mypubkeys.asc&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg --import-ownertrust otrust.txt&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg --list-secret-keys&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg --list-keys&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Configuración</title>
+      <link>http://localhost:1313/wiki/terminal/config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/config/</guid>
+      <description>&lt;p&gt;La configuración de la terminal se hace principalmente en el fichero &lt;code&gt;.bash_profile&lt;/code&gt; ubicado en la ráiz de la home del usuario, por ejemplo si tu usuario es &lt;strong&gt;nsc&lt;/strong&gt;, entonces la ruta en MAX OS X será &lt;code&gt;/Users/nsc/&lt;/code&gt; y si estás en Linux la ruta será &lt;code&gt;/home/nsc/&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Se puede especificar un fichero para que acceda directamente a la home de la siguiente forma, por ejemplo aquí queremos mostrar el contenido de &lt;code&gt;.bash_profile&lt;/code&gt;:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revoke</title>
@@ -58,20 +86,6 @@
       <description>&lt;h2 id=&#34;show-progress-of-load-script&#34;&gt;Show progress of load script&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pv -e -p -t updates.sql | mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD --batch --silent&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;h2 id=&#34;kill-all-mysql-processes&#34;&gt;Kill all MySQL processes&lt;/h2&gt;&#xA;&lt;p&gt;The command &lt;code&gt;m&lt;/code&gt; is a alias from &lt;code&gt;mysql -h 127.0.0.1 -u $MYSQL_USER -p$MYSQL_PASSWORD&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;m -se &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SHOW PROCESSLIST&amp;#34;&lt;/span&gt; | awk &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{print &amp;#34;KILL &amp;#34;$1&amp;#34;;&amp;#34;}&amp;#39;&lt;/span&gt; | m&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;For RDS use the follow commands, and in this example kill the all sleep processes:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Básico</title>
-      <link>http://localhost:1313/wiki/terminal/basic/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/wiki/terminal/basic/</guid>
-      <description>&lt;p&gt;Para ir entendiendo todo lo que esta escrito a lo largo del documento, será útil conocer y/o repasar estos puntos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Prompt:&lt;/strong&gt; Es el carácter o conjunto de caracteres que se muestran en una línea de comandos para indicar que está a la espera de órdenes. Este puede variar dependiendo del intérprete de comandos y suele ser configurable.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;user@host:~$&#xA;root@host:~#&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;La primera línea indica el &lt;em&gt;Prompt&lt;/em&gt; de un usuario normal, y la segunda línea indica el &lt;em&gt;Prompt&lt;/em&gt; de un super usuario cómo el &lt;code&gt;root&lt;/code&gt; o el que se accede usando &lt;code&gt;sudo&lt;/code&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Cliente</title>
-      <link>http://localhost:1313/wiki/terminal/client/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/wiki/terminal/client/</guid>
-      <description>&lt;p&gt;Si estás dentro de un SO con Interfaz Grafica, cómo Gnome, KDE, o el de Mac OS X, necesitas un cliente para acceder a la terminal, y este abrir el bash y poder ser el todo poderoso, está claro que sin eso no podemos ir avanzando, existen muchos clientes, pero listo algunos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://gnometerminator.blogspot.com/p/introduction.html&#34;&gt;Terminator&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/alacritty/alacritty&#34;&gt;Alacritty&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://iterm2.com&#34;&gt;iTerm2&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Terminal, Es nativo nativo del Mac OS X.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- ### ¿Cómo acceder en Linux?&#xA;&#xA;Por desarrollar...&#xA; --&gt;&#xA;&lt;h3 id=&#34;cómo-acceder-en-mac-os-x&#34;&gt;¿Cómo acceder en Mac OS X?&lt;/h3&gt;&#xA;&lt;p&gt;Con abrir el Spotlight combinando al mismo tiempo las teclas Command + Space bar aparece una ventana emergente par escribir, ponga el nombre &amp;ldquo;Terminal&amp;rdquo; ó &amp;ldquo;iTerm&amp;rdquo; por ejemplo, recuerde tener por lo menos iTerm instalado, sino no podrá conseguirlo.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>jq</title>
       <link>http://localhost:1313/wiki/jq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -91,6 +105,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wiki/ssh/</guid>
       <description>&lt;p&gt;Él &lt;a href=&#34;https://es.wikipedia.org/wiki/Secure_Shell&#34;&gt;SSH&lt;/a&gt; significa Secure Shell, en mi opinión es un servicio, un protocolo cifrado de comunicación y un conjunto de herramientas de el más usado para trabajar en remoto (servidor), básicamente si en local (cliente) usamos una Terminal para hacer de todo, pues con el SSH podemos hacer lo mismo, pero estando en remoto, no hay límites, puedes ejecutar comandos, bajar y subir ficheros, redirigir tráfico de red a través de este protocolo, conectarte a múltiples servidores en cascada, compartir variables de entorno entre el cliente y el servidor y mucho más.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Terminal</title>
+      <link>http://localhost:1313/wiki/terminal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/</guid>
+      <description>&lt;p&gt;Imaginate un sitio en el ordenador que puedas hacer lo que quieras sin limites, que se considera &amp;ldquo;oscuro&amp;rdquo;, flexible, rapido, y eficiente.&lt;/p&gt;&#xA;&lt;p&gt;Me acuerdo cuando quería aprender a usar Linux y los libros eran más grande que la biblia, había uno para cada cosa, explicaban de todo, al inicio era difícil encontrar lo que necesitabas para sobrevivir y sentirte útil. Pero con el tiempo me los fui leyendo y poniendo en practica a diario hasta que decidi escribir mi experiencia.&lt;/p&gt;</description>
     </item>
     <item>
       <title>YubiKey</title>

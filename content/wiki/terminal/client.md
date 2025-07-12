@@ -1,7 +1,8 @@
 +++
-draft = false
-title = 'Cliente'
-tags = ["terminal", "bash"]
+draft  = false
+title  = 'Cliente'
+tags   = ["terminal", "bash"]
+weight = 2
 +++
 
 Si estás dentro de un SO con Interfaz Grafica, cómo Gnome, KDE, o el de Mac OS X, necesitas un cliente para acceder a la terminal, y este abrir el bash y poder ser el todo poderoso, está claro que sin eso no podemos ir avanzando, existen muchos clientes, pero listo algunos:

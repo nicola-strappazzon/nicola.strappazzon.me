@@ -1,3 +1,10 @@
++++
+draft  = true
+title  = 'Streams [stdin|stdout|stderr]'
+tags   = ["terminal", "bash"]
+weight = 8
++++
+
 ## Entradas, salidas y error
 
 standard

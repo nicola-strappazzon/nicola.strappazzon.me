@@ -2,11 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terminal on Nicola Strappazzon</title>
-    <link>http://localhost:1313/tags/terminal/</link>
+    <link>http://localhost:1313/wiki/terminal/</link>
     <description>Recent content in Terminal on Nicola Strappazzon</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <atom:link href="http://localhost:1313/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/wiki/terminal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Básico</title>
+      <link>http://localhost:1313/wiki/terminal/basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/terminal/basic/</guid>
+      <description>&lt;p&gt;Para ir entendiendo todo lo que esta escrito a lo largo del documento, será útil conocer y/o repasar estos puntos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Prompt:&lt;/strong&gt; Es el carácter o conjunto de caracteres que se muestran en una línea de comandos para indicar que está a la espera de órdenes. Este puede variar dependiendo del intérprete de comandos y suele ser configurable.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;user@host:~$&#xA;root@host:~#&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;La primera línea indica el &lt;em&gt;Prompt&lt;/em&gt; de un usuario normal, y la segunda línea indica el &lt;em&gt;Prompt&lt;/em&gt; de un super usuario cómo el &lt;code&gt;root&lt;/code&gt; o el que se accede usando &lt;code&gt;sudo&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Cliente</title>
       <link>http://localhost:1313/wiki/terminal/client/</link>
