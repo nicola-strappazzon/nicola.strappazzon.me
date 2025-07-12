@@ -16,6 +16,10 @@ Todo lo que se explica a lo largo del documento es válido para Linux y Mac OS X
 
 Solo trataremos sobre el `bash` y lo que hay en su entorno, por la simple razón que es un estándar, esta en todos los servidores, imagenes de docker, ordenadores y siempre está allí presente, hay otros mas modernos y llamativos como el [zsh](https://ohmyz.sh), o uno primitivo y elemental como el `sh` que es compatible con el `bash` y se suele usar para las imagenes de docker para ahorrar el mayor espacio posible como es el caso de [alpine](https://www.alpinelinux.org). Mi consejo personal, es que domines de verdad el `bash` antes de usar otro.
 
+{{% blockquote type="tip" %}}
+La nueva versión de macOS Sequoia tiene por defecto `zsh`, pero sigue estando disponible el `bash` y puedes habilitarla por defecto en la configuración del terminal.
+{{% /blockquote %}}
+
 ¿Porque usar la terminal? Básicamente porque **eres el todo poderoso**, allí puedes hacer todo sin ninguna limitación. Podrás hacer mas cosas que en la GUI (Graphic User Interface), seguramente sea más complicado en la terminal, pero es más eficiente y flexible, en muchos casos de este mundo de Linux, primero se hace el comando y luego la GUI que la acompaña.
 
 También podrás conectarte a terminales remotas, subir o bajar ficheros, virtualizar terminales dentro de una terminal, dejar ejecutando procesos y retomarlos más adelante. No hay limites.

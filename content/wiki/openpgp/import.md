@@ -8,7 +8,7 @@ weight = 1
 # Importar desde un USB Security Key
 
 {{% blockquote type="important" %}}
-La clave privada se queda dentro del USB Security Key y es imposible extraerla
+La clave privada se queda dentro del USB Security Key y es imposible extraerla.
 {{% /blockquote %}}
 
 El proceso que se sigue a continuación permite importar la clave pública e indicar que la clave privada está dentro de una USB Security Key de confianza.
