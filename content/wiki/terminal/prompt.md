@@ -118,7 +118,7 @@ El `bash` tiene 256 colores a tu disposición, en algunos casos está desactivad
 
 Aquí dejo una imagen con la lista de colores disponibles:
 
-![](colors.png)
+![](draw02.png)
 
 Y puedes experimentar de la siguiente forma:
 
