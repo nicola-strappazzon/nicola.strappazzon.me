@@ -1,0 +1,35 @@
+\documentclass[margin=2mm]{standalone}
+\usepackage{tikz}
+\usepackage{anyfontsize}
+\usetikzlibrary{decorations.pathreplacing, arrows.meta, calc}
+\begin{document}
+\begin{tikzpicture}[x=10mm, y=10mm]
+    % \draw [help lines] (-12,-4) grid (12,5);
+
+    \node[font=\fontsize{64pt}{\baselineskip}\ttfamily\selectfont] at (0,0) {\$ cp myfile.txt dir/};
+    \node[font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont] at (-8.5,3.5) {Ctrl-a};
+    \node[font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont] at (-6.2,2.5) {Alt-b};
+    \node[font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont] at (-2.3,1.5) {Ctrl-b};
+    \node[font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont] at (11,3.5) {Ctrl-e};
+    \node[font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont] at (6,2.5) {Alt-f};
+    \node[font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont] at (3.3,1.5) {Ctrl-f};
+    \node[font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont] at (14.2,1.5) {Moving};
+    \node[font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont] at (14.2,-2.0) {Erasing};
+    \draw[line width=3pt] (-0.1, -1.0) rectangle (1.2, 1.0);
+
+    \draw[-{Stealth}, line width=2pt, bend right=70] (0.50,1.0) to (-9,1.0);
+    \draw[-{Stealth}, line width=2pt, bend right=70] (0.50,1.0) to (-5.8,1.0);
+    \draw[-{Stealth}, line width=2pt, bend right=50] (0.50,1.0) to (-1.0,1.0);
+    \draw[-{Stealth}, line width=2pt, bend left=50] (0.50,1.0) to (2,1.0);
+    \draw[-{Stealth}, line width=2pt, bend left=70] (0.50,1.0) to (5.6,1.0);
+    \draw[-{Stealth}, line width=2pt, bend left=70] (0.50,1.0) to (11.4,1.0);
+
+    \draw[{Stealth}-{Stealth}, line width=2pt] (-0.1,-1.5) -- node[below, font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont]{Ctrl-w} (-5.8,-1.5);
+    \draw[{Stealth}-{Stealth}, line width=2pt] (-0.1,-2.5) -- node[below, font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont]{Ctrl-u} (-9.1,-2.5);
+    \draw[{Stealth}-{Stealth}, line width=2pt] (1.2,-1.5) -- node[below, font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont]{Alt-d} (5.6,-1.5);
+    \draw[{Stealth}-{Stealth}, line width=2pt] (1.2,-2.5) -- node[below, font=\fontsize{20pt}{\baselineskip}\ttfamily\selectfont]{Ctrl-k} (11.4,-2.5);
+
+    \draw[decorate, decoration={brace, mirror, amplitude=8pt}, thick] (12.5,-1) to (12.5,4);
+    \draw[decorate, decoration={brace, mirror, amplitude=8pt}, thick] (12.5,-3) to (12.5,-1);
+\end{tikzpicture}
+\end{document}

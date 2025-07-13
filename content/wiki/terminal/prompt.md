@@ -34,9 +34,7 @@ Existen una serie de combinaciones que debes dominar para moverte en la línea d
 
 Esta imagen te permite ilustrarte más fácilmente:
 
-![](shortcuts.png)
-
-**ERRATA:** En la imagen la letra de que acompaña el comando Ctrl está en mayúscula, en la lista está en minúscula, hacer caso al de la lista.
+{{< svg name="draw01" >}}
 
 ### Atajos:
 
