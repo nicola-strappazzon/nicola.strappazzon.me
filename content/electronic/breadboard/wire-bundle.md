@@ -5,6 +5,8 @@ title = 'Wire bundle'
 
 Esta es sin duda la mejor forma de cablear un [breadboard](https://nicola.strappazzon.me/electronic/breadboard/) al no ser tan engorrosa y permitiendo observar bien el circuito, por lo que requiere más trabajo, pero no deja de ser mi favorita.
 
+![](breadboard01.png)
+
 ## Materiales
 
 - Cable opción 1: [Hook-up Wire Spool Set - 22AWG Solid Core - 6 x 25 ft](https://www.adafruit.com/product/1311)
