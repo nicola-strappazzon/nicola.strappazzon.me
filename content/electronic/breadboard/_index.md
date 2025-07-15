@@ -53,6 +53,8 @@ files:
   - SOIC1603.png
 {{% /images %}}
 
+![](breadboard05.png)
+
 ## Uso y precauciones
 
 1. Al instalar componentes discretos, debe poder ver su polaridad y marcas. Enderece los pines del componente y dóblelos donde sea necesario. Para evitar cortocircuitos en los cables expuestos, utilice cables con fundas. Generalmente, los pines del componente no se cortan para facilitar su reutilización. Por lo general, no inserte componentes con un diámetro de pin superior a 0,8 mm para evitar dañar la elasticidad de la pieza de contacto dentro del zócalo.
@@ -80,6 +82,7 @@ files:
 2. Evite conectar y desconectar bruscamente los circuitos integrados para evitar que los pines se doblen en los zócalos; no rompa los cables metálicos en los zócalos.
 3. No inserte cables gruesos, sondas o alfileres en los orificios.
 4. No fuerce la inserción de componentes.
+5. No debería superar 1A, mayor detalle [aquí](https://forum.digikey.com/t/what-is-the-maximum-current-for-a-solderless-breadboard/36612).
 
 ## Cableado
 
