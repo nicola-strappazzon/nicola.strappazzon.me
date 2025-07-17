@@ -127,7 +127,7 @@ kubectl describe deployment demo-api
 kubectl describe pod demo-api-598f6c5bb6-mmg4d
 ```
 
-## Eliminar un pod mal desplegado
+## Eliminar
 
 ```bash
 kubectl delete replicaset demo-api-598f6c5bb6-mmg4d
