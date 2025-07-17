@@ -3,7 +3,7 @@ draft = false
 title = 'kubectl'
 +++
 
-Es una herramienta para administrar kubernetes (k8) por la terminal.
+Es una herramienta para administrar kubernetes (k8) por la terminal, y es [parte del proyecto](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubectl/kubectl.go).
 
 Para facilitar la escritura del comando en la terminal, le asigno un alias para ser llamado por la letra `k` en vez de usar el nombre del comando completo, lo hago de la siguiente forma:
 
