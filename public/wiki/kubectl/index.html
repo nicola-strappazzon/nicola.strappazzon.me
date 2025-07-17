@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>kubernetes (k8) | Nicola Strappazzon</title>
+<title>kubectl | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -75,11 +75,21 @@
 
   
     <div class="content-header">
-      <h2 class="title">kubernetes (k8)</h2>
+      <h2 class="title">kubectl</h2>
       
     </div>
   
-  <h2 id="configuración">Configuración</h2>
+  <p>Es una herramienta para administrar kubernetes (k8) por la terminal.</p>
+<p>Para facilitar la escritura del comando en la terminal, le asigno un alias para ser llamado por la letra <code>k</code> en vez de usar el nombre del comando completo, lo hago de la siguiente forma:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias k<span style="color:#f92672">=</span>kubectl
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="configuración">Configuración</h2>
 <p>Muestra la configuración del comando, lo que esta en <code>~/.kube/config</code>.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

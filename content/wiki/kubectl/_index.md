@@ -5,6 +5,12 @@ title = 'kubectl'
 
 Es una herramienta para administrar kubernetes (k8) por la terminal.
 
+Para facilitar la escritura del comando en la terminal, le asigno un alias para ser llamado por la letra `k` en vez de usar el nombre del comando completo, lo hago de la siguiente forma:
+
+```bash
+alias k=kubectl
+```
+
 ## Configuración
 
 Muestra la configuración del comando, lo que esta en `~/.kube/config`.
