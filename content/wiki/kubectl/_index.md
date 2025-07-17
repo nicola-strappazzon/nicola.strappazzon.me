@@ -1,7 +1,9 @@
 +++
 draft = false
-title = 'kubernetes (k8)'
+title = 'kubectl'
 +++
+
+Es una herramienta para administrar kubernetes (k8) por la terminal.
 
 ## Configuración
 
