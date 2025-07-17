@@ -120,6 +120,14 @@ kubectl rollout restart deployment/api
 kubectl logs pod demo-api-598f6c5bb6-mmg4d
 ```
 
+## Connect
+
+```bash
+kubectl exec --stdin --tty demo-api-598f6c5bb6-mmg4d -- /bin/sh
+```
+
+Hay distribuciones que no tienen `/bin/bash` y hay que usar `/bin/sh`.
+
 ## Describir
 
 ```bash
