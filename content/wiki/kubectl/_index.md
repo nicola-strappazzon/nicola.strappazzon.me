@@ -128,6 +128,14 @@ kubectl exec --stdin --tty demo-api-598f6c5bb6-mmg4d -- /bin/sh
 
 Hay distribuciones que no tienen `/bin/bash` y hay que usar `/bin/sh`.
 
+## Desplegar
+
+Cómo ejecutar un pod de una imagen cualquiera en el cluster, muy útil para depurar.
+
+```bash
+kubectl run tmp-alpine-shell --restart=Never --rm --stdin --tty --image=alpine -- /bin/sh
+```
+
 ## Describir
 
 ```bash
