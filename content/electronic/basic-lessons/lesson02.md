@@ -22,3 +22,10 @@ Un circuito en serie es una configuración de conexión en la que los terminales
 Un circuito paralelo es una configuración de conexión de componentes en la que los bornes o terminales de entrada de todos los componentes conectados coinciden entre sí, al igual que sus terminales de salida.
 
 {{< svg name="schematic02" >}}
+
+Al observar este último circuito se nos viene la idea de ¿Por qué no *ponemos una sola resistencia* para todos los LED's? y la respuesta corta es que **no se debe**, y te explico por qué:
+
+- La razón principal es que no es posible conectar diodos en paralelo de forma segura. Recuerde que un LED es un diodo.
+- Si usamos una sola resistencia, tenemos un límite de corriente para todos los diodos. Ver la [ley de ohm](https://es.wikipedia.org/wiki/Ley_de_Ohm).
+- El problema es que los diodos reales no tienen las mismas características y, por lo tanto, existe el riesgo de que un diodo comience a conducir mientras que otros no.
+- Pueden surgir problemas de fuga térmica, cuando el diodo se calienta por la corriente que lo atraviesa, sus características cambian de tal manera que recibe más corriente, y en consecuencia se calienta aún más.

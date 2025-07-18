@@ -226,6 +226,13 @@
 <path fill-rule="nonzero" fill="rgb(0%, 0%, 0%)" fill-opacity="1" d="M 222.375 96.378906 C 221.722656 95.601562 220.570312 94.167969 220.195312 92.722656 C 220.289062 94.199219 219.792969 94.824219 218.332031 95.054688 C 219.824219 95.101562 221.472656 95.914062 222.375 96.378906 Z M 222.375 96.378906 "/>
 </svg>
 </div>
+<p>Al observar este último circuito se nos viene la idea de ¿Por qué no <em>ponemos una sola resistencia</em> para todos los LED&rsquo;s? y la respuesta corta es que <strong>no se debe</strong>, y te explico por qué:</p>
+<ul>
+<li>La razón principal es que no es posible conectar diodos en paralelo de forma segura. Recuerde que un LED es un diodo.</li>
+<li>Si usamos una sola resistencia, tenemos un límite de corriente para todos los diodos. Ver la <a href="https://es.wikipedia.org/wiki/Ley_de_Ohm">ley de ohm</a>.</li>
+<li>El problema es que los diodos reales no tienen las mismas características y, por lo tanto, existe el riesgo de que un diodo comience a conducir mientras que otros no.</li>
+<li>Pueden surgir problemas de fuga térmica, cuando el diodo se calienta por la corriente que lo atraviesa, sus características cambian de tal manera que recibe más corriente, y en consecuencia se calienta aún más.</li>
+</ul>
 
   </article>
 
