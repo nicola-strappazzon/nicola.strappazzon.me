@@ -87,10 +87,12 @@
 <blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p><ul>
 <li>La configuración de conexión en serie y en paralelo es aplicable para muchos componentes; resistencias, diodos, condensadores, led, bombillas, pilas, entre otros.</li>
 <li>Existen situaciones donde un mismo circuito es una combinación de ambas configuraciones.</li>
+<li>Recuerde que un LED es un diodo.</li>
 </ul>
 </p></blockquote>
 <h2 id="serie">Serie</h2>
 <p>Un circuito en serie es una configuración de conexión en la que los terminales de los componentes se conectan sucesivamente uno detrás de otro, es decir, el terminal de salida de un componente se conecta a la terminal de entrada del componente siguiente.</p>
+<h3 id="esquema">Esquema</h3>
 <div class="svg"><?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="238.73pt" height="88.272pt" viewBox="0 0 238.73 88.272">
 <defs>
@@ -144,8 +146,11 @@
 <path fill-rule="nonzero" fill="rgb(0%, 0%, 0%)" fill-opacity="1" d="M 228.214844 7.851562 C 227.4375 8.503906 226.003906 9.65625 224.558594 10.027344 C 226.035156 9.9375 226.660156 10.433594 226.890625 11.894531 C 226.9375 10.402344 227.746094 8.753906 228.214844 7.851562 Z M 228.214844 7.851562 "/>
 </svg>
 </div>
+<h3 id="placa-de-pruebas">Placa de pruebas</h3>
+<p><img src="breadboard01.png" alt=""></p>
 <h2 id="paralelo">Paralelo</h2>
 <p>Un circuito paralelo es una configuración de conexión de componentes en la que los bornes o terminales de entrada de todos los componentes conectados coinciden entre sí, al igual que sus terminales de salida.</p>
+<h3 id="esquema-1">Esquema</h3>
 <div class="svg"><?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="230.226pt" height="106.897pt" viewBox="0 0 230.226 106.897">
 <defs>
@@ -226,9 +231,11 @@
 <path fill-rule="nonzero" fill="rgb(0%, 0%, 0%)" fill-opacity="1" d="M 222.375 96.378906 C 221.722656 95.601562 220.570312 94.167969 220.195312 92.722656 C 220.289062 94.199219 219.792969 94.824219 218.332031 95.054688 C 219.824219 95.101562 221.472656 95.914062 222.375 96.378906 Z M 222.375 96.378906 "/>
 </svg>
 </div>
+<h3 id="placa-de-pruebas-1">Placa de pruebas</h3>
+<p><img src="breadboard02.png" alt=""></p>
 <p>Al observar este último circuito se nos viene la idea de ¿Por qué no <em>ponemos una sola resistencia</em> para todos los LED&rsquo;s? y la respuesta corta es que <strong>no se debe</strong>, y te explico por qué:</p>
 <ul>
-<li>La razón principal es que no es posible conectar diodos en paralelo de forma segura. Recuerde que un LED es un diodo.</li>
+<li>La razón principal es que no es posible conectar diodos en paralelo de forma segura.</li>
 <li>Si usamos una sola resistencia, tenemos un límite de corriente para todos los diodos. Ver la <a href="https://es.wikipedia.org/wiki/Ley_de_Ohm">ley de ohm</a>.</li>
 <li>El problema es que los diodos reales no tienen las mismas características y, por lo tanto, existe el riesgo de que un diodo comience a conducir mientras que otros no.</li>
 <li>Pueden surgir problemas de fuga térmica, cuando el diodo se calienta por la corriente que lo atraviesa, sus características cambian de tal manera que recibe más corriente, y en consecuencia se calienta aún más.</li>
