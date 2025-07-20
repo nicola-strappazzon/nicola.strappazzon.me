@@ -373,6 +373,13 @@
       <description>&lt;p&gt;En los trabajos que me e envuelto con base de datos, e visto un gran número de ellas, muchas echas por empresas pequeñas y medianas especializadas en el desarrollo, de cualquier sector; comercial, educativo o independientes, al final de todo, existe algo en común, y me llevo a una  conclusión, &amp;ldquo;&lt;strong&gt;Será que NO tienen la mas mínima y remota idea de ¿Cómo hacer un modelo físico y aprovechar todas las bondades de un manejador de base de datos?&lt;/strong&gt;&amp;rdquo;, y lo peor del caso, es que eso funciona milagrosamente y para ellos es indispensable toda su información &lt;em&gt;(obviamente)&lt;/em&gt;, pero tienen un problema en común, &lt;strong&gt;el sistema no funciona bien&lt;/strong&gt;, ¿Por qué será?&lt;/p&gt;</description>
     </item>
     <item>
+      <title>CH340</title>
+      <link>http://localhost:1313/electronic/integrated-circuit/ch340/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/integrated-circuit/ch340/</guid>
+      <description>&lt;p&gt;Este es un simple CI que permite la comunicación USB 2.0 a Serial &amp;amp; UPDI de muy bajo coste, diseñado y fabricado en china por &lt;a href=&#34;http://www.wch-ic.com&#34;&gt;Jiangsu Heng Qin Ltd. (WCH)&lt;/a&gt;. Para usar el CI conectado a un ordenador/computadora, necesitas tener instalado el driver. De momento nos vamos a centrar en el CH340C/B que tiene unas prestaciones muy versátiles, entre ellas destacan las siguientes:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Las versiones CH340C/N/K/E/X/B tiene reloj integrado, no requiere cristal externo. CH340B también integra una EEPROM utilizada para configurar el número de serie, etc.&lt;/li&gt;&#xA;&lt;li&gt;USB 2.0 a Serial, compatible con RS232, RS485, RS422.&lt;/li&gt;&#xA;&lt;li&gt;Usa el protocolo UART para comunicarse con el MCU.&lt;/li&gt;&#xA;&lt;li&gt;Soporta 5v y 3.3v.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;También podemos configurar el UART para Unified Program and Debug Interface (UPDI) que es habitual para programar MCU.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Condensadores</title>
       <link>http://localhost:1313/electronic/components/capacitor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

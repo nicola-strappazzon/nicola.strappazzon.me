@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Circuito integrado on Nicola Strappazzon</title>
+    <link>http://localhost:1313/electronic/integrated-circuit/</link>
+    <description>Recent content in Circuito integrado on Nicola Strappazzon</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <atom:link href="http://localhost:1313/electronic/integrated-circuit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CH340</title>
+      <link>http://localhost:1313/electronic/integrated-circuit/ch340/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/integrated-circuit/ch340/</guid>
+      <description>&lt;p&gt;Este es un simple CI que permite la comunicación USB 2.0 a Serial &amp;amp; UPDI de muy bajo coste, diseñado y fabricado en china por &lt;a href=&#34;http://www.wch-ic.com&#34;&gt;Jiangsu Heng Qin Ltd. (WCH)&lt;/a&gt;. Para usar el CI conectado a un ordenador/computadora, necesitas tener instalado el driver. De momento nos vamos a centrar en el CH340C/B que tiene unas prestaciones muy versátiles, entre ellas destacan las siguientes:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Las versiones CH340C/N/K/E/X/B tiene reloj integrado, no requiere cristal externo. CH340B también integra una EEPROM utilizada para configurar el número de serie, etc.&lt;/li&gt;&#xA;&lt;li&gt;USB 2.0 a Serial, compatible con RS232, RS485, RS422.&lt;/li&gt;&#xA;&lt;li&gt;Usa el protocolo UART para comunicarse con el MCU.&lt;/li&gt;&#xA;&lt;li&gt;Soporta 5v y 3.3v.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;También podemos configurar el UART para Unified Program and Debug Interface (UPDI) que es habitual para programar MCU.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

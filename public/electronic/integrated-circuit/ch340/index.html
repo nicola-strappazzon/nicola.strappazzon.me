@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>CH340 | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="container center">
+<header>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+  </div>
+  <div class="header__social__navigation">
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="header__navigation">
+      <nav class="navigation-menu">
+        <ul class="navigation-menu__inner menu--desktop">
+          
+            
+              
+                <li><a href="/posts/" >Posts</a></li>
+              
+            
+              
+                <li><a href="/wiki/" >Wiki</a></li>
+              
+            
+              
+                <li><a href="/electronic/" >Electrónica</a></li>
+              
+            
+              
+                <li><a href="/cultura/" >Cultura</a></li>
+              
+            
+              
+                <li><a href="/diccionary/" >Diccionario</a></li>
+              
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+</header>
+<div class="content">
+
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/electronic/">Electrónica</a></li>
+      <li><a href="/electronic/integrated-circuit/">Circuito integrado</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">CH340</h2>
+      
+    </div>
+    <p>Este es un simple CI que permite la comunicación USB 2.0 a Serial &amp; UPDI de muy bajo coste, diseñado y fabricado en china por <a href="http://www.wch-ic.com">Jiangsu Heng Qin Ltd. (WCH)</a>. Para usar el CI conectado a un ordenador/computadora, necesitas tener instalado el driver. De momento nos vamos a centrar en el CH340C/B que tiene unas prestaciones muy versátiles, entre ellas destacan las siguientes:</p>
+<ul>
+<li>Las versiones CH340C/N/K/E/X/B tiene reloj integrado, no requiere cristal externo. CH340B también integra una EEPROM utilizada para configurar el número de serie, etc.</li>
+<li>USB 2.0 a Serial, compatible con RS232, RS485, RS422.</li>
+<li>Usa el protocolo UART para comunicarse con el MCU.</li>
+<li>Soporta 5v y 3.3v.</li>
+</ul>
+<p>También podemos configurar el UART para Unified Program and Debug Interface (UPDI) que es habitual para programar MCU.</p>
+<p><img src="https://github.com/nicola-strappazzon/CH340/blob/main/img/minimal_protoboard.jpg?raw=true" alt=""></p>
+<p>En la imagen mostramos el circuito básico y la conexión con un ATMega328P.</p>
+<p>Puedes conseguir los IC en la tienda oficial del fabricante en <a href="https://wchofficialstore.es.aliexpress.com/store/1100367542">AliExpress</a> o en un distribuidor autorizado en china <a href="https://www.lcsc.com">LCSC</a>.</p>
+<h2 id="esquema-mínimo">Esquema mínimo</h2>
+<p>Con este CI podemos comunicarnos a un MCU usando el protocolo Serial o para algunos programarlos mediante UPDI.</p>
+<h3 id="serial">Serial</h3>
+<h4 id="componentes">Componentes</h4>
+<p>Use los siguientes componentes para construir el circuito mínimo:</p>
+<ul>
+<li>Un IC CH340C.</li>
+<li>Condensador de 0.1uF (Código: 104, Cantidad: 2).</li>
+<li>Condensador de 10nF.</li>
+<li>Condensador de 100nF.</li>
+</ul>
+<p><img src="https://github.com/nicola-strappazzon/CH340/blob/main/img/minimal_schematic.png?raw=true" alt=""></p>
+<h3 id="updi">UPDI</h3>
+<h4 id="componentes-1">Componentes</h4>
+<ul>
+<li>Un IC CH340C.</li>
+<li>Condensador de 0.1uF (Código: 104, Cantidad: 2).</li>
+<li>Condensador de 10nF.</li>
+<li>Condensador de 100nF.</li>
+<li>Resistencia de 470 ohm.</li>
+<li>Diodo schottky 1N5817 (puede ser otro).</li>
+</ul>
+<p><img src="https://github.com/nicola-strappazzon/CH340/blob/main/img/minimal_updi_schematic.png?raw=true" alt=""></p>
+<h2 id="driver">Driver</h2>
+<p>Dependiendo del sistema operativo (OS) que use, deberá instalar uno de los siguientes controladores.</p>
+<ul>
+<li><a href="https://www.wch-ic.com/downloads/CH341SER_LINUX_ZIP.html">Linux</a></li>
+<li><a href="https://www.wch-ic.com/downloads/CH341SER_MAC_ZIP.html">MacOS</a></li>
+<li><a href="https://www.wch-ic.com/downloads/CH341SER_ZIP.html">Windows</a></li>
+</ul>
+
+  </article>
+
+</div>
+<footer class="footer">
+<span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+</html>
