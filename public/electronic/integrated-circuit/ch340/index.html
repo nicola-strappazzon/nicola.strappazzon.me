@@ -90,7 +90,8 @@
 <li>Usa el protocolo UART para comunicarse con el MCU.</li>
 <li>Soporta 5v y 3.3v.</li>
 </ul>
-<p>También podemos configurar el UART para Unified Program and Debug Interface (UPDI) que es habitual para programar MCU.</p>
+<blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>En este <a href="https://github.com/nicola-strappazzon/CH340">repositorio</a> podrás tener acceso a un diseño de PCB que puedes construir tu mismo cómo cualquier material adicional que pueda ser de interés.</p></blockquote>
+<p>También podemos configurar el UART para Unified Program and Debug Interface (UPDI) que es habitual para programar los Microcontroladores (MCU) como el AVR Dx.</p>
 <p><img src="https://github.com/nicola-strappazzon/CH340/blob/main/img/minimal_protoboard.jpg?raw=true" alt=""></p>
 <p>En la imagen mostramos el circuito básico y la conexión con un ATMega328P.</p>
 <p>Puedes conseguir los IC en la tienda oficial del fabricante en <a href="https://wchofficialstore.es.aliexpress.com/store/1100367542">AliExpress</a> o en un distribuidor autorizado en china <a href="https://www.lcsc.com">LCSC</a>.</p>
@@ -100,19 +101,18 @@
 <h4 id="componentes">Componentes</h4>
 <p>Use los siguientes componentes para construir el circuito mínimo:</p>
 <ul>
-<li>Un IC CH340C.</li>
-<li>Condensador de 0.1uF (Código: 104, Cantidad: 2).</li>
+<li>Un IC CH340.</li>
 <li>Condensador de 10nF.</li>
-<li>Condensador de 100nF.</li>
+<li>Condensador de 100nF / 0.1uF, Código: 104, Cantidad: 2.</li>
 </ul>
 <p><img src="https://github.com/nicola-strappazzon/CH340/blob/main/img/minimal_schematic.png?raw=true" alt=""></p>
 <h3 id="updi">UPDI</h3>
+<p>UPDI significa Unified Program and Debug Interface, Está diseñada para facilitar enormemente la programación de chips AVR modernos, entre otros. Básicamente cualquier chip (FT232/CP2102N/CH340/etc) que permita comunicación USB a Serial es compatible usando una resistencia y un diodo schottky conectados en los puertos TX y RX cómo se aprecia en el siguiente diagrama. Lo cual es una opción muy versátil y económica.</p>
 <h4 id="componentes-1">Componentes</h4>
 <ul>
-<li>Un IC CH340C.</li>
-<li>Condensador de 0.1uF (Código: 104, Cantidad: 2).</li>
+<li>Un IC CH340.</li>
 <li>Condensador de 10nF.</li>
-<li>Condensador de 100nF.</li>
+<li>Condensador de 100nF / 0.1uF, Código: 104, Cantidad: 2.</li>
 <li>Resistencia de 470 ohm.</li>
 <li>Diodo schottky 1N5817 (puede ser otro).</li>
 </ul>
