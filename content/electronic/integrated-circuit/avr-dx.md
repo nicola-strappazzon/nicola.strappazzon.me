@@ -1,69 +1,44 @@
 +++
-draft = true
+draft = false
 title = 'AVR Dx'
 +++
 
-Cualquiera que se haya iniciado con los microcontroladores habrá escuchado hablar del mitico ATmega328 creado por Atmel para la familia megaAVR, en el año 2016 Atmel fue adquirida por Microchip Technology. Este era 
+## Repaso histórico
 
-Hagamos un repaso historico
+Cualquiera que se haya iniciado con los microcontroladores de 8-bit habrá escuchado hablar del mítico ATmega328 creado por Atmel para la familia ATmega que empezó en el año 2002, poco a poco fue evolucionando y la aparición de Arduino termino de popularizarse. Tiene más de dos décadas entre nosotros, y aún se sigue apostando por esta tecnología por muchos motivos. En el 2016 Atmel fue adquirida por Microchip Technology.
 
-8-bit
+El AVR es una arquitectura muy versátil y fácil de entender, creo que es la favorita para el hobby y la educación. Existe una gran comunidad en torno a ella, numerosos libros, ejemplos, proyectos, etc. Si ya has leído sobre el 8051, aprenderlo te resultará mucho más fácil. El AVR es, en resumen, una versión mejorada del 8051 con funciones adicionales. Incluye todas las características necesarias, como RAM, memoria flash, registros de propósito general, EEPROM, temporizador de vigilancia, fusibles para configurar el chip, diferentes modos de programación de la memoria flash, diferentes protocolos de comunicación como SPI, I₂C, UART, pines PWM, etc.
 
-ATmega328P y ATmega328PB
+Los microcontroladores AVR fueron diseñados por [Alf-Egil Bogen](https://no.wikipedia.org/wiki/Alf-Egil_Bogen) y [Vegard Wollan](https://no.wikipedia.org/wiki/Vegard_Wollan), dos estudiantes de electrónica de la Universidad Noruega de Ciencia y Tecnología (NTNU). Se cree que el nombre `AVR` proviene de sus nombres: Alf-Vegard y RISC (aunque Atmel nunca lo confirmó oficialmente). Pero oficialmente `AVR` sifnifica Advanced Virtual RISC.
 
-La P es de Power, y PB es de picoPower®
+|Año |Modelo     |Descripción                                                                      |
+|----|-----------|---------------------------------------------------------------------------------|
+|1997|AT90S1200  |Primer AVR comercial; muy básico, sin SRAM ni ADC.                               |
+|1998|AT90S2313  |Mejora respecto al 1200, con UART y más memoria.                                 |
+|1998|AT90S4433  |Con ADC, más memoria, y más pines de E/S.                                        |
+|2002|ATmega8    |Primer "ATmega" con más flash (8 KB) y periféricos avanzados.                    |
+|2005|ATmega88   |Versión optimizada del ATmega8, más rápida y con mejoras de periféricos.         |
+|2006|ATmega168  |Igual que el 88 pero con 16 KB de flash.                                         |
+|2002|ATmega32   |MCU de gama media con 32 KB Flash, 1 KB SRAM, ADC, timers, SPI, UART, etc.       |
+|2008|ATmega328  |Modelo popularizado por Arduino, con 32 KB de flash.                             |
+|2010|ATtiny     |Familia de bajo consumo y tamaño reducido (flash desde 0.5 KB a 8 KB).           |
+|2006|AVR32      |AVR de 32 bits (UC3); arquitectura distinta, ahora discontinuado.                |
+|2010|ATmega328P |Variante del 328 con tecnología picoPower® para bajo consumo.                    |
+|2015|ATmega328PB|Extensión del 328P con más periféricos (TWI/SPI/UART extras).                    |
+|2010|ATmega32u2 |Sin ADC; soporte USB nativo, usado en interfaces USB básicas.                    |
+|2010|ATmega32u4 |Con ADC, USB, y más periféricos; usado en Arduino Leonardo y similares.          |
+|2020|AVR128DA48 |Nueva serie AVR DA, con 128 KB flash, 16 KB SRAM, 24 MHz, y periféricos modernos.|
+|2020|AVR64DA32  |Versión con 64 KB flash, 32 pines, misma arquitectura moderna AVR Dx.            |
+|2021|AVR128DB28 |Serie DB con más periféricos (op-amp, DAC, puente analog/digital integrado).     |
+|2021|AVR32DB48  |Versión de 32 KB flash de la serie DB, 48 pines, rica en periféricos.            |
 
-atmega168 y atmega88
+La última novedad fue en el 2020 con la nueva incorporación de la familia AVR Dx, en especial AVRxxDAxx como una excelente evolución y reemplazo del mítico ATmega328P (sin soporte USB, para eso está el AVR DU). Para compilar podemos seguir usando él [avrdude](https://github.com/avrdudes/avrdude) sin problemas, se puede utilizar sobre el microcontrolador un framework como Arduno llamado [DxCore](https://github.com/SpenceKonde/DxCore) sobre el [Arduino IDE 1.x](https://www.arduino.cc/en/software/OldSoftwareReleases/) que funciona bastante bien. Para programarlo existe una nueva forma y mucho más simple que el clásico ISP, esta es UPDI que significa Unified Program and Debug Interface, y solo basta con un [CH340](https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/) y un puñado de componentes.
 
+Llevo un tiempo usando el AVR128DA28 y el AVR128DA48, programarlo no es igual que el ATmega328P porque los registros son diferentes, es más avanzado, pero aún queda mucho para que la comunidad vaya publicando ejemplos prácticos de cómo por ejemplo usar un I2C / TWI para un IC en particular, de todos modos [Microchip esta poco a poco publicando códigos fuentes de ejemplo en GitHub](https://github.com/microchip-pic-avr-examples?q=avr128&type=all&language=&sort=), igual no hay que dejar de visitar el [Foro para los Freaks de AVR](https://www.avrfreaks.net).
 
-ATmega32
-ATmega32u4
-ATmega328
-ATmega328P
-ATmega328PB
+## Recursos antiguos
 
-La arquitectura AVR® es RISC. RISC - reduced instruction set computing
-
-
-
-El AVR es una arquitectura muy versátil y fácil de entender. Existen numerosos libros, tanto online como offline, sobre los conceptos del AVR. Si ya has leído el 8051, aprenderlo te resultará mucho más fácil. El AVR es, en resumen, una versión mejorada del 8051 con funciones adicionales. Incluye todas las características necesarias, como RAM, memoria flash, registros de propósito general, EEPROM, temporizador de vigilancia, bits fusibles para configurar el chip, diferentes modos de programación de la memoria flash, diferentes protocolos de comunicación como SPI, I₂C, UART, pines PWM, etc.
-
-
-🧪 Origen académico (1995)
-Los microcontroladores AVR fueron diseñados por Alf-Egil Bogen y Vegard Wollan, dos estudiantes de electrónica de la Universidad Noruega de Ciencia y Tecnología (NTNU).
-El nombre "AVR" proviene de sus nombres: Alf-Vegard RISC (aunque Atmel nunca lo confirmó oficialmente).
-Fue uno de los primeros microcontroladores comerciales con memoria Flash programable en circuito (ISP), lo que era una gran ventaja frente a EEPROM o ROM fija.
-🏭 Atmel los adopta
-Atmel contrató a Bogen y Wollan, y comenzó la producción de los primeros AVR en 1996.
-El primer AVR comercial fue el AT90S1200, lanzado en 1997.
-
-🧬 Evolución de la familia AVR
-
-Año	Modelo	Notas clave
-1997	AT90S1200	Primer AVR comercial (8 bits, sin SRAM, sin ADC)
-1998–2000	AT90S2313, AT90S4433	Primeros modelos con más funcionalidades
-2002	ATmega8	Inicio de la familia "ATmega", más flash y periféricos
-2005	ATmega88, ATmega168	Mejora en densidad de memoria y periféricos
-2008	ATmega328	Popularizado por Arduino
-2010+	ATtiny series, XMega	Más pequeños o más potentes según la gama
-2006–2012	AVR32 (UC3)	AVR de 32 bits, discontinuado luego por Microchip
-2016+	Microchip compra Atmel	Microchip hereda y sigue fabricando AVR y ARM (SAM)
-💡 Contribución al hobbyismo y educación
-
-Arduino (2005): una de las razones por las que AVR se volvió tan conocido. Usaba el ATmega8 y luego el ATmega168/328, acercando la programación de microcontroladores al público general.
-AVR-GCC: herramienta libre para compilar código C para AVR. Hizo muy fácil el acceso para programadores.
-
-🔧 ¿Por qué tuvo tanto éxito?
-
-Arquitectura RISC simple y eficiente (ejecución de instrucciones en un solo ciclo de reloj).
-Memoria Flash programable en sistema.
-Buen soporte de herramientas libres (AVR-GCC, avrdude).
-Documentación clara.
-Bajo costo y buena relación precio/rendimiento.
-Excelente para aplicaciones embebidas pequeñas.
-
-https://www.eetimes.com/from-avr-to-arm-with-alf-egil-bogen-and-energy-micro/
-https://no.wikipedia.org/wiki/Alf-Egil_Bogen
-https://no.wikipedia.org/wiki/Vegard_Wollan
-https://electronicmaffia.weebly.com/avr-microcontroller.html
-https://community.element14.com/products/arduino/arduino-tutorials/w/documents/3504/tracing-the-origins-of-arduino-part-1-the-avr-microcontroller
+- [ArduinoCore para AVR](https://github.com/arduino/ArduinoCore-avr)
+- [Librería para el USB](https://github.com/abcminiuser/lufa)
+- [Bootloader](https://github.com/Optiboot/optiboot)
+- [Fuse Calculator](https://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega1284p)

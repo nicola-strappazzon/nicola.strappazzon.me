@@ -373,6 +373,13 @@
       <description>&lt;p&gt;En los trabajos que me e envuelto con base de datos, e visto un gran número de ellas, muchas echas por empresas pequeñas y medianas especializadas en el desarrollo, de cualquier sector; comercial, educativo o independientes, al final de todo, existe algo en común, y me llevo a una  conclusión, &amp;ldquo;&lt;strong&gt;Será que NO tienen la mas mínima y remota idea de ¿Cómo hacer un modelo físico y aprovechar todas las bondades de un manejador de base de datos?&lt;/strong&gt;&amp;rdquo;, y lo peor del caso, es que eso funciona milagrosamente y para ellos es indispensable toda su información &lt;em&gt;(obviamente)&lt;/em&gt;, pero tienen un problema en común, &lt;strong&gt;el sistema no funciona bien&lt;/strong&gt;, ¿Por qué será?&lt;/p&gt;</description>
     </item>
     <item>
+      <title>AVR Dx</title>
+      <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/</guid>
+      <description>&lt;h2 id=&#34;repaso-histórico&#34;&gt;Repaso histórico&lt;/h2&gt;&#xA;&lt;p&gt;Cualquiera que se haya iniciado con los microcontroladores de 8-bit habrá escuchado hablar del mítico ATmega328 creado por Atmel para la familia ATmega que empezó en el año 2002, poco a poco fue evolucionando y la aparición de Arduino termino de popularizarse. Tiene más de dos décadas entre nosotros, y aún se sigue apostando por esta tecnología por muchos motivos. En el 2016 Atmel fue adquirida por Microchip Technology.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>CH340</title>
       <link>http://localhost:1313/electronic/integrated-circuit/ch340/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
