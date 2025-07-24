@@ -188,16 +188,92 @@
       </tr>
   </tbody>
 </table>
-<p>La última novedad fue en el 2020 con la nueva incorporación de la familia AVR Dx, en especial AVRxxDAxx como una excelente evolución y reemplazo del mítico ATmega328P (sin soporte USB, para eso está el AVR DU). Para compilar podemos seguir usando él <a href="https://github.com/avrdudes/avrdude">avrdude</a> sin problemas, se puede utilizar sobre el microcontrolador un framework como Arduno llamado <a href="https://github.com/SpenceKonde/DxCore">DxCore</a> sobre el <a href="https://www.arduino.cc/en/software/OldSoftwareReleases/">Arduino IDE 1.x</a> que funciona bastante bien. Para programarlo existe una nueva forma y mucho más simple que el clásico ISP, esta es UPDI que significa Unified Program and Debug Interface, y solo basta con un <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/">CH340</a> y un puñado de componentes.</p>
-<p>Llevo un tiempo usando el AVR128DA28 y el AVR128DA48, programarlo no es igual que el ATmega328P porque los registros son diferentes, es más avanzado, pero aún queda mucho para que la comunidad vaya publicando ejemplos prácticos de cómo por ejemplo usar un I2C / TWI para un IC en particular, de todos modos <a href="https://github.com/microchip-pic-avr-examples?q=avr128&amp;type=all&amp;language=&amp;sort=">Microchip esta poco a poco publicando códigos fuentes de ejemplo en GitHub</a>.</p>
-<h2 id="recursos-antiguos">Recursos antiguos</h2>
-<ul>
-<li><a href="https://github.com/arduino/ArduinoCore-avr">ArduinoCore para AVR</a></li>
-<li><a href="https://github.com/abcminiuser/lufa">Librería para el USB</a></li>
-<li><a href="https://github.com/Optiboot/optiboot">Bootloader</a></li>
-<li><a href="https://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega1284p">Fuse Calculator</a></li>
-<li><a href="https://www.avrfreaks.net">Foro para los Freaks de AVR</a></li>
-</ul>
+<h2 id="la-nueva-generación">La nueva generación</h2>
+<p>La última novedad fue en el 2020 con la nueva incorporación de la familia <a href="https://www.microchip.com/en-us/products/microcontrollers/8-bit-mcus/avr-mcus/avr-db">AVR Dx</a>, algunos lo llaman AVR modernos, en especial AVR DA como una excelente evolución y reemplazo del mítico ATmega328P (sin soporte USB, para eso está el AVR DU). Para compilar podemos seguir usando él <a href="https://github.com/avrdudes/avrdude">avrdude</a> sin problemas, pero se necesita un <a href="http://packs.download.atmel.com/">pack</a> que lo proporciona Microchip instalando <a href="https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide">MPLAB X IDE</a>, o también se puede utilizar sobre el microcontrolador un framework como Arduno llamado <a href="https://github.com/SpenceKonde/DxCore">DxCore</a> sobre él <a href="https://www.arduino.cc/en/software/OldSoftwareReleases/">Arduino IDE 1.x</a> que funciona bastante bien. Para programarlo existe una nueva forma y mucho más simple que el clásico ISP, esta es UPDI que significa Unified Program and Debug Interface, y solo basta con un <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/">CH340</a> y un puñado de componentes.</p>
+<p><img src="pinout.png" alt=""></p>
+<p>Llevo un tiempo usando el AVR128DA28 (Versión DIP) y el AVR128DA48 (Versión SMD), programarlo no es igual que el ATmega328P porque los registros son diferentes, consulte el <a href="AVRxxDAxx.pdf">Datasheet del AVR-DA</a>, es más avanzado, pero aún queda mucho para que la comunidad vaya publicando ejemplos prácticos de cómo por ejemplo usar un I2C / TWI para un IC en particular, de todos modos <a href="https://github.com/microchip-pic-avr-examples?q=avr128&amp;type=all&amp;language=&amp;sort=">Microchip esta poco a poco publicando códigos fuentes de ejemplo en GitHub</a>, igual no hay que dejar de visitar el <a href="https://www.avrfreaks.net">Foro para los Freaks de AVR</a>.</p>
+<h2 id="mi-primer-programa">Mi primer programa</h2>
+<p>Creo que un programa clásico es el Blink, equivale al &ldquo;Hola Mundo&rdquo; en los microcontroladores. Este es el esquema del circuito:</p>
+<p><img src="minimal.png" alt=""></p>
+<p>Supongamos que tiene él <a href="http://packs.download.atmel.com/">pack</a> para el AVR-Dx Series y el avrdude instalado. Con todo eso podrá compilar el siguiente código:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;avr/io.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;util/delay.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define LED_PIN 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Configure internal clock:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CCP <span style="color:#f92672">=</span> CCP_IOREG_gc;                         <span style="color:#75715e">// Disable Configuration Change Protected register.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CLKCTRL.OSCHFCTRLA <span style="color:#f92672">=</span> CLKCTRL_FRQSEL_24M_gc; <span style="color:#75715e">// Configure to 24Mhz.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Configure LED on PC6:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    PORTA.DIRSET <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> LED_PIN);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        PORTA.OUTSET <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> LED_PIN);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">_delay_ms</span>(<span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        PORTA.OUTCLR <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> LED_PIN);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">_delay_ms</span>(<span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Para compilarlo deberá ejecutar el siguiente comando:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>avr-gcc -mmcu<span style="color:#f92672">=</span>avr128da28 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-DF_CPU<span style="color:#f92672">=</span>24000000UL <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-I /Applications/microchip/mplabx/v6.20/packs/Microchip/AVR-Dx_DFP/2.4.286/include <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-B /Applications/microchip/mplabx/v6.20/packs/Microchip/AVR-Dx_DFP/2.4.286/gcc/dev/avr128da28 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-g -Os -std<span style="color:#f92672">=</span>gnu99 -Wall -o main.elf *.c
+</span></span><span style="display:flex;"><span>avr-objcopy -O ihex  main.elf main.hex
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Dependiendo del sistema operativo que use, el path para llegar al pack será diferente.</p></blockquote>
+<p>Para subir el programa al microcontrolador, deberá ejecutar el siguiente comando:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2110 -e -F
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Si todo fue bien, podrá disfrutar del led parpadeando.</p>
 
   </article>
 
