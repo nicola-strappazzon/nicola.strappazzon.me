@@ -72,6 +72,16 @@ $ sudo !!
 $ su -c "!!"
 ```
 
+
+Extrae la última palabra del último comando:
+
+```
+$ echo hello world
+hello world
+$ echo $_
+world
+```
+
 Recupera el comando con número 123 del histórico, usar el comando `history` para conocer el histórico de comandos ejecutados.
 
 ```
