@@ -434,7 +434,12 @@
 </span></span><span style="display:flex;"><span>$ su -c <span style="color:#e6db74">&#34;!!&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Recupera el comando con número 123 del histórico, usar el comando <code>history</code> para conocer el histórico de comandos ejecutados.</p>
+</div><p>Extrae la última palabra del último comando:</p>
+<pre tabindex="0"><code>$ echo hello world
+hello world
+$ echo $_
+world
+</code></pre><p>Recupera el comando con número 123 del histórico, usar el comando <code>history</code> para conocer el histórico de comandos ejecutados.</p>
 <pre tabindex="0"><code>$ !123
 </code></pre><p>Ejecuta el último comando que empieza con las letras <code>un</code>:</p>
 <pre tabindex="0"><code>$ !un
