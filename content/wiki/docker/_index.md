@@ -1,8 +1,14 @@
 +++
-draft = true
 title = 'Docker'
 tags = ["bash", "docker"]
 +++
+
+Para instalalar `colima` y las demás tools de `docker`.
+
+```bash
+brew install colima
+brew install docker docker-compose
+```
 
 Para iniciar el servicio de docker usando `colima` cómo alternativa:
 
