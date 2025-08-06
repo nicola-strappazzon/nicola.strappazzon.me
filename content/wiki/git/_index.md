@@ -1,7 +1,7 @@
 +++
 draft = true
 title = 'git'
-tags = ["bash", "git", "json"]
+tags = ["bash", "git"]
 +++
 
 
@@ -9,13 +9,13 @@ tags = ["bash", "git", "json"]
 
 
 
-Forced update
+Forced update. Sobre escribir cambios forzando.
 
 ```bash
 git add . && git commit --amend --no-edit && git push -f
 ```
 
-Git pull after forced update
+Git pull luego de hacer `forced update`:
 
 ```bash
 git fetch

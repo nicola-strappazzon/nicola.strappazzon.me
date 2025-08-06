@@ -33,7 +33,7 @@ Los microcontroladores AVR fueron diseñados por [Alf-Egil Bogen](https://no.wik
 
 ## La nueva generación
 
-La última novedad fue en el 2020 con la nueva incorporación de la familia [AVR Dx](https://www.microchip.com/en-us/products/microcontrollers/8-bit-mcus/avr-mcus/avr-db), algunos lo llaman AVR modernos, existen un buen puñado de estos; DA/DB/DD/DU, por eso el nombre Dx. Me decanté por el AVR DA como una excelente evolución y reemplazo del mítico ATmega328P (sin soporte USB, para eso está el AVR DU). Para compilar podemos seguir usando él [avrdude](https://github.com/avrdudes/avrdude) sin problemas, pero se necesita un [pack](http://packs.download.atmel.com/) que lo proporciona Microchip instalando [MPLAB X IDE](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide), o también se puede utilizar sobre el microcontrolador un framework como Arduno llamado [DxCore](https://github.com/SpenceKonde/DxCore) sobre él [Arduino IDE 1.x](https://www.arduino.cc/en/software/OldSoftwareReleases/) que funciona bastante bien. Para programarlo existe una nueva forma y mucho más simple que el clásico ISP, esta es UPDI que significa Unified Program and Debug Interface, y solo basta con un [CH340](https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/) y un puñado de componentes.
+La última novedad fue en el 2020 con la nueva incorporación de la familia [AVR Dx](https://www.microchip.com/en-us/products/microcontrollers/8-bit-mcus/avr-mcus/avr-db), algunos lo llaman AVR modernos, existen un buen puñado de estos; DA/DB/DD/DU y otros más, por eso el nombre Dx. Me decanté por el AVR DA como una excelente evolución y reemplazo del mítico ATmega328P (sin soporte USB, para eso está el AVR DU). Para compilar podemos seguir usando él [avrdude](https://github.com/avrdudes/avrdude) sin problemas, y la librería que usa el avrdude que está en el repositorio [avr-libc](https://github.com/avrdudes/avr-libc) que es de la misma gente, ya tiene soporte para la familia AVR Dx. Aun así no logro compilar sin él [pack](http://packs.download.atmel.com/) que lo proporciona Microchip instalando [MPLAB X IDE](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide), o también se puede utilizar sobre el microcontrolador un framework como Arduno llamado [DxCore](https://github.com/SpenceKonde/DxCore) sobre él [Arduino IDE 1.x](https://www.arduino.cc/en/software/OldSoftwareReleases/) que funciona bastante bien. Para programarlo existe una nueva forma y mucho más simple que el clásico ISP, esta es UPDI que significa Unified Program and Debug Interface, y solo basta con un [CH340](https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/) y un puñado de componentes.
 
 ![](pinout.png)
 
@@ -93,3 +93,17 @@ avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2110 -e -F
 ```
 
 Si todo fue bien, podrá disfrutar del led parpadeando.
+
+
+## Troubleshooting
+
+Si al usar `avrdude` para compilar aparece el siguiente mensaje de error:
+
+```
+avr-gcc: fatal error: cannot read spec file 'device-specs/specs-avr128da28': No such file or directory
+```
+
+Posiblemente, sea algunas de estas causas el problema:
+
+1. No tiene instalado pack que proporciona [MPLAB X IDE](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide).
+2. El path que hace referencia a las librerías del pack no son válidas.
