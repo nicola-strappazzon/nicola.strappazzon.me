@@ -4,6 +4,16 @@ title = "Lección 3 - Condensador electrolítico"
 
 Con este simple circuito, se busca demostrar cómo funciona un condensador y en especial el de tipo electrolítico mediante la carga y descarga de una forma visible. Cómo sabemos, el condensador actúa cómo un tanque de agua en el circuito, en el caso de la electrónica no guarda agua, sino carga corriente. [Para saber más sobre los Condensadores, consulte aquí](https://nicola.strappazzon.me/electronic/components/capacitor/).
 
+## Componentes
+
+- Una placa de pruebas.
+- Dos pilas de 1.5V para sumar 3V y con su base.
+- Un pulsador.
+- Una condensador electrolítico de 1000µF.
+- Una resistencia de 1kΩ.
+- Un LED del color deseado.
+- Cables unifilar.
+
 ## Esquema
 
 {{< svg name="schematic01" >}}
