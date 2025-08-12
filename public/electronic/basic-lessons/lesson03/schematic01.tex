@@ -2,16 +2,12 @@
 \usepackage{circuitikz}
 \begin{document}
 \begin{circuitikz}[american]
-\draw (0,0)
-to[battery1, label=3V,invert] (0,3)
-to[push button] (2,3)
-to[resistor, label=1k] (2,1) to[led] (2,0)
--- (0,0);
-\draw (2,3) -- (4,3)
-to[resistor, label=1k] (4,1) to[led] (4,0)
--- (2,0);
-\draw (4,3) -- (6,3)
-to[resistor, label=1k] (6,1) to[led] (6,0)
--- (4,0);
+% \draw[help lines, step=1] (0,0) grid (7,4);
+\draw (0,3) to[battery1, label=3V,invert] (2,3);
+\draw (2,3) -- (2,4) to[push button] (4,4) -- (4,3);
+\draw (4,3) to[resistor, label=1k] (6,3);
+\draw (6,3) to[led] (7,3);
+\draw (2,3) -- (2,2) to[ecapacitor, l_=1000µF] (4,2) -- (4,3);
+\draw (0,3) -- (0,0) -- (7,0) -- (7,3);
 \end{circuitikz}
 \end{document}
