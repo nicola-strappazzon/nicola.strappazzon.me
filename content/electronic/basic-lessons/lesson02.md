@@ -1,5 +1,4 @@
 +++
-draft = false
 title = "Lección 2 - Encender varios LED's"
 +++
 

@@ -211,11 +211,17 @@
   </url><url>
     <loc>http://localhost:1313/wiki/yubikey/configure/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/docker/containers/</loc>
+  </url><url>
     <loc>http://localhost:1313/cultura/</loc>
   </url><url>
     <loc>http://localhost:1313/diccionary/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/light-emitting-diode/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/docker/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/docker/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
   </url><url>
@@ -230,6 +236,8 @@
     <loc>http://localhost:1313/electronic/basic-lessons/lesson01/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/basic-lessons/lesson02/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/basic-lessons/lesson03/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/basic-lessons/</loc>
   </url><url>
