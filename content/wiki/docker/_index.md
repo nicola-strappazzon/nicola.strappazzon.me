@@ -3,6 +3,8 @@ title = 'Docker'
 tags = ["bash", "docker"]
 +++
 
+Para iniciar **docker** en el equipo de forma oficial ya está generando ruido con preguntas, algunas restricciones, entre otras políticas corporativas, por eso nació `colima`, una forma de disfrutar `docker` sin el "extra".
+
 Para instalalar `colima` y las demás tools de `docker`.
 
 ```bash
