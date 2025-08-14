@@ -9,10 +9,12 @@ Con este simple circuito, se busca demostrar cómo funciona un condensador y en 
 - Una placa de pruebas.
 - Dos pilas de 1.5V para sumar 3V y con su base.
 - Un pulsador.
-- Una condensador electrolítico de 1000µF.
+- Una condensador electrolítico puede ser cualquiera de los siguientes valores: 100uF, 220uF, 470uF, 1000µF.
 - Una resistencia de 1kΩ.
 - Un LED del color deseado.
 - Cables unifilar.
+
+
 
 ## Esquema
 
@@ -21,3 +23,7 @@ Con este simple circuito, se busca demostrar cómo funciona un condensador y en 
 ## Placa de pruebas
 
 ![](breadboard01.png)
+
+## Análisis
+
+Al presionar el pulsador se enciende el LED y se empieza a cargar el condensador, cuando dejas de presionar el pulsador se interrumpe la carga del condensador y este empieza a suministrar corriente al led hasta descargarse el condensador por completo. Durante el proceso de descarga se puede apreciar cómo el LED va bajando su luminosidad poco a poco hasta apagarse.
