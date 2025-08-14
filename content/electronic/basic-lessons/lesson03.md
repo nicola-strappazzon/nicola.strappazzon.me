@@ -14,7 +14,7 @@ Con este simple circuito, se busca demostrar cómo funciona un condensador y en 
 - Un LED del color deseado.
 - Cables unifilar.
 
-
+La intención de usar valores altos de microfarad (µF) es para poder apreciar el tiempo de descarga, mientras más alto el valor, más tiempo de descarga. Considere que esto es proporcional al consumo, un LED tiene bajo consumo, por lo que ayuda apreciar el efecto deseado.
 
 ## Esquema
 
