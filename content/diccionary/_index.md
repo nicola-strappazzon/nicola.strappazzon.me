@@ -22,6 +22,7 @@ En el mundo de base de datos existe una gran variedad de términos técnicos que
 - **On-premise:** Servicio en tu infraestructura local o en tu cloud y gestionada por la organización, lo opuesto a SaaS.
 - **Resiliencia:** Es la capacidad de un sistema en reponerse a su normalidad luego de un incidente.
 - **Row:** Tupla, record, registro
+- **Sink:** Es el destino o "receptor final" al que se envían los datos después de ser generados, transformados o procesados. Es el opuesto de un source (fuente), que es de donde los datos se originan.
 - **Sincrono:** Quien envía permanece bloqueado esperando a que llegue una respuesta del receptor antes de realizar cualquier otra tarea. Se puede decir que la realización estándar de MySQL es síncrona. Cuando hay escrituras paralelas, se aplican de forma paralela en todos los nodos, mientras en la realización estándar de MySQL es una a la vez.
 - **SPoF:** Single Point of Failure.
 - **Tenant:** Cuando un cliente se le dedica un servidor con su propia base de datos y no es compartida con otros clientes.
