@@ -83,17 +83,18 @@
       <h2 class="title">Lección 3 - Condensador electrolítico</h2>
       
     </div>
-    <p>Con este simple circuito, se busca demostrar cómo funciona un condensador y en especial el de tipo electrolítico mediante la carga y descarga de una forma visible. Cómo sabemos, el condensador actúa cómo un tanque de agua en el circuito, en el caso de la electrónica no guarda agua, sino carga corriente. <a href="https://nicola.strappazzon.me/electronic/components/capacitor/">Para saber más sobre los Condensadores, consulte aquí</a>.</p>
+    <p>Con este simple circuito, se busca demostrar cómo funciona un condensador y en especial el de tipo electrolítico mediante la carga y descarga de una forma visible. Cómo sabemos, el condensador actúa cómo un tanque de agua en el circuito, en el caso de la electrónica no guarda agua, sino corriente. <a href="https://nicola.strappazzon.me/electronic/components/capacitor/">Para saber más, consulte aquí</a>.</p>
 <h2 id="componentes">Componentes</h2>
 <ul>
 <li>Una placa de pruebas.</li>
 <li>Dos pilas de 1.5V para sumar 3V y con su base.</li>
 <li>Un pulsador.</li>
-<li>Una condensador electrolítico de 1000µF.</li>
+<li>Una condensador electrolítico puede ser cualquiera de los siguientes valores: 100uF, 220uF, 470uF, 1000µF.</li>
 <li>Una resistencia de 1kΩ.</li>
 <li>Un LED del color deseado.</li>
 <li>Cables unifilar.</li>
 </ul>
+<p>La intención de usar valores altos de microfarad (µF) es para poder apreciar el tiempo de descarga, mientras más alto el valor, más tiempo de descarga. Considere que esto es proporcional al consumo, un LED tiene bajo consumo, por lo que ayuda apreciar el efecto deseado.</p>
 <h2 id="esquema">Esquema</h2>
 <div class="svg"><?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210.162pt" height="135.243pt" viewBox="0 0 210.162 135.243">
@@ -172,6 +173,8 @@
 </div>
 <h2 id="placa-de-pruebas">Placa de pruebas</h2>
 <p><img src="breadboard01.png" alt=""></p>
+<h2 id="análisis">Análisis</h2>
+<p>Al presionar el pulsador se enciende el LED y se empieza a cargar el condensador, cuando dejas de presionar el pulsador se interrumpe la carga del condensador y este empieza a suministrar corriente al led hasta descargarse el condensador por completo. Durante el proceso de descarga se puede apreciar cómo el LED va bajando su luminosidad poco a poco hasta apagarse.</p>
 
   </article>
 
