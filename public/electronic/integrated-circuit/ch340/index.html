@@ -119,19 +119,11 @@
 </ul>
 <p><img src="https://github.com/nicola-strappazzon/CH340/blob/main/img/minimal_updi_schematic.png?raw=true" alt=""></p>
 <h3 id="serial--updi">Serial + UPDI</h3>
-<p>Es posible usar el mismo CI para tener las dos funciones, pero se necesita un CI adicional que haga de switch (4052) que será controlado por el pin DTR (Data Terminal Ready).</p>
-<p>El CI 4052 permitira usar un pin de control XX para redirigir la entrada TX y RX del CH340, al circuito de UPDI o a los pines del UART del MCU.</p>
-<p>Para habilitar el pin DTR mientras usamos el comando avrdude, debe usar el siguiente argumento <code>-x rtsdtr=low</code> quedando así:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2120 -p avr128da28 -F -V -D -U flash:w:main.hex -x rtsdtr<span style="color:#f92672">=</span>low
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Lo que pasará es que al grabar en el MCU se pondrá el pin DTR en LOW (0v) y el CI 4052 redirige al circuito que usará el UPDI. Al terminar de grabar el pin DTR volvera a su estado inicial en HIGH (5v) y se podrá usar de comunicación Serial.</p>
-<p><img src="serial-dtr-updi.png" alt=""></p>
+<p>Esta idea la obtuve de <a href="https://avrhelp.mcselec.com/index.html?updi_programmer.htm">MCS Electronics</a>, ellos no usan ``avrdude` y en el ejemplo usan un CI 4053. Al entender cómo funciona su solución hice los cambios más lógicos a mi parecer usando un 4052 y un pulsador.</p>
+<p>Es posible usar el mismo CI para tener las dos funciones, pero se necesita un CI adicional que haga de switch (4052) para ir alternando a UART o UPDI y que será controlado por un pulsador, al ser presionado se activa el modo &ldquo;programmer&rdquo; como lo llamo yo, cuando no está presionado esta en el modo &ldquo;data&rdquo; o serial para que nos podamos entender. En el ejemplo de <a href="https://avrhelp.mcselec.com/index.html?updi_programmer.htm">MCS Electronics</a> usan el pin DTR (Data Terminal Ready) para controlar estos modos del 4052, a pesar de que conceptualmente funciona, pero en la práctica no del todo debido a que los clientes cómo <a href="https://freeware.the-meiers.org/">CoolTerm</a>, <a href="https://github.com/npat-efault/picocom">picocom</a> entre otros usan el DTR y termina no funcionando bien.</p>
+<p><img src="funcional-diagram-pinout.png" alt=""></p>
+<p>El CI 4052 permitirá usar un pin de control XX para redirigir la entrada TX y RX del CH340, al circuito de UPDI o a los pines del UART del MCU.</p>
+<p><img src="schematic3.png" alt=""></p>
 <h2 id="driver">Driver</h2>
 <p>Dependiendo del sistema operativo (OS) que use, deberá instalar uno de los siguientes controladores.</p>
 <ul>
