@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>CH340 | Nicola Strappazzon</title>
+<title>Serial &#43; UPDI | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -73,38 +73,36 @@
 </header>
 <div class="content">
 
-  
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/electronic/">Electrónica</a></li>
+      <li><a href="/electronic/integrated-circuit/">Circuito integrado</a></li>
+      <li><a href="/electronic/integrated-circuit/ch340/">CH340</a></li>
+    </ul>
     <div class="content-header">
-      <h2 class="title">CH340</h2>
+      <h2 class="title">Serial &#43; UPDI</h2>
       
     </div>
-  
-  <p>Este es un simple CI que permite la comunicación USB 2.0 a Serial &amp; UPDI de muy bajo coste, diseñado y fabricado en china por <a href="http://www.wch-ic.com">Jiangsu Heng Qin Ltd. (WCH)</a>. Para usar el CI conectado a un ordenador/computadora, necesitas tener instalado el driver. De momento nos vamos a centrar en el CH340C/B que tiene unas prestaciones muy versátiles, entre ellas destacan las siguientes:</p>
+    <p>Esta idea la obtuve de <a href="https://avrhelp.mcselec.com/index.html?updi_programmer.htm">MCS Electronics</a>, ellos no usan <code>avrdude</code> y en el ejemplo usan un CI 4053. Al entender cómo funciona su solución hice los cambios más lógicos a mi parecer usando un 4052 y un pulsador.</p>
+<p>Es posible usar el mismo CI para tener las dos funciones, pero se necesita un CI adicional que haga de switch (4052) para ir alternando a UART o UPDI y que será controlado por un pulsador, al ser presionado se activa el modo &ldquo;programmer&rdquo; como lo llamo yo, cuando no está presionado esta en el modo &ldquo;data&rdquo; o serial para que nos podamos entender. En el ejemplo de <a href="https://avrhelp.mcselec.com/index.html?updi_programmer.htm">MCS Electronics</a> usan el pin DTR (Data Terminal Ready) para controlar estos modos del 4052, a pesar de que conceptualmente funciona, pero en la práctica no del todo debido a que los clientes cómo <a href="https://freeware.the-meiers.org/">CoolTerm</a>, <a href="https://github.com/npat-efault/picocom">picocom</a> entre otros usan el DTR y termina no funcionando bien.</p>
+<p><img src="funcional-diagram-pinout.png" alt=""></p>
+<h2 id="componentes">Componentes</h2>
 <ul>
-<li>Las versiones CH340C/N/K/E/X/B tiene reloj integrado, no requiere cristal externo. CH340B también integra una EEPROM utilizada para configurar el número de serie, etc.</li>
-<li>USB 2.0 a Serial, compatible con RS232, RS485, RS422.</li>
-<li>Usa el protocolo UART para comunicarse con el MCU.</li>
-<li>Soporta 5v y 3.3v.</li>
+<li>Un IC CH340.</li>
+<li>Un IC CD4052B.</li>
+<li>Un pulsador.</li>
+<li>Condensador de 10nF.</li>
+<li>Condensador de 100nF / 0.1uF, Código: 104, Cantidad: 2.</li>
+<li>Resistencia de 4.7k.</li>
+<li>Resistencia de 10k.</li>
+<li>Diodo schottky 1N5817 (puede ser otro; BAT43).</li>
 </ul>
-<blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>En este <a href="https://github.com/nicola-strappazzon/CH340">repositorio</a> podrás tener acceso a un diseño de PCB que puedes construir tu mismo cómo cualquier material adicional que pueda ser de interés.</p></blockquote>
-<p>También podemos configurar el UART para Unified Program and Debug Interface (UPDI) que es habitual para programar los Microcontroladores (MCU) como el AVR Dx.</p>
-<p><img src="https://github.com/nicola-strappazzon/CH340/blob/main/img/minimal_protoboard.jpg?raw=true" alt=""></p>
-<p>En la imagen mostramos el circuito básico y la conexión con un ATMega328P.</p>
-<p>Puedes conseguir el CH340 en la tienda oficial del fabricante en <a href="https://wchofficialstore.es.aliexpress.com/store/1100367542">AliExpress</a> o en un distribuidor autorizado en china <a href="https://www.lcsc.com">LCSC</a>.</p>
+<h2 id="esquema">Esquema</h2>
+<p>El CI 4052 permitirá usar un pin de control A y B en paralelo para redirigir la entrada TX y RX del CH340, al circuito de UPDI o a los pines del UART del MCU. El pulsador que hace de programador está configurado en modo PullUp.</p>
+<p><img src="schematic3.png" alt=""></p>
 
-  
-  <ul>
-    
-      <li><a href="/electronic/integrated-circuit/ch340/driver/">Driver</a></li>
-    
-      <li><a href="/electronic/integrated-circuit/ch340/serial/">Serial</a></li>
-    
-      <li><a href="/electronic/integrated-circuit/ch340/serial&#43;updi/">Serial &#43; UPDI</a></li>
-    
-      <li><a href="/electronic/integrated-circuit/ch340/updi/">UPDI</a></li>
-    
-  </ul>
-  
+  </article>
 
 </div>
 <footer class="footer">

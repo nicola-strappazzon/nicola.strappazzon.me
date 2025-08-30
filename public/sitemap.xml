@@ -223,6 +223,8 @@
   </url><url>
     <loc>http://localhost:1313/wiki/docker/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/ch340/driver/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/jq/</loc>
@@ -251,6 +253,10 @@
   </url><url>
     <loc>http://localhost:1313/tags/security/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/ch340/serial/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/ch340/serial&#43;updi/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/ssh/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/ssh/</loc>
@@ -260,6 +266,8 @@
     <loc>http://localhost:1313/wiki/terminal/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/transistor/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/ch340/updi/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/wire-bundle/</loc>
   </url><url>
