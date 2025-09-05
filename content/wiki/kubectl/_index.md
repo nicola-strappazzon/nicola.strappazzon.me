@@ -108,6 +108,18 @@ Solo debe cambiar el número definido en `--replicas=3` al deseado.
 kubectl scale --replicas=3 deployment/api
 ```
 
+Para conocer los HPA disponibles:
+
+```bash
+kubectl get hpa
+```
+
+Definir el minimo y maximo del HPA:
+
+```bash
+kubectl patch hpa api -p '{"spec":{"minReplicas": 10}}'
+```
+
 ## Reiniciar
 
 ```bash
