@@ -2,9 +2,9 @@
 title = 'Serial + UPDI'
 +++
 
-![](breadboard.png)
-
 Imaginate poder usar un solo circuito para Serial (USB Communications Device Class CDC) para comunicarte con el MCU y también poder programarlo usando el UPDI. Todo esto es posible gracias al CI 4052 que hace de interruptor y es controlado por el CI CH340.
+
+![](breadboard.png)
 
 Esta idea la obtuve de [MCS Electronics](https://avrhelp.mcselec.com/index.html?updi_programmer.htm), ellos no usan `avrdude` y en el ejemplo usan un CI 4053. Al entender cómo funciona su solución hice los cambios más lógicos a mi parecer usando un 4052.
 
