@@ -26,12 +26,12 @@ Es posible usar el mismo CI para tener las dos funciones, pero se necesita un CI
 El CI 4052 permitirá usar un pin de control A y B en paralelo para redirigir la entrada TX y RX del CH340, al circuito de UPDI o a los pines del UART del MCU.
 
 {{% blockquote type="warning" %}}
-Se debe mantener el UART conectados a los pines X0 y Y0, y el UPDI X3 y Y3 del CI 4052. De esta forma funciona perfectamente, si invierte a pesar de que parezca lógico, NO funciona bien. Esto es debido a que se necesita interrumpir la comunicación del UART cuando necesitamos hacer uso del UPDI.
+Se debe mantener el UART conectados a los pines X0 y Y0, y el UPDI a los pines X3 y Y3 del CI 4052. De esta forma funciona perfectamente, si invierte a pesar de que parezca lógico, NO funciona bien. Esto es debido a que se necesita interrumpir la comunicación del UART cuando necesitamos hacer uso del UPDI.
 {{% /blockquote %}}
 
 ![](schematic3.png)
 
-## Cómo progamar usando el UPDI
+## ¿Cómo progamar usando el UPDI?
 
 Debemos indicarle al `avrdude` que ponga el pin del RTS en alto/hight de la siguiente forma `-x rtsdtr=hight`.
 
@@ -40,7 +40,7 @@ avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2110 -e -F -x rtsdtr=h
 avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2110 -p avr128da28 -x rtsdtr=hight -F -V -D -U flash:w:main.hex
 ```
 
-## Cómo usar el CDC
+## ¿Cómo usar el CDC?
 
 Puedes usar los clientes [CoolTerm](https://freeware.the-meiers.org/) o [picocom](https://github.com/npat-efault/picocom), te lo dejo a gusto.
 
