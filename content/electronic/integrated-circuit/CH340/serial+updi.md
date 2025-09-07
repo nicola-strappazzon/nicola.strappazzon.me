@@ -4,11 +4,11 @@ title = 'Serial + UPDI'
 
 ![](breadboard.png)
 
-Imaginate poder usar al mismo tiempo Serial (USB Communications Device Class CDC) + UPDI, quiero decir que puedes programar el MCU usando UPDI, y por el otro lado poder leer y escribir en el puerto Serial. Todo esto es posible gracias al CI 4052 que hace de interruptor y es controlado por el CI CH340.
+Imaginate poder usar un solo circuito para Serial (USB Communications Device Class CDC) para comunicarte con el MCU y también poder programarlo usando el UPDI. Todo esto es posible gracias al CI 4052 que hace de interruptor y es controlado por el CI CH340.
 
 Esta idea la obtuve de [MCS Electronics](https://avrhelp.mcselec.com/index.html?updi_programmer.htm), ellos no usan `avrdude` y en el ejemplo usan un CI 4053. Al entender cómo funciona su solución hice los cambios más lógicos a mi parecer usando un 4052.
 
-Es posible usar el mismo CI para tener las dos funciones, pero se necesita un CI adicional que haga de switch (4052) para ir alternando entre UART (donde está el CDC) y UPDI y que será controlado por el pin RTS (Request to Send) del CH340, cuando se pone el pin del RTS en alto/hight tambien pasara con los pines de conmutacion A y B del CI 4052 y se activa el modo "programmer" como lo llamo yo, y cuando el pin RTS esta en bajo/LOW los pines de control A y B tambien lo están y se activa el modo "data" o seríal para que nos podamos entender.
+Es posible usar el mismo CI para tener las dos funciones, pero se necesita un CI adicional que haga de switch (4052) para ir alternando entre UART (donde está el CDC) y UPDI. Ambos circuitos serán controlados por el pin RTS (Request to Send) del CH340, cuando se pone el pin del RTS en alto/hight tambien pasara con los pines de conmutacion A y B del CI 4052 y se activa el modo "programmer" como lo llamo yo, y cuando el pin RTS esta en bajo/LOW los pines de control A y B tambien lo están y se activa el modo "data" o seríal para que nos podamos entender.
 
 ![](funcional-diagram-pinout.png)
 
