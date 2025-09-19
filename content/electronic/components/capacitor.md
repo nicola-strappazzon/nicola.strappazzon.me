@@ -4,6 +4,10 @@ title = 'Condensadores'
 
 También llamado capacitores, este componente se comporta en la práctica como un elemento capaz de almacenar la energía eléctrica que recibe durante el período de carga, la misma energía que cede después durante el período de descarga. Además, es capaz de almacenar carga eléctrica luego de cargado y desconectado del circuito, por lo que es apropiado ser cuidadoso al manipular uno, ya que podría haber quedado cargado desde su uso anterior, lo adecuado es conectar siempre sus extremos mediante un elemento conductor por unos segundos antes de manipular un condensador.
 
+{{% blockquote type="warning" %}}
+Los capacitores pueden almacenar carga eléctrica incluso después de haberse desconectado del circuito o de una fuente de energía. Esto puede provocar descargas eléctricas peligrosas o dañar otros componentes si no se descargan adecuadamente.
+{{% /blockquote %}}
+
 Existen dos grandes grupos de condensadores, los polarizados y los que no. Cada tipo se representa con diferentes símbolos, muestro las formas más habituales de cada uno:
 
 ![](symbols.png)
