@@ -18,7 +18,7 @@ Entre ambos grupos, existen muchos diferentes tipos que utilizan distintos tipos
 
 1. **Capacitores electrolíticos:** Aunque tienen un valor más alto, su tolerancia es pobre. Son polarizados y no funcionan bien a altas frecuencias.
 2. **Capacitores cerámicos:** Pueden usarse en muchas áreas. Usualmente son buenos a altas frecuencias (RF y microondas). Algunas cerámicas ofrecen alta estabilidad, otras un tamaño reducido, etc.
-3. **Tántalo:** Son capacitores polarizados que ofrecen altos niveles de capacitancia, pero a menudo a bajos voltajes. Son muy intolerantes a voltajes inversos y no pueden manejar mucha corriente. Son caros.
+3. **Tántalo:** Son capacitores polarizados que ofrecen altos niveles de capacitancia, pero a menudo a bajos voltajes. Son muy intolerantes a voltajes inversos y no pueden manejar mucha corriente. Son costosos.
 4. **Película plástica:** No están disponibles en versiones de montaje superficial (SMD). Existen diferentes tipos que pueden proporcionar alta estabilidad y un buen nivel de desempeño en general, pero no son aptos para frecuencias RF o de microondas altas. Suelen usarse para audio.
 
 Las distintas combinaciones de dieléctrico, construcción del capacitor y otros factores implican que diferentes tipos de capacitores tienden a cubrir diferentes rangos de valores en los que están disponibles.
