@@ -219,6 +219,8 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/light-emitting-diode/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/components/display/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/docker/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/docker/</loc>
@@ -258,6 +260,8 @@
     <loc>http://localhost:1313/electronic/integrated-circuit/ch340/serial/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/ch340/serial&#43;updi/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/display/ssd1353/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/ssh/</loc>
   </url><url>

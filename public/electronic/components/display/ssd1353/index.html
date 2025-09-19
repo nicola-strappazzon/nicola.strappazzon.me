@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Componentes | Nicola Strappazzon</title>
+<title>SSD1353 | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -73,28 +73,38 @@
 </header>
 <div class="content">
 
-  
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/electronic/">Electrónica</a></li>
+      <li><a href="/electronic/components/">Componentes</a></li>
+      <li><a href="/electronic/components/display/">Display</a></li>
+    </ul>
     <div class="content-header">
-      <h2 class="title">Componentes</h2>
+      <h2 class="title">SSD1353</h2>
       
     </div>
-  
-  
-  
-  <ul>
-    
-      <li><a href="/electronic/components/capacitor/">Condensadores</a></li>
-    
-      <li><a href="/electronic/components/light-emitting-diode/">Diodo emisor de luz (LED)</a></li>
-    
-      <li><a href="/electronic/components/display/">Display</a></li>
-    
-      <li><a href="/electronic/components/resistor/">Resistencias</a></li>
-    
-      <li><a href="/electronic/components/transistor/">Transistores</a></li>
-    
-  </ul>
-  
+    <p>El controlador <a href="datasheet.pdf">SSD1353</a> es usado para pantallas a todo color de tipo OLED con una dimensión de 160x128 píxel configurado para trabajar en 8-bit 8080 Parallel Interface como los clásicos LCD 16x2, tambien tiene otros modos de configuración que no trataremos.</p>
+<p>A continuación se muestra el circuito mínimo para hacer funcionar controlador SSD1353, y hay un par de puntos que quiero aclarar; Primero es que usa dos voltajes de alimentación que son 3.3v para el controlador y 12v para los pixeles donde este último se logra con un boost. Segundo es que se pueden usar otro tipo de condensadores además de los indicados por el fabricante como ha hecho <a href="adafruit.png">adafruit</a> con uno de sus productos usando el mismo controlador pero para una pantalla con otras dimensiones.</p>
+<p><img src="schematic.png" alt=""></p>
+<h2 id="componentes">Componentes</h2>
+<ul>
+<li>R1 de 1.2M.</li>
+<li>R2 de 49.9ohm o 50ohm.</li>
+<li>D1 y D2 puede ser 1N4148 ó RB480K. Son diodos normales.</li>
+<li>C1 de 4.7uF con polaridad, ó 10uF ceramico (106).</li>
+<li>C2 de 1uF (105) ó 10uF (106), ambos ceramico.</li>
+<li>C3 1uF ceramico (105).</li>
+<li>C4 1uF ceramico (105).</li>
+<li>C5 0.1uF ceramico (104).</li>
+<li>C6 de 4.7uF con polaridad, ó 1uF ceramico (105).</li>
+</ul>
+<h2 id="construcción">Construcción</h2>
+<p>Así quedo luego de armarlo en el breadboard y conectarlo a mi otro circuito que usa un <a href="http://localhost:1313/electronic/integrated-circuit/ch340/serial+updi/">AVR128DA28</a>. No hacer caso al orden numérico de la PCB que usé para conectar el circuito al flex. En este punto el circuito no usa el 12V Boost y usé una fuente de alimentación ajustable para probar. Es cierto que la foto no es la mejor.</p>
+<p><img src="breadboard.png" alt=""></p>
+<!-- ## Boost -->
+
+  </article>
 
 </div>
 <footer class="footer">

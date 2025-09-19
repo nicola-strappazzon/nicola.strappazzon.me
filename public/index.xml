@@ -464,6 +464,13 @@
       <description>&lt;p&gt;Imaginate poder usar un solo circuito para Serial (USB Communications Device Class CDC) para comunicarte con el MCU y también poder programarlo usando el UPDI. Todo esto es posible gracias al CI 4052 que hace de interruptor y es controlado por el CI CH340.&lt;/p&gt;&#xA;&lt;p&gt;Para el ejemplo que desarrollo en este escrito, utilizo el circuito descrito para programar un MCU de tipo AVR128DA28.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;breadboard.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Esta idea la obtuve de &lt;a href=&#34;https://avrhelp.mcselec.com/index.html?updi_programmer.htm&#34;&gt;MCS Electronics&lt;/a&gt;, ellos no usan &lt;code&gt;avrdude&lt;/code&gt; y en el ejemplo usan un CI 4053. Al entender cómo funciona su solución hice los cambios más lógicos a mi parecer usando un 4052.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>SSD1353</title>
+      <link>http://localhost:1313/electronic/components/display/ssd1353/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/components/display/ssd1353/</guid>
+      <description>&lt;p&gt;El controlador &lt;a href=&#34;datasheet.pdf&#34;&gt;SSD1353&lt;/a&gt; es usado para pantallas a todo color de tipo OLED con una dimensión de 160x128 píxel configurado para trabajar en 8-bit 8080 Parallel Interface como los clásicos LCD 16x2, tambien tiene otros modos de configuración que no trataremos.&lt;/p&gt;&#xA;&lt;p&gt;A continuación se muestra el circuito mínimo para hacer funcionar controlador SSD1353, y hay un par de puntos que quiero aclarar; Primero es que usa dos voltajes de alimentación que son 3.3v para el controlador y 12v para los pixeles donde este último se logra con un boost. Segundo es que se pueden usar otro tipo de condensadores además de los indicados por el fabricante como ha hecho &lt;a href=&#34;adafruit.png&#34;&gt;adafruit&lt;/a&gt; con uno de sus productos usando el mismo controlador pero para una pantalla con otras dimensiones.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Transistores</title>
       <link>http://localhost:1313/electronic/components/transistor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
