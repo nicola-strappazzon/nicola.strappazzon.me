@@ -1,11 +1,29 @@
 +++
-draft = false
 title = 'Condensadores'
 +++
+
+También llamado capacitores, este componente se comporta en la práctica como un elemento capaz de almacenar la energía eléctrica que recibe durante el período de carga, la misma energía que cede después durante el período de descarga. Además, es capaz de almacenar carga eléctrica luego de cargado y desconectado del circuito, por lo que es apropiado ser cuidadoso al manipular uno, ya que podría haber quedado cargado desde su uso anterior, lo adecuado es conectar siempre sus extremos mediante un elemento conductor por unos segundos antes de manipular un condensador.
+
+Existen dos grandes grupos de condensadores, los polarizados y los que no. Cada tipo se representa con diferentes símbolos, muestro las formas más habituales de cada uno:
+
+![](symbols.png)
+
+<!-- Para que se suelen usar -->
+
+Entre ambos grupos, existen muchos diferentes tipos que utilizan distintos tipos de dieléctrico. Al diseñar un circuito es útil saber qué tipos de capacitores pueden estar disponibles en el rango requerido. Sin embargo, vale la pena tener en cuenta algunos puntos:
+
+1. **Capacitores electrolíticos:** Aunque tienen un valor más alto, su tolerancia es pobre. Son polarizados y no funcionan bien a altas frecuencias.
+2. **Capacitores cerámicos:** Pueden usarse en muchas áreas. Usualmente son buenos a altas frecuencias (RF y microondas). Algunas cerámicas ofrecen alta estabilidad, otras un tamaño reducido, etc.
+3. **Tántalo:** Son capacitores polarizados que ofrecen altos niveles de capacitancia, pero a menudo a bajos voltajes. Son muy intolerantes a voltajes inversos y no pueden manejar mucha corriente. Son caros.
+4. **Película plástica:** No están disponibles en versiones de montaje superficial (SMD). Existen diferentes tipos que pueden proporcionar alta estabilidad y un buen nivel de desempeño en general, pero no son aptos para frecuencias RF o de microondas altas. Suelen usarse para audio.
+
+Las distintas combinaciones de dieléctrico, construcción del capacitor y otros factores implican que diferentes tipos de capacitores tienden a cubrir diferentes rangos de valores en los que están disponibles.
 
 ## Tabla de equivalencias entre unidades
 
 Los fabricantes crean los condensadores de muchos valores, aquí listamos los más comunes para un laboratorio.
+
+<!-- Se puede indicar que rangos de valore cubre ceramico, electrolitico, tantalio, etc... -->
 
 |picofarad (pF)|nanofarad (nF)|microfarad (uF)|Code|Code (nF)|
 |--------------|--------------|---------------|----|---------|

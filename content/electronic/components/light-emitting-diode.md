@@ -1,5 +1,4 @@
 +++
-draft = false
 title = 'Diodo emisor de luz (LED)'
 +++
 

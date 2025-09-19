@@ -47,4 +47,3 @@ Los ladrillos más básicos.
 	•	74HC08 → 4 compuertas AND.
 	•	74HC32 → 4 compuertas OR.
 	•	74HC86 → 4 compuertas XOR.
-

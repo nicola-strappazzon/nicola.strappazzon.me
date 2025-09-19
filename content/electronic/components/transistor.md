@@ -1,7 +1,14 @@
 +++
-draft = false
 title = 'Transistores'
 +++
+
+<!-- Los transistores no operan por voltaje, sino por corriente. Esto quiere decir que la corriente es quien gobierna la apertura o cierre de la Base para que pueda circular corriente a travez del colector al emisor. -->
+
+<!-- La corriente pasa travez del colector al emisor. Entra por el colector y sale por el emisor, y quien actia como una valvula que abre o cierra es la base. -->
+
+<!-- poner la clasica imagen. -->
+
+<!-- Para que se suelen usar -->
 
 Para entender los transistores y hacerlos funcionar, debemos saber que significan sus valores, aquí una breve descripción de los más importantes:
 
