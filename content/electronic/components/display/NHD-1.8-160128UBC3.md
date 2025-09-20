@@ -18,6 +18,5 @@ Para poder montar de forma más cómoda y limpua el módulo del display al bread
 files:
   - connector01.png
   - connector02.png
+  - connector03.png
 {{% /images %}}
-
-
