@@ -100,7 +100,7 @@
 #define NOTE_C4  262
 </code></pre><p>Por ejemplo, la nota <code>G3</code> tiene el valor <code>196</code>, que corresponde a la frecuencia de 196 Hz.</p>
 <p><img src="logicanalyzer02.png" alt=""></p>
-<p>Si observamos la imagen anterior, notamos que hay una serie de picos, pulsos, períodos que los llamaremos <code>toggle</code>. Un <code>toggle</code> es un valor alto ó bajo. En la imagen anterior hay 49, y este valor se puede calcular usando la nota y el tiempo.</p>
+<p>Si observamos la imagen anterior, notamos que hay una serie de pulsos que los llamaremos <code>toggle</code>. Un <code>toggle</code> es un valor alto ó bajo. En la imagen anterior hay 49, y este valor se puede calcular usando la nota y el tiempo.</p>
 <p>Volvamos analizar la nota <code>G3</code> que está acompañada de un tiempo con el valor <code>8</code> que equivale a un corchete (jerga de la música), esto quiere decir, una duración de 1/8s que es equivalente <code>125ms</code>.</p>
 <div>$$ t_{ms}=\frac{1000}{8}=125_{ms} $$</div>
 <div>$$ toggles=\frac{2 \cdot f \cdot t_{ms}}{1000}=\frac{2 \cdot 196Hz \cdot 125_{ms}}{1000}=49 $$</div>
