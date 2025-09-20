@@ -32,14 +32,14 @@ Por ejemplo, la nota `G3` tiene el valor `196`, que corresponde a la frecuencia 
 
 Si observamos la imagen anterior, notamos que hay una serie de picos, pulsos, períodos que los llamaremos `toggle`. Un `toggle` es un valor alto ó bajo. En la imagen anterior hay 49, y este valor se puede calcular usando la nota y el tiempo.
 
-Volvamos analizar la nota `G3` que está acompañada de un tiempo con el valor `8` que equivale a un corchete (jerga de la música), esto quiere decir una duración de 1/8s que es equivalente `125ms`.
+Volvamos analizar la nota `G3` que está acompañada de un tiempo con el valor `8` que equivale a un corchete (jerga de la música), esto quiere decir, una duración de 1/8s que es equivalente `125ms`.
 
 {{< mathjax "t_{ms}=\frac{1000}{8}=125_{ms}" >}}
 
 {{< mathjax "toggle=\frac{2 x f x t_{ms}}{1000}=\frac{2 x 196Hz x 125_{ms}}{1000}=49" >}}
 
-Cómo resultado tenemos `49` toggles que es equivalente a 24.5 períodos, si redondeamos son `25 períodos`. Todo empieza a encajar según lo que nos dice la imagen anterior.
+Como resultado tenemos `49` toggles que es equivalente a 24.5 períodos, si redondeamos son `25 períodos`. Todo empieza a encajar según lo que nos dice la imagen anterior.
 
 ...
 
-Seguimos trabajando...
+Seguimos trabajando en terminar el artículo...
