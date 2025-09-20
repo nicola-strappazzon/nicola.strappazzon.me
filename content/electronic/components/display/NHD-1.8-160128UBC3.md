@@ -315,10 +315,6 @@ avr-gcc -mmcu=avr128da28 \
 avr-objcopy -O ihex  main.elf main.hex
 ```
 
-{{% blockquote type="note" %}}
-Dependiendo del sistema operativo que use, el path para llegar al pack será diferente.
-{{% /blockquote %}}
-
 Para subir el programa al microcontrolador, deberá ejecutar el siguiente comando:
 
 ```bash
