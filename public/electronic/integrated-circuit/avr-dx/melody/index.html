@@ -86,8 +86,8 @@
       <h2 class="title">Melody</h2>
       
     </div>
-    <p>Vamos a explicar desde la cero cómo reproducir melodías usando tonos generados por un timer en un AVR128DA28 con un <a href="https://en.wikipedia.org/wiki/Piezoelectric_speaker">buzzer / altavoz piezoeléctrico</a>. Para eso vamos a estudiar en profundidad una melodía muy famosa y más si eres padre, que es la primera pieza &ldquo;Twinkle, Twinkle, Little Star&rdquo; (Estrellita, ¿dónde estás?) de una canción infantil del siglo XVIII (melodía de Ah! vous dirai-je, maman de Mozart) que también la usa <a href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Arduino</a> en su ejemplo.</p>
-<p>Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera.</p>
+    <p>Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un <code>AVR128DA28</code>. Los tonos serán reproducidor por un <a href="https://en.wikipedia.org/wiki/Piezoelectric_speaker">buzzer o altavoz piezoeléctrico</a>. Para eso vamos a estudiar en profundidad una melodía muy famosa que es la primera pieza &ldquo;Twinkle, Twinkle, Little Star&rdquo; (Estrellita, ¿dónde estás?) de una canción infantil del siglo XVIII (melodía de Ah! vous dirai-je, maman de Mozart) que también la usa <a href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Arduino</a> en su ejemplo.</p>
+<p>Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.</p>
 <p>Si conectamos un analizador lógico (logic analyzer) a la salida del MCU que reproduce dicha melodía obtenemos una muestra de pulsos que se parecen a la siguiente imagen:</p>
 <p><img src="logicanalyzer01.png" alt=""></p>
 <p>Estas son las notas y la duración de cada nota de la melodía &ldquo;Twinkle, Twinkle, Little Star&rdquo;. La primera línea son las notas, y la segunda los tiempos.</p>
