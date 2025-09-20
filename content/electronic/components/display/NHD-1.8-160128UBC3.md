@@ -2,7 +2,7 @@
 title = 'OLED Display Module 1.8"'
 +++
 
-Hace tiempo me decanté por este módulo OLED 1.8" súper fácil de programar, es él [NHD-1.8-160128UBC3](https://www.digikey.es/es/products/detail/newhaven-display-intl/NHD-1-8-160128UBC3/23334148) de [Newhaven Display](https://newhavendisplay.com), en otro post explico como funciona el controlador [SSD1353](http://localhost:1313/electronic/components/display/ssd1353/) que trae. Descubrí este tipo de display por este proyecto; [Sir Box-a-Lot: an 8-bit Sokoban clone](https://lcamtuf.coredump.cx/sir-box-a-lot/) hecho por lcamtuf el cual me sorprendió su trabajo.
+Hace tiempo me decanté por este módulo OLED 1.8" súper fácil de programar, es él [NHD-1.8-160128UBC3](https://www.digikey.es/es/products/detail/newhaven-display-intl/NHD-1-8-160128UBC3/23334148) de [Newhaven Display](https://newhavendisplay.com), en otro post explico como funciona el controlador [SSD1353](https://nicola.strappazzon.me/electronic/components/display/ssd1353/) que trae. Descubrí este tipo de display por este proyecto; [Sir Box-a-Lot: an 8-bit Sokoban clone](https://lcamtuf.coredump.cx/sir-box-a-lot/) hecho por lcamtuf el cual me sorprendió su trabajo.
 
 A continuación muestro un diagrama esquemático usando el display con un AVR128DA28, las conexiones establecidas al módulo lo configuran para trabajar en 8-bit 8080 Parallel Interface como los clásicos LCD 16x2.
 
@@ -21,7 +21,7 @@ files:
   - connector03.png
 {{% /images %}}
 
-Programarlo es muy fácil, te dejo el código fuente:
+Programarlo en el [AVR128DA28]https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/serial+updi/) es muy fácil, te dejo el código fuente:
 
 ```C
 #include <avr/io.h>
