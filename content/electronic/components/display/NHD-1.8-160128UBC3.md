@@ -21,7 +21,7 @@ files:
   - connector03.png
 {{% /images %}}
 
-Programarlo en el [AVR128DA28]https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/serial+updi/) es muy fácil, te dejo el código fuente:
+Programarlo en el [AVR128DA28](https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/serial+updi/) es muy fácil, te dejo el código fuente:
 
 ```C
 #include <avr/io.h>
