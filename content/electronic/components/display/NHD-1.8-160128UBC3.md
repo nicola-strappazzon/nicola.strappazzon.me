@@ -12,7 +12,7 @@ A continuación muestro un diagrama esquemático usando el display con un AVR128
 Las conexiones para que funcione el MCU son ignoradas a propósito con la intención de simplificar el diagrama para centrarnos en el funcionamiento del módulo.
 {{% /blockquote %}}
 
-Para poder montar de forma más cómoda y limpua el módulo del display al breadboard, mandé hacer una PCB muy simple que hace de adaptador de [2x10](https://www.digikey.es/es/products/detail/w%C3%BCrth-elektronik/61302021821/16608495) a [1x20](https://www.digikey.es/es/products/detail/chip-quik-inc/HDR100IMP40M-G-V-TH/5978197) pines. Aquí tienes el diseño en KiCAD para [descargar](MountingDisplay.zip).
+Para poder montar de forma más cómoda y limpia el módulo al breadboard, mandé hacer una PCB muy simple que hace de adaptador de [2x10](https://www.digikey.es/es/products/detail/w%C3%BCrth-elektronik/61302021821/16608495) a [1x20](https://www.digikey.es/es/products/detail/chip-quik-inc/HDR100IMP40M-G-V-TH/5978197) pines. Aquí tienes el diseño en KiCAD para [descargar](MountingDisplay.zip).
 
 {{% images %}}
 files:
