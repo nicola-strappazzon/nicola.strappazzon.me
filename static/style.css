@@ -387,3 +387,8 @@ table th, td {
 #breadcrumbs .active {
   font-weight: bold;
 }
+
+.highlight .copy-btn {
+  float: right;
+  cursor: pointer;
+}

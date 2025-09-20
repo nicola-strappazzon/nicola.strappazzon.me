@@ -4,6 +4,8 @@
 {{ partial "head.html" . }}
 </head>
 <body>
+{{ $js := resources.Get "js/clipboard.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}"></script>
 <div class="container center">
 <header>
 {{ partial "header.html" . }}
