@@ -32,7 +32,7 @@ Por ejemplo, la nota `G3` tiene el valor `196`, que corresponde a la frecuencia 
 
 Si observamos la imagen anterior, notamos que hay una serie de pulsos que los llamaremos `toggle`. Un `toggle` es un valor alto ó bajo. En la imagen anterior hay 49, y este valor se puede calcular usando la nota y el tiempo.
 
-Volvamos analizar la nota `G3` que está acompañada de un tiempo con el valor `8` que equivale a un corchete (jerga de la música), esto quiere decir, una duración de 1/8s que es equivalente `125ms`.
+Volvamos analizar la nota `G3` que está acompañada de un tiempo con el valor `8` que equivale a una [corchea](https://es.wikipedia.org/wiki/Corchea) (jerga de la música), esto quiere decir, una duración de 1/8s que es equivalente `125ms`.
 
 {{< mathjax "t_{ms}=\frac{1000}{8}=125_{ms}" >}}
 
