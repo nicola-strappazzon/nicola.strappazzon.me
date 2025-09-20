@@ -36,7 +36,7 @@ Volvamos analizar la nota `G3` que está acompañada de un tiempo con el valor `
 
 {{< mathjax "t_{ms}=\frac{1000}{8}=125_{ms}" >}}
 
-{{< mathjax "toggle=\frac{2 \cdot f \cdot t_{ms}}{1000}=\frac{2 \cdot 196Hz \cdot 125_{ms}}{1000}=49" >}}
+{{< mathjax "toggles=\frac{2 \cdot f \cdot t_{ms}}{1000}=\frac{2 \cdot 196Hz \cdot 125_{ms}}{1000}=49" >}}
 
 Como resultado tenemos `49` toggles que es equivalente a 24.5 períodos, si redondeamos son `25 períodos`. Todo empieza a encajar según lo que nos dice la imagen anterior.
 
