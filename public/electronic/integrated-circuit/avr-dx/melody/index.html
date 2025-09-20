@@ -90,14 +90,15 @@
 <p>Vamos a ir descomponiendo la melodía, notas, tonos, y así hasta llegar al código fuente que los genera.</p>
 <p>Si conectamos un analizador lógico (logic analyzer) a la salida del MCU que reproduce dicha melodía obtenemos una muestra de pulsos que se parecen a la siguiente imagen:</p>
 <p><img src="logicanalyzer01.png" alt=""></p>
-<p>Estas son las notas de la melodía &ldquo;Twinkle, Twinkle, Little Star&rdquo;.</p>
+<p>Estas son las notas y la duración de cada nota de la melodía &ldquo;Twinkle, Twinkle, Little Star&rdquo;. La primera línea son las notas, y la segunda los tiempos.</p>
 <pre tabindex="0"><code>NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
-</code></pre><p>Si buscamos en la libreria de tonos musicales <code>pitches.h</code> obtenemos solo 4 notas:</p>
+4,       8,       8,       4,       4,       4, 4,       4
+</code></pre><p>Si buscamos en la libreria de tonos musicales <code>pitches.h</code> obtenemos solo estas cuatro notas que conforman la melodía:</p>
 <pre tabindex="0"><code>#define NOTE_G3  196
 #define NOTE_A3  220
 #define NOTE_B3  247
 #define NOTE_C4  262
-</code></pre><p>Por ejemplo la nota <code>NOTE_G3</code> tiene el valor <code>196</code>, que corresponde a la frecuencia de 196 Hz.</p>
+</code></pre><p>Por ejemplo, la nota <code>NOTE_G3</code> tiene el valor <code>196</code>, que corresponde a la frecuencia de 196 Hz.</p>
 <p><img src="logicanalyzer02.png" alt=""></p>
 
   </article>

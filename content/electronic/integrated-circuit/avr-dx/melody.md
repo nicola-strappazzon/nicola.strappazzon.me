@@ -11,13 +11,14 @@ Si conectamos un analizador lógico (logic analyzer) a la salida del MCU que rep
 
 ![](logicanalyzer01.png)
 
-Estas son las notas de la melodía "Twinkle, Twinkle, Little Star".
+Estas son las notas y la duración de cada nota de la melodía "Twinkle, Twinkle, Little Star". La primera línea son las notas, y la segunda los tiempos.
 
 ```
 NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
+4,       8,       8,       4,       4,       4, 4,       4
 ```
 
-Si buscamos en la libreria de tonos musicales `pitches.h` obtenemos solo 4 notas:
+Si buscamos en la libreria de tonos musicales `pitches.h` obtenemos solo estas cuatro notas que conforman la melodía:
 
 ```
 #define NOTE_G3  196
@@ -26,6 +27,6 @@ Si buscamos en la libreria de tonos musicales `pitches.h` obtenemos solo 4 notas
 #define NOTE_C4  262
 ```
 
-Por ejemplo la nota `NOTE_G3` tiene el valor `196`, que corresponde a la frecuencia de 196 Hz.
+Por ejemplo, la nota `NOTE_G3` tiene el valor `196`, que corresponde a la frecuencia de 196 Hz.
 
 ![](logicanalyzer02.png)
