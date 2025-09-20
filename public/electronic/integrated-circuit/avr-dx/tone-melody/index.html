@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Melody | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+<script src="/js/clipboard.min.a48e6828da436de32d10a615cb3004fd3348a7da47c661db91071e2b87a4294a.js"></script>
+<div class="container center">
+<header>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+  </div>
+  <div class="header__social__navigation">
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="header__navigation">
+      <nav class="navigation-menu">
+        <ul class="navigation-menu__inner menu--desktop">
+          
+            
+              
+                <li><a href="/posts/" >Posts</a></li>
+              
+            
+              
+                <li><a href="/wiki/" >Wiki</a></li>
+              
+            
+              
+                <li><a href="/electronic/" >Electrónica</a></li>
+              
+            
+              
+                <li><a href="/cultura/" >Cultura</a></li>
+              
+            
+              
+                <li><a href="/diccionary/" >Diccionario</a></li>
+              
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+</header>
+<div class="content">
+
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/electronic/">Electrónica</a></li>
+      <li><a href="/electronic/integrated-circuit/">Circuito integrado</a></li>
+      <li><a href="/electronic/integrated-circuit/avr-dx/">AVR Dx</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">Melody</h2>
+      
+    </div>
+    <p>Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un <code>AVR128DA28</code>. Los tonos serán reproducidor por un <a href="https://en.wikipedia.org/wiki/Piezoelectric_speaker">buzzer o altavoz piezoeléctrico</a>. Para eso vamos a estudiar en profundidad una melodía muy famosa que es la primera pieza &ldquo;Twinkle, Twinkle, Little Star&rdquo; (Estrellita, ¿dónde estás?) de una canción infantil del siglo XVIII (melodía de Ah! vous dirai-je, maman de Mozart) que también la usa <a href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Arduino</a> en su ejemplo.</p>
+<p>Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.</p>
+<p>Si conectamos un analizador lógico (logic analyzer) a la salida del MCU que reproduce dicha melodía obtenemos una muestra de pulsos que se parecen a la siguiente imagen:</p>
+<p><img src="logicanalyzer01.png" alt=""></p>
+<p>Estas son las notas y la duración de cada nota de la melodía &ldquo;Twinkle, Twinkle, Little Star&rdquo;. La primera línea son las notas, y la segunda los tiempos.</p>
+<pre tabindex="0"><code>NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
+4,       8,       8,       4,       4,       4, 4,       4
+</code></pre><p>Si buscamos en la librería de tonos musicales <code>pitches.h</code> obtenemos solo estas cuatro notas que conforman la melodía:</p>
+<pre tabindex="0"><code>#define NOTE_G3  196
+#define NOTE_A3  220
+#define NOTE_B3  247
+#define NOTE_C4  262
+</code></pre><p>Por ejemplo, la nota <code>G3</code> tiene el valor <code>196</code>, que corresponde a la frecuencia de 196 Hz.</p>
+<p><img src="logicanalyzer02.png" alt=""></p>
+<p>Si observamos la imagen anterior, notamos que hay una serie de pulsos que los llamaremos <code>toggle</code>. Un <code>toggle</code> es un valor alto ó bajo. En la imagen anterior hay 49, y este valor se puede calcular usando la nota y el tiempo.</p>
+<p>Volvamos analizar la nota <code>G3</code> que está acompañada de un tiempo con el valor <code>8</code> que equivale a una <a href="https://es.wikipedia.org/wiki/Corchea">corchea</a> (jerga de la música), esto quiere decir, una duración de 1/8s que es equivalente <code>125ms</code>.</p>
+<div>$$ t_{ms}=\frac{1000}{8}=125_{ms} $$</div>
+<div>$$ toggles=\frac{2 \cdot f \cdot t_{ms}}{1000}=\frac{2 \cdot 196Hz \cdot 125_{ms}}{1000}=49 $$</div>
+<p>Como resultado tenemos <code>49</code> toggles que es equivalente a 24.5 períodos, si redondeamos son <code>25 períodos</code>. Todo empieza a encajar según lo que nos dice la imagen anterior.</p>
+<p>&hellip;</p>
+<p>Seguimos trabajando en terminar el artículo&hellip;</p>
+
+  </article>
+
+</div>
+<footer class="footer">
+<span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+</html>
