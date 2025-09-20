@@ -8,6 +8,13 @@
     <language>es-es</language>
     <atom:link href="http://localhost:1313/electronic/components/display/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>OLED Display Module 1.8&#34;</title>
+      <link>http://localhost:1313/electronic/components/display/nhd-1.8-160128ubc3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/components/display/nhd-1.8-160128ubc3/</guid>
+      <description>&lt;p&gt;Hace tiempo me decanté por este módulo OLED 1.8&amp;quot; súper fácil de programar, es él &lt;a href=&#34;https://www.digikey.es/es/products/detail/newhaven-display-intl/NHD-1-8-160128UBC3/23334148&#34;&gt;NHD-1.8-160128UBC3&lt;/a&gt; de &lt;a href=&#34;https://newhavendisplay.com&#34;&gt;Newhaven Display&lt;/a&gt;, en otro post explico como funciona el controlador &lt;a href=&#34;http://localhost:1313/electronic/components/display/ssd1353/&#34;&gt;SSD1353&lt;/a&gt; que trae. Descubrí este tipo de display por este proyecto; &lt;a href=&#34;https://lcamtuf.coredump.cx/sir-box-a-lot/&#34;&gt;Sir Box-a-Lot: an 8-bit Sokoban clone&lt;/a&gt; hecho por lcamtuf el cual me sorprendió su trabajo.&lt;/p&gt;&#xA;&lt;p&gt;A continuación muestro un diagrama esquemático usando el display con un AVR128DA28, las conexiones establecidas al módulo lo configuran para trabajar en 8-bit 8080 Parallel Interface como los clásicos LCD 16x2.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>SSD1353</title>
       <link>http://localhost:1313/electronic/components/display/ssd1353/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

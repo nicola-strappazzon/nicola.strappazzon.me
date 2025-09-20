@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>OLED Display Module 1.8&#34; | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="container center">
+<header>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+  </div>
+  <div class="header__social__navigation">
+    <div class="header__social">
+      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="header__navigation">
+      <nav class="navigation-menu">
+        <ul class="navigation-menu__inner menu--desktop">
+          
+            
+              
+                <li><a href="/posts/" >Posts</a></li>
+              
+            
+              
+                <li><a href="/wiki/" >Wiki</a></li>
+              
+            
+              
+                <li><a href="/electronic/" >Electrónica</a></li>
+              
+            
+              
+                <li><a href="/cultura/" >Cultura</a></li>
+              
+            
+              
+                <li><a href="/diccionary/" >Diccionario</a></li>
+              
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+</header>
+<div class="content">
+
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/electronic/">Electrónica</a></li>
+      <li><a href="/electronic/components/">Componentes</a></li>
+      <li><a href="/electronic/components/display/">Display</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">OLED Display Module 1.8&#34;</h2>
+      
+    </div>
+    <p>Hace tiempo me decanté por este módulo OLED 1.8&quot; súper fácil de programar, es él <a href="https://www.digikey.es/es/products/detail/newhaven-display-intl/NHD-1-8-160128UBC3/23334148">NHD-1.8-160128UBC3</a> de <a href="https://newhavendisplay.com">Newhaven Display</a>, en otro post explico como funciona el controlador <a href="http://localhost:1313/electronic/components/display/ssd1353/">SSD1353</a> que trae. Descubrí este tipo de display por este proyecto; <a href="https://lcamtuf.coredump.cx/sir-box-a-lot/">Sir Box-a-Lot: an 8-bit Sokoban clone</a> hecho por lcamtuf el cual me sorprendió su trabajo.</p>
+<p>A continuación muestro un diagrama esquemático usando el display con un AVR128DA28, las conexiones establecidas al módulo lo configuran para trabajar en 8-bit 8080 Parallel Interface como los clásicos LCD 16x2.</p>
+<p><img src="schematic.png" alt=""></p>
+<blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Las conexiones para que funcione el MCU son ignoradas a propósito con la intención de simplificar el diagrama para centrarnos en el funcionamiento del módulo.</p></blockquote>
+<p>Para poder montar de forma más cómoda y limpua el módulo del display al breadboard, mandé hacer una PCB muy simple que hace de adaptador de <a href="https://www.digikey.es/es/products/detail/w%C3%BCrth-elektronik/61302021821/16608495">2x10</a> a <a href="https://www.digikey.es/es/products/detail/chip-quik-inc/HDR100IMP40M-G-V-TH/5978197">1x20</a> pines. Aquí tienes el diseño en KiCAD para <a href="MountingDisplay.zip">descargar</a>.</p>
+<table style="margin: 0px auto; border: none; table-layout: fixed; width: 100%;">
+<tbody>
+<tr>
+<td style="border: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+<img src="connector01.png" alt="" style="max-width: 100%; height: auto; display: block; background-color: white; margin: 0 auto;">
+</td>
+<td style="border: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+<img src="connector02.png" alt="" style="max-width: 100%; height: auto; display: block; background-color: white; margin: 0 auto;">
+</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+
+</div>
+<footer class="footer">
+<span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+</html>

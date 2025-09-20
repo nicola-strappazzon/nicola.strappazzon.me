@@ -247,6 +247,8 @@
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/blink/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/components/display/nhd-1.8-160128ubc3/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/openpgp/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/</loc>
