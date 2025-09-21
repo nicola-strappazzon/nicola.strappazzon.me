@@ -6,7 +6,7 @@ Vamos a explicar desde cero cómo reproducir melodías usando tonos generados po
 
 Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.
 
-**¿Qué es una melodía?** Es una sucesión organizada de sonidos de diferentes alturas y duraciones, percibida como una sola entidad musical que desarrolla una idea. Ahora si adapto éste concepto a lo que vamos a tratar en este documento, diría que; Es una *sucesión de notas organizadas de diferentes duraciones* que es percibida como una sola entidad musical.
+**¿Qué es una melodía?** Es una sucesión organizada de sonidos de diferentes alturas y duraciones, percibida como una sola entidad musical que desarrolla una idea. Los sonidos son representados por tonos.
 
 Conectemos un analizador lógico (logic analyzer) a la salida del microcontrolador que reproduce dicha melodía para obtener una muestra de pulsos que se parecen a la siguiente imagen:
 
@@ -52,11 +52,11 @@ Entre nota y nota se define un tiempo llamado pausa a partir de la siguiente for
 
 {{< mathjax "t_{pause}=t_{ms} \cdot 0,30=125ms \cdot 0,30=75,5ms" >}}
 
-Si el tiempo es `8` y aplicando la formula, obtenemos `37,5ms` como se muestra en la siguiente imagen:
+El tiempo de la nota `G3` es `8` y aplicando la formula, obtenemos `37,5ms` como se muestra en la siguiente imagen:
 
 ![](logicanalyzer03.png)
 
-Hasta ahora se han realizado los cálculos para la nota `G3`, este procedimiento se debe repetir por cada nota hasta terminar la melodía. Con cada variable descubierta; t{{< sub "ms">}}, t{{< sub "pause">}} y toggles, se puede empezar a programar.
+Se han realizado los cálculos para la nota `G3`, estos pasos se debe repetir por cada nota hasta terminar la melodía. Hasta ahora se han identificado tres variables que son necesarias para poder programar; t{{< sub "ms">}}, t{{< sub "pause">}} y toggles.
 
 ...
 
