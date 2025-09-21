@@ -56,7 +56,7 @@ Si el tiempo es `8` y aplicando la formula, obtenemos `37,5ms` como se muestra e
 
 ![](logicanalyzer03.png)
 
-Hasta ahora se han realizado los cálculos para una nota, esto se debe repetir por cada nota hasta terminar la melodía. Con cada variable descubierta; t{{< sub "ms">}}, t{{< sub "pause">}} y toggles, se puede empezar a programar.
+Hasta ahora se han realizado los cálculos para la nota `G3`, este procedimiento se debe repetir por cada nota hasta terminar la melodía. Con cada variable descubierta; t{{< sub "ms">}}, t{{< sub "pause">}} y toggles, se puede empezar a programar.
 
 ...
 
