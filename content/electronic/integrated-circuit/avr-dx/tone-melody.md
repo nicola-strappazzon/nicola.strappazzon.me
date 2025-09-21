@@ -1,5 +1,5 @@
 +++
-title = 'Melody'
+title = 'Tonos y melodías'
 +++
 
 Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un `AVR128DA28`. Los tonos serán reproducidor por un [buzzer o altavoz piezoeléctrico](https://en.wikipedia.org/wiki/Piezoelectric_speaker). Para eso vamos a estudiar en profundidad una melodía muy famosa que es la primera pieza "Twinkle, Twinkle, Little Star" (Estrellita, ¿dónde estás?) de una canción infantil del siglo XVIII (melodía de Ah! vous dirai-je, maman de Mozart) que también la usa [Arduino](https://docs.arduino.cc/built-in-examples/digital/toneMelody/) en su ejemplo.

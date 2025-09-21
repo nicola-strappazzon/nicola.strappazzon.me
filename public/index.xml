@@ -436,13 +436,6 @@
       <description>&lt;p&gt;Con este simple circuito, se busca demostrar cómo funciona un condensador y en especial el de tipo electrolítico mediante la carga y descarga de una forma visible. Cómo sabemos, el condensador actúa cómo un tanque de agua en el circuito, en el caso de la electrónica no guarda agua, sino corriente. &lt;a href=&#34;https://nicola.strappazzon.me/electronic/components/capacitor/&#34;&gt;Para saber más, consulte aquí&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;componentes&#34;&gt;Componentes&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Una placa de pruebas.&lt;/li&gt;&#xA;&lt;li&gt;Dos pilas de 1.5V para sumar 3V y con su base.&lt;/li&gt;&#xA;&lt;li&gt;Un pulsador.&lt;/li&gt;&#xA;&lt;li&gt;Una condensador electrolítico puede ser cualquiera de los siguientes valores: 100uF, 220uF, 470uF, 1000µF.&lt;/li&gt;&#xA;&lt;li&gt;Una resistencia de 1kΩ.&lt;/li&gt;&#xA;&lt;li&gt;Un LED del color deseado.&lt;/li&gt;&#xA;&lt;li&gt;Cables unifilar.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;La intención de usar valores altos de microfarad (µF) es para poder apreciar el tiempo de descarga, mientras más alto el valor, más tiempo de descarga. Considere que esto es proporcional al consumo, un LED tiene bajo consumo, por lo que ayuda apreciar el efecto deseado.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Melody</title>
-      <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</guid>
-      <description>&lt;p&gt;Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un &lt;code&gt;AVR128DA28&lt;/code&gt;. Los tonos serán reproducidor por un &lt;a href=&#34;https://en.wikipedia.org/wiki/Piezoelectric_speaker&#34;&gt;buzzer o altavoz piezoeléctrico&lt;/a&gt;. Para eso vamos a estudiar en profundidad una melodía muy famosa que es la primera pieza &amp;ldquo;Twinkle, Twinkle, Little Star&amp;rdquo; (Estrellita, ¿dónde estás?) de una canción infantil del siglo XVIII (melodía de Ah! vous dirai-je, maman de Mozart) que también la usa &lt;a href=&#34;https://docs.arduino.cc/built-in-examples/digital/toneMelody/&#34;&gt;Arduino&lt;/a&gt; en su ejemplo.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Mi primer programa (Blink)</title>
       <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/blink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -483,6 +476,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electronic/components/display/ssd1353/</guid>
       <description>&lt;p&gt;El controlador &lt;a href=&#34;datasheet.pdf&#34;&gt;SSD1353&lt;/a&gt; es usado para pantallas a todo color de tipo OLED con una dimensión de 160x128 pixeles configurado para trabajar en 8-bit 8080 Parallel Interface como los clásicos LCD 16x2, tambien tiene otros modos de configuración que no trataremos.&lt;/p&gt;&#xA;&lt;p&gt;A continuación se muestra el &lt;a href=&#34;schematic.kicad_sc&#34;&gt;circuito mínimo&lt;/a&gt; para hacer funcionar controlador SSD1353, y hay un par de puntos que quiero aclarar; Primero, usa dos voltajes de alimentación que son 3.3V para el controlador y 12V para los pixeles donde este último se logra con un boost. Segundo, se pueden usar otro tipo de condensadores además de los indicados por el fabricante como ha hecho &lt;a href=&#34;adafruit.png&#34;&gt;adafruit&lt;/a&gt; con uno de sus productos usando el mismo controlador pero para una pantalla con otras dimensiones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tonos y melodías</title>
+      <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</guid>
+      <description>&lt;p&gt;Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un &lt;code&gt;AVR128DA28&lt;/code&gt;. Los tonos serán reproducidor por un &lt;a href=&#34;https://en.wikipedia.org/wiki/Piezoelectric_speaker&#34;&gt;buzzer o altavoz piezoeléctrico&lt;/a&gt;. Para eso vamos a estudiar en profundidad una melodía muy famosa que es la primera pieza &amp;ldquo;Twinkle, Twinkle, Little Star&amp;rdquo; (Estrellita, ¿dónde estás?) de una canción infantil del siglo XVIII (melodía de Ah! vous dirai-je, maman de Mozart) que también la usa &lt;a href=&#34;https://docs.arduino.cc/built-in-examples/digital/toneMelody/&#34;&gt;Arduino&lt;/a&gt; en su ejemplo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Transistores</title>
