@@ -12,7 +12,7 @@ Conectemos un analizador lógico (logic analyzer) a la salida del microcontrolad
 
 ![](logicanalyzer01.png)
 
-Estas son las notas y la duración de cada una en la melodía "Twinkle, Twinkle, Little Star". La primera línea son las notas, y la segunda los tiempos.
+Estas son las notas y la duración de cada de la melodía. La primera línea son las notas, y la segunda los tiempos.
 
 ```
 NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
