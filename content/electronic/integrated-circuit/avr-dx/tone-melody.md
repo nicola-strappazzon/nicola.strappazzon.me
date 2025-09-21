@@ -8,7 +8,7 @@ Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta lle
 
 **¿Qué es una melodía?** Es una sucesión organizada de sonidos de diferentes alturas y duraciones, percibida como una sola entidad musical que desarrolla una idea. Ahora si adapto éste concepto a lo que vamos a tratar en este documento, diría que; Es una *sucesión de notas organizadas de diferentes duraciones* que es percibida como una sola entidad musical.
 
-Conectemos un analizador lógico (logic analyzer) a la salida del MCU que reproduce dicha melodía para obtener una muestra de pulsos que se parecen a la siguiente imagen:
+Conectemos un analizador lógico (logic analyzer) a la salida del microcontrolador que reproduce dicha melodía para obtener una muestra de pulsos que se parecen a la siguiente imagen:
 
 ![](logicanalyzer01.png)
 
