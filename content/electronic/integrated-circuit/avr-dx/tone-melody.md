@@ -2,7 +2,7 @@
 title = 'Tonos y melodías'
 +++
 
-Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un `AVR128DA28`. Los tonos serán reproducidor por un [buzzer o altavoz piezoeléctrico](https://en.wikipedia.org/wiki/Piezoelectric_speaker). Para eso vamos a estudiar en profundidad una melodía muy famosa que es la primera pieza "Twinkle, Twinkle, Little Star" (Estrellita, ¿dónde estás?) de una canción infantil del siglo XVIII (melodía de Ah! vous dirai-je, maman de Mozart) que también la usa [Arduino](https://docs.arduino.cc/built-in-examples/digital/toneMelody/) en su ejemplo.
+Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un `AVR128DA28`. Los tonos serán reproducidor por un [buzzer o altavoz piezoeléctrico](https://en.wikipedia.org/wiki/Piezoelectric_speaker). Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa [Arduino](https://docs.arduino.cc/built-in-examples/digital/toneMelody/) en su ejemplo.
 
 Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.
 
@@ -58,6 +58,80 @@ El tiempo de la nota `G3` es `8` y aplicando la formula, obtenemos `37,5ms` como
 
 Se han realizado los cálculos para la nota `G3`, estos pasos se debe repetir por cada nota hasta terminar la melodía. Hasta ahora se han identificado tres variables que son necesarias para poder programar; t{{< sub "ms">}}, t{{< sub "pause">}} y toggles.
 
-...
+```C
+#include <avr/interrupt.h>
+#include <avr/io.h>
+#include <stdlib.h>
+#include <util/delay.h>
 
-Sigo trabajando en terminar el artículo...
+#define NOTE_G3  196
+#define NOTE_A3  220
+#define NOTE_B3  247
+#define NOTE_C4  262
+
+static volatile uint32_t toggles = 0;
+
+int melody[] = {
+    NOTE_C4, 4, NOTE_G3, 8, NOTE_G3, 8, NOTE_A3, 4, NOTE_G3, 4, 0, 4, NOTE_B3, 4, NOTE_C4, 4
+};
+
+void clk_init(void) {
+    CCP = CCP_IOREG_gc;
+    CLKCTRL.OSCHFCTRLA = CLKCTRL_FRQSEL_24M_gc;
+}
+
+void noTone(void) {
+  TCA0.SINGLE.CTRLA = 0;
+  PORTF.OUTCLR = PIN0_bm;
+}
+
+void tone(uint32_t freq, uint32_t dur) {
+    if (freq == 0 || dur == 0) return;
+
+    cli();
+
+    PORTF.DIRSET = PIN0_bm;
+    VPORTF.OUT &= ~PIN0_bm;
+
+    TCA0.SINGLE.PER = F_CPU / (16 * 2 * freq) - 1;
+    TCA0.SINGLE.INTCTRL  = TCA_SINGLE_OVF_bm;
+    TCA0.SINGLE.CTRLA = TCA_SINGLE_CLKSEL_DIV16_gc | TCA_SINGLE_ENABLE_bm;
+
+    toggles = (2 * freq * dur) / 1000;
+
+    sei();
+}
+
+void pause(uint32_t ms) {
+    while (ms--) _delay_ms(1);
+}
+
+int main(void) {
+    clk_init();
+
+    while (1) {
+        int notes=sizeof(melody)/sizeof(melody[0])/2; 
+
+        for (int thisNote = 0; thisNote < notes * 2; thisNote = thisNote + 2) {
+            int duration = 1000 / melody[thisNote + 1];
+            tone(melody[thisNote], duration);
+
+            int pauseBetweenNotes = duration * 1.30;
+            pause(pauseBetweenNotes);
+        }
+        _delay_ms(2000);
+    }
+}
+
+ISR(TCA0_OVF_vect) {
+    PORTF.OUTTGL = PIN0_bm;
+    if (toggles > 0) {
+        if (--toggles == 0) {
+            noTone();
+        }
+    }
+    TCA0.SINGLE.INTFLAGS = TCA_SINGLE_OVF_bm;
+}
+```
+
+Sigo trabajando en mejorar y terminar el artículo...
