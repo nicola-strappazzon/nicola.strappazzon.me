@@ -99,13 +99,20 @@
 #define NOTE_A3  220
 #define NOTE_B3  247
 #define NOTE_C4  262
-</code></pre><p>Por ejemplo, la nota <code>G3</code> tiene el valor <code>196</code>, que corresponde a la frecuencia de 196 Hz.</p>
+</code></pre><p>Tenemos a la mano toda la información para empezar a realizar los cálculos.</p>
+<blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Los valores decimales que se obtienen de los cálculos y los que se aprecian en las imágenes obtenidas por el analizador lógico no son exactos, hay un margen de error que se debe a múltiples factores.</p></blockquote>
+<p>Por ejemplo, la nota <code>G3</code> tiene el valor <code>196</code>, que corresponde a la frecuencia de 196 Hz.</p>
 <p><img src="logicanalyzer02.png" alt=""></p>
 <p>Si observamos la imagen anterior, notamos que hay una serie de pulsos que los llamaremos <code>toggle</code>. Un <code>toggle</code> es un valor alto ó bajo. En la imagen anterior hay 49, y este valor se puede calcular usando la nota y el tiempo.</p>
-<p>Volvamos analizar la nota <code>G3</code> que está acompañada de un tiempo con el valor <code>8</code> que equivale a una <a href="https://es.wikipedia.org/wiki/Corchea">corchea</a> (jerga de la música), esto quiere decir, una duración de 1/8s que es equivalente <code>125ms</code>.</p>
+<p>Volvamos analizar la nota <code>G3</code> que está acompañada de un tiempo con el valor <code>8</code> que equivale a una <a href="https://es.wikipedia.org/wiki/Corchea">corchea</a> (jerga de la música), esto quiere decir, una duración de 1/8s es equivalente a <code>125ms</code>.</p>
 <div>$$ t_{ms}=\frac{1000}{8}=125_{ms} $$</div>
 <div>$$ toggles=\frac{2 \cdot f \cdot t_{ms}}{1000}=\frac{2 \cdot 196Hz \cdot 125_{ms}}{1000}=49 $$</div>
 <p>Como resultado tenemos <code>49</code> toggles que es equivalente a 24.5 períodos, si redondeamos son <code>25 períodos</code>. Todo empieza a encajar según lo que nos dice la imagen anterior.</p>
+<p>Entre nota y nota se define un tiempo llamado pausa a partir de la siguiente formula:</p>
+<div>$$ t_{pause}=t_{ms} \cdot 0,30=125ms \cdot 0,30=75,5ms $$</div>
+<p>Si el tiempo es <code>8</code> y aplicando la formula, obtenemos <code>37,5ms</code> como se muestra en la siguiente imagen:</p>
+<p><img src="logicanalyzer03.png" alt=""></p>
+<p>Hasta ahora se han realizado los cálculos para una nota, esto se debe repetir por cada nota hasta terminar la melodía. Con cada variable descubierta; t<sub>ms</sub>, t<sub>pause</sub> y toggles, se puede empezar a programar.</p>
 <p>&hellip;</p>
 <p>Seguimos trabajando en terminar el artículo&hellip;</p>
 

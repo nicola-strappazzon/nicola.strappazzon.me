@@ -28,19 +28,35 @@ Si buscamos en la librería de tonos musicales `pitches.h` obtenemos solo estas 
 #define NOTE_C4  262
 ```
 
+Tenemos a la mano toda la información para empezar a realizar los cálculos.
+
+{{% blockquote type="note" %}}
+Los valores decimales que se obtienen de los cálculos y los que se aprecian en las imágenes obtenidas por el analizador lógico no son exactos, hay un margen de error que se debe a múltiples factores.
+{{% /blockquote %}}
+
 Por ejemplo, la nota `G3` tiene el valor `196`, que corresponde a la frecuencia de 196 Hz.
 
 ![](logicanalyzer02.png)
 
 Si observamos la imagen anterior, notamos que hay una serie de pulsos que los llamaremos `toggle`. Un `toggle` es un valor alto ó bajo. En la imagen anterior hay 49, y este valor se puede calcular usando la nota y el tiempo.
 
-Volvamos analizar la nota `G3` que está acompañada de un tiempo con el valor `8` que equivale a una [corchea](https://es.wikipedia.org/wiki/Corchea) (jerga de la música), esto quiere decir, una duración de 1/8s que es equivalente `125ms`.
+Volvamos analizar la nota `G3` que está acompañada de un tiempo con el valor `8` que equivale a una [corchea](https://es.wikipedia.org/wiki/Corchea) (jerga de la música), esto quiere decir, una duración de 1/8s es equivalente a `125ms`.
 
 {{< mathjax "t_{ms}=\frac{1000}{8}=125_{ms}" >}}
 
 {{< mathjax "toggles=\frac{2 \cdot f \cdot t_{ms}}{1000}=\frac{2 \cdot 196Hz \cdot 125_{ms}}{1000}=49" >}}
 
 Como resultado tenemos `49` toggles que es equivalente a 24.5 períodos, si redondeamos son `25 períodos`. Todo empieza a encajar según lo que nos dice la imagen anterior.
+
+Entre nota y nota se define un tiempo llamado pausa a partir de la siguiente formula:
+
+{{< mathjax "t_{pause}=t_{ms} \cdot 0,30=125ms \cdot 0,30=75,5ms" >}}
+
+Si el tiempo es `8` y aplicando la formula, obtenemos `37,5ms` como se muestra en la siguiente imagen:
+
+![](logicanalyzer03.png)
+
+Hasta ahora se han realizado los cálculos para una nota, esto se debe repetir por cada nota hasta terminar la melodía. Con cada variable descubierta; t{{< sub "ms">}}, t{{< sub "pause">}} y toggles, se puede empezar a programar.
 
 ...
 
