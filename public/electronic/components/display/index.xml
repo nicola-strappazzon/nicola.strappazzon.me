@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Display on Nicola Strappazzon</title>
-    <link>http://localhost:60164/electronic/components/display/</link>
+    <link>http://localhost:1313/electronic/components/display/</link>
     <description>Recent content in Display on Nicola Strappazzon</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <atom:link href="http://localhost:60164/electronic/components/display/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/electronic/components/display/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OLED Display Module 1.8&#34;</title>
-      <link>http://localhost:60164/electronic/components/display/nhd-1.8-160128ubc3/</link>
+      <link>http://localhost:1313/electronic/components/display/nhd-1.8-160128ubc3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:60164/electronic/components/display/nhd-1.8-160128ubc3/</guid>
+      <guid>http://localhost:1313/electronic/components/display/nhd-1.8-160128ubc3/</guid>
       <description>&lt;p&gt;Hace tiempo me decanté por este módulo OLED 1.8&amp;quot; súper fácil de programar, es él &lt;a href=&#34;https://www.digikey.es/es/products/detail/newhaven-display-intl/NHD-1-8-160128UBC3/23334148&#34;&gt;NHD-1.8-160128UBC3&lt;/a&gt; de &lt;a href=&#34;https://newhavendisplay.com&#34;&gt;Newhaven Display&lt;/a&gt;, en otro post explico como funciona el controlador &lt;a href=&#34;https://nicola.strappazzon.me/electronic/components/display/ssd1353/&#34;&gt;SSD1353&lt;/a&gt; que incorpora. Descubrí este tipo de display por este proyecto; &lt;a href=&#34;https://lcamtuf.coredump.cx/sir-box-a-lot/&#34;&gt;Sir Box-a-Lot: an 8-bit Sokoban clone&lt;/a&gt; hecho por lcamtuf el cual me sorprendió su trabajo.&lt;/p&gt;&#xA;&lt;p&gt;A continuación muestro un diagrama esquemático usando el display con un AVR128DA28, las conexiones establecidas al módulo lo configuran para trabajar en 8-bit 8080 Parallel Interface como los clásicos LCD 16x2.&lt;/p&gt;</description>
     </item>
     <item>
       <title>SSD1353</title>
-      <link>http://localhost:60164/electronic/components/display/ssd1353/</link>
+      <link>http://localhost:1313/electronic/components/display/ssd1353/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:60164/electronic/components/display/ssd1353/</guid>
+      <guid>http://localhost:1313/electronic/components/display/ssd1353/</guid>
       <description>&lt;p&gt;El controlador &lt;a href=&#34;datasheet.pdf&#34;&gt;SSD1353&lt;/a&gt; es usado para pantallas a todo color de tipo OLED con una dimensión de 160x128 pixeles configurado para trabajar en 8-bit 8080 Parallel Interface como los clásicos LCD 16x2, tambien tiene otros modos de configuración que no trataremos.&lt;/p&gt;&#xA;&lt;p&gt;A continuación se muestra el &lt;a href=&#34;schematic.kicad_sc&#34;&gt;circuito mínimo&lt;/a&gt; para hacer funcionar controlador SSD1353, y hay un par de puntos que quiero aclarar; Primero, usa dos voltajes de alimentación que son 3.3V para el controlador y 12V para los pixeles donde este último se logra con un boost. Segundo, se pueden usar otro tipo de condensadores además de los indicados por el fabricante como ha hecho &lt;a href=&#34;adafruit.png&#34;&gt;adafruit&lt;/a&gt; con uno de sus productos usando el mismo controlador pero para una pantalla con otras dimensiones.&lt;/p&gt;</description>
     </item>
   </channel>

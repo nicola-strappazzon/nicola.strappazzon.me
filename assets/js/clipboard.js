@@ -64,16 +64,17 @@ function addCopyButtonToCodeBlocks() {
     copyButton.style.marginLeft = "auto";
 
     // Add a click event listener to the copy button
-    copyButton.addEventListener("click", () => {
-      // Copy the code inside the code block to the clipboard
-      const codeToCopy = codeBlock.innerText;
-      navigator.clipboard.writeText(codeToCopy);
+    copyButton.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(codeBlock.textContent);
+        copyButton.innerHTML = copiedIcon;
+        setTimeout(() => {
+          copyButton.innerHTML = copyIcon;
+        }, 1500);
 
-      // Update the copy button text to indicate that the code has been copied
-      copyButton.innerHTML = copiedIcon;
-      setTimeout(() => {
-        copyButton.innerHTML = copyIcon;
-      }, 1500);
+      } catch (err) {
+        console.error("Error copiando texto:", err);
+      }
     });
 
     // Get the language from the class
