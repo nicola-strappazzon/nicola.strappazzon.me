@@ -118,10 +118,10 @@
 <blockquote class="important"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>El reloj interno debe estar bien configurado a 24MHz (24.000.000 Hz).</p></blockquote>
 <p>Hay una serie de términos básicos que hay que dominar para configurar y entender cómo funciona el timer, vamos a conocerlos antes de profundizar aún más en el funcionamiento:</p>
 <ul>
-<li><strong>Counter:</strong></li>
-<li><strong>Tick:</strong></li>
-<li><strong>Prescaled:</strong></li>
-<li><strong>Overflow:</strong></li>
+<li><strong>Counter:</strong> Es un contador que incrementa o decrementa de forma automatica en cada ciclo del reloj o evento. Es el registro interno del contador <code>TCA0.SINGLE.CNT</code>.</li>
+<li><strong>Tick:</strong> Cada vez que el contador <code>TCA0.SINGLE.CNT</code> incrementa <code>1</code>.</li>
+<li><strong>Prescaled:</strong> Es un divisor que se le pone a la velocidad del reloj y es usado para indicar cada cúanto hace <code>tick</code>, son valores que van desde 1 hasta 64 y suelen ser estos; 1, 2, 4, 8, 16, 32, 64.</li>
+<li><strong>Overflow:</strong> Es el desbordamiento, y ocurre cuando el contador llega a su valor maximo (TOP) o minimo (BOTTOM) y vuelve a empezar, cuando esto ocurre se dispara la interrupción <code>TCA0_OVF_vect</code>.</li>
 </ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

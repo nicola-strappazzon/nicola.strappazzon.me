@@ -68,10 +68,10 @@ El reloj interno debe estar bien configurado a 24MHz (24.000.000 Hz).
 
 Hay una serie de términos básicos que hay que dominar para configurar y entender cómo funciona el timer, vamos a conocerlos antes de profundizar aún más en el funcionamiento:
 
-- **Counter:**
-- **Tick:**
-- **Prescaled:**
-- **Overflow:**
+- **Counter:** Es un contador que incrementa o decrementa de forma automatica en cada ciclo del reloj o evento. Es el registro interno del contador `TCA0.SINGLE.CNT`.
+- **Tick:** Cada vez que el contador `TCA0.SINGLE.CNT` incrementa `1`.
+- **Prescaled:** Es un divisor que se le pone a la velocidad del reloj y es usado para indicar cada cúanto hace `tick`, son valores que van desde 1 hasta 64 y suelen ser estos; 1, 2, 4, 8, 16, 32, 64.
+- **Overflow:** Es el desbordamiento, y ocurre cuando el contador llega a su valor maximo (TOP) o minimo (BOTTOM) y vuelve a empezar, cuando esto ocurre se dispara la interrupción `TCA0_OVF_vect`.
 
 ```C
 #include <avr/cpufunc.h>
