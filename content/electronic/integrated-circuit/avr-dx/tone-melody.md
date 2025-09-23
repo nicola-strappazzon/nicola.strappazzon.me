@@ -84,6 +84,7 @@ Hay una serie de términos básicos que hay que dominar para configurar y entend
 #include <stdlib.h>
 #include <util/delay.h>
 
+#define NOTE_NA  0
 #define NOTE_G3  196
 #define NOTE_A3  220
 #define NOTE_B3  247
@@ -92,7 +93,14 @@ Hay una serie de términos básicos que hay que dominar para configurar y entend
 static volatile uint32_t toggles = 0;
 
 int melody[] = {
-    NOTE_C4, 4, NOTE_G3, 8, NOTE_G3, 8, NOTE_A3, 4, NOTE_G3, 4, 0, 4, NOTE_B3, 4, NOTE_C4, 4
+    NOTE_C4, 4,
+    NOTE_G3, 8,
+    NOTE_G3, 8,
+    NOTE_A3, 4,
+    NOTE_G3, 4,
+    NOTE_NA, 4,
+    NOTE_B3, 4,
+    NOTE_C4, 4
 };
 
 void clk_init(void) {
