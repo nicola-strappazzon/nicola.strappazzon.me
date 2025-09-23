@@ -87,7 +87,7 @@
       
     </div>
     <p><img src="workspace.png" alt=""></p>
-<p>Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un <code>AVR128DA28</code>. Los tonos serán reproducidor por un <a href="https://en.wikipedia.org/wiki/Piezoelectric_speaker">buzzer o altavoz piezoeléctrico</a>. Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa <a href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Arduino</a> en su ejemplo. Te recomiendo mucho que uses un <a href="https://www.saleae.com">analizador lógico</a> para no ir a ciegas.</p>
+<p>Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un <code>AVR128DA28</code>. Los tonos serán reproducidor por un <a href="https://en.wikipedia.org/wiki/Piezoelectric_speaker">buzzer o altavoz piezoeléctrico</a> y en especifico use este de <a href="https://www.digikey.es/es/products/detail/tdk-corporation/PS1240P02BT/935924">TDK PS1240P02BT</a>. Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa <a href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Arduino</a> en su ejemplo. Te recomiendo mucho que uses un <a href="https://www.saleae.com">analizador lógico</a> para no ir a ciegas.</p>
 <p>Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.</p>
 <p><strong>¿Qué es una melodía?</strong> Es una sucesión organizada de sonidos de diferentes alturas y duraciones, percibida como una sola entidad musical que desarrolla una idea. Los sonidos son representados por tonos.</p>
 <p>Conectemos un analizador lógico (logic analyzer) a la salida del microcontrolador que reproduce dicha melodía para obtener una muestra de pulsos que se parecen a la siguiente imagen:</p>
@@ -226,7 +226,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clk_init</span>(<span style="color:#66d9ef">void</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">_PROTECTED_WRITE</span>(CLKCTRL.OSCHFCTRLA, CLKCTRL_FRQSEL_24M_gc);
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">_PROTECTED_WRITE</span>(CLKCTRL.MCLKCTRLA, CLKCTRL_CLKSEL_OSCHF_gc);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">_PROTECTED_WRITE</span>(CLKCTRL.MCLKCTRLB, <span style="color:#ae81ff">0</span>); 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">_PROTECTED_WRITE</span>(CLKCTRL.MCLKCTRLB, <span style="color:#ae81ff">0</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">noTone</span>(<span style="color:#66d9ef">void</span>) {
@@ -262,7 +262,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">clk_init</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> notes<span style="color:#f92672">=</span><span style="color:#66d9ef">sizeof</span>(melody)<span style="color:#f92672">/</span><span style="color:#66d9ef">sizeof</span>(melody[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>; 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> notes<span style="color:#f92672">=</span><span style="color:#66d9ef">sizeof</span>(melody)<span style="color:#f92672">/</span><span style="color:#66d9ef">sizeof</span>(melody[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> thisNote <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; thisNote <span style="color:#f92672">&lt;</span> notes <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>; thisNote <span style="color:#f92672">=</span> thisNote <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>) {
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> duration <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">/</span> melody[thisNote <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>];
