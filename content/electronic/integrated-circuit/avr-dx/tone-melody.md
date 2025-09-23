@@ -2,6 +2,10 @@
 title = 'Tonos y melodías'
 +++
 
+{{% blockquote type="note" %}}
+Sigo trabajando en mejorar y terminar el artículo. De momento esta incompleto.
+{{% /blockquote %}}
+
 ![](workspace.png)
 
 Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un `AVR128DA28`. Los tonos serán reproducidor por un [buzzer o altavoz piezoeléctrico](https://en.wikipedia.org/wiki/Piezoelectric_speaker) y en especifico use este de [TDK PS1240P02BT](https://www.digikey.es/es/products/detail/tdk-corporation/PS1240P02BT/935924). Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa [Arduino](https://docs.arduino.cc/built-in-examples/digital/toneMelody/) en su ejemplo. Te recomiendo mucho que uses un [analizador lógico](https://www.saleae.com) para no ir a ciegas.
@@ -155,5 +159,3 @@ ISR(TCA0_OVF_vect) {
 ```
 
 El **ejemplo 2.9** muestra el código de configuración del `timer/counter A (TCA)` en modo `NORMAL` de la [guia de migración](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/migration-from-megaAVR-to-AVR-Dx.pdf) que use para la función `tone(uint32_t freq, uint32_t dur)`.
-
-Sigo trabajando en mejorar y terminar el artículo...
