@@ -104,8 +104,8 @@
 <blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Los valores decimales que se obtienen de los cálculos y los que se aprecian en las imágenes obtenidas por el analizador lógico no son exactos, hay un margen de error que se debe a múltiples factores.</p></blockquote>
 <p>Por ejemplo, la nota <code>G3</code> tiene el valor <code>196</code>, que corresponde a la frecuencia de 196 Hz.</p>
 <p><img src="logicanalyzer02.png" alt=""></p>
-<p>Si observamos la imagen anterior, notamos que hay una serie de pulsos que los llamaremos <code>toggle</code>. Un <code>toggle</code> es un valor alto ó bajo. En la imagen anterior hay 49, y este valor se puede calcular usando la nota y el tiempo.</p>
-<p>Volvamos analizar la nota <code>G3</code> que está acompañada de un tiempo con el valor <code>8</code> que equivale a una <a href="https://es.wikipedia.org/wiki/Corchea">corchea</a> (jerga de la música), esto quiere decir, una duración de 1/8s es equivalente a <code>125ms</code>.</p>
+<p>Si observamos la imagen anterior, notamos que hay una serie de pulsos que los llamaremos <code>toggle</code>. Un <code>toggle</code> es un valor alto ó bajo, la cantidad de estos son <code>25</code> como se muestra en la imagen, y este valor se puede calcular usando la nota y el tiempo.</p>
+<p>Volvamos analizar la nota <code>G3</code> que está acompañada de un tiempo con el valor <code>8</code> que equivale a una <a href="https://es.wikipedia.org/wiki/Corchea">corchea</a> (jerga de la música), esto quiere decir, una duración de 1/8s es equivalente a <code>125ms</code>, en la imagen anterior está como <code>124,60</code>.</p>
 <div>$$ t_{ms}=\frac{1000}{8}=125_{ms} $$</div>
 <div>$$ toggles=\frac{2 \cdot f \cdot t_{ms}}{1000}=\frac{2 \cdot 196Hz \cdot 125_{ms}}{1000}=49 $$</div>
 <p>Como resultado tenemos <code>49</code> toggles que es equivalente a 24.5 períodos, si redondeamos son <code>25 períodos</code>. Todo empieza a encajar según lo que nos dice la imagen anterior.</p>
@@ -115,9 +115,10 @@
 <p><img src="logicanalyzer03.png" alt=""></p>
 <p>Se han realizado los cálculos para la nota <code>G3</code>, estos pasos se debe repetir por cada nota hasta terminar la melodía. Hasta ahora se han identificado tres variables que son necesarias para poder programar; t<sub>ms</sub>, t<sub>pause</sub> y toggles.</p>
 <p>Para crear los pulsos de la forma deseada para cada tono vamos a usar uno de los timer/counter de varios que tiene el microcontrolador junto a las interrupciones, en específico el <code>timer A (TCA)</code> que tiene una resolución de 16-bit, quiere decir que el contador va desde el <code>0</code> hasta <code>65535 (2<sup>16</sup> − 1)</code>. Para entender su funcionamiento vamos a estudiar el modo <code>NORMAL</code> que es el que viene por defecto y es el más simple de comprender. Es importante saber que su funcionamiento y configuración es muy abstracto, por lo que voy a hacer el mejor esfuerzo al explicarlo.</p>
-<p>counter
-overflow
-ISR</p>
+<blockquote class="important"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>El reloj interno debe estar bien configurado a 24MHz.</p></blockquote>
+<!-- counter -->
+<!-- overflow -->
+<!-- ISR -->
 <p>El <strong>ejemplo 2.9</strong> muestra el código de configuración del <code>timer/counter A (TCA)</code> en modo <code>NORMAL</code> en la <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/migration-from-megaAVR-to-AVR-Dx.pdf">guia de migración</a> que use para la función <code>tone(uint32_t freq, uint32_t dur)</code>.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -197,9 +198,12 @@ ISR</p>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;avr/interrupt.h&gt;</span><span style="color:#75715e">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;avr/cpufunc.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;avr/interrupt.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;avr/io.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;util/delay.h&gt;</span><span style="color:#75715e">
@@ -216,8 +220,9 @@ ISR</p>
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clk_init</span>(<span style="color:#66d9ef">void</span>) {
-</span></span><span style="display:flex;"><span>    CCP <span style="color:#f92672">=</span> CCP_IOREG_gc;
-</span></span><span style="display:flex;"><span>    CLKCTRL.OSCHFCTRLA <span style="color:#f92672">=</span> CLKCTRL_FRQSEL_24M_gc;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">_PROTECTED_WRITE</span>(CLKCTRL.OSCHFCTRLA, CLKCTRL_FRQSEL_24M_gc);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">_PROTECTED_WRITE</span>(CLKCTRL.MCLKCTRLA, CLKCTRL_CLKSEL_OSCHF_gc);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">_PROTECTED_WRITE</span>(CLKCTRL.MCLKCTRLB, <span style="color:#ae81ff">0</span>); 
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">noTone</span>(<span style="color:#66d9ef">void</span>) {
@@ -267,7 +272,7 @@ ISR</p>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">ISR</span>(TCA0_OVF_vect) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (toggles<span style="color:#f92672">--</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (toggles<span style="color:#f92672">--</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
 </span></span><span style="display:flex;"><span>        PORTF.OUT <span style="color:#f92672">^=</span> PIN0_bm;
 </span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">noTone</span>();

@@ -40,9 +40,9 @@ Por ejemplo, la nota `G3` tiene el valor `196`, que corresponde a la frecuencia 
 
 ![](logicanalyzer02.png)
 
-Si observamos la imagen anterior, notamos que hay una serie de pulsos que los llamaremos `toggle`. Un `toggle` es un valor alto ó bajo. En la imagen anterior hay 49, y este valor se puede calcular usando la nota y el tiempo.
+Si observamos la imagen anterior, notamos que hay una serie de pulsos que los llamaremos `toggle`. Un `toggle` es un valor alto ó bajo, la cantidad de estos son `25` como se muestra en la imagen, y este valor se puede calcular usando la nota y el tiempo.
 
-Volvamos analizar la nota `G3` que está acompañada de un tiempo con el valor `8` que equivale a una [corchea](https://es.wikipedia.org/wiki/Corchea) (jerga de la música), esto quiere decir, una duración de 1/8s es equivalente a `125ms`.
+Volvamos analizar la nota `G3` que está acompañada de un tiempo con el valor `8` que equivale a una [corchea](https://es.wikipedia.org/wiki/Corchea) (jerga de la música), esto quiere decir, una duración de 1/8s es equivalente a `125ms`, en la imagen anterior está como `124,60`.
 
 {{< mathjax "t_{ms}=\frac{1000}{8}=125_{ms}" >}}
 
@@ -62,13 +62,18 @@ Se han realizado los cálculos para la nota `G3`, estos pasos se debe repetir po
 
 Para crear los pulsos de la forma deseada para cada tono vamos a usar uno de los timer/counter de varios que tiene el microcontrolador junto a las interrupciones, en específico el `timer A (TCA)` que tiene una resolución de 16-bit, quiere decir que el contador va desde el `0` hasta `65535 (2{{< sup "16">}} − 1)`. Para entender su funcionamiento vamos a estudiar el modo `NORMAL` que es el que viene por defecto y es el más simple de comprender. Es importante saber que su funcionamiento y configuración es muy abstracto, por lo que voy a hacer el mejor esfuerzo al explicarlo.
 
-counter
-overflow
-ISR
+{{% blockquote type="important" %}}
+El reloj interno debe estar bien configurado a 24MHz.
+{{% /blockquote %}}
+
+<!-- counter -->
+<!-- overflow -->
+<!-- ISR -->
 
 El **ejemplo 2.9** muestra el código de configuración del `timer/counter A (TCA)` en modo `NORMAL` en la [guia de migración](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/migration-from-megaAVR-to-AVR-Dx.pdf) que use para la función `tone(uint32_t freq, uint32_t dur)`.
 
 ```C
+#include <avr/cpufunc.h>
 #include <avr/interrupt.h>
 #include <avr/io.h>
 #include <stdlib.h>
@@ -86,8 +91,9 @@ int melody[] = {
 };
 
 void clk_init(void) {
-    CCP = CCP_IOREG_gc;
-    CLKCTRL.OSCHFCTRLA = CLKCTRL_FRQSEL_24M_gc;
+    _PROTECTED_WRITE(CLKCTRL.OSCHFCTRLA, CLKCTRL_FRQSEL_24M_gc);
+    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLA, CLKCTRL_CLKSEL_OSCHF_gc);
+    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, 0); 
 }
 
 void noTone(void) {
@@ -137,7 +143,7 @@ int main(void) {
 }
 
 ISR(TCA0_OVF_vect) {
-    if (toggles-- > 1) {
+    if (toggles-- > 0) {
         PORTF.OUT ^= PIN0_bm;
     } else {
         noTone();
