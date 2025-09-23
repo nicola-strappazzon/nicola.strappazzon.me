@@ -73,8 +73,6 @@ Hay una serie de términos básicos que hay que dominar para configurar y entend
 - **Prescaled:**
 - **Overflow:**
 
-El **ejemplo 2.9** muestra el código de configuración del `timer/counter A (TCA)` en modo `NORMAL` en la [guia de migración](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/migration-from-megaAVR-to-AVR-Dx.pdf) que use para la función `tone(uint32_t freq, uint32_t dur)`.
-
 ```C
 #include <avr/cpufunc.h>
 #include <avr/interrupt.h>
@@ -155,5 +153,7 @@ ISR(TCA0_OVF_vect) {
     TCA0.SINGLE.INTFLAGS = TCA_SINGLE_OVF_bm;
 }
 ```
+
+El **ejemplo 2.9** muestra el código de configuración del `timer/counter A (TCA)` en modo `NORMAL` en la [guia de migración](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/migration-from-megaAVR-to-AVR-Dx.pdf) que use para la función `tone(uint32_t freq, uint32_t dur)`.
 
 Sigo trabajando en mejorar y terminar el artículo...
