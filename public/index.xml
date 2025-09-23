@@ -436,6 +436,13 @@
       <description>&lt;p&gt;Con este simple circuito, se busca demostrar cómo funciona un condensador y en especial el de tipo electrolítico mediante la carga y descarga de una forma visible. Cómo sabemos, el condensador actúa cómo un tanque de agua en el circuito, en el caso de la electrónica no guarda agua, sino corriente. &lt;a href=&#34;https://nicola.strappazzon.me/electronic/components/capacitor/&#34;&gt;Para saber más, consulte aquí&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;componentes&#34;&gt;Componentes&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Una placa de pruebas.&lt;/li&gt;&#xA;&lt;li&gt;Dos pilas de 1.5V para sumar 3V y con su base.&lt;/li&gt;&#xA;&lt;li&gt;Un pulsador.&lt;/li&gt;&#xA;&lt;li&gt;Una condensador electrolítico puede ser cualquiera de los siguientes valores: 100uF, 220uF, 470uF, 1000µF.&lt;/li&gt;&#xA;&lt;li&gt;Una resistencia de 1kΩ.&lt;/li&gt;&#xA;&lt;li&gt;Un LED del color deseado.&lt;/li&gt;&#xA;&lt;li&gt;Cables unifilar.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;La intención de usar valores altos de microfarad (µF) es para poder apreciar el tiempo de descarga, mientras más alto el valor, más tiempo de descarga. Considere que esto es proporcional al consumo, un LED tiene bajo consumo, por lo que ayuda apreciar el efecto deseado.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Medición</title>
+      <link>http://localhost:1313/electronic/resources/measurement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/resources/measurement/</guid>
+      <description>&lt;p&gt;Las siguientes herramientas de medición son muy importantes para no ir a ciegas, es super básico:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.amazon.es/dp/B0012VYKVQ&#34;&gt;Multímetro Extech MN36 Mini&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.amazon.es/dp/B01N76DEFX&#34;&gt;Osciloscopio RIGOL DS1054Z&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.saleae.com&#34;&gt;Analizador lógico&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
       <title>Mi primer programa (Blink)</title>
       <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/blink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -482,7 +489,7 @@
       <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;workspace.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un &lt;code&gt;AVR128DA28&lt;/code&gt;. Los tonos serán reproducidor por un &lt;a href=&#34;https://en.wikipedia.org/wiki/Piezoelectric_speaker&#34;&gt;buzzer o altavoz piezoeléctrico&lt;/a&gt;. Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa &lt;a href=&#34;https://docs.arduino.cc/built-in-examples/digital/toneMelody/&#34;&gt;Arduino&lt;/a&gt; en su ejemplo. Te recomiendo mucho que uses un analizador lógico para no ir a ciegas.&lt;/p&gt;&#xA;&lt;p&gt;Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;workspace.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un &lt;code&gt;AVR128DA28&lt;/code&gt;. Los tonos serán reproducidor por un &lt;a href=&#34;https://en.wikipedia.org/wiki/Piezoelectric_speaker&#34;&gt;buzzer o altavoz piezoeléctrico&lt;/a&gt;. Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa &lt;a href=&#34;https://docs.arduino.cc/built-in-examples/digital/toneMelody/&#34;&gt;Arduino&lt;/a&gt; en su ejemplo. Te recomiendo mucho que uses un &lt;a href=&#34;https://www.saleae.com&#34;&gt;analizador lógico&lt;/a&gt; para no ir a ciegas.&lt;/p&gt;&#xA;&lt;p&gt;Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Transistores</title>

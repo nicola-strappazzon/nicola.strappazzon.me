@@ -87,7 +87,7 @@
       
     </div>
     <p><img src="workspace.png" alt=""></p>
-<p>Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un <code>AVR128DA28</code>. Los tonos serán reproducidor por un <a href="https://en.wikipedia.org/wiki/Piezoelectric_speaker">buzzer o altavoz piezoeléctrico</a>. Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa <a href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Arduino</a> en su ejemplo. Te recomiendo mucho que uses un analizador lógico para no ir a ciegas.</p>
+<p>Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un <code>AVR128DA28</code>. Los tonos serán reproducidor por un <a href="https://en.wikipedia.org/wiki/Piezoelectric_speaker">buzzer o altavoz piezoeléctrico</a>. Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa <a href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Arduino</a> en su ejemplo. Te recomiendo mucho que uses un <a href="https://www.saleae.com">analizador lógico</a> para no ir a ciegas.</p>
 <p>Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.</p>
 <p><strong>¿Qué es una melodía?</strong> Es una sucesión organizada de sonidos de diferentes alturas y duraciones, percibida como una sola entidad musical que desarrolla una idea. Los sonidos son representados por tonos.</p>
 <p>Conectemos un analizador lógico (logic analyzer) a la salida del microcontrolador que reproduce dicha melodía para obtener una muestra de pulsos que se parecen a la siguiente imagen:</p>
@@ -115,10 +115,14 @@
 <p><img src="logicanalyzer03.png" alt=""></p>
 <p>Se han realizado los cálculos para la nota <code>G3</code>, estos pasos se debe repetir por cada nota hasta terminar la melodía. Hasta ahora se han identificado tres variables que son necesarias para poder programar; t<sub>ms</sub>, t<sub>pause</sub> y toggles.</p>
 <p>Para crear los pulsos de la forma deseada para cada tono vamos a usar uno de los timer/counter de varios que tiene el microcontrolador junto a las interrupciones, en específico el <code>timer A (TCA)</code> que tiene una resolución de 16-bit, quiere decir que el contador va desde el <code>0</code> hasta <code>65535 (2<sup>16</sup> − 1)</code>. Para entender su funcionamiento vamos a estudiar el modo <code>NORMAL</code> que es el que viene por defecto y es el más simple de comprender. Es importante saber que su funcionamiento y configuración es muy abstracto, por lo que voy a hacer el mejor esfuerzo al explicarlo.</p>
-<blockquote class="important"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>El reloj interno debe estar bien configurado a 24MHz.</p></blockquote>
-<!-- counter -->
-<!-- overflow -->
-<!-- ISR -->
+<blockquote class="important"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>El reloj interno debe estar bien configurado a 24MHz (24.000.000 Hz).</p></blockquote>
+<p>Hay una serie de términos básicos que hay que dominar para configurar y entender cómo funciona el timer, vamos a conocerlos antes de profundizar aún más en el funcionamiento:</p>
+<ul>
+<li><strong>Counter:</strong></li>
+<li><strong>Tick:</strong></li>
+<li><strong>Prescaled:</strong></li>
+<li><strong>Overflow:</strong></li>
+</ul>
 <p>El <strong>ejemplo 2.9</strong> muestra el código de configuración del <code>timer/counter A (TCA)</code> en modo <code>NORMAL</code> en la <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/migration-from-megaAVR-to-AVR-Dx.pdf">guia de migración</a> que use para la función <code>tone(uint32_t freq, uint32_t dur)</code>.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

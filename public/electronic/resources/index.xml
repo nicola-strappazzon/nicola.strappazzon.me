@@ -50,5 +50,12 @@
       <guid>http://localhost:1313/electronic/resources/sellers/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.adafruit.com&#34;&gt;adafruit&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.digikey.es&#34;&gt;DigiKey&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://eleshop.eu&#34;&gt;Eleshop&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://es.farnell.com&#34;&gt;Farnell&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://lcsc.com&#34;&gt;LCSC Electronics&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.mouser.es&#34;&gt;Mouser Electronics&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.sparkfun.com&#34;&gt;sparkfun&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.tme.eu/es/&#34;&gt;TME&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
+    <item>
+      <title>Medición</title>
+      <link>http://localhost:1313/electronic/resources/measurement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/resources/measurement/</guid>
+      <description>&lt;p&gt;Las siguientes herramientas de medición son muy importantes para no ir a ciegas, es super básico:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.amazon.es/dp/B0012VYKVQ&#34;&gt;Multímetro Extech MN36 Mini&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.amazon.es/dp/B01N76DEFX&#34;&gt;Osciloscopio RIGOL DS1054Z&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.saleae.com&#34;&gt;Analizador lógico&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
   </channel>
 </rss>

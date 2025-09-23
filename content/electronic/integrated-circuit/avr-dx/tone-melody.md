@@ -4,7 +4,7 @@ title = 'Tonos y melodías'
 
 ![](workspace.png)
 
-Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un `AVR128DA28`. Los tonos serán reproducidor por un [buzzer o altavoz piezoeléctrico](https://en.wikipedia.org/wiki/Piezoelectric_speaker). Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa [Arduino](https://docs.arduino.cc/built-in-examples/digital/toneMelody/) en su ejemplo. Te recomiendo mucho que uses un analizador lógico para no ir a ciegas.
+Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un `AVR128DA28`. Los tonos serán reproducidor por un [buzzer o altavoz piezoeléctrico](https://en.wikipedia.org/wiki/Piezoelectric_speaker). Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa [Arduino](https://docs.arduino.cc/built-in-examples/digital/toneMelody/) en su ejemplo. Te recomiendo mucho que uses un [analizador lógico](https://www.saleae.com) para no ir a ciegas.
 
 Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.
 
@@ -63,12 +63,15 @@ Se han realizado los cálculos para la nota `G3`, estos pasos se debe repetir po
 Para crear los pulsos de la forma deseada para cada tono vamos a usar uno de los timer/counter de varios que tiene el microcontrolador junto a las interrupciones, en específico el `timer A (TCA)` que tiene una resolución de 16-bit, quiere decir que el contador va desde el `0` hasta `65535 (2{{< sup "16">}} − 1)`. Para entender su funcionamiento vamos a estudiar el modo `NORMAL` que es el que viene por defecto y es el más simple de comprender. Es importante saber que su funcionamiento y configuración es muy abstracto, por lo que voy a hacer el mejor esfuerzo al explicarlo.
 
 {{% blockquote type="important" %}}
-El reloj interno debe estar bien configurado a 24MHz.
+El reloj interno debe estar bien configurado a 24MHz (24.000.000 Hz).
 {{% /blockquote %}}
 
-<!-- counter -->
-<!-- overflow -->
-<!-- ISR -->
+Hay una serie de términos básicos que hay que dominar para configurar y entender cómo funciona el timer, vamos a conocerlos antes de profundizar aún más en el funcionamiento:
+
+- **Counter:**
+- **Tick:**
+- **Prescaled:**
+- **Overflow:**
 
 El **ejemplo 2.9** muestra el código de configuración del `timer/counter A (TCA)` en modo `NORMAL` en la [guia de migración](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/migration-from-megaAVR-to-AVR-Dx.pdf) que use para la función `tone(uint32_t freq, uint32_t dur)`.
 
