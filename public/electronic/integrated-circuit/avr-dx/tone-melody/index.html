@@ -86,7 +86,8 @@
       <h2 class="title">Tonos y melodías</h2>
       
     </div>
-    <p>Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un <code>AVR128DA28</code>. Los tonos serán reproducidor por un <a href="https://en.wikipedia.org/wiki/Piezoelectric_speaker">buzzer o altavoz piezoeléctrico</a>. Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa <a href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Arduino</a> en su ejemplo.</p>
+    <p><img src="workspace.png" alt=""></p>
+<p>Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un <code>AVR128DA28</code>. Los tonos serán reproducidor por un <a href="https://en.wikipedia.org/wiki/Piezoelectric_speaker">buzzer o altavoz piezoeléctrico</a>. Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa <a href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Arduino</a> en su ejemplo. Te recomiendo mucho que uses un analizador lógico para no ir a ciegas.</p>
 <p>Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.</p>
 <p><strong>¿Qué es una melodía?</strong> Es una sucesión organizada de sonidos de diferentes alturas y duraciones, percibida como una sola entidad musical que desarrolla una idea. Los sonidos son representados por tonos.</p>
 <p>Conectemos un analizador lógico (logic analyzer) a la salida del microcontrolador que reproduce dicha melodía para obtener una muestra de pulsos que se parecen a la siguiente imagen:</p>
@@ -94,7 +95,7 @@
 <p>Estas son las notas y la duración de cada de la melodía. La primera línea son las notas, y la segunda los tiempos.</p>
 <pre tabindex="0"><code>NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
 4,       8,       8,       4,       4,       4, 4,       4
-</code></pre><p>Si buscamos en la librería de tonos musicales <code>pitches.h</code> obtenemos solo estas cuatro notas que conforman la melodía:</p>
+</code></pre><p>Si buscamos en la librería de tonos musicales que suele estar en un fichero llamado <code>pitches.h</code> obtenemos solo estas cuatro notas que conforman la melodía:</p>
 <pre tabindex="0"><code>#define NOTE_G3  196
 #define NOTE_A3  220
 #define NOTE_B3  247
@@ -109,10 +110,15 @@
 <div>$$ toggles=\frac{2 \cdot f \cdot t_{ms}}{1000}=\frac{2 \cdot 196Hz \cdot 125_{ms}}{1000}=49 $$</div>
 <p>Como resultado tenemos <code>49</code> toggles que es equivalente a 24.5 períodos, si redondeamos son <code>25 períodos</code>. Todo empieza a encajar según lo que nos dice la imagen anterior.</p>
 <p>Entre nota y nota se define un tiempo llamado pausa a partir de la siguiente formula:</p>
-<div>$$ t_{pause}=t_{ms} \cdot 0,30=125ms \cdot 0,30=75,5ms $$</div>
+<div>$$ t_{pause}=t_{ms} \cdot 0,30=125ms \cdot 0,30=37,5ms $$</div>
 <p>El tiempo de la nota <code>G3</code> es <code>8</code> y aplicando la formula, obtenemos <code>37,5ms</code> como se muestra en la siguiente imagen:</p>
 <p><img src="logicanalyzer03.png" alt=""></p>
 <p>Se han realizado los cálculos para la nota <code>G3</code>, estos pasos se debe repetir por cada nota hasta terminar la melodía. Hasta ahora se han identificado tres variables que son necesarias para poder programar; t<sub>ms</sub>, t<sub>pause</sub> y toggles.</p>
+<p>Para crear los pulsos de la forma deseada para cada tono vamos a usar uno de los timer/counter de varios que tiene el microcontrolador junto a las interrupciones, en específico el <code>timer A (TCA)</code> que tiene una resolución de 16-bit, quiere decir que el contador va desde el <code>0</code> hasta <code>65535 (2<sup>16</sup> − 1)</code>. Para entender su funcionamiento vamos a estudiar el modo <code>NORMAL</code> que es el que viene por defecto y es el más simple de comprender. Es importante saber que su funcionamiento y configuración es muy abstracto, por lo que voy a hacer el mejor esfuerzo al explicarlo.</p>
+<p>counter
+overflow
+ISR</p>
+<p>El <strong>ejemplo 2.9</strong> muestra el código de configuración del <code>timer/counter A (TCA)</code> en modo <code>NORMAL</code> en la <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/migration-from-megaAVR-to-AVR-Dx.pdf">guia de migración</a> que use para la función <code>tone(uint32_t freq, uint32_t dur)</code>.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -188,6 +194,9 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;avr/interrupt.h&gt;</span><span style="color:#75715e">
@@ -212,8 +221,9 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">noTone</span>(<span style="color:#66d9ef">void</span>) {
-</span></span><span style="display:flex;"><span>  TCA0.SINGLE.CTRLA <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>  PORTF.OUTCLR <span style="color:#f92672">=</span> PIN0_bm;
+</span></span><span style="display:flex;"><span>    TCA0.SINGLE.CTRLA <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    PORTF.OUTCLR <span style="color:#f92672">=</span> PIN0_bm;
+</span></span><span style="display:flex;"><span>    toggles <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">tone</span>(<span style="color:#66d9ef">uint32_t</span> freq, <span style="color:#66d9ef">uint32_t</span> dur) {
@@ -224,8 +234,10 @@
 </span></span><span style="display:flex;"><span>    PORTF.DIRSET <span style="color:#f92672">=</span> PIN0_bm;
 </span></span><span style="display:flex;"><span>    VPORTF.OUT <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>PIN0_bm;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    TCA0.SINGLE.PER <span style="color:#f92672">=</span> F_CPU <span style="color:#f92672">/</span> (<span style="color:#ae81ff">16</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> freq) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>    TCA0.SINGLE.INTCTRL  <span style="color:#f92672">=</span> TCA_SINGLE_OVF_bm;
+</span></span><span style="display:flex;"><span>    TCA0.SINGLE.CTRLB <span style="color:#f92672">=</span> TCA_SINGLE_WGMODE_NORMAL_gc;
+</span></span><span style="display:flex;"><span>    TCA0.SINGLE.EVCTRL <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>(TCA_SINGLE_CNTAEI_bm);
+</span></span><span style="display:flex;"><span>    TCA0.SINGLE.PER <span style="color:#f92672">=</span> F_CPU <span style="color:#f92672">/</span> (<span style="color:#ae81ff">16</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> freq) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>    TCA0.SINGLE.CTRLA <span style="color:#f92672">=</span> TCA_SINGLE_CLKSEL_DIV16_gc <span style="color:#f92672">|</span> TCA_SINGLE_ENABLE_bm;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    toggles <span style="color:#f92672">=</span> (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> freq <span style="color:#f92672">*</span> dur) <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000</span>;
@@ -255,12 +267,12 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">ISR</span>(TCA0_OVF_vect) {
-</span></span><span style="display:flex;"><span>    PORTF.OUTTGL <span style="color:#f92672">=</span> PIN0_bm;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (toggles <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">--</span>toggles <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">noTone</span>();
-</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (toggles<span style="color:#f92672">--</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        PORTF.OUT <span style="color:#f92672">^=</span> PIN0_bm;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">noTone</span>();
 </span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    TCA0.SINGLE.INTFLAGS <span style="color:#f92672">=</span> TCA_SINGLE_OVF_bm;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
