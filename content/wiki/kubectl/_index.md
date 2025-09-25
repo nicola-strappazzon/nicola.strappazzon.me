@@ -182,3 +182,9 @@ Un pod puede estar ejecutando uno o varios contenedores, lo puedes describir esc
 ```bash
 kubectl get pods -o=jsonpath="{.items[*].spec.containers[*].name}"
 ```
+
+Para poder ver los logs de un determinado contenedor usando `-c container_name`, escribir:
+
+```bash
+kubectl logs pod/demo-api-598f6c5bb6-mmg4d -c grafana -n monitor
+```
