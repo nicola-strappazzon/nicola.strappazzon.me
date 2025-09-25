@@ -81,11 +81,15 @@ Hay una serie de términos básicos que hay que dominar para entender cómo func
 
 Vamos a ubicar la mayoria de los términos en una gráfica:
 
-{{< svg name="grapth01" >}}
+<!-- {{< svg name="grapth01" >}} -->
+
+![](grapth01.png)
 
 La onda cuadrada queda de la siguiente forma:
 
-{{< svg name="grapth02" >}}
+![](grapth02.png)
+
+<!-- {{< svg name="grapth02" >}} -->
 
 ---
 
