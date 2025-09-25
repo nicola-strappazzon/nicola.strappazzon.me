@@ -50,7 +50,7 @@ Volvamos a analizar la nota `G3` que está acompañada de un tiempo con el valor
 
 {{< mathjax "t_{ms}=\frac{1000}{8}=125_{ms}" >}}
 
-{{< mathjax "toggles=\frac{2 \cdot f \cdot t_{ms}}{1000}=\frac{2 \cdot 196Hz \cdot 125_{ms}}{1000}=49" >}}
+{{< mathjax "toggles=\frac{2 \cdot freq \cdot t_{ms}}{1000}=\frac{2 \cdot 196Hz \cdot 125_{ms}}{1000}=49" >}}
 
 Como resultado tenemos `49` toggles que es equivalente a 24.5 períodos, si redondeamos son `25 períodos`. Todo empieza a encajar según lo que nos dice la imagen anterior.
 
@@ -81,17 +81,15 @@ Hay una serie de términos básicos que hay que dominar para entender cómo func
 
 Vamos a ubicar la mayoria de los términos en una gráfica:
 
-<!-- {{< svg name="grapth01" >}} -->
-
 ![](grapth01.png)
 
-La onda cuadrada queda de la siguiente forma:
+Veamos las fórmulas implicadas en estas gráficas:
 
-![](grapth02.png)
+{{< mathjax "tick=\frac{f_{CPU}}{ 2 \cdot prescaler \cdot freq}=\frac{24000000}{ 2 \cdot 16 \cdot 196}=3826" >}}
 
-<!-- {{< svg name="grapth02" >}} -->
+{{< mathjax "T_{tick}=\frac{prescaler}{f_{CPU}}=\frac{16}{24000000}=0.667_{µs}" >}}
 
----
+{{< mathjax "T_{PER}=tick \cdot T_{tick}=3822 \cdot 0.667_{µs}=2.55_{ms}" >}}
 
 <!-- entonces a ver si entiendo, el timer/counter A es un acumulador de 16 bits que llega a 65535, ajustando el prescale y la frecuencia es como definir una resolución, entonces empieza a ser 3822 ticks, q es basicamente ir contando hasta llegar a ese valor?
 
