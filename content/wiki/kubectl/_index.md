@@ -174,3 +174,11 @@ Lista los volumenes persistentes
 ```bash
 kubectl get pvc
 ```
+
+## Containers
+
+Un pod puede estar ejecutando uno o varios contenedores, lo puedes describir escribiendo:
+
+```bash
+kubectl get pods -o=jsonpath="{.items[*].spec.containers[*].name}"
+```
