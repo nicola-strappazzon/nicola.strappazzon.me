@@ -83,7 +83,7 @@ Vamos a ubicar la mayoría de los términos en dos gráficas y así poder visual
 
 ![](grapth01.png)
 
-El timer/counter A es un acumulador de 16 bits que llega a 65535, ajustando el prescale a 16 para la frecuencia a 24MHz (24000000 Hz) nos permite definir un valor `PER` que indica hasta donde debe llegar el contador, entonces el timer cuenta de 0 hasta `3826` ticks y luego se reinicia `overflow`. En ese momento que se reinicia se produce una interrupción llamada `TCA0_OVF_vect` que se usa para togglear el pin en este caso.
+El timer/counter A es un acumulador de 16 bits que llega a 65535, ajustando el prescale a 16 para la frecuencia a 24MHz (24.000.000 Hz) nos permite definir un valor `PER` que indica hasta donde debe llegar el contador, entonces el timer cuenta de 0 hasta `3826` ticks y luego se reinicia `overflow`. En ese momento que se reinicia se produce una interrupción llamada `TCA0_OVF_vect` que se usa para togglear el pin en este caso.
 
 {{< mathjax "tick=\frac{f_{CPU}}{ 2 \cdot prescaler \cdot freq}=\frac{24000000}{ 2 \cdot 16 \cdot 196}=3826" >}}
 
