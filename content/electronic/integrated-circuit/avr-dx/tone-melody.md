@@ -4,13 +4,17 @@ title = 'Tonos y melodías'
 
 ![](workspace.png)
 
-Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un `AVR128DA28`. Los tonos serán reproducidos por un [buzzer o altavoz piezoeléctrico](https://en.wikipedia.org/wiki/Piezoelectric_speaker) y en específico usé este de [TDK PS1240P02BT](https://www.digikey.es/es/products/detail/tdk-corporation/PS1240P02BT/935924). Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa [Arduino](https://docs.arduino.cc/built-in-examples/digital/toneMelody/) en su ejemplo. Te recomiendo mucho que uses un [analizador lógico](https://www.saleae.com) para no ir a ciegas.
+Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un `AVR128DA28`. Los tonos serán reproducidos por un [buzzer o altavoz piezoeléctrico](https://en.wikipedia.org/wiki/Piezoelectric_speaker) y en específico usé este de [TDK PS1240P02BT](https://www.digikey.es/es/products/detail/tdk-corporation/PS1240P02BT/935924). Usaremos cómo ejemlo de estudio una melodía muy famosa que la usa [Arduino](https://docs.arduino.cc/built-in-examples/digital/toneMelody/).
+
+{{% blockquote type="note" %}}
+Te aconsejo que uses un [analizador lógico](https://www.saleae.com) para no ir a ciegas.
+{{% /blockquote %}}
 
 Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.
 
 **¿Qué es una melodía?** Es una sucesión organizada de sonidos de diferentes alturas y duraciones, percibida como una sola entidad musical que desarrolla una idea. Los sonidos son representados por tonos.
 
-Conectemos un analizador lógico (logic analyzer) a la salida del microcontrolador que reproduce dicha melodía para obtener una muestra de pulsos que se parecen a la siguiente imagen:
+Comencemos, para eso conectamos un analizador lógico (logic analyzer) a la salida del microcontrolador que reproduce dicha melodía para obtener una muestra de pulsos que se parecen a la siguiente imagen:
 
 ![](logicanalyzer01.png)
 
