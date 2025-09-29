@@ -7,12 +7,13 @@ title = 'Conocimiento'
 Estos son los sitios de confianza para documentarse e ir obteniendo buenas ideas:
 
 - [adafruit learn](https://learn.adafruit.com)
-- [sparkfun learn](https://learn.sparkfun.com)
-- [HACKADAY](https://hackaday.com)
+- [AVR Freaks](https://www.avrfreaks.net)
 - [Electronics and microcontroller projects](http://www.technoblogy.com)
 - [ElectronicWings](https://www.electronicwings.com)
-- [AVR Freaks](https://www.avrfreaks.net)
+- [HACKADAY](https://hackaday.com)
+- [Learnabout Electronics](https://www.learnabout-electronics.org)
 - [Maker.io](https://www.digikey.es/en/maker)
+- [sparkfun learn](https://learn.sparkfun.com)
 
 ## Radio Shack Basic Electronics
 
