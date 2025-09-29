@@ -2,10 +2,6 @@
 title = 'Tonos y melodías'
 +++
 
-{{% blockquote type="note" %}}
-Sigo trabajando en mejorar y terminar el artículo. De momento esta incompleto.
-{{% /blockquote %}}
-
 ![](workspace.png)
 
 Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un `AVR128DA28`. Los tonos serán reproducidos por un [buzzer o altavoz piezoeléctrico](https://en.wikipedia.org/wiki/Piezoelectric_speaker) y en específico usé este de [TDK PS1240P02BT](https://www.digikey.es/es/products/detail/tdk-corporation/PS1240P02BT/935924). Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa [Arduino](https://docs.arduino.cc/built-in-examples/digital/toneMelody/) en su ejemplo. Te recomiendo mucho que uses un [analizador lógico](https://www.saleae.com) para no ir a ciegas.
@@ -79,61 +75,23 @@ Hay una serie de términos básicos que hay que dominar para entender cómo func
 - **Overflow:** Es el desbordamiento, y ocurre cuando el contador llega a su valor máximo (TOP) y vuelve a empezar. Cuando esto ocurre, se dispara la interrupción `TCA0_OVF_vect`.
 - **Interrupción:** Es un mecanismo que detiene temporalmente la ejecución normal de un programa para atender un evento, ejecutando una rutina especial llamada `ISR` (Interrupt Service Routine) y al terminar regresa al punto donde estaba el programa.
 
-Vamos a ubicar la mayoria de los términos en una gráfica:
+Vamos a ubicar la mayoría de los términos en dos gráficas y así poder visualizarlo mejor:
 
 ![](grapth01.png)
 
-Veamos las fórmulas implicadas en estas gráficas:
+El timer/counter A es un acumulador de 16 bits que llega a 65535, ajustando el prescale a 16 para la frecuencia a 24MHz (24000000 Hz) nos permite definir un valor `PER` que indica hasta donde debe llegar el contador, entonces el timer cuenta de 0 hasta `3826` ticks y luego se reinicia `overflow`. En ese momento que se reinicia se produce una interrupción llamada `TCA0_OVF_vect` que se usa para togglear el pin en este caso.
 
 {{< mathjax "tick=\frac{f_{CPU}}{ 2 \cdot prescaler \cdot freq}=\frac{24000000}{ 2 \cdot 16 \cdot 196}=3826" >}}
 
+El tick ocurre cada cierto tiempo y está definido por:
+
 {{< mathjax "T_{tick}=\frac{prescaler}{f_{CPU}}=\frac{16}{24000000}=0.667_{µs}" >}}
 
-{{< mathjax "T_{PER}=tick \cdot T_{tick}=3822 \cdot 0.667_{µs}=2.55_{ms}" >}}
+Para terminar, cada incremento del contador (tick) ocurre cada 0.667µs y el overflow a los 2.55ms:
 
-<!-- entonces a ver si entiendo, el timer/counter A es un acumulador de 16 bits que llega a 65535, ajustando el prescale y la frecuencia es como definir una resolución, entonces empieza a ser 3822 ticks, q es basicamente ir contando hasta llegar a ese valor?
+{{< mathjax "T_{PER}=tick \cdot T_{tick}=3826 \cdot 0.667_{µs}=2.55_{ms}" >}}
 
-Es un contador de 16 bits => puede contar de 0 a 65535.
-
-- Cada tick es un incremento de +1 en ese contador.
-- El tick time está definido por:
-
-T_{\text{tick}} = \frac{prescaler}{f_{CPU}}  = 0.667 µs.
-
-el timer no sube hasta 65535; sube solo hasta PER, luego se resetea a 0.
-Cada vez que junta 3822 ticks, hace un toggle.
-
-ajustar prescaler y PER define la resolución.
-
-PER = hasta dónde llega antes de reiniciar.
-
-PER+1 = 3822 ticks => 3822 × 0.667 µs ≈ 2.55 ms.
-entonces un incremento del contador (tick) ocurre cada 0.667 µs y el overflow a los 2.55ms?
-Cada vez que junta 3822 ticks, hace un toggle.
-Dos toggles (arriba y abajo) => 1 ciclo de onda cuadrada = 5.1 ms => ~196 Hz.
-
-
-Sí, como decís: ajustar prescaler y PER define la resolución temporal.
-- Con prescaler bajo => ticks muy cortos => mayor resolución en frecuencias altas.
-- Con prescaler alto => ticks más largos => podés cubrir frecuencias bajas sin que PER se pase de 65535.
-
-En tu caso, "3822 ticks" significa: el timer cuenta 0 => 3821, luego se reinicia, y ese evento se usa para togglear el pin.
-
-sino el valor máximo del contador (TOP). PER = valor hasta donde cuenta el counter (TCNT) antes de volver a cero.
-
-Ahora vamos a ver cómo interactúan todos estos conceptos en la lógica de crear una melodía. Lo curioso es cómo se transforma a sonido una onda cuadrada usando PWM (Pulse Width Modulation) en el mundo de la electrónica.
- -->
-<!-- Poner la imagen que muestra la relación de una señal y un pwm -->
-<!-- https://electronics.stackexchange.com/questions/239442/audio-using-pwm-what-is-the-principle-behind-it -->
-<!-- hacer una breve descripcion de la imagen. -->
-
-<!-- Entre las múltiples funciones del microcontrolador, está la del `timer/counter` quien se encarga de marcar el ritmo como un [metrónomo](https://es.wikipedia.org/wiki/Metr%C3%B3nomo). Pero ese ritmo debe ser ajustado usando el `prescaler`. Cuando ya tienes todo configurado en armonía, es cuando se producen los `tick` al ritmo deseado por el `timer`, y ese ciclo se va repitiendo por cada nota de la melodía porque hay un `overflow` que reinicia cada interacción del `counter`. Y cómo queremos reproducir un sonido de forma asíncrona sin que se pause por completo ese proceso para que pueda hacer otras cosas al "mismo tiempo" como dibujar en una pantalla, usamos las `interrupciones`. Espero que se entienda la relación de cada uno en todo el ciclo. -->
-
-<!-- Poner la grafica de como funciona un timer/counter -->
-
-<!-- En el código fuente vemos la siguiente línea `TCA0.SINGLE.PER = F_CPU / (16 * 2 * freq) - 1;` y esto quiere decir cuántos ticks del timer hacen falta para obtener esa frecuencia de salida, dicho de otra forma, cuántos ticks necesita el timer acumular para generar medio ciclo de la frecuencia deseada. 24000000 / (16 * 2 * 196) - 1 = 3826 -->
-
-<!-- Ahora deberás relacionar todo lo que te conte con el código fuente: -->
+Ahora deberás relacionar todo lo que te conté con el código fuente, será mucho más fácil sabiendo de donde proviene cada fórmula y que hace cada variable que configura el timer/counter y su relación con la interrupción.
 
 ```C
 #include <avr/cpufunc.h>

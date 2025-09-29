@@ -86,8 +86,7 @@
       <h2 class="title">Tonos y melodías</h2>
       
     </div>
-    <blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Sigo trabajando en mejorar y terminar el artículo. De momento esta incompleto.</p></blockquote>
-<p><img src="workspace.png" alt=""></p>
+    <p><img src="workspace.png" alt=""></p>
 <p>Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un <code>AVR128DA28</code>. Los tonos serán reproducidos por un <a href="https://en.wikipedia.org/wiki/Piezoelectric_speaker">buzzer o altavoz piezoeléctrico</a> y en específico usé este de <a href="https://www.digikey.es/es/products/detail/tdk-corporation/PS1240P02BT/935924">TDK PS1240P02BT</a>. Para eso vamos a estudiar en profundidad una melodía muy famosa que la usa <a href="https://docs.arduino.cc/built-in-examples/digital/toneMelody/">Arduino</a> en su ejemplo. Te recomiendo mucho que uses un <a href="https://www.saleae.com">analizador lógico</a> para no ir a ciegas.</p>
 <p>Vamos a ir descomponiendo la melodía en notas y luego en tonos y así hasta llegar al código fuente que los genera. Es un ejemplo maravilloso donde se aplica ingeniería inversa, matemática y programación.</p>
 <p><strong>¿Qué es una melodía?</strong> Es una sucesión organizada de sonidos de diferentes alturas y duraciones, percibida como una sola entidad musical que desarrolla una idea. Los sonidos son representados por tonos.</p>
@@ -126,51 +125,15 @@
 <li><strong>Overflow:</strong> Es el desbordamiento, y ocurre cuando el contador llega a su valor máximo (TOP) y vuelve a empezar. Cuando esto ocurre, se dispara la interrupción <code>TCA0_OVF_vect</code>.</li>
 <li><strong>Interrupción:</strong> Es un mecanismo que detiene temporalmente la ejecución normal de un programa para atender un evento, ejecutando una rutina especial llamada <code>ISR</code> (Interrupt Service Routine) y al terminar regresa al punto donde estaba el programa.</li>
 </ul>
-<p>Vamos a ubicar la mayoria de los términos en una gráfica:</p>
+<p>Vamos a ubicar la mayoría de los términos en dos gráficas y así poder visualizarlo mejor:</p>
 <p><img src="grapth01.png" alt=""></p>
-<p>Veamos las fórmulas implicadas en estas gráficas:</p>
+<p>El timer/counter A es un acumulador de 16 bits que llega a 65535, ajustando el prescale a 16 para la frecuencia a 24MHz (24000000 Hz) nos permite definir un valor <code>PER</code> que indica hasta donde debe llegar el contador, entonces el timer cuenta de 0 hasta <code>3826</code> ticks y luego se reinicia <code>overflow</code>. En ese momento que se reinicia se produce una interrupción llamada <code>TCA0_OVF_vect</code> que se usa para togglear el pin en este caso.</p>
 <div>$$ tick=\frac{f_{CPU}}{ 2 \cdot prescaler \cdot freq}=\frac{24000000}{ 2 \cdot 16 \cdot 196}=3826 $$</div>
+<p>El tick ocurre cada cierto tiempo y está definido por:</p>
 <div>$$ T_{tick}=\frac{prescaler}{f_{CPU}}=\frac{16}{24000000}=0.667_{µs} $$</div>
-<div>$$ T_{PER}=tick \cdot T_{tick}=3822 \cdot 0.667_{µs}=2.55_{ms} $$</div>
-<!-- entonces a ver si entiendo, el timer/counter A es un acumulador de 16 bits que llega a 65535, ajustando el prescale y la frecuencia es como definir una resolución, entonces empieza a ser 3822 ticks, q es basicamente ir contando hasta llegar a ese valor?
-
-Es un contador de 16 bits => puede contar de 0 a 65535.
-
-- Cada tick es un incremento de +1 en ese contador.
-- El tick time está definido por:
-
-T_{\text{tick}} = \frac{prescaler}{f_{CPU}}  = 0.667 µs.
-
-el timer no sube hasta 65535; sube solo hasta PER, luego se resetea a 0.
-Cada vez que junta 3822 ticks, hace un toggle.
-
-ajustar prescaler y PER define la resolución.
-
-PER = hasta dónde llega antes de reiniciar.
-
-PER+1 = 3822 ticks => 3822 × 0.667 µs ≈ 2.55 ms.
-entonces un incremento del contador (tick) ocurre cada 0.667 µs y el overflow a los 2.55ms?
-Cada vez que junta 3822 ticks, hace un toggle.
-Dos toggles (arriba y abajo) => 1 ciclo de onda cuadrada = 5.1 ms => ~196 Hz.
-
-
-Sí, como decís: ajustar prescaler y PER define la resolución temporal.
-- Con prescaler bajo => ticks muy cortos => mayor resolución en frecuencias altas.
-- Con prescaler alto => ticks más largos => podés cubrir frecuencias bajas sin que PER se pase de 65535.
-
-En tu caso, "3822 ticks" significa: el timer cuenta 0 => 3821, luego se reinicia, y ese evento se usa para togglear el pin.
-
-sino el valor máximo del contador (TOP). PER = valor hasta donde cuenta el counter (TCNT) antes de volver a cero.
-
-Ahora vamos a ver cómo interactúan todos estos conceptos en la lógica de crear una melodía. Lo curioso es cómo se transforma a sonido una onda cuadrada usando PWM (Pulse Width Modulation) en el mundo de la electrónica.
- -->
-<!-- Poner la imagen que muestra la relación de una señal y un pwm -->
-<!-- https://electronics.stackexchange.com/questions/239442/audio-using-pwm-what-is-the-principle-behind-it -->
-<!-- hacer una breve descripcion de la imagen. -->
-<!-- Entre las múltiples funciones del microcontrolador, está la del `timer/counter` quien se encarga de marcar el ritmo como un [metrónomo](https://es.wikipedia.org/wiki/Metr%C3%B3nomo). Pero ese ritmo debe ser ajustado usando el `prescaler`. Cuando ya tienes todo configurado en armonía, es cuando se producen los `tick` al ritmo deseado por el `timer`, y ese ciclo se va repitiendo por cada nota de la melodía porque hay un `overflow` que reinicia cada interacción del `counter`. Y cómo queremos reproducir un sonido de forma asíncrona sin que se pause por completo ese proceso para que pueda hacer otras cosas al "mismo tiempo" como dibujar en una pantalla, usamos las `interrupciones`. Espero que se entienda la relación de cada uno en todo el ciclo. -->
-<!-- Poner la grafica de como funciona un timer/counter -->
-<!-- En el código fuente vemos la siguiente línea `TCA0.SINGLE.PER = F_CPU / (16 * 2 * freq) - 1;` y esto quiere decir cuántos ticks del timer hacen falta para obtener esa frecuencia de salida, dicho de otra forma, cuántos ticks necesita el timer acumular para generar medio ciclo de la frecuencia deseada. 24000000 / (16 * 2 * 196) - 1 = 3826 -->
-<!-- Ahora deberás relacionar todo lo que te conte con el código fuente: -->
+<p>Para terminar, cada incremento del contador (tick) ocurre cada 0.667µs y el overflow a los 2.55ms:</p>
+<div>$$ T_{PER}=tick \cdot T_{tick}=3826 \cdot 0.667_{µs}=2.55_{ms} $$</div>
+<p>Ahora deberás relacionar todo lo que te conté con el código fuente, será mucho más fácil sabiendo de donde proviene cada fórmula y que hace cada variable que configura el timer/counter y su relación con la interrupción.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
