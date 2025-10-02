@@ -2,11 +2,13 @@
 title = 'Mi primer programa (Blink)'
 +++
 
-Creo que un programa clásico es el Blink, equivale al "Hola Mundo" en los microcontroladores. Este es el esquema del circuito:
+Creo que es un programa clásico hacer el efecto Blink, equivale al “Hola Mundo” en los microcontroladores, se puede hacer de varias formas, te mostraré cada una, algunas son fáciles y otras más complejas, pero todas llegan a lo mismo. Este es el esquema del circuito que será necesario:
 
 ![](minimal.png)
 
-El siguiente código es para un blink:
+## Primera forma:
+
+El siguiente código es para un blink indicando el encendido y el apagado del pin.
 
 ```C
 #include <avr/io.h>
@@ -31,6 +33,33 @@ int main(void) {
     }
 }
 ```
+
+## Segunda forma:
+
+Podemos mejorar el código haciendo uso de un registro especial llamado `OUTTGL` que hace de toggle:
+
+```C
+#include <avr/io.h>
+#include <util/delay.h>
+
+#define LED_PIN 6
+
+int main(void) {
+    // Configure internal clock:
+    CCP = CCP_IOREG_gc;                         // Disable Configuration Change Protected register.
+    CLKCTRL.OSCHFCTRLA = CLKCTRL_FRQSEL_24M_gc; // Configure to 24Mhz.
+
+    // Configure LED on PC6:
+    PORTA.DIRSET = (1 << LED_PIN);
+
+    while (1) {
+        PORTA.OUTTGL = (1 << LED_PIN);
+        _delay_ms(1000);
+    }
+}
+```
+
+## Compilar y subirlo
 
 Para compilarlo deberá ejecutar el siguiente comando:
 
@@ -57,4 +86,4 @@ Si al usar `avrdude` para compilar aparece el siguiente mensaje de error:
 avr-gcc: fatal error: cannot read spec file 'device-specs/specs-avr128da28': No such file or directory
 ```
 
-Posiblemente, no tiene instalada una de las últimas versiones de avrdude que incorpore las librerías de la familia AVR Dx.
+Posiblemente, no tengas instalada la versión más resiente que incorpora las librerías de la familia AVR Dx.
