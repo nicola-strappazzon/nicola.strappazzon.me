@@ -28,13 +28,8 @@ int main(void) {
 
     // Seleccionar modo Single Slope PWM:
     TCA0.SINGLE.CTRLB = TCA_SINGLE_WGMODE_SINGLESLOPE_gc | TCA_SINGLE_CMP0EN_bm;
-
-    // Frecuencia PWM: F_PWM = F_CPU / (PRESCALER * (PER + 1))
-    // Ej: PER = 255 y PRESCALER = 64 → F_PWM ≈ 1464 Hz
-
-    TCA0.SINGLE.PER = 255;           // Resolución de 8 bits (0..255)
-    TCA0.SINGLE.CMP0 = 0;            // Duty cycle inicial (apagado)
-
+    TCA0.SINGLE.PER   = 255;                    // Resolución de 8 bits (0..255)
+    TCA0.SINGLE.CMP0  = 0;                      // Duty cycle inicial (apagado)
     TCA0.SINGLE.CTRLA = TCA_SINGLE_CLKSEL_DIV64_gc | TCA_SINGLE_ENABLE_bm;
 
     while (1) {
@@ -50,6 +45,8 @@ int main(void) {
     }
 }
 ```
+
+{{< mathjax "f_{PWM}=\frac{f_{CPU}}{prescaler \cdot (PER + 1)}=\frac{24000000}{64 \cdot (255 + 1)}=1464_{Hz}" >}}
 
 ## Segunda forma:
 
