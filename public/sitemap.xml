@@ -229,6 +229,8 @@
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/fade/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/jq/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/jq/</loc>
