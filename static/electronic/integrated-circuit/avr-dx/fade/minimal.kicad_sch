@@ -2516,12 +2516,12 @@
 		(uuid "efb52de8-0da7-498f-ac07-c9b1de0cdcd6")
 	)
 	(no_connect
-		(at 101.6 96.52)
-		(uuid "f6074429-d023-45a1-b28b-040e2d0dc883")
+		(at 101.6 106.68)
+		(uuid "f587608a-4d88-46e4-b35b-fc2cadef5c36")
 	)
 	(no_connect
-		(at 101.6 91.44)
-		(uuid "f6478d51-73f6-42b5-97af-da9440a54051")
+		(at 101.6 96.52)
+		(uuid "f6074429-d023-45a1-b28b-040e2d0dc883")
 	)
 	(wire
 		(pts
@@ -2535,7 +2535,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 106.68) (xy 86.36 106.68)
+			(xy 83.82 91.44) (xy 86.36 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2602,6 +2602,16 @@
 			(type default)
 		)
 		(uuid "51d10dbb-2313-464c-b290-09b8d9d43eec")
+	)
+	(wire
+		(pts
+			(xy 93.98 91.44) (xy 101.6 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53b707de-c516-487b-aff5-a70f0f4fbd34")
 	)
 	(wire
 		(pts
@@ -2785,16 +2795,6 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 106.68) (xy 101.6 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cf032ea9-2bc0-433e-8ea2-eaedeef51a76")
-	)
-	(wire
-		(pts
 			(xy 184.15 83.82) (xy 190.5 83.82)
 		)
 		(stroke
@@ -2875,7 +2875,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 106.68) (xy 76.2 106.68)
+			(xy 73.66 91.44) (xy 76.2 91.44)
 		)
 		(stroke
 			(width 0)
@@ -3066,7 +3066,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 90.17 106.68 0)
+		(at 90.17 91.44 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3074,7 +3074,7 @@
 		(dnp no)
 		(uuid "23607324-69e3-40f4-851c-5a475a375935")
 		(property "Reference" "D1"
-			(at 90.1954 103.5558 0)
+			(at 90.1954 88.3158 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3082,7 +3082,7 @@
 			)
 		)
 		(property "Value" "TEST LED"
-			(at 90.1446 111.0996 0)
+			(at 90.1446 95.8596 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3090,7 +3090,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 90.17 106.68 0)
+			(at 90.17 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3099,7 +3099,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 90.17 106.68 0)
+			(at 90.17 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3108,7 +3108,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 90.17 106.68 0)
+			(at 90.17 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3236,7 +3236,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 80.01 106.68 90)
+		(at 80.01 91.44 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3245,7 +3245,7 @@
 		(dnp no)
 		(uuid "294baa79-19a8-4ee0-a11c-2f1f0cee8d3c")
 		(property "Reference" "R4"
-			(at 80.01 113.03 90)
+			(at 80.01 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3253,7 +3253,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 80.01 110.49 90)
+			(at 80.01 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3261,7 +3261,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 80.01 104.902 90)
+			(at 80.01 89.662 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3270,7 +3270,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 80.01 106.68 0)
+			(at 80.01 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3279,7 +3279,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 80.01 106.68 0)
+			(at 80.01 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3637,7 +3637,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 73.66 106.68 270)
+		(at 73.66 91.44 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3646,7 +3646,7 @@
 		(fields_autoplaced yes)
 		(uuid "788a2827-6b1b-4fad-a60f-1183d7667193")
 		(property "Reference" "#PWR011"
-			(at 67.31 106.68 0)
+			(at 67.31 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3655,7 +3655,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 69.85 106.6799 90)
+			(at 69.85 91.4399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3664,7 +3664,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 73.66 106.68 0)
+			(at 73.66 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3673,7 +3673,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 73.66 106.68 0)
+			(at 73.66 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3682,7 +3682,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 73.66 106.68 0)
+			(at 73.66 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)

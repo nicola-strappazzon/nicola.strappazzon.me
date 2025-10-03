@@ -4,9 +4,13 @@ title = 'Efecto fade, un blink con PWM'
 
 Este es una forma de hacer un [blink](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/) con un efecto de encendido y apagado suave y transitorio, es bonito y relajante. Para lograrlo, debemos hacer uso del `timer/counter` que genera una frecuencia de tipo [PWM (Pulse Width Modulation)](https://en.wikipedia.org/wiki/Pulse-width_modulation) y es más complejo que él [ejemplo anterior](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/) pero es una base esencial para hacer muchas más cosas.
 
+![](minimal.png)
+
 {{% blockquote type="note" %}}
 Cómo dato curioso, el PWM entre las múltiples utilidades que tiene, se usa en las linternas o lámparas con bombillas LED para ahorrar energía o controlar el nivel de luminosidad.
 {{% /blockquote %}}
+
+Los siguientes ejemplos no hacen uso del mismo pin que tratamos en este ejemplo del [blink](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/) porque el `timer/counter A (TCA)` no tiene acceso al pin `PA6`, pero sí al `PA0` entre otros.
 
 ## Primera forma:
 
@@ -23,10 +27,10 @@ int main(void) {
     CCP = CCP_IOREG_gc;                         // Disable Configuration Change Protected register.
     CLKCTRL.OSCHFCTRLA = CLKCTRL_FRQSEL_24M_gc; // Configure to 24Mhz.
 
-    // Configurar PA0 como salida:
+    // Configure LED on PA0:
     PORTA.DIRSET = PIN0_bm;
 
-    // Seleccionar modo Single Slope PWM:
+    // Select mode Single Slope PWM:
     TCA0.SINGLE.CTRLB = TCA_SINGLE_WGMODE_SINGLESLOPE_gc | TCA_SINGLE_CMP0EN_bm;
     TCA0.SINGLE.PER   = 255;                    // Resolución de 8 bits (0..255)
     TCA0.SINGLE.CMP0  = 0;                      // Duty cycle inicial (apagado)

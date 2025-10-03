@@ -87,7 +87,9 @@
       
     </div>
     <p>Este es una forma de hacer un <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/">blink</a> con un efecto de encendido y apagado suave y transitorio, es bonito y relajante. Para lograrlo, debemos hacer uso del <code>timer/counter</code> que genera una frecuencia de tipo <a href="https://en.wikipedia.org/wiki/Pulse-width_modulation">PWM (Pulse Width Modulation)</a> y es más complejo que él <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/">ejemplo anterior</a> pero es una base esencial para hacer muchas más cosas.</p>
+<p><img src="minimal.png" alt=""></p>
 <blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Cómo dato curioso, el PWM entre las múltiples utilidades que tiene, se usa en las linternas o lámparas con bombillas LED para ahorrar energía o controlar el nivel de luminosidad.</p></blockquote>
+<p>Los siguientes ejemplos no hacen uso del mismo pin que tratamos en este ejemplo del <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/">blink</a> porque el <code>timer/counter A (TCA)</code> no tiene acceso al pin <code>PA6</code>, pero sí al <code>PA0</code> entre otros.</p>
 <h2 id="primera-forma">Primera forma:</h2>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -138,10 +140,10 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CCP <span style="color:#f92672">=</span> CCP_IOREG_gc;                         <span style="color:#75715e">// Disable Configuration Change Protected register.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CLKCTRL.OSCHFCTRLA <span style="color:#f92672">=</span> CLKCTRL_FRQSEL_24M_gc; <span style="color:#75715e">// Configure to 24Mhz.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Configurar PA0 como salida:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Configure LED on PA0:
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    PORTA.DIRSET <span style="color:#f92672">=</span> PIN0_bm;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Seleccionar modo Single Slope PWM:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Select mode Single Slope PWM:
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    TCA0.SINGLE.CTRLB <span style="color:#f92672">=</span> TCA_SINGLE_WGMODE_SINGLESLOPE_gc <span style="color:#f92672">|</span> TCA_SINGLE_CMP0EN_bm;
 </span></span><span style="display:flex;"><span>    TCA0.SINGLE.PER   <span style="color:#f92672">=</span> <span style="color:#ae81ff">255</span>;                    <span style="color:#75715e">// Resolución de 8 bits (0..255)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    TCA0.SINGLE.CMP0  <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;                      <span style="color:#75715e">// Duty cycle inicial (apagado)
