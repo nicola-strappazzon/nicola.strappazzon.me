@@ -1,5 +1,5 @@
 +++
-title = 'Efecto fade, un blink con PWM'
+title = 'Efecto fade'
 +++
 
 Este es una forma de hacer un [blink](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/) con un efecto de encendido y apagado suave y transitorio, es bonito y relajante. Para lograrlo, debemos hacer uso del `timer/counter` que genera una frecuencia de tipo [PWM (Pulse Width Modulation)](https://en.wikipedia.org/wiki/Pulse-width_modulation) y es más complejo que él [ejemplo anterior](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/) pero es una base esencial para hacer muchas más cosas.
