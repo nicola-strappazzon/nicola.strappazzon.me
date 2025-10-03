@@ -14,21 +14,19 @@ El siguiente código es para un blink indicando el encendido y el apagado del pi
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED_PIN 6
-
 int main(void) {
     // Configure internal clock:
     CCP = CCP_IOREG_gc;                         // Disable Configuration Change Protected register.
     CLKCTRL.OSCHFCTRLA = CLKCTRL_FRQSEL_24M_gc; // Configure to 24Mhz.
 
-    // Configure LED on PC6:
-    PORTA.DIRSET = (1 << LED_PIN);
+    // Configure LED on PA6:
+    PORTA.DIRSET = PIN6_bm;
 
     while (1) {
-        PORTA.OUTSET = (1 << LED_PIN);
+        PORTA.OUTSET = PIN6_bm;
         _delay_ms(1000);
 
-        PORTA.OUTCLR = (1 << LED_PIN);
+        PORTA.OUTCLR = PIN6_bm;
         _delay_ms(1000);
     }
 }
@@ -42,18 +40,16 @@ Podemos mejorar el código haciendo uso de un registro especial llamado `OUTTGL`
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED_PIN 6
-
 int main(void) {
     // Configure internal clock:
     CCP = CCP_IOREG_gc;                         // Disable Configuration Change Protected register.
     CLKCTRL.OSCHFCTRLA = CLKCTRL_FRQSEL_24M_gc; // Configure to 24Mhz.
 
-    // Configure LED on PC6:
-    PORTA.DIRSET = (1 << LED_PIN);
+    // Configure LED on PA6:
+    PORTA.DIRSET = PIN6_bm;
 
     while (1) {
-        PORTA.OUTTGL = (1 << LED_PIN);
+        PORTA.OUTTGL = PIN6_bm;
         _delay_ms(1000);
     }
 }

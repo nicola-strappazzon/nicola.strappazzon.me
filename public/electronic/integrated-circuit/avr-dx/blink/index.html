@@ -111,28 +111,24 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;avr/io.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;util/delay.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#define LED_PIN 6
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Configure internal clock:
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CCP <span style="color:#f92672">=</span> CCP_IOREG_gc;                         <span style="color:#75715e">// Disable Configuration Change Protected register.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CLKCTRL.OSCHFCTRLA <span style="color:#f92672">=</span> CLKCTRL_FRQSEL_24M_gc; <span style="color:#75715e">// Configure to 24Mhz.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Configure LED on PC6:
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    PORTA.DIRSET <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> LED_PIN);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Configure LED on PA6:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    PORTA.DIRSET <span style="color:#f92672">=</span> PIN6_bm;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) {
-</span></span><span style="display:flex;"><span>        PORTA.OUTSET <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> LED_PIN);
+</span></span><span style="display:flex;"><span>        PORTA.OUTSET <span style="color:#f92672">=</span> PIN6_bm;
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">_delay_ms</span>(<span style="color:#ae81ff">1000</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        PORTA.OUTCLR <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> LED_PIN);
+</span></span><span style="display:flex;"><span>        PORTA.OUTCLR <span style="color:#f92672">=</span> PIN6_bm;
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">_delay_ms</span>(<span style="color:#ae81ff">1000</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
@@ -158,25 +154,21 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;avr/io.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;util/delay.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#define LED_PIN 6
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Configure internal clock:
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CCP <span style="color:#f92672">=</span> CCP_IOREG_gc;                         <span style="color:#75715e">// Disable Configuration Change Protected register.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CLKCTRL.OSCHFCTRLA <span style="color:#f92672">=</span> CLKCTRL_FRQSEL_24M_gc; <span style="color:#75715e">// Configure to 24Mhz.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Configure LED on PC6:
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    PORTA.DIRSET <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> LED_PIN);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Configure LED on PA6:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    PORTA.DIRSET <span style="color:#f92672">=</span> PIN6_bm;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) {
-</span></span><span style="display:flex;"><span>        PORTA.OUTTGL <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> LED_PIN);
+</span></span><span style="display:flex;"><span>        PORTA.OUTTGL <span style="color:#f92672">=</span> PIN6_bm;
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">_delay_ms</span>(<span style="color:#ae81ff">1000</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
