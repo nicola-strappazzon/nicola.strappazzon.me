@@ -187,3 +187,7 @@ ISR(TCA0_OVF_vect) {
 ```
 
 El **ejemplo 2.9** muestra el código de configuración del `timer/counter A (TCA)` en modo `NORMAL` de la [guía de migración](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/migration-from-megaAVR-to-AVR-Dx.pdf) que use para la función `tone(uint32_t freq, uint32_t dur)`.
+
+Para terminar, este es el esquema del circuito:
+
+![](minimal.png)

@@ -219,6 +219,8 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/light-emitting-diode/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/direct-digital-synthesis-sine-wave/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/components/display/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/docker/</loc>
