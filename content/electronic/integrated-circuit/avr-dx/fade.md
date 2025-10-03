@@ -32,8 +32,8 @@ int main(void) {
 
     // Select mode Single Slope PWM:
     TCA0.SINGLE.CTRLB = TCA_SINGLE_WGMODE_SINGLESLOPE_gc | TCA_SINGLE_CMP0EN_bm;
-    TCA0.SINGLE.PER   = 255;                    // Resolución de 8 bits (0..255)
-    TCA0.SINGLE.CMP0  = 0;                      // Duty cycle inicial (apagado)
+    TCA0.SINGLE.PER   = 255;                    // 8 bits (0..255)
+    TCA0.SINGLE.CMP0  = 0;                      // Duty cycle initial (off)
     TCA0.SINGLE.CTRLA = TCA_SINGLE_CLKSEL_DIV64_gc | TCA_SINGLE_ENABLE_bm;
 
     while (1) {
@@ -53,6 +53,8 @@ int main(void) {
 {{< mathjax "f_{PWM}=\frac{f_{CPU}}{prescaler \cdot (PER + 1)}=\frac{24000000}{64 \cdot (255 + 1)}=1464_{Hz}" >}}
 
 ## Segunda forma:
+
+Aquí se hace uso de las interrupciones.
 
 ```C
 #include <avr/interrupt.h>
@@ -79,14 +81,14 @@ int main(void){
   CCP = CCP_IOREG_gc;                         // Disable Configuration Change Protected register.
   CLKCTRL.OSCHFCTRLA = CLKCTRL_FRQSEL_24M_gc; // Configure to 24Mhz.
 
-  // Configurar PA0 como salida:
+  // Configure LED on PA0:
   PORTA.DIRSET        = PIN0_bm;
 
   // Configuramos el PWM:
   TCA0.SINGLE.CTRLB   = TCA_SINGLE_WGMODE_SINGLESLOPE_gc | TCA_SINGLE_CMP0EN_bm;
-  TCA0.SINGLE.PER     = 255;                  // Resolución de 8 bits (0..255)
-  TCA0.SINGLE.CMP0    = 0;                    // Inicia en 0
-  TCA0.SINGLE.INTCTRL = TCA_SINGLE_OVF_bm;    // Habilita OVF
+  TCA0.SINGLE.PER     = 255;                  // 8 bits (0..255)
+  TCA0.SINGLE.CMP0    = 0;                    // Start from 0
+  TCA0.SINGLE.INTCTRL = TCA_SINGLE_OVF_bm;    // Enable OVF
   TCA0.SINGLE.CTRLA   = TCA_SINGLE_CLKSEL_DIV64_gc | TCA_SINGLE_ENABLE_bm;
 
   sei();
