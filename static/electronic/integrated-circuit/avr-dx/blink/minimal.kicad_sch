@@ -2456,10 +2456,6 @@
 		(uuid "67f36c67-1e0b-4f92-8670-4c47bd47bdd4")
 	)
 	(no_connect
-		(at 101.6 91.44)
-		(uuid "71251609-85a8-41a1-95eb-ecd4346641f3")
-	)
-	(no_connect
 		(at 101.6 121.92)
 		(uuid "72e0930c-5b21-43a1-bc4b-73dd090c0089")
 	)
@@ -2595,6 +2591,16 @@
 	)
 	(wire
 		(pts
+			(xy 93.98 91.44) (xy 101.6 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50fc553b-fa37-4606-b8a5-0c6f56465a43")
+	)
+	(wire
+		(pts
 			(xy 195.58 57.15) (xy 195.58 54.61)
 		)
 		(stroke
@@ -2695,6 +2701,16 @@
 	)
 	(wire
 		(pts
+			(xy 83.82 91.44) (xy 86.36 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e4d000b-6820-4bda-b230-35e3efe4db19")
+	)
+	(wire
+		(pts
 			(xy 173.99 62.0776) (xy 173.99 66.04)
 		)
 		(stroke
@@ -2702,6 +2718,16 @@
 			(type default)
 		)
 		(uuid "831459ca-2b62-403d-8afc-3a36a7c56240")
+	)
+	(wire
+		(pts
+			(xy 73.66 91.44) (xy 76.2 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9008865a-cddb-4620-b3d8-bec40fe310e5")
 	)
 	(wire
 		(pts
@@ -3770,6 +3796,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 80.01 91.44 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "876b469a-9493-4078-af1d-0f34fccd0ac4")
+		(property "Reference" "R6"
+			(at 80.01 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 80.01 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 80.01 89.662 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 80.01 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 80.01 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "45ef140b-0faa-4dac-950f-d0f61538a1ba")
+		)
+		(pin "2"
+			(uuid "faeb8034-e2db-49b6-a126-2ada7fe22d37")
+		)
+		(instances
+			(project "minimal"
+				(path "/d38a9a4d-fc9a-4cfe-b425-a2f2b1409680"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 173.99 62.0776 180)
 		(unit 1)
@@ -4291,6 +4385,73 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 73.66 91.44 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ce6324ef-c921-4f2d-8260-9512b682c6be")
+		(property "Reference" "#PWR012"
+			(at 67.31 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 69.85 91.4399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 73.66 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 73.66 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "39c96242-2425-4054-949e-83de8200042a")
+		)
+		(instances
+			(project "minimal"
+				(path "/d38a9a4d-fc9a-4cfe-b425-a2f2b1409680"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 176.53 110.3884 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4483,6 +4644,73 @@
 			(project "minimal"
 				(path "/d38a9a4d-fc9a-4cfe-b425-a2f2b1409680"
 					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 90.17 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f8d72b6d-1f82-4697-9c51-be1ec475fcb5")
+		(property "Reference" "D2"
+			(at 90.1954 88.3158 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TEST LED"
+			(at 90.1446 95.8596 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 90.17 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 90.17 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d01d5f2c-8a7c-4718-a7bc-7edbbdcbf54f")
+		)
+		(pin "2"
+			(uuid "854b5e03-7b27-4dc8-8af1-d558de4a8058")
+		)
+		(instances
+			(project "minimal"
+				(path "/d38a9a4d-fc9a-4cfe-b425-a2f2b1409680"
+					(reference "D2")
 					(unit 1)
 				)
 			)
