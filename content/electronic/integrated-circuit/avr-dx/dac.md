@@ -11,60 +11,38 @@ title = 'DAC'
 
 ```C
 #include <avr/io.h>
+#include <avr/interrupt.h>
 #include <util/delay.h>
 #include <math.h>
 
-/* VREF start-up time */
-#define VREF_STARTUP_TIME (50)
-/* Mask needed to get the 2 LSb for DAC Data Register */
-#define LSB_MASK (0x03)
-/* Number of samples for a sine wave period */
-#define SINE_PERIOD_STEPS (100)
-/* Sine wave amplitude */
-#define SINE_AMPLITUDE (511)
-/* Sine wave DC offset */
-#define SINE_DC_OFFSET (512)
-/* Frequency of the sine wave */
-#define SINE_FREQ (100)
-/* Step delay for the loop */
-#define STEP_DELAY_TIME ((1000000 / SINE_FREQ) / SINE_PERIOD_STEPS)
+#define LSB_MASK   0x03
+#define WAVE_STEPS 100     // número de muestras por ciclo
+#define WAVE_FREQ  100     // frecuencia final de la onda (Hz)
+#define DAC_MAX    1023
 
-static void sineWaveInit(void);
-static void triangleWaveInit(void);
-static void VREF_init(void);
-static void DAC0_init(void);
-static void DAC0_setVal(uint16_t value);
+uint16_t wave[WAVE_STEPS];
+volatile uint8_t waveIndex = 0;
 
-/* Buffer to store the sine wave samples */
-uint16_t sineWave[SINE_PERIOD_STEPS];
-
-static void sineWaveInit(void) {
-    uint8_t i;
-    for(i = 0; i < SINE_PERIOD_STEPS; i++) {
-        sineWave[i] = SINE_DC_OFFSET + SINE_AMPLITUDE * sin(2 * M_PI * i / SINE_PERIOD_STEPS);
+static void sineWave(void) {
+    for (uint8_t i = 0; i < WAVE_STEPS; i++) {
+        double x = 2.0 * M_PI * i / WAVE_STEPS;
+        wave[i] = (uint16_t)(512 + (511 * sin(x))); // 0–1023
     }
 }
 
-static void triangleWaveInit(void) {
-    for (uint8_t i = 0; i < SINE_PERIOD_STEPS; i++) {
-        double phase = (double)i / SINE_PERIOD_STEPS;  // 0.0 -> 1.0
-
-        double tri;
-        if (phase < 0.5)
-            tri = 2.0 * phase;         // sube 0 -> 1
+static void triangleWave(void) {
+    uint16_t half = WAVE_STEPS / 2;
+    for (uint8_t i = 0; i < WAVE_STEPS; i++) {
+        if (i < half)
+            wave[i] = (uint16_t)(DAC_MAX * ((double)i / half));
         else
-            tri = 2.0 * (1.0 - phase); // baja 1 -> 0
-
-        sineWave[i] = SINE_DC_OFFSET + SINE_AMPLITUDE * (2.0 * tri - 1.0);
-        // (2*tri -1) centra la onda entre -1 y +1, como el seno
+            wave[i] = (uint16_t)(DAC_MAX * (1.0 - ((double)(i - half) / half)));
     }
 }
 
-static void sawtoothWaveInit(void) {
-    for (uint8_t i = 0; i < SINE_PERIOD_STEPS; i++) {
-        // sube de 0 -> 1 linealmente a lo largo de todo el ciclo
-        double phase = (double)i / SINE_PERIOD_STEPS;
-        sineWave[i] = SINE_DC_OFFSET + SINE_AMPLITUDE * (2.0 * phase - 1.0);
+static void sawtoothWave(void) {
+    for (uint8_t i = 0; i < WAVE_STEPS; i++) {
+        wave[i] = (uint16_t)(DAC_MAX * ((double)i / WAVE_STEPS));
     }
 }
 
@@ -74,48 +52,50 @@ static inline void clk_init(void){
     _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB,  0);
 }
 
-static void VREF_init(void) {
+static void vref_init(void) {
     /* Select the 2.048V Internal Voltage Reference for DAC */
     VREF.DAC0REF = VREF_REFSEL_2V048_gc | VREF_ALWAYSON_bm; /* Set the Voltage Reference in Always On mode */
-    /* Wait VREF start-up time */
-    _delay_us(VREF_STARTUP_TIME);
+    
+    _delay_us(50); // Wait VREF start-up time.
 }
 
-static void DAC0_init(void) {
-    /* Disable digital input buffer */
-    PORTD.PIN6CTRL &= ~PORT_ISC_gm;
-    PORTD.PIN6CTRL |= PORT_ISC_INPUT_DISABLE_gc;
-
-    /* Disable pull-up resistor */
-    PORTD.PIN6CTRL &= ~PORT_PULLUPEN_bm;
-    DAC0.CTRLA = DAC_ENABLE_bm /* Enable DAC */
-    | DAC_OUTEN_bm /* Enable output buffer */
-    | DAC_RUNSTDBY_bm; /* Enable Run in Standby mode */
+static void dac_init(void) {
+    PORTD.PIN6CTRL = PORT_ISC_INPUT_DISABLE_gc;  // deshabilita entrada digital
+    DAC0.CTRLA = DAC_ENABLE_bm | DAC_OUTEN_bm;   // salida PD6 activa
 }
 
-static void DAC0_setVal(uint16_t value) {
-    /* Store the two LSbs in DAC0.DATAL */
+static void dac_set(uint16_t value) {
     DAC0.DATAL = (value & LSB_MASK) << 6;
-    /* Store the eight MSbs in DAC0.DATAH */
     DAC0.DATAH = value >> 2;
 }
 
+static void tcb0_init(void) {
+    // f_ISR = WAVE_FREQ * WAVE_STEPS = 100 * 100 = 10 kHz
+    // Periodo = 24e6 / 10e3 = 2400
+    TCB0.CCMP = 2400 - 1;                         // 10 kHz interrupción
+    TCB0.CTRLA = TCB_CLKSEL_DIV1_gc | TCB_ENABLE_bm;
+    TCB0.INTCTRL = TCB_CAPT_bm;
+}
+
+ISR(TCB0_INT_vect) {
+    dac_set(wave[waveIndex++]);
+    if (waveIndex >= WAVE_STEPS)
+        waveIndex = 0;
+    TCB0.INTFLAGS = TCB_CAPT_bm;
+}
+
 int main(void) {
-    uint8_t sineIndex = 0;
-
     clk_init();
-    VREF_init();
-    DAC0_init();
+    vref_init();
+    dac_init();
 
-    // sineWaveInit();
-    // triangleWaveInit();
-    sawtoothWaveInit();
+    sineWave();
+    // triangleWave();
+    // sawtoothWave();
+    tcb0_init();
 
-    while (1) {
-        DAC0_setVal(sineWave[sineIndex++]);
-        if(sineIndex == SINE_PERIOD_STEPS)
-        sineIndex = 0;
-        _delay_us(STEP_DELAY_TIME);
-    }
+    sei();
+
+    while (1) {}
 }
 ```
