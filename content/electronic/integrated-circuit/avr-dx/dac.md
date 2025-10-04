@@ -47,13 +47,13 @@ static void sineWaveInit(void) {
 
 static void triangleWaveInit(void) {
     for (uint8_t i = 0; i < SINE_PERIOD_STEPS; i++) {
-        double phase = (double)i / SINE_PERIOD_STEPS;  // 0.0 → 1.0
+        double phase = (double)i / SINE_PERIOD_STEPS;  // 0.0 -> 1.0
 
         double tri;
         if (phase < 0.5)
-            tri = 2.0 * phase;         // sube 0 → 1
+            tri = 2.0 * phase;         // sube 0 -> 1
         else
-            tri = 2.0 * (1.0 - phase); // baja 1 → 0
+            tri = 2.0 * (1.0 - phase); // baja 1 -> 0
 
         sineWave[i] = SINE_DC_OFFSET + SINE_AMPLITUDE * (2.0 * tri - 1.0);
         // (2*tri -1) centra la onda entre -1 y +1, como el seno
@@ -62,7 +62,7 @@ static void triangleWaveInit(void) {
 
 static void sawtoothWaveInit(void) {
     for (uint8_t i = 0; i < SINE_PERIOD_STEPS; i++) {
-        // sube de 0 → 1 linealmente a lo largo de todo el ciclo
+        // sube de 0 -> 1 linealmente a lo largo de todo el ciclo
         double phase = (double)i / SINE_PERIOD_STEPS;
         sineWave[i] = SINE_DC_OFFSET + SINE_AMPLITUDE * (2.0 * phase - 1.0);
     }
