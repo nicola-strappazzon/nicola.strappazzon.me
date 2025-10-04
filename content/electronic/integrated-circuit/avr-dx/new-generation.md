@@ -11,9 +11,9 @@ Librería que usa el avrdude que está en el repositorio [avr-libc](https://gith
 
 ![](pinout.png)
 
-Llevo un tiempo usando el AVR128DA28 (Versión DIP) y el AVR128DA48 (Versión SMD), programarlo no es igual que el ATmega328P porque los registros son diferentes, consulte el [Datasheet del AVR-DA](AVRxxDAxx.pdf), es más avanzado, pero aún queda mucho para que la comunidad vaya publicando ejemplos prácticos de cómo por ejemplo usar un I2C / TWI para un IC en particular, de todos modos [Microchip esta poco a poco publicando códigos fuentes de ejemplo en GitHub](https://github.com/microchip-pic-avr-examples?q=avr128&type=all&language=&sort=), igual no hay que dejar de visitar el [Foro para los Freaks de AVR](https://www.avrfreaks.net).
+Llevo un tiempo usando el AVR128DA28 (Versión DIP) y el AVR128DA48 (Versión SMD) entre muchos otros, programarlo no es igual que el ATmega328P porque los registros son diferentes, consulte el [Datasheet del AVR-DA](AVRxxDAxx.pdf), es más avanzado, pero aún queda mucho para que la comunidad vaya publicando ejemplos prácticos de cómo por ejemplo usar un I2C / TWI para un IC en particular, de todos modos [Microchip esta poco a poco publicando códigos fuentes de ejemplo en GitHub](https://github.com/microchip-pic-avr-examples?q=avr128&type=all&language=&sort=), igual no hay que dejar de visitar el [Foro para los Freaks de AVR](https://www.avrfreaks.net).
 
-Microchip tiene publicada una serie de documentos muy didacticos y detallados de cada funcionalidad.
+Microchip tiene publicada una serie de documentos muy didacticos y detallados de cada funcionalidad:
 
 - [AVR® Instruction Set Manual](AVR-InstructionSet-Manual.pdf)
 - [Datasheet del AVR-DA](AVRxxDAxx.pdf)
