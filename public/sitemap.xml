@@ -32,7 +32,7 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/dummy-load/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/fade/</loc>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/internal-clock/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/restore/</loc>
   </url><url>
@@ -40,15 +40,17 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/voltage-divider/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/fade/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/openpgp/revoke/</loc>
-  </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</loc>
-  </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/dac/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/current-divider/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/git/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/dac/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/esr/</loc>
   </url><url>
