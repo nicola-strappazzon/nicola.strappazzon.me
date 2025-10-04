@@ -8,19 +8,31 @@
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/import/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/components/display/nhd-1.8-160128ubc3/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/history/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/terminal/client/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/export/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/new-generation/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/values/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/display/ssd1353/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/backup/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/measurement/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/blink/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/terminal/prompt/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/dummy-load/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/fade/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/restore/</loc>
   </url><url>
@@ -29,6 +41,10 @@
     <loc>http://localhost:1313/electronic/components/resistor/voltage-divider/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/revoke/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/dac/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/current-divider/</loc>
   </url><url>
@@ -215,8 +231,6 @@
   </url><url>
     <loc>http://localhost:1313/cultura/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/dac/</loc>
-  </url><url>
     <loc>http://localhost:1313/diccionary/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/light-emitting-diode/</loc>
@@ -231,8 +245,6 @@
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/fade/</loc>
-  </url><url>
     <loc>http://localhost:1313/wiki/jq/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/jq/</loc>
@@ -240,8 +252,6 @@
     <loc>http://localhost:1313/tags/json/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/kubectl/</loc>
-  </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/new-generation/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/basic-lessons/lesson01/</loc>
   </url><url>
@@ -253,15 +263,9 @@
   </url><url>
     <loc>http://localhost:1313/electronic/resources/measurement/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/blink/</loc>
-  </url><url>
-    <loc>http://localhost:1313/electronic/components/display/nhd-1.8-160128ubc3/</loc>
-  </url><url>
     <loc>http://localhost:1313/tags/openpgp/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/</loc>
-  </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/history/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/</loc>
   </url><url>
@@ -273,8 +277,6 @@
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/ch340/serial&#43;updi/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/components/display/ssd1353/</loc>
-  </url><url>
     <loc>http://localhost:1313/tags/ssh/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/ssh/</loc>
@@ -282,8 +284,6 @@
     <loc>http://localhost:1313/tags/terminal/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/terminal/</loc>
-  </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/transistor/</loc>
   </url><url>
