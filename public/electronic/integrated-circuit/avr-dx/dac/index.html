@@ -86,7 +86,7 @@
       <h2 class="title">DAC</h2>
       
     </div>
-    <p><a href="TB3235-DAC.pdf">Using 10-Bit DAC for Generating Analog Signals</a></p>
+    <p><a href="https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/new-generation/TB3235-DAC.pdf">Using 10-Bit DAC for Generating Analog Signals</a></p>
 <p><img src="minimal.png" alt=""></p>
 <p><img src="logicanalyzer01.png" alt=""></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -179,6 +179,13 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">95
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;avr/io.h&gt;</span><span style="color:#75715e">
@@ -188,8 +195,19 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define LSB_MASK   0x03
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define WAVE_STEPS 100     </span><span style="color:#75715e">// número de muestras por ciclo
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define WAVE_FREQ  100     </span><span style="color:#75715e">// frecuencia final de la onda (Hz)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define WAVE_FREQ  261     </span><span style="color:#75715e">// frecuencia final de la onda (Hz)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DAC_MAX    1023
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define F_ISR   (WAVE_STEPS * WAVE_FREQ)  </span><span style="color:#75715e">// Hz de la ISR
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Selección de prescaler para TCB: DIV1 o DIV2 (AVR-DA) */</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if   ((F_CPU / 1) / F_ISR) - 1 &lt;= 0xFFFF
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">#define TCB_CLKSEL   TCB_CLKSEL_DIV1_gc
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">#define TCB_CCMP     (uint16_t)((F_CPU / 1 / F_ISR) - 1)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#elif ((F_CPU / 2) / F_ISR) - 1 &lt;= 0xFFFF
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">#define TCB_CLKSEL   TCB_CLKSEL_DIV2_gc
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">#define TCB_CCMP     (uint16_t)((F_CPU / 2 / F_ISR) - 1)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">uint16_t</span> wave[WAVE_STEPS];
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">volatile</span> <span style="color:#66d9ef">uint8_t</span> waveIndex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
@@ -224,9 +242,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">vref_init</span>(<span style="color:#66d9ef">void</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* Select the 2.048V Internal Voltage Reference for DAC */</span>
-</span></span><span style="display:flex;"><span>    VREF.DAC0REF <span style="color:#f92672">=</span> VREF_REFSEL_2V048_gc <span style="color:#f92672">|</span> VREF_ALWAYSON_bm; <span style="color:#75715e">/* Set the Voltage Reference in Always On mode */</span>
-</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    VREF.DAC0REF <span style="color:#f92672">=</span> VREF_REFSEL_2V048_gc <span style="color:#f92672">|</span> VREF_ALWAYSON_bm;
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">_delay_us</span>(<span style="color:#ae81ff">50</span>); <span style="color:#75715e">// Wait VREF start-up time.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span><span style="display:flex;"><span>
@@ -241,10 +257,8 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">tcb0_init</span>(<span style="color:#66d9ef">void</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// f_ISR = WAVE_FREQ * WAVE_STEPS = 100 * 100 = 10 kHz
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Periodo = 24e6 / 10e3 = 2400
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    TCB0.CCMP <span style="color:#f92672">=</span> <span style="color:#ae81ff">2400</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;                         <span style="color:#75715e">// 10 kHz interrupción
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    TCB0.CTRLA <span style="color:#f92672">=</span> TCB_CLKSEL_DIV1_gc <span style="color:#f92672">|</span> TCB_ENABLE_bm;
+</span></span><span style="display:flex;"><span>    TCB0.CCMP <span style="color:#f92672">=</span> TCB_CCMP;
+</span></span><span style="display:flex;"><span>    TCB0.CTRLA <span style="color:#f92672">=</span> TCB_CLKSEL <span style="color:#f92672">|</span> TCB_ENABLE_bm;
 </span></span><span style="display:flex;"><span>    TCB0.INTCTRL <span style="color:#f92672">=</span> TCB_CAPT_bm;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>

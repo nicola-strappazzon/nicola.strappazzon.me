@@ -3,7 +3,7 @@ weight = 7
 title = 'DAC'
 +++
 
-[Using 10-Bit DAC for Generating Analog Signals](TB3235-DAC.pdf)
+[Using 10-Bit DAC for Generating Analog Signals](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/new-generation/TB3235-DAC.pdf)
 
 ![](minimal.png)
 
@@ -17,8 +17,19 @@ title = 'DAC'
 
 #define LSB_MASK   0x03
 #define WAVE_STEPS 100     // número de muestras por ciclo
-#define WAVE_FREQ  100     // frecuencia final de la onda (Hz)
+#define WAVE_FREQ  261     // frecuencia final de la onda (Hz)
 #define DAC_MAX    1023
+
+#define F_ISR   (WAVE_STEPS * WAVE_FREQ)  // Hz de la ISR
+
+/* Selección de prescaler para TCB: DIV1 o DIV2 (AVR-DA) */
+#if   ((F_CPU / 1) / F_ISR) - 1 <= 0xFFFF
+  #define TCB_CLKSEL   TCB_CLKSEL_DIV1_gc
+  #define TCB_CCMP     (uint16_t)((F_CPU / 1 / F_ISR) - 1)
+#elif ((F_CPU / 2) / F_ISR) - 1 <= 0xFFFF
+  #define TCB_CLKSEL   TCB_CLKSEL_DIV2_gc
+  #define TCB_CCMP     (uint16_t)((F_CPU / 2 / F_ISR) - 1)
+#endif
 
 uint16_t wave[WAVE_STEPS];
 volatile uint8_t waveIndex = 0;
@@ -53,9 +64,7 @@ static inline void clk_init(void){
 }
 
 static void vref_init(void) {
-    /* Select the 2.048V Internal Voltage Reference for DAC */
-    VREF.DAC0REF = VREF_REFSEL_2V048_gc | VREF_ALWAYSON_bm; /* Set the Voltage Reference in Always On mode */
-    
+    VREF.DAC0REF = VREF_REFSEL_2V048_gc | VREF_ALWAYSON_bm;
     _delay_us(50); // Wait VREF start-up time.
 }
 
@@ -70,10 +79,8 @@ static void dac_set(uint16_t value) {
 }
 
 static void tcb0_init(void) {
-    // f_ISR = WAVE_FREQ * WAVE_STEPS = 100 * 100 = 10 kHz
-    // Periodo = 24e6 / 10e3 = 2400
-    TCB0.CCMP = 2400 - 1;                         // 10 kHz interrupción
-    TCB0.CTRLA = TCB_CLKSEL_DIV1_gc | TCB_ENABLE_bm;
+    TCB0.CCMP = TCB_CCMP;
+    TCB0.CTRLA = TCB_CLKSEL | TCB_ENABLE_bm;
     TCB0.INTCTRL = TCB_CAPT_bm;
 }
 
