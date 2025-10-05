@@ -86,25 +86,25 @@
       
     </div>
     <p>Para usar <a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key">GPG con GitHub</a>, hacer lo siguiente:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global --unset gpg.format
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global --unset gpg.format
 </span></span><span style="display:flex;"><span>git config --global user.signingkey 9186C4129FFD3D2500B35FA18E97CAEEEE861364
-</span></span><span style="display:flex;"><span>git config --global commit.gpgsign true
-</span></span><span style="display:flex;"><span>git config --global tag.gpgSign true
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -r ~/.bash_profile <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo -e <span style="color:#e6db74">&#39;\nexport GPG_TTY=$(tty)&#39;</span> &gt;&gt; ~/.bash_profile;   <span style="color:#66d9ef">else</span> echo -e <span style="color:#e6db74">&#39;\nexport GPG_TTY=$(tty)&#39;</span> &gt;&gt; ~/.profile; <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>git config --global commit.gpgsign <span style="color:#b58900">true</span>
+</span></span><span style="display:flex;"><span>git config --global tag.gpgSign <span style="color:#b58900">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">if</span> <span style="color:#719e07">[</span> -r ~/.bash_profile <span style="color:#719e07">]</span>; <span style="color:#719e07">then</span> <span style="color:#b58900">echo</span> -e <span style="color:#2aa198">&#39;\nexport GPG_TTY=$(tty)&#39;</span> &gt;&gt; ~/.bash_profile;   <span style="color:#719e07">else</span> <span style="color:#b58900">echo</span> -e <span style="color:#2aa198">&#39;\nexport GPG_TTY=$(tty)&#39;</span> &gt;&gt; ~/.profile; <span style="color:#719e07">fi</span>
 </span></span><span style="display:flex;"><span>brew install pinentry-mac
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;pinentry-program </span><span style="color:#66d9ef">$(</span>which pinentry-mac<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; ~/.gnupg/gpg-agent.conf
+</span></span><span style="display:flex;"><span><span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;pinentry-program </span><span style="color:#719e07">$(</span>which pinentry-mac<span style="color:#719e07">)</span><span style="color:#2aa198">&#34;</span> &gt;&gt; ~/.gnupg/gpg-agent.conf
 </span></span><span style="display:flex;"><span>killall gpg-agent
 </span></span></code></pre></td></tr></table>
 </div>

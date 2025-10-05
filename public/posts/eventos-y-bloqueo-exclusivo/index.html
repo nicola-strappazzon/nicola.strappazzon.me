@@ -88,73 +88,73 @@
     </div>
     <p>Puede pasar que la ejecución de un procedimiento almacenado tarde más tiempo de lo previsto, y como hay un evento que lo ejecuta cada X tiempo, estos empiezan a verse amontonados en la lista de procesos, como podemos imaginar es muy malo. Afortunadamente MySQL tiene unas funciones que nos permite hacer un bloqueo exclusivo, así garantizamos que se ejecute solo uno a la vez.</p>
 <p>En el siguiente ejemplo, tenemos un evento que se ejecuta cada 1 segundo y llama a un procedimiento almacenado que tarda 5 segundos en ejecutarse. Lo ideal de este caso, es que podremos observar en la lista de procesos 5 eventos ejecutando al mismo tiempo.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">PROCEDURE</span> sp_wait()
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> SLEEP(<span style="color:#ae81ff">5</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">END</span><span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> ;
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">DELIMITER</span> <span style="color:#719e07">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">CREATE</span> <span style="color:#719e07">PROCEDURE</span> sp_wait()
+</span></span><span style="display:flex;"><span><span style="color:#719e07">BEGIN</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">SELECT</span> SLEEP(<span style="color:#2aa198">5</span>);
+</span></span><span style="display:flex;"><span><span style="color:#719e07">END</span><span style="color:#719e07">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">DELIMITER</span> ;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> EVENT <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> ev_wait;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> EVENT ev_wait <span style="color:#66d9ef">ON</span> SCHEDULE <span style="color:#66d9ef">EVERY</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">SECOND</span> <span style="color:#66d9ef">DO</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CALL</span> sp_wait();
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">END</span><span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> ;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">DROP</span> EVENT <span style="color:#719e07">IF</span> <span style="color:#719e07">EXISTS</span> ev_wait;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">DELIMITER</span> <span style="color:#719e07">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">CREATE</span> EVENT ev_wait <span style="color:#719e07">ON</span> SCHEDULE <span style="color:#719e07">EVERY</span> <span style="color:#2aa198">1</span> <span style="color:#719e07">SECOND</span> <span style="color:#719e07">DO</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">BEGIN</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">CALL</span> sp_wait();
+</span></span><span style="display:flex;"><span><span style="color:#719e07">END</span><span style="color:#719e07">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">DELIMITER</span> ;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Una vez creado el procedimiento almacenado y el evento, ya podremos observar como se amontonan en la lista de procesos usando el comando &ldquo;SHOW PROCESSLIST;&rdquo;:</p>
 <p><img src="event_lock1.png" alt="Lock Example 1"></p>
 <p>La solución es muy simple, vamos a implementar dos funciones; <a href="http://dev.mysql.com/doc/refman/5.6/en/miscellaneous-functions.html#function_get-lock">GET_LOCK</a> y <a href="http://dev.mysql.com/doc/refman/5.6/en/miscellaneous-functions.html#function_release-lock">RELEASE_LOCK</a> para hacer el bloqueo exclusivo, en el ejemplo siguiente podemos ver como lo implementamos:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> EVENT <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> ev_wait;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> EVENT ev_wait <span style="color:#66d9ef">ON</span> SCHEDULE <span style="color:#66d9ef">EVERY</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">SECOND</span> <span style="color:#66d9ef">DO</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span> GET_LOCK(<span style="color:#e6db74">&#39;temp.sp_wait&#39;</span>, <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">@</span>got_lock;
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">DROP</span> EVENT <span style="color:#719e07">IF</span> <span style="color:#719e07">EXISTS</span> ev_wait;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">DELIMITER</span> <span style="color:#719e07">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">CREATE</span> EVENT ev_wait <span style="color:#719e07">ON</span> SCHEDULE <span style="color:#719e07">EVERY</span> <span style="color:#2aa198">1</span> <span style="color:#719e07">SECOND</span> <span style="color:#719e07">DO</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">BEGIN</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">SELECT</span> GET_LOCK(<span style="color:#2aa198">&#39;temp.sp_wait&#39;</span>, <span style="color:#2aa198">0</span>) <span style="color:#719e07">INTO</span> <span style="color:#719e07">@</span>got_lock;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">IF</span> <span style="color:#f92672">@</span>got_lock <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">THEN</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">CALL</span> sp_wait();
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">IF</span> <span style="color:#719e07">@</span>got_lock <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span> <span style="color:#719e07">THEN</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">CALL</span> sp_wait();
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> RELEASE_LOCK(<span style="color:#e6db74">&#39;temp.sp_wait&#39;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">END</span> <span style="color:#66d9ef">IF</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">END</span><span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DELIMITER</span> ;
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">SELECT</span> RELEASE_LOCK(<span style="color:#2aa198">&#39;temp.sp_wait&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">END</span> <span style="color:#719e07">IF</span>;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">END</span><span style="color:#719e07">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">DELIMITER</span> ;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Ahora podremos observar en la lista de procesos que siempre hay un único proceso en ejecución y no 5 como antes:</p>

@@ -97,35 +97,35 @@
 <p>Al no existir una restricción que soporte este tipo de invento, nos encontramos con una <strong>serie de inconvenientes</strong> técnicos:</p>
 <p>Se presenta una <strong>inconsistencia de datos</strong> porque no puede gestionarlos el RDBMS, y se tiende a delegar en la aplicación. El problema es que la aplicación se ejecuta en varios servidores, y los <strong>datos terminan en la base de datos quien tiene la última palabra si es valido o no</strong>, mientras que los servidores de aplicaciones por la concurrencia trabajan de forma aislada. Éste es uno de los típicos argumentos cuando no hay relaciones definidas dentro del RDBMS.</p>
 <p>Por otro lado, las consultas se hacen más complicadas y difícil de mantener, porque puede que necesitemos <strong>consultas diferentes dependiendo del ROW</strong>, muestro un simple ejemplo:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> purchases p
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">OUTER</span> <span style="color:#66d9ef">JOIN</span> shoes s <span style="color:#66d9ef">ON</span> s.id <span style="color:#f92672">=</span> p.item_id <span style="color:#66d9ef">AND</span> p.item_type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Shoe&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">OUTER</span> <span style="color:#66d9ef">JOIN</span> bags  b <span style="color:#66d9ef">ON</span> b.id <span style="color:#f92672">=</span> p.item_id <span style="color:#66d9ef">AND</span> p.item_type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Bag&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> p.id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> purchases p
+</span></span><span style="display:flex;"><span><span style="color:#719e07">LEFT</span> <span style="color:#719e07">OUTER</span> <span style="color:#719e07">JOIN</span> shoes s <span style="color:#719e07">ON</span> s.id <span style="color:#719e07">=</span> p.item_id <span style="color:#719e07">AND</span> p.item_type <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Shoe&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">LEFT</span> <span style="color:#719e07">OUTER</span> <span style="color:#719e07">JOIN</span> bags  b <span style="color:#719e07">ON</span> b.id <span style="color:#719e07">=</span> p.item_id <span style="color:#719e07">AND</span> p.item_type <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Bag&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> p.id <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Como vemos en la consulta anterior, debemos hacer LEFT OUTER JOIN por cada tabla &ldquo;relacionada&rdquo; para obtener una lista de todos los productos comprados, se puede simplificar mucho si usamos la siguiente forma:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> purchases p
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> items i <span style="color:#66d9ef">ON</span> i.id <span style="color:#f92672">=</span> p.item_id
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> e.id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> purchases p
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> items i <span style="color:#719e07">ON</span> i.id <span style="color:#719e07">=</span> p.item_id
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> e.id <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Para poder distinguir si nuestro item es un Zapato o un Bolso u otra cosa, simplemente podemos implementar atributos, o ir más allá y usar <a href="https://www.swapbytes.com/modelo-atributos-tipos-eav-diseno-base-de-datos">EAV</a>.</p>
@@ -137,33 +137,33 @@
 <li>Creamos una columna (picture_id) en las tablas employees y products que se relaciona con la tabla pictures.</li>
 </ul>
 <p>Quiero mostrar varios ejemplos, el primero sería una consulta SQL usando relaciones polimórficas, y el segundo ejemplo es usando la forma correcta de normalización:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> employees e
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> pictures p <span style="color:#66d9ef">ON</span> p.imageable_id <span style="color:#f92672">=</span> e.id <span style="color:#66d9ef">AND</span> p.imageable_type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Employee&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> e.id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> employees e
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> pictures p <span style="color:#719e07">ON</span> p.imageable_id <span style="color:#719e07">=</span> e.id <span style="color:#719e07">AND</span> p.imageable_type <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;Employee&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> e.id <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Como podemos observar la consulta es mucho más compleja por tener una condición más que evaluar.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> employees e
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> pictures p <span style="color:#66d9ef">ON</span> p.id <span style="color:#f92672">=</span> e.picture_id
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> e.id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> employees e
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> pictures p <span style="color:#719e07">ON</span> p.id <span style="color:#719e07">=</span> e.picture_id
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> e.id <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>En este caso es la representación correcta por un correcto modelo de datos. Una consulta SQL mucho más simple.</p>

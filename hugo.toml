@@ -39,4 +39,5 @@ title = 'Nicola Strappazzon'
   unsafe = true
 [markup.highlight]
   lineNos = true
+  style = "solarized-dark"
   lineNumbersInTable = true
