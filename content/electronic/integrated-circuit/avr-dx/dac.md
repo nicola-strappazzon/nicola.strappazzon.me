@@ -3,6 +3,12 @@ weight = 7
 title = 'DAC'
 +++
 
+{{% blockquote type="note" %}}
+Sigo trabajando en mejorar y terminar el artículo. De momento esta incompleto.
+{{% /blockquote %}}
+
+Un buzzer no funciona ya que es para PWM, debes usar un altavoz / speaker de 8 por lo menos.
+
 [Using 10-Bit DAC for Generating Analog Signals](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/new-generation/TB3235-DAC.pdf)
 
 ![](minimal.png)
