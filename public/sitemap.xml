@@ -18,8 +18,6 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/values/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/components/display/ssd1353/</loc>
-  </url><url>
     <loc>http://localhost:1313/wiki/openpgp/backup/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/measurement/</loc>
@@ -27,6 +25,8 @@
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/blink/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/terminal/prompt/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/components/display/ssd1353/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/dummy-load/</loc>
   </url><url>
@@ -51,6 +51,8 @@
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/dac/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/esr/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/nokia-5110/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/nhd-1.8-160128ubc3/</loc>
   </url><url>

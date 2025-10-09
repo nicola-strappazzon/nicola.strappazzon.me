@@ -1,5 +1,5 @@
 +++
-weight = 10
+weight = 20
 title = 'OLED Display Module 1.8"'
 +++
 
