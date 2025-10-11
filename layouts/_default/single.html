@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{- define "main" }}
   <article>
     <ul id="breadcrumbs">
     {{- range .Ancestors.Reverse }}
@@ -19,4 +19,4 @@
     </div>
     {{ .Content }}
   </article>
-{{ end }}
+{{- end }}

@@ -94,18 +94,18 @@ a {
   padding-bottom: 2em;
 }
 
-.header__inner {
+.header_inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.header__logo {
+.header_logo {
   display: flex;
   flex: 1;
 }
 
-.header__logo::after {
+.header_logo::after {
   content: "";
   background: repeating-linear-gradient(90deg, var(--accent), var(--accent) 2px, transparent 0, transparent 10px);
   display: block;
@@ -113,7 +113,7 @@ a {
   right: 10px;
 }
 
-.header__logo a {
+.header_logo a {
   flex: 0 0 auto;
   max-width: 100%;
   text-decoration: none;
@@ -129,11 +129,11 @@ a {
   padding: 5px 10px;
 }
 
-.header__social {
+.header_social {
   margin-top: 6px;
 }
 
-.header__social a {
+.header_social a {
   color: var(--accent);
   font-size: 1.2em;
   text-decoration: none;
@@ -302,25 +302,25 @@ code {
   -webkit-text-size-adjust: 100%;
 }
 
-.header__social__navigation {
+.header_social_navigation {
   display: flex;
   justify-content: space-between; /* Opcional: separa extremos */
   align-items: center;            /* Centrado vertical */
 }
 
-.header__social,
-.header__navigation {
+.header_social,
+.header_navigation {
   /*padding: 1rem;*/
 }
 
-.header__navigation {
+.header_navigation {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   margin: 6px 1px;
 }
 
-.navigation-menu__inner {
+.navigation-menu-list {
   display: flex;
   flex: 1;
   /*flex-wrap: wrap;*/
@@ -329,13 +329,33 @@ code {
   padding: 0;
 }
 
-.navigation-menu__inner > li:not(:last-of-type) {
+.navigation-menu-list > li:not(:last-of-type) {
   margin-right: 20px;
 }
 
+.navigation-menu-toggle {
+  display: none;
+  padding: 0px 0px 0px 10px;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.navigation-menu-toggle i {
+  color: var(--accent);
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
 @media (max-width: 550px) {
-  .navigation-menu {
+  .navigation-menu-list {
     display: none;
+  }
+
+  .navigation-menu-toggle {
+    display: inline-block;
   }
 }
 

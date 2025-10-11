@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
-{{ partial "head.html" . }}
+{{- partial "head.html" . }}
 </head>
 <body>
-{{ $js := resources.Get "js/clipboard.js" | minify | fingerprint }}
+{{- $js := resources.Get "js/clipboard.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}"></script>
 <div class="container center">
 <header>
-{{ partial "header.html" . }}
+{{- partial "header.html" . }}
 </header>
 <div class="content">
-{{ block "main" . }}{{ end }}
+{{- block "main" . }}
+{{- end }}
 </div>
 <footer class="footer">
-{{ partial "footer.html" . }}
+{{- partial "footer.html" . }}
 </footer>
 </div>
 </body>
