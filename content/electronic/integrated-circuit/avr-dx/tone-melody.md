@@ -192,3 +192,22 @@ El **ejemplo 2.9** muestra el código de configuración del `timer/counter A (TC
 Para terminar, este es el esquema del circuito:
 
 ![](minimal.png)
+
+## Compilar y subirlo
+
+Para compilarlo deberá ejecutar el siguiente comando:
+
+```bash
+avr-gcc -mmcu=avr128da28 \
+    -DF_CPU=24000000UL \
+    -g -Os -std=gnu99 -Wall -o main.elf *.c
+avr-objcopy -O ihex  main.elf main.hex
+```
+
+Para subir el programa al microcontrolador, deberá ejecutar el siguiente comando:
+
+```bash
+avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2110 -e -F
+```
+
+Si todo fue bien, podrá disfrutar del sonido.
