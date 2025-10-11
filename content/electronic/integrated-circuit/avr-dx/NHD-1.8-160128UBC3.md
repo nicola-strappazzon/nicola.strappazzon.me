@@ -322,4 +322,4 @@ Para subir el programa al microcontrolador, deberá ejecutar el siguiente comand
 avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2110 -e -F
 ```
 
-Si todo fue bien, podrá disfrutar del dosplay.
+Si todo fue bien, podrá disfrutar del display.

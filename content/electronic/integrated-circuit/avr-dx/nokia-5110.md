@@ -7,9 +7,9 @@ title = 'LCD Display module (Nokia 5110)'
 Sigo trabajando en mejorar y terminar el artículo. De momento esta incompleto.
 {{% /blockquote %}}
 
-El módulo **Nokia 5110** es un LCD monocromático que consume muy poco y es o fue muy popular, su pantalla permite 84x48 pixel. Usa originalmente el controlador [PCD8544](datasheet.pdf) que se comunica usando el protocolo SPI, se alimenta usando 3.3V.
+El módulo **Nokia 5110** es un LCD monocromático que consume muy poco y es o fue muy popular, su pantalla permite 84x48 pixel. Usa originalmente el controlador [PCD8544](PCD8544.pdf) que se comunica usando el protocolo SPI, se alimenta desde 2.7V hasta 3.3V.
 
-Entre sus clones, están los controladores `AiP31567` y `ST7567`. Aún me queda por verificar.
+Entre sus clones, está el controlador [ST7567](ST7567.pdf). Aún me queda por verificar.
 
 A continuación muestro un diagrama esquemático usando el display con un AVR128DA28:
 
@@ -209,3 +209,20 @@ int main(void) {
     while(1){}
 }
 ```
+
+Para compilarlo deberá ejecutar el siguiente comando:
+
+```bash
+avr-gcc -mmcu=avr128da28 \
+    -DF_CPU=24000000UL \
+    -g -Os -std=gnu99 -Wall -o main.elf *.c
+avr-objcopy -O ihex  main.elf main.hex
+```
+
+Para subir el programa al microcontrolador, deberá ejecutar el siguiente comando:
+
+```bash
+avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2110 -e -F
+```
+
+Si todo fue bien, podrá disfrutar del display.
