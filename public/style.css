@@ -356,6 +356,17 @@ code {
   .navigation-menu-toggle {
     display: inline-block;
   }
+
+  .navigation-menu-list.is-open {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: env(safe-area-inset-right, 0px);
+    padding: 10px 25px 10px 20px;
+    background:#20232a;
+    border: 1px solid;
+    margin-right: 35px;
+  }
 }
 
 article table {
