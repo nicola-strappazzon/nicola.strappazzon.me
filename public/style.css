@@ -182,8 +182,7 @@ a {
 }
 
 article p,
-.content p,
-.content li {
+.content p {
   text-align: justify;
 }
 
@@ -349,7 +348,7 @@ code {
   text-decoration: none;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 730px) {
   .navigation-menu-list {
     display: none;
   }

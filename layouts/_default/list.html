@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ if .IsHome }}
   <ul>
-    {{ range where .Site.RegularPages "Type" "post" }}
+    {{ range where .Site.RegularPages "Type" "posts" }}
       <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}
   </ul>
