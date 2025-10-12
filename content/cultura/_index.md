@@ -40,3 +40,5 @@ Cualquier material que sirva de inspiración o conocimiento.
 - [The IT Crowd](https://www.imdb.com/title/tt0487831)
 - [Halt and Catch Fire](https://www.imdb.com/title/tt2543312)
 - [The Billion Dollar Code](https://www.imdb.com/title/tt15392100)
+- [How to Sell Drugs Online (Fast)](https://www.imdb.com/title/tt9184994)
+- [Mr. Robot](https://www.imdb.com/title/tt4158110)
