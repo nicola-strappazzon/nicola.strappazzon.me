@@ -409,13 +409,16 @@ table th, td {
   padding: 0;
   margin: 1rem 0;
 }
+
 #breadcrumbs li::after {
   content: "\\";
   margin-left: 0.5rem;
 }
+
 #breadcrumbs li:last-child::after {
   content: "";
 }
+
 #breadcrumbs .active {
   font-weight: bold;
 }

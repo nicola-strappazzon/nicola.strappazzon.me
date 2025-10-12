@@ -17,7 +17,7 @@ Cualquier material que sirva de inspiración o conocimiento.
 - [The Unicorn Project: A Novel about Developers, Digital Disruption, and Thriving in the Age of Data](https://www.amazon.es/Unicorn-Project-Developers-Disruption-Thriving/dp/1942788762)
 - [Hábitos atómicos: Cambios pequeños, resultados extraordinarios (Autoconocimiento)](https://www.amazon.es/habitos-atomicos-autoconocimiento-james-clear/dp/8418118032)
 
-### Ciencia Ficción
+### Ciencia Ficción (Sci-Fi)
 
 - [Armada](https://www.amazon.es/Armada-Ernest-Cline-ebook/dp/B01C79FXQW)
 - [Ready Player One](https://www.amazon.es/Ready-Player-One-Ernest-Cline/dp/0099560437)
