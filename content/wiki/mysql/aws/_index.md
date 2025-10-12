@@ -3,7 +3,7 @@ title = 'AWS RDS - MySQL'
 tags = ["aws", "rds", "mysql", "bash", "dba"]
 +++
 
-Esta es una pequeña selección de stored procedures propios de los RDS de Amazon Web Services para manejar la repliación, para mayor detalle puedes consultar su [documentación](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_MySQL.Replication.ReadReplicas.html).
+Esta es una pequeña selección de stored procedures propios de los RDS de Amazon Web Services para manejar la replicación, para mayor detalle puedes consultar su [documentación](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_MySQL.Replication.ReadReplicas.html).
 
 
 Para detener la replicación:
@@ -30,7 +30,7 @@ Para saber el valor actual de configuración:
 CALL mysql.rds_get_configuration('binlog retention hours');
 ```
 
-Confgurar una nueva replicación:
+Configurar una nueva replicación:
 
 ```sql
 CALL mysql.rds_set_external_master (
