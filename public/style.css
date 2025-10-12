@@ -334,12 +334,13 @@ code {
 
 .navigation-menu-toggle {
   display: none;
-  padding: 0px 0px 0px 10px;
+  padding: 2px 0px 0px 10px;
   background: none;
   border: 0;
   color: white;
   font-size: 1.8rem;
   cursor: pointer;
+  width: 40px;
 }
 
 .navigation-menu-toggle i {
