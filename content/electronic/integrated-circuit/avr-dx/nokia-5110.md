@@ -9,7 +9,9 @@ Sigo trabajando en mejorar y terminar el artículo. De momento esta incompleto.
 
 El módulo **Nokia 5110** es un LCD monocromático que consume muy poco y es o fue muy popular, su pantalla permite 84x48 pixel. Usa originalmente el controlador [PCD8544](PCD8544.pdf) que se comunica usando el protocolo SPI, se alimenta desde 2.7V hasta 3.3V.
 
-Entre sus clones, está el controlador [ST7567](ST7567.pdf). Aún me queda por verificar.
+{{% blockquote type="warning" %}}
+Entre sus "clones", está el controlador [ST7567](ST7567.pdf) y el [AiP31567](AiP31567.pdf) que NO son compatibles con el `PCD8544`.
+{{% /blockquote %}}
 
 A continuación muestro un diagrama esquemático usando el display con un AVR128DA28:
 
