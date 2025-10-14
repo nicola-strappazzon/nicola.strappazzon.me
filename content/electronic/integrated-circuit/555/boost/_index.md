@@ -1,9 +1,9 @@
 +++
 draft = false
-title = 'IC 555 Boost converter desde 5V hasta 12V'
+title = 'IC 555 Boost converter desde 5V hasta "12V"'
 +++
 
-Este es otro de esos ejemplos útiles con un IC 555 ideal para un laboratorio o ejercicio para entender cómo funciona un circuito que convertir de 5V hasta 12V. Este tipo de circuito se llaman `Boost` y se suelen encontrar mucho para alimentar un arreglo de LED's o pantallas OLED.
+Este es otro de esos ejemplos útiles con un IC 555 ideal para un laboratorio o ejercicio para entender cómo funciona un circuito que convertir desde los "5V" hasta los "12V". Este tipo de circuito se llaman `Boost` y se suelen encontrar mucho para alimentar un arreglo de LED's o pantallas OLED.
 
 {{% blockquote type="tip" %}}
 Existen muchos IC especializados para esta función, por lo que tienen mucha mejor eficiencia que un IC 555.
