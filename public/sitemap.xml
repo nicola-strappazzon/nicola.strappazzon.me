@@ -217,6 +217,10 @@
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/aws/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/mysql/aws/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/breadboard/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
@@ -249,6 +253,10 @@
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/555/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/555/boost/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/jq/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/jq/</loc>
@@ -270,6 +278,8 @@
     <loc>http://localhost:1313/tags/openpgp/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/rds/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/</loc>
   </url><url>
