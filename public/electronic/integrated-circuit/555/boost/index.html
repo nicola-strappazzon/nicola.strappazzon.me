@@ -62,9 +62,10 @@
       
     </div>
   
-  <p>Este es otro de esos ejemplos útiles con un IC 555 ideal para un laboratorio o ejercicio para entender cómo funciona un circuito que convertir desde los &ldquo;3V&rdquo; hasta los &ldquo;12V&rdquo;. Este tipo de circuito se llaman <code>Boost</code> y se suelen encontrar mucho para alimentar un arreglo de LED&rsquo;s o pantallas OLED.</p>
+  <p>Este es otro de esos ejemplos útiles con un 555 ideal para un laboratorio o ejercicio para entender cómo funciona un circuito que convertir desde los &ldquo;3V&rdquo; hasta los &ldquo;12V&rdquo;. Este tipo de circuito se llaman <code>Boost</code> y se suelen encontrar mucho para alimentar un arreglo de LED&rsquo;s o pantallas OLED.</p>
+<p>La idea la obtuve buscando en Internet hasta que me conseguí con varios post que tenían un diagrama esquemático aceptable y explicaban cómo funciona. Al final probé este <a href="https://rgelectrics.com/5v-to-12v-boost-converter-circuit/">5V to 12V Boost Converter Circuit</a>, la explicación de cómo funciona me quedo con estos dos post <a href="https://circuitdigest.com/electronic-circuits/a-simple-boost-converter-circuit-using-555-timer-ic">A Simple DC-DC Boost Converter using 555 Timer IC</a> y <a href="https://www.homemade-circuits.com/how-to-make-simple-boost-converter-circuits/">How to Build a Boost Converter Circuit: Explained with Calculations</a>.</p>
 <p><img src="breadboard.png" alt=""></p>
-<blockquote class="tip"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>Existen muchos IC especializados para esta función, por lo que tienen mucha mejor eficiencia que un IC 555.</p></blockquote>
+<blockquote class="tip"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>Existen muchos IC especializados para esta función, por lo que tienen mucha mejor eficiencia que un 555.</p></blockquote>
 <p><img src="schematic.png" alt=""></p>
 <p>Use una fuente de alimentación ajustable en la entrada y limite la corriente.</p>
 <blockquote class="warning"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</p><p><ol>
@@ -83,14 +84,14 @@
 <p>Ignore el diodo zener para saber cuál era el máximo voltaje que se llegaba. Con 5V de entrada varios componentes empezaban a calentarse; como el transistor y el inductor.</p>
 <h2 id="componentes">Componentes</h2>
 <ul>
-<li>IC 555.</li>
+<li><a href="NE555P.pdf">NE555P</a>.</li>
 <li><a href="BD135.pdf">BD135</a>.</li>
 <li>Dos resistencias de 1K 1/2W 5%.</li>
 <li>Una resistencias de 10K 1/2W 5%.</li>
 <li>Un condensador cerámico 560pF (561).</li>
 <li>Un condensador cerámico 10nF (103).</li>
 <li>Un condensador electrolítico 1uF de 100V.</li>
-<li>Un inductor con nucleo de ferrita de 100uH 1A.</li>
+<li>Un inductor con nucleo de ferrita de 100uH 1A. Use el modelo <a href="RLB.pdf">RLB0914-101KL</a>.</li>
 <li>Un diodo schottky 1N5819.</li>
 <li>Un diodo zener de 12V 1W.</li>
 </ul>

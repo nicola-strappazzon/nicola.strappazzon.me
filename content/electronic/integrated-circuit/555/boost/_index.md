@@ -3,12 +3,14 @@ draft = false
 title = '555 Boost converter desde 3V hasta "12V"'
 +++
 
-Este es otro de esos ejemplos útiles con un IC 555 ideal para un laboratorio o ejercicio para entender cómo funciona un circuito que convertir desde los "3V" hasta los "12V". Este tipo de circuito se llaman `Boost` y se suelen encontrar mucho para alimentar un arreglo de LED's o pantallas OLED.
+Este es otro de esos ejemplos útiles con un 555 ideal para un laboratorio o ejercicio para entender cómo funciona un circuito que convertir desde los "3V" hasta los "12V". Este tipo de circuito se llaman `Boost` y se suelen encontrar mucho para alimentar un arreglo de LED's o pantallas OLED.
+
+La idea la obtuve buscando en Internet hasta que me conseguí con varios post que tenían un diagrama esquemático aceptable y explicaban cómo funciona. Al final probé este [5V to 12V Boost Converter Circuit](https://rgelectrics.com/5v-to-12v-boost-converter-circuit/), la explicación de cómo funciona me quedo con estos dos post [A Simple DC-DC Boost Converter using 555 Timer IC](https://circuitdigest.com/electronic-circuits/a-simple-boost-converter-circuit-using-555-timer-ic) y [How to Build a Boost Converter Circuit: Explained with Calculations](https://www.homemade-circuits.com/how-to-make-simple-boost-converter-circuits/).
 
 ![](breadboard.png)
 
 {{% blockquote type="tip" %}}
-Existen muchos IC especializados para esta función, por lo que tienen mucha mejor eficiencia que un IC 555.
+Existen muchos IC especializados para esta función, por lo que tienen mucha mejor eficiencia que un 555.
 {{% /blockquote %}}
 
 ![](schematic.png)
@@ -32,14 +34,14 @@ Ignore el diodo zener para saber cuál era el máximo voltaje que se llegaba. Co
 
 ## Componentes
 
-- IC 555.
+- [NE555P](NE555P.pdf).
 - [BD135](BD135.pdf).
 - Dos resistencias de 1K 1/2W 5%.
 - Una resistencias de 10K 1/2W 5%.
 - Un condensador cerámico 560pF (561).
 - Un condensador cerámico 10nF (103).
 - Un condensador electrolítico 1uF de 100V.
-- Un inductor con nucleo de ferrita de 100uH 1A.
+- Un inductor con nucleo de ferrita de 100uH 1A. Use el modelo [RLB0914-101KL](RLB.pdf).
 - Un diodo schottky 1N5819.
 - Un diodo zener de 12V 1W.
 
