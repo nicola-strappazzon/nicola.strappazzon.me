@@ -215,6 +215,8 @@
     <loc>http://localhost:1313/posts/errores-frecuentes-normalizacion/</loc>
     <lastmod>2010-08-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/555/boost/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/aws/</loc>
@@ -254,8 +256,6 @@
     <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/555/</loc>
-  </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/555/boost/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/jq/</loc>
   </url><url>
