@@ -275,6 +275,8 @@
   </url><url>
     <loc>http://localhost:1313/electronic/resources/measurement/</loc>
   </url><url>
+    <loc>http://localhost:1313/cultura/music/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/openpgp/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/</loc>
