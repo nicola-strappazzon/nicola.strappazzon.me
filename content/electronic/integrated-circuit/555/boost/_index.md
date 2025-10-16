@@ -1,5 +1,5 @@
 +++
-draft = false
+draft = true
 title = '555 Boost converter desde 3V hasta "12V"'
 +++
 
@@ -7,19 +7,22 @@ title = '555 Boost converter desde 3V hasta "12V"'
 Sigo trabajando en mejorar y terminar el artículo. De momento esta incompleto.
 {{% /blockquote %}}
 
-Este es otro de esos ejemplos útiles con un 555 ideal para un laboratorio o ejercicio para entender cómo funciona un circuito que convertir desde los "3V" hasta los "12V". Este tipo de circuito se llaman `Boost` y se suelen encontrar mucho para alimentar un arreglo de LED's o pantallas OLED.
+Hace un tiempo descubri que puedes pasar de un voltaje menor a un voltaje mayor con ciertos componentes, algunos más eficientes que otros.
+
+
+<!-- Este es otro de esos ejemplos útiles con un 555 ideal para un laboratorio o ejercicio para entender cómo funciona un circuito que convertir desde los "3V" hasta los "12V". Este tipo de circuito se llaman `Boost` y se suelen encontrar mucho para alimentar un arreglo de LED's o pantallas OLED. -->
 
 <!-- La idea la obtuve buscando en Internet hasta que me conseguí con varios post que tenían un diagrama esquemático aceptable y algunos explican cómo funciona. Al final probé este [5V to 12V Boost Converter Circuit](https://rgelectrics.com/5v-to-12v-boost-converter-circuit/), la explicación de cómo funciona me quedo con estos dos post [A Simple DC-DC Boost Converter using 555 Timer IC](https://circuitdigest.com/electronic-circuits/a-simple-boost-converter-circuit-using-555-timer-ic) y [Laptop Charger Circuit from 12V Battery](https://www.homemade-circuits.com/12v-car-laptop-charger-circuit-using/). -->
 
-![](breadboard.png)
+<!-- ![](breadboard.png)
 
 {{% blockquote type="tip" %}}
 Existen muchos IC especializados para esta función, por lo que tienen mucha mejor eficiencia que un 555.
-{{% /blockquote %}}
+{{% /blockquote %}} -->
 
-![](schematic.png)
+<!-- ![](schematic.png) -->
 
-Use una fuente de alimentación ajustable en la entrada y limite la corriente.
+<!-- Use una fuente de alimentación ajustable en la entrada y limite la corriente. -->
 
 <!-- {{% blockquote type="warning" %}}
 1. Sino usas el transistor correcto se sobrecalienta.
@@ -29,13 +32,13 @@ Use una fuente de alimentación ajustable en la entrada y limite la corriente.
 5. Suele consumir bastante corriente, por eso no es eficiente.
 {{% /blockquote %}} -->
 
-Con las pruebas que hice conectando una fuente de alimentación ajustable, pude determinar que dependiendo del voltaje de entrada, podía generar los siguientes valores:
+<!-- Con las pruebas que hice conectando una fuente de alimentación ajustable, pude determinar que dependiendo del voltaje de entrada, podía generar los siguientes valores: -->
 
 <!-- - Voltaje de entrada: 3.3V => Voltaje y corriente de salida: 47V / 120mA
 - Voltaje de entrada: 5.0V => Voltaje y corriente de salida: 76V / 300mA
 
 Ignore el diodo zener para saber cuál era el voltaje máximo de salida del transistor, es importante para saber el voltaje maximo del condensador. Con 5V de entrada el transistor empieza a calentarse pero no supera los 100C, su maximo es 150C. -->
-
+<!-- 
 ## Componentes
 
 - [NE555P](NE555P.pdf).
@@ -74,3 +77,22 @@ Si observamos el esquema, identificamos que `R{{< sub "1">}}=1k`, `R{{< sub "2">
 
 ### Condensador de salida
 
+ -->
+
+<!--
+### Links
+
+https://electronics.stackexchange.com/questions/447517/why-cant-my-555-based-dc-dc-boost-converter-supply-even-3-milliamps-at-12v
+https://www.homemade-circuits.com/how-to-make-simple-boost-converter-circuits/
+https://rgelectrics.com/5v-to-12v-boost-converter-circuit/
+
+
+https://theorycircuit.com/ic-555-ic-741/boost-converter-circuit-555/
+
+
+https://www.nomad.ee/micros/vbooster/index.shtml
+https://www.emcauliffe.ca/blog/2016-11-26-555-Boost-Converter
+https://leap.tardate.com/electronics101/555timer/nixiepowersupply/
+https://community.element14.com/technologies/experts/f/forum/50023/boost-converter
+
+ -->
