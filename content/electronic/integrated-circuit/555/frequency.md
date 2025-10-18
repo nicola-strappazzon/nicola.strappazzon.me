@@ -2,7 +2,7 @@
 title = 'Frecuencias'
 +++
 
-Para no tener que calcular la frecuencia deseada cada vez, dejo una tabla con los cálculos ya hechos. Así, al conocer la frecuencia, también sabremos qué valores de R{{< sub "1">}}, R{{< sub "2">}} y C{{< sub "1">}} necesitamos:
+Para no tener que calcular la frecuencia deseada cada vez, dejo una tabla con los cálculos ya hechos hasta el momento. Así, al conocer la frecuencia, también sabremos qué valores de R{{< sub "1">}}, R{{< sub "2">}} y C{{< sub "1">}} necesitamos:
 
 |f         |R{{< sub "1">}}|R{{< sub "2">}}|C{{< sub "1">}}|Duty  |
 |----------|---------------|---------------|---------------|------|
