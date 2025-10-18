@@ -2,7 +2,7 @@
 <html lang="es-es" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>555 | Nicola Strappazzon</title>
+<title>Frecuencias | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -55,25 +55,110 @@
 </header>
 </header>
 <div class="content">
-  
-  
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/electronic/">Electrónica</a></li>
+      <li><a href="/electronic/integrated-circuit/">Circuito integrado</a></li>
+      <li><a href="/electronic/integrated-circuit/555/">555</a></li>
+    </ul>
     <div class="content-header">
-      <h2 class="title">555</h2>
+      <h2 class="title">Frecuencias</h2>
       
     </div>
-  
-  <p>Pocos circuitos integrados han alcanzado el estatus de leyenda como el 555. Diseñado en 1971 por Hans R. Camenzind para Signetics (más tarde parte de Philips), este diminuto chip de ocho pines revolucionó la electrónica analógica por su versatilidad, bajo costo y facilidad de uso. Más de medio siglo después, el 555 sigue siendo un componente imprescindible tanto en proyectos educativos como en diseños profesionales.</p>
-<p>Capaz de funcionar como temporizador, oscilador o generador de pulsos, el 555 se utiliza en alarmas, relojes, controladores PWM, luces intermitentes, moduladores y sistemas de temporización precisos. Con el tiempo, se ha descubierto que la cantidad de soluciones que ofrece es muy amplia. Su diseño robusto y su sencillez lo convierten en un punto de partida ideal para quienes se inician en la electrónica y en una herramienta confiable para ingenieros experimentados.</p>
-<p>A pesar del avance de la electrónica digital y los microcontroladores, el 555 continúa vigente por una razón simple: sigue ofreciendo una solución elegante, económica y efectiva para tareas que requieren precisión temporal sin recurrir a código. En otras palabras, el 555 no solo ha sobrevivido a las décadas, sino que se ha ganado un lugar permanente en el corazón de la electrónica.</p>
+    <p>Para no tener que calcular la frecuencia deseada cada vez, dejo una tabla con los cálculos ya hechos. Así, al conocer la frecuencia, también sabremos qué valores de R<sub>1</sub>, R<sub>2</sub> y C<sub>1</sub> necesitamos:</p>
+<table>
+  <thead>
+      <tr>
+          <th>f</th>
+          <th>R<sub>1</sub></th>
+          <th>R<sub>2</sub></th>
+          <th>C<sub>1</sub></th>
+          <th>Duty</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1,02 kHz</td>
+          <td>4,7kΩ</td>
+          <td>4,7kΩ</td>
+          <td>100 nF</td>
+          <td>66,7 %</td>
+      </tr>
+      <tr>
+          <td>1,02 kHz</td>
+          <td>47kΩ</td>
+          <td>47kΩ</td>
+          <td>10 nF</td>
+          <td>66,7 %</td>
+      </tr>
+      <tr>
+          <td>1,02 kHz</td>
+          <td>470kΩ</td>
+          <td>470kΩ</td>
+          <td>1 nF</td>
+          <td>66,7 %</td>
+      </tr>
+      <tr>
+          <td>10,21 kHz</td>
+          <td>4,7kΩ</td>
+          <td>4,7kΩ</td>
+          <td>10 nF</td>
+          <td>66,7 %</td>
+      </tr>
+      <tr>
+          <td>10,75 kHz</td>
+          <td>2,2kΩ</td>
+          <td>5,6kΩ</td>
+          <td>10 nF</td>
+          <td>58,2 %</td>
+      </tr>
+      <tr>
+          <td>32,00 kHz</td>
+          <td>1,5kΩ</td>
+          <td>1,5kΩ</td>
+          <td>10 nF</td>
+          <td>66,7 %</td>
+      </tr>
+      <tr>
+          <td>60,08 kHz</td>
+          <td>1,5kΩ</td>
+          <td>1,8kΩ</td>
+          <td>4.7 nF</td>
+          <td>64,7 %</td>
+      </tr>
+      <tr>
+          <td>60,25 kHz</td>
+          <td>750Ω</td>
+          <td>820Ω</td>
+          <td>10 nF</td>
+          <td>65,7 %</td>
+      </tr>
+      <tr>
+          <td>62,07 kHz</td>
+          <td>6,8kΩ</td>
+          <td>8,2kΩ</td>
+          <td>1 nF</td>
+          <td>64,7 %</td>
+      </tr>
+      <tr>
+          <td>123,08 kHz</td>
+          <td>3,9kΩ</td>
+          <td>3,9kΩ</td>
+          <td>1 nF</td>
+          <td>66,7 %</td>
+      </tr>
+      <tr>
+          <td>127,43 kHz</td>
+          <td>4,7kΩ</td>
+          <td>3,3kΩ</td>
+          <td>1 nF</td>
+          <td>70,8 %</td>
+      </tr>
+  </tbody>
+</table>
 
-  
-  <ul>
-    
-      <li><a href="/electronic/integrated-circuit/555/frequency/">Frecuencias</a></li>
-    
-  </ul>
-  
-
+  </article>
 </div>
 <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
 </footer>

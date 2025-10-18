@@ -7,22 +7,15 @@ title = '555 Boost converter desde 3V hasta "12V"'
 Sigo trabajando en mejorar y terminar el artículo. De momento esta incompleto.
 {{% /blockquote %}}
 
-Hace un tiempo descubri que puedes pasar de un voltaje menor a un voltaje mayor con ciertos componentes, algunos más eficientes que otros.
+Hace un tiempo descubrí que es posible pasar de un voltaje menor a uno mayor en corriente continua utilizando ciertos componentes, algunos más eficientes que otros. Me puse a investigar cómo hacer uno con un *555*, pero leí que era **muy ineficiente**, y razón no les falta. Aun así, me dediqué a verificar los esquemas que encontraba, y al probarlos noté lo que comentaban: no son en absoluto ineficientes, ya que presentan una **bajada de tensión** considerable y una **pérdida de energía** en el transistor. A pesar de eso, seguí estudiando para entender cómo funciona y realicé varias pruebas hasta conseguir un circuito que no tiene ninguno de estos problemas, aunque su corriente es mínima. Considero que es aceptable.
 
+![](breadboard.png)
 
-<!-- Este es otro de esos ejemplos útiles con un 555 ideal para un laboratorio o ejercicio para entender cómo funciona un circuito que convertir desde los "3V" hasta los "12V". Este tipo de circuito se llaman `Boost` y se suelen encontrar mucho para alimentar un arreglo de LED's o pantallas OLED. -->
+Este es otro de esos ejemplos útiles que puedes realizar con un *555*, ideal para un laboratorio o una práctica que busque entender cómo funciona un circuito elevador de voltaje, capaz de convertir 5V en un valor mayor. Este tipo de circuitos se llaman Boost y suelen emplearse para alimentar arreglos de LED o pantallas OLED. La realidad es que existen componentes diseñados específicamente para esta función, por lo que son mucho más eficientes, como por ejemplo el; [MCP1661T](https://nicola.strappazzon.me/electronic/integrated-circuit/mcp1661/).
 
-<!-- La idea la obtuve buscando en Internet hasta que me conseguí con varios post que tenían un diagrama esquemático aceptable y algunos explican cómo funciona. Al final probé este [5V to 12V Boost Converter Circuit](https://rgelectrics.com/5v-to-12v-boost-converter-circuit/), la explicación de cómo funciona me quedo con estos dos post [A Simple DC-DC Boost Converter using 555 Timer IC](https://circuitdigest.com/electronic-circuits/a-simple-boost-converter-circuit-using-555-timer-ic) y [Laptop Charger Circuit from 12V Battery](https://www.homemade-circuits.com/12v-car-laptop-charger-circuit-using/). -->
+![](schematic.png)
 
-<!-- ![](breadboard.png)
-
-{{% blockquote type="tip" %}}
-Existen muchos IC especializados para esta función, por lo que tienen mucha mejor eficiencia que un 555.
-{{% /blockquote %}} -->
-
-<!-- ![](schematic.png) -->
-
-<!-- Use una fuente de alimentación ajustable en la entrada y limite la corriente. -->
+Usé una fuente de alimentación ajustable en la entrada, lo que me permitió conocer el límite de corriente, y un voltímetro en la salida para medir el voltaje obtenido. Además, con el voltímetro también puedes conocer la frecuencia que genera el 555.
 
 <!-- {{% blockquote type="warning" %}}
 1. Sino usas el transistor correcto se sobrecalienta.
@@ -95,4 +88,7 @@ https://www.emcauliffe.ca/blog/2016-11-26-555-Boost-Converter
 https://leap.tardate.com/electronics101/555timer/nixiepowersupply/
 https://community.element14.com/technologies/experts/f/forum/50023/boost-converter
 
+http://students.ceid.upatras.gr/~galanopu/555_circ.png
  -->
+
+<!-- La idea la obtuve buscando en Internet hasta que me conseguí con varios post que tenían un diagrama esquemático aceptable y algunos explican cómo funciona. Al final probé este [5V to 12V Boost Converter Circuit](https://rgelectrics.com/5v-to-12v-boost-converter-circuit/), la explicación de cómo funciona me quedo con estos dos post [A Simple DC-DC Boost Converter using 555 Timer IC](https://circuitdigest.com/electronic-circuits/a-simple-boost-converter-circuit-using-555-timer-ic) y [Laptop Charger Circuit from 12V Battery](https://www.homemade-circuits.com/12v-car-laptop-charger-circuit-using/). -->

@@ -36,3 +36,6 @@ title = 'Música'
 | Mötley Crüe              | Los Angeles, California, U.S.    | Glam metal      | 1981     | Vince Neil                  |
 | Pink Floyd               | London, England                  | Progressive rock| 1965–1994| David Gilmour / Roger Waters|
 | Airbourne                | Warrnambool, Victoria, Australia | Hard rock       | 2003     | Joel O’Keeffe               |
+| Faster Pussycat          | Los Angeles, California, U.S.    | Hard rock       | 1985–1993| Taime Downe                 |
+| Skid Row                 | Toms River, New Jersey, U.S.     | Heavy metal     | 1986     | Sebastian Bach              |
+| Bon Jovi                 | Sayreville, New Jersey, U.S.     | Hard rock       | 1983     | Jon Bon Jovi                |

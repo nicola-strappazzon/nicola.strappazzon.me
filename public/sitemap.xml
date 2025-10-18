@@ -217,8 +217,6 @@
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/555/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/555/boost/</loc>
-  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/aws/</loc>
@@ -256,6 +254,8 @@
     <loc>http://localhost:1313/electronic/integrated-circuit/ch340/driver/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/555/frequency/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/jq/</loc>
   </url><url>
