@@ -513,7 +513,7 @@
       <description>&lt;p&gt;Con este simple circuito, se busca demostrar cómo funciona un condensador y en especial el de tipo electrolítico mediante la carga y descarga de una forma visible. Cómo sabemos, el condensador actúa cómo un tanque de agua en el circuito, en el caso de la electrónica no guarda agua, sino corriente. &lt;a href=&#34;https://nicola.strappazzon.me/electronic/components/capacitor/&#34;&gt;Para saber más, consulte aquí&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;componentes&#34;&gt;Componentes&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Una placa de pruebas.&lt;/li&gt;&#xA;&lt;li&gt;Dos pilas de 1.5V para sumar 3V y con su base.&lt;/li&gt;&#xA;&lt;li&gt;Un pulsador.&lt;/li&gt;&#xA;&lt;li&gt;Una condensador electrolítico puede ser cualquiera de los siguientes valores: 100uF, 220uF, 470uF, 1000µF.&lt;/li&gt;&#xA;&lt;li&gt;Una resistencia de 1kΩ.&lt;/li&gt;&#xA;&lt;li&gt;Un LED del color deseado.&lt;/li&gt;&#xA;&lt;li&gt;Cables unifilar.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;La intención de usar valores altos de microfarad (µF) es para poder apreciar el tiempo de descarga, mientras más alto el valor, más tiempo de descarga. Considere que esto es proporcional al consumo, un LED tiene bajo consumo, por lo que ayuda apreciar el efecto deseado.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>MCP1661 - Switch PWM Boost Regulator</title>
+      <title>MCP1661</title>
       <link>http://localhost:1313/electronic/integrated-circuit/mcp1661/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electronic/integrated-circuit/mcp1661/</guid>
