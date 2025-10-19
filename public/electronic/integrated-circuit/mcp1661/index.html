@@ -69,6 +69,45 @@
 <p>El <a href="datasheet.pdf">MCP1661</a> es un regulador conmutado elevador (boost) por modulación por ancho de pulso (PWM) -¡en inglés suena mucho mejor!-. Este pequeño circuito permite elevar un voltaje de 3V hasta 12V y 120mA con apenas seis componentes. Permite diferentes configuraciónes por lo que te recomiendo que consultes el datasheet.</p>
 <p><img src="schematic.png" alt=""></p>
 <p>para configurar el voltaje de salida deseado, se configura combinando las resistencias R<sub>TOP</sub> y R<sub>BOT</sub>. Los capacitores C<sub>IN</sub> y C<sub>OUT</sub> no afectan al voltaje de salida, pero mantenerse en el margen de 4.7<sub>uF</sub> hasta 10<sub>uF</sub>.</p>
+<p>Con la siguiente formula podemos calcular las resistencias necesarias para obtener V<sub>out</sub>:</p>
+<div>$$ V_{out}=1,227V \cdot \left ( 1 &#43; \frac{R_{TOP}}{R_{BOT}} \right) $$</div>
+<p>Aquí hay una tabla con valores ya precalculados:</p>
+<table>
+  <thead>
+      <tr>
+          <th>V<sub>out</sub></th>
+          <th>R<sub>TOP</sub></th>
+          <th>R<sub>BOT</sub></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>5V</td>
+          <td>313kΩ</td>
+          <td>316kΩ</td>
+      </tr>
+      <tr>
+          <td>9V</td>
+          <td>644kΩ</td>
+          <td>649kΩ</td>
+      </tr>
+      <tr>
+          <td>12V</td>
+          <td>892kΩ</td>
+          <td>887kΩ</td>
+      </tr>
+      <tr>
+          <td>13V</td>
+          <td>974kΩ</td>
+          <td>976kΩ</td>
+      </tr>
+      <tr>
+          <td>15V</td>
+          <td>1138kΩ</td>
+          <td>1.13MΩ</td>
+      </tr>
+  </tbody>
+</table>
 <p>El encapsulado del <a href="datasheet.pdf">MCP1661</a> es el SOT-23 y use un <a href="https://www.adafruit.com/product/1230">SMT Breakout PCB For SOT-23</a> de adafruit. Antes de montar el circuito en el breadboard ten en cuenta el pinout del componente.</p>
 <p><img src="pinout.png" alt=""></p>
 <p>Aquí va un pequeño truco: como usé resistencias SMD 1206 -que son muy pequeñas, pero aún manejables-, les soldé un par de pines header de 2,54 mm a cada una, y quedaron así:</p>
