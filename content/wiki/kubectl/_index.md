@@ -188,3 +188,35 @@ Para poder ver los logs de un determinado contenedor usando `-c container_name`,
 ```bash
 kubectl logs pod/demo-api-598f6c5bb6-mmg4d -c grafana -n monitor
 ```
+
+## Secret
+
+Para conocer o listar los secrets:
+
+```bash
+kubectl get secrets
+```
+
+Ver el detalle del secret:
+
+```bash
+kubectl describe secret api
+```
+
+Para ver el contenido del secret:
+
+```bash
+kubectl get secret api -o jsonpath='{.data}' | jq
+```
+
+Decodificar un valor del secret:
+
+```bash
+echo "d3NzOi8vZGVtZXJ6ZWwuc3RnLnRobi5hcHA6ODA=" | base64 --decode
+```
+
+Obtener de forma directa el valor y decodificarlo:
+
+```bash
+kubectl get secret api -o jsonpath='{.data.password}' | base64 --decode
+```
