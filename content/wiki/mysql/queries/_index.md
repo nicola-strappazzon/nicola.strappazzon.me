@@ -161,7 +161,7 @@ UPDATE performance_schema.setup_consumers
   SET enabled='YES'
   WHERE name IN ('events_stages_current','events_stages_history','events_stages_history_long');
 
-SELECT t.processlist_info, c.work_completed, c.work_estimated
+SELECT t.processlist_info, c.work_completed, c.work_estimated, ROUND(c.work_completed / NULLIF(c.work_estimated,0) * 100, 2) AS pct_done
 FROM performance_schema.events_stages_current c
 JOIN performance_schema.threads t ON t.thread_id = c.thread_id;
 ```
