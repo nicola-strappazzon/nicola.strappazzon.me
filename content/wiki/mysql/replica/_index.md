@@ -1,6 +1,7 @@
 +++
-title = 'MySQL Replication Debug'
-tags = [, "mysql", "dba"]
+title = 'MySQL replication debug'
+tags = ["mysql", "dba"]
+weight = 3
 +++
 
 ## Conocer el estado de la replicación:

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>MySQL replication debug | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+<div class="container center">
+<header><header class="header">
+  <div class="header_inner">
+    <div class="header_logo">
+      <a href="http://localhost:1313/">
+        <div class="logo">Nicola Strappazzon</div>
+      </a>
+    </div>
+    <button class="navigation-menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navigation-menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  <div class="header_social_navigation">
+    <div class="header_social">
+      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="header_navigation">
+      <nav class="navigation-menu">
+        <ul class="navigation-menu-list" id="mainMenu">
+          <li><a href="/posts/" >Posts</a></li>
+          <li><a href="/wiki/" >Wiki</a></li>
+          <li><a href="/electronic/" >Electrónica</a></li>
+          <li><a href="/cultura/" >Cultura</a></li>
+          <li><a href="/diccionary/" >Diccionario</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+</header>
+<div class="content">
+  
+  
+    <div class="content-header">
+      <h2 class="title">MySQL replication debug</h2>
+      
+    </div>
+  
+  <h2 id="conocer-el-estado-de-la-replicación">Conocer el estado de la replicación:</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SHOW</span> REPLICA STATUS\<span style="color:#719e07">G</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Aquí lo importante es ver las siguientes variables:</p>
+<pre tabindex="0"><code>Replica_IO_Running: Yes
+Replica_SQL_Running: No
+Seconds_Behind_Source: 0
+</code></pre><p>O esta con un valor alto tambien:</p>
+<pre tabindex="0"><code>Seconds_Behind_Source: 0
+</code></pre><p>Pero si vemos una de estas con el valor <code>No</code> hay que preocuparse.</p>
+<pre tabindex="0"><code>Replica_IO_Running: Yes
+Replica_SQL_Running: No
+</code></pre><p>Si hay algún error que se haya producido en el proceso de replicación, lo podrás ver facilmente en una de estas variables:</p>
+<ul>
+<li>Last_IO_Errno</li>
+<li>Last_IO_Error</li>
+<li>Last_Errno</li>
+<li>Last_Error</li>
+<li>Last_SQL_Errno</li>
+<li>Last_SQL_Error</li>
+</ul>
+<h2 id="conocer-el-estado-de-cada-worker">Conocer el estado de cada worker</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> worker_id, last_error_number, last_error_message
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> performance_schema.replication_applier_status_by_worker;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="conocer-el-tiempo-que-tarda-en-aplicar-los-cambios">Conocer el tiempo que tarda en aplicar los cambios</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"></code></pre></td></tr></table>
+</div>
+</div><h2 id="variables-relacionadas">Variables relacionadas</h2>
+<p>Las siguientes variables suelen mejorar el rendimiento:</p>
+<ul>
+<li><code>innodb_flush_log_at_trx_commit=2</code></li>
+<li><code>sync_binlog=0</code></li>
+<li><code>slave_parallel_workers=4</code> Si cambias este valor debes detener y reanudar la replicación.</li>
+<li><code>binlog_transaction_dependency_tracking</code></li>
+<li><code>slave_preserve_commit_order</code></li>
+</ul>
+<h2 id="ignorar-objetos">Ignorar objetos</h2>
+<p>Es posible ignorar los cambios a una o varias tablas cambiando la variable <code>replicate-ignore-table</code>.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="error-number-13146">Error number: 13146</h3>
+<ul>
+<li>Mensaje de error: <code>Worker 2 failed executing transaction '7daa9221-f81c-11ee-a5e5-066f1686b5af:4001763498' at source log mysql-bin-changelog.202710, end_log_pos 133307795; Column 15 of table '&lt;database&gt;.&lt;table&gt;' cannot be converted from type 'int' to type 'bigint unsigned'</code></li>
+<li>Solución: <code>SLAVE_TYPE_CONVERSIONS=ALL_NON_LOSSY</code>.</li>
+</ul>
+<p>Una vez aplicado el cambio verifique, detenga y reanude la replicación. Si el cambio no aparece reinicie el servidor si es necesario.</p>
+
+  
+  <ul>
+    
+  </ul>
+  
+
+</div>
+<footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+<script>
+(function () {
+    const btn = document.getElementById('menuToggle');
+    const menu = document.getElementById('mainMenu');
+
+    if (!btn || !menu) return;
+
+    function openMenu() {
+        menu.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.innerHTML = '<i class="fas fa-times"></i>';
+    }
+
+    function closeMenu() {
+        menu.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+
+    btn.addEventListener('click', () => {
+        if (menu.classList.toggle('is-open')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    });
+
+    menu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bp'))) {
+            closeMenu();
+        }
+    });
+})();
+</script>
+</html>

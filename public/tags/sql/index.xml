@@ -9,7 +9,7 @@
     <lastBuildDate>Fri, 09 May 2025 10:56:29 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>MySQL queries for DBA</title>
+      <title>MySQL queries</title>
       <link>http://localhost:1313/wiki/mysql/queries/</link>
       <pubDate>Fri, 09 May 2025 10:56:29 +0200</pubDate>
       <guid>http://localhost:1313/wiki/mysql/queries/</guid>

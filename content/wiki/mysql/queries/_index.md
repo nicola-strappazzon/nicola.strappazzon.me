@@ -1,8 +1,9 @@
 +++
 date = '2025-05-09T10:56:29+02:00'
 draft = false
-title = 'MySQL queries for DBA'
+title = 'MySQL queries'
 tags = ["mysql", "sql", "dba"]
+weight = 2
 +++
 
 ## Tables size
