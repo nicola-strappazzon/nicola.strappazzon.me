@@ -1,6 +1,6 @@
 +++
 title = 'MySQL Replication Debug'
-tags = ["aws", "rds", "mysql", "bash", "dba"]
+tags = [, "mysql", "dba"]
 +++
 
 ## Conocer el estado de la replicación:
@@ -45,6 +45,26 @@ Si hay algún error que se haya producido en el proceso de replicación, lo podr
 SELECT worker_id, last_error_number, last_error_message
 FROM performance_schema.replication_applier_status_by_worker;
 ```
+
+## Conocer el tiempo que tarda en aplicar los cambios
+
+```SQL
+
+```
+
+## Variables relacionadas
+
+Las siguientes variables suelen mejorar el rendimiento:
+
+- `innodb_flush_log_at_trx_commit=2`
+- `sync_binlog=0`
+- `slave_parallel_workers=4` Si cambias este valor debes detener y reanudar la replicación.
+- `binlog_transaction_dependency_tracking`
+- `slave_preserve_commit_order`
+
+## Ignorar objetos
+
+Es posible ignorar los cambios a una o varias tablas cambiando la variable `replicate-ignore-table`.
 
 ## Troubleshooting
 
