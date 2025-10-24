@@ -62,7 +62,7 @@
       
     </div>
   
-  <h2 id="conocer-el-estado-de-la-replicación">Conocer el estado de la replicación:</h2>
+  <h2 id="conocer-el-estado">Conocer el estado</h2>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
@@ -90,7 +90,7 @@ Seconds_Behind_Source: 0
 <li>Last_SQL_Errno</li>
 <li>Last_SQL_Error</li>
 </ul>
-<h2 id="conocer-el-estado-de-cada-worker">Conocer el estado de cada worker</h2>
+<h2 id="estado-de-cada-worker">Estado de cada worker</h2>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
@@ -105,9 +105,35 @@ Seconds_Behind_Source: 0
 <h2 id="conocer-el-tiempo-que-tarda-en-aplicar-los-cambios">Conocer el tiempo que tarda en aplicar los cambios</h2>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code></code></pre></td>
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span>
+</span></span><span style="display:flex;"><span>  worker_id,
+</span></span><span style="display:flex;"><span>  thread_id,
+</span></span><span style="display:flex;"><span>  service_state,
+</span></span><span style="display:flex;"><span>  last_error_number,
+</span></span><span style="display:flex;"><span>  last_error_message,
+</span></span><span style="display:flex;"><span>  last_applied_transaction,
+</span></span><span style="display:flex;"><span>  TIMESTAMPDIFF(<span style="color:#719e07">SECOND</span>,
+</span></span><span style="display:flex;"><span>    last_applied_transaction_start_apply_timestamp,
+</span></span><span style="display:flex;"><span>    last_applied_transaction_end_apply_timestamp
+</span></span><span style="display:flex;"><span>  ) <span style="color:#719e07">+</span> ((MICROSECOND(last_applied_transaction_end_apply_timestamp) <span style="color:#719e07">-</span> MICROSECOND(last_applied_transaction_start_apply_timestamp)) <span style="color:#719e07">/</span> <span style="color:#2aa198">1000000</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#719e07">AS</span> last_applied_seconds
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> performance_schema.replication_applier_status_by_worker;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="variables-relacionadas">Variables relacionadas</h2>
 <p>Las siguientes variables suelen mejorar el rendimiento:</p>
@@ -122,10 +148,9 @@ Seconds_Behind_Source: 0
 <p>Es posible ignorar los cambios de una o varias tablas ajustando la variable <code>replicate-ignore-table</code>. El nombre de la tabla debe estar acompañado del nombre de la base de datos <code>db.table</code>. Cada tabla separada por <code>,</code>.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="error-number-13146">Error number: 13146</h3>
-<ul>
-<li>Mensaje de error: <code>Worker 2 failed executing transaction '7daa9221-f81c-11ee-a5e5-066f1686b5af:4001763498' at source log mysql-bin-changelog.202710, end_log_pos 133307795; Column 15 of table '&lt;database&gt;.&lt;table&gt;' cannot be converted from type 'int' to type 'bigint unsigned'</code></li>
-<li>Solución: <code>SLAVE_TYPE_CONVERSIONS=ALL_NON_LOSSY</code>.</li>
-</ul>
+<p>Mensaje de error:</p>
+<pre tabindex="0"><code>Worker 2 failed executing transaction &#39;7daa9221-f81c-11ee-a5e5-066f1686b5af:4001763498&#39; at source log mysql-bin-changelog.202710, end_log_pos 133307795; Column 15 of table &#39;&lt;database&gt;.&lt;table&gt;&#39; cannot be converted from type &#39;int&#39; to type &#39;bigint unsigned&#39;
+</code></pre><p>Solución: <code>SLAVE_TYPE_CONVERSIONS=ALL_NON_LOSSY</code>.</p>
 <p>Una vez aplicado el cambio verifique, detenga y reanude la replicación. Si el cambio no aparece reinicie el servidor si es necesario.</p>
 
   

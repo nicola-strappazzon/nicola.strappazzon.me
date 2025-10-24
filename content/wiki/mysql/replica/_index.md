@@ -45,7 +45,19 @@ La cantidad de rows debe coincidir con el valor asignado en la variable `slave_p
 ## Conocer el tiempo que tarda en aplicar los cambios
 
 ```SQL
-
+SELECT
+  worker_id,
+  thread_id,
+  service_state,
+  last_error_number,
+  last_error_message,
+  last_applied_transaction,
+  TIMESTAMPDIFF(SECOND,
+    last_applied_transaction_start_apply_timestamp,
+    last_applied_transaction_end_apply_timestamp
+  ) + ((MICROSECOND(last_applied_transaction_end_apply_timestamp) - MICROSECOND(last_applied_transaction_start_apply_timestamp)) / 1000000
+  ) AS last_applied_seconds
+FROM performance_schema.replication_applier_status_by_worker;
 ```
 
 ## Variables relacionadas
