@@ -149,3 +149,19 @@ WHERE object_schema NOT IN ('mysql',
                             'information_schema',
                             'performance_schema');
 ```
+
+### Conocer el progreso de un ALTER
+
+```SQL
+UPDATE performance_schema.setup_instruments
+  SET enabled='YES', timed='YES'
+  WHERE name LIKE 'stage/%';
+
+UPDATE performance_schema.setup_consumers
+  SET enabled='YES'
+  WHERE name IN ('events_stages_current','events_stages_history','events_stages_history_long');
+
+SELECT t.processlist_info, c.work_completed, c.work_estimated
+FROM performance_schema.events_stages_current c
+JOIN performance_schema.threads t ON t.thread_id = c.thread_id;
+```
