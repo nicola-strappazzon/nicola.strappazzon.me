@@ -75,12 +75,13 @@
 <pre tabindex="0"><code>Replica_IO_Running: Yes
 Replica_SQL_Running: No
 Seconds_Behind_Source: 0
-</code></pre><p>O esta con un valor alto tambien:</p>
-<pre tabindex="0"><code>Seconds_Behind_Source: 0
-</code></pre><p>Pero si vemos una de estas con el valor <code>No</code> hay que preocuparse.</p>
-<pre tabindex="0"><code>Replica_IO_Running: Yes
-Replica_SQL_Running: No
-</code></pre><p>Si hay algún error que se haya producido en el proceso de replicación, lo podrás ver facilmente en una de estas variables:</p>
+</code></pre><p>Si no hay errores, las dos primeras variables; <code>Replica_IO_Running</code> y <code>Replica_SQL_Running</code> deben tener el valor <code>Yes</code>. Luego se puede presentar un retardo en segundos en aplicar los cambios, ese valor lo indica la variable <code>Seconds_Behind_Source</code> la cual debe estar siempre en 0, si tiene un valor alto deberá revisar la causa y se puede deber a varios motivos:</p>
+<ul>
+<li>Lentitud en aplicar los cambios: hardware lento, gran número de cambios.</li>
+<li>Bloqueo de tablas en la replica: Queries lentas, falta de indices, ALTER en progreso.</li>
+<li>Configuración.</li>
+</ul>
+<p>Si hay algún error que se haya producido en el proceso de replicación una de las variables <code>Replica_IO_Running</code> y <code>Replica_SQL_Running</code> podrá tener el valor <code>No</code>, y un detalle inicial del problema lo podrás ver facilmente en una de estas variables:</p>
 <ul>
 <li>Last_IO_Errno</li>
 <li>Last_IO_Error</li>
@@ -96,11 +97,12 @@ Replica_SQL_Running: No
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> worker_id, last_error_number, last_error_message
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> worker_id, thread_id, service_state, last_error_number, last_error_message, last_applied_transaction
 </span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> performance_schema.replication_applier_status_by_worker;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="conocer-el-tiempo-que-tarda-en-aplicar-los-cambios">Conocer el tiempo que tarda en aplicar los cambios</h2>
+</div><p>La cantidad de rows debe coincidir con el valor asignado en la variable <code>slave_parallel_workers</code>.</p>
+<h2 id="conocer-el-tiempo-que-tarda-en-aplicar-los-cambios">Conocer el tiempo que tarda en aplicar los cambios</h2>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code></code></pre></td>
@@ -112,12 +114,12 @@ Replica_SQL_Running: No
 <ul>
 <li><code>innodb_flush_log_at_trx_commit=2</code></li>
 <li><code>sync_binlog=0</code></li>
-<li><code>slave_parallel_workers=4</code> Si cambias este valor debes detener y reanudar la replicación.</li>
+<li><code>slave_parallel_workers=4</code> Si cambias este valor debes detener y reanudar la replicación. Aumentar no significa que vaya más rápido, puede ayudar.</li>
 <li><code>binlog_transaction_dependency_tracking</code></li>
 <li><code>slave_preserve_commit_order</code></li>
 </ul>
 <h2 id="ignorar-objetos">Ignorar objetos</h2>
-<p>Es posible ignorar los cambios a una o varias tablas cambiando la variable <code>replicate-ignore-table</code>.</p>
+<p>Es posible ignorar los cambios de una o varias tablas ajustando la variable <code>replicate-ignore-table</code>. El nombre de la tabla debe estar acompañado del nombre de la base de datos <code>db.table</code>. Cada tabla separada por <code>,</code>.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="error-number-13146">Error number: 13146</h3>
 <ul>

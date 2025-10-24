@@ -18,20 +18,13 @@ Replica_SQL_Running: No
 Seconds_Behind_Source: 0
 ```
 
-O esta con un valor alto tambien:
+Si no hay errores, las dos primeras variables; `Replica_IO_Running` y `Replica_SQL_Running` deben tener el valor `Yes`. Luego se puede presentar un retardo en segundos en aplicar los cambios, ese valor lo indica la variable `Seconds_Behind_Source` la cual debe estar siempre en 0, si tiene un valor alto deberá revisar la causa y se puede deber a varios motivos:
 
-```
-Seconds_Behind_Source: 0
-```
+- Lentitud en aplicar los cambios: hardware lento, gran número de cambios.
+- Bloqueo de tablas en la replica: Queries lentas, falta de indices, ALTER en progreso.
+- Configuración.
 
-Pero si vemos una de estas con el valor `No` hay que preocuparse.
-
-```
-Replica_IO_Running: Yes
-Replica_SQL_Running: No
-```
-
-Si hay algún error que se haya producido en el proceso de replicación, lo podrás ver facilmente en una de estas variables:
+Si hay algún error que se haya producido en el proceso de replicación una de las variables `Replica_IO_Running` y `Replica_SQL_Running` podrá tener el valor `No`, y un detalle inicial del problema lo podrás ver facilmente en una de estas variables:
 
 - Last_IO_Errno
 - Last_IO_Error
@@ -43,9 +36,11 @@ Si hay algún error que se haya producido en el proceso de replicación, lo podr
 ## Conocer el estado de cada worker
 
 ```SQL
-SELECT worker_id, last_error_number, last_error_message
+SELECT worker_id, thread_id, service_state, last_error_number, last_error_message, last_applied_transaction
 FROM performance_schema.replication_applier_status_by_worker;
 ```
+
+La cantidad de rows debe coincidir con el valor asignado en la variable `slave_parallel_workers`.
 
 ## Conocer el tiempo que tarda en aplicar los cambios
 
@@ -59,13 +54,13 @@ Las siguientes variables suelen mejorar el rendimiento:
 
 - `innodb_flush_log_at_trx_commit=2`
 - `sync_binlog=0`
-- `slave_parallel_workers=4` Si cambias este valor debes detener y reanudar la replicación.
+- `slave_parallel_workers=4` Si cambias este valor debes detener y reanudar la replicación. Aumentar no significa que vaya más rápido, puede ayudar.
 - `binlog_transaction_dependency_tracking`
 - `slave_preserve_commit_order`
 
 ## Ignorar objetos
 
-Es posible ignorar los cambios a una o varias tablas cambiando la variable `replicate-ignore-table`.
+Es posible ignorar los cambios de una o varias tablas ajustando la variable `replicate-ignore-table`. El nombre de la tabla debe estar acompañado del nombre de la base de datos `db.table`. Cada tabla separada por `,`.
 
 ## Troubleshooting
 
