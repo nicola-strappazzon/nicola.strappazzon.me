@@ -4,7 +4,7 @@ tags = ["mysql", "dba"]
 weight = 3
 +++
 
-## Conocer el estado de la replicación:
+## Conocer el estado
 
 ```SQL
 SHOW REPLICA STATUS\G
@@ -33,7 +33,7 @@ Si hay algún error que se haya producido en el proceso de replicación una de l
 - Last_SQL_Errno
 - Last_SQL_Error
 
-## Conocer el estado de cada worker
+## Estado de cada worker
 
 ```SQL
 SELECT worker_id, thread_id, service_state, last_error_number, last_error_message, last_applied_transaction
@@ -66,7 +66,12 @@ Es posible ignorar los cambios de una o varias tablas ajustando la variable `rep
 
 ### Error number: 13146
 
-- Mensaje de error: `Worker 2 failed executing transaction '7daa9221-f81c-11ee-a5e5-066f1686b5af:4001763498' at source log mysql-bin-changelog.202710, end_log_pos 133307795; Column 15 of table '<database>.<table>' cannot be converted from type 'int' to type 'bigint unsigned'`
-- Solución: `SLAVE_TYPE_CONVERSIONS=ALL_NON_LOSSY`.
+Mensaje de error:
+
+```
+Worker 2 failed executing transaction '7daa9221-f81c-11ee-a5e5-066f1686b5af:4001763498' at source log mysql-bin-changelog.202710, end_log_pos 133307795; Column 15 of table '<database>.<table>' cannot be converted from type 'int' to type 'bigint unsigned'
+```
+
+Solución: `SLAVE_TYPE_CONVERSIONS=ALL_NON_LOSSY`.
 
 Una vez aplicado el cambio verifique, detenga y reanude la replicación. Si el cambio no aparece reinicie el servidor si es necesario.
