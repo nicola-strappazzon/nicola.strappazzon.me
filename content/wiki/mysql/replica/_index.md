@@ -78,7 +78,11 @@ Es posible ignorar los cambios de una o varias tablas ajustando la variable `rep
 
 ### Error number: 1846
 
-Mensaje de error: `Worker 2 failed executing transaction '7daa9221-f81c-11ee-a5e5-066f1686b5af:4040122258' at source log mysql-bin-changelog.203989, end_log_pos 13342954; Error 'ALGORITHM=INPLACE is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY.' on query. Default database: 'demo'. Query: ALTER TABLE demo_table MODIFY COLUMN fk_id BIGINT NULL, ALGORITHM=INPLACE, LOCK=NONE'`
+Mensaje de error:
+
+```
+Worker 2 failed executing transaction '7daa9221-f81c-11ee-a5e5-066f1686b5af:4040122258' at source log mysql-bin-changelog.203989, end_log_pos 13342954; Error 'ALGORITHM=INPLACE is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY.' on query. Default database: 'demo'. Query: ALTER TABLE demo_table MODIFY COLUMN fk_id BIGINT NULL, ALGORITHM=INPLACE, LOCK=NONE'
+```
 
 Intenta primero:
 
