@@ -2,7 +2,7 @@
 <html lang="es-es" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>MySQL replication debug | Nicola Strappazzon</title>
+<title>MySQL replication | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -58,7 +58,7 @@
   
   
     <div class="content-header">
-      <h2 class="title">MySQL replication debug</h2>
+      <h2 class="title">MySQL replication</h2>
       
     </div>
   
@@ -147,7 +147,28 @@ Seconds_Behind_Source: 0
 <h2 id="ignorar-objetos">Ignorar objetos</h2>
 <p>Es posible ignorar los cambios de una o varias tablas ajustando la variable <code>replicate-ignore-table</code>. El nombre de la tabla debe estar acompañado del nombre de la base de datos <code>db.table</code>. Cada tabla separada por <code>,</code>.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="error-number-13146">Error number: 13146</h3>
+<h3 id="error-number-1846">Error number: 1846</h3>
+<p>Mensaje de error:</p>
+<pre tabindex="0"><code>Worker 2 failed executing transaction &#39;7daa9221-f81c-11ee-a5e5-066f1686b5af:4040122258&#39; at source log mysql-bin-changelog.203989, end_log_pos 13342954; Error &#39;ALGORITHM=INPLACE is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY.&#39; on query. Default database: &#39;demo&#39;. Query: ALTER TABLE demo_table MODIFY COLUMN fk_id BIGINT NULL, ALGORITHM=INPLACE, LOCK=NONE&#39;
+</code></pre><p>Intenta primero:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#719e07">ALTER</span> <span style="color:#719e07">TABLE</span> demo.demo_table <span style="color:#719e07">MODIFY</span> <span style="color:#719e07">COLUMN</span> fk_id <span style="color:#b58900">BIGINT</span> <span style="color:#719e07">NULL</span>, ALGORITHM<span style="color:#719e07">=</span><span style="color:#719e07">COPY</span>, <span style="color:#719e07">LOCK</span><span style="color:#719e07">=</span>SHARED;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Sino ignora el cambio:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#719e07">CALL</span> mysql.rds_skip_transaction_with_gtid(<span style="color:#2aa198">&#39;7daa9221-f81c-11ee-a5e5-066f1686b5af:4040122258&#39;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="error-number-13146">Error number: 13146</h3>
 <p>Mensaje de error:</p>
 <pre tabindex="0"><code>Worker 2 failed executing transaction &#39;7daa9221-f81c-11ee-a5e5-066f1686b5af:4001763498&#39; at source log mysql-bin-changelog.202710, end_log_pos 133307795; Column 15 of table &#39;&lt;database&gt;.&lt;table&gt;&#39; cannot be converted from type &#39;int&#39; to type &#39;bigint unsigned&#39;
 </code></pre><p>Solución: <code>SLAVE_TYPE_CONVERSIONS=ALL_NON_LOSSY</code>.</p>

@@ -285,7 +285,33 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="performance-schema">Performance Schema</h2>
-<h3 id="list-all-tables-with-dml-operations">List all tables with DML operations</h3>
+<p>Activar el instrumento:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">UPDATE</span> performance_schema.setup_instruments
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">SET</span> enabled<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;YES&#39;</span>, timed<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;YES&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">WHERE</span> name <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;stage/%&#39;</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Activar los eventos, útil para obtener información de los ALTER&rsquo;s:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">UPDATE</span> performance_schema.setup_consumers
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">SET</span> enabled<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;YES&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">WHERE</span> name <span style="color:#719e07">IN</span> (<span style="color:#2aa198">&#39;events_stages_current&#39;</span>,<span style="color:#2aa198">&#39;events_stages_history&#39;</span>,<span style="color:#2aa198">&#39;events_stages_history_long&#39;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="list-all-tables-with-dml-operations">List all tables with DML operations</h3>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
@@ -328,15 +354,15 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">UPDATE</span> performance_schema.setup_instruments
-</span></span><span style="display:flex;"><span>  <span style="color:#719e07">SET</span> enabled<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;YES&#39;</span>, timed<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;YES&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#719e07">WHERE</span> name <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;stage/%&#39;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#719e07">UPDATE</span> performance_schema.setup_consumers
-</span></span><span style="display:flex;"><span>  <span style="color:#719e07">SET</span> enabled<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;YES&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#719e07">WHERE</span> name <span style="color:#719e07">IN</span> (<span style="color:#2aa198">&#39;events_stages_current&#39;</span>,<span style="color:#2aa198">&#39;events_stages_history&#39;</span>,<span style="color:#2aa198">&#39;events_stages_history_long&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> t.processlist_info, <span style="color:#719e07">c</span>.work_completed, <span style="color:#719e07">c</span>.work_estimated
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span>
+</span></span><span style="display:flex;"><span>    t.processlist_info,
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">c</span>.work_completed,
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">c</span>.work_estimated,
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#719e07">c</span>.work_completed <span style="color:#719e07">/</span> <span style="color:#719e07">NULLIF</span>(<span style="color:#719e07">c</span>.work_estimated,<span style="color:#2aa198">0</span>) <span style="color:#719e07">*</span> <span style="color:#2aa198">100</span>, <span style="color:#2aa198">2</span>) <span style="color:#719e07">AS</span> pct_done,
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#719e07">c</span>.timer_wait <span style="color:#719e07">/</span> <span style="color:#2aa198">1000000000000</span>, <span style="color:#2aa198">2</span>) <span style="color:#719e07">AS</span> seconds_elapsed,
+</span></span><span style="display:flex;"><span>    ROUND((<span style="color:#719e07">c</span>.timer_wait <span style="color:#719e07">/</span> <span style="color:#2aa198">1000000000000</span>) <span style="color:#719e07">/</span> 
+</span></span><span style="display:flex;"><span>          (<span style="color:#719e07">c</span>.work_completed <span style="color:#719e07">/</span> <span style="color:#719e07">NULLIF</span>(<span style="color:#719e07">c</span>.work_estimated,<span style="color:#2aa198">1</span>)) 
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">*</span> (<span style="color:#2aa198">1</span> <span style="color:#719e07">-</span> (<span style="color:#719e07">c</span>.work_completed <span style="color:#719e07">/</span> <span style="color:#719e07">NULLIF</span>(<span style="color:#719e07">c</span>.work_estimated,<span style="color:#2aa198">1</span>))), <span style="color:#2aa198">2</span>) <span style="color:#719e07">AS</span> seconds_eta
 </span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> performance_schema.events_stages_current <span style="color:#719e07">c</span>
 </span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> performance_schema.threads t <span style="color:#719e07">ON</span> t.thread_id <span style="color:#719e07">=</span> <span style="color:#719e07">c</span>.thread_id;
 </span></span></code></pre></td></tr></table>

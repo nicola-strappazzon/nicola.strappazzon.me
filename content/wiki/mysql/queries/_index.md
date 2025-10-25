@@ -135,6 +135,22 @@ ORDER BY c.table_name, c.column_name;
 
 ## Performance Schema
 
+Activar el instrumento:
+
+```SQL
+UPDATE performance_schema.setup_instruments
+  SET enabled='YES', timed='YES'
+  WHERE name LIKE 'stage/%';
+```
+
+Activar los eventos, útil para obtener información de los ALTER's:
+
+```SQL
+UPDATE performance_schema.setup_consumers
+  SET enabled='YES'
+  WHERE name IN ('events_stages_current','events_stages_history','events_stages_history_long');
+```
+
 ### List all tables with DML operations
 
 ```SQL
@@ -153,14 +169,6 @@ WHERE object_schema NOT IN ('mysql',
 ### Conocer el progreso de un ALTER
 
 ```SQL
-UPDATE performance_schema.setup_instruments
-  SET enabled='YES', timed='YES'
-  WHERE name LIKE 'stage/%';
-
-UPDATE performance_schema.setup_consumers
-  SET enabled='YES'
-  WHERE name IN ('events_stages_current','events_stages_history','events_stages_history_long');
-
 SELECT
     t.processlist_info,
     c.work_completed,
