@@ -5,7 +5,6 @@ tags = ["aws", "rds", "mysql", "bash", "dba"]
 
 Esta es una pequeña selección de stored procedures propios de los RDS de Amazon Web Services para manejar la replicación, para mayor detalle puedes consultar su [documentación](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_MySQL.Replication.ReadReplicas.html).
 
-
 Para detener la replicación:
 
 ```sql
@@ -54,4 +53,10 @@ Para borrar la configuración de la replicación:
 
 ```sql
 CALL mysql.rds_reset_external_master;
+```
+
+Saltarse el error de replicación:
+
+```sql
+CALL mysql.rds_skip_repl_error;
 ```

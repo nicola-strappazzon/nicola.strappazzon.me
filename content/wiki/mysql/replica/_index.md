@@ -76,6 +76,22 @@ Es posible ignorar los cambios de una o varias tablas ajustando la variable `rep
 
 ## Troubleshooting
 
+### Error number: 1846
+
+Mensaje de error: `Worker 2 failed executing transaction '7daa9221-f81c-11ee-a5e5-066f1686b5af:4040122258' at source log mysql-bin-changelog.203989, end_log_pos 13342954; Error 'ALGORITHM=INPLACE is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY.' on query. Default database: 'demo'. Query: ALTER TABLE demo_table MODIFY COLUMN fk_id BIGINT NULL, ALGORITHM=INPLACE, LOCK=NONE'`
+
+Intenta primero:
+
+```sql
+ALTER TABLE demo.demo_table MODIFY COLUMN fk_id BIGINT NULL, ALGORITHM=COPY, LOCK=SHARED;
+```
+
+Sino ignora el cambio:
+
+```sql
+CALL mysql.rds_skip_transaction_with_gtid('7daa9221-f81c-11ee-a5e5-066f1686b5af:4040122258');
+```
+
 ### Error number: 13146
 
 Mensaje de error:
