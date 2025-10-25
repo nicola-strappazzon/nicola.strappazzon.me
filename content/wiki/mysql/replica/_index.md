@@ -1,5 +1,5 @@
 +++
-title = 'MySQL replication debug'
+title = 'MySQL replication'
 tags = ["mysql", "dba"]
 weight = 3
 +++
