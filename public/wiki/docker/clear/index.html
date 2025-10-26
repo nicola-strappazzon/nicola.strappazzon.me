@@ -2,7 +2,7 @@
 <html lang="es-es" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Bash | Nicola Strappazzon</title>
+<title>Reclamar espacio | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -55,62 +55,46 @@
 </header>
 </header>
 <div class="content">
-  
-  
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/wiki/">Wiki</a></li>
+      <li><a href="/wiki/docker/">Docker</a></li>
+    </ul>
     <div class="content-header">
-      <h2 class="title">Bash</h2>
-      
-      <span class="date"><em>09/05/2025</em></span>
+      <h2 class="title">Reclamar espacio</h2>
       
     </div>
-  
-  
-  
-  <ul>
-    
-      <li><a href="/wiki/mysql/commands/">MySQL commands</a></li>
-    
-      <li><a href="/wiki/terminal/basic/">Básico</a></li>
-    
-      <li><a href="/wiki/openpgp/import/">Import</a></li>
-    
-      <li><a href="/wiki/terminal/client/">Cliente</a></li>
-    
-      <li><a href="/wiki/openpgp/export/">Export</a></li>
-    
-      <li><a href="/wiki/openpgp/backup/">Backup</a></li>
-    
-      <li><a href="/wiki/terminal/prompt/">Prompt</a></li>
-    
-      <li><a href="/wiki/openpgp/restore/">Restore</a></li>
-    
-      <li><a href="/wiki/terminal/config/">Configuración</a></li>
-    
-      <li><a href="/wiki/openpgp/revoke/">Revoke</a></li>
-    
-      <li><a href="/wiki/openpgp/git/">GitHub</a></li>
-    
-      <li><a href="/wiki/mysql/aws/">AWS RDS - MySQL</a></li>
-    
-      <li><a href="/wiki/docker/containers/">Containers</a></li>
-    
-      <li><a href="/wiki/docker/">Docker</a></li>
-    
-      <li><a href="/wiki/jq/">jq</a></li>
-    
-      <li><a href="/wiki/openpgp/">OpenPGP</a></li>
-    
-      <li><a href="/wiki/docker/clear/">Reclamar espacio</a></li>
-    
-      <li><a href="/wiki/ssh/">SSH</a></li>
-    
-      <li><a href="/wiki/terminal/">Terminal</a></li>
-    
-      <li><a href="/wiki/yubikey/">YubiKey</a></li>
-    
-  </ul>
-  
-
+    <p>Es muy habitual si trabajamos con Docker quedarnos sin espacio de disco, estos comandos te permiten reclamar espacio:</p>
+<p>Elimina todo lo que no se ha usado; contenedores, network, imagenes, volumenes:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker system prune -f
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Elimina todos los contenedores y sus volumenes:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker rm -vf <span style="color:#719e07">$(</span>docker ps -aq<span style="color:#719e07">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Elimina todas las imagenes:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker rmi -f <span style="color:#719e07">$(</span>docker images -aq<span style="color:#719e07">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </article>
 </div>
 <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
 </footer>

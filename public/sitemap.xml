@@ -287,6 +287,8 @@
   </url><url>
     <loc>http://localhost:1313/tags/rds/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/docker/clear/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/yubikey/restart/</loc>
