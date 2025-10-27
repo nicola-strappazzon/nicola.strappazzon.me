@@ -1,5 +1,5 @@
 +++
-title = 'AWS RDS - MySQL'
+title = 'MySQL en Amazon RDS'
 tags = ["aws", "rds", "mysql", "bash", "dba"]
 +++
 
