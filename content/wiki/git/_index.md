@@ -6,12 +6,12 @@ tags = ["bash", "git"]
 
 Renombrar URL del repositorio:
 
-```
+```bash
 git remote -v
-git remote set-url origin <NEW_GIT_URL_HERE>
+git remote set-url origin <new_git_url>
 ```
 
-Forced update. Sobre escribir cambios forzando.
+Forzando a sobrescribir cambios:
 
 ```bash
 git add . && git commit --amend --no-edit && git push -f
