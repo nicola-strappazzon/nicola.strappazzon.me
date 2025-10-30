@@ -67,8 +67,8 @@ Las siguientes variables suelen mejorar el rendimiento:
 - `innodb_flush_log_at_trx_commit=2`
 - `sync_binlog=0`
 - `slave_parallel_workers=4` Si cambias este valor debes detener y reanudar la replicación. Aumentar no significa que vaya más rápido, puede ayudar.
-- `binlog_transaction_dependency_tracking`
-- `slave_preserve_commit_order`
+- `binlog_transaction_dependency_tracking` Por defecto viene `COMMIT_ORDER`, lo pasamos a `WRITESET`.
+- `slave_preserve_commit_order=OFF` Por defecto viene en `ON`.
 
 ## Ignorar objetos
 

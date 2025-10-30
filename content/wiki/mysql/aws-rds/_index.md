@@ -3,6 +3,12 @@ title = 'MySQL en Amazon RDS'
 tags = ["aws", "rds", "mysql", "bash", "dba"]
 +++
 
+## Enlaces de interés
+
+- [MySQL bugs fixed by Aurora MySQL database engine updates](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraMySQLReleaseNotes/AuroraMySQL.Updates.MySQLBugs.html)
+- [Security vulnerabilities fixed in Aurora MySQL](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraMySQLReleaseNotes/AuroraMySQL.CVE_list.html)
+- [Configuring, starting, and stopping binary log (binlog) replication](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-stored-proc-replicating.html)
+
 Esta es una pequeña selección de stored procedures propios de los RDS de Amazon Web Services.
 
 ## Replicación
