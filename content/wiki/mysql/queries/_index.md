@@ -61,19 +61,71 @@ ORDER BY t.table_schema, c.table_name, c.column_name;
 ## List all foreign keys
 
 ```SQL
-SELECT TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME
-FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
-WHERE REFERENCED_TABLE_SCHEMA = '<database>'
-  AND REFERENCED_TABLE_NAME = '<table>';
+SELECT table_name, column_name, constraint_name, referenced_table_name, referenced_column_name
+FROM information_schema.key_column_usage
+WHERE referenced_table_schema = '<database>'
+  AND referenced_table_name = '<table>';
 ```
 
 ## List all foreign keys with rules
 
 ```SQL
-SELECT kcu.TABLE_NAME, kcu.COLUMN_NAME, kcu.CONSTRAINT_NAME, kcu.REFERENCED_TABLE_NAME, kcu.REFERENCED_COLUMN_NAME, rc.UPDATE_RULE, rc.DELETE_RULE
-FROM information_schema.KEY_COLUMN_USAGE kcu
-JOIN information_schema.REFERENTIAL_CONSTRAINTS rc ON kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
-ORDER BY kcu.TABLE_NAME, kcu.COLUMN_NAME;
+SELECT kcu.table_name, kcu.column_name, kcu.constraint_name, kcu.referenced_table_name, kcu.referenced_column_name, rc.update_rule, rc.delete_rule
+FROM information_schema.key_column_usage kcu
+JOIN information_schema.referential_constraints rc ON kcu.constraint_name = rc.constraint_name
+ORDER BY kcu.table_name, kcu.column_name;
+```
+
+## Drop all foreign keys
+
+```SQL
+SELECT DISTINCT CONCAT(
+    "ALTER TABLE ",
+    kcu.table_name,
+    " DROP CONSTRAINT ",
+    kcu.constraint_name,
+    ";"
+  ) AS statement
+FROM information_schema.key_column_usage kcu
+JOIN information_schema.tables AS t
+  ON t.table_schema = kcu.table_schema 
+ AND t.table_name = kcu.table_name
+ JOIN information_schema.columns AS c
+  ON t.table_schema = c.table_schema
+ AND t.table_name = c.table_name
+WHERE kcu.table_schema = DATABASE()
+  AND kcu.referenced_table_name IS NOT NULL;
+```
+
+## Create all foreign keys with rules
+
+```SQL
+SELECT CONCAT(
+    "ALTER TABLE ",
+    kcu.table_name,
+    " ADD CONSTRAINT ",
+    kcu.constraint_name,
+    " FOREIGN KEY (",
+    kcu.column_name,
+    ") REFERENCES ",
+    kcu.referenced_table_name,
+    "(",
+    kcu.referenced_column_name,
+    ") ON DELETE ",
+    rc.delete_rule,
+    " ON UPDATE ",
+    rc.update_rule,
+    ";"
+  ) AS statement
+FROM information_schema.key_column_usage kcu
+JOIN information_schema.tables AS t
+  ON t.table_schema = kcu.table_schema
+ AND t.table_name = kcu.table_name
+JOIN information_schema.referential_constraints rc
+  ON kcu.constraint_name = rc.constraint_name
+WHERE kcu.table_schema = DATABASE()
+  AND kcu.referenced_table_name IS NOT NULL
+ORDER BY kcu.table_name, kcu.column_name;
 ```
 
 ## List all primary and foreign keys
