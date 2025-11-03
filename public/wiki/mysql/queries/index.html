@@ -162,10 +162,10 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">TABLE_NAME</span>, <span style="color:#719e07">COLUMN_NAME</span>, <span style="color:#719e07">CONSTRAINT_NAME</span>, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME
-</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> INFORMATION_SCHEMA.KEY_COLUMN_USAGE
-</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> REFERENCED_TABLE_SCHEMA <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&lt;database&gt;&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> REFERENCED_TABLE_NAME <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&lt;table&gt;&#39;</span>;
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">table_name</span>, <span style="color:#719e07">column_name</span>, <span style="color:#719e07">constraint_name</span>, referenced_table_name, referenced_column_name
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.key_column_usage
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> referenced_table_schema <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&lt;database&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> referenced_table_name <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&lt;table&gt;&#39;</span>;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="list-all-foreign-keys-with-rules">List all foreign keys with rules</h2>
@@ -177,10 +177,108 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> kcu.<span style="color:#719e07">TABLE_NAME</span>, kcu.<span style="color:#719e07">COLUMN_NAME</span>, kcu.<span style="color:#719e07">CONSTRAINT_NAME</span>, kcu.REFERENCED_TABLE_NAME, kcu.REFERENCED_COLUMN_NAME, rc.UPDATE_RULE, rc.DELETE_RULE
-</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.KEY_COLUMN_USAGE kcu
-</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.REFERENTIAL_CONSTRAINTS rc <span style="color:#719e07">ON</span> kcu.<span style="color:#719e07">CONSTRAINT_NAME</span> <span style="color:#719e07">=</span> rc.<span style="color:#719e07">CONSTRAINT_NAME</span>
-</span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> kcu.<span style="color:#719e07">TABLE_NAME</span>, kcu.<span style="color:#719e07">COLUMN_NAME</span>;
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> kcu.<span style="color:#719e07">table_name</span>, kcu.<span style="color:#719e07">column_name</span>, kcu.<span style="color:#719e07">constraint_name</span>, kcu.referenced_table_name, kcu.referenced_column_name, rc.update_rule, rc.delete_rule
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.key_column_usage kcu
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.referential_constraints rc <span style="color:#719e07">ON</span> kcu.<span style="color:#719e07">constraint_name</span> <span style="color:#719e07">=</span> rc.<span style="color:#719e07">constraint_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> kcu.<span style="color:#719e07">table_name</span>, kcu.<span style="color:#719e07">column_name</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="drop-all-foreign-keys">Drop all foreign keys</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">DISTINCT</span> CONCAT(
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;ALTER TABLE &#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.<span style="color:#719e07">table_name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34; DROP CONSTRAINT &#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.<span style="color:#719e07">constraint_name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#719e07">AS</span> <span style="color:#719e07">statement</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.key_column_usage kcu
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.tables <span style="color:#719e07">AS</span> t
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">ON</span> t.table_schema <span style="color:#719e07">=</span> kcu.table_schema 
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">AND</span> t.<span style="color:#719e07">table_name</span> <span style="color:#719e07">=</span> kcu.<span style="color:#719e07">table_name</span>
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">JOIN</span> information_schema.columns <span style="color:#719e07">AS</span> <span style="color:#719e07">c</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">ON</span> t.table_schema <span style="color:#719e07">=</span> <span style="color:#719e07">c</span>.table_schema
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">AND</span> t.<span style="color:#719e07">table_name</span> <span style="color:#719e07">=</span> <span style="color:#719e07">c</span>.<span style="color:#719e07">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> kcu.table_schema <span style="color:#719e07">=</span> <span style="color:#719e07">DATABASE</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> kcu.referenced_table_name <span style="color:#719e07">IS</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="create-all-foreign-keys-with-rules">Create all foreign keys with rules</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> CONCAT(
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;ALTER TABLE &#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.<span style="color:#719e07">table_name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34; ADD CONSTRAINT &#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.<span style="color:#719e07">constraint_name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34; FOREIGN KEY (&#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.<span style="color:#719e07">column_name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;) REFERENCES &#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.referenced_table_name,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;(&#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.referenced_column_name,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;) ON DELETE &#34;</span>,
+</span></span><span style="display:flex;"><span>    rc.delete_rule,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34; ON UPDATE &#34;</span>,
+</span></span><span style="display:flex;"><span>    rc.update_rule,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#719e07">AS</span> <span style="color:#719e07">statement</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.key_column_usage kcu
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.tables <span style="color:#719e07">AS</span> t
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">ON</span> t.table_schema <span style="color:#719e07">=</span> kcu.table_schema
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">AND</span> t.<span style="color:#719e07">table_name</span> <span style="color:#719e07">=</span> kcu.<span style="color:#719e07">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.referential_constraints rc
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">ON</span> kcu.<span style="color:#719e07">constraint_name</span> <span style="color:#719e07">=</span> rc.<span style="color:#719e07">constraint_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> kcu.table_schema <span style="color:#719e07">=</span> <span style="color:#719e07">DATABASE</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> kcu.referenced_table_name <span style="color:#719e07">IS</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> kcu.<span style="color:#719e07">table_name</span>, kcu.<span style="color:#719e07">column_name</span>;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="list-all-primary-and-foreign-keys">List all primary and foreign keys</h2>

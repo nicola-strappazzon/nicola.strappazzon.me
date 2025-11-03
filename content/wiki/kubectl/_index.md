@@ -220,3 +220,11 @@ Obtener de forma directa el valor y decodificarlo:
 ```bash
 kubectl get secret api -o jsonpath='{.data.password}' | base64 --decode
 ```
+
+## Job/Cronjob
+
+Ejecutar un job de forma manual, excelente para probar:
+
+```bash
+kubectl create job --from=cronjob.batch/demo "cronjob-manually-$(date '+%s')" --namespace demo
+```

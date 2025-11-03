@@ -141,8 +141,8 @@ Seconds_Behind_Source: 0
 <li><code>innodb_flush_log_at_trx_commit=2</code></li>
 <li><code>sync_binlog=0</code></li>
 <li><code>slave_parallel_workers=4</code> Si cambias este valor debes detener y reanudar la replicación. Aumentar no significa que vaya más rápido, puede ayudar.</li>
-<li><code>binlog_transaction_dependency_tracking</code></li>
-<li><code>slave_preserve_commit_order</code></li>
+<li><code>binlog_transaction_dependency_tracking</code> Por defecto viene <code>COMMIT_ORDER</code>, lo pasamos a <code>WRITESET</code>.</li>
+<li><code>slave_preserve_commit_order=OFF</code> Por defecto viene en <code>ON</code>.</li>
 </ul>
 <h2 id="ignorar-objetos">Ignorar objetos</h2>
 <p>Es posible ignorar los cambios de una o varias tablas ajustando la variable <code>replicate-ignore-table</code>. El nombre de la tabla debe estar acompañado del nombre de la base de datos <code>db.table</code>. Cada tabla separada por <code>,</code>.</p>

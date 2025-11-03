@@ -356,6 +356,16 @@
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get secret api -o <span style="color:#268bd2">jsonpath</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;{.data.password}&#39;</span> | base64 --decode
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="jobcronjob">Job/Cronjob</h2>
+<p>Ejecutar un job de forma manual, excelente para probar:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create job --from<span style="color:#719e07">=</span>cronjob.batch/demo <span style="color:#2aa198">&#34;cronjob-manually-</span><span style="color:#719e07">$(</span>date <span style="color:#2aa198">&#39;+%s&#39;</span><span style="color:#719e07">)</span><span style="color:#2aa198">&#34;</span> --namespace demo
+</span></span></code></pre></td></tr></table>
+</div>
 </div>
   
   <ul>
