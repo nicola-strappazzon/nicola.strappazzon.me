@@ -60,6 +60,8 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/esr/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/ws2812/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/nokia-5110/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/nhd-1.8-160128ubc3/</loc>
@@ -284,6 +286,8 @@
     <loc>http://localhost:1313/tags/openpgp/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/proxysql/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/rds/</loc>
   </url><url>
