@@ -62,7 +62,26 @@
       
     </div>
   
-  <h2 id="estado-de-las-conexiones">Estado de las conexiones</h2>
+  <h2 id="clenup">ClenUp</h2>
+<p>Borra los datos de las siguientes tablas:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> stats_mysql_client_host_cache_reset;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> stats_mysql_connection_pool_reset;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> stats_mysql_errors_reset;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> stats_mysql_query_digest_reset;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> stats_proxysql_message_metrics_reset;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="conexiones">Conexiones</h2>
+<p>Estado general de cada MySQL server.</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
@@ -91,7 +110,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> srv_host;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="contador-general">Contador general</h2>
+</div><h2 id="contadores">Contadores</h2>
+<p>Es un contador de cualquier tipo de sentencia, también incluye media de rango de tiempos.</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
@@ -100,7 +120,8 @@
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> stats_mysql_commands_counters;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="errores-en-el-backend">Errores en el backend</h2>
+</div><h2 id="errores">Errores</h2>
+<p>Registra cualquier query que genere algún error del lado de MySQL server.</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
@@ -127,7 +148,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> stats_mysql_errors;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="ping-time-backend-servers">Ping time backend servers</h2>
+</div><h2 id="ping">Ping</h2>
+<p>Constantemente está midiendo el tiempo de respuesta por cada uno de los MySQL server, lo hace para descartar aquellos que tardan mucho.</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
@@ -142,6 +164,70 @@
 </span></span><span style="display:flex;"><span>       <span style="color:#719e07">avg</span>(ping_success_time_us) <span style="color:#719e07">AS</span> time_us
 </span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> monitor.mysql_server_ping_log
 </span></span><span style="display:flex;"><span><span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> hostname, port;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="slow-queries">Slow queries</h2>
+<p>Lista las 25 consultas más lentas.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> hostgroup,
+</span></span><span style="display:flex;"><span>       schemaname,
+</span></span><span style="display:flex;"><span>       username,
+</span></span><span style="display:flex;"><span>       digest,
+</span></span><span style="display:flex;"><span>       SUBSTR(digest_text,<span style="color:#2aa198">0</span>,<span style="color:#2aa198">45</span>),
+</span></span><span style="display:flex;"><span>       count_star,sum_time<span style="color:#719e07">/</span>count_star avg_time,
+</span></span><span style="display:flex;"><span>       min_time, max_time<span style="color:#719e07">/</span><span style="color:#2aa198">1000000</span> <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#34;max time secs&#34;</span>,
+</span></span><span style="display:flex;"><span>       from_unixtime(first_seen) <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#34;first seen&#34;</span>,
+</span></span><span style="display:flex;"><span>       from_unixtime(last_seen) <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#34;last seen&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> stats_mysql_query_digest
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> digest_text <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;SELECT%&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> max_time <span style="color:#719e07">DESC</span>, digest
+</span></span><span style="display:flex;"><span><span style="color:#719e07">LIMIT</span> <span style="color:#2aa198">25</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="más-ejecutadas">Más ejecutadas</h2>
+<p>Lista las 25 consultas más frecuentes.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> digest, SUBSTR(digest_text,<span style="color:#2aa198">0</span>,<span style="color:#2aa198">45</span>),
+</span></span><span style="display:flex;"><span>       count_star,
+</span></span><span style="display:flex;"><span>       sum_time,
+</span></span><span style="display:flex;"><span>       from_unixtime(first_seen) <span style="color:#2aa198">&#34;first seen&#34;</span>,
+</span></span><span style="display:flex;"><span>       from_unixtime(last_seen) <span style="color:#2aa198">&#34;last seen&#34;</span>,
+</span></span><span style="display:flex;"><span>       username,
+</span></span><span style="display:flex;"><span>       hostgroup
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> stats_mysql_query_digest
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> digest_text <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;SELECT%&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> count_star <span style="color:#719e07">DESC</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">LIMIT</span> <span style="color:#2aa198">25</span>;
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
