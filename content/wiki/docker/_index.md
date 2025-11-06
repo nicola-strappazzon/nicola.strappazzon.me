@@ -24,6 +24,12 @@ Para listar los contenedores que se estan ejecutando:
 docker ps
 ```
 
+Para ver el comando completo cuando se lanzo el contenedor:
+
+```bash
+docker ps -a --no-trunc
+```
+
 Para detener un contenedor:
 
 ```bash
