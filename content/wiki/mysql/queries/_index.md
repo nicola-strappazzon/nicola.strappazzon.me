@@ -145,6 +145,20 @@ WHERE tab.table_schema = '<table>'
     AND tab.table_type = 'BASE TABLE'
 ORDER BY tab.table_name, column_id;
 ```
+
+## List all virtual columns
+
+```SQL
+SELECT table_schema,
+       table_name,
+       data_type,
+       extra,
+       generation_expression
+FROM information_schema.columns
+WHERE extra LIKE '%stored%'
+   OR extra LIKE '%virtual%';
+```
+
 ## Add new column before x column
 
 ```SQL
