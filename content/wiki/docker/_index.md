@@ -30,6 +30,12 @@ Para ver el comando completo cuando se lanzo el contenedor:
 docker ps -a --no-trunc
 ```
 
+Para entrar dentro de un contenedor:
+
+```bash
+docker exec -it my-container sh
+```
+
 Para detener un contenedor:
 
 ```bash
