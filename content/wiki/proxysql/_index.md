@@ -53,7 +53,7 @@ SELECT hostgroup,
        schemaname,
        errno,
        count_star,
-       last_seen,
+       from_unixtime(last_seen) AS last_seen,
        last_error
 FROM stats_mysql_errors;
 ```
@@ -81,9 +81,9 @@ SELECT hostgroup,
        digest,
        SUBSTR(digest_text,0,45),
        count_star,sum_time/count_star avg_time,
-       min_time, max_time/1000000 AS "max time secs",
-       from_unixtime(first_seen) AS "first seen",
-       from_unixtime(last_seen) AS "last seen"
+       min_time, max_time/1000000 AS max_time_secs,
+       from_unixtime(first_seen) AS first_seen,
+       from_unixtime(last_seen) AS last_seen
 FROM stats_mysql_query_digest
 WHERE digest_text LIKE 'SELECT%'
 ORDER BY max_time DESC, digest
@@ -98,8 +98,8 @@ Lista las 25 consultas más frecuentes.
 SELECT digest, SUBSTR(digest_text,0,45),
        count_star,
        sum_time,
-       from_unixtime(first_seen) "first seen",
-       from_unixtime(last_seen) "last seen",
+       from_unixtime(first_seen) AS first_seen,
+       from_unixtime(last_seen) AS last_seen,
        username,
        hostgroup
 FROM stats_mysql_query_digest
