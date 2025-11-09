@@ -143,7 +143,7 @@
 </span></span><span style="display:flex;"><span>       schemaname,
 </span></span><span style="display:flex;"><span>       errno,
 </span></span><span style="display:flex;"><span>       count_star,
-</span></span><span style="display:flex;"><span>       last_seen,
+</span></span><span style="display:flex;"><span>       from_unixtime(last_seen) <span style="color:#719e07">AS</span> last_seen,
 </span></span><span style="display:flex;"><span>       last_error
 </span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> stats_mysql_errors;
 </span></span></code></pre></td></tr></table>
@@ -191,9 +191,9 @@
 </span></span><span style="display:flex;"><span>       digest,
 </span></span><span style="display:flex;"><span>       SUBSTR(digest_text,<span style="color:#2aa198">0</span>,<span style="color:#2aa198">45</span>),
 </span></span><span style="display:flex;"><span>       count_star,sum_time<span style="color:#719e07">/</span>count_star avg_time,
-</span></span><span style="display:flex;"><span>       min_time, max_time<span style="color:#719e07">/</span><span style="color:#2aa198">1000000</span> <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#34;max time secs&#34;</span>,
-</span></span><span style="display:flex;"><span>       from_unixtime(first_seen) <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#34;first seen&#34;</span>,
-</span></span><span style="display:flex;"><span>       from_unixtime(last_seen) <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#34;last seen&#34;</span>
+</span></span><span style="display:flex;"><span>       min_time, max_time<span style="color:#719e07">/</span><span style="color:#2aa198">1000000</span> <span style="color:#719e07">AS</span> max_time_secs,
+</span></span><span style="display:flex;"><span>       from_unixtime(first_seen) <span style="color:#719e07">AS</span> first_seen,
+</span></span><span style="display:flex;"><span>       from_unixtime(last_seen) <span style="color:#719e07">AS</span> last_seen
 </span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> stats_mysql_query_digest
 </span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> digest_text <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;SELECT%&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> max_time <span style="color:#719e07">DESC</span>, digest
@@ -220,8 +220,8 @@
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> digest, SUBSTR(digest_text,<span style="color:#2aa198">0</span>,<span style="color:#2aa198">45</span>),
 </span></span><span style="display:flex;"><span>       count_star,
 </span></span><span style="display:flex;"><span>       sum_time,
-</span></span><span style="display:flex;"><span>       from_unixtime(first_seen) <span style="color:#2aa198">&#34;first seen&#34;</span>,
-</span></span><span style="display:flex;"><span>       from_unixtime(last_seen) <span style="color:#2aa198">&#34;last seen&#34;</span>,
+</span></span><span style="display:flex;"><span>       from_unixtime(first_seen) <span style="color:#719e07">AS</span> first_seen,
+</span></span><span style="display:flex;"><span>       from_unixtime(last_seen) <span style="color:#719e07">AS</span> last_seen,
 </span></span><span style="display:flex;"><span>       username,
 </span></span><span style="display:flex;"><span>       hostgroup
 </span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> stats_mysql_query_digest
