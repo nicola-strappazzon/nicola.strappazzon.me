@@ -10,9 +10,10 @@ weight = 2
 
 ```SQL
 SELECT table_schema as "Database",
-       table_name AS "Table", 
-       round(((data_length + index_length) / 1024 / 1024), 2) "Size in MB"
-FROM information_schema.TABLES 
+       table_name AS "Table",
+       table_rows AS "Rows",
+       round(((data_length + index_length) / 1024 / 1024 / 1024), 2) "SizeInGB"
+FROM information_schema.tables
 ORDER BY (data_length + index_length) DESC;
 ```
 
@@ -20,8 +21,8 @@ ORDER BY (data_length + index_length) DESC;
 
 ```SQL
 SELECT table_schema "DB Name",
-       ROUND(SUM(data_length + index_length) / 1024 / 1024, 1) "DB Size in MB" 
-FROM information_schema.tables 
+       ROUND(SUM(data_length + index_length) / 1024 / 1024 / 1024, 1) "SizeInGB"
+FROM information_schema.tables
 GROUP BY table_schema;
 ```
 
@@ -88,7 +89,7 @@ SELECT DISTINCT CONCAT(
   ) AS statement
 FROM information_schema.key_column_usage kcu
 JOIN information_schema.tables AS t
-  ON t.table_schema = kcu.table_schema 
+  ON t.table_schema = kcu.table_schema
  AND t.table_name = kcu.table_name
  JOIN information_schema.columns AS c
   ON t.table_schema = c.table_schema
@@ -241,8 +242,8 @@ SELECT
     c.work_estimated,
     ROUND(c.work_completed / NULLIF(c.work_estimated,0) * 100, 2) AS pct_done,
     ROUND(c.timer_wait / 1000000000000, 2) AS seconds_elapsed,
-    ROUND((c.timer_wait / 1000000000000) / 
-          (c.work_completed / NULLIF(c.work_estimated,1)) 
+    ROUND((c.timer_wait / 1000000000000) /
+          (c.work_completed / NULLIF(c.work_estimated,1))
         * (1 - (c.work_completed / NULLIF(c.work_estimated,1))), 2) AS seconds_eta
 FROM performance_schema.events_stages_current c
 JOIN performance_schema.threads t ON t.thread_id = c.thread_id;
