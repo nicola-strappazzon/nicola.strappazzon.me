@@ -12,7 +12,7 @@ weight = 2
 SELECT table_schema as "Database",
        table_name AS "Table",
        table_rows AS "Rows",
-       round(((data_length + index_length) / 1024 / 1024 / 1024), 2) "SizeInGB"
+       ROUND(((data_length + index_length) / POWER(1024, 3)), 2) "SizeInGB"
 FROM information_schema.tables
 ORDER BY (data_length + index_length) DESC;
 ```
@@ -21,7 +21,7 @@ ORDER BY (data_length + index_length) DESC;
 
 ```SQL
 SELECT table_schema "DB Name",
-       ROUND(SUM(data_length + index_length) / 1024 / 1024 / 1024, 1) "SizeInGB"
+       ROUND(SUM(data_length + index_length) / POWER(1024, 3), 1) "SizeInGB"
 FROM information_schema.tables
 GROUP BY table_schema;
 ```
