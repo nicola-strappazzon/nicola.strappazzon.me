@@ -78,7 +78,7 @@
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> table_schema <span style="color:#719e07">as</span> <span style="color:#2aa198">&#34;Database&#34;</span>,
 </span></span><span style="display:flex;"><span>       <span style="color:#719e07">table_name</span> <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#34;Table&#34;</span>,
 </span></span><span style="display:flex;"><span>       table_rows <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#34;Rows&#34;</span>,
-</span></span><span style="display:flex;"><span>       round(((data_length <span style="color:#719e07">+</span> index_length) <span style="color:#719e07">/</span> <span style="color:#2aa198">1024</span> <span style="color:#719e07">/</span> <span style="color:#2aa198">1024</span> <span style="color:#719e07">/</span> <span style="color:#2aa198">1024</span>), <span style="color:#2aa198">2</span>) <span style="color:#2aa198">&#34;SizeInGB&#34;</span>
+</span></span><span style="display:flex;"><span>       ROUND(((data_length <span style="color:#719e07">+</span> index_length) <span style="color:#719e07">/</span> POWER(<span style="color:#2aa198">1024</span>, <span style="color:#2aa198">3</span>)), <span style="color:#2aa198">2</span>) <span style="color:#2aa198">&#34;SizeInGB&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.tables
 </span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> (data_length <span style="color:#719e07">+</span> index_length) <span style="color:#719e07">DESC</span>;
 </span></span></code></pre></td></tr></table>
@@ -93,7 +93,7 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> table_schema <span style="color:#2aa198">&#34;DB Name&#34;</span>,
-</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#719e07">SUM</span>(data_length <span style="color:#719e07">+</span> index_length) <span style="color:#719e07">/</span> <span style="color:#2aa198">1024</span> <span style="color:#719e07">/</span> <span style="color:#2aa198">1024</span> <span style="color:#719e07">/</span> <span style="color:#2aa198">1024</span>, <span style="color:#2aa198">1</span>) <span style="color:#2aa198">&#34;SizeInGB&#34;</span>
+</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#719e07">SUM</span>(data_length <span style="color:#719e07">+</span> index_length) <span style="color:#719e07">/</span> POWER(<span style="color:#2aa198">1024</span>, <span style="color:#2aa198">3</span>), <span style="color:#2aa198">1</span>) <span style="color:#2aa198">&#34;SizeInGB&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.tables
 </span></span><span style="display:flex;"><span><span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> table_schema;
 </span></span></code></pre></td></tr></table>
