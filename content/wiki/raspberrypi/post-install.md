@@ -37,9 +37,24 @@ Removemos el logo de raspberry en la esquina superior de la pantalla:
 
 Debes añadir la siguiente opción `logo.nologo` al final de la única línea que esta dentro del fichero `/boot/firmware/cmdline.txt` antiguamente en `/boot/cmdline.txt`.
 
+## Red
+
+A mí me gusta que cada cacharro en casa tenga su IP estática, así sé donde está. Vamos a definir una IP estática y los DNS de cloudflare.
+
+```bash
+nmcli con show
+sudo nmcli con mod "Wired connection 1" ipv4.addresses 192.168.1.10/24
+sudo nmcli con mod "Wired connection 1" ipv4.gateway 192.168.1.1
+sudo nmcli con mod "Wired connection 1" ipv4.dns "1.1.1.1 8.8.8.8"
+sudo nmcli con mod "Wired connection 1" ipv4.method manual
+sudo nmcli con down "Wired connection 1" && sudo nmcli con up "Wired connection 1"
+# Seguro has perdido la conexión SSH, deberás volver a conectarte.
+nmcli device show eth0
+```
+
 ## Servicios
 
-Si usas el dispositivo cómo servidor sin entorno grafico, seguramente nada de estos servicios te hace falta:
+Si usas el dispositivo cómo servidor sin entorno grafico, seguramente nada de esto te hace falta:
 
 - avahi: Permite descubrir tu dispositivo en la red usando un DNS `.local`.
 - bluealsa: Gestiona el audio por Bluetooth.

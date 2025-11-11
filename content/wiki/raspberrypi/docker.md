@@ -61,7 +61,7 @@ docker run \
 
 Usuario y clave por defecto: `slskd`
 
-## navidrome
+## Navidrome
 
 ```bash
 docker run \
@@ -69,13 +69,34 @@ docker run \
     --name navidrome \
     --restart=always \
     --user $(id -u):$(id -g) \
-    --volume "${PWD:-.}/samba/music/files:/music" \
-    --volume "${PWD:-.}/samba/music/data:/data" \
+    --volume "${PWD:-.}/samba/music:/music:ro" \
+    --volume "${PWD:-.}/samba/navidrome:/data:rw" \
     --publish 8080:4533 \
     --env ND_LOGLEVEL=info \
     --env ND_ENABLEINSIGHTSCOLLECTOR=false \
     --env ND_ENABLETRANSCODINGCONFIG=true \
+    --env ND_SUBSONIC_ARTISTPARTICIPATIONS=true \
+    --env ND_SUBSONIC_DEFAULTREPORTREALPATH=true \
     deluan/navidrome:latest
+```
+
+## LMS - Lightweight Music Server
+
+
+https://github.com/epoupon/lms
+https://hub.docker.com/r/epoupon/lms
+https://github.com/dweymouth/supersonic
+
+```bash
+docker run \
+    --detach \
+    --name lms \
+    --restart=always \
+    --user 0:0 \
+    --publish 8080:5082 \
+    --env "${PWD:-.}/samba/music:/music:ro" \
+    --env "${PWD:-.}/samba/lms:/var/lms:rw" \
+    epoupon/lms
 ```
 
 ## PiHole
