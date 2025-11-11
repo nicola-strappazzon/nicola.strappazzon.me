@@ -24,6 +24,12 @@ Para listar los contenedores que se estan ejecutando:
 docker ps
 ```
 
+Lista las columnas más importantes:
+
+```bash
+docker ps --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}"
+```
+
 Para ver el comando completo cuando se lanzo el contenedor:
 
 ```bash
