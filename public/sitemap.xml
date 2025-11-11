@@ -11,12 +11,16 @@
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/import/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/raspberrypi/post-install/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/history/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/mysql/queries/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/terminal/client/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/raspberrypi/docker/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/export/</loc>
   </url><url>
@@ -290,6 +294,8 @@
     <loc>http://localhost:1313/wiki/openpgp/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/proxysql/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/raspberrypi/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/rds/</loc>
   </url><url>
