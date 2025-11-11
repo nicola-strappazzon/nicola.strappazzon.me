@@ -64,15 +64,37 @@ Usuario y clave por defecto: `slskd`
 ## navidrome
 
 ```bash
-sudo docker run -d \
-   --name navidrome \
-   --restart=always \
-   --user $(id -u):$(id -g) \
-   --volume "${PWD:-.}/samba/music/files:/music" \
-   --volume "${PWD:-.}/samba/music/data:/data" \
-   --publish 8080:4533 \
-   --env ND_LOGLEVEL=info \
-   --env ND_ENABLEINSIGHTSCOLLECTOR=false \
-   --env ND_ENABLETRANSCODINGCONFIG=true \
-   deluan/navidrome:latest
+docker run \
+    --detach \
+    --name navidrome \
+    --restart=always \
+    --user $(id -u):$(id -g) \
+    --volume "${PWD:-.}/samba/music/files:/music" \
+    --volume "${PWD:-.}/samba/music/data:/data" \
+    --publish 8080:4533 \
+    --env ND_LOGLEVEL=info \
+    --env ND_ENABLEINSIGHTSCOLLECTOR=false \
+    --env ND_ENABLETRANSCODINGCONFIG=true \
+    deluan/navidrome:latest
+```
+
+## PiHole
+
+```bash
+docker run \
+    --detach \
+    --name pihole\
+    --restart=always \
+    --publish 53:53/tcp\
+    --publish 53:53/udp\
+    --publish 80:80/tcp\
+    --publish 443:443/tcp\
+    --env TZ=Europe/Madrid\
+    --env FTLCONF_webserver_api_password="mysecretpassword"\
+    --env FTLCONF_dns_listeningMode=all\
+    --volume ./etc-pihole:/etc/pihole\
+    --volume ./etc-dnsmasq.d:/etc/dnsmasq.d\
+    --cap-add NET_ADMIN\
+    --restart unless-stopped \
+    pihole/pihole:latest
 ```
