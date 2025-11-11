@@ -17,7 +17,7 @@ sudo apt upgrade
 Instalamos una serie de paquetes:
 
 ```bash
-sudo apt install nmap tmux vim btop
+sudo apt install nmap tmux vim btop mc
 ```
 
 ## Configuración
