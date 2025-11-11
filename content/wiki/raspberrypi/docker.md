@@ -82,10 +82,7 @@ docker run \
 
 ## LMS - Lightweight Music Server
 
-
-https://github.com/epoupon/lms
-https://hub.docker.com/r/epoupon/lms
-https://github.com/dweymouth/supersonic
+El sitio [oficial del proyecto](https://github.com/epoupon/lms), cómo usar la versión del [docker la consigues aquí](https://hub.docker.com/r/epoupon/lms) y un este es un [reproductor de escritorio](https://github.com/dweymouth/supersonic) que se conecta al servidor.
 
 ```bash
 docker run \
