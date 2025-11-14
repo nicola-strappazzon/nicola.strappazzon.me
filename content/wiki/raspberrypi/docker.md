@@ -29,6 +29,17 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
+## Cloudflare tunnel
+
+```bash
+docker run \
+    --detach \
+    --name=cloudflare-tunnel-name \
+    --restart=always \
+    --network=host
+    cloudflare/cloudflared:latest tunnel --no-autoupdate run --token $CLOUDFLARE_TOKEN
+```
+
 ## Samba
 
 ```bash
@@ -108,6 +119,7 @@ mkdir -p /home/nicola/jellyfin/{config,cache}
 docker run \
     --detach \
     --name pihole\
+    --restart=always \
     --volume /home/nicola/jellyfin/config:/config \
     --volume /home/nicola/jellyfin/cache:/cache \
     --volume /home/nicola/media:/media \
