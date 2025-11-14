@@ -17,7 +17,7 @@ sudo apt upgrade
 Instalamos una serie de paquetes:
 
 ```bash
-sudo apt install nmap tmux vim btop mc
+sudo apt install nmap tmux vim btop mc sqlite3
 ```
 
 ## Configuración
@@ -48,7 +48,7 @@ sudo nmcli con mod "Wired connection 1" ipv4.gateway 192.168.1.1
 sudo nmcli con mod "Wired connection 1" ipv4.dns "1.1.1.1 8.8.8.8"
 sudo nmcli con mod "Wired connection 1" ipv4.method manual
 sudo nmcli con down "Wired connection 1" && sudo nmcli con up "Wired connection 1"
-# Seguro has perdido la conexión SSH, deberás volver a conectarte.
+# Puede que pierdas la conexión SSH.
 nmcli device show eth0
 ```
 
@@ -80,4 +80,13 @@ sudo systemctl disable polkit.service
 sudo systemctl disable systemd-logind.service
 sudo systemctl disable udisks2.service
 sudo systemctl disable wpa_supplicant.service
+```
+
+## Directories
+
+Cómo utilizó la raspberry pi como servidor personal suelo tener esta estructura de directorios:
+
+```bash
+mkdir -p /home/nicola/media/{downloads,music,movies,tvshow,photos,documents}
+mkdir -p /home/nicola/config/{dnsmasq,slskd,pihole,jellyfin,transmission}
 ```
