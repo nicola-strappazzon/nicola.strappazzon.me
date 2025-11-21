@@ -38,3 +38,19 @@ Git pull luego de hacer `forced update`:
 git fetch
 git reset origin/main --hard
 ```
+
+Unir los últimos 3 commits en uno reescribiendo el historial remoto:
+
+```bash
+git rebase -i HEAD~3
+```
+
+Se abrira un editor de texto, deja el primero `pick` y el resto renombralos como `squash`, guarda y cierra. Luego git te pedirá editar el mensaje del nuevo commit unico, guarda y cierra. Ahora podrás hacer `git push --force`.
+
+Editar el mensaje del último commit.
+
+```bash
+git commit --amend
+```
+
+Se abrira un editor de texto para modificar el mensaje, guarda y cierra. Hahora podrás hacer `git push --force`.
