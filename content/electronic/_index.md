@@ -8,7 +8,9 @@ Este es mi hobby, soy de aquellos que piensa que un informático debería saber 
 Todos los circuitos publicados están probados, si necesitas comentarme algo [escríbeme aquí](https://github.com/nicola-strappazzon/nicola.strappazzon.me/issues/new).
 
 {{% blockquote type="warning" %}}
-La electrónica requiere mucha paciencia, calma, concentración, pulso firme y sentido común. En caso de duda o si no entiende algo del todo, infórmese primero buscando en su buscador favorito de Internet antes de seguir el paso en cuestión. Si no se siente lo suficientemente competente para seguir un procedimiento determinado, lo mejor es buscar la ayuda de un técnico experto en su zona. No me hago responsable de ningún daño que pueda sufrir usted, su equipo o el circuito que esté haciendo como resultado de seguir cualquiera de los tutoriales de este sitio web.
+La electrónica requiere mucha paciencia, calma, concentración, pulso firme y sentido común. En caso de duda o si no entiende algo del todo, infórmese primero buscando en su buscador favorito de Internet o una IA antes de seguir el paso en cuestión. Si no se siente lo suficientemente competente para seguir un procedimiento determinado, lo mejor es buscar la ayuda de un técnico experto en su zona. No me hago responsable de ningún daño que pueda sufrir usted, su equipo o el circuito que esté haciendo como resultado de seguir cualquiera de los tutoriales de este sitio web.
 
 "Every machine is a smoke machine if you operate it incorrectly enough."
 {{% /blockquote %}}
+
+¡Para aprender estoy en contra de los módulos, de los frameworks, de las librerías. Mientras baremetal es, mejor es!.
