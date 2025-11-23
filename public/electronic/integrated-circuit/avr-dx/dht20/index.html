@@ -67,6 +67,7 @@
       
     </div>
     <p>El sensor de temperatura y humedad <a href="datasheet.pdf">DHT20</a> es el sucesor del mítico DHT11 entre sus variantes y es fabricado por <a href="https://asairsensors.com/product/dht20-sip-packaged-temperature-and-humidity-sensor/">asair</a>, opera entre 2.2V y 5.5V y usa el protocolo de comunicaciones I2C a diferencia de su antecesor que era un protocolo de un solo cable (&ldquo;single-wire&rdquo; o &ldquo;single-bus&rdquo;). Este sensor tiene una precisión típica de ±2 % de humedad relativa y ±0,3 °C a 20-80 % de humedad relativa y 20-60 °C. Internamente tiene un AHT20.</p>
+<p>El fabricante <a href="https://es.aliexpress.com/store/1103421005">asair</a> vende por <a href="https://es.aliexpress.com/item/1005006503645001.html">AliExpress</a> el sensor a buen precio.</p>
 <p><img src="workspace.png" alt=""></p>
 <p>Para este ejemplo vamos a leer los datos del sensor y enviarlos por CDC (Communication Device Class) para poder leerlos desde la terminal usando la tool <a href="https://github.com/npat-efault/picocom">picocom</a>. El microcontrolador AVR DA tiene varios I2C, pero en el mundo de Microchip no se dice I2C, sino <a href="http://localhost:1313/electronic/integrated-circuit/avr-dx/new-generation/TB3181.pdf">TWI (Two-Wire Interface)</a>, usaremos el <code>TWI0</code> y la dirección del TWI Slave es <code>0x38</code>.</p>
 <p><img src="schematic.png" alt=""></p>
@@ -249,7 +250,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#268bd2">inline</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">USART1_init_115200</span>(<span style="color:#dc322f">void</span>) {
 </span></span><span style="display:flex;"><span>    PORTC.DIRSET <span style="color:#719e07">=</span> PIN0_bm;
 </span></span><span style="display:flex;"><span>    PORTC.DIRCLR <span style="color:#719e07">=</span> PIN1_bm;
-</span></span><span style="display:flex;"><span>    USART1.BAUD <span style="color:#719e07">=</span> (<span style="color:#dc322f">uint16_t</span>)((<span style="color:#2aa198">64UL</span> <span style="color:#719e07">*</span> F_CPU) <span style="color:#719e07">/</span> (<span style="color:#2aa198">16UL</span> <span style="color:#719e07">*</span> <span style="color:#2aa198">115200UL</span>) <span style="color:#719e07">+</span> <span style="color:#2aa198">0.5</span>);
+</span></span><span style="display:flex;"><span>    USART1.BAUD <span style="color:#719e07">=</span> (<span style="color:#2aa198">64UL</span> <span style="color:#719e07">*</span> F_CPU) <span style="color:#719e07">/</span> (<span style="color:#2aa198">16UL</span> <span style="color:#719e07">*</span> <span style="color:#2aa198">115200UL</span>) <span style="color:#719e07">+</span> <span style="color:#2aa198">0.5</span>;
 </span></span><span style="display:flex;"><span>    USART1.CTRLC <span style="color:#719e07">=</span> USART_CMODE_ASYNCHRONOUS_gc <span style="color:#719e07">|</span>
 </span></span><span style="display:flex;"><span>                   USART_CHSIZE_8BIT_gc;
 </span></span><span style="display:flex;"><span>    USART1.CTRLB <span style="color:#719e07">=</span> USART_TXEN_bm <span style="color:#719e07">|</span> USART_RXEN_bm;
@@ -399,7 +400,8 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="compilar-y-subirlo">Compilar y subirlo</h2>
+</div><p>En el código, en la función DHT20_read vemos que se hacen unos cálculos, estos están definidos en la página 11 del datasheet.</p>
+<h2 id="compilar-y-subirlo">Compilar y subirlo</h2>
 <p>Para compilarlo deberá ejecutar el siguiente comando:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

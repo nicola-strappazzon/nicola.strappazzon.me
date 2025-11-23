@@ -29,7 +29,7 @@ El código fuente:
 static inline void USART1_init_115200(void) {
     PORTC.DIRSET = PIN0_bm;
     PORTC.DIRCLR = PIN1_bm;
-    USART1.BAUD = (uint16_t)((64UL * F_CPU) / (16UL * 115200UL) + 0.5);
+    USART1.BAUD = (64UL * F_CPU) / (16UL * 115200UL) + 0.5;
     USART1.CTRLC = USART_CMODE_ASYNCHRONOUS_gc |
                    USART_CHSIZE_8BIT_gc;
     USART1.CTRLB = USART_TXEN_bm | USART_RXEN_bm;
