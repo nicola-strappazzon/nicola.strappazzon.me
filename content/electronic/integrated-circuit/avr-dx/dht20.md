@@ -24,9 +24,6 @@ El código fuente:
 #define DHT20_CMD_STATUS  0x71
 #define DHT20_CMD_MEASURE 0xAC
 
-#define TWI_sendBytes TWI_write
-#define TWI_readBytes TWI_read
-
 static inline void USART1_init_115200(void) {
     PORTC.DIRSET = PIN0_bm;
     PORTC.DIRCLR = PIN1_bm;
@@ -105,10 +102,10 @@ bool DHT20_init(void) {
 
     _delay_ms(200);
 
-    if (!TWI_sendBytes(DHT20_ADDR, &cmd, 1))
+    if (!TWI_write(DHT20_ADDR, &cmd, 1))
         return false;
 
-    if (!TWI_readBytes(DHT20_ADDR, &status, 1))
+    if (!TWI_read(DHT20_ADDR, &status, 1))
         return false;
 
     if ((status & 0x18) != 0x18) {
@@ -122,12 +119,12 @@ bool DHT20_read(float *temperature_c, float *humidity_rh) {
     uint8_t cmd[3] = { DHT20_CMD_MEASURE, 0x33, 0x00 };
     uint8_t buf[7];
 
-    if (!TWI_sendBytes(DHT20_ADDR, cmd, 3))
+    if (!TWI_write(DHT20_ADDR, cmd, 3))
         return false;
 
     _delay_ms(85);
 
-    if (!TWI_readBytes(DHT20_ADDR, buf, 7))
+    if (!TWI_read(DHT20_ADDR, buf, 7))
         return false;
 
     if (buf[0] & 0x80) {
