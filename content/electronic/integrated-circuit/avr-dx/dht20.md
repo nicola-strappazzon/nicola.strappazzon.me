@@ -177,6 +177,8 @@ int main(void) {
 }
 ```
 
+En el código, en la función DHT20_read vemos que se hacen unos cálculos, estos están definidos en la página 11 del datasheet.
+
 ## Compilar y subirlo
 
 Para compilarlo deberá ejecutar el siguiente comando:
