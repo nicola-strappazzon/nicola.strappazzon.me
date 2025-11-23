@@ -5,6 +5,8 @@ title  = 'DHT20'
 
 El sensor de temperatura y humedad [DHT20](datasheet.pdf) es el sucesor del mítico DHT11 entre sus variantes y es fabricado por [asair](https://asairsensors.com/product/dht20-sip-packaged-temperature-and-humidity-sensor/), opera entre 2.2V y 5.5V y usa el protocolo de comunicaciones I2C a diferencia de su antecesor que era un protocolo de un solo cable ("single-wire" o "single-bus"). Este sensor tiene una precisión típica de ±2 % de humedad relativa y ±0,3 °C a 20-80 % de humedad relativa y 20-60 °C. Internamente tiene un AHT20.
 
+El fabricante [asair](https://es.aliexpress.com/store/1103421005) vende por [AliExpress](https://es.aliexpress.com/item/1005006503645001.html) el sensor a buen precio.
+
 ![](workspace.png)
 
 Para este ejemplo vamos a leer los datos del sensor y enviarlos por CDC (Communication Device Class) para poder leerlos desde la terminal usando la tool [picocom](https://github.com/npat-efault/picocom). El microcontrolador AVR DA tiene varios I2C, pero en el mundo de Microchip no se dice I2C, sino [TWI (Two-Wire Interface)](http://localhost:1313/electronic/integrated-circuit/avr-dx/new-generation/TB3181.pdf), usaremos el `TWI0` y la dirección del TWI Slave es `0x38`.
