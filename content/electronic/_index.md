@@ -13,4 +13,4 @@ La electrónica requiere mucha paciencia, calma, concentración, pulso firme y s
 "Every machine is a smoke machine if you operate it incorrectly enough."
 {{% /blockquote %}}
 
-¡Para aprender estoy en contra de los módulos, de los frameworks, de las librerías. Mientras baremetal es, mejor es!.
+¡Para aprender estoy en contra de los módulos, de los frameworks, de las librerías. ¡Mientras más baremetal es, mejor es!. Solo hay una excepción de momento para mí, la parte de radio y sensores ópticos por su alta sensibilidad, pero estoy trabajando en superarlo.

@@ -43,11 +43,11 @@
       <description>&lt;p&gt;Este es una forma de hacer un &lt;a href=&#34;https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/&#34;&gt;blink&lt;/a&gt; con un efecto de encendido y apagado suave y transitorio, es bonito y relajante. Para lograrlo, debemos hacer uso del &lt;code&gt;timer/counter&lt;/code&gt; que genera una frecuencia de tipo &lt;a href=&#34;https://en.wikipedia.org/wiki/Pulse-width_modulation&#34;&gt;PWM (Pulse Width Modulation)&lt;/a&gt; y es más complejo que él &lt;a href=&#34;https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/&#34;&gt;ejemplo anterior&lt;/a&gt; pero es una base esencial para hacer muchas más cosas.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;minimal.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;blockquote class=&#34;note&#34;&gt;&lt;p class=&#34;title&#34;&gt;&lt;svg viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;Note&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Tonos y melodías</title>
-      <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</link>
+      <title>CDC - Communication Device Class</title>
+      <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/cdc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;workspace.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un &lt;code&gt;AVR128DA28&lt;/code&gt;. Los tonos serán reproducidos por un &lt;a href=&#34;https://en.wikipedia.org/wiki/Piezoelectric_speaker&#34;&gt;buzzer o altavoz piezoeléctrico&lt;/a&gt; y en específico usé este de &lt;a href=&#34;https://www.digikey.es/es/products/detail/tdk-corporation/PS1240P02BT/935924&#34;&gt;TDK PS1240P02BT&lt;/a&gt;. Cómo ejemlo de estudio usaremos una melodía muy famosa que la usa &lt;a href=&#34;https://docs.arduino.cc/built-in-examples/digital/toneMelody/&#34;&gt;Arduino&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;note&#34;&gt;&lt;p class=&#34;title&#34;&gt;&lt;svg viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;Note&lt;/p&gt;</description>
+      <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/cdc/</guid>
+      <description>&lt;p&gt;Se puede enviar y recibir datos desde al Microcontrolador por el puerto USB con el componente &lt;a href=&#34;https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/&#34;&gt;CH340&lt;/a&gt; que permite la comunicación entre UART y USB, es algo muy útil para ampliar funcionalidades e incluso para &amp;ldquo;debugear&amp;rdquo; nuestro programa con mayor facilidad.&lt;/p&gt;</description>
     </item>
     <item>
       <title>DAC</title>
@@ -57,18 +57,25 @@
       <description>&lt;blockquote class=&#34;note&#34;&gt;&lt;p class=&#34;title&#34;&gt;&lt;svg viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;Note&lt;/p&gt;&lt;p&gt;Sigo trabajando en mejorar y terminar el artículo. De momento esta incompleto.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>DHT20</title>
+      <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/dht20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/dht20/</guid>
+      <description>&lt;p&gt;El sensor de temperatura y humedad &lt;a href=&#34;datasheet.pdf&#34;&gt;DHT20&lt;/a&gt; es el sucesor del mítico DHT11 entre sus variantes y es fabricado por &lt;a href=&#34;https://asairsensors.com/product/dht20-sip-packaged-temperature-and-humidity-sensor/&#34;&gt;asair&lt;/a&gt;, opera entre 2.2V y 5.5V y usa el protocolo de comunicaciones I2C a diferencia de su antecesor que era un protocolo de un solo cable (&amp;ldquo;single-wire&amp;rdquo; o &amp;ldquo;single-bus&amp;rdquo;). Este sensor tiene una precisión típica de ±2% de humedad relativa a 20-80 % y ±0,3°C a  de humedad relativa y 20-60 °C. Internamente tiene un AHT20.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tonos y melodías</title>
+      <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;workspace.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Vamos a explicar desde cero cómo reproducir melodías usando tonos generados por un timer en un &lt;code&gt;AVR128DA28&lt;/code&gt;. Los tonos serán reproducidos por un &lt;a href=&#34;https://en.wikipedia.org/wiki/Piezoelectric_speaker&#34;&gt;buzzer o altavoz piezoeléctrico&lt;/a&gt; y en específico usé este de &lt;a href=&#34;https://www.digikey.es/es/products/detail/tdk-corporation/PS1240P02BT/935924&#34;&gt;TDK PS1240P02BT&lt;/a&gt;. Cómo ejemlo de estudio usaremos una melodía muy famosa que la usa &lt;a href=&#34;https://docs.arduino.cc/built-in-examples/digital/toneMelody/&#34;&gt;Arduino&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;note&#34;&gt;&lt;p class=&#34;title&#34;&gt;&lt;svg viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;Note&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>WS2812</title>
       <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/ws2812/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/ws2812/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;workspace.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Los LED&amp;rsquo;s RGB de tipo &lt;a href=&#34;WS2811.pdf&#34;&gt;WS2811&lt;/a&gt;, &lt;a href=&#34;WS2812B.pdf&#34;&gt;WS2812B&lt;/a&gt;, WS2814, y WS2815 entre muchos otros que hay como el SK6812, son los denominados LED inteligentes o LED addressable. Básicamente, tienen un controlador integrado fabricado por Worldsemi. Estos funciona con 5V y un máximo de 60mA a su máximo brillo (20mA por LED y 3 colores), y tiene un protocolo comunicación propietario NRZ (Non-Return-to-Zero) para ir por un solo cable y sentido.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;note&#34;&gt;&lt;p class=&#34;title&#34;&gt;&lt;svg viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;Note&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DHT20</title>
-      <link>http://localhost:1313/electronic/integrated-circuit/avr-dx/dht20/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/dht20/</guid>
-      <description>&lt;p&gt;El sensor de temperatura y humedad &lt;a href=&#34;datasheet.pdf&#34;&gt;DHT20&lt;/a&gt; es el sucesor del mítico DHT11 entre sus variantes y es fabricado por &lt;a href=&#34;https://asairsensors.com/product/dht20-sip-packaged-temperature-and-humidity-sensor/&#34;&gt;asair&lt;/a&gt;, opera entre 2.2V y 5.5V y usa el protocolo de comunicaciones I2C a diferencia de su antecesor que era un protocolo de un solo cable (&amp;ldquo;single-wire&amp;rdquo; o &amp;ldquo;single-bus&amp;rdquo;). Este sensor tiene una precisión típica de ±2 % de humedad relativa y ±0,3 °C a 20-80 % de humedad relativa y 20-60 °C. Internamente tiene un AHT20.&lt;/p&gt;</description>
     </item>
     <item>
       <title>LCD Display module (Nokia 5110)</title>

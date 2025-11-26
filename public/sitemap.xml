@@ -54,31 +54,30 @@
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/revoke/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/cdc/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/current-divider/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/git/</loc>
-  </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/dac/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/esr/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/ws2812/</loc>
-  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/dht20/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/tone-melody/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/ws2812/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/nokia-5110/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/nhd-1.8-160128ubc3/</loc>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-10-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-10-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/electronic/</loc>
+    <lastmod>2025-07-01T23:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-07-01T23:00:00+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/bash/</loc>
@@ -124,6 +123,9 @@
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/mysql-host-blocked-many-connection-errors/</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/database/</loc>

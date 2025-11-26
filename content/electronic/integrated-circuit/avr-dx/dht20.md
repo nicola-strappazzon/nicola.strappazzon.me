@@ -3,7 +3,7 @@ weight = 8
 title  = 'DHT20'
 +++
 
-El sensor de temperatura y humedad [DHT20](datasheet.pdf) es el sucesor del mítico DHT11 entre sus variantes y es fabricado por [asair](https://asairsensors.com/product/dht20-sip-packaged-temperature-and-humidity-sensor/), opera entre 2.2V y 5.5V y usa el protocolo de comunicaciones I2C a diferencia de su antecesor que era un protocolo de un solo cable ("single-wire" o "single-bus"). Este sensor tiene una precisión típica de ±2 % de humedad relativa y ±0,3 °C a 20-80 % de humedad relativa y 20-60 °C. Internamente tiene un AHT20.
+El sensor de temperatura y humedad [DHT20](datasheet.pdf) es el sucesor del mítico DHT11 entre sus variantes y es fabricado por [asair](https://asairsensors.com/product/dht20-sip-packaged-temperature-and-humidity-sensor/), opera entre 2.2V y 5.5V y usa el protocolo de comunicaciones I2C a diferencia de su antecesor que era un protocolo de un solo cable ("single-wire" o "single-bus"). Este sensor tiene una precisión típica de ±2% de humedad relativa a 20-80 % y ±0,3°C a  de humedad relativa y 20-60 °C. Internamente tiene un AHT20.
 
 El fabricante [asair](https://es.aliexpress.com/store/1103421005) vende por [AliExpress](https://es.aliexpress.com/item/1005006503645001.html) el sensor a buen precio.
 
