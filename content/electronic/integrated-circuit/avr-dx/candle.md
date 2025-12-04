@@ -11,7 +11,7 @@ Para ir entendiendo vamos a ir desde lo más simple hasta lograr un efecto más 
 
 ## Ejemplo simple:
 
-En este primer caso encendemos y apagamos el LED usando el algoritmo LFSR (Linear Feedback Shift Register) para generar secuencias pseudoaleatorias muy rápidas y muy baratas en hardware. Utiliza el desplazamientos de bits a la izquierda `>>` (right shift) y la realimentación lineal `^` (XOR).
+En este primer caso encendemos y apagamos el LED usando el algoritmo [LFSR de Galois 8 bits](https://en.wikipedia.org/wiki/Linear-feedback_shift_register) (Linear Feedback Shift Register) para generar secuencias pseudoaleatorias muy rápidas y muy baratas en hardware. Utiliza el desplazamientos de bits a la izquierda `>>` (right shift) y la realimentación lineal `^` (XOR).
 
 ```C
 #include <avr/io.h>
