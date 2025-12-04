@@ -8,7 +8,7 @@ Este efecto convierte el LED en una vela, y me parece muy interesante porque usa
 ![](minimal.png)
 
 {{% blockquote type="note" %}}
-Este tipo de código lo conseguirás comúnmente para los ATtiny.
+Este tipo de código lo conseguirás comúnmente para los ATtiny / tinyAVR.
 {{% /blockquote %}}
 
 Para ir entendiendo vamos a ir desde lo más simple hasta lograr un efecto más real.
