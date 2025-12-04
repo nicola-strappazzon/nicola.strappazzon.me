@@ -3,15 +3,19 @@ weight = 6
 title  = 'LED Candle'
 +++
 
-Este efecto convierte el LED en una vela, y me parece muy interesante porque usando lo que hemos aprendido en los dos anteriores efectos [blink](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/) y [fade](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/fade/) más añadiendo funciones pseudoaleatorias podemos recrear el efecto de una vela.
+Este efecto convierte el LED en una vela, y me parece muy interesante porque usando lo que hemos aprendido en los dos anteriores efectos [blink](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/) y [fade](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/fade/) más añadiendo funciones pseudoaleatorias podemos recrear el efecto de una vela. Usaremos el mismo circuito del fade que usa el pin `PA0`.
 
 ![](minimal.png)
+
+{{% blockquote type="note" %}}
+Este tipo de código lo conseguirás comúnmente para los ATtiny.
+{{% /blockquote %}}
 
 Para ir entendiendo vamos a ir desde lo más simple hasta lograr un efecto más real.
 
 ## Ejemplo simple:
 
-En este primer caso encendemos y apagamos el LED usando el algoritmo [LFSR de Galois 8 bits](https://en.wikipedia.org/wiki/Linear-feedback_shift_register) (Linear Feedback Shift Register) para generar secuencias pseudoaleatorias muy rápidas y muy baratas en hardware. Utiliza el desplazamientos de bits a la izquierda `>>` (right shift) y la realimentación lineal `^` (XOR).
+En este primer caso encendemos y apagamos el LED usando el algoritmo [LFSR de Galois 8 bits](https://en.wikipedia.org/wiki/Linear-feedback_shift_register) (Linear Feedback Shift Register) para generar secuencias pseudoaleatorias muy rápidas y muy baratas en hardware. Utiliza el desplazamiento de bits a la izquierda `>>` (right shift) y la realimentación lineal `^` (XOR).
 
 ```C
 #include <avr/io.h>
@@ -44,7 +48,7 @@ int main(void){
 
 ## Ejemplo complejo:
 
-Para este caso mantenemos el uso del algoritmo LFSR pero añadimos una condición más, no puede apagarse el LED, este debe hacer cómo un efecto fade + LFSR. Entonces para lograrlo debemos hacer uso del PWM.
+Para este caso mantenemos el uso del algoritmo LFSR, pero añadimos una condición más, no puede apagarse el LED, este debe hacer cómo un efecto fade + LFSR. Entonces para lograrlo debemos hacer uso del PWM.
 
 ```C
 #include <avr/io.h>
