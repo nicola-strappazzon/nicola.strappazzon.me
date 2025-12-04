@@ -1,9 +1,9 @@
 +++
-weight = 3
-title = 'Mi primer programa (Blink)'
+weight = 4
+title = 'LED Blink'
 +++
 
-Creo que es un programa clásico hacer el efecto Blink, equivale al “Hola Mundo” en los microcontroladores, se puede hacer de varias formas, te mostraré cada una, algunas son fáciles y otras más complejas, pero todas llegan a lo mismo. Este es el esquema del circuito que será necesario:
+Considero que es un clásico hacer el efecto Blink, equivale al “Hola Mundo” en los microcontroladores, se puede hacer de varias formas, te mostraré cada una, algunas son fáciles y otras más complejas, pero todas llegan a lo mismo. Este es el esquema del circuito que será necesario:
 
 ![](minimal.png)
 
