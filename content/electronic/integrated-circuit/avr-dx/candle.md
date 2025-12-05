@@ -78,6 +78,10 @@ int main(void){
 }
 ```
 
+{{% blockquote type="note" %}}
+Hay quien ha hecho lo mismo usando el algorimo BBS (Blum-Blum-Shumb).
+{{% /blockquote %}}
+
 ## Compilar y subirlo
 
 Para compilarlo deberá ejecutar el siguiente comando:
