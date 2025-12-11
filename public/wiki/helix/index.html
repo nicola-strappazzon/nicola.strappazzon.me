@@ -2,7 +2,7 @@
 <html lang="es-es" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Posts | Nicola Strappazzon</title>
+<title>Helix | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -58,73 +58,132 @@
   
   
     <div class="content-header">
-      <h2 class="title">Posts</h2>
-      
-      <span class="date"><em>20/01/2025</em></span>
+      <h2 class="title">Helix</h2>
       
     </div>
   
-  
+  <p>La lista de <a href="https://docs.helix-editor.com/keymap.html">shortcuts/keymap</a> oficial. Si quieres aprender de forma interactiva con un tutorial incorporado, debes escribir el siguiente comando <code>hx --tutor</code>.</p>
+<h2 id="modes">Modes</h2>
+<ul>
+<li>Normal <code>Escape</code> Por defecto (moverte, seleccionar, operadores, etc.)</li>
+<li>Space <code>Space</code> Tambien llamado action, es un sitio para centralizar las acciones con menu ()</li>
+<li>Command <code>:</code> Para hacer uso de la línea de comandos (guardar, abrir, cerrar, configurar, etc.)</li>
+</ul>
+<h2 id="shortcuts">Shortcuts</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Mode</th>
+          <th>Key</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Normal</td>
+          <td>&gt;</td>
+          <td>Indent.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>&lt;</td>
+          <td>Unindent.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>u</td>
+          <td>Undo.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>x</td>
+          <td>Selecciona una linea.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>y</td>
+          <td>Yunk (Copu).</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>p</td>
+          <td>Paste.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>r</td>
+          <td>Replace char.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>d</td>
+          <td>Delete.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>i</td>
+          <td>Insert mode.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>gg</td>
+          <td>Ir al inicio del fichero.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>ge</td>
+          <td>Ir al final del fichero.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>gh</td>
+          <td>Ir al inicio de la linea.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>gl</td>
+          <td>Ir al final de la linea.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>mimd</td>
+          <td>Eliminar un texto entre comillas.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>vged</td>
+          <td>Selecciona y elimina todo.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>Ctrl-c</td>
+          <td>Comentar/Descomentar.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>Ctrl-b</td>
+          <td>Page Up.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>Ctrl-f</td>
+          <td>Page Down.</td>
+      </tr>
+      <tr>
+          <td>Normal</td>
+          <td>Shift-C</td>
+          <td>Multiline, seleccionar e ir bajando, precionas la tecla <code>,</code> para salir.</td>
+      </tr>
+      <tr>
+          <td>Space</td>
+          <td>s</td>
+          <td>List variables or functions on document.</td>
+      </tr>
+  </tbody>
+</table>
+
   
   <ul>
-    
-      <li><a href="/posts/mysql-host-blocked-many-connection-errors/">Host is blocked because of many connection errors MySQL</a></li>
-    
-      <li><a href="/posts/codigo-agnostico-base-datos/">El mito del &#39;código debe ser agnóstico a la base de datos&#39;</a></li>
-    
-      <li><a href="/posts/query-review/">Query review</a></li>
-    
-      <li><a href="/posts/mysql-emojis/">MySQL y los emojis</a></li>
-    
-      <li><a href="/posts/mysql-timeouts/">MySQL y los Timeouts</a></li>
-    
-      <li><a href="/posts/mysql-bloqueo-pesimista/">Ejemplo del bloqueo pesimista</a></li>
-    
-      <li><a href="/posts/restaurar-rapido-dump-mysql/">Restaurar rápido un dump de MySQL</a></li>
-    
-      <li><a href="/posts/teorema-cap/">El teorema CAP</a></li>
-    
-      <li><a href="/posts/actualizar-sin-bloquear/">Actualizar datos de una tabla sin bloquearla desde un archivo</a></li>
-    
-      <li><a href="/posts/monitorizar-resolver-problemas-replicacion-mysql/">Monitorizar y resolver problemas de replicación en MySQL</a></li>
-    
-      <li><a href="/posts/buscar-registros-huerfanos/">Buscar registros huérfanos</a></li>
-    
-      <li><a href="/posts/collation-diferencias-utf8_general_ci-utf8_unicode_ci/">Collation, diferencias entre utf8_general_ci y utf8_unicode_ci</a></li>
-    
-      <li><a href="/posts/bloqueos-optimistas-pesimistas-mysql/">Bloqueos en MySQL</a></li>
-    
-      <li><a href="/posts/mysql-config-editor/">Seguridad en MySQL con mysql_config_editor</a></li>
-    
-      <li><a href="/posts/origen-nosql/">Origen de la palabra NoSQL</a></li>
-    
-      <li><a href="/posts/eventos-y-bloqueo-exclusivo/">Eventos y bloqueo exclusivo en MySQL</a></li>
-    
-      <li><a href="/posts/relaciones-polimorficas/">¿Por qué no debes usar relaciones polimórficas?</a></li>
-    
-      <li><a href="/posts/mysql-processes-threads-connections/">Processes, Threads &amp; Connections</a></li>
-    
-      <li><a href="/posts/relacionales-vs-no-relacionales/">Bases de datos relacionales y no relacionales</a></li>
-    
-      <li><a href="/posts/niveles-aislamiento/">MySQL y los Niveles de aislamiento</a></li>
-    
-      <li><a href="/posts/rol-dba/">Rol de un DBA</a></li>
-    
-      <li><a href="/posts/color-consola-mysql/">Darle un poco de color a la consola de MySQL</a></li>
-    
-      <li><a href="/posts/trabajando-largas-listas-procesos-mysql/">Trabajando con largas listas de procesos en MySQL</a></li>
-    
-      <li><a href="/posts/paginar-consola-mysql/">Paginar en la consola de MySQL</a></li>
-    
-      <li><a href="/posts/interpretar-mensajes-error-mysql/">Interpretar los mensajes de error de MySQL</a></li>
-    
-      <li><a href="/posts/cache-mysql/">¿Cómo funciona y se configura la Cache de MySQL?</a></li>
-    
-      <li><a href="/posts/curso-postgresql/">Curso de SQL en PostgreSQL</a></li>
-    
-      <li><a href="/posts/eav-lof/">El modelo Atributos &amp; Tipos (EAV) o List of Values (LOV)</a></li>
-    
-      <li><a href="/posts/errores-frecuentes-normalizacion/">Errores frecuentes en la normalización de una Base de Datos</a></li>
     
   </ul>
   
