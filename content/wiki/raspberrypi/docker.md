@@ -46,7 +46,7 @@ docker run \
 docker run \
     --detach \
     --name samba \
-    --restart=always \
+    --restart always \
     --publish 445:445 \
     --env "NAME=Data" \
     --env "USER=myuser" \
@@ -61,7 +61,7 @@ docker run \
 docker run \
     --detach \
     --name transmission \
-    --restart=always \
+    --restart always \
     --env PUID=1000 \
     --env PGID=1000 \
     --env TZ=Etc/UTC \
@@ -80,7 +80,7 @@ docker run \
 docker run \
     --detach \
     --name slskd \
-    --restart=always \
+    --restart always \
     --publish 5030:5030 \
     --publish 5031:5031 \
     --publish 50300:50300 \
@@ -97,19 +97,30 @@ Usuario y clave por defecto: `slskd`
 docker run \
     --detach \
     --name pihole\
-    --restart=always \
-    --publish 53:53/tcp\
-    --publish 53:53/udp\
-    --publish 80:80/tcp\
-    --publish 443:443/tcp\
-    --env TZ=Europe/Madrid\
-    --env FTLCONF_webserver_api_password="mysecretpassword"\
-    --env FTLCONF_dns_listeningMode=all\
-    --volume /home/nicola/config/pihole:/etc/pihole\
-    --volume /home/nicola/config/dnsmasq:/etc/dnsmasq.d\
-    --cap-add NET_ADMIN\
-    --restart unless-stopped \
+    --restart always \
+    --publish 53:53/tcp \
+    --publish 53:53/udp \
+    --publish 80:80/tcp \
+    --env TZ=Europe/Madrid \
+    --env FTLCONF_webserver_api_password="mysecretpassword" \
+    --env FTLCONF_dns_listeningMode=all \
+    --volume /home/nicola/config/pihole:/etc/pihole \
+    --volume /home/nicola/config/dnsmasq:/etc/dnsmasq.d \
+    --cap-add NET_ADMIN \
     pihole/pihole:latest
+```
+
+## DNSCrypt
+
+```bash
+docker run \
+    --detach \
+    --name dnscrypt \
+    --restart always \
+    --publish 443:443/udp \
+    --publish 443:443/tcp \
+    --volume /etc/dnscrypt-server/keys:/opt/encrypted-dns/etc/keys \
+    jedisct1/dnscrypt-server init -N example.com -E '192.168.1.10:443'
 ```
 
 ## jellyfin
@@ -119,7 +130,7 @@ mkdir -p /home/nicola/jellyfin/{config,cache}
 docker run \
     --detach \
     --name pihole\
-    --restart=always \
+    --restart always \
     --volume /home/nicola/jellyfin/config:/config \
     --volume /home/nicola/jellyfin/cache:/cache \
     --volume /home/nicola/media:/media \
