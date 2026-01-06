@@ -2,7 +2,7 @@
 <html lang="es-es" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Bash | Nicola Strappazzon</title>
+<title>f3 | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -58,59 +58,57 @@
   
   
     <div class="content-header">
-      <h2 class="title">Bash</h2>
-      
-      <span class="date"><em>09/05/2025</em></span>
+      <h2 class="title">f3</h2>
       
     </div>
   
-  
+  <p><a href="https://github.com/AltraMayor/f3">F3 - Fight Flash Fraud</a> Es una herramienta para verificar sectores defectuosos en memorias de tipo USB, SD y discos externos.</p>
+<h2 id="instalación">Instalación</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install f3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="uso">Uso</h2>
+<p>Supongamos que conoces la ruta donde está montada la memoria cómo por ejemplo <code>/mount/usb/</code>.</p>
+<p><strong>Escribir:</strong> Esto llenará el dispositivo con archivos de prueba. No destruye los datos de la memoria.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>f3write /mount/usb/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Leer:</strong> Esto leerá todos los archivos de prueba del dispositivo.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>f3read /mount/usb/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>En este ejemplo se aprecia que hay sectores corruptos:</p>
+<pre tabindex="0"><code>$ f3read /mount/usb/
+F3 read 9.0
+Copyright (C) 2010 Digirati Internet LTDA.
+This is free software; see the source for copying conditions.
+
+
+                  SECTORS      ok/corrupted/changed/overwritten
+Validating file 1.h2w ...       0/  2097152/      0/      0
+Validating file 2.h2w ...       0/  2097152/      0/      0
+Validating file 3.h2w ...       0/  2097152/      0/      0
+Validating file 4.h2w ...       0/  2097152/      0/      0
+Validating file 5.h2w ... 15.32% -- 18.02 MB/s -- 23:04^C
+$
+</code></pre>
   
   <ul>
-    
-      <li><a href="/wiki/mysql/commands/">MySQL commands</a></li>
-    
-      <li><a href="/wiki/terminal/basic/">Básico</a></li>
-    
-      <li><a href="/wiki/openpgp/import/">Import</a></li>
-    
-      <li><a href="/wiki/terminal/client/">Cliente</a></li>
-    
-      <li><a href="/wiki/openpgp/export/">Export</a></li>
-    
-      <li><a href="/wiki/openpgp/backup/">Backup</a></li>
-    
-      <li><a href="/wiki/terminal/prompt/">Prompt</a></li>
-    
-      <li><a href="/wiki/openpgp/restore/">Restore</a></li>
-    
-      <li><a href="/wiki/terminal/config/">Configuración</a></li>
-    
-      <li><a href="/wiki/openpgp/revoke/">Revoke</a></li>
-    
-      <li><a href="/wiki/openpgp/git/">GitHub</a></li>
-    
-      <li><a href="/wiki/docker/containers/">Containers</a></li>
-    
-      <li><a href="/wiki/docker/">Docker</a></li>
-    
-      <li><a href="/wiki/f3/">f3</a></li>
-    
-      <li><a href="/wiki/git/">git</a></li>
-    
-      <li><a href="/wiki/jq/">jq</a></li>
-    
-      <li><a href="/wiki/mysql/aws-rds/">MySQL en Amazon RDS</a></li>
-    
-      <li><a href="/wiki/openpgp/">OpenPGP</a></li>
-    
-      <li><a href="/wiki/docker/clear/">Reclamar espacio</a></li>
-    
-      <li><a href="/wiki/ssh/">SSH</a></li>
-    
-      <li><a href="/wiki/terminal/">Terminal</a></li>
-    
-      <li><a href="/wiki/yubikey/">YubiKey</a></li>
     
   </ul>
   
