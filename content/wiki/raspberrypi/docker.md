@@ -137,3 +137,28 @@ docker run \
     --net=host \
     jellyfin/jellyfin:latest
 ```
+
+## iCloud Photos Downloader
+
+```bash
+mkdir -p /home/nicola/icloudpd/config
+
+docker run \
+    -it \
+    --rm \
+    --name icloudpd \
+    --volume /mnt/data1/photos:/data \
+    --volume /home/nicola/icloudpd/config:/config \
+    --env TZ=Europe/Madrid \
+    icloudpd/icloudpd:latest icloudpd --directory /data --username user@example.me --cookie-directory /config --watch-with-interval 3600
+
+# Interrumpir la ejecución.
+
+docker run \
+    --detach \
+    --name icloudpd \
+    --volume /mnt/data1/photos:/data \
+    --volume /home/nicola/icloudpd/config:/config \
+    --env TZ=Europe/Madrid \
+    icloudpd/icloudpd:latest icloudpd --directory /data --username user@example.me --cookie-directory /config --watch-with-interval 3600
+```

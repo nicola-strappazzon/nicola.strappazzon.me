@@ -14,6 +14,7 @@ Estos son los sitios de confianza para documentarse e ir obteniendo buenas ideas
 - [Learnabout Electronics](https://www.learnabout-electronics.org)
 - [Maker.io](https://www.digikey.es/en/maker)
 - [sparkfun learn](https://learn.sparkfun.com)
+- [Borneo Schematics](https://borneoschematics.co.id)
 
 ## Radio Shack Basic Electronics
 
