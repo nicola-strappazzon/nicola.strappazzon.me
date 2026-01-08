@@ -140,6 +140,8 @@ docker run \
 
 ## iCloud Photos Downloader
 
+Hay que ejecutar el contenedor en dos pasos, el primero para establecer la cookie de auth y luego dejarlo ejecutando en background:
+
 ```bash
 mkdir -p /home/nicola/icloudpd/config
 
