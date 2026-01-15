@@ -129,11 +129,13 @@ docker run \
 mkdir -p /home/nicola/jellyfin/{config,cache}
 docker run \
     --detach \
-    --name pihole\
+    --name jellyfin \
     --restart always \
+    --publish 8096:8096/tcp \
+    --publish 7359:7359/udp \
     --volume /home/nicola/jellyfin/config:/config \
     --volume /home/nicola/jellyfin/cache:/cache \
-    --volume /home/nicola/media:/media \
+    --volume /home/nicola/samba/media:/media \
     --net=host \
     jellyfin/jellyfin:latest
 ```
@@ -163,4 +165,16 @@ docker run \
     --volume /home/nicola/icloudpd/config:/config \
     --env TZ=Europe/Madrid \
     icloudpd/icloudpd:latest icloudpd --directory /data --username user@example.me --cookie-directory /config --watch-with-interval 3600
+```
+
+## Uptime Kuma
+
+```bash
+docker run \
+    --detach \
+    --name uptime-kuma \
+    --restart=always \
+    --publish 3001:3001 \
+    --volume /home/nicola/uptime-kuma:/app/data \
+    louislam/uptime-kuma:2
 ```

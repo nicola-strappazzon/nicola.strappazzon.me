@@ -54,3 +54,17 @@ git commit --amend
 ```
 
 Se abrira un editor de texto para modificar el mensaje, guarda y cierra. Hahora podrás hacer `git push --force`.
+
+Crear un tag
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+Eliminar un tag
+
+```bash
+git push origin --delete v0.1.0
+git tag -d v0.1.0
+```
