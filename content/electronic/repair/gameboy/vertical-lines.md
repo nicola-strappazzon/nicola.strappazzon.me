@@ -1,6 +1,7 @@
 +++
 title = 'Vertical Lines'
 weight = 1
+date = "2026-01-16"
 +++
 
 Literalmente conseguí alguien que vendía por muy pocos euros una carcasa que solo incluía la pantalla dañada cómo la quería.

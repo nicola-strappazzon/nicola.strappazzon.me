@@ -6,8 +6,15 @@
     <description>Recent content on Nicola Strappazzon</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Fri, 09 May 2025 10:56:29 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vertical Lines</title>
+      <link>http://localhost:1313/electronic/repair/gameboy/vertical-lines/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/repair/gameboy/vertical-lines/</guid>
+      <description>&lt;p&gt;Literalmente conseguí alguien que vendía por muy pocos euros una carcasa que solo incluía la pantalla dañada cómo la quería.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;gameboy-vertical-lines-01.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Buscando por Internet conseguí este &lt;a href=&#34;https://www.youtube.com/watch?v=jTdatWaQ07o&#34;&gt;video&lt;/a&gt; que ha sido suficiente para entender el proceso de reparación. Adicionalmente, use una punta biselada en el soldador y ajuste la temperatura a 300 °C.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;gameboy-vertical-lines-02.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Me alegró poder arreglarla.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Básico</title>
       <link>http://localhost:1313/wiki/terminal/basic/</link>
@@ -42,13 +49,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/history/</guid>
       <description>&lt;p&gt;Cualquiera que se haya iniciado con los microcontroladores de 8-bit habrá escuchado hablar del mítico ATmega328 creado por Atmel para la familia ATmega que empezó en el año 2002, poco a poco fue evolucionando y la aparición de Arduino termino de popularizarse. Tiene más de dos décadas entre nosotros, y aún se sigue apostando por esta tecnología por muchos motivos. En el 2016 Atmel fue adquirida por Microchip Technology.&lt;/p&gt;&#xA;&lt;p&gt;El AVR es una arquitectura muy versátil y fácil de entender, creo que es la favorita para el hobby y la educación. Existe una gran comunidad en torno a ella, numerosos libros, ejemplos, proyectos, etc. Si ya has leído sobre el 8051, aprenderlo te resultará mucho más fácil. El AVR es, en resumen, una versión mejorada del 8051 con funciones adicionales. Incluye todas las características necesarias, como RAM, memoria flash, registros de propósito general, EEPROM, temporizador de vigilancia, fusibles para configurar el chip, diferentes modos de programación de la memoria flash, diferentes protocolos de comunicación como SPI, I₂C, UART, pines PWM, etc.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Vertical Lines</title>
-      <link>http://localhost:1313/electronic/repair/gameboy/vertical-lines/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/electronic/repair/gameboy/vertical-lines/</guid>
-      <description>&lt;p&gt;Literalmente conseguí alguien que vendía por muy pocos euros una carcasa que solo incluía la pantalla dañada cómo la quería para este propósito.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;gameboy-vertical-lines-01.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Buscando por Internet conseguí este &lt;a href=&#34;https://www.youtube.com/watch?v=jTdatWaQ07o&#34;&gt;video&lt;/a&gt; que ha sido suficiente para entender el proceso de reparación. Adicionalmente, use una punta biselada en el soldador y ajuste la temperatura a 300 °C.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;gameboy-vertical-lines-02.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cliente</title>

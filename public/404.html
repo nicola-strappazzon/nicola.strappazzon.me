@@ -12,47 +12,106 @@
 <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
 <div class="container center">
 <header><header class="header">
-  <div class="header_inner">
-    <div class="header_logo">
-      <a href="http://localhost:1313/">
-        <div class="logo">Nicola Strappazzon</div>
-      </a>
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
-    <button class="navigation-menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navigation-menu-toggle">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-  <div class="header_social_navigation">
-    <div class="header_social">
-      <a href="https://github.com/nicola-strappazzon/" target="_blank" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/" target="_blank" title="stackoverflow">
-        <i class="fab fa-stack-overflow"></i>
-      </a>
-      <a href="https://medium.com/@nicola-strappazzon/" target="_blank" title="Medium">
-        <i class="fab fa-medium"></i>
-      </a>
-      <a href="https://www.instagram.com/nicola.strappazzon/" target="_blank" title="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <div class="header_navigation">
-      <nav class="navigation-menu">
-        <ul class="navigation-menu-list" id="mainMenu">
-          <li><a href="/posts/" >Posts</a></li>
-          <li><a href="/wiki/" >Wiki</a></li>
-          <li><a href="/electronic/" >Electrónica</a></li>
-          <li><a href="/cultura/" >Cultura</a></li>
-          <li><a href="/diccionary/" >Diccionario</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
 </header>
+
 </header>
 <div class="content">
   <div class="post">

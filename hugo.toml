@@ -41,3 +41,6 @@ title = 'Nicola Strappazzon'
   lineNos = true
   style = "solarized-dark"
   lineNumbersInTable = true
+
+[outputs]
+  home = ['html', 'rss']
