@@ -121,7 +121,7 @@ a {
 
 .header_logo a {
     flex: 0 0 auto;
-    width: 225px;
+    width: 230px;
     text-decoration: none;
 }
 
@@ -311,11 +311,6 @@ code {
     display: flex;
     justify-content: space-between; /* Opcional: separa extremos */
     align-items: center; /* Centrado vertical */
-}
-
-.header_social,
-.header_navigation {
-    /*padding: 1rem;*/
 }
 
 .header_navigation {
