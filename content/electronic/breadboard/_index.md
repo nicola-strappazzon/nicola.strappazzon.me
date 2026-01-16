@@ -1,6 +1,7 @@
 +++
 draft = false
 title = 'Breadboard'
+weight = 2
 +++
 
 Para aprender a construir un circuito o verificar su funcionamiento, debe usar primero una placa de pruebas, es una de las herramientas más básicas y sencillas que existe. Gracias a sus numerosos conectores pequeños, se pueden insertar o quitar diversos componentes electrónicos según sea necesario, eliminando la necesidad de soldar y ahorrando tiempo de montaje. Los componentes se pueden reutilizar, lo que la hace ideal para el desarrollo de circuitos electrónicos.

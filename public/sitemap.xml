@@ -5,9 +5,14 @@
     <loc>http://localhost:1313/wiki/mysql/commands/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/electronic/resources/</loc>
+    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/wiki/terminal/basic/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/color-code/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/repair/gameboy/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/import/</loc>
   </url><url>
@@ -15,8 +20,12 @@
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/history/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/repair/gameboy/vertical-lines/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/mysql/queries/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/electronic/breadboard/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/terminal/client/</loc>
   </url><url>
@@ -30,6 +39,8 @@
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/backup/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/components/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/measurement/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/mysql/replica/</loc>
@@ -42,9 +53,13 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/dummy-load/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/basic-lessons/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/blink/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/restore/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/terminal/config/</loc>
   </url><url>
@@ -59,6 +74,8 @@
     <loc>http://localhost:1313/wiki/openpgp/git/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/candle/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/repair/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/cdc/</loc>
   </url><url>
@@ -107,9 +124,6 @@
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/mysql/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/electronic/resources/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/sql/</loc>
@@ -235,15 +249,9 @@
   </url><url>
     <loc>http://localhost:1313/tags/aws/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/breadboard/</loc>
-  </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/ch340/</loc>
-  </url><url>
-    <loc>http://localhost:1313/electronic/integrated-circuit/</loc>
-  </url><url>
-    <loc>http://localhost:1313/electronic/components/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/capacitor/</loc>
   </url><url>
@@ -294,8 +302,6 @@
     <loc>http://localhost:1313/electronic/basic-lessons/lesson02/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/basic-lessons/lesson03/</loc>
-  </url><url>
-    <loc>http://localhost:1313/electronic/basic-lessons/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/mcp1661/</loc>
   </url><url>

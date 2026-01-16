@@ -1,6 +1,7 @@
 +++
 draft = false
 title = 'Lecciones básicas'
+weight = 4
 +++
 
 Inspirado para mi hijo.
