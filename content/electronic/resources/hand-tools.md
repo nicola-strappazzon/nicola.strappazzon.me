@@ -72,7 +72,7 @@ Esta parte es importante por temas de salud, evite usar químicos con plomo. Sue
 - [Estaño 63/37](https://www.digikey.es/es/products/detail/chip-quik-inc/RASW-015-100G/9681995) Diametros: 0.38mm. Su punto de fusión es a partir de 220°C.
 - [Estaño 96.5/3/0.5](https://www.digikey.es/en/products/detail/chip-quik-inc/RASWLF-015-1OZ/9682011) Diametros: 0.38mm. Su punto de fusión es a partir de 270°C. La combinación de estaño que tiene es bastante limpia y deja un mínimo de residuos.
 - [Flux](https://www.digikey.es/en/products/detail/chip-quik-inc/CQ4LF-0-5/9558133) CQ4LF-0.5, No Clean, Liquid.
-- [Malla para desoldar](https://www.mouser.es/ProductDetail/Aven/17541?qs=uwxL4vQweFMwWqGr0IUxLQ%3D%3D) Tamaño 2 mm / 0.08 in.
+- [Malla para desoldar](https://www.digikey.es/es/products/detail/aven-tools/17541/1992580) Tamaño 2 mm / 0.08 in.
 - [SS-03 Solder Sucker](https://www.engineertools-jp.com/product-page/ss-03-solder-sucker) Este extractor de estaño con una punta de goma cambiable es muy útil y eficiente.
 - [EasyBraid S3020-P-T](https://www.digikey.es/es/products/detail/easybraid/S3020-P-T/4381772) Esponja para limpiar el soldador.
 
