@@ -58,6 +58,12 @@ docker run --name some-postgres --env POSTGRES_PASSWORD=mysecretpassword --detac
 docker run --detach --name redis --publish 6379:6379 redis:latest
 ```
 
+## Redis CLI
+
+```bash
+docker run -it --rm redis redis-cli -h redis.example.com
+```
+
 ## InfluxDB
 
 ```bash
