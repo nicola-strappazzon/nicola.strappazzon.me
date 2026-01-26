@@ -102,9 +102,6 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-10-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/bash/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
@@ -145,6 +142,9 @@
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/mysql-host-blocked-many-connection-errors/</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/database/</loc>
@@ -248,6 +248,8 @@
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/555/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/macos/apps/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/aws/</loc>
@@ -259,6 +261,8 @@
     <loc>http://localhost:1313/electronic/components/capacitor/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/yubikey/configure/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/macos/container/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/docker/containers/</loc>
   </url><url>
@@ -292,6 +296,8 @@
   </url><url>
     <loc>http://localhost:1313/wiki/helix/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/macos/homebrew/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/jq/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/jq/</loc>
@@ -305,6 +311,8 @@
     <loc>http://localhost:1313/electronic/basic-lessons/lesson02/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/basic-lessons/lesson03/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/macos/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/mcp1661/</loc>
   </url><url>
@@ -337,6 +345,8 @@
     <loc>http://localhost:1313/electronic/integrated-circuit/ch340/serial/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/ch340/serial&#43;updi/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/macos/settings/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/ssh/</loc>
   </url><url>
