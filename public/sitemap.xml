@@ -18,6 +18,8 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/color-code/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/go/module/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/openpgp/import/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/display/ssd1353/kicad/</loc>
@@ -269,8 +271,6 @@
     <loc>http://localhost:1313/wiki/macos/container/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/docker/containers/</loc>
-  </url><url>
-    <loc>http://localhost:1313/wiki/go/module/</loc>
   </url><url>
     <loc>http://localhost:1313/cultura/</loc>
   </url><url>

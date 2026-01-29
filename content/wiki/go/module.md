@@ -1,8 +1,18 @@
 +++
 title = 'Crear un proyecto (module)'
+weight = 1
 +++
 
-El **módulo** es la unidad principal de versionado y distribución en Go. Dentro de un módulo hay uno o más paquetes. Tu código importa paquetes, que pueden estar en tu mismo módulo o en otros módulos (propios o de terceros).
+Al leer esta página, deberías poder entender los siguientes puntos:
+
+- Entender los términos básicos que definen un proyecto.
+- Crear un proyecto y entender su estructura básica.
+- Escribir un programa clásico.
+- Compilar y ejecutar tu primer programa.
+
+---
+
+El **módulo** es la unidad principal de versionado (proyecto) y distribución en Go. Dentro de un módulo hay uno o más paquetes. Tu código importa paquetes, que pueden estar en tu mismo módulo o en otros módulos (propios o de terceros).
 
 Veamos como se crea tu primer proyecto:
 
@@ -20,7 +30,15 @@ ls -l
 La ruta `example/hello` por lo general debe ser la ruta del repositorio. Por ejemplo, si usas GitHub debe quedar de la siguiente forma: `github.com/example/hello`.
 {{% /blockquote %}}
 
-Un módulo se distingue por contener el archivo `go.mod`. Dentro de él se define las características principales cómo el nombre, ruta, versionado, versión de go y dependencias.
+Un módulo se distingue por contener el archivo `go.mod`. Dentro de él se define las características principales cómo la ruta & nombre, versión de go y dependencias. Para este ejemplo super simple se genero de la siguiente forma:
+
+```text
+module example/hello
+
+go 1.24.2
+```
+
+Cómo puedes ver el nombre, la primera línea contiene él la ruta y el nombre del módulo `module example/hello`, la siguiente línea la version de go que se usó para compilar.
 
 Con tu editor de texto, crea el archivo principal `main.go` y agrega el siguiente código:
 
