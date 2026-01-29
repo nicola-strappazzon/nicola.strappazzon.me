@@ -2,7 +2,7 @@
 <html lang="es-es" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Circuito integrado | Nicola Strappazzon</title>
+<title>MCP73831 | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -114,30 +114,25 @@
 
 </header>
 <div class="content">
-  
-  
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/electronic/">Electrónica</a></li>
+      <li><a href="/electronic/integrated-circuit/">Circuito integrado</a></li>
+    </ul>
     <div class="content-header">
-      <h2 class="title">Circuito integrado</h2>
+      <h2 class="title">MCP73831</h2>
       
     </div>
-  
-  
-  
-  <ul>
-    
-      <li><a href="/electronic/integrated-circuit/555/">555</a></li>
-    
-      <li><a href="/electronic/integrated-circuit/avr-dx/">AVR Dx</a></li>
-    
-      <li><a href="/electronic/integrated-circuit/ch340/">CH340</a></li>
-    
-      <li><a href="/electronic/integrated-circuit/mcp1661/">MCP1661</a></li>
-    
-      <li><a href="/electronic/integrated-circuit/mcp73831/">MCP73831</a></li>
-    
-  </ul>
-  
+    <p><img src="breadboard.png" alt=""></p>
+<p>El <a href="datasheet.pdf">MCP73831</a> es un cargador de baterias de los tipos Li-Ion &amp; Li-Polymer de una sola celda, es muy simple de usar y muy popular. Permite diferentes configuraciónes por lo que te recomiendo que consultes el datasheet.</p>
+<p><img src="schematic01.png" alt=""></p>
+<h2 id="circuito-completo">Circuito completo</h2>
+<p>En la práctica necesitamos un circuito mucho más complejo que el anterior, necesitas un conector USB que se puede usar como alimentación de 5V, el circuito anterior que hace de cargador, un regulador de voltaje para tener 3.3v, un switch que conmuta entre el VCC del USB o el de la batería, y por último un circuito que permite medir el voltaje con un MCU. Todo junto es lo que se espera tener en un proyecto que use baterias de este tipo.</p>
+<p>Esta idea la obtuve de <a href="https://www.youtube.com/@cybercitycircuits/shorts">@cybercitycircuits</a> que hizo un video corto explicando <a href="https://www.youtube.com/shorts/hBdJ9uH2Yd4">USB-C and LiPo Battery Charging Design</a>.</p>
+<p><img src="schematic02.png" alt=""></p>
 
+  </article>
 </div>
 <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
 </footer>

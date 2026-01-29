@@ -14,5 +14,12 @@
       <guid>http://localhost:1313/electronic/integrated-circuit/mcp1661/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;breadboard.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;El &lt;a href=&#34;datasheet.pdf&#34;&gt;MCP1661&lt;/a&gt; es un regulador conmutado elevador (boost) por modulación por ancho de pulso (PWM) -¡en inglés suena mucho mejor!-. Este pequeño circuito permite elevar un voltaje de 3V hasta 12V y 120mA con apenas seis componentes. Permite diferentes configuraciónes por lo que te recomiendo que consultes el datasheet.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;schematic.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;para configurar el voltaje de salida deseado, se configura combinando las resistencias R&lt;sub&gt;TOP&lt;/sub&gt; y R&lt;sub&gt;BOT&lt;/sub&gt;. Los capacitores C&lt;sub&gt;IN&lt;/sub&gt; y C&lt;sub&gt;OUT&lt;/sub&gt; no afectan al voltaje de salida, pero mantenerse en el margen de 4.7&lt;sub&gt;uF&lt;/sub&gt; hasta 10&lt;sub&gt;uF&lt;/sub&gt;.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>MCP73831</title>
+      <link>http://localhost:1313/electronic/integrated-circuit/mcp73831/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/integrated-circuit/mcp73831/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;breadboard.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;El &lt;a href=&#34;datasheet.pdf&#34;&gt;MCP73831&lt;/a&gt; es un cargador de baterias de los tipos Li-Ion &amp;amp; Li-Polymer de una sola celda, es muy simple de usar y muy popular. Permite diferentes configuraciónes por lo que te recomiendo que consultes el datasheet.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;schematic01.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;circuito-completo&#34;&gt;Circuito completo&lt;/h2&gt;&#xA;&lt;p&gt;En la práctica necesitamos un circuito mucho más complejo que el anterior, necesitas un conector USB que se puede usar como alimentación de 5V, el circuito anterior que hace de cargador, un regulador de voltaje para tener 3.3v, un switch que conmuta entre el VCC del USB o el de la batería, y por último un circuito que permite medir el voltaje con un MCU. Todo junto es lo que se espera tener en un proyecto que use baterias de este tipo.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
