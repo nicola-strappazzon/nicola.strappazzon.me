@@ -63,6 +63,10 @@ Estas son las puntas que recomiendo:
 - [T18-C2](https://www.hakko.com/english/products/hakko_fx888dx_tips.html).
 - [T18-K](https://www.hakko.com/english/products/hakko_fx888dx_tips.html).
 
+## Consumibles varios
+
+- [MG Chemicals 8241-T - Alcohol Wipes for Electronics](https://mgchemicals.com/products/discontinued-products/electronic-cleaning-wipes/) Muy útil para limpiar aparatos electrónicos que se te entregan.
+
 ## Consumibles para soldar y desoldar
 
 {{% blockquote type="caution" %}}
