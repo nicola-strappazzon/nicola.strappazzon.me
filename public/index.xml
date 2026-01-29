@@ -37,6 +37,13 @@
       <description>&lt;h1 id=&#34;importar-desde-un-usb-security-key&#34;&gt;Importar desde un USB Security Key&lt;/h1&gt;&#xA;&lt;blockquote class=&#34;important&#34;&gt;&lt;p class=&#34;title&#34;&gt;&lt;svg viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;Important&lt;/p&gt;</description>
     </item>
     <item>
+      <title>KiCad</title>
+      <link>http://localhost:1313/electronic/components/display/ssd1353/kicad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/components/display/ssd1353/kicad/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Post Install</title>
       <link>http://localhost:1313/wiki/raspberrypi/post-install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -70,6 +77,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wiki/openpgp/export/</guid>
       <description>&lt;p&gt;Explicamos cómo exportar los certificados al USB Security Key.&lt;/p&gt;&#xA;&lt;p&gt;Al insertar dispositivo podrá ejecutar el siguiente comando para listar los detalles.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ gpg --card-status&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;Al ser nueva, observará algo como esto:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Reader ...........: Yubico YubiKey OTP FIDO CCID&#xA;Application ID ...: A0123456789012345678901234567890&#xA;Application type .: OpenPGP&#xA;Version ..........: 3.4&#xA;Manufacturer .....: Yubico&#xA;Serial number ....: 12345678&#xA;Name of cardholder: [not set]&#xA;Language prefs ...: [not set]&#xA;Salutation .......:&#xA;URL of public key : [not set]&#xA;Login data .......: [not set]&#xA;Signature PIN ....: not forced&#xA;Key attributes ...: rsa2048 rsa2048 rsa2048&#xA;Max. PIN lengths .: 127 127 127&#xA;PIN retry counter : 3 0 3&#xA;Signature counter : 0&#xA;KDF setting ......: off&#xA;UIF setting ......: Sign=off Decrypt=off Auth=off&#xA;Signature key ....: [none]&#xA;Encryption key....: [none]&#xA;Authentication key: [none]&#xA;General key info..: [none]&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ahora vamos a configurarla, y vamos hacer todo esto antes de exportar la clave privada.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FreeCAD</title>
+      <link>http://localhost:1313/electronic/components/display/ssd1353/freecad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/components/display/ssd1353/freecad/</guid>
+      <description>&lt;p&gt;Este es mi primer proyecto hecho en &lt;a href=&#34;https://www.freecad.org&#34;&gt;FreeCAD&lt;/a&gt; para diseñar un marco de pantalla (bezel) que fija el display a la &lt;a href=&#34;https://nicola.strappazzon.me/electronic/components/display/ssd1353/kicad/&#34;&gt;PCB&lt;/a&gt; con el resultado de obtener un módulo firme, lo mande a fabricar en &lt;a href=&#34;https://jlccnc.com/sheet-metal-quote&#34;&gt;JLCCNC&lt;/a&gt;, y este &lt;a href=&#34;https://www.youtube.com/watch?v=CNUlHoU6qvA&#34;&gt;video&lt;/a&gt; me ayudo mucho a entender como diseñar un &lt;code&gt;sheet metal&lt;/code&gt;, la verdad que tarde varias semanas y muchos intentos hasta lograr algo aceptable.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;head.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;El diseño quedo bastante cercano a la pieza original que tome de referencia.&lt;/p&gt;</description>
     </item>
     <item>
       <title>La nueva generación</title>
@@ -112,13 +126,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wiki/terminal/prompt/</guid>
       <description>&lt;p&gt;Es el símbolo del sistema, incluso configurable, y también mediante una simbología básica te indica tus privilegios y donde estás.&lt;/p&gt;&#xA;&lt;p&gt;El prompt es un grupo de símbolos que indican que ya puedes escribir un comando, y su primera aparición suele ser así, indicando que eres un usuario normal:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; $ _&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;En el caso de que tienes permisos máximos, como el del usuario todo poderoso &lt;strong&gt;root&lt;/strong&gt;, entonces te aparecerá de la siguiente forma:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>SSD1353</title>
-      <link>http://localhost:1313/electronic/components/display/ssd1353/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/electronic/components/display/ssd1353/</guid>
-      <description>&lt;p&gt;El controlador &lt;a href=&#34;datasheet.pdf&#34;&gt;SSD1353&lt;/a&gt; es usado para pantallas a todo color de tipo OLED con una dimensión de 160x128 pixeles configurado para trabajar en 8-bit 8080 Parallel Interface como los clásicos LCD 16x2, tambien tiene otros modos de configuración que no trataremos.&lt;/p&gt;&#xA;&lt;p&gt;A continuación se muestra el &lt;a href=&#34;schematic.kicad_sc&#34;&gt;circuito mínimo&lt;/a&gt; para hacer funcionar controlador SSD1353, y hay un par de puntos que quiero aclarar; Primero, usa dos voltajes de alimentación que son 3.3V para el controlador y 12V para los pixeles donde este último se logra con un &lt;a href=&#34;https://nicola.strappazzon.me/electronic/integrated-circuit/555/boost/&#34;&gt;boost&lt;/a&gt;. Segundo, se pueden usar otro tipo de condensadores además de los indicados por el fabricante como ha hecho &lt;a href=&#34;adafruit.png&#34;&gt;adafruit&lt;/a&gt; con uno de sus productos usando el mismo controlador pero para una pantalla con otras dimensiones.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Carga ficticia</title>

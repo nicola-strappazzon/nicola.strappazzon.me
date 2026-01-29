@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSD1353 on Nicola Strappazzon</title>
+    <link>http://localhost:1313/electronic/components/display/ssd1353/</link>
+    <description>Recent content in SSD1353 on Nicola Strappazzon</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <atom:link href="http://localhost:1313/electronic/components/display/ssd1353/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KiCad</title>
+      <link>http://localhost:1313/electronic/components/display/ssd1353/kicad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/components/display/ssd1353/kicad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FreeCAD</title>
+      <link>http://localhost:1313/electronic/components/display/ssd1353/freecad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/components/display/ssd1353/freecad/</guid>
+      <description>&lt;p&gt;Este es mi primer proyecto hecho en &lt;a href=&#34;https://www.freecad.org&#34;&gt;FreeCAD&lt;/a&gt; para diseñar un marco de pantalla (bezel) que fija el display a la &lt;a href=&#34;https://nicola.strappazzon.me/electronic/components/display/ssd1353/kicad/&#34;&gt;PCB&lt;/a&gt; con el resultado de obtener un módulo firme, lo mande a fabricar en &lt;a href=&#34;https://jlccnc.com/sheet-metal-quote&#34;&gt;JLCCNC&lt;/a&gt;, y este &lt;a href=&#34;https://www.youtube.com/watch?v=CNUlHoU6qvA&#34;&gt;video&lt;/a&gt; me ayudo mucho a entender como diseñar un &lt;code&gt;sheet metal&lt;/code&gt;, la verdad que tarde varias semanas y muchos intentos hasta lograr algo aceptable.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;head.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;El diseño quedo bastante cercano a la pieza original que tome de referencia.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

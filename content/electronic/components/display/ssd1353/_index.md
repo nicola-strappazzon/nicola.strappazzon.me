@@ -26,3 +26,7 @@ A continuación se muestra el [circuito mínimo](schematic.kicad_sc) para hacer 
 Así quedo luego de armarlo en el breadboard y conectarlo a mi otro circuito que usa un [AVR128DA28](http://localhost:1313/electronic/integrated-circuit/ch340/serial+updi/). No hacer caso al orden numérico de la PCB que usé cómo adaptador para conectar el circuito al flex (FPC). En este punto el circuito no usa los 12V generados por un Boost, sino usé una fuente de alimentación ajustable para probar. Es cierto que la foto no es la mejor.
 
 ![](breadboard.png)
+
+## Diseños
+
+Ahora toca crear un módulo funcional con su PCB y su marco:
