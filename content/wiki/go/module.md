@@ -17,7 +17,7 @@ ls -l
 ```
 
 {{% blockquote type="note" %}}
-La ruta `example/hello` por lo general debe ser la ruta del repositorio. Por ejemplo si usas GitHub debe quedar `github.com/example/hello`.
+La ruta `example/hello` por lo general debe ser la ruta del repositorio. Por ejemplo, si usas GitHub debe quedar de la siguiente forma: `github.com/example/hello`.
 {{% /blockquote %}}
 
 Un módulo se distingue por contener el archivo `go.mod`. Dentro de él se define las características principales cómo el nombre, ruta, versionado, versión de go y dependencias.
