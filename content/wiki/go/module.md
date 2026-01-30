@@ -3,12 +3,12 @@ title = 'Crear un proyecto (module)'
 weight = 1
 +++
 
-Al leer esta página, deberías poder entender los siguientes puntos:
+Al leer esta página, deberías poder entender:
 
-- Entender los términos básicos que definen un proyecto.
-- Crear un proyecto y entender su estructura básica.
-- Escribir un programa clásico.
-- Compilar y ejecutar tu primer programa.
+- Los términos básicos que definen un proyecto.
+- Cómo crear un proyecto.
+- Su estructura básica.
+- Cómo compilar y ejecutar tu primer programa.
 
 ---
 
@@ -20,10 +20,17 @@ Veamos como se crea tu primer proyecto:
 mkdir hello
 cd hello
 go mod init example/hello
-# go: creating new go.mod: module example/hello
+```
+```text
+go: creating new go.mod: module example/hello
+```
+```bash
 ls -l
-# total 8
-# -rw-r--r--  1 nicola  staff  32 Jan 29 20:57 go.mod
+```
+
+```text
+total 8
+-rw-r--r--  1 nicola  staff  32 Jan 29 20:57 go.mod
 ```
 
 {{% blockquote type="note" %}}
@@ -52,15 +59,16 @@ func main() {
 }
 ```
 
-Cómo podrás observar del código anterior, la función principal es `main()`, si no está definida se producirá un error.
+Cómo podrás observar del código anterior, el package es `main`, la función principal es `main()` y esto indica el punto de inicio del programa, si no está definida se producirá un error especifico si es por package o por función, cómo por ejemplo; `package ... is not a main package.` o `function main is undeclared in the main package`.
 
 Para ejecutarlo y probar el código escribe el siguiente comando:
 
 ```bash
 go run .
-# Hello, World!
 ```
-
+```text
+Hello, World!
+```
 Para generar el binario escribe el siguiente comando:
 
 ```bash

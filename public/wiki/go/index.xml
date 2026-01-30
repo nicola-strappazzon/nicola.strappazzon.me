@@ -12,7 +12,7 @@
       <link>http://localhost:1313/wiki/go/module/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wiki/go/module/</guid>
-      <description>&lt;p&gt;Al leer esta página, deberías poder entender los siguientes puntos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Entender los términos básicos que definen un proyecto.&lt;/li&gt;&#xA;&lt;li&gt;Crear un proyecto y entender su estructura básica.&lt;/li&gt;&#xA;&lt;li&gt;Escribir un programa clásico.&lt;/li&gt;&#xA;&lt;li&gt;Compilar y ejecutar tu primer programa.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;El &lt;strong&gt;módulo&lt;/strong&gt; es la unidad principal de versionado (proyecto) y distribución en Go. Dentro de un módulo hay uno o más paquetes. Tu código importa paquetes, que pueden estar en tu mismo módulo o en otros módulos (propios o de terceros).&lt;/p&gt;</description>
+      <description>&lt;p&gt;Al leer esta página, deberías poder entender:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Los términos básicos que definen un proyecto.&lt;/li&gt;&#xA;&lt;li&gt;Cómo crear un proyecto.&lt;/li&gt;&#xA;&lt;li&gt;Su estructura básica.&lt;/li&gt;&#xA;&lt;li&gt;Cómo compilar y ejecutar tu primer programa.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;El &lt;strong&gt;módulo&lt;/strong&gt; es la unidad principal de versionado (proyecto) y distribución en Go. Dentro de un módulo hay uno o más paquetes. Tu código importa paquetes, que pueden estar en tu mismo módulo o en otros módulos (propios o de terceros).&lt;/p&gt;&#xA;&lt;p&gt;Veamos como se crea tu primer proyecto:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

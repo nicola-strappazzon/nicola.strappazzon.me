@@ -124,12 +124,12 @@
       <h2 class="title">Crear un proyecto (module)</h2>
       
     </div>
-    <p>Al leer esta página, deberías poder entender los siguientes puntos:</p>
+    <p>Al leer esta página, deberías poder entender:</p>
 <ul>
-<li>Entender los términos básicos que definen un proyecto.</li>
-<li>Crear un proyecto y entender su estructura básica.</li>
-<li>Escribir un programa clásico.</li>
-<li>Compilar y ejecutar tu primer programa.</li>
+<li>Los términos básicos que definen un proyecto.</li>
+<li>Cómo crear un proyecto.</li>
+<li>Su estructura básica.</li>
+<li>Cómo compilar y ejecutar tu primer programa.</li>
 </ul>
 <hr>
 <p>El <strong>módulo</strong> es la unidad principal de versionado (proyecto) y distribución en Go. Dentro de un módulo hay uno o más paquetes. Tu código importa paquetes, que pueden estar en tu mismo módulo o en otros módulos (propios o de terceros).</p>
@@ -139,19 +139,37 @@
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir hello
 </span></span><span style="display:flex;"><span><span style="color:#b58900">cd</span> hello
 </span></span><span style="display:flex;"><span>go mod init example/hello
-</span></span><span style="display:flex;"><span><span style="color:#586e75"># go: creating new go.mod: module example/hello</span>
-</span></span><span style="display:flex;"><span>ls -l
-</span></span><span style="display:flex;"><span><span style="color:#586e75"># total 8</span>
-</span></span><span style="display:flex;"><span><span style="color:#586e75"># -rw-r--r--  1 nicola  staff  32 Jan 29 20:57 go.mod</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>go: creating new go.mod: module example/hello
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -l
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>total 8
+</span></span><span style="display:flex;"><span>-rw-r--r--  1 nicola  staff  32 Jan 29 20:57 go.mod
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>La ruta <code>example/hello</code> por lo general debe ser la ruta del repositorio. Por ejemplo, si usas GitHub debe quedar de la siguiente forma: <code>github.com/example/hello</code>.</p></blockquote>
@@ -190,16 +208,22 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Cómo podrás observar del código anterior, la función principal es <code>main()</code>, si no está definida se producirá un error.</p>
+</div><p>Cómo podrás observar del código anterior, el package es <code>main</code>, la función principal es <code>main()</code> y esto indica el punto de inicio del programa, si no está definida se producirá un error especifico si es por package o por función, cómo por ejemplo; <code>package ... is not a main package.</code> o <code>function main is undeclared in the main package</code>.</p>
 <p>Para ejecutarlo y probar el código escribe el siguiente comando:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go run .
-</span></span><span style="display:flex;"><span><span style="color:#586e75"># Hello, World!</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Hello, World!
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Para generar el binario escribe el siguiente comando:</p>
