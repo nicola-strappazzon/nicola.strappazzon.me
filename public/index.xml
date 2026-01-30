@@ -34,7 +34,7 @@
       <link>http://localhost:1313/wiki/go/module/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/wiki/go/module/</guid>
-      <description>&lt;p&gt;Al leer esta página, deberías poder entender:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Los términos básicos que definen un proyecto.&lt;/li&gt;&#xA;&lt;li&gt;Cómo crear un proyecto.&lt;/li&gt;&#xA;&lt;li&gt;Su estructura básica.&lt;/li&gt;&#xA;&lt;li&gt;Cómo compilar y ejecutar tu primer programa.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;El &lt;strong&gt;módulo&lt;/strong&gt; es la unidad principal de versionado (proyecto) y distribución en Go. Dentro de un módulo hay uno o más paquetes. Tu código importa paquetes, que pueden estar en tu mismo módulo o en otros módulos (propios o de terceros).&lt;/p&gt;&#xA;&lt;p&gt;Veamos como se crea tu primer proyecto:&lt;/p&gt;</description>
+      <description>&lt;p&gt;Al leer esta página, deberías poder entender:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Los términos básicos que definen un proyecto.&lt;/li&gt;&#xA;&lt;li&gt;Cómo crear un proyecto.&lt;/li&gt;&#xA;&lt;li&gt;La estructura básica del modulo y del programa.&lt;/li&gt;&#xA;&lt;li&gt;Cómo compilar y ejecutar tu primer programa.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;El &lt;strong&gt;módulo&lt;/strong&gt; es la unidad principal de versionado (proyecto) y distribución en Go. Dentro de un módulo hay uno o más paquetes. Tu código importa paquetes, que pueden estar en tu mismo módulo o en otros módulos (propios o de terceros).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Import</title>
@@ -63,6 +63,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electronic/integrated-circuit/avr-dx/history/</guid>
       <description>&lt;p&gt;Cualquiera que se haya iniciado con los microcontroladores de 8-bit habrá escuchado hablar del mítico ATmega328 creado por Atmel para la familia ATmega que empezó en el año 2002, poco a poco fue evolucionando y la aparición de Arduino termino de popularizarse. Tiene más de dos décadas entre nosotros, y aún se sigue apostando por esta tecnología por muchos motivos. En el 2016 Atmel fue adquirida por Microchip Technology.&lt;/p&gt;&#xA;&lt;p&gt;El AVR es una arquitectura muy versátil y fácil de entender, creo que es la favorita para el hobby y la educación. Existe una gran comunidad en torno a ella, numerosos libros, ejemplos, proyectos, etc. Si ya has leído sobre el 8051, aprenderlo te resultará mucho más fácil. El AVR es, en resumen, una versión mejorada del 8051 con funciones adicionales. Incluye todas las características necesarias, como RAM, memoria flash, registros de propósito general, EEPROM, temporizador de vigilancia, fusibles para configurar el chip, diferentes modos de programación de la memoria flash, diferentes protocolos de comunicación como SPI, I₂C, UART, pines PWM, etc.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Anatomía de un programa</title>
+      <link>http://localhost:1313/wiki/go/anatomy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki/go/anatomy/</guid>
+      <description>&lt;p&gt;Al leer esta página, deberías poder entender la estructura básica e interna de un progama:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Definir el nombre de un paquete.&lt;/li&gt;&#xA;&lt;li&gt;Importar paquetes.&lt;/li&gt;&#xA;&lt;li&gt;Definir constantes y variables globales.&lt;/li&gt;&#xA;&lt;li&gt;Uso de la función &lt;code&gt;init()&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;</description>
     </item>
     <item>
       <title>Cliente</title>

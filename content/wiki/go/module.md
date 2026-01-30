@@ -7,7 +7,7 @@ Al leer esta página, deberías poder entender:
 
 - Los términos básicos que definen un proyecto.
 - Cómo crear un proyecto.
-- Su estructura básica.
+- La estructura básica del modulo y del programa.
 - Cómo compilar y ejecutar tu primer programa.
 
 ---
