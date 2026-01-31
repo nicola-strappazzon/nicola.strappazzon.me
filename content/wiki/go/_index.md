@@ -12,3 +12,5 @@ title = 'Go'
 - [Standard Go Project Layout](https://github.com/golang-standards/project-layout) Cómo organizas tu código dentro del módulo.
 
 ## Temario
+
+Seguir el orden definido en la siguiente lista garantiza una mejor comprensión del curso.
