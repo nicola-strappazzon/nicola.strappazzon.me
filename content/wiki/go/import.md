@@ -1,18 +1,17 @@
 +++
-title = 'Anatomía de un programa'
+title = 'Importar'
 weight = 2
 +++
 
-Al leer esta página, deberías poder entender la estructura básica e interna de un progama:
+Al leer esta página, deberías poder entender:
 
-- Definir el nombre de un paquete.
-- Importar [paquetes standard](https://pkg.go.dev/std).
-- Definir constantes y variables globales.
-- Uso de la función `init()`.
+- Cómo definir el nombre de un paquete.
+- Cómo importar [paquetes standard](https://pkg.go.dev/std).
+- El uso de la función `init()`.
 
 ---
 
-Vamos a incrementar levemente la lógica del programa. Lo primero que se define es el `package ...` al inicio del archivo, luego se importan `import ...` los módulos, luego las constantes `const ...`, variables `var ...`, y tipos `type ...`, por último las funciones y métodos `func ...`.
+Vamos a incrementar levemente la lógica del programa. Lo primero que se define es el `package ...` al inicio del archivo, luego se importan `import ...` los módulos, el nombre del módulo debe coincidir con el de package y el directorio que lo contiene, luego las constantes `const ...`, variables `var ...`, tipos `type ...` en cualquiera de sus variantes, por último las funciones y métodos `func ...`.
 
 ```go
 package main
@@ -23,16 +22,13 @@ import (
 	t "time"
 )
 
-const AppName = "Demo"
-const FormatTime = "2006-01-02 15:04:05"
-
 func init() {
 	fmt.Println("Starting...")
 }
 
 func main() {
-	now := t.Now().Format(FormatTime)
-	fmt.Println("Hi from", AppName)
+	now := t.Now().Format("2006-01-02 15:04:05")
+	fmt.Println("Hi from Demo")
 	fmt.Println("Run at:", now)
 }
 ```

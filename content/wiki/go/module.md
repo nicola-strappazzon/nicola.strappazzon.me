@@ -1,5 +1,5 @@
 +++
-title = 'Crear un proyecto (module)'
+title = 'Módulo'
 weight = 1
 +++
 

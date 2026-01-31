@@ -2,7 +2,7 @@
 <html lang="es-es" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Anatomía de un programa | Nicola Strappazzon</title>
+<title>Importar | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -121,18 +121,17 @@
       <li><a href="/wiki/go/">Go</a></li>
     </ul>
     <div class="content-header">
-      <h2 class="title">Anatomía de un programa</h2>
+      <h2 class="title">Importar</h2>
       
     </div>
-    <p>Al leer esta página, deberías poder entender la estructura básica e interna de un progama:</p>
+    <p>Al leer esta página, deberías poder entender:</p>
 <ul>
-<li>Definir el nombre de un paquete.</li>
-<li>Importar <a href="https://pkg.go.dev/std">paquetes standard</a>.</li>
-<li>Definir constantes y variables globales.</li>
-<li>Uso de la función <code>init()</code>.</li>
+<li>Cómo definir el nombre de un paquete.</li>
+<li>Cómo importar <a href="https://pkg.go.dev/std">paquetes standard</a>.</li>
+<li>El uso de la función <code>init()</code>.</li>
 </ul>
 <hr>
-<p>Vamos a incrementar levemente la lógica del programa. Lo primero que se define es el <code>package ...</code> al inicio del archivo, luego se importan <code>import ...</code> los módulos, luego las constantes <code>const ...</code>, variables <code>var ...</code>, y tipos <code>type ...</code>, por último las funciones y métodos <code>func ...</code>.</p>
+<p>Vamos a incrementar levemente la lógica del programa. Lo primero que se define es el <code>package ...</code> al inicio del archivo, luego se importan <code>import ...</code> los módulos, el nombre del módulo debe coincidir con el de package y el directorio que lo contiene, luego las constantes <code>const ...</code>, variables <code>var ...</code>, tipos <code>type ...</code> en cualquiera de sus variantes, por último las funciones y métodos <code>func ...</code>.</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
@@ -152,9 +151,6 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">19
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#719e07">package</span> main
@@ -165,16 +161,13 @@
 </span></span><span style="display:flex;"><span>	t <span style="color:#2aa198">&#34;time&#34;</span>
 </span></span><span style="display:flex;"><span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">const</span> AppName = <span style="color:#2aa198">&#34;Demo&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">const</span> FormatTime = <span style="color:#2aa198">&#34;2006-01-02 15:04:05&#34;</span>
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#268bd2">func</span> <span style="color:#268bd2">init</span>() {
 </span></span><span style="display:flex;"><span>	fmt.<span style="color:#268bd2">Println</span>(<span style="color:#2aa198">&#34;Starting...&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#268bd2">func</span> <span style="color:#268bd2">main</span>() {
-</span></span><span style="display:flex;"><span>	now <span style="color:#719e07">:=</span> t.<span style="color:#268bd2">Now</span>().<span style="color:#268bd2">Format</span>(FormatTime)
-</span></span><span style="display:flex;"><span>	fmt.<span style="color:#268bd2">Println</span>(<span style="color:#2aa198">&#34;Hi from&#34;</span>, AppName)
+</span></span><span style="display:flex;"><span>	now <span style="color:#719e07">:=</span> t.<span style="color:#268bd2">Now</span>().<span style="color:#268bd2">Format</span>(<span style="color:#2aa198">&#34;2006-01-02 15:04:05&#34;</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#268bd2">Println</span>(<span style="color:#2aa198">&#34;Hi from Demo&#34;</span>)
 </span></span><span style="display:flex;"><span>	fmt.<span style="color:#268bd2">Println</span>(<span style="color:#2aa198">&#34;Run at:&#34;</span>, now)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
