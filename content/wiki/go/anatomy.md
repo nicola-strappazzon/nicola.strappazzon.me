@@ -12,7 +12,7 @@ Al leer esta página, deberías poder entender la estructura básica e interna d
 
 ---
 
-Vamos a incrementar levemente la lógica del programa. Lo primero que se define es el `package ...` al inicio del archivo, luego se importan `import ...` los módulos, luego las constantes `const ...`, variables `var ...`, y structs `type ... struct ...`, por último las funciones `func ...`.
+Vamos a incrementar levemente la lógica del programa. Lo primero que se define es el `package ...` al inicio del archivo, luego se importan `import ...` los módulos, luego las constantes `const ...`, variables `var ...`, y tipos `type ...`, por último las funciones y métodos `func ...`.
 
 ```go
 package main
@@ -31,13 +31,8 @@ func init() {
 }
 
 func main() {
-	fmt.Println("Hi from", AppName)
-	getTime()
-}
-
-func getTime() {
 	now := t.Now().Format(FormatTime)
-
+	fmt.Println("Hi from", AppName)
 	fmt.Println("Run at:", now)
 }
 ```
