@@ -12,14 +12,15 @@ Al leer esta página, deberías poder entender la estructura básica e interna d
 
 ---
 
-Vamos a incrementar levemente la lógica del programa:
+Vamos a incrementar levemente la lógica del programa. Lo primero que se define es el `package ...` al inicio del archivo, luego se importan `import ...` los módulos, luego las constantes `const ...`, variables `var ...`, y structs `type ... struct ...`, por último las funciones `func ...`.
 
 ```go
 package main
 
 import (
 	"fmt"
-	"time"
+	_ "strings"
+	t "time"
 )
 
 const AppName = "Demo"
@@ -29,15 +30,15 @@ func init() {
 	fmt.Println("Starting...")
 }
 
-func getTime() {
-	now := time.Now().Format(FormatTime)
-
-	fmt.Println("Run at:", now)
-}
-
 func main() {
 	fmt.Println("Hi from", AppName)
 	getTime()
+}
+
+func getTime() {
+	now := t.Now().Format(FormatTime)
+
+	fmt.Println("Run at:", now)
 }
 ```
 ```bash
@@ -49,4 +50,6 @@ Hi from Demo
 Run at: 2026-01-30 14:46:40
 ```
 
-Vamos con la explicación. Go tiene un grupo de módulos (librerías) estándar, en este caso usamos `fmt` para formatear e imprimir o capturar datos, `time` para cualquier cosa sobre el tiempo, y `strings` para manipular cadenas de texto, y las importamos como puedes apreciar. En el caso de `strings` tiene un guion bajo `_` adelante y esto indica que la importamos, pero no la usamos, también se usa para las variables.
+Go tiene un grupo de módulos (librerías) estándar, en este caso usamos `fmt` para formatear e imprimir o capturar datos, `time` para cualquier cosa sobre el tiempo, y `strings` para manipular cadenas de texto, y las importamos como puedes apreciar. En el caso del módulo `time` le hemos definido un alias colocando un nombre delante del módulo cómo `t`, el alias solo se usa cuando hay otro módulo que entra en conflicto con el nombre. En el caso de `strings` tiene un guion bajo `_` adelante y esto indica que la importamos, pero no la usamos, también se usa para las variables.
+
+En Go, cualquier archivo de un paquete puede definir una función `init()`. Las funciones `init()` se ejecutan automáticamente una sola vez cuando el paquete se inicializa. La inicialización ocurre la primera vez que el programa importa ese paquete.
