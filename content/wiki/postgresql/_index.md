@@ -20,14 +20,14 @@ SELECT current_database();
 
 Cambiar o seleccionar una base de datos:
 
-```
+```sq;
 \c demo
 \connect demo
 ```
 
 Listar las tablas:
 
-```
+```sql
 \dt
 \dt+
 SELECT * FROM pg_catalog.pg_tables;
@@ -57,6 +57,6 @@ SELECT datname, COUNT(datid) FROM pg_stat_activity GROUP BY datname;
 
 Conocer la configuración:
 
-```
+```sql
 SELECT setting::int max_conn FROM pg_settings WHERE name=$$max_connections$$;
 ```
