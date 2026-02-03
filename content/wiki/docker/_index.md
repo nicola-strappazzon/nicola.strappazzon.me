@@ -36,6 +36,18 @@ Para ver el comando completo cuando se lanzo el contenedor:
 docker ps -a --no-trunc
 ```
 
+Para conocer las variables de entorno del contenedor:
+
+```bash
+docker inspect my-container --format '{{range .Config.Env}}{{println .}}{{end}}'
+```
+
+Para conocer la IP del contenedor:
+
+```bash
+docker inspect my-container --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
+```
+
 Para entrar dentro de un contenedor:
 
 ```bash

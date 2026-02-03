@@ -82,3 +82,16 @@ Si compilas en macOS, tu codigo solo funcionará en macOS. Si compulas en Linux 
 
 El proyecto [GoReleaser](https://goreleaser.com) te permite simplificar la creación de binarios dentro de tus pipes (CI/CD) cuando haces una release.
 {{% /blockquote %}}
+
+Esto ya es un poco más avanzado, pero en caso de usar un módulo externo en local porque estamos **programando en los dos módulos la vez**, podemos modificar `go.mod` para que lo contemple de la siguiente forma:
+
+```bash
+go mod edit -replace github.com/example/foo=$HOME/go/src/github.com/example/foo
+```
+
+Recuerda que debes revertir el reemplazo cuando hayas finalizado el desarrollo del módulo externo y hayas hecho una release del módulo externo:
+
+```bash
+go mod edit -dropreplace github.com/example/foo
+go get -u
+```
