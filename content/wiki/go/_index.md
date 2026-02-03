@@ -11,6 +11,14 @@ title = 'Go'
 - [Go Style Decisions](https://google.github.io/styleguide/go/decisions.html) Guía de estilo oficial.
 - [Standard Go Project Layout](https://github.com/golang-standards/project-layout) Cómo organizas tu código dentro del módulo.
 
+## Instalación
+
+En macOS solo debes escribir lo siguiente si tienes [homebrew](https://brew.sh) instalado:
+
+```bash
+brew install go
+```
+
 ## Temario
 
 Seguir el orden definido en la siguiente lista garantiza una mejor comprensión del curso.
