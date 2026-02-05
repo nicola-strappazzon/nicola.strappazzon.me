@@ -148,13 +148,22 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Cambiar o seleccionar una base de datos:</p>
-<pre tabindex="0"><code>\c demo
+<pre tabindex="0"><code class="language-sq;" data-lang="sq;">\c demo
 \connect demo
 </code></pre><p>Listar las tablas:</p>
-<pre tabindex="0"><code>\dt
-\dt+
-SELECT * FROM pg_catalog.pg_tables;
-</code></pre><p>Conocer el tamaño de la base de datos o de una tabla:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>\dt
+</span></span><span style="display:flex;"><span>\dt<span style="color:#719e07">+</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> pg_catalog.pg_tables;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Conocer el tamaño de la base de datos o de una tabla:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
@@ -190,8 +199,15 @@ SELECT * FROM pg_catalog.pg_tables;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Conocer la configuración:</p>
-<pre tabindex="0"><code>SELECT setting::int max_conn FROM pg_settings WHERE name=$$max_connections$$;
-</code></pre>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> setting::<span style="color:#b58900">int</span> max_conn <span style="color:#719e07">FROM</span> pg_settings <span style="color:#719e07">WHERE</span> name<span style="color:#719e07">=</span>$$max_connections$$;
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
   
   <ul>
     

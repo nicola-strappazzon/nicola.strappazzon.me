@@ -14,8 +14,10 @@ title = 'Apps'
 - [Hex Field](https://hexfiend.com) Hex Editor.
 - [HiFidelity](https://github.com/rvarunrathod/HiFidelity) Music player with high-fidelity audio playback.
 - [Homebrew](https://brew.sh) Package Manager.
+- [Insomnia](https://insomnia.rest) API Client.
 - [Kap](https://getkap.co) Screen recorder.
 - [KiCad](https://www.kicad.org) Electronics Design.
+- [LibreWolf](https://librewolf.net) A custom version of Firefox, focused on privacy, security and freedom.
 - [MacPass](https://macpassapp.org) Password manager.
 - [Mole](https://github.com/tw93/Mole) Deep clean and optimize your Mac.
 - [NetNewsWire](https://netnewswire.com) RSS reader.
