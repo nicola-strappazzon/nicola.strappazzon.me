@@ -10,6 +10,8 @@ brew install --cask insomnia      # API Client.
 brew install --cask iterm2        # Terminal.
 brew install --cask 1password-cli # Command-line interface for 1Password.
 brew install --cask pgadmin4      # PostgreSQL Client.
+brew install --cask chatgpt       # ChatGPT Desktop.
+brew install --cask viscosity     # OpenVPN Client.
 brew install ast-grep             # Is a code tool for structural search and replace. It is like syntax-aware grep/sed.
 brew install atac                 # Terminal API Client.
 brew install atuin                # History.
@@ -31,4 +33,5 @@ brew install lsd
 brew install macfuse
 brew install mcat                 # View images or videos on terminal.
 brew install superfile
+brew install gh                   # GitHub CLI
 ```
