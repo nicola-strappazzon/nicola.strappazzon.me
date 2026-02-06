@@ -92,4 +92,41 @@ Si todo va bien debe imprimir algo cómo `go: added github.com/google/uuid v1.6.
 go mod tidy
 ```
 
-Este te descarga los requerimientos que tengas definidos en `go.mod` y estes usando en el módulo, pero si hay requerimientos que no estás usando en el módulo los borra.
+Este te descarga los requerimientos que tengas definidos en `go.mod` y estés usando en el módulo evitando ejecutar por tu cuenta de nuevo `go get...`. Pero, **si hay requerimientos que no se están usando en el módulo se borran**. Te aconsejo que puedes y verifiques tú mismo.
+
+Ahora modifiquemos el archivo principal del módulo que se llama `main.go` para que haga uso de la nueva librería:
+
+```go
+package main
+
+import (
+	"fmt"
+	_ "strings"
+	
+	"example/hello/time"
+
+	"github.com/google/uuid"
+)
+
+func init() {
+	fmt.Println("Starting...")
+}
+
+func main() {
+	now := time.At()
+	id := uuid.New()
+
+	fmt.Println("Hi from Demo")
+	fmt.Println("Run at:", now)
+	fmt.Println("UUID:", id.String())
+}
+```
+
+Ahora si ejecutamos el programa obtenemos una salida bastante parecida:
+
+```
+Starting...
+Hi from Demo
+Run at: 2026-02-06 02:43:08
+UUID: 2dea2096-f9ca-43cc-9569-89ad8c2c2eea
+```
