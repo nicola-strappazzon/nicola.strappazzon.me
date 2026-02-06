@@ -19,6 +19,15 @@ En macOS solo debes escribir lo siguiente si tienes [homebrew](https://brew.sh) 
 brew install go
 ```
 
+Una vez instalado puedes comprobar la versión de la siguiente forma:
+
+```bash
+go version
+```
+```text
+go version go1.24.2 darwin/arm64
+```
+
 ## Temario
 
 Seguir el orden definido en la siguiente lista garantiza una mejor comprensión del curso.
