@@ -247,7 +247,7 @@ void display_init(void) {
 }
 
 void display_pixel(uint8_t x, uint8_t y, uint16_t color) {
-  display_region(x, y, x, y);
+  display_region(x, y, 1, 1);
   display_cmd(DISPLAY_WRITE);
   display_data(color >> 8);
   display_data(color & 0xFF);

@@ -652,7 +652,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#dc322f">void</span> <span style="color:#268bd2">display_pixel</span>(<span style="color:#dc322f">uint8_t</span> x, <span style="color:#dc322f">uint8_t</span> y, <span style="color:#dc322f">uint16_t</span> color) {
-</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">display_region</span>(x, y, x, y);
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">display_region</span>(x, y, <span style="color:#2aa198">1</span>, <span style="color:#2aa198">1</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#268bd2">display_cmd</span>(DISPLAY_WRITE);
 </span></span><span style="display:flex;"><span>  <span style="color:#268bd2">display_data</span>(color <span style="color:#719e07">&gt;&gt;</span> <span style="color:#2aa198">8</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#268bd2">display_data</span>(color <span style="color:#719e07">&amp;</span> <span style="color:#2aa198">0xFF</span>);
