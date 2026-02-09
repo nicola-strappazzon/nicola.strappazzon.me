@@ -10,6 +10,7 @@ title = 'Go'
 - [The Go Playground](https://go.dev/play) Aquí podrás ejecutar codigo en línea.
 - [Go Style Decisions](https://google.github.io/styleguide/go/decisions.html) Guía de estilo oficial.
 - [Standard Go Project Layout](https://github.com/golang-standards/project-layout) Cómo organizas tu código dentro del módulo.
+- [Design Patterns in Go](https://refactoring.guru/design-patterns/go) Soluciones habituales a problemas que ocurren con frecuencia en el diseño de software.
 
 ## Instalación
 
