@@ -12,9 +12,10 @@ defaults write com.apple.Music no-bouncing -bool TRUE
 ## Upgrade Bash
 
 ```bash
-brew update && brew install bash
-sudo bash -c 'echo /opt/homebrew/Cellar/bash/5.2.37/bin/bash >> /etc/shells' && sudo -k
-chsh -s /opt/homebrew/Cellar/bash/5.2.37/bin/bash
+brew update
+brew install bash
+sudo bash -c 'echo /opt/homebrew/bin/bash >> /etc/shells' && sudo -k
+chsh -s /opt/homebrew/bin/bash
 ```
 
 ## Disk Not Ejected

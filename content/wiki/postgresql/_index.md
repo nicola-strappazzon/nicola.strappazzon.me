@@ -18,6 +18,13 @@ SELECT datname FROM pg_database;
 SELECT current_database();
 ```
 
+Listar los esquemas:
+
+```sql
+\dn
+\dn+
+```
+
 Cambiar o seleccionar una base de datos:
 
 ```sq;
@@ -55,8 +62,72 @@ Listar las conexiones por base de datos:
 SELECT datname, COUNT(datid) FROM pg_stat_activity GROUP BY datname;
 ```
 
+Listar los usuarios (roles):
+
+```sql
+\du
+\du+
+SELECT rolname, rolcanlogin, rolsuper, rolcreatedb, rolcreaterole
+FROM pg_roles
+ORDER BY rolname;
+```
+
+Ver el propietario de la base de datos
+
+```sql
+SELECT datname, pg_get_userbyid(datdba) AS owner, datcollate, datctype
+FROM pg_database;
+```
+
 Conocer la configuración:
 
 ```sql
 SELECT setting::int max_conn FROM pg_settings WHERE name=$$max_connections$$;
+```
+
+Usario para una aplicación:
+
+```sql
+CREATE ROLE app_owner
+  LOGIN
+  PASSWORD 'password_owner'
+  NOSUPERUSER
+  CREATEDB
+  NOCREATEROLE;
+
+CREATE DATABASE app_db
+  OWNER app_owner
+  ENCODING 'UTF8';
+
+GRANT CONNECT ON DATABASE app_db TO app_user;
+
+-- CREATE SCHEMA app_schema AUTHORIZATION app_owner;
+GRANT USAGE, CREATE ON SCHEMA public TO app_user;
+GRANT USAGE, SELECT, UPDATE ON ALL SEQUENCES IN SCHEMA public TO app_user;
+
+```
+
+Hacer un respaldo:
+
+```bash
+# Forma tradicional:
+pg_dump -h 127.0.0.1 -p 5432 -d app_db -U app_user --no-owner --no-privileges > app.sql
+# Tarda mucho, y comparado con gzip no es mucho:
+pg_dump -h 127.0.0.1 -p 5432 -d app_db -U app_user -Fc -Z9 -f app.dump
+# En paralelo, usando cuatro cores:
+pg_dump -h 127.0.0.1 -p 5432 -d app_db -U app_user -Fd -j 4 -f app_dir
+# Es la mejor opción usar gzip:
+pg_dump -h 127.0.0.1 -p 5432 -d app_db -U app_user | gzip > app.sql.gz
+```
+
+Hacer un restore:
+
+```bash
+gunzip -c app.sql.gz | psql -h 127.0.0.1 -p 5432 -U app_user -d app_db
+```
+
+Hacer un respaldo de los roles:
+
+```bash
+pg_dumpall --roles-only > roles.sql
 ```
