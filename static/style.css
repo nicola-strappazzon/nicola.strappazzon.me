@@ -431,3 +431,7 @@ td {
     float: right;
     cursor: pointer;
 }
+
+.highlight {
+    line-height: normal;
+}

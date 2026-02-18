@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/electronic/repair/gameboy/</loc>
-    <lastmod>2026-01-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/electronic/repair/gameboy/vertical-lines/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -17,6 +14,8 @@
     <loc>http://localhost:1313/wiki/terminal/basic/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/color-code/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/repair/gameboy/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/import/</loc>
   </url><url>
@@ -81,14 +80,13 @@
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/revoke/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/repair/</loc>
-    <lastmod>2026-01-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/current-divider/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/git/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/fade/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/repair/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/candle/</loc>
   </url><url>
@@ -108,22 +106,10 @@
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/nhd-1.8-160128ubc3/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/</loc>
-    <lastmod>2026-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/bash/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/electronic/resources/sim/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/electronic/resources/knowledge/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/dba/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/electronic/resources/design/</loc>
@@ -135,32 +121,11 @@
     <loc>http://localhost:1313/electronic/resources/hand-tools/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mysql/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/mysql/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/sql/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/electronic/resources/sellers/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/mysql-host-blocked-many-connection-errors/</loc>
     <lastmod>2025-01-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/database/</loc>
-    <lastmod>2020-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/codigo-agnostico-base-datos/</loc>
     <lastmod>2020-06-27T00:00:00+00:00</lastmod>
@@ -231,28 +196,16 @@
     <loc>http://localhost:1313/posts/paginar-consola-mysql/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/errors/</loc>
-    <lastmod>2014-12-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/interpretar-mensajes-error-mysql/</loc>
     <lastmod>2014-12-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/cache-mysql/</loc>
     <lastmod>2014-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cache/</loc>
-    <lastmod>2014-02-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/curso-postgresql/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/postgresql/</loc>
-    <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/eav-lof/</loc>
-    <lastmod>2010-10-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/model/</loc>
     <lastmod>2010-10-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/errores-frecuentes-normalizacion/</loc>
@@ -265,6 +218,10 @@
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/aws/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/bash/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/cache/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
@@ -280,6 +237,10 @@
   </url><url>
     <loc>http://localhost:1313/cultura/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/database/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/dba/</loc>
+  </url><url>
     <loc>http://localhost:1313/diccionary/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/light-emitting-diode/</loc>
@@ -293,6 +254,10 @@
     <loc>http://localhost:1313/electronic/integrated-circuit/ch340/driver/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/dupont-wire/</loc>
+  </url><url>
+    <loc>http://localhost:1313/electronic/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/errors/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/f3/</loc>
   </url><url>
@@ -336,9 +301,17 @@
   </url><url>
     <loc>http://localhost:1313/electronic/resources/measurement/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/model/</loc>
+  </url><url>
     <loc>http://localhost:1313/cultura/music/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/mysql/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/mysql/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/mysql/aws-rds/</loc>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/nmap/</loc>
   </url><url>
@@ -346,7 +319,11 @@
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/postgresql/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/postgresql/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/proxysql/</loc>
   </url><url>
@@ -368,9 +345,13 @@
   </url><url>
     <loc>http://localhost:1313/wiki/macos/settings/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/sql/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/ssh/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/ssh/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/terminal/</loc>
   </url><url>
@@ -379,6 +360,8 @@
     <loc>http://localhost:1313/electronic/components/transistor/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/ch340/updi/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/wire-bundle/</loc>
   </url><url>
