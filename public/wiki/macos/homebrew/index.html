@@ -156,18 +156,21 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">28
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">29
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">33
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew update
+</span></span><span style="display:flex;"><span>brew install --cask 1password-cli <span style="color:#586e75"># Command-line interface for 1Password.</span>
+</span></span><span style="display:flex;"><span>brew install --cask chatgpt       <span style="color:#586e75"># ChatGPT Desktop.</span>
 </span></span><span style="display:flex;"><span>brew install --cask freelens      <span style="color:#586e75"># Kubernetes IDE.</span>
 </span></span><span style="display:flex;"><span>brew install --cask insomnia      <span style="color:#586e75"># API Client.</span>
-</span></span><span style="display:flex;"><span>brew install --cask iterm2        <span style="color:#586e75"># Terminal.</span>
-</span></span><span style="display:flex;"><span>brew install --cask 1password-cli <span style="color:#586e75"># Command-line interface for 1Password.</span>
+</span></span><span style="display:flex;"><span>brew install --cask iterm2        <span style="color:#586e75"># Terminal emulator.</span>
+</span></span><span style="display:flex;"><span>brew install --cask librewolf     <span style="color:#586e75"># Web browser.</span>
 </span></span><span style="display:flex;"><span>brew install --cask pgadmin4      <span style="color:#586e75"># PostgreSQL Client.</span>
-</span></span><span style="display:flex;"><span>brew install --cask chatgpt       <span style="color:#586e75"># ChatGPT Desktop.</span>
 </span></span><span style="display:flex;"><span>brew install --cask viscosity     <span style="color:#586e75"># OpenVPN Client.</span>
-</span></span><span style="display:flex;"><span>brew install ast-grep             <span style="color:#586e75"># Is a code tool for structural search and replace. It is like syntax-aware grep/sed.</span>
-</span></span><span style="display:flex;"><span>brew install atac                 <span style="color:#586e75"># Terminal API Client.</span>
+</span></span><span style="display:flex;"><span>brew install ast-grep             <span style="color:#586e75"># grep/sed alternative.</span>
 </span></span><span style="display:flex;"><span>brew install atuin                <span style="color:#586e75"># History.</span>
 </span></span><span style="display:flex;"><span>brew install awscli               <span style="color:#586e75"># Amazon Web Service CLI.</span>
 </span></span><span style="display:flex;"><span>brew install azure-cli            <span style="color:#586e75"># Azure CLI.</span>
@@ -178,16 +181,29 @@
 </span></span><span style="display:flex;"><span>brew install colima               <span style="color:#586e75"># Container runtimes on macOS (and Linux) with minimal setup.</span>
 </span></span><span style="display:flex;"><span>brew install font-hack-nerd-font
 </span></span><span style="display:flex;"><span>brew install fzf
+</span></span><span style="display:flex;"><span>brew install gh                   <span style="color:#586e75"># GitHub CLI</span>
 </span></span><span style="display:flex;"><span>brew install glow                 <span style="color:#586e75"># Markdown.</span>
 </span></span><span style="display:flex;"><span>brew install go                   <span style="color:#586e75"># The GO programming language.</span>
 </span></span><span style="display:flex;"><span>brew install helix
 </span></span><span style="display:flex;"><span>brew install jq
 </span></span><span style="display:flex;"><span>brew install kubernetes-cli       <span style="color:#586e75"># kubectl.</span>
 </span></span><span style="display:flex;"><span>brew install lsd
+</span></span><span style="display:flex;"><span>brew install m1ddc                <span style="color:#586e75"># Display manager.</span>
 </span></span><span style="display:flex;"><span>brew install macfuse
 </span></span><span style="display:flex;"><span>brew install mcat                 <span style="color:#586e75"># View images or videos on terminal.</span>
+</span></span><span style="display:flex;"><span>brew install resterm              <span style="color:#586e75"># Terminal API Client.</span>
+</span></span><span style="display:flex;"><span>brew install sequel-ace           <span style="color:#586e75"># MySQL Client for MAC OS</span>
 </span></span><span style="display:flex;"><span>brew install superfile
-</span></span><span style="display:flex;"><span>brew install gh                   <span style="color:#586e75"># GitHub CLI</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Configura tu terminal (iTerm2) para que use el nuevo bash con la siguiente ruta <code>/opt/homebrew/bin/bash</code>. No olvides de revisar la versión del básh con <code>echo $BASH_VERSION</code></p>
+<p>Recuerda que algunas aplicaciones pierden sus privilegios luego de ser actualizadas, por lo que deberás asignarlos nuevamente de forma manual hasta que esto se haya resuelto en <code>homebrew</code>.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xattr -dr com.apple.quarantine /Applications/LibreWolf.app
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

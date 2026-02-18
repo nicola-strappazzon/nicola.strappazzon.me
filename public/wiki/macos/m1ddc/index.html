@@ -2,7 +2,7 @@
 <html lang="es-es" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Go | Nicola Strappazzon</title>
+<title>m1ddc | Nicola Strappazzon</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
@@ -114,39 +114,33 @@
 
 </header>
 <div class="content">
-  
-  
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/wiki/">Wiki</a></li>
+      <li><a href="/wiki/macos/">macOS</a></li>
+    </ul>
     <div class="content-header">
-      <h2 class="title">Go</h2>
+      <h2 class="title">m1ddc</h2>
       
     </div>
-  
-  <p><a href="https://go.dev">Go</a> es un lenguaje de programación de alto nivel, de propósito general, tipado estático inspirado en <code>C</code>, y es un proyecto de <a href="https://github.com/golang/go">código abierto</a> disponible en múltiples sistemas operativos. Si quieres saber más sobre el deberías consultar la <a href="https://en.wikipedia.org/wiki/Go_(programming_language)">Wikipedia</a> o la <a href="https://go.dev/wiki/">Wiki del proyecto</a>.</p>
-<h2 id="recursos">Recursos</h2>
-<ul>
-<li><a href="https://go.dev/doc">Documentation</a> Documentación oficial.</li>
-<li><a href="https://go.dev/play">The Go Playground</a> Aquí podrás ejecutar codigo en línea.</li>
-<li><a href="https://google.github.io/styleguide/go/decisions.html">Go Style Decisions</a> Guía de estilo oficial.</li>
-<li><a href="https://github.com/golang-standards/project-layout">Standard Go Project Layout</a> Cómo organizas tu código dentro del módulo.</li>
-<li><a href="https://refactoring.guru/design-patterns/go">Design Patterns in Go</a> Soluciones habituales a problemas que ocurren con frecuencia en el diseño de software.</li>
-</ul>
-<h2 id="instalación">Instalación</h2>
-<p>En macOS solo debes escribir lo siguiente si tienes <a href="https://brew.sh">homebrew</a> instalado:</p>
+    <p>Es una pequeña <a href="https://github.com/waydabber/m1ddc">tool</a> para manejar un monitor externo usando el protocolo DDC en los Apple Silicon. Podrás ajustar el brillo, los colores y cambiar de entrada desde la línea de comandos.</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install go
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install m1ddc
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Una vez instalado puedes comprobar la versión de la siguiente forma:</p>
+</div><p>Es importante saber que no funciona con cualquier cable conectado al monitor, hay uno que es el principal llamado DisplayPort que tiene acceso al protocolo I²C y el resto serian los HDMI, sino recibirás el siguiente mensaje de error <code>DDC communication failure: (iokit/?) unknown subsystem error</code>.</p>
+<p>Para listar los monitores escribe:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go version
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>m1ddc display list
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
@@ -154,33 +148,29 @@
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>go version go1.24.2 darwin/arm64
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[1] DELL U2724DE (6CDE86E3-4958-4C2B-817F-FFB5BFA74D11)
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Si quieres instalar una versión específica debes indicarla de la siguiente forma:</p>
+</div><p>Para cambiar al DisplayPort</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install go@1.24
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>m1ddc display <span style="color:#2aa198">1</span> <span style="color:#b58900">set</span> input <span style="color:#2aa198">18</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="temario">Temario</h2>
-<p>Seguir el orden definido en la siguiente lista garantiza una mejor comprensión del curso.</p>
-
-  
-  <ul>
-    
-      <li><a href="/wiki/go/module/">Módulo</a></li>
-    
-      <li><a href="/wiki/go/import/">Importar</a></li>
-    
-      <li><a href="/wiki/go/packages/">Paquetes</a></li>
-    
-  </ul>
-  
-
+</div><p>Para cambiar al HDMI</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>m1ddc display <span style="color:#2aa198">1</span> <span style="color:#b58900">set</span> input <span style="color:#2aa198">17</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </article>
 </div>
 <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
 </footer>
