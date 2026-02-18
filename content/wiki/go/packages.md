@@ -20,7 +20,7 @@ Anteriormente, vimos como [importar paquetes estándar](https://nicola.strappazz
 
 En Go permite empaquetar código en un paquete (dentro de un directorio del módulo) y usarlo en otras partes, como una librería. Basandonos en el [módulo anterior](https://nicola.strappazzon.me/wiki/go/module/) creamos un directorio llamado `time` y dentro de el un archivo llamado `main.go`, el archivo principal del paquete se suele llamarse `main.go`.
 
-```
+```text
 .
 ├── go.mod
 ├── hello
@@ -49,7 +49,7 @@ func At() string {
 
 Ahora debemos modificar el archivo `main.go` para que haga uso del paquete `time`:
 
-```bash
+```go
 package main
 
 import (

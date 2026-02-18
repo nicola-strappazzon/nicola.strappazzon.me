@@ -13,7 +13,7 @@ Al leer esta página, deberías poder entender:
 
 Vamos a incrementar levemente la lógica del programa. Lo primero que se define es el `package ...` al inicio del archivo, luego se importan `import ...` los módulos, el nombre del módulo debe coincidir con el de package y el directorio que lo contiene, luego las constantes `const ...`, variables `var ...`, tipos `type ...` en cualquiera de sus variantes, por último las funciones y métodos `func ...`.
 
-```go
+```go {hl_lines=["3-7", "9-11"]}
 package main
 
 import (
