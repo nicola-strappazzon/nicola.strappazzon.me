@@ -37,6 +37,7 @@ Git pull luego de hacer `forced update`:
 ```bash
 git fetch
 git reset origin/main --hard
+git pull
 ```
 
 Unir los últimos 3 commits en uno reescribiendo el historial remoto:
