@@ -34,6 +34,7 @@ brew install lsd
 brew install m1ddc                # Display manager.
 brew install macfuse
 brew install mcat                 # View images or videos on terminal.
+brew install percona-toolkit      # Percona toolkit.
 brew install resterm              # Terminal API Client.
 brew install sequel-ace           # MySQL Client for MAC OS
 brew install superfile
