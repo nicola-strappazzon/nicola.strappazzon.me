@@ -13,7 +13,6 @@ Este es un simple CI que permite la comunicación USB 2.0 a Serial & UPDI de muy
 En este [repositorio](https://github.com/nicola-strappazzon/CH340) podrás tener acceso a un diseño de PCB que puedes construir tu mismo cómo cualquier material adicional que pueda ser de interés.
 {{% /blockquote %}}
 
-
 También podemos configurar el UART para Unified Program and Debug Interface (UPDI) que es habitual para programar los Microcontroladores (MCU) como el AVR Dx.
 
 ![](https://github.com/nicola-strappazzon/CH340/blob/main/img/minimal_protoboard.jpg?raw=true)
@@ -21,3 +20,5 @@ También podemos configurar el UART para Unified Program and Debug Interface (UP
 En la imagen mostramos el circuito básico y la conexión con un ATMega328P.
 
 Puedes conseguir el CH340 en la tienda oficial del fabricante en [AliExpress](https://wchofficialstore.es.aliexpress.com/store/1100367542) o en un distribuidor autorizado en china [LCSC](https://www.lcsc.com).
+
+Te recomiendo que [leas este post](https://www.digikey.es/en/maker/blogs/2025/non-compliant-use-of-ch340-v3-pin-deep-dive-for-engineers) que explican la razón del desacople externo de 0.1 µF en el pin V3. Básicamente, siempre debes tener el pin V3 desacoplado. Adicionalmente, te aconsejo que no lo uses para alimentar otros circuitos que requieran 3.3v
