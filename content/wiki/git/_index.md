@@ -69,3 +69,40 @@ Eliminar un tag
 git push origin --delete v0.1.0
 git tag -d v0.1.0
 ```
+
+## Cambios temporales
+
+Listar
+
+```bash
+git stash list
+```
+
+Guardar
+
+```bash
+# Guarda
+git stash
+# Guardar con comentario
+git stash push -m "comment.."
+```
+
+Recuperar o aplicar
+
+```bash
+# Aplicar el último
+git stash apply
+# Aplicar uno en específico
+git stash apply stash@{1}
+# Aplicar y eliminar
+git stash pop
+```
+
+Eliminar
+
+```bash
+# Borrar uno en específico
+git stash drop stash@{0}
+# Borrar todos
+git stash clear
+```
