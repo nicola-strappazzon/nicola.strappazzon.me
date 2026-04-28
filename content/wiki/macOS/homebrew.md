@@ -5,38 +5,40 @@ title = 'Homebrew'
 
 ```bash
 brew update
-brew install --cask 1password-cli # Command-line interface for 1Password.
-brew install --cask chatgpt       # ChatGPT Desktop.
-brew install --cask freelens      # Kubernetes IDE.
-brew install --cask insomnia      # API Client.
-brew install --cask iterm2        # Terminal emulator.
-brew install --cask librewolf     # Web browser.
-brew install --cask pgadmin4      # PostgreSQL Client.
-brew install --cask viscosity     # OpenVPN Client.
-brew install ast-grep             # grep/sed alternative.
-brew install atuin                # History.
-brew install awscli               # Amazon Web Service CLI.
-brew install azure-cli            # Azure CLI.
+brew install --cask 1password-cli    # Command-line interface for 1Password.
+brew install --cask chatgpt          # ChatGPT Desktop.
+brew install --cask freelens         # Kubernetes IDE.
+brew install --cask google-cloud-sdk #
+brew install --cask insomnia         # API Client.
+brew install --cask iterm2           # Terminal emulator.
+brew install --cask librewolf        # Web browser.
+brew install --cask pgadmin4         # PostgreSQL Client.
+brew install --cask viscosity        # OpenVPN Client.
+brew install ast-grep                # grep/sed alternative.
+brew install atuin                   # History.
+brew install awscli                  # Amazon Web Service CLI.
+brew install azure-cli               # Azure CLI.
 brew install bash
 brew install bash-completion@2
 brew install bat
 brew install btop
-brew install colima               # Container runtimes on macOS (and Linux) with minimal setup.
+brew install colima                  # Container runtimes on macOS (and Linux) with minimal setup.
 brew install font-hack-nerd-font
 brew install fzf
-brew install gh                   # GitHub CLI
-brew install glow                 # Markdown.
-brew install go                   # The GO programming language.
+brew install gh                      # GitHub CLI
+brew install glow                    # Markdown.
+brew install go                      # The GO programming language.
+brew install hashicorp/tap/terraform # Terraform
 brew install helix
 brew install jq
-brew install kubernetes-cli       # kubectl.
+brew install kubernetes-cli          # kubectl.
 brew install lsd
-brew install m1ddc                # Display manager.
+brew install m1ddc                   # Display manager.
 brew install macfuse
-brew install mcat                 # View images or videos on terminal.
-brew install percona-toolkit      # Percona toolkit.
-brew install resterm              # Terminal API Client.
-brew install sequel-ace           # MySQL Client for MAC OS
+brew install mcat                    # View images or videos on terminal.
+brew install percona-toolkit         # Percona toolkit.
+brew install resterm                 # Terminal API Client.
+brew install sequel-ace              # MySQL Client for MAC OS
 brew install superfile
 ```
 
