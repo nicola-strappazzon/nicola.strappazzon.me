@@ -104,7 +104,27 @@ GRANT CONNECT ON DATABASE app_db TO app_user;
 -- CREATE SCHEMA app_schema AUTHORIZATION app_owner;
 GRANT USAGE, CREATE ON SCHEMA public TO app_user;
 GRANT USAGE, SELECT, UPDATE ON ALL SEQUENCES IN SCHEMA public TO app_user;
+```
 
+Usario solo lectura:
+
+```sql
+CREATE ROLE usr_ro_audit
+  LOGIN
+  PASSWORD 'password_owner';
+
+GRANT CONNECT ON DATABASE app_db TO usr_ro_audit;
+GRANT USAGE ON SCHEMA public TO usr_ro_audit;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO usr_ro_audit;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO usr_ro_audit;
+```
+
+Eliminar un usuario:
+
+```sql
+REVOKE ALL PRIVILEGES ON SCHEMA public FROM usr_ro_audit;
+REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM usr_ro_audit;
+DROP ROLE usr_ro_audit;
 ```
 
 Hacer un respaldo:
