@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Radio AM | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+<div class="container center">
+<header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+</header>
+<div class="content">
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/electronic/">Electrónica</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">Radio AM</h2>
+      
+    </div>
+    <blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Esta es una traducción de la página <a href="https://www.circuitbasics.com/what-are-am-radios/">How to Build an AM Radio Receiver</a> escrita por <em>Scott Campbell</em>.</p></blockquote>
+<p>Construir una radio AM es una forma divertida de iniciarse en la electrónica. En este proyecto, construiremos un receptor de radio AM. A lo largo del proceso, veremos cómo diseñar y optimizar circuitos osciladores LC, circuitos RC, amplificadores usando transistores y amplificadores de potencia.</p>
+<p>Esta radio recibe frecuencias de emisión (<a href="https://es.wikipedia.org/wiki/Radio_(medio_de_comunicaci%C3%B3n)">broadcast</a>) en AM que corresponde en el rango de 535 kHz a 1705 kHz, en América del Norte y del Sur es lo habitual. En Europa y Asia, el rango es de 535 kHz a 1605 kHz, por lo que también veremos una forma de modificar el rango sintonizable de la radio mediante una técnica llamada <a href="https://en.wikipedia.org/wiki/Bandspread">bandspreading</a>.</p>
+<p>Esta radio ofrece una excelente recepción y selectividad al utilizar una antena de bobina y cable.</p>
+<h2 id="descripción-general-del-receptor-de-radio-am">Descripción general del receptor de radio AM</h2>
+<p><img src="am-schematic-all.png" alt=""></p>
+<p>Empezando por el lado izquierdo del esquema, la antena capta las frecuencias de radio del aire. La bobina y el condensador variable (C1) permiten sintonizar la radio en una frecuencia específica dentro del rango de sintonización del aparato. Un diodo de germanio (D1) rectifica la señal de AM; a continuación, un filtro de condensador y resistencia (C4 y R1) demodula la señal de mensaje de la señal portadora (más adelante se profundizará en este tema). A continuación, un amplificador de transistores (Q1) aumenta la señal de bajo voltaje procedente del detector hasta un nivel que pueda ser utilizado por el amplificador de potencia (U1). El amplificador de potencia tiene una potencia de salida de 2,5 vatios, lo que permite a la radio alimentar fácilmente un altavoz de 5 vatios y 4-32 ohmios. El circuito es solo de corriente continua (CC) y funciona mejor a 13,25 V CC, aunque puede llegar hasta los 16 V CC.</p>
+<h2 id="el-circuito-detector">El circuito detector</h2>
+<p>La función de un circuito detector de AM es tomar la forma de onda de audio modulada en amplitud y convertirla en una forma de onda de CA positiva que pueda amplificarse y utilizarse para alimentar un altavoz. Esta radio de AM utiliza un detector de envolvente de diodos. Los detectores de envolvente de diodos funcionan rectificando y demodulando la forma de onda modulada en amplitud.</p>
+<p><img src="am-schematic-detector.png" alt=""></p>
+<p>La antena está conectada a una bobina de alambre en paralelo con un condensador variable. La antena capta las frecuencias de radio AM del aire. La inductancia de la bobina y la capacitancia del condensador forman un circuito oscilador LC capaz de resonar a frecuencias específicas. La frecuencia de resonancia del circuito determina qué frecuencia (emisora de radio) se sintonizará. Los circuitos LC tienen una frecuencia de resonancia definida por esta ecuación:
+Receptor de radio AM - Fórmula de la frecuencia de resonancia</p>
+<p>&hellip; la formula &hellip;</p>
+<p>Esta frecuencia (f) representa el punto en el que la reactancia inductiva (XL) y la reactancia capacitiva (XC) son iguales, lo que produce la máxima oscilación y amplificación de la frecuencia sintonizada.</p>
+<h2 id="el-condensador-variable">El condensador variable</h2>
+<p>El condensador variable permite modificar la frecuencia de resonancia del circuito oscilador para sintonizarla con la frecuencia de la emisora de radio. La señal de radio se «sintoniza» cuando la frecuencia de resonancia del circuito oscilador coincide con la frecuencia de la emisora de radio.</p>
+<p>Un condensador variable de 365 pF como este es muy utilizado en proyectos de radio y resulta ideal para esta radio, aunque también se pueden emplear otros tipos y valores de capacitancia. El cursor del condensador variable se conecta al ánodo del diodo. El cuerpo del condensador variable se conecta a tierra.</p>
+<p>&hellip; indicar que lo consegui en aliexpress &hellip;</p>
+<h2 id="rectificación-am">Rectificación AM</h2>
+<p>La señal resonante procedente del circuito oscilador LC pasa a continuación por un diodo. Esto rectifica la señal, de modo que solo pasa la mitad positiva de la misma:</p>
+<p><img src="am-modulation.png" alt=""></p>
+<h2 id="demodulación-am">Demodulación AM</h2>
+<p>R1 y C4 forman un circuito filtrador RC que demodula la señal AM después de que haya sido rectificada por el diodo. La señal AM consta de dos frecuencias: una frecuencia portadora y una frecuencia de mensaje. Las frecuencias portadoras AM oscilan entre 535 kHz y 1705 kHz en América del Norte y del Sur (entre 535 kHz y 1605 kHz en Europa y Asia). La frecuencia de mensaje suele estar dentro del rango audible para el oído humano: de 20 Hz a 20 kHz.</p>
+<p>Después de que un pulso de frecuencia portadora atraviesa el diodo, el condensador C4 se carga. Sin embargo, la resistencia R1 proporciona una ruta a tierra, por lo que la carga de C4 se disipa según la ecuación de la constante de tiempo:</p>
+<p>T (tau) = R x C</p>
+<p>El tiempo que C4 permanece cargado influye en la eficacia con la que se pueden suavizar los picos de la frecuencia portadora:</p>
+<p><img src="am-demodulation.png" alt=""></p>
+<p>La constante de tiempo RC (tau) del filtro crea una envolvente de la señal eléctrica que sigue los picos de la frecuencia portadora. Una constante de tiempo demasiado corta no suavizará en absoluto la frecuencia portadora. Una constante de tiempo demasiado larga hará que los pulsos se solapen entre sí y provoquen distorsión. Lo ideal es que la constante de tiempo sea lo suficientemente pequeña como para seguir los cambios más rápidos de la señal de audio en la señal del mensaje, pero lo suficientemente grande como para suavizar la portadora de radiofrecuencia.</p>
+<p>Si se modifica el valor de C4 o de R1, se alterará la constante de tiempo y se verá afectado el sonido. Probé diferentes constantes de tiempo sustituyendo R1 por un potenciómetro y lo ajusté hasta que el sonido resultara más nítido. Al aumentar demasiado la constante de tiempo, el sonido se volvía suave y confuso, y al reducirla en exceso, sonaba chirriante. El mejor sonido se obtuvo con 30 kΩ y C4 a 10 nF.</p>
+<p>Con R1 a 30 kΩ y C4 a 10 nF, la constante de tiempo es:</p>
+<p>&hellip; poner unos cálculos &hellip;</p>
+<h2 id="elección-de-un-diodo">Elección de un diodo</h2>
+<p>Probablemente, el factor más importante a tener en cuenta a la hora de elegir un diodo para un circuito detector de radio AM es la tensión directa. Cuanto mayor sea la tensión directa, más potente deberá ser la señal resonante en el circuito oscilador LC para poder atravesar el diodo. Un diodo con una tensión directa más baja permitirá el paso de una señal más débil, lo cual es deseable para poder sintonizar emisoras de radio de baja potencia o lejanas.</p>
+<p>Los diodos de germanio son una opción clásica que se ha utilizado en innumerables diseños de radio. Tienen una baja caída de tensión directa, baja capacitancia y conmutación rápida. Sin embargo, se pueden utilizar otros diodos, y los diodos Schottky y de silicio también son populares.</p>
+<p>Esta tabla compara las tensiones directas y los números de referencia de algunos de los diferentes diodos que son populares en los circuitos detectores de radio:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Diode Type</th>
+          <th>Example Part Numbers</th>
+          <th>Typical Forward Voltage (Vf)</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Germanium diode</td>
+          <td>1N34A, 1N60</td>
+          <td>~0.2–0.3 V</td>
+          <td>Excellent for crystal radios; very sensitive due to low Vf</td>
+      </tr>
+      <tr>
+          <td>Schottky diode</td>
+          <td>1N5711, BAT54</td>
+          <td>~0.15–0.45 V</td>
+          <td>Very good alternative to germanium; fast and widely available</td>
+      </tr>
+      <tr>
+          <td>Silicon small-signal</td>
+          <td>1N4148, 1N914</td>
+          <td>~0.6–0.7 V</td>
+          <td>Works, but less sensitive; needs stronger signals</td>
+      </tr>
+      <tr>
+          <td>RF detector diode</td>
+          <td>HSMS-2850, HSMS-2820</td>
+          <td>~0.15–0.35 V</td>
+          <td>Designed specifically for RF detection; excellent performance</td>
+      </tr>
+      <tr>
+          <td>Power silicon diode</td>
+          <td>1N4001–1N4007</td>
+          <td>~0.7–1.0 V</td>
+          <td>Poor choice; too high Vf and slow response</td>
+      </tr>
+      <tr>
+          <td>LED</td>
+          <td>Any standard LED</td>
+          <td>~1.6–3.3 V</td>
+          <td>Not suitable; very high Vf</td>
+      </tr>
+      <tr>
+          <td>Tunnel diode</td>
+          <td>1N3716</td>
+          <td>~0.1–0.3 V</td>
+          <td>Rare; can work but not practical for typical builds</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="amplitud-de-banda">Amplitud de banda</h2>
+<p>La amplitud de banda permite modificar el rango de sintonización de una radio y cambiar la forma en que las frecuencias se distribuyen a lo largo de ese rango. La amplitud de banda depende de la inductancia de la bobina y de la capacitancia del condensador variable, el condensador de ajuste y el condensador de compensación. En este circuito, C2 es el condensador de compensación y C3 es el condensador de ajuste. La calculadora de extensión de banda de la página web Electron Bunker es una herramienta gratuita que calcula los valores ideales para los condensadores de relleno y de ajuste en función del rango de frecuencias al que quieras sintonizar la radio.</p>
+<p>Cómo utilizar la calculadora de ancho de banda:</p>
+<p>Introduzca la frecuencia más baja y la más alta (en kHz) del rango sintonizable previsto para la radio.
+Introduzca la capacitancia mínima y máxima del condensador de sintonización (el condensador variable). La capacitancia máxima del condensador variable es el valor nominal del mismo, 365 pF en este caso. La capacitancia mínima del condensador variable es en realidad cero, pero al introducir 0 pF no funcionaba en la calculadora. La capacitancia más baja que funcionaba era 20 pF, así que utilicé ese valor como capacitancia mínima.
+Introduzca la capacitancia parásita. Dejé este campo en blanco.
+A continuación, la calculadora mostrará los valores ideales para el condensador de relleno, el condensador de ajuste y el inductor (bobina). Si ya tienes una bobina fabricada, la siguiente sección tomará la inductancia de la bobina y mostrará los mejores valores para los condensadores de relleno y de ajuste.</p>
+<h2 id="uso-de-una-antena-de-bobina-y-alambre">Uso de una antena de bobina y alambre</h2>
+<p>Construir y probar diferentes bobinas es divertido y fácil. Los distintos tamaños de bobina, las tomas y las inductancias pueden influir en la recepción de la señal; por lo general, las bobinas más grandes ofrecen una mejor selectividad y una recuperación de la señal más potente.</p>
+<p>La bobina que utilicé tiene una inductancia de 243 uH y se fabricó enrollando cable magnético de calibre 26 muy apretado alrededor de un tubo de cartón de 3,96 cm (1.57&quot;) de diámetro y 9,9 cm (3.9&quot;) de longitud. La bobina tiene 96 vueltas, con una derivación en la décima (10th) vuelta para conectar la antena de alambre. La derivación se puede hacer retorciendo un bucle en el alambre magnético en la décima vuelta y, a continuación, continuando con el bobinado sin romper la conexión conductora a través de la bobina. Lija ligeramente el esmalte del bucle y fija la antena de alambre a él con una pinza cocodrilo.</p>
+<p>La selectividad se refiere a la capacidad de la radio para sintonizar y separar emisoras de radio muy próximas entre sí. La bobina influye en gran medida en la selectividad. Aunque la selectividad de esta radio es buena con una bobina y una antena de alambre, puede mejorarse utilizando una antena de bucle magnético.</p>
+<h2 id="-me-salte-la-parte-de-la-otra-antena">&hellip; me salte la parte de la otra antena.</h2>
+<h2 id="puesta-a-tierra-de-la-radio">Puesta a tierra de la radio</h2>
+<p>¿Alguna vez has montado un circuito amplificador de audio en una placa de pruebas y has notado que al mover la mano cerca del circuito se produce ruido? ¿O has observado que al tocar el cuerpo de un potenciómetro el ruido parece desaparecer? Esto suele deberse a una mala conexión a tierra. Tu mano tiene carga eléctrica y puede inducir corrientes en los cables del circuito que causarán ruido, y tener una buena conexión a tierra ayudará a que estas corrientes se disipen más fácilmente. Convertir el circuito prototipo en un diseño de placa de circuito impreso (PCB) con un buen esquema de conexión a tierra también ayuda mucho.</p>
+<p>Esta radio está diseñada para funcionar con una pila. El circuito utiliza el polo negativo de la pila como tierra, pero la conexión a tierra se puede mejorar añadiendo una conexión adicional a tierra. Aunque es opcional, esto mejorará la recepción de la señal, la claridad y el volumen del sonido. Para crear una conexión a tierra, basta con tender un cable desde el lado de tierra de la bobina hasta una pica de tierra, una tubería de agua metálica o una estaca enterrada en el suelo.</p>
+<h2 id="el-preamplificador-de-transistores">El preamplificador de transistores</h2>
+<p>La señal AM rectificada y demodulada procedente del circuito detector de diodos tiene una intensidad de solo unos 10 µA. Es necesario amplificarla para poder escucharla a través de un altavoz. Esta radio cuenta con dos etapas de amplificación. La señal procedente del circuito detector se amplifica primero mediante un transistor BC337 y, a continuación, se envía a un potenciómetro de volumen de 10 kΩ. El cursor del potenciómetro de volumen está conectado a la entrada de un chip amplificador de potencia LM380.</p>
+<p>El transistor bipolar NPN (BJT) BC337 de Onsemi está diseñado para aplicaciones de audio, y fue el que mejor sonó tras compararlo con otros cinco transistores de calidad de audio en el mismo circuito. A continuación, mis notas sobre cómo sonaba cada uno, ordenados de mi favorito al que menos me gustó:</p>
+<pre><code>BC337
+    Suena similar al 2N3904, pero con menos distorsión.
+    Ruido de fondo ligeramente superior al del BC109, pero tiene un sonido más limpio y brillante.
+    Más potente que el BC109.
+BC109
+    Más silencioso, con menos ruido y medios más limpios que el 2N3904.
+    Sonido más cálido y suave que el del BC337. 
+2N4401
+    Más potente que el 2N3904.
+    Sonido limpio, pero más ruidoso que el BC109.
+2N3904
+    Suena bien, pero podría ser mejor.
+BC550
+    El más potente de los cinco transistores probados.
+    El sonido es ruidoso y distorsionado.
+</code></pre>
+<p>El amplificador de transistores debe tener una alta impedancia de entrada para facilitar que el circuito detector impulse la entrada. También debe tener una baja impedancia de salida para proporcionar suficiente corriente al amplificador de potencia en la siguiente etapa. La etapa del amplificador de transistores de esta radio tiene una impedancia de entrada de 37,8 kOhmios y una impedancia de salida de 8,9 kOhmios. Además, se ha diseñado para funcionar con una ganancia de 100 Av.</p>
+<p>Para obtener más detalles sobre cómo diseñar un amplificador de transistores, consulta nuestro otro artículo sobre Cómo construir un amplificador de transistores.</p>
+<h2 id="el-amplificador-de-potencia">El amplificador de potencia</h2>
+<p>La potencia de salida del BC337 no es suficiente para alimentar un altavoz de más de una pulgada de diámetro aproximadamente. Para que la radio AM se oiga en una habitación, se necesita un altavoz más grande, como este de 5 W y 8 ohmios. Sin embargo, se requiere más potencia para alimentar un altavoz de este tamaño. Por lo tanto, amplificamos aún más la señal utilizando un amplificador de potencia LM380 de clase A/B de Texas Instruments. El LM380 es un chip amplificador de potencia de 2,5 vatios con una distorsión armónica total de solo el 0,2 %.</p>
+<p>El LM380 está disponible en un encapsulado de 8 pines y en uno de 14 pines. El encapsulado de 14 pines tiene una disipación de potencia mucho mejor (8 W frente a 1,7 W), por lo que es el que he utilizado en este diseño.</p>
+<p>&hellip; schema &hellip;</p>
+<p>Un filtro RC de paso alto formado por R6 y C7 establece el límite inferior del ancho de banda de audio del LM380 en 15,92 Hz.</p>
+<p>El pin de derivación (pin 1) está conectado a masa a través de R7 y C9, tal y como se recomienda en la hoja de datos.</p>
+<p>R8, R9 y C10 forman un bucle de retroalimentación positiva que establece la ganancia de tensión (Av) en 200. La nota de aplicación del LM380 explica esto en detalle.</p>
+<p>La salida del LM380 cuenta con una red de Zobel formada por R10 y C14 para amortiguar las oscilaciones que podrían producirse en los cables de los altavoces. Se trata de un filtro de paso bajo con Fc = 159 kHz.</p>
+<p>Hay tres condensadores de desacoplamiento de la fuente de alimentación (C11, C12 y C13) situados junto al pin de alimentación positiva (Vs, pin 14) del LM380. Los condensadores de desacoplamiento de la fuente de alimentación proporcionan una reserva de energía al chip amplificador, para ayudar a que este responda mejor a los picos bruscos de la señal de audio. También ayudan a filtrar cualquier ruido en el circuito de la fuente de alimentación.</p>
+<h2 id="requisitos-de-alimentación">Requisitos de alimentación</h2>
+<p>Te recomiendo que pruebes diferentes tensiones de alimentación para ver cuál ofrece el mejor sonido en tu circuito. Para encontrar la tensión de alimentación ideal, monté un divisor de tensión con un potenciómetro conectado a una batería de 16 V y luego ajusté el potenciómetro hasta obtener el mejor sonido. También puedes utilizar una fuente de alimentación variable. Con este diseño de radio en una placa de circuito impreso, 13,25 V CC sonaba mejor. Pero el voltaje óptimo podría variar en función de la disposición del circuito y de los componentes que utilices.</p>
+
+  </article>
+</div>
+<footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+<script>
+(function () {
+    const btn = document.getElementById('menuToggle');
+    const menu = document.getElementById('mainMenu');
+
+    if (!btn || !menu) return;
+
+    function openMenu() {
+        menu.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.innerHTML = '<i class="fas fa-times"></i>';
+    }
+
+    function closeMenu() {
+        menu.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+
+    btn.addEventListener('click', () => {
+        if (menu.classList.toggle('is-open')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    });
+
+    menu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bp'))) {
+            closeMenu();
+        }
+    });
+})();
+</script>
+</html>

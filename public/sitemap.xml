@@ -296,6 +296,8 @@
   </url><url>
     <loc>http://localhost:1313/wiki/f3/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/firefox/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/555/frequency/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/git/</loc>
@@ -345,6 +347,8 @@
     <loc>http://localhost:1313/tags/openpgp/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/yubikey/otp/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/postgresql/</loc>
   </url><url>
