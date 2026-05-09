@@ -19,7 +19,6 @@ Esta radio ofrece una excelente recepción y selectividad al utilizar una antena
 
 Empezando por el lado izquierdo del esquema, la antena capta las frecuencias de radio del aire. La bobina y el condensador variable (C1) permiten sintonizar la radio en una frecuencia específica dentro del rango de sintonización del aparato. Un diodo de germanio (D1) rectifica la señal de AM; a continuación, un filtro de condensador y resistencia (C4 y R1) demodula la señal de mensaje de la señal portadora (más adelante se profundizará en este tema). A continuación, un amplificador de transistores (Q1) aumenta la señal de bajo voltaje procedente del detector hasta un nivel que pueda ser utilizado por el amplificador de potencia (U1). El amplificador de potencia tiene una potencia de salida de 2,5 vatios, lo que permite a la radio alimentar fácilmente un altavoz de 5 vatios y 4-32 ohmios. El circuito es solo de corriente continua (CC) y funciona mejor a 13,25 V CC, aunque puede llegar hasta los 16 V CC.
 
-
 ## El circuito detector
 
 La función de un circuito detector de AM es tomar la forma de onda de audio modulada en amplitud y convertirla en una forma de onda de CA positiva que pueda amplificarse y utilizarse para alimentar un altavoz. Esta radio de AM utiliza un detector de envolvente de diodos. Los detectores de envolvente de diodos funcionan rectificando y demodulando la forma de onda modulada en amplitud. 
