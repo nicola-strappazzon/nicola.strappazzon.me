@@ -259,6 +259,229 @@ BC550
 <p>Hay tres condensadores de desacoplamiento de la fuente de alimentación (C11, C12 y C13) situados junto al pin de alimentación positiva (Vs, pin 14) del LM380. Los condensadores de desacoplamiento de la fuente de alimentación proporcionan una reserva de energía al chip amplificador, para ayudar a que este responda mejor a los picos bruscos de la señal de audio. También ayudan a filtrar cualquier ruido en el circuito de la fuente de alimentación.</p>
 <h2 id="requisitos-de-alimentación">Requisitos de alimentación</h2>
 <p>Te recomiendo que pruebes diferentes tensiones de alimentación para ver cuál ofrece el mejor sonido en tu circuito. Para encontrar la tensión de alimentación ideal, monté un divisor de tensión con un potenciómetro conectado a una batería de 16 V y luego ajusté el potenciómetro hasta obtener el mejor sonido. También puedes utilizar una fuente de alimentación variable. Con este diseño de radio en una placa de circuito impreso, 13,25 V CC sonaba mejor. Pero el voltaje óptimo podría variar en función de la disposición del circuito y de los componentes que utilices.</p>
+<h2 id="lista-de-materiales">Lista de materiales</h2>
+<p>El autor del artículo original ofrece un <a href="https://www.circuitbasics.com/product/am-radio-receiver/">circuito impreso</a> (PCB) y la mayoria de sus componentes, también da la opción de adquirir los componentes por separado, dejo la lista completa de todo lo que use:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Ref.</th>
+          <th>Valor</th>
+          <th>Tipo de componente</th>
+          <th>Fabricante / Serie</th>
+          <th>Número de parte</th>
+          <th>Cantidad</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>C2</td>
+          <td>420 pF</td>
+          <td>Capacitor silver mica, 1kV, 5%</td>
+          <td>Cornell Dubilier / Knowles CDV16</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Knowles-Illinois-Capacitor/CDV16FF421JO3F?qs=tNDx7qEChkdvs0eeUmn3tA%3D%3D">CDV16FF421JO3F</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>C3</td>
+          <td>5.1 pF</td>
+          <td>Capacitor C0G (NP0), 200V, 10%</td>
+          <td>Kemet Goldmax 300</td>
+          <td><a href="https://www.mouser.es/ProductDetail/KEMET/C321C519DAG5TA?qs=h3%2Fj8evtlm1JME%2Fn99vrZw%3D%3D">C321C519DAG5TA</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>C4</td>
+          <td>10 nF</td>
+          <td>Capacitor polypropylene film, 400V, 5%</td>
+          <td>Wima FKP3</td>
+          <td><a href="https://www.mouser.es/ProductDetail/WIMA/FKP3G021004B00JD00?qs=WI052HLiD5hAQcCVsJwniQ%3D%3D">FKP3G021004B00JD00</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>C5</td>
+          <td>220 nF</td>
+          <td>Capacitor metallized polypropylene film, 160V, 5%</td>
+          <td>Vishay MKP</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Vishay-Roederstein/MKP1839422164?qs=5W%252BGeepUzodo0g6N7rH1hQ%3D%3D">MKP1839422164</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>C6-C12</td>
+          <td>100 uF</td>
+          <td>Capacitor aluminum electrolytic, 50V, 20%</td>
+          <td>Nichicon UES</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Nichicon/UES1H101MHM?qs=pECem3OyIRgLuxyPt1Ar2A%3D%3D">UES1H101MHM</a></td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>C7</td>
+          <td>100 nF</td>
+          <td>Capacitor metallized polypropylene film, 160V, 5%</td>
+          <td>Vishay MKP</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Vishay-Roederstein/MKP1839410164?qs=ZC%252BWKP10IGdI2dGIet6n%252Bw%3D%3D">MKP1839410164</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>C8</td>
+          <td>100 nF</td>
+          <td>Capacitor metallized polypropylene film, 630V, 3%</td>
+          <td>Panasonic ECW</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Panasonic/ECW-H6104HC?qs=BZBei1rCqCAalj08x9hxZA%3D%3D">ECW-H6104HC</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>C9</td>
+          <td>1 uF</td>
+          <td>Capacitor metallized polypropylene film, 400V, 3%</td>
+          <td>Panasonic ECW</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Panasonic/ECW-F4105HL?qs=GoZnPdyRfja9JqlKM8gKWg%3D%3D">ECW-F4105HL</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>C10</td>
+          <td>24 pF</td>
+          <td>Capacitor silver mica, 500V, 5%</td>
+          <td>Cornell Dubilier / Knowles CD15</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Knowles-Illinois-Capacitor/CD15ED240JO3F?qs=FKrQhPEeH%252B7n1Vq1xczv2A%3D%3D">CD15ED240JO3F</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>C11-C15</td>
+          <td>1000 uF</td>
+          <td>Capacitor aluminum electrolytic, 25V, 20%</td>
+          <td>Nichicon UES</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Nichicon/UES1E102MHM?qs=kArNe9LFxXmdrTBXDqi2Iw%3D%3D">UES1E102MHM</a></td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>C13</td>
+          <td>100 nF</td>
+          <td>Capacitor X7R, 200V, 5%</td>
+          <td>Kemet Goldmax 300</td>
+          <td><a href="https://www.mouser.es/ProductDetail/KEMET/C340C104J2R5TA?qs=9Jcv%252B5Uo%2F3nxXUJ3Mz9j6g%3D%3D">C340C104J2R5TA</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>C14</td>
+          <td>100 nF</td>
+          <td>Capacitor polypropylene film, 100V, 5%</td>
+          <td>Wima FKP3</td>
+          <td><a href="https://www.mouser.es/ProductDetail/WIMA/FKP3D031004D00JF00?qs=WI052HLiD5g9y4zA9JzRug%3D%3D">FKP3D031004D00JF00</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>R1</td>
+          <td>30K</td>
+          <td>Resistor 1/4W, 1%, 100 ppm</td>
+          <td>Vishay RN60</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Vishay-Dale/RN60D3002FB14?qs=6z8JnUK2jyN6b11Y5A%2FnNQ%3D%3D">RN60D3002FB14</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>R2</td>
+          <td>1.5M</td>
+          <td>Resistor 1/4W, 1%, 100 ppm</td>
+          <td>Vishay RN60</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Vishay/RN60D1504FB14?qs=YzWo7YEPTR9P81s6BNO31A%3D%3D">RN60D1504FB14</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>R3</td>
+          <td>73.2K</td>
+          <td>Resistor 1/4W, 1%, 100 ppm</td>
+          <td>Vishay RN60</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Vishay/RN60D7322FB14?qs=97%252BiwClkCtf9%252BvxMfwu0AQ%3D%3D">RN60D7322FB14</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>R4</td>
+          <td>80.6K</td>
+          <td>Resistor 1/4W, 1%, 100 ppm</td>
+          <td>Vishay RN60</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Vishay/RN60D8062FB14?qs=0hlZ1ctwNONbqNnlsPUNug%3D%3D">RN60D8062FB14</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>R5</td>
+          <td>806R</td>
+          <td>Resistor 1/4W, 1%, 50 ppm</td>
+          <td>Vishay RN60</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Vishay-Dale/RN60C8060FB14?qs=XbZ1sjYlnaWmMgNsnmHo6A%3D%3D">RN60C8060FB14</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>R6</td>
+          <td>100K</td>
+          <td>Resistor 1/4W, 1%, 100 ppm</td>
+          <td>Vishay RN60</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Vishay/RN60D1003FRE6?qs=7VR27ARAOdnba5%2FOU025VA%3D%3D">RN60D1003FRE6</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>R7-R10</td>
+          <td>10R</td>
+          <td>Resistor 1/4W, 1%, 100 ppm</td>
+          <td>Vishay RN60</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Vishay/RN60D10R0FB14?qs=3bwLI%252BXDrBmcfl9ALeZoWA%3D%3D">RN60D10R0FB14</a></td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>R8</td>
+          <td>16.9K</td>
+          <td>Resistor 1/4W, 1%, 100 ppm</td>
+          <td>Vishay RN60</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Vishay/RN60D1692FB14?qs=2Ta4L6IlF3ixQY8kgzohRQ%3D%3D">RN60D1692FB14</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>R9</td>
+          <td>1M</td>
+          <td>Resistor 1/4W, 1%, 100 ppm</td>
+          <td>Vishay RN60</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Vishay-Dale/RN60D1004FB14?qs=YpThDOo7zfTXxEtYBiOYrg%3D%3D">RN60D1004FB14</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>Q1</td>
+          <td>BC337</td>
+          <td>Transistor BJT NPN</td>
+          <td>Onsemi</td>
+          <td><a href="https://www.mouser.es/ProductDetail/onsemi/BC33740BU?qs=UMEuL5FsraDblVeOj41nvQ%3D%3D">BC33740BU</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>U1</td>
+          <td>LM380</td>
+          <td>Amplificador de potencia de audio 2.5W</td>
+          <td>Texas Instruments</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Texas-Instruments/LM380N-NOPB?qs=QbsRYf82W3FZTPVTV5PPcQ%3D%3D">LM380N/NOPB</a></td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>H1-H6</td>
+          <td>N/A</td>
+          <td>Terminales de tornillo duales</td>
+          <td>Same Sky</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Same-Sky/TB001-500-02BE?qs=sGAEpiMZZMvlX3nhDDO4APVSUT%252BeE4WCZ2ttB070YMU%3D">TB001-500-02BE</a></td>
+          <td>5</td>
+      </tr>
+      <tr>
+          <td>VOLUME</td>
+          <td>10K</td>
+          <td>Potenciómetro lineal, 1/10W</td>
+          <td>Alps RK163</td>
+          <td><a href="https://www.mouser.es/ProductDetail/Alps-Alpine/RK1631110U1Q?qs=6EGMNY9ZYDSbAwK9e%2FQEZg%3D%3D">RK1631110U1Q</a></td>
+          <td>1</td>
+      </tr>
+  </tbody>
+</table>
+<p>Otros componentes que debes adquirir fuera de mouser:</p>
+<ul>
+<li><a href="https://es.aliexpress.com/item/1005003750182452.html">D1 - 1N34A - Diodo de germanio</a></li>
+<li><a href="https://www.amazon.es/Emtel-Cable-magn%C3%A9tico-AWG-transformador/dp/B0DFHDT5VM">Cable magnético de 26 AWG</a></li>
+<li><a href="https://es.aliexpress.com/w/wholesale-variable-capacitor-365pf.html?spm=a2g0o.productlist.search.0">Capacitor variable de 365pF</a></li>
+</ul>
+<p>Cuando analizas los componentes, te das cuenta de que usa algunos muy raros como los condensadores de 420pF y el 5.1pF que son valores fuera del estándar. Por lo que son difíciles de conseguir.</p>
 
   </article>
 </div>

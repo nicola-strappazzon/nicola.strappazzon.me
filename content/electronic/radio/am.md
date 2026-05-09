@@ -1,5 +1,5 @@
 +++
-draft = true
+# draft = true
 title = 'Radio AM'
 +++
 
@@ -158,3 +158,43 @@ Hay tres condensadores de desacoplamiento de la fuente de alimentación (C11, C1
 ## Requisitos de alimentación
 
 Te recomiendo que pruebes diferentes tensiones de alimentación para ver cuál ofrece el mejor sonido en tu circuito. Para encontrar la tensión de alimentación ideal, monté un divisor de tensión con un potenciómetro conectado a una batería de 16 V y luego ajusté el potenciómetro hasta obtener el mejor sonido. También puedes utilizar una fuente de alimentación variable. Con este diseño de radio en una placa de circuito impreso, 13,25 V CC sonaba mejor. Pero el voltaje óptimo podría variar en función de la disposición del circuito y de los componentes que utilices.
+
+## Lista de materiales
+
+El autor del artículo original ofrece un [circuito impreso](https://www.circuitbasics.com/product/am-radio-receiver/) (PCB) y la mayoria de sus componentes, también da la opción de adquirir los componentes por separado, dejo la lista completa de todo lo que use:
+
+| Ref.    | Valor   | Tipo de componente                                | Fabricante / Serie               | Número de parte        | Cantidad |
+|---------|---------|---------------------------------------------------|----------------------------------|------------------------|----------|
+| C2      | 420 pF  | Capacitor silver mica, 1kV, 5%                    | Cornell Dubilier / Knowles CDV16 | [CDV16FF421JO3F](https://www.mouser.es/ProductDetail/Knowles-Illinois-Capacitor/CDV16FF421JO3F?qs=tNDx7qEChkdvs0eeUmn3tA%3D%3D)     | 1        |
+| C3      | 5.1 pF  | Capacitor C0G (NP0), 200V, 10%                    | Kemet Goldmax 300                | [C321C519DAG5TA](https://www.mouser.es/ProductDetail/KEMET/C321C519DAG5TA?qs=h3%2Fj8evtlm1JME%2Fn99vrZw%3D%3D)     | 1        |
+| C4      | 10 nF   | Capacitor polypropylene film, 400V, 5%            | Wima FKP3                        | [FKP3G021004B00JD00](https://www.mouser.es/ProductDetail/WIMA/FKP3G021004B00JD00?qs=WI052HLiD5hAQcCVsJwniQ%3D%3D) | 1        |
+| C5      | 220 nF  | Capacitor metallized polypropylene film, 160V, 5% | Vishay MKP                       | [MKP1839422164](https://www.mouser.es/ProductDetail/Vishay-Roederstein/MKP1839422164?qs=5W%252BGeepUzodo0g6N7rH1hQ%3D%3D)      | 1        |
+| C6-C12  | 100 uF  | Capacitor aluminum electrolytic, 50V, 20%         | Nichicon UES                     | [UES1H101MHM](https://www.mouser.es/ProductDetail/Nichicon/UES1H101MHM?qs=pECem3OyIRgLuxyPt1Ar2A%3D%3D)        | 2        |
+| C7      | 100 nF  | Capacitor metallized polypropylene film, 160V, 5% | Vishay MKP                       | [MKP1839410164](https://www.mouser.es/ProductDetail/Vishay-Roederstein/MKP1839410164?qs=ZC%252BWKP10IGdI2dGIet6n%252Bw%3D%3D)      | 1        |
+| C8      | 100 nF  | Capacitor metallized polypropylene film, 630V, 3% | Panasonic ECW                    | [ECW-H6104HC](https://www.mouser.es/ProductDetail/Panasonic/ECW-H6104HC?qs=BZBei1rCqCAalj08x9hxZA%3D%3D)        | 1        |
+| C9      | 1 uF    | Capacitor metallized polypropylene film, 400V, 3% | Panasonic ECW                    | [ECW-F4105HL](https://www.mouser.es/ProductDetail/Panasonic/ECW-F4105HL?qs=GoZnPdyRfja9JqlKM8gKWg%3D%3D)        | 1        |
+| C10     | 24 pF   | Capacitor silver mica, 500V, 5%                   | Cornell Dubilier / Knowles CD15  | [CD15ED240JO3F](https://www.mouser.es/ProductDetail/Knowles-Illinois-Capacitor/CD15ED240JO3F?qs=FKrQhPEeH%252B7n1Vq1xczv2A%3D%3D)      | 1        |
+| C11-C15 | 1000 uF | Capacitor aluminum electrolytic, 25V, 20%         | Nichicon UES                     | [UES1E102MHM](https://www.mouser.es/ProductDetail/Nichicon/UES1E102MHM?qs=kArNe9LFxXmdrTBXDqi2Iw%3D%3D)        | 2        |
+| C13    | 100 nF  | Capacitor X7R, 200V, 5%                           | Kemet Goldmax 300                | [C340C104J2R5TA](https://www.mouser.es/ProductDetail/KEMET/C340C104J2R5TA?qs=9Jcv%252B5Uo%2F3nxXUJ3Mz9j6g%3D%3D)     | 1        |
+| C14    | 100 nF  | Capacitor polypropylene film, 100V, 5%            | Wima FKP3                        | [FKP3D031004D00JF00](https://www.mouser.es/ProductDetail/WIMA/FKP3D031004D00JF00?qs=WI052HLiD5g9y4zA9JzRug%3D%3D) | 1        |
+| R1     | 30K     | Resistor 1/4W, 1%, 100 ppm                        | Vishay RN60                      | [RN60D3002FB14](https://www.mouser.es/ProductDetail/Vishay-Dale/RN60D3002FB14?qs=6z8JnUK2jyN6b11Y5A%2FnNQ%3D%3D)      | 1        |
+| R2     | 1.5M    | Resistor 1/4W, 1%, 100 ppm                        | Vishay RN60                      | [RN60D1504FB14](https://www.mouser.es/ProductDetail/Vishay/RN60D1504FB14?qs=YzWo7YEPTR9P81s6BNO31A%3D%3D)      | 1        |
+| R3     | 73.2K   | Resistor 1/4W, 1%, 100 ppm                        | Vishay RN60                      | [RN60D7322FB14](https://www.mouser.es/ProductDetail/Vishay/RN60D7322FB14?qs=97%252BiwClkCtf9%252BvxMfwu0AQ%3D%3D)      | 1        |
+| R4     | 80.6K   | Resistor 1/4W, 1%, 100 ppm                        | Vishay RN60                      | [RN60D8062FB14](https://www.mouser.es/ProductDetail/Vishay/RN60D8062FB14?qs=0hlZ1ctwNONbqNnlsPUNug%3D%3D)      | 1        |
+| R5     | 806R    | Resistor 1/4W, 1%, 50 ppm                         | Vishay RN60                      | [RN60C8060FB14](https://www.mouser.es/ProductDetail/Vishay-Dale/RN60C8060FB14?qs=XbZ1sjYlnaWmMgNsnmHo6A%3D%3D)      | 1        |
+| R6     | 100K    | Resistor 1/4W, 1%, 100 ppm                        | Vishay RN60                      | [RN60D1003FRE6](https://www.mouser.es/ProductDetail/Vishay/RN60D1003FRE6?qs=7VR27ARAOdnba5%2FOU025VA%3D%3D)      | 1        |
+| R7-R10 | 10R     | Resistor 1/4W, 1%, 100 ppm                        | Vishay RN60                      | [RN60D10R0FB14](https://www.mouser.es/ProductDetail/Vishay/RN60D10R0FB14?qs=3bwLI%252BXDrBmcfl9ALeZoWA%3D%3D)      | 2        |
+| R8     | 16.9K   | Resistor 1/4W, 1%, 100 ppm                        | Vishay RN60                      | [RN60D1692FB14](https://www.mouser.es/ProductDetail/Vishay/RN60D1692FB14?qs=2Ta4L6IlF3ixQY8kgzohRQ%3D%3D)      | 1        |
+| R9     | 1M      | Resistor 1/4W, 1%, 100 ppm                        | Vishay RN60                      | [RN60D1004FB14](https://www.mouser.es/ProductDetail/Vishay-Dale/RN60D1004FB14?qs=YpThDOo7zfTXxEtYBiOYrg%3D%3D)      | 1        |
+| Q1     | BC337   | Transistor BJT NPN                                | Onsemi                           | [BC33740BU](https://www.mouser.es/ProductDetail/onsemi/BC33740BU?qs=UMEuL5FsraDblVeOj41nvQ%3D%3D)          | 1        |
+| U1     | LM380   | Amplificador de potencia de audio 2.5W            | Texas Instruments                | [LM380N/NOPB](https://www.mouser.es/ProductDetail/Texas-Instruments/LM380N-NOPB?qs=QbsRYf82W3FZTPVTV5PPcQ%3D%3D)        | 1        |
+| H1-H6  | N/A     | Terminales de tornillo duales                     | Same Sky                         | [TB001-500-02BE](https://www.mouser.es/ProductDetail/Same-Sky/TB001-500-02BE?qs=sGAEpiMZZMvlX3nhDDO4APVSUT%252BeE4WCZ2ttB070YMU%3D)     | 5        |
+| VOLUME | 10K     | Potenciómetro lineal, 1/10W                       | Alps RK163                       | [RK1631110U1Q](https://www.mouser.es/ProductDetail/Alps-Alpine/RK1631110U1Q?qs=6EGMNY9ZYDSbAwK9e%2FQEZg%3D%3D)       | 1        |
+
+Otros componentes que debes adquirir fuera de mouser:
+
+- [D1 - 1N34A - Diodo de germanio](https://es.aliexpress.com/item/1005003750182452.html)
+- [Cable magnético de 26 AWG](https://www.amazon.es/Emtel-Cable-magn%C3%A9tico-AWG-transformador/dp/B0DFHDT5VM)
+- [Capacitor variable de 365pF](https://es.aliexpress.com/w/wholesale-variable-capacitor-365pf.html?spm=a2g0o.productlist.search.0)
+
+Cuando analizas los componentes, te das cuenta de que usa algunos muy raros como los condensadores de 420pF y el 5.1pF que son valores fuera del estándar. Por lo que son difíciles de conseguir.
