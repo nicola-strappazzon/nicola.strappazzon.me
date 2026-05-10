@@ -7,7 +7,7 @@ Mi hijo tiene una cámara fotográfica de esas de niños, china, y la verdad es 
 
 A veces, por alguna razón "desconocida", todas las fotos se eliminan de la SD, incluso si la sacan sin apagarla. Esto me ha pasado varias veces, por eso dejo aquí anotadas las herramientas y pasos para recuperarlas.
 
-[TestDisk](https://www.cgsecurity.org/wiki/TestDisk) Es un conjunto de herramientas para recuperar particiones y archivos borrados.
+[TestDisk](https://www.cgsecurity.org/wiki/TestDisk) Es un conjunto de herramientas para recuperar particiones y archivos borrados. Entre ellas tenemos `photorec`.
 
 ## Instalación
 
