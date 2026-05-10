@@ -350,6 +350,8 @@
   </url><url>
     <loc>http://localhost:1313/wiki/yubikey/otp/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/photorec/</loc>
+  </url><url>
     <loc>http://localhost:1313/wiki/postgresql/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/proxysql/</loc>
