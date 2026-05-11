@@ -13,7 +13,7 @@ Para hacer una anécdota histórica, en los años 80 cuando empezó mi curiosida
 - Un pulsador.
 - Una resistencia de 1kΩ.
 - Un LED del color deseado.
-- Cables unifilar.
+- Cable unifilar.
 
 ## Esquema
 

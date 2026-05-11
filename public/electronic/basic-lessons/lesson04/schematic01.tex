@@ -1,0 +1,28 @@
+\documentclass[margin=2mm]{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}[american]
+	\draw (0, 11) to[battery2] (0, 6);
+	\draw (0, 10) to[push button] (2, 10);
+	\draw (2, 10) to[american resistor] (2, 8);
+	\node[npn, rotate=-90] at (2, 7.16){};
+	\draw (2.75, 6) to[empty led] (1.25, 6);
+	\draw (2.77, 6) to[american resistor] (2.77, 4);
+	\draw (2.75, 6) to[american resistor] (5, 6);
+	\draw (2.77, 7.16) |- (2.75, 6);
+	\node[npn, rotate=-90] at (5, 3.16){};
+	\draw (5, 6) to[american resistor] (5, 4);
+	\draw (5, 6) to[push button] (8, 6);
+	\draw (2, 10) to[american resistor] (5.75, 10);
+	\draw (5.75, 10) |- (5.77, 3.16);
+	\draw (0, 11) -| (8, 6);
+	\draw (1.23, 7.16) -| (1.25, 6);
+	\draw (5.75, 2) to[empty led] (4.25, 2);
+	\draw (5.75, 2) to[american resistor] (5.75, -0);
+	\draw (2.77, 4) |- (5.75, -0) -| (8, 6);
+	\draw (4.23, 3.16) -| (4.25, 2);
+	\draw (1.25, 6) -- (0, 6);
+	\draw (4.25, 2) |- (0, 2) -| (0, 6);
+	\draw (5.77, 3.16) |- (5.75, 2);
+\end{circuitikz}
+\end{document}
