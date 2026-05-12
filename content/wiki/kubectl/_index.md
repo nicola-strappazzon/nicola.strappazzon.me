@@ -25,6 +25,13 @@ Lista los cluster que están configurados:
 kubectl config get-contexts
 ```
 
+Añadir un nuevo cluster:
+
+```bash
+aws sts get-caller-identity
+aws eks update-kubeconfig --region eu-west-3 --name aws-prod-new-prod-01-ew3-eks
+```
+
 Renombre un cluster:
 
 ```bash
@@ -139,6 +146,12 @@ kubectl exec --stdin --tty demo-api-598f6c5bb6-mmg4d -- /bin/sh
 ```
 
 Hay distribuciones que no tienen `/bin/bash` y hay que usar `/bin/sh`.
+
+## Port Forwarding
+
+```bash
+kubectl port-forward pod/grafana-78476b4794-pvcb4 3000:3000
+```
 
 ## Desplegar
 
