@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>SSH | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+<div class="container center">
+<header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+</header>
+<div class="content">
+  
+  
+    <div class="content-header">
+      <h2 class="title">SSH</h2>
+      
+    </div>
+  
+  <p>Él <a href="https://es.wikipedia.org/wiki/Secure_Shell">SSH</a> significa Secure Shell, en mi opinión es un servicio, un protocolo cifrado de comunicación y un conjunto de herramientas de el más usado para trabajar en remoto (servidor), básicamente si en local (cliente) usamos una Terminal para hacer de todo, pues con el SSH podemos hacer lo mismo, pero estando en remoto, no hay límites, puedes ejecutar comandos, bajar y subir ficheros, redirigir tráfico de red a través de este protocolo, conectarte a múltiples servidores en cascada, compartir variables de entorno entre el cliente y el servidor y mucho más.</p>
+<p>La única desventaja relevante que tiene el SSH es cuando se pierde la conexión entre el cliente y el servidor, lamentablemente se pierde por completo la sesión que se estaba ejecutando en el servidor y no la podemos recuperar, incluso comandos que habíamos dejado ejecutando (no en background como los servicios) se cierran, pero para eso usamos una herramienta llamada tmux que compensa, ahora la solución es perfecta.</p>
+<p>El SSH es tan usado, que incluso forma parte en las herramientas cómo; git, vim y rsync entre otras. Por eso saber usarla nos habré un mundo ilimitado de posibilidades.</p>
+<!-- Auqí hay que poner un grafico para orientar -->
+<p>Hay varias formas de autentificarnos con el servicio SSH, una es que nos pida una clave de acceso, la otra es usar un par de claves (pública y privada) para acceder de forma más segura, incluso podemos usar ambas formas para aumentar el nivel de seguridad al máximo.</p>
+<h2 id="crear-par-de-claves">Crear par de claves</h2>
+<p>Esta es la forma más segura de generar el par de claves.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -t rsa -b <span style="color:#2aa198">4096</span> -o -a <span style="color:#2aa198">100</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Pero, la forma tradicional y más compatible es la siguiente:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Estas formas generan dos ficheros, uno llamado <code>id_rsa</code> que es la clave privada, y por último el <code>id_rsa.pub</code> que es la clave pública.</p>
+<blockquote class="important"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>La clave privada no se comparte, se queda en tu ordenador.</p></blockquote>
+<h2 id="establecer-una-conexión">Establecer una conexión</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh ec2-user@bastion.stg.corp.com -i &lt;/path/to/private.key&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="copiar-ficheros">Copiar ficheros</h2>
+<p>En el grupo de herramientas que trae el SSH, tenemos un comando llamado <code>scp</code> para copiar ficheros usando el protocolo SSH.</p>
+<h3 id="subir">Subir</h3>
+<p>Nos referimos a la acción de copiar del cliente uno o varios ficheros al servidor usando el comando <code>scp</code>, las siglas significan security copy.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scp foo.sql stg-bastion:path/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="descargar">Descargar</h3>
+<p>Nos referimos a la acción de copiar del servidor uno o varios ficheros al cliente.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scp -r stg-bastion:/path/foo test:/tmp
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>En caso de que el fichero es muy grante, y comprimirlo mejorará el tiempo de descarga como suele pasar con los de tipo .log, podemos hacerlo de la siguiente forma:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scp -C -o <span style="color:#268bd2">CompressionLevel</span><span style="color:#719e07">=</span><span style="color:#2aa198">9</span> bastion.stg.corp.com:/path/to/file.log .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="caution"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</p><p>Esta técnica hace que la CPU del servidor incremente.</p></blockquote>
+<!-- ## Configurar el servidor -->
+<h2 id="configurar-una-conexión">Configurar una conexión</h2>
+<p>Para guardar una o varias conexiones de ssh en cliente, editamos el fichero <code>~/.ssh/config</code>:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch ~/.ssh/config <span style="color:#719e07">&amp;&amp;</span> chmod <span style="color:#2aa198">600</span> ~/.ssh/config
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Ahora editamos el fichero con nuestro editor favorito:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim ~/.ssh/config
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Dentro del fichero poner lo siguiente:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host stg-bastion
+</span></span><span style="display:flex;"><span>  ForwardAgent yes
+</span></span><span style="display:flex;"><span>  HostName bastion.stg.corp.com
+</span></span><span style="display:flex;"><span>  User ec2-user
+</span></span><span style="display:flex;"><span>  IdentityFile ~/.ssh/key.pem
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Host stg-proxysql
+</span></span><span style="display:flex;"><span>  HostName proxysql.stg.corp.com
+</span></span><span style="display:flex;"><span>  User ec2-user
+</span></span><span style="display:flex;"><span>  IdentityFile ~/.ssh/key.pem
+</span></span><span style="display:flex;"><span>  ProxyCommand ssh -W %h:22 stg-bastion
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="administrar-conexiones">Administrar conexiones</h2>
+<p>Para listar las conexiones establecidas, usamos el siguiente comando:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>who -u
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Mostrando una salida por <code>stdout</code> como esta:</p>
+<pre tabindex="0"><code>user1 pts/0      2008-10-03 16:29   .      11044 (192.168.5.6)
+user2 pts/2      2008-10-03 14:16 01:16     9602 (192.168.5.5)
+user3 pts/10     2008-10-03 14:30 00:21     9908 (192.168.5.7)
+user4 pts/12     2008-10-03 14:38 01:29     9987 (192.168.5.7)
+</code></pre><p>En casos de que queramos terminar por ejemplo la conexion con el pid número <code>9987</code> hacemos lo siguiente:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b58900">kill</span> <span style="color:#2aa198">9987</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="port-forward">Port Forward</h2>
+<p>El SSH tiene la funcionalidad de compartir un puerto remoto en tu cliente local, es muy útil para saltarse algún firewall. Por ejemplo, no tenemos acceso local al puerto <code>8001</code>, entonces hacemos una conexión con un servidor que si puede verlo, y redirigimos ese puerto en nuestro cliente para acceder de la forma <code>localhost:8001</code>, solo debemos hacer la conexión de la con el siguiente comando:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -i key.pem ec2-user@bastion.stg.corp.com -L 8001:localhost:8001
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Para verificar la existencia del puerto 8001 desde el cliente:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>netstat -tunelp | grep <span style="color:#2aa198">8001</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Supongamos que necesitamos un acceso desde nuestro ordenador (local) a un servidor MySQL que se encuentra en AWS (remoto) y no tiene acceso público y/o directo desde el exterior (Internet). Esta práctica se suele usar para ejecutar scripts en local o algún entorno de desarrollo con una base de datos de desarrollo.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh ec2-user@bastion.stg.corp.com -i &lt;/path/to/private.key&gt; -fNg -L 3306:mysql.cluster-ro-xxxx.eu-west-1.rds.amazonaws.com:3306
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Si usamos los parámetros <code>-fNg</code> ejecuta el comando en segundo plano y no se abre la terminal.</p>
+<h2 id="variables-de-entorno">Variables de entorno</h2>
+<p>El SSH tiene la funcionalidad de compartir un grupo de variables de entorno locales y enviarlas automáticamente al establecer la conexión del cliente al servidor conectado, pero para lograrlo hay que especificar tanto del lado del cliente cómo del servidor cuáles variables podemos enviar, es seguro, ya que al cerrar la conexión se pierde la variable y no queda rastro en el servidor.</p>
+<p>Un caso práctico para compartir variable de entorno, es la clave de MySQL llamada por ejemplo <code>MYSQL_PWD</code>, la definimos en nuestro cliente u ordenador una vez y nos olvidamos de su valor.</p>
+<p>En el fichero de configuración del servidor <code>/etc/ssh/sshd_config</code> indicamos que variables queremos permitir recibir:</p>
+<pre tabindex="0"><code>AcceptEnv MYSQL_PWD
+</code></pre><p>Puede definir varias también</p>
+<pre tabindex="0"><code>AcceptEnv MYSQL_PWD AWS_REGION AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
+</code></pre><p>Una vez aplicado los cambios, debe reiniciar el servidor sshd para que tenga efecto los cambios, por ejemplo:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>service ssh reload
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>En el cliente, puede configurar la conexión de la siguiente forma para indicar qué variable obtendrá:</p>
+<pre tabindex="0"><code>Host stg-bastion
+  ForwardAgent yes
+  HostName bastion.stg.corp.com
+  User ec2-user
+  SetEnv MYSQL_PWD=&#34;miclave&#34;
+  SendEnv AWS_REGION
+  SendEnv AWS_ACCESS_KEY_ID
+  SendEnv AWS_SECRET_ACCESS_KEY
+  IdentityFile ~/.ssh/key.pem
+</code></pre><p>Con SetEnv definimos una variable de entorno y se puede definir una vez, pero con SendEnv podemos definir varias y enviar las que tenemos en nuestra sesion por ssh.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="remover-la-clave-pública-de-un-host">Remover la clave pública de un host</h3>
+<p>Hay varias forma de hacerlo, esta es una de ellas.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -R 54.217.60.180
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Que es lo que pasa cuando ejecutamos el siguiente comando, básicamente busca en el fichero <code>~/.ssh/known_hosts</code> la línea que contiene el host en cuestion y elimina la línea entera, esta operación la podemos hacer de forma manual usando el comando <code>vim</code> de la siguiente forma:</p>
+<pre tabindex="0"><code>vim .ssh/known_hosts +&#34;2d|x&#34;
+</code></pre><p>El comando anterior lo que hace es eliminar directamente la línea 2 del fichero <code>~/.ssh/known_hosts</code> y guardar los cambios con una sola operación.</p>
+<!-- ### Permission denied (publickey gssapi-keyex gssapi-with-mic) -->
+<h3 id="claves-de-tipo-pem">Claves de tipo PEM</h3>
+<p>Cuando el cliente nos dice que una clave privada es inválida, posiblemente se deba a que está esperando una de tipo .pem, entonces lo que debemos hacer es una conversión de la siguiente forma:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -p -m PEM -f ~/.ssh/id_rsa
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="logs">Logs</h3>
+<p>En caso de que haya un problema de conexión, se aconseja explorar los siguientes ficheros para encontrar alguna pista:</p>
+<ul>
+<li>/var/log/secure</li>
+<li>/var/log/auth.log</li>
+<li>/var/log/audit/audit.log</li>
+</ul>
+<h2 id="herramientas-alternativas">Herramientas alternativas:</h2>
+<p>Esta es una lista de varias herramientas alternativas que se pueden usar junto al SSH.</p>
+<ul>
+<li><strong>knockd:</strong> Es un servicio que permite ocultar un puerto particular, y se habre mediante la combinación de toques en otros puertos, se puede combinar con el SSH para ocultarlo.</li>
+<li><strong>fail2ban:</strong> Es un servicio que permite bloquear una IP cuando hay n cantidad de intentos.</li>
+<li><strong>putty:</strong> Es un pack para windows.</li>
+</ul>
+
+  
+  <ul>
+    
+  </ul>
+  
+
+</div>
+<footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+<script>
+(function () {
+    const btn = document.getElementById('menuToggle');
+    const menu = document.getElementById('mainMenu');
+
+    if (!btn || !menu) return;
+
+    function openMenu() {
+        menu.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.innerHTML = '<i class="fas fa-times"></i>';
+    }
+
+    function closeMenu() {
+        menu.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+
+    btn.addEventListener('click', () => {
+        if (menu.classList.toggle('is-open')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    });
+
+    menu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bp'))) {
+            closeMenu();
+        }
+    });
+})();
+</script>
+</html>

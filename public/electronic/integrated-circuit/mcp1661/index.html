@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>MCP1661 | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+<div class="container center">
+<header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+</header>
+<div class="content">
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/electronic/">Electrónica</a></li>
+      <li><a href="/electronic/integrated-circuit/">Circuito integrado</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">MCP1661</h2>
+      
+    </div>
+    <p><img src="breadboard.png" alt=""></p>
+<p>El <a href="datasheet.pdf">MCP1661</a> es un regulador conmutado elevador (boost) por modulación por ancho de pulso (PWM) -¡en inglés suena mucho mejor!-. Este pequeño circuito permite elevar un voltaje de 3V hasta 12V y 120mA con apenas seis componentes. Permite diferentes configuraciónes por lo que te recomiendo que consultes el datasheet.</p>
+<p><img src="schematic.png" alt=""></p>
+<p>para configurar el voltaje de salida deseado, se configura combinando las resistencias R<sub>TOP</sub> y R<sub>BOT</sub>. Los capacitores C<sub>IN</sub> y C<sub>OUT</sub> no afectan al voltaje de salida, pero mantenerse en el margen de 4.7<sub>uF</sub> hasta 10<sub>uF</sub>.</p>
+<p>Con la siguiente formula podemos calcular las resistencias necesarias para obtener V<sub>out</sub>:</p>
+<div>$$ V_{out}=1,227V \cdot \left ( 1 &#43; \frac{R_{TOP}}{R_{BOT}} \right) $$</div>
+<p>Aquí hay una tabla con valores ya precalculados:</p>
+<table>
+  <thead>
+      <tr>
+          <th>V<sub>out</sub></th>
+          <th>R<sub>TOP</sub></th>
+          <th>R<sub>BOT</sub></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>12V</td>
+          <td>1.05MΩ</td>
+          <td>120kΩ</td>
+      </tr>
+      <tr>
+          <td>24V</td>
+          <td>1.05MΩ</td>
+          <td>56kΩ</td>
+      </tr>
+  </tbody>
+</table>
+<p>El encapsulado del <a href="datasheet.pdf">MCP1661</a> es el SOT-23 y use un <a href="https://www.adafruit.com/product/1230">SMT Breakout PCB For SOT-23</a> de adafruit. Antes de montar el circuito en el breadboard ten en cuenta el pinout del componente.</p>
+<p><img src="pinout.png" alt=""></p>
+<p>Aquí va un pequeño truco: como usé resistencias SMD 1206 -que son muy pequeñas, pero aún manejables-, les soldé un par de pines header de 2,54 mm a cada una, y quedaron así:</p>
+<p><img src="smd.png" alt=""></p>
+
+  </article>
+</div>
+<footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+<script>
+(function () {
+    const btn = document.getElementById('menuToggle');
+    const menu = document.getElementById('mainMenu');
+
+    if (!btn || !menu) return;
+
+    function openMenu() {
+        menu.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.innerHTML = '<i class="fas fa-times"></i>';
+    }
+
+    function closeMenu() {
+        menu.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+
+    btn.addEventListener('click', () => {
+        if (menu.classList.toggle('is-open')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    });
+
+    menu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bp'))) {
+            closeMenu();
+        }
+    });
+})();
+</script>
+</html>

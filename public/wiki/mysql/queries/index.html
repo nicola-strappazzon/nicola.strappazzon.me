@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>MySQL queries | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+<div class="container center">
+<header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+</header>
+<div class="content">
+  
+  
+    <div class="content-header">
+      <h2 class="title">MySQL queries</h2>
+      
+      <span class="date"><em>09/05/2025</em></span>
+      
+    </div>
+  
+  <h2 id="tables-size">Tables size</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> table_schema <span style="color:#719e07">as</span> <span style="color:#2aa198">&#34;Database&#34;</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">table_name</span> <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#34;Table&#34;</span>,
+</span></span><span style="display:flex;"><span>       table_rows <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#34;Rows&#34;</span>,
+</span></span><span style="display:flex;"><span>       ROUND(((data_length <span style="color:#719e07">+</span> index_length) <span style="color:#719e07">/</span> POWER(<span style="color:#2aa198">1024</span>, <span style="color:#2aa198">3</span>)), <span style="color:#2aa198">2</span>) <span style="color:#2aa198">&#34;SizeInGB&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.tables
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> (data_length <span style="color:#719e07">+</span> index_length) <span style="color:#719e07">DESC</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="databases-size">Databases size</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> table_schema <span style="color:#2aa198">&#34;DB Name&#34;</span>,
+</span></span><span style="display:flex;"><span>       ROUND(<span style="color:#719e07">SUM</span>(data_length <span style="color:#719e07">+</span> index_length) <span style="color:#719e07">/</span> POWER(<span style="color:#2aa198">1024</span>, <span style="color:#2aa198">3</span>), <span style="color:#2aa198">1</span>) <span style="color:#2aa198">&#34;SizeInGB&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.tables
+</span></span><span style="display:flex;"><span><span style="color:#719e07">GROUP</span> <span style="color:#719e07">BY</span> table_schema;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="safe-update">Safe update</h2>
+<p>You are using safe update mode and you tried to update a table without a WHERE clause that uses a KEY column.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SET</span> SQL_SAFE_UPDATES<span style="color:#719e07">=</span><span style="color:#2aa198">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">UPDATE</span> <span style="color:#719e07">table_name</span> <span style="color:#719e07">SET</span> foo <span style="color:#719e07">=</span> <span style="color:#2aa198">0</span> <span style="color:#719e07">WHERE</span> bar <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;oof&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">SET</span> SQL_SAFE_UPDATES<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="list-all-primary-keys">List all primary keys</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> t.table_schema <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#39;Schema&#39;</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">c</span>.<span style="color:#719e07">table_name</span> <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#39;Table&#39;</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">c</span>.<span style="color:#719e07">column_name</span> <span style="color:#719e07">AS</span> <span style="color:#2aa198">&#39;Column&#39;</span>,
+</span></span><span style="display:flex;"><span>       (<span style="color:#719e07">c</span>.extra <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;%AUTO_INCREMENT%&#39;</span>) <span style="color:#719e07">AS</span> AI,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">c</span>.is_nullable <span style="color:#719e07">AS</span> NN,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">c</span>.data_type <span style="color:#719e07">AS</span> DT
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.tables t
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.columns <span style="color:#719e07">c</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">ON</span> <span style="color:#719e07">c</span>.table_schema <span style="color:#719e07">=</span> t.table_schema
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">AND</span> <span style="color:#719e07">c</span>.<span style="color:#719e07">table_name</span> <span style="color:#719e07">=</span> t.<span style="color:#719e07">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.<span style="color:#719e07">statistics</span> s
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">ON</span> s.table_schema <span style="color:#719e07">=</span> t.table_schema
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">AND</span> s.<span style="color:#719e07">table_name</span> <span style="color:#719e07">=</span> t.<span style="color:#719e07">table_name</span>
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">AND</span> s.<span style="color:#719e07">column_name</span> <span style="color:#719e07">=</span> <span style="color:#719e07">c</span>.<span style="color:#719e07">column_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> t.table_schema <span style="color:#719e07">NOT</span> <span style="color:#719e07">IN</span> (<span style="color:#2aa198">&#39;mysql&#39;</span>, <span style="color:#2aa198">&#39;performance_schema&#39;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> t.table_type <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;BASE TABLE&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> s.index_name <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;PRIMARY&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> t.table_schema, <span style="color:#719e07">c</span>.<span style="color:#719e07">table_name</span>, <span style="color:#719e07">c</span>.<span style="color:#719e07">column_name</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="list-all-foreign-keys">List all foreign keys</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">table_name</span>, <span style="color:#719e07">column_name</span>, <span style="color:#719e07">constraint_name</span>, referenced_table_name, referenced_column_name
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.key_column_usage
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> referenced_table_schema <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&lt;database&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> referenced_table_name <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&lt;table&gt;&#39;</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="list-all-foreign-keys-with-rules">List all foreign keys with rules</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> kcu.<span style="color:#719e07">table_name</span>, kcu.<span style="color:#719e07">column_name</span>, kcu.<span style="color:#719e07">constraint_name</span>, kcu.referenced_table_name, kcu.referenced_column_name, rc.update_rule, rc.delete_rule
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.key_column_usage kcu
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.referential_constraints rc <span style="color:#719e07">ON</span> kcu.<span style="color:#719e07">constraint_name</span> <span style="color:#719e07">=</span> rc.<span style="color:#719e07">constraint_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> kcu.<span style="color:#719e07">table_name</span>, kcu.<span style="color:#719e07">column_name</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="drop-all-foreign-keys">Drop all foreign keys</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">DISTINCT</span> CONCAT(
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;ALTER TABLE &#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.<span style="color:#719e07">table_name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34; DROP CONSTRAINT &#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.<span style="color:#719e07">constraint_name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#719e07">AS</span> <span style="color:#719e07">statement</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.key_column_usage kcu
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.tables <span style="color:#719e07">AS</span> t
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">ON</span> t.table_schema <span style="color:#719e07">=</span> kcu.table_schema
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">AND</span> t.<span style="color:#719e07">table_name</span> <span style="color:#719e07">=</span> kcu.<span style="color:#719e07">table_name</span>
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">JOIN</span> information_schema.columns <span style="color:#719e07">AS</span> <span style="color:#719e07">c</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">ON</span> t.table_schema <span style="color:#719e07">=</span> <span style="color:#719e07">c</span>.table_schema
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">AND</span> t.<span style="color:#719e07">table_name</span> <span style="color:#719e07">=</span> <span style="color:#719e07">c</span>.<span style="color:#719e07">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> kcu.table_schema <span style="color:#719e07">=</span> <span style="color:#719e07">DATABASE</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> kcu.referenced_table_name <span style="color:#719e07">IS</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="create-all-foreign-keys-with-rules">Create all foreign keys with rules</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> CONCAT(
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;ALTER TABLE &#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.<span style="color:#719e07">table_name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34; ADD CONSTRAINT &#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.<span style="color:#719e07">constraint_name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34; FOREIGN KEY (&#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.<span style="color:#719e07">column_name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;) REFERENCES &#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.referenced_table_name,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;(&#34;</span>,
+</span></span><span style="display:flex;"><span>    kcu.referenced_column_name,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;) ON DELETE &#34;</span>,
+</span></span><span style="display:flex;"><span>    rc.delete_rule,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34; ON UPDATE &#34;</span>,
+</span></span><span style="display:flex;"><span>    rc.update_rule,
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#719e07">AS</span> <span style="color:#719e07">statement</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.key_column_usage kcu
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.tables <span style="color:#719e07">AS</span> t
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">ON</span> t.table_schema <span style="color:#719e07">=</span> kcu.table_schema
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">AND</span> t.<span style="color:#719e07">table_name</span> <span style="color:#719e07">=</span> kcu.<span style="color:#719e07">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.referential_constraints rc
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">ON</span> kcu.<span style="color:#719e07">constraint_name</span> <span style="color:#719e07">=</span> rc.<span style="color:#719e07">constraint_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> kcu.table_schema <span style="color:#719e07">=</span> <span style="color:#719e07">DATABASE</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> kcu.referenced_table_name <span style="color:#719e07">IS</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> kcu.<span style="color:#719e07">table_name</span>, kcu.<span style="color:#719e07">column_name</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="list-all-primary-and-foreign-keys">List all primary and foreign keys</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> tab.table_schema <span style="color:#719e07">AS</span> database_schema,
+</span></span><span style="display:flex;"><span>    sta.index_name <span style="color:#719e07">AS</span> pk_name,
+</span></span><span style="display:flex;"><span>    sta.seq_in_index <span style="color:#719e07">AS</span> column_id,
+</span></span><span style="display:flex;"><span>    sta.<span style="color:#719e07">column_name</span>,
+</span></span><span style="display:flex;"><span>    tab.<span style="color:#719e07">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.tables <span style="color:#719e07">AS</span> tab
+</span></span><span style="display:flex;"><span><span style="color:#719e07">LEFT</span> <span style="color:#719e07">OUTER</span> <span style="color:#719e07">JOIN</span> information_schema.<span style="color:#719e07">statistics</span> <span style="color:#719e07">AS</span> sta
+</span></span><span style="display:flex;"><span>             <span style="color:#719e07">ON</span> sta.table_schema <span style="color:#719e07">=</span> tab.table_schema
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">AND</span> sta.<span style="color:#719e07">table_name</span> <span style="color:#719e07">=</span> tab.<span style="color:#719e07">table_name</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">AND</span> sta.index_name <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;primary&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> tab.table_schema <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&lt;table&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">AND</span> tab.table_type <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;BASE TABLE&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> tab.<span style="color:#719e07">table_name</span>, column_id;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="list-all-virtual-columns">List all virtual columns</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> table_schema,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">table_name</span>,
+</span></span><span style="display:flex;"><span>       data_type,
+</span></span><span style="display:flex;"><span>       extra,
+</span></span><span style="display:flex;"><span>       generation_expression
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.columns
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> extra <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;%stored%&#39;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#719e07">OR</span> extra <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;%virtual%&#39;</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="add-new-column-before-x-column">Add new column before x column</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">ALTER</span> <span style="color:#719e07">TABLE</span> demo <span style="color:#719e07">ADD</span> <span style="color:#719e07">COLUMN</span> foo TINYINT <span style="color:#719e07">DEFAULT</span> <span style="color:#2aa198">0</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> <span style="color:#719e07">AFTER</span> bar;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="list-partitions-on-table">List partitions on table</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> PARTITION_NAME, TABLE_ROWS
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> INFORMATION_SCHEMA.PARTITIONS
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> <span style="color:#719e07">TABLE_NAME</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;demo&#39;</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="empty-partitioned-table">Empty partitioned table</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">CREATE</span> <span style="color:#719e07">TABLE</span> <span style="color:#719e07">`</span>demo_p201901<span style="color:#719e07">`</span> <span style="color:#719e07">LIKE</span> <span style="color:#719e07">`</span>demo<span style="color:#719e07">`</span>;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ALTER</span> <span style="color:#719e07">TABLE</span> <span style="color:#719e07">`</span>demo_p201901<span style="color:#719e07">`</span> REMOVE PARTITIONING;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ALTER</span> <span style="color:#719e07">TABLE</span> <span style="color:#719e07">`</span>demo<span style="color:#719e07">`</span>
+</span></span><span style="display:flex;"><span>EXCHANGE PARTITION p201901
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WITH</span> <span style="color:#719e07">TABLE</span> <span style="color:#719e07">`</span>demo_p201901<span style="color:#719e07">`</span>;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">DROP</span> <span style="color:#719e07">TABLE</span> <span style="color:#719e07">`</span>demo_p201901<span style="color:#719e07">`</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="encoding-and-collation-on-tables-and-columns">Encoding and collation on tables and columns</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> t.table_schema, t.<span style="color:#719e07">table_name</span>, t.engine, t.table_collation, <span style="color:#719e07">c</span>.<span style="color:#719e07">column_name</span>, <span style="color:#719e07">c</span>.data_type, <span style="color:#719e07">c</span>.<span style="color:#719e07">character_set_name</span>, <span style="color:#719e07">c</span>.<span style="color:#719e07">collation_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> information_schema.columns <span style="color:#719e07">c</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> information_schema.tables t
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> t.table_schema <span style="color:#719e07">NOT</span> <span style="color:#719e07">IN</span> (<span style="color:#2aa198">&#39;information_schema&#39;</span>, <span style="color:#2aa198">&#39;mysql&#39;</span>, <span style="color:#2aa198">&#39;performance_schema&#39;</span>, <span style="color:#2aa198">&#39;sys&#39;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> t.<span style="color:#719e07">table_name</span> <span style="color:#719e07">=</span> <span style="color:#719e07">c</span>.<span style="color:#719e07">table_name</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> t.table_schema <span style="color:#719e07">=</span> <span style="color:#719e07">c</span>.table_schema
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">AND</span> (<span style="color:#719e07">c</span>.<span style="color:#719e07">character_set_name</span> <span style="color:#719e07">!=</span> <span style="color:#2aa198">&#39;utf8mb4&#39;</span>
+</span></span><span style="display:flex;"><span>  	<span style="color:#719e07">OR</span> <span style="color:#719e07">c</span>.<span style="color:#719e07">collation_name</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;utf8mb4%&#39;</span>
+</span></span><span style="display:flex;"><span>  	<span style="color:#719e07">OR</span> t.table_collation <span style="color:#719e07">NOT</span> <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;utf8mb4%&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ORDER</span> <span style="color:#719e07">BY</span> <span style="color:#719e07">c</span>.<span style="color:#719e07">table_name</span>, <span style="color:#719e07">c</span>.<span style="color:#719e07">column_name</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="performance-schema">Performance Schema</h2>
+<p>Activar el instrumento:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">UPDATE</span> performance_schema.setup_instruments
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">SET</span> enabled<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;YES&#39;</span>, timed<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;YES&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">WHERE</span> name <span style="color:#719e07">LIKE</span> <span style="color:#2aa198">&#39;stage/%&#39;</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Activar los eventos, útil para obtener información de los ALTER&rsquo;s:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">UPDATE</span> performance_schema.setup_consumers
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">SET</span> enabled<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;YES&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">WHERE</span> name <span style="color:#719e07">IN</span> (<span style="color:#2aa198">&#39;events_stages_current&#39;</span>,<span style="color:#2aa198">&#39;events_stages_history&#39;</span>,<span style="color:#2aa198">&#39;events_stages_history_long&#39;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="list-all-tables-with-dml-operations">List all tables with DML operations</h3>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> object_schema,
+</span></span><span style="display:flex;"><span>       object_name,
+</span></span><span style="display:flex;"><span>       count_read,
+</span></span><span style="display:flex;"><span>       count_insert,
+</span></span><span style="display:flex;"><span>       count_update,
+</span></span><span style="display:flex;"><span>       count_delete
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> performance_schema.table_io_waits_summary_by_table
+</span></span><span style="display:flex;"><span><span style="color:#719e07">WHERE</span> object_schema <span style="color:#719e07">NOT</span> <span style="color:#719e07">IN</span> (<span style="color:#2aa198">&#39;mysql&#39;</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#2aa198">&#39;information_schema&#39;</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#2aa198">&#39;performance_schema&#39;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="conocer-el-progreso-de-un-alter">Conocer el progreso de un ALTER</h3>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span>
+</span></span><span style="display:flex;"><span>    t.processlist_info,
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">c</span>.work_completed,
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">c</span>.work_estimated,
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#719e07">c</span>.work_completed <span style="color:#719e07">/</span> <span style="color:#719e07">NULLIF</span>(<span style="color:#719e07">c</span>.work_estimated,<span style="color:#2aa198">0</span>) <span style="color:#719e07">*</span> <span style="color:#2aa198">100</span>, <span style="color:#2aa198">2</span>) <span style="color:#719e07">AS</span> pct_done,
+</span></span><span style="display:flex;"><span>    ROUND(<span style="color:#719e07">c</span>.timer_wait <span style="color:#719e07">/</span> <span style="color:#2aa198">1000000000000</span>, <span style="color:#2aa198">2</span>) <span style="color:#719e07">AS</span> seconds_elapsed,
+</span></span><span style="display:flex;"><span>    ROUND((<span style="color:#719e07">c</span>.timer_wait <span style="color:#719e07">/</span> <span style="color:#2aa198">1000000000000</span>) <span style="color:#719e07">/</span>
+</span></span><span style="display:flex;"><span>          (<span style="color:#719e07">c</span>.work_completed <span style="color:#719e07">/</span> <span style="color:#719e07">NULLIF</span>(<span style="color:#719e07">c</span>.work_estimated,<span style="color:#2aa198">1</span>))
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">*</span> (<span style="color:#2aa198">1</span> <span style="color:#719e07">-</span> (<span style="color:#719e07">c</span>.work_completed <span style="color:#719e07">/</span> <span style="color:#719e07">NULLIF</span>(<span style="color:#719e07">c</span>.work_estimated,<span style="color:#2aa198">1</span>))), <span style="color:#2aa198">2</span>) <span style="color:#719e07">AS</span> seconds_eta
+</span></span><span style="display:flex;"><span><span style="color:#719e07">FROM</span> performance_schema.events_stages_current <span style="color:#719e07">c</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">JOIN</span> performance_schema.threads t <span style="color:#719e07">ON</span> t.thread_id <span style="color:#719e07">=</span> <span style="color:#719e07">c</span>.thread_id;
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  
+  <ul>
+    
+  </ul>
+  
+
+</div>
+<footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span>
+</footer>
+</div>
+</body>
+<script>
+(function () {
+    const btn = document.getElementById('menuToggle');
+    const menu = document.getElementById('mainMenu');
+
+    if (!btn || !menu) return;
+
+    function openMenu() {
+        menu.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.innerHTML = '<i class="fas fa-times"></i>';
+    }
+
+    function closeMenu() {
+        menu.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+
+    btn.addEventListener('click', () => {
+        if (menu.classList.toggle('is-open')) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    });
+
+    menu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bp'))) {
+            closeMenu();
+        }
+    });
+})();
+</script>
+</html>

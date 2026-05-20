@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Breadboard on Nicola Strappazzon</title>
+    <link>http://localhost:1313/electronic/breadboard/</link>
+    <description>Recent content in Breadboard on Nicola Strappazzon</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <atom:link href="http://localhost:1313/electronic/breadboard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dupont Wire</title>
+      <link>http://localhost:1313/electronic/breadboard/dupont-wire/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/breadboard/dupont-wire/</guid>
+      <description>&lt;p&gt;Estos son los cables multifilares 26 AWG más famosos que existen para cablear un &lt;a href=&#34;https://nicola.strappazzon.me/electronic/breadboard/&#34;&gt;breadboard&lt;/a&gt;, son geniales para hacer prototipos rápidos, pero si es cierto que al haber muchos de ellos hace que el circuito sea confuso, pero no dejan de ser muy útiles y deben estar en cualquier laboratorio. Yo recomiendo mucho estos:&lt;/p&gt;&#xA;&lt;p&gt;Pero luego de más de una década de uso presentaban desgaste en sus terminales, la verdad que me sorprendió mucho, y aquí empieza la aventura de investigar algo que parecía muy obvio, pero complejo, reemplazar las terminales desgastadas por las nuevas, en el camino me conseguí &lt;a href=&#34;https://www.mattmillman.com/info/crimpconnectors/&#34;&gt;este blog que explica muy bien&lt;/a&gt; que necesitas y que opciones hay, también me apoye de esta &lt;a href=&#34;https://forum.digikey.com/t/dupont-connectors-and-how-to-find-them-from-digi-key/3315&#34;&gt;pregunta en el foro de digikey&lt;/a&gt;, en Internet hay muchos tutoriales buenos que explican el trabajo mecánico de &lt;a href=&#34;https://www.instructables.com/Make-a-Good-Dupont-Pin-Crimp-EVERY-TIME/&#34;&gt;cambiar o instalar un terminal&lt;/a&gt;, lo difícil es escoger que entre la gran variedad que existe en el mercado. La final les cuento la herramienta y terminales que use. Incluso pude mejorar algunas adaptaciones que he hecho en el camino que comentaré al final.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wire bundle</title>
+      <link>http://localhost:1313/electronic/breadboard/wire-bundle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electronic/breadboard/wire-bundle/</guid>
+      <description>&lt;p&gt;Esta es sin duda la mejor forma de cablear un &lt;a href=&#34;https://nicola.strappazzon.me/electronic/breadboard/&#34;&gt;breadboard&lt;/a&gt; al no ser tan engorrosa y permitiendo observar bien el circuito, por lo que requiere más trabajo, pero no deja de ser mi favorita.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;breadboard01.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;materiales&#34;&gt;Materiales&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cable opción 1: &lt;a href=&#34;https://www.adafruit.com/product/1311&#34;&gt;Hook-up Wire Spool Set - 22AWG Solid Core - 6 x 25 ft&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Cable opción 2: &lt;a href=&#34;https://www.adafruit.com/product/3174&#34;&gt;Hook-up Wire Spool Set - 22AWG Solid Core - 10 x 25ft&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Herramienta para pelar cables: &lt;a href=&#34;https://www.amazon.es/dp/B003EA04FO&#34;&gt;Knipex 12-80-040 SB&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Pinsa para cortar cables: &lt;a href=&#34;https://www.engineertools-jp.com/product-page/ns-04-esd-micro-nippers&#34;&gt;NS-04&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Pinsa para doblar cables: &lt;a href=&#34;https://www.engineertools-jp.com/product-page/ps-03-miniature-needle-nose-pliers&#34;&gt;PS-03&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;medidas&#34;&gt;Medidas&lt;/h2&gt;&#xA;&lt;p&gt;Esta es una lista de medidas para construir tus propios cables, donde te indico el largo total de cada cable que esta compuesto por la suma de; el largo entre punto y punto del breadboard y los extremos que hay que pelar que serán usados cómo pines &lt;code&gt;(0,6cm)x2&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
