@@ -5,7 +5,7 @@ title = 'SSD1353'
 
 El controlador [SSD1353](datasheet.pdf) es usado para pantallas a todo color de tipo OLED con una dimensión de 160x128 pixeles configurado para trabajar en 8-bit 8080 Parallel Interface como los clásicos LCD 16x2, tambien tiene otros modos de configuración que no trataremos.
 
-A continuación se muestra el [circuito mínimo](schematic.kicad_sc) para hacer funcionar controlador SSD1353, y hay un par de puntos que quiero aclarar; Primero, usa dos voltajes de alimentación que son 3.3V para el controlador y 12V para los pixeles donde este último se logra con un [boost](https://nicola.strappazzon.me/electronic/integrated-circuit/555/boost/). Segundo, se pueden usar otro tipo de condensadores además de los indicados por el fabricante como ha hecho [adafruit](adafruit.png) con uno de sus productos usando el mismo controlador pero para una pantalla con otras dimensiones.
+A continuación se muestra el [circuito mínimo](schematic.kicad_sc) para hacer funcionar controlador SSD1353, y hay un par de puntos que quiero aclarar; Primero, usa dos voltajes de alimentación que son 3.3V para el controlador y 12V para los pixeles donde este último se logra con un [boost](https://nicola.strappazzon.me/electronic/integrated-circuit/mcp1661/). Segundo, se pueden usar otro tipo de condensadores además de los indicados por el fabricante como ha hecho [adafruit](adafruit.png) con uno de sus productos usando el mismo controlador pero para una pantalla con otras dimensiones.
 
 ![](schematic.png)
 
