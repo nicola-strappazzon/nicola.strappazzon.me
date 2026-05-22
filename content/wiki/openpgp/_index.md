@@ -11,6 +11,7 @@ A la hora de escoger una Security Key debe verificar que soporte openpgp y tambi
 - [token2](https://www.token2.eu/) Hasta 2048
 - [yubico](https://www.yubico.com/) Hasta 4096
 - [Nitrokey](https://www.nitrokey.com/) Hasta 4096
+- [SecuX](https://secuxtech.com/) Sin GPG.
 
 En [esta página](https://keys.openpgp.org) puedes validar la identidad de una persona buscando por su clave pública, es recomendable que subas tu clave pública para que puedan verificar tu identidad ó recibir mensajes cifrados que solo tú puedes leer usando la clave privada.
 

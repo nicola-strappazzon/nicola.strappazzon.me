@@ -1470,6 +1470,16 @@
 	)
 	(wire
 		(pts
+			(xy 107.95 82.55) (xy 107.95 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ac690c1-a9ee-481c-84f2-a3e31fdcd8ce")
+	)
+	(wire
+		(pts
 			(xy 110.49 87.63) (xy 119.38 87.63)
 		)
 		(stroke
@@ -1530,7 +1540,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 78.74) (xy 107.95 85.09)
+			(xy 107.95 74.295) (xy 107.95 77.47)
 		)
 		(stroke
 			(width 0)
@@ -1660,7 +1670,7 @@
 	)
 	(global_label "Input"
 		(shape input)
-		(at 107.95 78.74 90)
+		(at 107.95 74.295 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1670,7 +1680,7 @@
 		)
 		(uuid "8e5f97bb-d9ec-40b2-9b9d-c9dc4978247a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 107.95 70.9773 90)
+			(at 107.95 66.5323 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1692,7 +1702,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "09f2c363-729d-4a5c-a7a1-b000142d223d")
 		(property "Reference" "#PWR05"
 			(at 124.46 106.68 0)
@@ -1706,7 +1715,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 124.46 105.41 0)
+			(at 123.317 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2120,7 +2129,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3e2d55a5-d425-430a-bd0b-ad4131019396")
 		(property "Reference" "#PWR02"
 			(at 127 106.68 0)
@@ -2134,7 +2142,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 127 105.41 0)
+			(at 128.524 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2183,6 +2191,88 @@
 			(project "schematic"
 				(path "/6ada202e-a762-4b40-840a-77a412eabf67"
 					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 107.95 80.01 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4793d8ae-0b1a-41ea-b1af-78695a719e4b")
+		(property "Reference" "C5"
+			(at 105.41 78.7462 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 105.41 81.2862 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 107.95 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 107.95 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "5f768427-02dd-4056-867a-35bf01203446")
+		)
+		(pin "1"
+			(uuid "88bb32a0-97de-454d-a0ff-9892b418a91a")
+		)
+		(instances
+			(project "schematic"
+				(path "/6ada202e-a762-4b40-840a-77a412eabf67"
+					(reference "C5")
 					(unit 1)
 				)
 			)
