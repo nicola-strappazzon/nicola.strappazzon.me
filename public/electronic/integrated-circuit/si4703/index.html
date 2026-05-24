@@ -126,8 +126,8 @@
     </div>
     <p>El <a href="Si4702-03-C19.pdf">Si4703</a> es un IC receptor de radio FM (76–108 MHz) con RDS. Pero su tamaño diminuto (QFN 20 3x3) me he dicho: búscate un módulo. Los de <a href="https://www.sparkfun.com/sparkfun-fm-tuner-basic-breakout-si4703.html">sparkfun</a> tienen el suyo que va genial, incluso tiene su <a href="Si470x-breakout-v13_fix_2.pdf">diagrama esquemático</a> cómo es costumbre. Me puse armar el circuito con un <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/new-generation/">AVR128DA28</a> y un <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/lm386/">LM386</a>. Para programarlo y poder visualizar por la terminal (CDC) use mi grogramador <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/serial+updi/">CH340 Serial + UPDI</a></p>
 <p><img src="breadboard.png" alt=""></p>
-<p>Para hacerlo funcionar con un microcontrolador <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/new-generation/">AVR128DA28</a> no hay librerías, entonces decidí usar la IA (claude) basándonos en este <a href="https://github.com/pu2clr/SI470X">repositorio</a> haga una &ldquo;traducción&rdquo; y luego de varios intentos y correcciones se logró que funcionara. Aquí tienes un <a href="Si4703.zip">zip</a> con lo necesario.</p>
-<p>Para entender el funcionamiento y el buen uso del Si4703 hay una serie de documentos interesantes:</p>
+<p>Para hacerlo funcionar con un microcontrolador <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/new-generation/">AVR128DA28</a> no hay librerías, entonces decidí usar la IA (claude) basándonos en este <a href="https://github.com/pu2clr/SI470X">repositorio</a> para hacer una &ldquo;traducción&rdquo; y luego de varios intentos y correcciones se logró que funcionara. Aquí tienes un <a href="Si4703.zip">zip</a> con lo necesario.</p>
+<p>El fabricante ofrece además del datasheet, estos documentos para entender el funcionamiento y el buen uso:</p>
 <ul>
 <li><a href="AN230.pdf">AN230 - Programming guide</a></li>
 <li><a href="AN243.pdf">AN243 - Using RDS/RBDS</a></li>
