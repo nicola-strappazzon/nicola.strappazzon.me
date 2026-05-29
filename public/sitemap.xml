@@ -370,6 +370,8 @@
   </url><url>
     <loc>http://localhost:1313/wiki/yubikey/restart/</loc>
   </url><url>
+    <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/rotary-encoder/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/security/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/ch340/serial/</loc>
