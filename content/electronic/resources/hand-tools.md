@@ -73,9 +73,9 @@ Estas son las puntas que recomiendo:
 
 ## Consumibles varios
 
-- [MG Chemicals 8241-T - Alcohol Wipes for Electronics](https://mgchemicals.com/products/discontinued-products/electronic-cleaning-wipes/) Muy útil para limpiar aparatos electrónicos que se te entregan.
-- [Kontakt PCC 400 Ml - 84013](https://www.tme.eu/es/details/pcc_400/preparados-de-limpieza/kontakt-chemie/84013-006/) Es un removedor de flux.
 - [Kontakt MULTIFOAM 77](https://www.tme.eu/es/details/77_400/productos-de-limpieza-y-mantenimiento/kontakt-chemie/62713-005/) Limpiador a base de espuma.
+- [Kontakt PCC 400 Ml - 84013](https://www.tme.eu/es/details/pcc_400/preparados-de-limpieza/kontakt-chemie/84013-006/) Es un removedor de flux.
+- [MG Chemicals 8241-T - Alcohol Wipes for Electronics](https://mgchemicals.com/products/discontinued-products/electronic-cleaning-wipes/) Muy útil para limpiar aparatos electrónicos que se te entregan.
 
 ## Consumibles para soldar y desoldar
 
