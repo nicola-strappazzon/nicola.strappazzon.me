@@ -36,6 +36,14 @@ Tenemos dos formas de cablear nuestro circuito, la primera es usando cable a med
 - [Jumper Wires Premium 6" F/F Pack of 10](https://www.sparkfun.com/jumper-wires-premium-6-f-f-pack-of-10.html)
 - [Jumper Wires Premium 6" Mixed Pack of 100](https://www.sparkfun.com/jumper-wires-premium-6-mixed-pack-of-100.html)
 
+## Pinzas
+
+Este juego de pinzas de KNIPEX es de excelente calidad.
+
+- [KNIPEX Pinzas universales ESD mate 120 mm, 92 28 69 ESD](https://www.amazon.es/dp/B00189FGW4)
+- [KNIPEX Pinzas universales ESD mate 118 mm, 92 38 75 ESD](https://www.amazon.es/dp/B000ZEDX4G)
+- [KNIPEX Pinzas universales ESD mate 145 mm, 92 78 77 ESD](https://www.amazon.es/dp/B000ZECHWU)
+
 ## Destornilladores
 
 Los de la marca Wera son muy cómodos y de muy buena calidad:
@@ -74,6 +82,7 @@ Esta parte es importante por temas de salud, evite usar químicos con plomo. Sue
 {{% /blockquote %}}
 
 - [Estaño 63/37](https://www.digikey.es/es/products/detail/chip-quik-inc/RASW-015-100G/9681995) Diametros: 0.38mm. Su punto de fusión es a partir de 220°C.
+- [Estaño 63/37](https://www.digikey.es/es/products/detail/chip-quik-inc/RASW-020-2OZ/9681985) Diametros: 0.51mm. Su punto de fusión es a partir de 220°C.
 - [Estaño 96.5/3/0.5](https://www.digikey.es/en/products/detail/chip-quik-inc/RASWLF-015-1OZ/9682011) Diametros: 0.38mm. Su punto de fusión es a partir de 270°C. La combinación de estaño que tiene es bastante limpia y deja un mínimo de residuos.
 - [Flux](https://www.digikey.es/en/products/detail/chip-quik-inc/CQ4LF-0-5/9558133) CQ4LF-0.5, No Clean, Liquid.
 - [Malla para desoldar](https://www.digikey.es/es/products/detail/aven-tools/17541/1992580) Tamaño 2 mm / 0.08 in.
