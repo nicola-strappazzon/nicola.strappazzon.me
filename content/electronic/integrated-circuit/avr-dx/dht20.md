@@ -9,7 +9,7 @@ El fabricante [asair](https://es.aliexpress.com/store/1103421005) vende por [Ali
 
 ![](workspace.png)
 
-Para este ejemplo vamos a leer los datos del sensor y enviarlos por CDC (Communication Device Class) para poder leerlos desde la terminal usando la tool [picocom](https://github.com/npat-efault/picocom). El microcontrolador AVR DA tiene varios I2C, pero en el mundo de Microchip no se dice I2C, sino [TWI (Two-Wire Interface)](http://localhost:1313/electronic/integrated-circuit/avr-dx/new-generation/TB3181.pdf), usaremos el `TWI0` y la dirección del TWI Slave es `0x38`.
+Para este ejemplo vamos a leer los datos del sensor y enviarlos por CDC (Communication Device Class) para poder leerlos desde la terminal usando la tool [picocom](https://github.com/npat-efault/picocom). El microcontrolador AVR DA tiene varios I2C, pero en el mundo de Microchip no se dice I2C, sino [TWI (Two-Wire Interface)](http://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/new-generation/TB3181.pdf), usaremos el `TWI0` y la dirección del TWI Slave es `0x38`.
 
 ![](schematic.png)
 
