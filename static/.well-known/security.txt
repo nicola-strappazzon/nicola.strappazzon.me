@@ -1,5 +1,21 @@
-Contact: mailto:nicola@strappazzon.me
-Expires: 2027-01-01T00:00:00.000Z
-Encryption: https://keys.openpgp.org/vks/v1/by-fingerprint/9186C4129FFD3D2500B35FA18E97CAEEEE861364
-Preferred-Languages: es, en
-Canonical: https://nicola.strappazzon.me/.well-known/security.txt
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJOBAEBCAA5FiEE+5HSlxvGFZj6kGvwUEwJTL/5YtwFAmotwO0bFIAAAAAABAAO
+bWFudTIsMi41KzEuMTIsMCwzAAoJEFBMCUy/+WLcVZgP+NS+iCqm1GWLmujfpWuz
+97s42/ahYqmEvSU914D0YmxWP0M6DJqktk/G59Ul5uKUJwmabHPWhqOLnJsALQ9+
+7KSwiurGuTBE7UxTppQ0agdrTdsfYKpDV7gcj6L8C4sU1g1ndgVTdoPasbY51cVe
+2l30ho2XaFbcAjXCzkxeZISLnmjfGA2zrYen8SPTDiJ2OLPW8UCJqbQph0VEFUCM
+qBhEolq10lCRHWzdZLkerYDdZwD1Y2sLCMbgFWZFrP7ZD0C8rdYHSba8ZU6BBgTx
+av2nLHI9xw+8pDkBl4RwDZVw6dVglxAa3dzC1x+wRRQUbIeTCRzDDVHi+YEpU4bT
+Kc1W5+LWBzIrCUtW5tUtxNo2/Y3BXa2UQT9hLw1TpKUk3GzwLREMzk8Rj8aM1fXB
+ij2wzlV1S2ikR23zMedFyGL751oaHKJBh3S7s0boNz39GOqNDdanGjd3njEugpaS
+F5KMIu2f4GV6IDXuvJ+5g7XzEVW8lFgc1Z2QqeE8XJOVaUkjAF9aosogOXLj67QA
+xMnK4IiLZSmyP0XyLEGNfnrsCGtvIDskKPFEz7j49p5UJzC6enDydkmuJ2K4mHvP
+Cx1js2n9VAY1g0kjz7AreihIhmREU/S6zxqWQbgXmSwybhgK566KcP7gF285z1A+
+QkG80J8iQarw1CwDobjdjcA=
+=22vy
+-----END PGP SIGNATURE-----
