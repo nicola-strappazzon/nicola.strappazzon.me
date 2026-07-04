@@ -1,0 +1,302 @@
+<!doctype html>
+<html
+    lang="es"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Helix | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+        <div class="container center">
+            <header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</header>
+            <div class="content">
+  
+  
+    <div class="content-header">
+      <h2 class="title">Helix</h2>
+      
+    </div>
+  
+  <p>La lista de <a href="https://docs.helix-editor.com/keymap.html">shortcuts/keymap</a> oficial. Si quieres aprender de forma interactiva con un tutorial incorporado, debes escribir el siguiente comando <code>hx --tutor</code>.</p>
+<h2 id="modes">Modes</h2>
+<ul>
+<li>Normal <code>Escape</code> Por defecto (moverte, seleccionar, operadores, etc.)</li>
+<li>Space <code>Space</code> Tambien llamado action, es un sitio para centralizar las acciones con menu ()</li>
+<li>Command <code>:</code> Para hacer uso de la línea de comandos (guardar, abrir, cerrar, configurar, etc.)</li>
+</ul>
+<h2 id="shortcuts">Shortcuts</h2>
+<table>
+	<thead>
+			<tr>
+					<th>Mode</th>
+					<th>Key</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Normal</td>
+					<td>&gt;</td>
+					<td>Indent.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>&lt;</td>
+					<td>Unindent.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>u</td>
+					<td>Undo.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>x</td>
+					<td>Selecciona una linea.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>y</td>
+					<td>Yunk (Copu).</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>p</td>
+					<td>Paste.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>r</td>
+					<td>Replace char.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>d</td>
+					<td>Delete.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>i</td>
+					<td>Insert mode.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>gg</td>
+					<td>Ir al inicio del fichero.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>ge</td>
+					<td>Ir al final del fichero.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>gh</td>
+					<td>Ir al inicio de la linea.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>gl</td>
+					<td>Ir al final de la linea.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>mimd</td>
+					<td>Eliminar un texto entre comillas.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>vged</td>
+					<td>Selecciona y elimina todo.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>Ctrl-c</td>
+					<td>Comentar/Descomentar.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>Ctrl-b</td>
+					<td>Page Up.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>Ctrl-f</td>
+					<td>Page Down.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
+					<td>Shift-C</td>
+					<td>Multiline, seleccionar e ir bajando, precionas la tecla <code>,</code> para salir.</td>
+			</tr>
+			<tr>
+					<td>Space</td>
+					<td>s</td>
+					<td>List variables or functions on document.</td>
+			</tr>
+	</tbody>
+</table>
+
+  
+  <ul>
+    
+  </ul>
+  
+</div>
+            <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
+
+            if (!btn || !menu) return;
+
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</html>

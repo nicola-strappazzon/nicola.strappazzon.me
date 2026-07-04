@@ -1,62 +1,65 @@
-<!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
-<head>
-{{- partial "head.html" . }}
-</head>
-<body>
-{{- $js := resources.Get "js/clipboard.js" | minify | fingerprint }}
-<script src="{{ $js.RelPermalink }}"></script>
-<div class="container center">
-<header>
-{{- partial "header.html" . }}
-</header>
-<div class="content">
-{{- block "main" . }}
-{{- end }}
-</div>
-<footer class="footer">
-{{- partial "footer.html" . }}
-</footer>
-</div>
-</body>
-<script>
-(function () {
-    const btn = document.getElementById('menuToggle');
-    const menu = document.getElementById('mainMenu');
+<!doctype html>
+<html
+    lang="{{ site.Language.Locale }}"
+    dir="{{ or site.Language.Direction `ltr` }}"
+>
+    <head>
+        {{- partial "head.html" . }}
+    </head>
+    <body>
+        {{- $js := resources.Get "js/clipboard.js" | minify | fingerprint }}
+        <script src="{{ $js.RelPermalink }}"></script>
+        <div class="container center">
+            <header>{{- partial "header.html" . }}</header>
+            <div class="content">{{- block "main" . }} {{- end }}</div>
+            <footer class="footer">{{- partial "footer.html" . }}</footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
 
-    if (!btn || !menu) return;
+            if (!btn || !menu) return;
 
-    function openMenu() {
-        menu.classList.add('is-open');
-        btn.setAttribute('aria-expanded', 'true');
-        btn.innerHTML = '<i class="fas fa-times"></i>';
-    }
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
 
-    function closeMenu() {
-        menu.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.innerHTML = '<i class="fas fa-bars"></i>';
-    }
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
 
-    btn.addEventListener('click', () => {
-        if (menu.classList.toggle('is-open')) {
-            openMenu();
-        } else {
-            closeMenu();
-        }
-    });
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
 
-    menu.addEventListener('click', (e) => {
-        if (e.target.closest('a')) {
-            closeMenu();
-        }
-    });
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
 
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bp'))) {
-            closeMenu();
-        }
-    });
-})();
-</script>
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
 </html>

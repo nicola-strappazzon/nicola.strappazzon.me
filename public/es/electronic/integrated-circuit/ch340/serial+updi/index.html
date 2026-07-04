@@ -1,0 +1,224 @@
+<!doctype html>
+<html
+    lang="es"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Serial &#43; UPDI | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+        <div class="container center">
+            <header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</header>
+            <div class="content">
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/es/">Inicio</a></li>
+      <li><a href="/es/electronic/">Electrónica</a></li>
+      <li><a href="/es/electronic/integrated-circuit/">Circuito integrado</a></li>
+      <li><a href="/es/electronic/integrated-circuit/ch340/">CH340</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">Serial &#43; UPDI</h2>
+      
+    </div>
+    <p>Imaginate poder usar un solo circuito para Serial (USB Communications Device Class CDC) para comunicarte con el MCU y también poder programarlo usando el UPDI. Todo esto es posible gracias al CI 4052 que hace de interruptor y es controlado por el CI CH340.</p>
+<p>Para el ejemplo que desarrollo en este escrito, utilizo el circuito descrito para programar un MCU de tipo AVR128DA28.</p>
+<p><img src="breadboard.png" alt=""></p>
+<p>Esta idea la obtuve de <a href="https://avrhelp.mcselec.com/index.html?updi_programmer.htm">MCS Electronics</a>, ellos no usan <code>avrdude</code> y en el ejemplo usan un CI 4053. Al entender cómo funciona su solución hice los cambios más lógicos a mi parecer usando un 4052.</p>
+<p>Es posible usar el mismo CI para tener las dos funciones, pero se necesita un CI adicional que haga de switch (4052) para ir alternando entre UART (donde está el CDC) y UPDI. Ambos circuitos serán controlados por el pin RTS (Request to Send) del CH340, cuando se pone el pin del RTS en alto/hight tambien pasara con los pines de conmutacion A y B del CI 4052 y se activa el modo &ldquo;programmer&rdquo; como lo llamo yo, y cuando el pin RTS esta en bajo/LOW los pines de control A y B tambien lo están y se activa el modo &ldquo;data&rdquo; o seríal para que nos podamos entender.</p>
+<p><img src="funcional-diagram-pinout.png" alt=""></p>
+<h2 id="componentes">Componentes</h2>
+<ul>
+<li>Un IC CH340.</li>
+<li>Un IC CD4052B.</li>
+<li>Condensador de 10nF.</li>
+<li>Condensador de 100nF / 0.1uF, Código: 104, Cantidad: 2.</li>
+<li>Resistencia de 4.7k.</li>
+<li>Diodo schottky 1N5817 (puede ser otro; BAT43).</li>
+</ul>
+<h2 id="esquema">Esquema</h2>
+<p>El CI 4052 permitirá usar un pin de control A y B en paralelo para redirigir la entrada TX y RX del CH340, al circuito de UPDI o a los pines del UART del MCU.</p>
+<blockquote class="warning"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</p><p>Se debe mantener el UART conectados a los pines X0 y Y0, y el UPDI a los pines X3 y Y3 del CI 4052. De esta forma funciona perfectamente, si invierte a pesar de que parezca lógico, NO funciona bien. Esto es debido a que se necesita interrumpir la comunicación del UART cuando necesitamos hacer uso del UPDI.</p></blockquote>
+<p><img src="schematic3.png" alt=""></p>
+<h2 id="cómo-progamar-usando-el-updi">¿Cómo progamar usando el UPDI?</h2>
+<p>Debemos indicarle al <code>avrdude</code> que ponga el pin del RTS en alto/hight de la siguiente forma <code>-x rtsdtr=hight</code>.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2110 -e -F -x <span style="color:#268bd2">rtsdtr</span><span style="color:#719e07">=</span>hight
+</span></span><span style="display:flex;"><span>avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2110 -p avr128da28 -x <span style="color:#268bd2">rtsdtr</span><span style="color:#719e07">=</span>hight -F -V -D -U flash:w:main.hex
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="cómo-usar-el-cdc">¿Cómo usar el CDC?</h2>
+<p>Puedes usar los clientes <a href="https://freeware.the-meiers.org/">CoolTerm</a> o <a href="https://github.com/npat-efault/picocom">picocom</a>, te lo dejo a gusto.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>picocom --lower-rts -b <span style="color:#2aa198">115200</span> /dev/tty.usbserial-2110
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>¿Cómo salir del <a href="https://github.com/npat-efault/picocom">picocom</a>? Debes presionar la siguiente combinación de teclas: Control + a y luego Control + x</p>
+
+  </article></div>
+            <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
+
+            if (!btn || !menu) return;
+
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</html>

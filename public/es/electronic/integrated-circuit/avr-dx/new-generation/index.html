@@ -1,0 +1,207 @@
+<!doctype html>
+<html
+    lang="es"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>La nueva generación | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+        <div class="container center">
+            <header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</header>
+            <div class="content">
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/es/">Inicio</a></li>
+      <li><a href="/es/electronic/">Electrónica</a></li>
+      <li><a href="/es/electronic/integrated-circuit/">Circuito integrado</a></li>
+      <li><a href="/es/electronic/integrated-circuit/avr-dx/">AVR Dx</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">La nueva generación</h2>
+      
+    </div>
+    <p>La última novedad fue en el 2020 con la nueva incorporación de la familia <a href="https://www.microchip.com/en-us/products/microcontrollers/8-bit-mcus/avr-mcus/avr-db">AVR Dx</a>, algunos lo llaman AVR modernos, existen un buen puñado de estos; DA/DB/DD/DU y otros más, por eso el nombre Dx. Me decanté por el AVR DA como una excelente evolución y reemplazo del mítico ATmega328P (sin soporte USB, para eso está el AVR DU). Para compilar podemos seguir usando él <a href="https://github.com/avrdudes/avrdude">avrdude</a> sin problemas, pero debe ser la última version posible.</p>
+<p>Los registros y algunas lógicas de configuración de la nueva familia AVR Dx son diferentes, y para eso <a href="migration-from-megaAVR-to-AVR-Dx.pdf">Microchip ha sacado una documentación</a> que explica como migrar acompañado de bastantes ejemplos escritos en C.</p>
+<p>Librería que usa el avrdude que está en el repositorio <a href="https://github.com/avrdudes/avr-libc">avr-libc</a> que es de la misma gente, ya tiene soporte para la familia AVR Dx, o también se puede utilizar sobre el microcontrolador un framework como Arduno llamado <a href="https://github.com/SpenceKonde/DxCore">DxCore</a> sobre él <a href="https://www.arduino.cc/en/software/OldSoftwareReleases/">Arduino IDE 1.x</a> que funciona bastante bien. Para programarlo existe una nueva forma y mucho más simple que el clásico ISP, esta es UPDI que significa <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/serial+updi/">Unified Program and Debug Interface</a>, solo basta con un <a href="https://nicola.strappazzon.me/electronic/integrated-circuit/ch340/">CH340</a> y un puñado de componentes.</p>
+<p><img src="pinout.png" alt=""></p>
+<p>Llevo un tiempo usando el AVR128DA28 (Versión DIP) y el AVR128DA48 (Versión SMD) entre muchos otros, programarlo no es igual que el ATmega328P porque los registros son diferentes, consulte el <a href="AVRxxDAxx.pdf">Datasheet del AVR-DA</a>, es más avanzado, pero aún queda mucho para que la comunidad vaya publicando ejemplos prácticos de cómo por ejemplo usar un I2C / TWI para un IC en particular, de todos modos <a href="https://github.com/microchip-pic-avr-examples?q=avr128&amp;type=all&amp;language=&amp;sort=">Microchip esta poco a poco publicando códigos fuentes de ejemplo en GitHub</a>, igual no hay que dejar de visitar el <a href="https://www.avrfreaks.net">Foro para los Freaks de AVR</a>.</p>
+<p>Microchip tiene publicada una serie de documentos muy didacticos y detallados de cada funcionalidad:</p>
+<ul>
+<li><a href="AVR-InstructionSet-Manual.pdf">AVR® Instruction Set Manual</a></li>
+<li><a href="AVRxxDAxx.pdf">Datasheet del AVR-DA</a></li>
+<li><a href="TB3236-PWM.pdf">Generating PWM Signals Using TCD with High-Frequency Input</a></li>
+<li><a href="TB3209-ADC.pdf">Getting Started with Analog-to-Digital Converter (ADC)</a></li>
+<li><a href="TB3218-CCL.pdf">Getting Started with Configurable Custom Logic (CCL)</a></li>
+<li><a href="TB3229-GPIO.pdf">Getting Started with General Purpose Input/Output (GPIO)</a></li>
+<li><a href="TB3213-RTC.pdf">Getting Started with Real-Time Counter (RTC)</a></li>
+<li><a href="TB3215-SPI.pdf">Getting Started with Serial Peripheral Interface (SPI)</a></li>
+<li><a href="TB3217-TCA.pdf">Getting Started with Timer/Counter Type A (TCA)</a></li>
+<li><a href="TB3214-TCB.pdf">Getting Started with Timer/Counter Type B (TCB)</a></li>
+<li><a href="TB3212-TCD.pdf">Getting Started with Timer/Counter Type D (TCD)</a></li>
+<li><a href="TB3216-USART.pdf">Getting Started with Universal Synchronous and Asynchronous Receiver and Transmitter (USART)</a></li>
+<li><a href="TB3234.pdf">Internal High-Frequency Oscillator Calibration Using the Auto-Tune Feature</a></li>
+<li><a href="migration-from-megaAVR-to-AVR-Dx.pdf">Migration Guide</a></li>
+<li><a href="TB3235-DAC.pdf">Using 10-Bit DAC for Generating Analog Signals</a></li>
+<li><a href="TB3245-ADC16.pdf">Using 12-Bit ADC for Conversions, Accumulation, and Triggering Events</a></li>
+<li><a href="TB3233-ZCD.pdf">Using ZCD to Implement Special Functions</a></li>
+</ul>
+
+  </article></div>
+            <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
+
+            if (!btn || !menu) return;
+
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</html>

@@ -1,0 +1,288 @@
+<!doctype html>
+<html
+    lang="es"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Post Install | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+        <div class="container center">
+            <header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</header>
+            <div class="content">
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/es/">Inicio</a></li>
+      <li><a href="/es/wiki/">Wiki</a></li>
+      <li><a href="/es/wiki/raspberrypi/">Raspberry Pi</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">Post Install</h2>
+      
+    </div>
+    <p>Es algo que hago luego de instalar el sistema operativo.</p>
+<h2 id="paquetes">Paquetes</h2>
+<p>Actualizamos el sistema operativo:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt upgrade
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Instalamos una serie de paquetes:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install nmap tmux vim btop mc sqlite3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="configuración">Configuración</h2>
+<p>Desactivamos el <code>rainbow</code> en el splash screen:</p>
+<p>Debes añadir la siguiente línea <code>disable_splash=1</code> al final del fichero <code>/boot/firmware/config.txt</code> antiguamente en <code>/boot/config.txt</code>.</p>
+<p>Si tienes el raspberry pi conectado a una red usando ethernet, y no usas el bluetooth, desactívalos por seguridad añadiendo al final del fichero donde está <code>[all]</code> las siguientes líneas:</p>
+<pre tabindex="0"><code>dtoverlay=disable-wifi
+dtoverlay=disable-bt
+</code></pre><p>Removemos el logo de raspberry en la esquina superior de la pantalla:</p>
+<p>Debes añadir la siguiente opción <code>logo.nologo</code> al final de la única línea que esta dentro del fichero <code>/boot/firmware/cmdline.txt</code> antiguamente en <code>/boot/cmdline.txt</code>.</p>
+<h2 id="red">Red</h2>
+<p>A mí me gusta que cada cacharro en casa tenga su IP estática, así sé donde está. Vamos a definir una IP estática y los DNS de cloudflare.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmcli con show
+</span></span><span style="display:flex;"><span>sudo nmcli con mod <span style="color:#2aa198">&#34;Wired connection 1&#34;</span> ipv4.addresses 192.168.1.10/24
+</span></span><span style="display:flex;"><span>sudo nmcli con mod <span style="color:#2aa198">&#34;Wired connection 1&#34;</span> ipv4.gateway 192.168.1.1
+</span></span><span style="display:flex;"><span>sudo nmcli con mod <span style="color:#2aa198">&#34;Wired connection 1&#34;</span> ipv4.dns <span style="color:#2aa198">&#34;1.1.1.1 8.8.8.8&#34;</span>
+</span></span><span style="display:flex;"><span>sudo nmcli con mod <span style="color:#2aa198">&#34;Wired connection 1&#34;</span> ipv4.method manual
+</span></span><span style="display:flex;"><span>sudo nmcli con down <span style="color:#2aa198">&#34;Wired connection 1&#34;</span> <span style="color:#719e07">&amp;&amp;</span> sudo nmcli con up <span style="color:#2aa198">&#34;Wired connection 1&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Puede que pierdas la conexión SSH.</span>
+</span></span><span style="display:flex;"><span>nmcli device show eth0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="servicios">Servicios</h2>
+<p>Si usas el dispositivo cómo servidor sin entorno grafico, seguramente nada de esto te hace falta:</p>
+<ul>
+<li>avahi: Permite descubrir tu dispositivo en la red usando un DNS <code>.local</code>.</li>
+<li>bluealsa: Gestiona el audio por Bluetooth.</li>
+<li>bluetooth: Controla el adaptador Bluetooth general del sistema.</li>
+<li>gldriver-test: Prueba el controlador gráfico OpenGL en el arranque.</li>
+<li>hciuart: Configura la interfaz UART para el chip Bluetooth interno del Raspberry Pi.</li>
+<li>lightdm: Es el gestor gráfico de inicio de sesión (interfaz visual de escritorio).</li>
+<li>polkit: Gestiona permisos de administración en entorno gráfico.</li>
+<li>systemd-logind: Maneja sesiones de usuario y dispositivos de entrada.</li>
+<li>udisks2: Gestiona discos y unidades extraíbles en entorno gráfico.</li>
+<li>wpa_supplicant: Gestiona conexiones Wi-Fi.</li>
+</ul>
+<p>Hay que desactivar una serie de servicios que no hacen falta; así ahorramos algo de recursos, si ya están desactivados no pasa nada.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl disable avahi-daemon.service
+</span></span><span style="display:flex;"><span>sudo systemctl disable bluealsa.service
+</span></span><span style="display:flex;"><span>sudo systemctl disable bluetooth.service
+</span></span><span style="display:flex;"><span>sudo systemctl disable gldriver-test.service
+</span></span><span style="display:flex;"><span>sudo systemctl disable hciuart.service
+</span></span><span style="display:flex;"><span>sudo systemctl disable lightdm.service
+</span></span><span style="display:flex;"><span>sudo systemctl disable polkit.service
+</span></span><span style="display:flex;"><span>sudo systemctl disable systemd-logind.service
+</span></span><span style="display:flex;"><span>sudo systemctl disable udisks2.service
+</span></span><span style="display:flex;"><span>sudo systemctl disable wpa_supplicant.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="directories">Directories</h2>
+<p>Cómo utilizó la raspberry pi como servidor personal suelo tener esta estructura de directorios:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /home/nicola/media/<span style="color:#719e07">{</span>downloads,music,movies,tvshow,photos,documents<span style="color:#719e07">}</span>
+</span></span><span style="display:flex;"><span>mkdir -p /home/nicola/config/<span style="color:#719e07">{</span>dnsmasq,slskd,pihole,jellyfin,transmission<span style="color:#719e07">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </article></div>
+            <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
+
+            if (!btn || !menu) return;
+
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</html>

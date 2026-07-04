@@ -1,0 +1,497 @@
+<!doctype html>
+<html
+    lang="es"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Docker | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+        <div class="container center">
+            <header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</header>
+            <div class="content">
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/es/">Inicio</a></li>
+      <li><a href="/es/wiki/">Wiki</a></li>
+      <li><a href="/es/wiki/raspberrypi/">Raspberry Pi</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">Docker</h2>
+      
+    </div>
+    <p>En el <a href="https://docs.docker.com/engine/install/debian/#set-up-the-repository">sitio oficial</a> explica cómo instalarlo, igual dejo aquí todos los pasos a seguir:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#586e75"># Add Docker&#39;s official GPG key:</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install ca-certificates curl
+</span></span><span style="display:flex;"><span>sudo install -m <span style="color:#2aa198">0755</span> -d /etc/apt/keyrings
+</span></span><span style="display:flex;"><span>sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+</span></span><span style="display:flex;"><span>sudo chmod a+r /etc/apt/keyrings/docker.asc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Add the repository to Apt sources:</span>
+</span></span><span style="display:flex;"><span>sudo tee /etc/apt/sources.list.d/docker.sources <span style="color:#2aa198">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">Types: deb
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">URIs: https://download.docker.com/linux/debian
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">Suites: $(. /etc/os-release &amp;&amp; echo &#34;$VERSION_CODENAME&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">Components: stable
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">Signed-By: /etc/apt/keyrings/docker.asc
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</span></span><span style="display:flex;"><span>sudo systemctl start docker
+</span></span><span style="display:flex;"><span>sudo groupadd docker
+</span></span><span style="display:flex;"><span>sudo usermod -aG docker <span style="color:#268bd2">$USER</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="cloudflare-tunnel">Cloudflare tunnel</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --detach <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --name<span style="color:#719e07">=</span>cloudflare-tunnel-name <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --restart<span style="color:#719e07">=</span>always <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --network<span style="color:#719e07">=</span>host
+</span></span><span style="display:flex;"><span>    cloudflare/cloudflared:latest tunnel --no-autoupdate run --token <span style="color:#268bd2">$CLOUDFLARE_TOKEN</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="samba">Samba</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --detach <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --name samba <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --restart always <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 445:445 <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#2aa198">&#34;NAME=Data&#34;</span> <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#2aa198">&#34;USER=myuser&#34;</span> <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#2aa198">&#34;PASS=mysecretpassword&#34;</span> <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/media:/storage <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    dockurr/samba
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="transmission">transmission</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --detach <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --name transmission <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --restart always <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#268bd2">PUID</span><span style="color:#719e07">=</span><span style="color:#2aa198">1000</span> <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#268bd2">PGID</span><span style="color:#719e07">=</span><span style="color:#2aa198">1000</span> <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#268bd2">TZ</span><span style="color:#719e07">=</span>Etc/UTC <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 9091:9091 <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 51413:51413 <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 51413:51413/udp <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/config/transmission/data:/config <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/samba/transmission:/downloads <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/config/transmission/watch:/watch <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    lscr.io/linuxserver/transmission:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="slskd">slskd</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --detach <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --name slskd <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --restart always <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 5030:5030 <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 5031:5031 <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 50300:50300 <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#268bd2">SLSKD_REMOTE_CONFIGURATION</span><span style="color:#719e07">=</span><span style="color:#b58900">true</span> <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/media/downloads:/app <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    slskd/slskd:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Usuario y clave por defecto: <code>slskd</code></p>
+<h2 id="pihole">PiHole</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --detach <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --name pihole<span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --restart always <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 53:53/tcp <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 53:53/udp <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 80:80/tcp <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#268bd2">TZ</span><span style="color:#719e07">=</span>Europe/Madrid <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#268bd2">FTLCONF_webserver_api_password</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;mysecretpassword&#34;</span> <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#268bd2">FTLCONF_dns_listeningMode</span><span style="color:#719e07">=</span>all <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/config/pihole:/etc/pihole <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/config/dnsmasq:/etc/dnsmasq.d <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --cap-add NET_ADMIN <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    pihole/pihole:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dnscrypt">DNSCrypt</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --detach <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --name dnscrypt <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --restart always <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 443:443/udp <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 443:443/tcp <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /etc/dnscrypt-server/keys:/opt/encrypted-dns/etc/keys <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    jedisct1/dnscrypt-server init -N example.com -E <span style="color:#2aa198">&#39;192.168.1.10:443&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="jellyfin">jellyfin</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /home/nicola/jellyfin/<span style="color:#719e07">{</span>config,cache<span style="color:#719e07">}</span>
+</span></span><span style="display:flex;"><span>docker run <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --detach <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --name jellyfin <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --restart always <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 8096:8096/tcp <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 7359:7359/udp <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/jellyfin/config:/config <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/jellyfin/cache:/cache <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/samba/media:/media <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --net<span style="color:#719e07">=</span>host <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    jellyfin/jellyfin:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="icloud-photos-downloader">iCloud Photos Downloader</h2>
+<p>Hay que ejecutar el contenedor en dos pasos, el primero para establecer la cookie de auth y luego dejarlo ejecutando en background:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /home/nicola/icloudpd/config
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker run <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    -it <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --rm <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --name icloudpd <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /mnt/data1/photos:/data <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/icloudpd/config:/config <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#268bd2">TZ</span><span style="color:#719e07">=</span>Europe/Madrid <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    icloudpd/icloudpd:latest icloudpd --directory /data --username user@example.me --cookie-directory /config --watch-with-interval <span style="color:#2aa198">3600</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Interrumpir la ejecución.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker run <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --detach <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --name icloudpd <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /mnt/data1/photos:/data <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/icloudpd/config:/config <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --env <span style="color:#268bd2">TZ</span><span style="color:#719e07">=</span>Europe/Madrid <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    icloudpd/icloudpd:latest icloudpd --directory /data --username user@example.me --cookie-directory /config --watch-with-interval <span style="color:#2aa198">3600</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="uptime-kuma">Uptime Kuma</h2>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --detach <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --name uptime-kuma <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --restart<span style="color:#719e07">=</span>always <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --publish 3001:3001 <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    --volume /home/nicola/uptime-kuma:/app/data <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    louislam/uptime-kuma:2
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </article></div>
+            <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
+
+            if (!btn || !menu) return;
+
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</html>

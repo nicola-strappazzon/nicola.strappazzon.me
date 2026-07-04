@@ -1,0 +1,239 @@
+<!doctype html>
+<html
+    lang="es"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Lección 1 - Encender un LED | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+        <div class="container center">
+            <header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</header>
+            <div class="content">
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/es/">Inicio</a></li>
+      <li><a href="/es/electronic/">Electrónica</a></li>
+      <li><a href="/es/electronic/basic-lessons/">Lecciones básicas</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">Lección 1 - Encender un LED</h2>
+      
+    </div>
+    <p>El objetivo de este ejercicio es la de entender cómo se conecta un LED de forma básica. Un LED siempre debe estar acompañado de una resistencia. <a href="https://nicola.strappazzon.me/electronic/components/light-emitting-diode/">Para saber más sobre los LED, consulte aquí</a>.</p>
+<p>Para hacer una anécdota histórica, en los años 80 cuando empezó mi curiosidad por la electrónica, los primeros circuitos se hacían con una bombilla, sería como hacer tu primera linterna, poco a poco los LED han reemplazado las bombillas por su eficiencia energética. Por eso en esta primera lección empezamos usando los LED directamente, hoy en día es un componente que está en todos los aparatos electrónicos que nos rodea.</p>
+<h2 id="componentes">Componentes</h2>
+<ul>
+<li>Una placa de pruebas.</li>
+<li>Dos pilas de 1.5V para sumar 3V y con su base.</li>
+<li>Un pulsador.</li>
+<li>Una resistencia de 1kΩ.</li>
+<li>Un LED del color deseado.</li>
+<li>Cable unifilar.</li>
+</ul>
+<h2 id="esquema">Esquema</h2>
+<div class="svg"><?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="116.803pt" height="98.393pt" viewBox="0 0 116.803 98.393">
+<defs>
+<g>
+<g id="glyph-0-0">
+<path d="M 2.890625 -3.515625 C 3.703125 -3.78125 4.28125 -4.46875 4.28125 -5.265625 C 4.28125 -6.078125 3.40625 -6.640625 2.453125 -6.640625 C 1.453125 -6.640625 0.6875 -6.046875 0.6875 -5.28125 C 0.6875 -4.953125 0.90625 -4.765625 1.203125 -4.765625 C 1.5 -4.765625 1.703125 -4.984375 1.703125 -5.28125 C 1.703125 -5.765625 1.234375 -5.765625 1.09375 -5.765625 C 1.390625 -6.265625 2.046875 -6.390625 2.40625 -6.390625 C 2.828125 -6.390625 3.375 -6.171875 3.375 -5.28125 C 3.375 -5.15625 3.34375 -4.578125 3.09375 -4.140625 C 2.796875 -3.65625 2.453125 -3.625 2.203125 -3.625 C 2.125 -3.609375 1.890625 -3.59375 1.8125 -3.59375 C 1.734375 -3.578125 1.671875 -3.5625 1.671875 -3.46875 C 1.671875 -3.359375 1.734375 -3.359375 1.90625 -3.359375 L 2.34375 -3.359375 C 3.15625 -3.359375 3.53125 -2.6875 3.53125 -1.703125 C 3.53125 -0.34375 2.84375 -0.0625 2.40625 -0.0625 C 1.96875 -0.0625 1.21875 -0.234375 0.875 -0.8125 C 1.21875 -0.765625 1.53125 -0.984375 1.53125 -1.359375 C 1.53125 -1.71875 1.265625 -1.921875 0.984375 -1.921875 C 0.734375 -1.921875 0.421875 -1.78125 0.421875 -1.34375 C 0.421875 -0.4375 1.34375 0.21875 2.4375 0.21875 C 3.65625 0.21875 4.5625 -0.6875 4.5625 -1.703125 C 4.5625 -2.515625 3.921875 -3.296875 2.890625 -3.515625 Z M 2.890625 -3.515625 "/>
+</g>
+<g id="glyph-0-1">
+<path d="M 6.1875 -5.828125 C 6.328125 -6.203125 6.59375 -6.484375 7.28125 -6.5 L 7.28125 -6.8125 C 6.96875 -6.78125 6.5625 -6.78125 6.3125 -6.78125 C 6.015625 -6.78125 5.4375 -6.796875 5.171875 -6.8125 L 5.171875 -6.5 C 5.6875 -6.484375 5.90625 -6.234375 5.90625 -6 C 5.90625 -5.921875 5.875 -5.859375 5.859375 -5.796875 L 4.03125 -1 L 2.125 -6.03125 C 2.0625 -6.171875 2.0625 -6.1875 2.0625 -6.203125 C 2.0625 -6.5 2.625 -6.5 2.875 -6.5 L 2.875 -6.8125 C 2.515625 -6.78125 1.828125 -6.78125 1.453125 -6.78125 C 0.984375 -6.78125 0.546875 -6.796875 0.1875 -6.8125 L 0.1875 -6.5 C 0.84375 -6.5 1.03125 -6.5 1.171875 -6.125 L 3.484375 0 C 3.546875 0.1875 3.59375 0.21875 3.734375 0.21875 C 3.890625 0.21875 3.921875 0.171875 3.96875 0.03125 Z M 6.1875 -5.828125 "/>
+</g>
+<g id="glyph-0-2">
+<path d="M 2.9375 -6.375 C 2.9375 -6.625 2.9375 -6.640625 2.703125 -6.640625 C 2.078125 -6 1.203125 -6 0.890625 -6 L 0.890625 -5.6875 C 1.09375 -5.6875 1.671875 -5.6875 2.1875 -5.953125 L 2.1875 -0.78125 C 2.1875 -0.421875 2.15625 -0.3125 1.265625 -0.3125 L 0.953125 -0.3125 L 0.953125 0 C 1.296875 -0.03125 2.15625 -0.03125 2.5625 -0.03125 C 2.953125 -0.03125 3.828125 -0.03125 4.171875 0 L 4.171875 -0.3125 L 3.859375 -0.3125 C 2.953125 -0.3125 2.9375 -0.421875 2.9375 -0.78125 Z M 2.9375 -6.375 "/>
+</g>
+<g id="glyph-0-3">
+<path d="M 1.0625 -0.75 C 1.0625 -0.3125 0.953125 -0.3125 0.28125 -0.3125 L 0.28125 0 C 0.609375 -0.015625 1.078125 -0.03125 1.359375 -0.03125 C 1.671875 -0.03125 2.0625 -0.015625 2.46875 0 L 2.46875 -0.3125 C 1.796875 -0.3125 1.6875 -0.3125 1.6875 -0.75 L 1.6875 -1.78125 L 2.328125 -2.328125 C 3.09375 -1.28125 3.515625 -0.71875 3.515625 -0.53125 C 3.515625 -0.34375 3.34375 -0.3125 3.15625 -0.3125 L 3.15625 0 C 3.421875 -0.015625 4.015625 -0.03125 4.234375 -0.03125 C 4.515625 -0.03125 4.8125 -0.015625 5.09375 0 L 5.09375 -0.3125 C 4.71875 -0.3125 4.5 -0.3125 4.125 -0.84375 L 2.859375 -2.625 C 2.84375 -2.640625 2.796875 -2.703125 2.796875 -2.734375 C 2.796875 -2.765625 3.515625 -3.375 3.609375 -3.453125 C 4.234375 -3.953125 4.65625 -3.984375 4.859375 -3.984375 L 4.859375 -4.296875 C 4.578125 -4.265625 4.453125 -4.265625 4.171875 -4.265625 C 3.8125 -4.265625 3.1875 -4.28125 3.046875 -4.296875 L 3.046875 -3.984375 C 3.234375 -3.984375 3.34375 -3.875 3.34375 -3.734375 C 3.34375 -3.53125 3.203125 -3.421875 3.125 -3.34375 L 1.71875 -2.140625 L 1.71875 -6.921875 L 0.28125 -6.8125 L 0.28125 -6.5 C 0.984375 -6.5 1.0625 -6.4375 1.0625 -5.9375 Z M 1.0625 -0.75 "/>
+</g>
+</g>
+</defs>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 0 98.394531 L 116.804688 98.394531 L 116.804688 0 L 0 0 Z M 0 98.394531 "/>
+<path fill="none" stroke-width="0.3985" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 0.0015 -0.00159375 L 0.0015 22.392938 M 0.0015 34.299188 L 0.0015 56.693719 L 18.427281 56.693719 M 38.267125 56.693719 L 56.692906 56.693719 L 56.692906 44.221063 M 56.692906 12.471063 L 56.692906 -0.00159375 L 36.28275 -0.00159375 M 20.411656 -0.00159375 L 0.0015 -0.00159375 M 0.0015 -0.00159375 L 0.0015 -0.00159375 " transform="matrix(1, 0, 0, -1, 34.436, 72.682)"/>
+<path fill="none" stroke-width="0.3985" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 0.0015 26.381219 L 0.0015 22.392938 M 0.0015 30.310906 L 0.0015 34.299188 " transform="matrix(1, 0, 0, -1, 34.436, 72.682)"/>
+<path fill="none" stroke-width="0.797" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M -5.951625 26.381219 L 5.954625 26.381219 M -11.90475 30.310906 L 11.903844 30.310906 " transform="matrix(1, 0, 0, -1, 34.436, 72.682)"/>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use xlink:href="#glyph-0-0" x="7.278" y="46.48"/>
+<use xlink:href="#glyph-0-1" x="12.2593" y="46.48"/>
+</g>
+<path fill="none" stroke-width="0.797" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 18.427281 61.654656 L 38.267125 61.654656 M 28.34525 61.654656 L 28.34525 66.615594 " transform="matrix(1, 0, 0, -1, 34.436, 72.682)"/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" stroke-width="0.797" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 20.013219 56.693719 C 20.013219 57.568719 19.302281 58.279656 18.427281 58.279656 C 17.548375 58.279656 16.837438 57.568719 16.837438 56.693719 C 16.837438 55.818719 17.548375 55.107781 18.427281 55.107781 C 19.302281 55.107781 20.013219 55.818719 20.013219 56.693719 Z M 20.013219 56.693719 " transform="matrix(1, 0, 0, -1, 34.436, 72.682)"/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" stroke-width="0.797" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 39.856969 56.693719 C 39.856969 57.568719 39.146031 58.279656 38.267125 58.279656 C 37.392125 58.279656 36.681188 57.568719 36.681188 56.693719 C 36.681188 55.818719 37.392125 55.107781 38.267125 55.107781 C 39.146031 55.107781 39.856969 55.818719 39.856969 56.693719 Z M 39.856969 56.693719 " transform="matrix(1, 0, 0, -1, 34.436, 72.682)"/>
+<path fill="none" stroke-width="0.797" stroke-linecap="butt" stroke-linejoin="bevel" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 56.692906 44.6195 L 62.646031 41.576531 L 50.739781 36.283563 L 62.646031 30.990594 L 50.739781 25.701531 L 62.646031 20.408563 L 50.739781 15.1195 L 56.692906 12.072625 " transform="matrix(1, 0, 0, -1, 34.436, 72.682)"/>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use xlink:href="#glyph-0-2" x="99.285" y="46.48"/>
+<use xlink:href="#glyph-0-3" x="104.2663" y="46.48"/>
+</g>
+<path fill="none" stroke-width="0.797" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 20.411656 -0.00159375 L 36.28275 -9.919562 L 36.28275 9.920281 Z M 20.411656 -0.00159375 " transform="matrix(1, 0, 0, -1, 34.436, 72.682)"/>
+<path fill="none" stroke-width="0.797" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 20.411656 9.920281 L 20.411656 -9.919562 " transform="matrix(1, 0, 0, -1, 34.436, 72.682)"/>
+<path fill="none" stroke-width="0.3985" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 31.521031 -9.919562 L 25.079625 -17.97425 " transform="matrix(1, 0, 0, -1, 34.436, 72.682)"/>
+<path fill-rule="nonzero" fill="rgb(0%, 0%, 0%)" fill-opacity="1" d="M 58.019531 92.523438 C 58.796875 91.871094 60.230469 90.71875 61.675781 90.347656 C 60.199219 90.441406 59.578125 89.941406 59.34375 88.480469 C 59.296875 89.972656 58.488281 91.621094 58.019531 92.523438 Z M 58.019531 92.523438 "/>
+<path fill="none" stroke-width="0.3985" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 26.759313 -7.935187 L 20.317906 -15.989875 " transform="matrix(1, 0, 0, -1, 34.436, 72.682)"/>
+<path fill-rule="nonzero" fill="rgb(0%, 0%, 0%)" fill-opacity="1" d="M 53.257812 90.539062 C 54.035156 89.886719 55.46875 88.734375 56.914062 88.363281 C 55.4375 88.457031 54.8125 87.957031 54.582031 86.496094 C 54.535156 87.988281 53.726562 89.636719 53.257812 90.539062 Z M 53.257812 90.539062 "/>
+</svg>
+</div>
+<h2 id="placa-de-pruebas">Placa de pruebas</h2>
+<p><img src="breadboard.png" alt=""></p>
+<h2 id="análisis">Análisis</h2>
+<p>Al presionar el pulsador se enciende el LED. Al no presionar el pulsador no se enciende el LED.</p>
+
+  </article></div>
+            <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
+
+            if (!btn || !menu) return;
+
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</html>

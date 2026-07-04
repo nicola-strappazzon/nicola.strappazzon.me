@@ -1,6 +1,8 @@
 baseURL = 'https://nicola.strappazzon.me/'
-languageCode = 'es-es'
 title = 'Nicola Strappazzon'
+
+defaultContentLanguage = 'es'
+defaultContentLanguageInSubdir = true
 
 [menu]
   [[menu.main]]

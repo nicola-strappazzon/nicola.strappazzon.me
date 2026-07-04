@@ -1,0 +1,589 @@
+<!doctype html>
+<html
+    lang="es"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>LCD Display module (Nokia 5110) | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+        <div class="container center">
+            <header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</header>
+            <div class="content">
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/es/">Inicio</a></li>
+      <li><a href="/es/electronic/">Electrónica</a></li>
+      <li><a href="/es/electronic/integrated-circuit/">Circuito integrado</a></li>
+      <li><a href="/es/electronic/integrated-circuit/avr-dx/">AVR Dx</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">LCD Display module (Nokia 5110)</h2>
+      
+    </div>
+    <blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Sigo trabajando en mejorar y terminar el artículo. De momento esta incompleto.</p></blockquote>
+<p>El módulo <strong>Nokia 5110</strong> es un LCD monocromático que consume muy poco y es o fue muy popular, su pantalla permite 84x48 pixel. Usa originalmente el controlador <a href="PCD8544.pdf">PCD8544</a> que se comunica usando el protocolo SPI, se alimenta desde 2.7V hasta 3.3V.</p>
+<blockquote class="warning"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</p><p>Entre sus &ldquo;clones&rdquo;, está el controlador <a href="ST7567.pdf">ST7567</a> y el <a href="AiP31567.pdf">AiP31567</a> que NO son compatibles con el <code>PCD8544</code>.</p></blockquote>
+<p>A continuación muestro un diagrama esquemático usando el display con un AVR128DA28:</p>
+<p><img src="schematic.png" alt=""></p>
+<p>La conexión del LED a 3V3 es opcional.</p>
+<blockquote class="note"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Las conexiones para que funcione el MCU son ignoradas a propósito con la intención de simplificar el diagrama para centrarnos en el funcionamiento del módulo.</p></blockquote>
+<p>El código fuente que se muestra a continuación usa los puertos SPI0 que trae el AVR128DA28, por eso la conexión entre el LCD y el MCU es bastante cruzada.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">100
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">101
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">102
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">103
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">104
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">105
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">106
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">107
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">108
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">109
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">110
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">111
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">112
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">113
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">114
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">115
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">116
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">117
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">118
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">119
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">120
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">121
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">122
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">123
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">124
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">125
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">126
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">127
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">128
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">129
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">130
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">131
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">132
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">133
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">134
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">135
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">136
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">137
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">138
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">139
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">140
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">141
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">142
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">143
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">144
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">145
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">146
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">147
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">148
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">149
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">150
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">151
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">152
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">153
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">154
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">155
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">156
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">157
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">158
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">159
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">160
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">161
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">162
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">163
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">164
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">165
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">166
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">167
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">168
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">169
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">170
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">171
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">172
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">173
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">174
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">175
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">176
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">177
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">178
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">179
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">180
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">181
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">182
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">183
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">184
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#719e07">#include</span> <span style="color:#719e07">&lt;avr/io.h&gt;</span><span style="color:#719e07">
+</span></span></span><span style="display:flex;"><span><span style="color:#719e07">#include</span> <span style="color:#719e07">&lt;util/delay.h&gt;</span><span style="color:#719e07">
+</span></span></span><span style="display:flex;"><span><span style="color:#719e07">#include</span> <span style="color:#719e07">&lt;stdint.h&gt;</span><span style="color:#719e07">
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#719e07">const</span> <span style="color:#dc322f">uint8_t</span> font5x7[][<span style="color:#2aa198">5</span>] <span style="color:#719e07">=</span> {
+</span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 32  
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x5F</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 33 !
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x07</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x07</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 34 &#34;
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x14</span>}, <span style="color:#586e75">// 35 #
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x24</span>,<span style="color:#2aa198">0x2A</span>,<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x2A</span>,<span style="color:#2aa198">0x12</span>}, <span style="color:#586e75">// 36 $
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x23</span>,<span style="color:#2aa198">0x13</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x64</span>,<span style="color:#2aa198">0x62</span>}, <span style="color:#586e75">// 37 %
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x36</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x55</span>,<span style="color:#2aa198">0x22</span>,<span style="color:#2aa198">0x50</span>}, <span style="color:#586e75">// 38 &amp;
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x05</span>,<span style="color:#2aa198">0x03</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 39 &#39;
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x1C</span>,<span style="color:#2aa198">0x22</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 40 (
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x22</span>,<span style="color:#2aa198">0x1C</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 41 )
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x3E</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x14</span>}, <span style="color:#586e75">// 42 *
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x3E</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x08</span>}, <span style="color:#586e75">// 43 +
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x50</span>,<span style="color:#2aa198">0x30</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 44 ,
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x08</span>}, <span style="color:#586e75">// 45 -
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x60</span>,<span style="color:#2aa198">0x60</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 46 .
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x20</span>,<span style="color:#2aa198">0x10</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x02</span>}, <span style="color:#586e75">// 47 /
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x3E</span>,<span style="color:#2aa198">0x51</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x45</span>,<span style="color:#2aa198">0x3E</span>}, <span style="color:#586e75">// 48 0
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x42</span>,<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 49 1
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x42</span>,<span style="color:#2aa198">0x61</span>,<span style="color:#2aa198">0x51</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x46</span>}, <span style="color:#586e75">// 50 2
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x21</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x45</span>,<span style="color:#2aa198">0x4B</span>,<span style="color:#2aa198">0x31</span>}, <span style="color:#586e75">// 51 3
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x18</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x12</span>,<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x10</span>}, <span style="color:#586e75">// 52 4
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x27</span>,<span style="color:#2aa198">0x45</span>,<span style="color:#2aa198">0x45</span>,<span style="color:#2aa198">0x45</span>,<span style="color:#2aa198">0x39</span>}, <span style="color:#586e75">// 53 5
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x3C</span>,<span style="color:#2aa198">0x4A</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x30</span>}, <span style="color:#586e75">// 54 6
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x01</span>,<span style="color:#2aa198">0x71</span>,<span style="color:#2aa198">0x09</span>,<span style="color:#2aa198">0x05</span>,<span style="color:#2aa198">0x03</span>}, <span style="color:#586e75">// 55 7
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x36</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x36</span>}, <span style="color:#586e75">// 56 8
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x06</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x29</span>,<span style="color:#2aa198">0x1E</span>}, <span style="color:#586e75">// 57 9
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x36</span>,<span style="color:#2aa198">0x36</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 58 :
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x56</span>,<span style="color:#2aa198">0x36</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 59 ;
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x22</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 60 &lt;
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x14</span>}, <span style="color:#586e75">// 61 =
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x22</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x08</span>}, <span style="color:#586e75">// 62 &gt;
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x02</span>,<span style="color:#2aa198">0x01</span>,<span style="color:#2aa198">0x51</span>,<span style="color:#2aa198">0x09</span>,<span style="color:#2aa198">0x06</span>}, <span style="color:#586e75">// 63 ?
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x32</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x79</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x3E</span>}, <span style="color:#586e75">// 64 @
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7E</span>,<span style="color:#2aa198">0x11</span>,<span style="color:#2aa198">0x11</span>,<span style="color:#2aa198">0x11</span>,<span style="color:#2aa198">0x7E</span>}, <span style="color:#586e75">// 65 A
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x36</span>}, <span style="color:#586e75">// 66 B
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x3E</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x22</span>}, <span style="color:#586e75">// 67 C
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x22</span>,<span style="color:#2aa198">0x1C</span>}, <span style="color:#586e75">// 68 D
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x41</span>}, <span style="color:#586e75">// 69 E
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x09</span>,<span style="color:#2aa198">0x09</span>,<span style="color:#2aa198">0x09</span>,<span style="color:#2aa198">0x01</span>}, <span style="color:#586e75">// 70 F
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x3E</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x7A</span>}, <span style="color:#586e75">// 71 G
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x7F</span>}, <span style="color:#586e75">// 72 H
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 73 I
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x20</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x3F</span>,<span style="color:#2aa198">0x01</span>}, <span style="color:#586e75">// 74 J
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x22</span>,<span style="color:#2aa198">0x41</span>}, <span style="color:#586e75">// 75 K
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x40</span>}, <span style="color:#586e75">// 76 L
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x02</span>,<span style="color:#2aa198">0x0C</span>,<span style="color:#2aa198">0x02</span>,<span style="color:#2aa198">0x7F</span>}, <span style="color:#586e75">// 77 M
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x10</span>,<span style="color:#2aa198">0x7F</span>}, <span style="color:#586e75">// 78 N
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x3E</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x3E</span>}, <span style="color:#586e75">// 79 O
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x09</span>,<span style="color:#2aa198">0x09</span>,<span style="color:#2aa198">0x09</span>,<span style="color:#2aa198">0x06</span>}, <span style="color:#586e75">// 80 P
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x3E</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x51</span>,<span style="color:#2aa198">0x21</span>,<span style="color:#2aa198">0x5E</span>}, <span style="color:#586e75">// 81 Q
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x09</span>,<span style="color:#2aa198">0x19</span>,<span style="color:#2aa198">0x29</span>,<span style="color:#2aa198">0x46</span>}, <span style="color:#586e75">// 82 R
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x46</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x31</span>}, <span style="color:#586e75">// 83 S
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x01</span>,<span style="color:#2aa198">0x01</span>,<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x01</span>,<span style="color:#2aa198">0x01</span>}, <span style="color:#586e75">// 84 T
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x3F</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x3F</span>}, <span style="color:#586e75">// 85 U
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x1F</span>,<span style="color:#2aa198">0x20</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x20</span>,<span style="color:#2aa198">0x1F</span>}, <span style="color:#586e75">// 86 V
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x3F</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x38</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x3F</span>}, <span style="color:#586e75">// 87 W
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x63</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x63</span>}, <span style="color:#586e75">// 88 X
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x07</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x70</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x07</span>}, <span style="color:#586e75">// 89 Y
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x61</span>,<span style="color:#2aa198">0x51</span>,<span style="color:#2aa198">0x49</span>,<span style="color:#2aa198">0x45</span>,<span style="color:#2aa198">0x43</span>}, <span style="color:#586e75">// 90 Z
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 91 [
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x02</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x10</span>,<span style="color:#2aa198">0x20</span>}, <span style="color:#586e75">// 92 &#39;\&#39;
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 93 ]
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x02</span>,<span style="color:#2aa198">0x01</span>,<span style="color:#2aa198">0x02</span>,<span style="color:#2aa198">0x04</span>}, <span style="color:#586e75">// 94 ^
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x40</span>}, <span style="color:#586e75">// 95 _
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x01</span>,<span style="color:#2aa198">0x02</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">// 96 `
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x20</span>,<span style="color:#2aa198">0x54</span>,<span style="color:#2aa198">0x54</span>,<span style="color:#2aa198">0x54</span>,<span style="color:#2aa198">0x78</span>}, <span style="color:#586e75">// 97 a
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x48</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x38</span>}, <span style="color:#586e75">// 98 b
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x38</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x20</span>}, <span style="color:#586e75">// 99 c
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x38</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x48</span>,<span style="color:#2aa198">0x7F</span>}, <span style="color:#586e75">//100 d
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x38</span>,<span style="color:#2aa198">0x54</span>,<span style="color:#2aa198">0x54</span>,<span style="color:#2aa198">0x54</span>,<span style="color:#2aa198">0x18</span>}, <span style="color:#586e75">//101 e
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x7E</span>,<span style="color:#2aa198">0x09</span>,<span style="color:#2aa198">0x01</span>,<span style="color:#2aa198">0x02</span>}, <span style="color:#586e75">//102 f
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x0C</span>,<span style="color:#2aa198">0x52</span>,<span style="color:#2aa198">0x52</span>,<span style="color:#2aa198">0x52</span>,<span style="color:#2aa198">0x3E</span>}, <span style="color:#586e75">//103 g
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x78</span>}, <span style="color:#586e75">//104 h
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x7D</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">//105 i
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x20</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x3D</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">//106 j
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x10</span>,<span style="color:#2aa198">0x28</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">//107 k
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">//108 l
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7C</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x18</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x78</span>}, <span style="color:#586e75">//109 m
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7C</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x78</span>}, <span style="color:#586e75">//110 n
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x38</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x38</span>}, <span style="color:#586e75">//111 o
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7C</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x08</span>}, <span style="color:#586e75">//112 p
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x14</span>,<span style="color:#2aa198">0x18</span>,<span style="color:#2aa198">0x7C</span>}, <span style="color:#586e75">//113 q
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x7C</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x08</span>}, <span style="color:#586e75">//114 r
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x48</span>,<span style="color:#2aa198">0x54</span>,<span style="color:#2aa198">0x54</span>,<span style="color:#2aa198">0x54</span>,<span style="color:#2aa198">0x20</span>}, <span style="color:#586e75">//115 s
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x3F</span>,<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x20</span>}, <span style="color:#586e75">//116 t
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x3C</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x20</span>,<span style="color:#2aa198">0x7C</span>}, <span style="color:#586e75">//117 u
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x1C</span>,<span style="color:#2aa198">0x20</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x20</span>,<span style="color:#2aa198">0x1C</span>}, <span style="color:#586e75">//118 v
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x3C</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x30</span>,<span style="color:#2aa198">0x40</span>,<span style="color:#2aa198">0x3C</span>}, <span style="color:#586e75">//119 w
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x28</span>,<span style="color:#2aa198">0x10</span>,<span style="color:#2aa198">0x28</span>,<span style="color:#2aa198">0x44</span>}, <span style="color:#586e75">//120 x
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x0C</span>,<span style="color:#2aa198">0x50</span>,<span style="color:#2aa198">0x50</span>,<span style="color:#2aa198">0x50</span>,<span style="color:#2aa198">0x3C</span>}, <span style="color:#586e75">//121 y
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x44</span>,<span style="color:#2aa198">0x64</span>,<span style="color:#2aa198">0x54</span>,<span style="color:#2aa198">0x4C</span>,<span style="color:#2aa198">0x44</span>}, <span style="color:#586e75">//122 z
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x36</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">//123 {
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x7F</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">//124 |
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x41</span>,<span style="color:#2aa198">0x36</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x00</span>}, <span style="color:#586e75">//125 }
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x04</span>,<span style="color:#2aa198">0x08</span>,<span style="color:#2aa198">0x10</span>,<span style="color:#2aa198">0x08</span>}, <span style="color:#586e75">//126 ~
+</span></span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>,<span style="color:#2aa198">0x00</span>}  <span style="color:#586e75">//127
+</span></span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#268bd2">inline</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">spi_init</span>(<span style="color:#dc322f">void</span>) {
+</span></span><span style="display:flex;"><span>    PORTA.DIRSET <span style="color:#719e07">=</span> PIN4_bm <span style="color:#719e07">|</span> PIN6_bm <span style="color:#719e07">|</span> PIN7_bm;
+</span></span><span style="display:flex;"><span>    PORTA.OUTSET <span style="color:#719e07">=</span> PIN7_bm;
+</span></span><span style="display:flex;"><span>    PORTA.OUTCLR <span style="color:#719e07">=</span> PIN6_bm;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    SPI0.CTRLA <span style="color:#719e07">=</span> SPI_ENABLE_bm <span style="color:#719e07">|</span> SPI_MASTER_bm <span style="color:#719e07">|</span> SPI_CLK2X_bm <span style="color:#719e07">|</span> SPI_PRESC_DIV16_gc;
+</span></span><span style="display:flex;"><span>    SPI0.CTRLB <span style="color:#719e07">=</span> SPI_MODE_0_gc;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#268bd2">inline</span> <span style="color:#dc322f">uint8_t</span> <span style="color:#268bd2">spi_tx</span>(<span style="color:#dc322f">uint8_t</span> v) {
+</span></span><span style="display:flex;"><span>    SPI0.DATA <span style="color:#719e07">=</span> v;
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">while</span>(<span style="color:#719e07">!</span>(SPI0.INTFLAGS <span style="color:#719e07">&amp;</span> SPI_IF_bm)) {;}
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> SPI0.DATA;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#268bd2">inline</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">display_cmd</span>(<span style="color:#dc322f">uint8_t</span> c) {
+</span></span><span style="display:flex;"><span>    PORTA.OUTCLR <span style="color:#719e07">=</span> PIN2_bm;
+</span></span><span style="display:flex;"><span>    PORTA.OUTCLR <span style="color:#719e07">=</span> PIN7_bm;
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">spi_tx</span>(c);
+</span></span><span style="display:flex;"><span>    PORTA.OUTSET <span style="color:#719e07">=</span> PIN7_bm;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#268bd2">inline</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">display_data</span>(<span style="color:#dc322f">uint8_t</span> d) {
+</span></span><span style="display:flex;"><span>    PORTA.OUTSET <span style="color:#719e07">=</span> PIN2_bm;
+</span></span><span style="display:flex;"><span>    PORTA.OUTCLR <span style="color:#719e07">=</span> PIN7_bm;
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">spi_tx</span>(d);
+</span></span><span style="display:flex;"><span>    PORTA.OUTSET <span style="color:#719e07">=</span> PIN7_bm;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#268bd2">inline</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">display_set_xy</span>(<span style="color:#dc322f">uint8_t</span> x, <span style="color:#dc322f">uint8_t</span> y) {
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_cmd</span>(<span style="color:#2aa198">0x80</span> <span style="color:#719e07">|</span> (x <span style="color:#719e07">&amp;</span> <span style="color:#2aa198">0x7F</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_cmd</span>(<span style="color:#2aa198">0x40</span> <span style="color:#719e07">|</span> (y <span style="color:#719e07">&amp;</span> <span style="color:#2aa198">0x07</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">display_reset_gpio_init</span>(<span style="color:#dc322f">void</span>) {
+</span></span><span style="display:flex;"><span>    PORTA.DIRSET <span style="color:#719e07">=</span> PIN1_bm <span style="color:#719e07">|</span> PIN2_bm;
+</span></span><span style="display:flex;"><span>    PORTA.OUTSET <span style="color:#719e07">=</span> PIN1_bm;
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">_delay_ms</span>(<span style="color:#2aa198">1</span>);
+</span></span><span style="display:flex;"><span>    PORTA.OUTCLR <span style="color:#719e07">=</span> PIN1_bm; <span style="color:#268bd2">_delay_ms</span>(<span style="color:#2aa198">5</span>);
+</span></span><span style="display:flex;"><span>    PORTA.OUTSET <span style="color:#719e07">=</span> PIN1_bm; <span style="color:#268bd2">_delay_ms</span>(<span style="color:#2aa198">5</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">display_init</span>(<span style="color:#dc322f">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">spi_init</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_reset_gpio_init</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_cmd</span>(<span style="color:#2aa198">0x21</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_cmd</span>(<span style="color:#2aa198">0xB1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_cmd</span>(<span style="color:#2aa198">0x04</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_cmd</span>(<span style="color:#2aa198">0x14</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_cmd</span>(<span style="color:#2aa198">0x20</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_cmd</span>(<span style="color:#2aa198">0x0C</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">display_clear</span>(<span style="color:#dc322f">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_set_xy</span>(<span style="color:#2aa198">0</span>,<span style="color:#2aa198">0</span>);
+</span></span><span style="display:flex;"><span>    PORTA.OUTSET <span style="color:#719e07">=</span> PIN2_bm;
+</span></span><span style="display:flex;"><span>    PORTA.OUTCLR <span style="color:#719e07">=</span> PIN7_bm;
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">for</span>(<span style="color:#dc322f">uint16_t</span> i<span style="color:#719e07">=</span><span style="color:#2aa198">0</span>;i<span style="color:#719e07">&lt;</span><span style="color:#2aa198">504</span>;i<span style="color:#719e07">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">spi_tx</span>(<span style="color:#2aa198">0x00</span>);
+</span></span><span style="display:flex;"><span>    PORTA.OUTSET <span style="color:#719e07">=</span> PIN7_bm;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">display_char</span>(<span style="color:#dc322f">char</span> c) {
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">if</span> (c <span style="color:#719e07">&lt;</span> <span style="color:#2aa198">32</span> <span style="color:#719e07">||</span> (<span style="color:#dc322f">uint8_t</span>)c <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">127</span>)
+</span></span><span style="display:flex;"><span>        c <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;?&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">const</span> <span style="color:#dc322f">uint8_t</span> <span style="color:#719e07">*</span>g <span style="color:#719e07">=</span> font5x7[c <span style="color:#719e07">-</span> <span style="color:#2aa198">32</span>];
+</span></span><span style="display:flex;"><span>    PORTA.OUTSET <span style="color:#719e07">=</span> PIN2_bm;
+</span></span><span style="display:flex;"><span>    PORTA.OUTCLR <span style="color:#719e07">=</span> PIN7_bm;
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">for</span> (<span style="color:#dc322f">uint8_t</span> i<span style="color:#719e07">=</span><span style="color:#2aa198">0</span>;i<span style="color:#719e07">&lt;</span><span style="color:#2aa198">5</span>;i<span style="color:#719e07">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">spi_tx</span>(g[i]);
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">spi_tx</span>(<span style="color:#2aa198">0x00</span>);
+</span></span><span style="display:flex;"><span>    PORTA.OUTSET <span style="color:#719e07">=</span> PIN7_bm;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">static</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">display_print</span>(<span style="color:#719e07">const</span> <span style="color:#dc322f">char</span> <span style="color:#719e07">*</span>s) {
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">while</span>(<span style="color:#719e07">*</span>s)
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">display_char</span>(<span style="color:#719e07">*</span>s<span style="color:#719e07">++</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#dc322f">int</span> <span style="color:#268bd2">main</span>(<span style="color:#dc322f">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_init</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_clear</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_set_xy</span>(<span style="color:#2aa198">0</span>,<span style="color:#2aa198">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">display_print</span>(<span style="color:#2aa198">&#34;PCD8544&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">while</span>(<span style="color:#2aa198">1</span>){}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Para compilarlo deberá ejecutar el siguiente comando:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>avr-gcc -mmcu<span style="color:#719e07">=</span>avr128da28 <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    -DF_CPU<span style="color:#719e07">=</span>24000000UL <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>    -g -Os -std<span style="color:#719e07">=</span>gnu99 -Wall -o main.elf *.c
+</span></span><span style="display:flex;"><span>avr-objcopy -O ihex  main.elf main.hex
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Para subir el programa al microcontrolador, deberá ejecutar el siguiente comando:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2110 -e -F
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Si todo fue bien, podrá disfrutar del display.</p>
+
+  </article></div>
+            <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
+
+            if (!btn || !menu) return;
+
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</html>

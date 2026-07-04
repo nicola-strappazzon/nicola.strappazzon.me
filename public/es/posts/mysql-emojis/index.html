@@ -1,0 +1,353 @@
+<!doctype html>
+<html
+    lang="es"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>MySQL y los emojis | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+        <div class="container center">
+            <header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</header>
+            <div class="content">
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/es/">Inicio</a></li>
+      <li><a href="/es/posts/">Posts</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">MySQL y los emojis</h2>
+      
+      <span class="date"><em>18/05/2020</em></span>
+      
+    </div>
+    <p>Esta es la típica tontería inútil que da problemas, veamos como se implementa y donde puede haber problemas, al grano, vemos todo lo que hace falta para que funcione, y los ejemplos que trataremos están hechos para saber investigar el problema y poder resolverlo:</p>
+<ul>
+<li>Debes utilizar el encoding <code>utf8mb4</code>.</li>
+<li>El encoding debe estar configurado en varios sitios; en las tablas a usar, en la conexión de la aplicación y en las variables de entorno. En este punto es donde suele haber problemas.</li>
+<li>Debes asegurarte de que los datos se guardan y se recuperan bien.</li>
+<li>Realiza pruebas en un entorno seguro y controlado.</li>
+</ul>
+<p>Si ya estas utilizando el encoding <code>utf8</code> no es problema que implementes <code>utf8mb4</code>.</p>
+<p>Vamos a crear primero una tabla como debe ser, luego modificar una tabla existente y luego agregamos varios registros de ejemplo:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">DROP</span> <span style="color:#719e07">TABLE</span> <span style="color:#719e07">IF</span> <span style="color:#719e07">EXISTS</span> foo;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">CREATE</span> <span style="color:#719e07">TABLE</span> <span style="color:#719e07">IF</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">EXISTS</span> <span style="color:#719e07">`</span>foo<span style="color:#719e07">`</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">`</span>id<span style="color:#719e07">`</span> <span style="color:#b58900">bigint</span>(<span style="color:#2aa198">20</span>) UNSIGNED <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> AUTO_INCREMENT,
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">`</span><span style="color:#b58900">text</span><span style="color:#719e07">`</span> <span style="color:#b58900">varchar</span>(<span style="color:#2aa198">2000</span>) <span style="color:#719e07">DEFAULT</span> <span style="color:#719e07">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">PRIMARY</span> <span style="color:#719e07">KEY</span> (<span style="color:#719e07">`</span>id<span style="color:#719e07">`</span>)
+</span></span><span style="display:flex;"><span>) ENGINE<span style="color:#719e07">=</span>InnoDB <span style="color:#719e07">DEFAULT</span> CHARSET<span style="color:#719e07">=</span>utf8mb4;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> foo (<span style="color:#719e07">`</span><span style="color:#b58900">text</span><span style="color:#719e07">`</span>) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#34;test case&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> foo (<span style="color:#719e07">`</span><span style="color:#b58900">text</span><span style="color:#719e07">`</span>) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#34;🚌&#34;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Podemos modificar una tabla existente para que use <code>utf8mb4</code>, en el ejemplo pongo como crear la tabla y luego como modificarla:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">DROP</span> <span style="color:#719e07">TABLE</span> <span style="color:#719e07">IF</span> <span style="color:#719e07">EXISTS</span> foo;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">CREATE</span> <span style="color:#719e07">TABLE</span> <span style="color:#719e07">IF</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">EXISTS</span> <span style="color:#719e07">`</span>foo<span style="color:#719e07">`</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">`</span>id<span style="color:#719e07">`</span> <span style="color:#b58900">bigint</span>(<span style="color:#2aa198">20</span>) UNSIGNED <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> AUTO_INCREMENT,
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">`</span><span style="color:#b58900">text</span><span style="color:#719e07">`</span> <span style="color:#b58900">varchar</span>(<span style="color:#2aa198">2000</span>) <span style="color:#719e07">DEFAULT</span> <span style="color:#719e07">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">PRIMARY</span> <span style="color:#719e07">KEY</span> (<span style="color:#719e07">`</span>id<span style="color:#719e07">`</span>)
+</span></span><span style="display:flex;"><span>) ENGINE<span style="color:#719e07">=</span>InnoDB <span style="color:#719e07">DEFAULT</span> CHARSET<span style="color:#719e07">=</span>utf8;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">ALTER</span> <span style="color:#719e07">TABLE</span> foo <span style="color:#719e07">CONVERT</span> <span style="color:#719e07">TO</span> <span style="color:#b58900">CHARACTER</span> <span style="color:#719e07">SET</span> utf8mb4;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>ADVERTENCIA:</strong> Cuidado con el tamano de la tabla a la hora de modificarla, y el encoding diferente al <code>utf8</code>.</p>
+<p>Ahora insertamos varios registros y vemos que pasa:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> foo (<span style="color:#719e07">`</span><span style="color:#b58900">text</span><span style="color:#719e07">`</span>) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#34;test case&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> foo (<span style="color:#719e07">`</span><span style="color:#b58900">text</span><span style="color:#719e07">`</span>) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#34;🚌&#34;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Posiblemente se te genere la siguiente salida, donde el primer registro se agrego perfectamente pero en el segundo registro tienes <strong>2 warnings</strong>, hay que prestar mucho a esa información que suele ser ignorada.</p>
+<pre tabindex="0"><code>mysql&gt; INSERT INTO foo (`text`) VALUES (&#34;test case&#34;);
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; INSERT INTO foo (`text`) VALUES (&#34;🚌&#34;);
+Query OK, 1 row affected, 2 warnings (0.01 sec)
+
+mysql&gt; SHOW WARNINGS;
++---------+------+-----------------------------------------------------------------------+
+| Level   | Code | Message                                                               |
++---------+------+-----------------------------------------------------------------------+
+| Warning | 1300 | Invalid utf8 character string: &#39;F09F9A&#39;                               |
+| Warning | 1366 | Incorrect string value: &#39;\xF0\x9F\x9A\x8C&#39; for column &#39;text&#39; at row 1 |
++---------+------+-----------------------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM foo;
++----+-----------+
+| id | text      |
++----+-----------+
+|  1 | test case |
+|  2 | ????      |
++----+-----------+
+2 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre><p>Como puedes ver, usando el comando <code>SHOW WARNINGS</code> te lista los mensajes, aquí podemos observar no hay compatibilidad con el emoji y sobre escribe el valor de dicho emoji para hacerlo compatible al <code>CHARACTER_SET</code> actual, también puedes observar que hiciste <code>SELECT</code> del contenido de la tabla y no está el emoji sino una serie de símbolos,</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> id, <span style="color:#719e07">`</span><span style="color:#b58900">text</span><span style="color:#719e07">`</span>, HEX(<span style="color:#719e07">`</span><span style="color:#b58900">text</span><span style="color:#719e07">`</span>) <span style="color:#719e07">FROM</span> foo <span style="color:#719e07">WHERE</span> id <span style="color:#719e07">=</span> <span style="color:#2aa198">2</span>;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> HEX(<span style="color:#2aa198">&#34;🚌&#34;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Es cierto que se creo antes la tabla con el soporte a <code>utf8mb4</code> y aún así esta dando problemas, debemos revisar las variables del servidor relacionadas a este tipo de configuración, posiblemente nos falta algo, hagamos la siguiente consulta para averiguarlo:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">@@</span>collation_connection,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">@@</span>collation_database,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">@@</span>collation_server,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">@@</span>character_set_client,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">@@</span>character_set_connection,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">@@</span>character_set_database,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">@@</span>character_set_filesystem,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">@@</span>character_set_results,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">@@</span>character_set_server,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">@@</span>character_set_system,
+</span></span><span style="display:flex;"><span>       <span style="color:#719e07">@@</span>init_connect\<span style="color:#719e07">G</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Por ejemplo no usamos la sentencia <code>SHOW VARIABLES LIKE 'character%';</code> y su variante porque debes ejecutarla por cada tipo de variables [collation|character] o una variable en específico, es cosa tuya. De la query anterior posiblemente obtengamos el siguiente resultado:</p>
+<pre tabindex="0"><code>*************************** 1. row ***************************
+    @@collation_connection: utf8_general_ci
+      @@collation_database: latin1_swedish_ci
+        @@collation_server: latin1_swedish_ci
+    @@character_set_client: utf8
+@@character_set_connection: utf8
+  @@character_set_database: latin1
+@@character_set_filesystem: binary
+   @@character_set_results: utf8
+    @@character_set_server: latin1
+    @@character_set_system: utf8
+            @@init_connect:
+1 row in set (0.00 sec)
+</code></pre><p>Ya podemos ver que tenemos un desorden en las variables, toda una ensalada de opciones, deberíamos unificar el mayor número de opciones. Como hemos dicho, necesitamos tener definida la opción <code>utf8mb4</code></p>
+<p>Tampoco está demás verificar el collation de la tabla:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SELECT</span> table_collation <span style="color:#719e07">FROM</span> information_schema.tables <span style="color:#719e07">WHERE</span> table_schema <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;demo&#39;</span> <span style="color:#719e07">AND</span> <span style="color:#719e07">table_name</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;foo&#39;</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Como la creamos nosotros desde el principio, y no te olvidaste de hacer el ALTER, seguramente todo está bien, ahora cambiamos la configuración en la sesión actual de la conexión y actualizamos el registro problemático y verificamos que todo está bien:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#719e07">SET</span> character_set_client <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;utf8mb4&#39;</span>; <span style="color:#719e07">SET</span> character_set_connection <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;utf8mb4&#39;</span>; <span style="color:#719e07">SET</span> character_set_results <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;utf8mb4&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">UPDATE</span> demo.foo <span style="color:#719e07">SET</span> <span style="color:#719e07">`</span><span style="color:#b58900">text</span><span style="color:#719e07">`</span> <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;🚌&#34;</span> <span style="color:#719e07">WHERE</span> id <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Es muy importante que en la conexión de nuestro código que usa la base de datos y dicha tabla se le especifique el <code>CHARACTER_SET</code> para evitar algún problema, este es un ejemplo en python, consulta tu lenguaje y/o framework.</p>
+<p>Fin.</p>
+
+  </article></div>
+            <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
+
+            if (!btn || !menu) return;
+
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</html>
