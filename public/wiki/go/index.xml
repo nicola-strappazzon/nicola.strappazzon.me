@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Go on Nicola Strappazzon</title>
+		<link>http://localhost:1313/wiki/go/</link>
+		<description>Recent content in Go on Nicola Strappazzon</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="http://localhost:1313/wiki/go/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Módulo</title>
+				<link>http://localhost:1313/wiki/go/module/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/wiki/go/module/</guid>
+				<description>&lt;p&gt;Al leer esta página, deberías poder entender:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Los términos básicos que definen un proyecto.&lt;/li&gt;&#xA;&lt;li&gt;Cómo crear un proyecto.&lt;/li&gt;&#xA;&lt;li&gt;La estructura básica del modulo y del programa.&lt;/li&gt;&#xA;&lt;li&gt;Cómo compilar y ejecutar tu primer programa.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;El &lt;strong&gt;módulo&lt;/strong&gt; es la unidad principal de versionado (proyecto) y distribución en Go. Dentro de un módulo hay uno o más paquetes. Tu código importa paquetes, que pueden estar en tu mismo módulo o en otros módulos (propios o de terceros).&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Importar</title>
+				<link>http://localhost:1313/wiki/go/import/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/wiki/go/import/</guid>
+				<description>&lt;p&gt;Al leer esta página, deberías poder entender:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cómo definir el nombre de un paquete.&lt;/li&gt;&#xA;&lt;li&gt;Cómo importar &lt;a href=&#34;https://pkg.go.dev/std&#34;&gt;paquetes standard&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;El uso de la función &lt;code&gt;init()&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Vamos a incrementar levemente la lógica del programa. Lo primero que se define es el &lt;code&gt;package ...&lt;/code&gt; al inicio del archivo, luego se importan &lt;code&gt;import ...&lt;/code&gt; los módulos, el nombre del módulo debe coincidir con el de package y el directorio que lo contiene, luego las constantes &lt;code&gt;const ...&lt;/code&gt;, variables &lt;code&gt;var ...&lt;/code&gt;, tipos &lt;code&gt;type ...&lt;/code&gt; en cualquiera de sus variantes, por último las funciones y métodos &lt;code&gt;func ...&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Paquetes</title>
+				<link>http://localhost:1313/wiki/go/packages/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/wiki/go/packages/</guid>
+				<description>&lt;p&gt;Al leer esta página, deberías poder entender:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cómo definir un paquete y su estructura.&lt;/li&gt;&#xA;&lt;li&gt;Cómo importar paquetes del módulo.&lt;/li&gt;&#xA;&lt;li&gt;Cómo importar paquetes de terceros.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Repasemos dos conceptos que pueden malinterpretarse:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Módulo:&lt;/strong&gt; Unidad de proyecto, versionado y dependencias.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Paquete:&lt;/strong&gt; Unidad de código que se importa y se usa.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Anteriormente, vimos como &lt;a href=&#34;https://nicola.strappazzon.me/wiki/go/import/&#34;&gt;importar paquetes estándar&lt;/a&gt;, ahora vamos a ver como crear un paquete dentro de nuestro módulo para organizar mejor el código y cómo usar paquetes de terceros que están en otro repositorio.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,350 @@
+<!doctype html>
+<html
+    lang="en"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>LED Blink | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+        <div class="container center">
+            <header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</header>
+            <div class="content">
+  <article>
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/electronic/">Electrónica</a></li>
+      <li><a href="/electronic/integrated-circuit/">Circuito integrado</a></li>
+      <li><a href="/electronic/integrated-circuit/avr-dx/">AVR Dx</a></li>
+    </ul>
+    <div class="content-header">
+      <h2 class="title">LED Blink</h2>
+      
+    </div>
+    <p>Considero que es un clásico hacer el efecto Blink, equivale al “Hola Mundo” en los microcontroladores, se puede hacer de varias formas, te mostraré cada una, algunas son fáciles y otras más complejas, pero todas llegan a lo mismo. Este es el esquema del circuito que será necesario:</p>
+<p><img src="minimal.png" alt=""></p>
+<h2 id="primera-forma">Primera forma:</h2>
+<p>El siguiente código es para un blink indicando el encendido y el apagado del pin.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#719e07">#include</span> <span style="color:#719e07">&lt;avr/io.h&gt;</span><span style="color:#719e07">
+</span></span></span><span style="display:flex;"><span><span style="color:#719e07">#include</span> <span style="color:#719e07">&lt;util/delay.h&gt;</span><span style="color:#719e07">
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#dc322f">int</span> <span style="color:#268bd2">main</span>(<span style="color:#dc322f">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75">// Configure internal clock:
+</span></span></span><span style="display:flex;"><span>    CCP <span style="color:#719e07">=</span> CCP_IOREG_gc;                         <span style="color:#586e75">// Disable Configuration Change Protected register.
+</span></span></span><span style="display:flex;"><span>    CLKCTRL.OSCHFCTRLA <span style="color:#719e07">=</span> CLKCTRL_FRQSEL_24M_gc; <span style="color:#586e75">// Configure to 24Mhz.
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75">// Configure LED on PA6:
+</span></span></span><span style="display:flex;"><span>    PORTA.DIRSET <span style="color:#719e07">=</span> PIN6_bm;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">while</span> (<span style="color:#2aa198">1</span>) {
+</span></span><span style="display:flex;"><span>        PORTA.OUTSET <span style="color:#719e07">=</span> PIN6_bm;
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">_delay_ms</span>(<span style="color:#2aa198">1000</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        PORTA.OUTCLR <span style="color:#719e07">=</span> PIN6_bm;
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">_delay_ms</span>(<span style="color:#2aa198">1000</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="segunda-forma">Segunda forma:</h2>
+<p>Podemos mejorar el código haciendo uso de un registro especial llamado <code>OUTTGL</code> que hace de toggle:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#719e07">#include</span> <span style="color:#719e07">&lt;avr/io.h&gt;</span><span style="color:#719e07">
+</span></span></span><span style="display:flex;"><span><span style="color:#719e07">#include</span> <span style="color:#719e07">&lt;util/delay.h&gt;</span><span style="color:#719e07">
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#dc322f">int</span> <span style="color:#268bd2">main</span>(<span style="color:#dc322f">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75">// Configure internal clock:
+</span></span></span><span style="display:flex;"><span>    CCP <span style="color:#719e07">=</span> CCP_IOREG_gc;                         <span style="color:#586e75">// Disable Configuration Change Protected register.
+</span></span></span><span style="display:flex;"><span>    CLKCTRL.OSCHFCTRLA <span style="color:#719e07">=</span> CLKCTRL_FRQSEL_24M_gc; <span style="color:#586e75">// Configure to 24Mhz.
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75">// Configure LED on PA6:
+</span></span></span><span style="display:flex;"><span>    PORTA.DIRSET <span style="color:#719e07">=</span> PIN6_bm;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">while</span> (<span style="color:#2aa198">1</span>) {
+</span></span><span style="display:flex;"><span>        PORTA.OUTTGL <span style="color:#719e07">=</span> PIN6_bm;
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">_delay_ms</span>(<span style="color:#2aa198">1000</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="tercera-forma">Tercera forma:</h2>
+<p>Usaremos el <code>timer/counter A (TCA)</code> para lograr el mismo efecto, esta funcionalidad <strong>NO</strong> tiene acceso al pin <code>PA6</code>, pero sí al pin <code>PA0</code>. No se usa la estructura <code>while</code>, ni tampoco la función <code>_delay_ms</code>. Los tiempos se calculan, ya lo verás.</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#719e07">#include</span> <span style="color:#719e07">&lt;avr/io.h&gt;</span><span style="color:#719e07">
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#dc322f">int</span> <span style="color:#268bd2">main</span>(<span style="color:#dc322f">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75">// Configure internal clock:
+</span></span></span><span style="display:flex;"><span>    CCP <span style="color:#719e07">=</span> CCP_IOREG_gc;                         <span style="color:#586e75">// Disable Configuration Change Protected register.
+</span></span></span><span style="display:flex;"><span>    CLKCTRL.OSCHFCTRLA <span style="color:#719e07">=</span> CLKCTRL_FRQSEL_24M_gc; <span style="color:#586e75">// Configure to 24Mhz.
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75">// Configure LED on PA0:
+</span></span></span><span style="display:flex;"><span>    PORTA.DIRSET <span style="color:#719e07">=</span> PIN0_bm;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75">// Configure timer/counter A:
+</span></span></span><span style="display:flex;"><span>    TCA0.SINGLE.CTRLB <span style="color:#719e07">=</span> TCA_SINGLE_WGMODE_FRQ_gc <span style="color:#719e07">|</span> TCA_SINGLE_CMP0EN_bm;
+</span></span><span style="display:flex;"><span>    TCA0.SINGLE.CTRLA <span style="color:#719e07">=</span> TCA_SINGLE_CLKSEL_DIV1024_gc <span style="color:#719e07">|</span> TCA_SINGLE_ENABLE_bm;
+</span></span><span style="display:flex;"><span>    TCA0.SINGLE.CMP0 <span style="color:#719e07">=</span> <span style="color:#2aa198">23436</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">while</span> (<span style="color:#2aa198">1</span>) {}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Si buscamos encender durante un segundo y apagar durante otro segundo, esto quiere decir que es una frecuencia de 0.5Hz, por lo que el período es de 2 segundos, cada 1/2 ciclo ó semiperíodo equivale a un segundo. Cómo ambos semiperíodo duran el mismo tiempo se dice que tiene duty del 50%.</p>
+<div>$$ freq=\frac{1}{t}=\frac{1}{2}=0.5Hz $$</div>
+<p>Si observas el código, verás un parámetro llamado <code>TCA_SINGLE_CLKSEL_DIV1024_gc</code> que define un preescalado de <code>1024</code>. Y tu reloj interno está configurado a 24MHz (24.000.000 Hz). Con los valores identificados y con la siguiente fórmula podrás calcular el valor del comparador <code>TCA0.SINGLE.CMP0</code> para definir el tiempo de espera que permite generar la frecuencia deseada.</p>
+<p>Cómo estamos usando el <code>timer/counter A</code> de varios que tiene el microcontrolador, este tiene una resolución de 16-bit, quiere decir que el contador va desde el <code>0</code> hasta <code>65535 (2<sup>16</sup> − 1)</code>. Cada vez que se cuenta, hay un comparador <code>CMP0</code> que verifica si el valor es igual al definido <code>23436</code> y al cumplir la condición el contador vuelve a cero (0).</p>
+<p>Ahora que tenemos todo el contexto, necesitamos que el contador se reinicie cada medio ciclo (semiperíodo):</p>
+<div>$$ CMP0=\frac{f_{CPU}}{2 \cdot prescaler \cdot freq} - 1=\frac{24000000}{2 \cdot 1024 \cdot 0.5Hz}≈23436 $$</div>
+<p>Para comprobar los cálculos:</p>
+<div>$$ f_{out}=\frac{f_{CPU}}{2 \cdot prescaler \cdot (CMP0&#43;1)}=\frac{24000000}{2 \cdot 1024 \cdot (23436&#43;1)}≈0.5_{Hz} $$</div>
+<h2 id="compilar-y-subirlo">Compilar y subirlo</h2>
+<p>Para compilarlo deberá ejecutar el siguiente comando:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>avr-gcc -mmcu<span style="color:#719e07">=</span>avr128da28 <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>	-DF_CPU<span style="color:#719e07">=</span>24000000UL <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>	-g -Os -std<span style="color:#719e07">=</span>gnu99 -Wall -o main.elf *.c
+</span></span><span style="display:flex;"><span>avr-objcopy -O ihex  main.elf main.hex
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Para subir el programa al microcontrolador, deberá ejecutar el siguiente comando:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>avrdude -c serialupdi -p avr128da28 -P /dev/tty.usbserial-2110 -e -F
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Si todo fue bien, podrá disfrutar del led parpadeando.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Si al usar <code>avrdude</code> para compilar aparece el siguiente mensaje de error:</p>
+<pre tabindex="0"><code>avr-gcc: fatal error: cannot read spec file &#39;device-specs/specs-avr128da28&#39;: No such file or directory
+</code></pre><p>Posiblemente, no tengas instalada la versión más resiente que incorpora las librerías de la familia AVR Dx.</p>
+
+  </article></div>
+            <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
+
+            if (!btn || !menu) return;
+
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</html>
