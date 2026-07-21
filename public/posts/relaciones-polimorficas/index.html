@@ -130,7 +130,7 @@
     <p>La verdad no se como empezar este post, ya que el tema es muy delicado en el mundo de RubyOnRails y algo en Java, no quiero ofender a la comunidad, sino ayudarlos hacer un buen modelo de datos dentro de un Manejador de Bases de Datos Relacionales (<a href="http://en.wikipedia.org/wiki/Relational_database_management_system">RDBMS</a>). Considero que primero debemos enterarnos que son las relaciones polimórficas, luego hablar de los problemas que conlleva y por último como podemos evitarlos.</p>
 <h2 id="qué-son-las-relaciones-polimórficas">¿Qué son las relaciones polimórficas?</h2>
 <p>Es una forma de relacionar muchas tablas con una sola mediante una única relación, esto se debe que programamos orientado a objetos y tratamos la base de datos de la misma forma, creando relaciones entre objetos, es una implementación de la librería (gema) ActiveRecord que compone el framework RubyOnRails. Depende del enfoque, esto nos puede traer un ahorro en el uso de tablas como mayor complicación del código.</p>
-<p>![DBA]({{ &ldquo;/assets/PolymorphismRelationship01.png&rdquo; | absolute_url }})</p>
+<p><img src="PolymorphismRelationship01.png" alt="DBA"></p>
 <p>Como vemos en el modelo anterior, explica un caso hipotético de que una imagen puede estar relacionada con uno o varios productos y/o empleados.</p>
 <h2 id="el-problema">El problema</h2>
 <p>La razón es muy simple, hasta el día de hoy <strong>NO hay un Manejador de Bases de Datos Relacionales que tenga un una restricción de integridad referencial para las relaciones polimórficas</strong>, y en el álgebra relacional no existe forma de representarlo. El día que uses MySQL u otro para tus cosas y tenga implementado esta funcionalidad y sea un software seguro, no habrá ningún problema.</p>

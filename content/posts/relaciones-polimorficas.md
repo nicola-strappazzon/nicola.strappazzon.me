@@ -11,7 +11,7 @@ La verdad no se como empezar este post, ya que el tema es muy delicado en el mun
 
 Es una forma de relacionar muchas tablas con una sola mediante una única relación, esto se debe que programamos orientado a objetos y tratamos la base de datos de la misma forma, creando relaciones entre objetos, es una implementación de la librería (gema) ActiveRecord que compone el framework RubyOnRails. Depende del enfoque, esto nos puede traer un ahorro en el uso de tablas como mayor complicación del código.
 
-![DBA]({{ "/assets/PolymorphismRelationship01.png" | absolute_url }})
+![DBA](PolymorphismRelationship01.png)
 
 Como vemos en el modelo anterior, explica un caso hipotético de que una imagen puede estar relacionada con uno o varios productos y/o empleados.
 
