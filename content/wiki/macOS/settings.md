@@ -35,3 +35,13 @@ csrutil disable
 ```bash
 spctl --master-disable
 ```
+
+## Disable Microsoft AutoUpdater
+
+```bash
+# disable the service
+launchctl disable gui/$(id -u)/com.microsoft.update.agent
+
+# check that the service is disabled
+launchctl print-disabled gui/$(id -u) | grep microsoft
+```
