@@ -18,6 +18,12 @@ sudo bash -c 'echo /opt/homebrew/bin/bash >> /etc/shells' && sudo -k
 chsh -s /opt/homebrew/bin/bash
 ```
 
+## Flush DNS cache
+
+```bash
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+```
+
 ## Disk Not Ejected
 
 ```bash
