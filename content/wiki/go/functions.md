@@ -1,6 +1,6 @@
 +++
 draft = true
-title = 'Functions'
+title = 'Funciones'
 weight = 0
 +++
 
@@ -85,7 +85,15 @@ func Divide(a, b float64) (float64, error) {
 }
 ```
 
+### Retornar valor por el parámetro
+
+...
+
 ### Parámetro cómo funcion
+
+...
+
+### Parámetros...
 
 ...
 
