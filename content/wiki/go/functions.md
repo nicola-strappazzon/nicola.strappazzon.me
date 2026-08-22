@@ -149,7 +149,7 @@ Por convención se suele usar la letra `T`, especialmente cuando solo hay un tip
 
 Existen restricciones predefinidas:
 
-- `any`: acepta cualquier tipo
+- `any`: acepta cualquier tipo:
 
   ```go
   func Print[T any](valor T) {
@@ -157,7 +157,7 @@ Existen restricciones predefinidas:
   }
   ```
 
-- `comparable`: acepta tipos comparables con == y !=
+- `comparable`: acepta tipos comparables con == y !=:
 
   ```go
   func Equal[T comparable](a, b T) bool {
@@ -165,7 +165,7 @@ Existen restricciones predefinidas:
   }
   ```
 
-- `cmp.Ordered`: acepta tipos ordenables con <, <=, >, >=
+- `cmp.Ordered`: acepta tipos ordenables con <, <=, >, >=:
 
   ```go
   import "cmp"
