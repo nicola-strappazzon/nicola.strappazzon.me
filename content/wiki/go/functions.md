@@ -1,7 +1,7 @@
 +++
-draft = true
+draft = false
 title = 'Funciones'
-weight = 0
+weight = 7
 +++
 
 Al leer esta página, deberías poder entender:
@@ -9,7 +9,6 @@ Al leer esta página, deberías poder entender:
 - Cómo crear funciones y métodos.
 - Entender la diferencia de ambas.
 - Cómo evitar código duplicado.
-- Cómo definir la visibilidad.
 
 ---
 
@@ -178,13 +177,3 @@ Existen restricciones predefinidas:
 		return b
   }
   ```
-
-## Visibilidad
-
-La visibilidad depende de la primera letra del nombre.
-
-- Si empieza con minúscula, así que solo es visible dentro del mismo paquete.
-- Si empieza con mayúscula, así que es exportada: se puede usar desde otros paquetes.
-- Dentro del mismo paquete, puedes usar tanto nombres con minúscula como con mayúscula.
-
-Esto aplica a casi todo lo nombrado en el lenguaje: funciones, tipos, structs, interfaces, métodos, variables, constantes y campos de structs.

@@ -71,6 +71,8 @@
   </url><url>
     <loc>http://localhost:1313/wiki/openpgp/restore/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/go/visibilidad/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/terminal/config/</loc>
@@ -89,6 +91,10 @@
     <loc>http://localhost:1313/wiki/openpgp/git/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/fade/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/go/structs/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/go/functions/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/candle/</loc>
   </url><url>
