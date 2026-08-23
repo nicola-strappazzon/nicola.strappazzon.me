@@ -1,0 +1,36 @@
+version: "3"
+
+tasks:
+  default:
+    desc: Show help
+    cmds:
+      - task --list
+
+  build:
+    desc: "Create pdf, svg, and png file from LaTex file. Usage: task build FILE=formula01"
+    requires:
+      vars: [FILE]
+    cmds:
+      - pdflatex -halt-on-error {{.FILE}}.tex
+      - pdf2svg {{.FILE}}.pdf {{.FILE}}.svg
+      - magick convert -density 100 {{.FILE}}.pdf -quality 100 {{.FILE}}.png
+
+  save:
+    desc: Save changes into repository automatically
+    vars:
+      DATE:
+        sh: date +%s
+    cmds:
+      - git add .
+      - 'git commit -m "Save changes at: {{.DATE}}"'
+      - git push
+
+  run:
+    desc: Run hugo server in local
+    cmds:
+      - hugo server --disableFastRender --noHTTPCache --ignoreCache --cleanDestinationDir
+
+  clean:
+    desc: Remove build files
+    cmds:
+      - rm -f *.aux *.log *.dvi
