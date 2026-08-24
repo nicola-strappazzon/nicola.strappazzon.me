@@ -122,6 +122,35 @@
       <h2 class="title">SSH</h2>
       
     </div>
+    
+    <nav class="table-of-contents" aria-label="Índice">
+      <strong>Índice</strong>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#crear-par-de-claves">Crear par de claves</a></li>
+    <li><a href="#establecer-una-conexión">Establecer una conexión</a></li>
+    <li><a href="#copiar-ficheros">Copiar ficheros</a>
+      <ul>
+        <li><a href="#subir">Subir</a></li>
+        <li><a href="#descargar">Descargar</a></li>
+      </ul>
+    </li>
+    <li><a href="#configurar-una-conexión">Configurar una conexión</a></li>
+    <li><a href="#administrar-conexiones">Administrar conexiones</a></li>
+    <li><a href="#port-forward">Port Forward</a></li>
+    <li><a href="#variables-de-entorno">Variables de entorno</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#remover-la-clave-pública-de-un-host">Remover la clave pública de un host</a></li>
+        <li><a href="#claves-de-tipo-pem">Claves de tipo PEM</a></li>
+        <li><a href="#logs">Logs</a></li>
+      </ul>
+    </li>
+    <li><a href="#herramientas-alternativas">Herramientas alternativas</a></li>
+  </ul>
+</nav>
+    </nav>
+    
   
   <p>Él <a href="https://es.wikipedia.org/wiki/Secure_Shell">SSH</a> significa Secure Shell, en mi opinión es un servicio, un protocolo cifrado de comunicación y un conjunto de herramientas de el más usado para trabajar en remoto (servidor), básicamente si en local (cliente) usamos una Terminal para hacer de todo, pues con el SSH podemos hacer lo mismo, pero estando en remoto, no hay límites, puedes ejecutar comandos, bajar y subir ficheros, redirigir tráfico de red a través de este protocolo, conectarte a múltiples servidores en cascada, compartir variables de entorno entre el cliente y el servidor y mucho más.</p>
 <p>La única desventaja relevante que tiene el SSH es cuando se pierde la conexión entre el cliente y el servidor, lamentablemente se pierde por completo la sesión que se estaba ejecutando en el servidor y no la podemos recuperar, incluso comandos que habíamos dejado ejecutando (no en background como los servicios) se cierran, pero para eso usamos una herramienta llamada tmux que compensa, ahora la solución es perfecta.</p>

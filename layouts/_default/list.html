@@ -13,6 +13,12 @@
       <span class="date"><em>{{ .Date.Format "02/01/2006" }}</em></span>
       {{ end }}
     </div>
+    {{ if .Fragments.Headings }}
+    <nav class="table-of-contents" aria-label="Índice">
+      <strong>Índice</strong>
+      {{ .TableOfContents }}
+    </nav>
+    {{ end }}
   {{ end }}
   {{ .Content }}
   {{ if not .IsHome }}
