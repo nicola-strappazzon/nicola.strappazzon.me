@@ -2,9 +2,11 @@
 title = 'Diodo emisor de luz (LED)'
 +++
 
+Los diodos LED es la forma más habitual de indicar estados en los circuitos electrónicos. Hoy en día se encuentra en cualquier circuito y es parte indispensable de nuestras vidas por su bajo consumo. Para que funcione un LED necesitamos que una corriente lo atraviese, la intensidad de esta corriente debe ser cuidadosamente calculada, dado que si excedemos los límites especificados en el datasheet, este se destruirá.
+
 {{< svg name="draw01" >}}
 
-Los diodos LED es la forma más habitual de indicar estados en los circuitos electrónicos. Para que funcione un LED necesitamos que una corriente lo atraviese, la intensidad de esta corriente debe ser cuidadosamente calculada, dado que si excedemos los límites especificados en el datasheet, este se destruirá. La siguiente lista nos da una idea de la tensión aproximada que se necesita:
+La siguiente lista nos da una idea de la tensión aproximada que se necesita:
 
 | Color    | Forward Voltage F{{<sub f>}} |
 |----------|------------------------------|
