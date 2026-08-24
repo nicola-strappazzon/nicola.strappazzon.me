@@ -12,6 +12,8 @@ Al leer esta página, deberías poder entender:
 
 ---
 
+## Definición
+
 Un **struct** es un tipo de dato que agrupa varios campos bajo un mismo nombre. Sirve para representar "cosas" con propiedades.
 
 ```go

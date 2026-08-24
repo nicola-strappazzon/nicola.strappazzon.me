@@ -12,6 +12,8 @@ Al leer esta página, deberías poder entender:
 
 ---
 
+## Definición
+
 Las **funciones** no pertenece a ningún tipo. La definición de una función es casi la misma para un método, ambos tienen nombre, parámetros, argumentos al llamarse y valores de retorno. Entender esta primera parte es esencial.
 
 ```go
