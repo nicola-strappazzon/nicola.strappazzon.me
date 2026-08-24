@@ -60,7 +60,7 @@
 				<link>http://localhost:1313/posts/restaurar-rapido-dump-mysql/</link>
 				<pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/posts/restaurar-rapido-dump-mysql/</guid>
-				<description>&lt;p&gt;Hay situaciones que necesitan restaurar una Base de Datos de MySQL &lt;strong&gt;rápido&lt;/strong&gt;, comento una serie de trucos que puede ayudar en ahorrarnos casi un 40% del tiempo. Lo divido en varios pasos.&lt;/p&gt;&#xA;&lt;h3 id=&#34;configurar-el-servidor-local-de-mysql&#34;&gt;Configurar el servidor local de MySQL:&lt;/h3&gt;&#xA;&lt;p&gt;Lo que hacemos aquí para no entrar con muchos detalles, es ampliar el uso de memoria para cargar los datos más rápido, como desactivar algunas funciones de consistencia a nivel de disco, y más.&lt;/p&gt;</description>
+				<description>&lt;p&gt;Hay situaciones que necesitan restaurar una Base de Datos de MySQL &lt;strong&gt;rápido&lt;/strong&gt;, comento una serie de trucos que puede ayudar en ahorrarnos casi un 40% del tiempo. Lo divido en varios pasos.&lt;/p&gt;&#xA;&lt;h3 id=&#34;configurar-el-servidor-local-de-mysql&#34;&gt;Configurar el servidor local de MySQL&lt;/h3&gt;&#xA;&lt;p&gt;Lo que hacemos aquí para no entrar con muchos detalles, es ampliar el uso de memoria para cargar los datos más rápido, como desactivar algunas funciones de consistencia a nivel de disco, y más.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>El teorema CAP</title>

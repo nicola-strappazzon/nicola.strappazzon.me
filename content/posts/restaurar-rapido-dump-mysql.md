@@ -7,7 +7,7 @@ tags = ["mysql"]
 
 Hay situaciones que necesitan restaurar una Base de Datos de MySQL **rápido**, comento una serie de trucos que puede ayudar en ahorrarnos casi un 40% del tiempo. Lo divido en varios pasos.
 
-### Configurar el servidor local de MySQL:
+### Configurar el servidor local de MySQL
 
 Lo que hacemos aquí para no entrar con muchos detalles, es ampliar el uso de memoria para cargar los datos más rápido, como desactivar algunas funciones de consistencia a nivel de disco, y más.
 

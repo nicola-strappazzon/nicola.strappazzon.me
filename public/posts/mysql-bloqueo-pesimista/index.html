@@ -127,6 +127,17 @@
       <span class="date"><em>08/07/2018</em></span>
       
     </div>
+    
+    <nav class="table-of-contents" aria-label="Índice">
+      <strong>Índice</strong>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cuando-podemos-usar-el-bloqueo-de-registros">Cuando podemos usar el bloqueo de registros</a></li>
+    <li><a href="#ejemplo-práctico">Ejemplo práctico</a></li>
+  </ul>
+</nav>
+    </nav>
+    
     <p>El bloqueo pesimista es algo que <strong>NO DEBEMOS USAR</strong>, incluso su nombre lo deja muy claro, pero debemos <strong>saber ¿porque?</strong>, y la verdad es que es bastante interesante, hay que tener en cuenta varios detalles; el engine de la tabla debe ser InnoDB, toda <strong>modificación</strong> del registro se debe hacer dentro de una declaración de transacción (BEGIN / COMMIT), usar el nivel de aislamiento adecuado, y por último, recordar que cada transacción tiene un timeout, si abusamos del tiempo de espera se aborta la transacción.</p>
 <p>En este post vamos a ver paso por paso como funciona usando dos sesiones que tratan de modificar el mismo registro, utilizaremos varios comandos muy interesantes y también veremos que el tiempo de espera puede afectar.</p>
 <p>Primero me gustaría aclarar que el nivel de aislamiento si importa, es recomendable usar REPEATABLE-READ, pero también funciona usando READ-COMMITTED. Al usar otros modos de aislamiento, podría haber alguna diferencia en el comportamiento, pero el principio es el mismo.</p>

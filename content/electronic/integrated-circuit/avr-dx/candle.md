@@ -13,7 +13,7 @@ Este tipo de código lo conseguirás comúnmente para los ATtiny / tinyAVR.
 
 Para ir entendiendo vamos a ir desde lo más simple hasta lograr un efecto más real.
 
-## Ejemplo simple:
+## Ejemplo simple
 
 En este primer caso encendemos y apagamos el LED usando el algoritmo [LFSR de Galois 8 bits](https://en.wikipedia.org/wiki/Linear-feedback_shift_register) (Linear Feedback Shift Register) para generar secuencias pseudoaleatorias muy rápidas y muy baratas en hardware. Utiliza el desplazamiento de bits a la izquierda `>>` (right shift) y la realimentación lineal `^` (XOR).
 
@@ -46,7 +46,7 @@ int main(void){
 }
 ```
 
-## Ejemplo complejo:
+## Ejemplo complejo
 
 Para este caso mantenemos el uso del algoritmo LFSR, pero añadimos una condición más, no puede apagarse el LED, este debe hacer cómo un efecto fade + LFSR. Entonces para lograrlo debemos hacer uso del PWM.
 

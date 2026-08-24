@@ -34,7 +34,7 @@ log_error_verbosity = 3
 
 Considere que este nivel de verbosity es para uso temporal con el fin de detectar problemas recurrentes.
 
-## Causas:
+## Causas
 
 MySQL tiene un mecanismo de protección para las conexiones que se malforman del lado del cliente, o problemas de red. Al detectarlas se bloquea la IP, para tener más detalles debe hacer uso de la variable `log_error_verbosity` y verificar el `error_log`.
 
@@ -54,7 +54,7 @@ SELECT * FROM performance_schema.error_log;
 
 Es normal que pase una vez al año con uso medio.
 
-## Solución inmediata:
+## Solución inmediata
 
 La solución que se describe a continuación es de tipo reactiva, ideal para una situación de intervención ante una incidencia.
 
@@ -76,7 +76,7 @@ También puedes usar el comando `mysqladmin` de la siguiente forma:
 mysqladmin -h <HOST> -P <PORT> -u <USER> -p flush-hosts
 ```
 
-## Solución preventiva:
+## Solución preventiva
 
 La siguiente forma es automatizar el proceso indicado en la solución anterior, de esta forma es más de uso preventivo y aprovecha las características propias de MySQL.
 

@@ -36,7 +36,7 @@ Esta imagen te permite ilustrarte más fácilmente:
 
 {{< svg name="draw01" >}}
 
-### Atajos:
+### Atajos
 
 - `Ctrl + c`: Cancela la ejecución de un proceso.
 - `Ctrl + l`: Limpia la pantalla de la terminal, igual al escribir el comando clear.
@@ -53,7 +53,7 @@ Esta imagen te permite ilustrarte más fácilmente:
 
 Hay más atajos que vamos a tratar con mayor profundidad más adelante.
 
-## Comandos:
+## Comandos
 
 Luego existen una serie de comandos, más bien son unos símbolos que extienden su funcionalidad evitando más trabajo re-escribiendo, veamos cada caso:
 

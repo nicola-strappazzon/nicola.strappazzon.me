@@ -127,9 +127,23 @@
       <h2 class="title">LED Blink</h2>
       
     </div>
+    
+    <nav class="table-of-contents" aria-label="Índice">
+      <strong>Índice</strong>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#primera-forma">Primera forma</a></li>
+    <li><a href="#segunda-forma">Segunda forma</a></li>
+    <li><a href="#tercera-forma">Tercera forma</a></li>
+    <li><a href="#compilar-y-subirlo">Compilar y subirlo</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+  </ul>
+</nav>
+    </nav>
+    
     <p>Considero que es un clásico hacer el efecto Blink, equivale al “Hola Mundo” en los microcontroladores, se puede hacer de varias formas, te mostraré cada una, algunas son fáciles y otras más complejas, pero todas llegan a lo mismo. Este es el esquema del circuito que será necesario:</p>
 <p><img src="minimal.png" alt=""></p>
-<h2 id="primera-forma">Primera forma:</h2>
+<h2 id="primera-forma">Primera forma</h2>
 <p>El siguiente código es para un blink indicando el encendido y el apagado del pin.</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -175,7 +189,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="segunda-forma">Segunda forma:</h2>
+</div><h2 id="segunda-forma">Segunda forma</h2>
 <p>Podemos mejorar el código haciendo uso de un registro especial llamado <code>OUTTGL</code> que hace de toggle:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -215,7 +229,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="tercera-forma">Tercera forma:</h2>
+</div><h2 id="tercera-forma">Tercera forma</h2>
 <p>Usaremos el <code>timer/counter A (TCA)</code> para lograr el mismo efecto, esta funcionalidad <strong>NO</strong> tiene acceso al pin <code>PA6</code>, pero sí al pin <code>PA0</code>. No se usa la estructura <code>while</code>, ni tampoco la función <code>_delay_ms</code>. Los tiempos se calculan, ya lo verás.</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

@@ -127,6 +127,7 @@
       <span class="date"><em>17/11/2015</em></span>
       
     </div>
+    
     <p>El bloqueo es la esencia de cualquier manejador de bases de datos relacional (RDBMS), para el caso de MySQL es importante destacar que el engine <strong>InnoDB</strong> lo gestiona de forma óptima, hasta la fecha no hay otro que lo haga mejor.</p>
 <p>No podemos confundir bloqueos con <a href="https://www.swapbytes.com/niveles-aislamiento-base-de-datos/">niveles de aislamiento</a>, ya que el bloqueo se hace a nivel de registros usando una instrucción específica, mientras el nivel de aislamiento es el comportamiento por defecto para cualquier otra instrucción normal que manipule los registros.</p>
 <p>Los bloqueos existen para poder garantizar el <a href="https://en.wikipedia.org/wiki/ACID">ACID</a>, su correcta implementación permite que halla <strong>concurrencia</strong>, de lo contrario se puede presentar la <strong>contención</strong> y es fatal.</p>

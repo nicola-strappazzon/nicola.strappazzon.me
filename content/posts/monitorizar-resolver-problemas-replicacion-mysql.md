@@ -25,7 +25,7 @@ SHOW SLAVE STATUS\G
 
 Recuerde que el estado de la replicación es individual en cada slave. A partir de aquí, tenemos una serie de variables que nos indica que está pasando y también les explico como resolver cualquiera de estos dos grandes problemas.
 
-### Como identificar una replicación interrumpida:
+### Como identificar una replicación interrumpida
 
 Este problema se puede presentar por una serie de motivos:
 
@@ -57,7 +57,7 @@ SHOW SLAVE STATUS\G
 
 Es muy importante saber porque pasó esto y como prevenirlo, el echo de saltar el error y continuar nos crea una inconsistencia de los datos, debemos tomar nota del mensaje de error y resolverlo a mano.
 
-### Como identificar el retraso de la replicación:
+### Como identificar el retraso de la replicación
 
 Primero debemos entender como funciona y cuales son los indicadores que se pueden encontrar en el estado de la replica. La replicación en MySQL trabaja con dos hilos, IO_THREAD y SQL_THREAD.
 

@@ -21,7 +21,7 @@ Podemos observar que todo lo que está susceptible a fallos está duplicado. Hag
 * **Slave:** Las instancias de MySQL, no requiere ninguna configuración especial.
 * **HAProxy:** Éste servicio debe usar la versión 1.5 que tiene soporte para MySQL. Depende como lo configuremos, pero balancea las conexiones en Round Robin por ejemplo, también podemos definir el número máximo de conexiones, como una conexión de backup que valla contra el Master en caso de que todos los Slaves fallen.
 
-## Cronología de un desastre:
+## Cronología de un desastre
 
 Vamos a ver en orden que pasa si algo falla y como se resuelve:
 

@@ -127,6 +127,19 @@
       <span class="date"><em>15/02/2015</em></span>
       
     </div>
+    
+    <nav class="table-of-contents" aria-label="Índice">
+      <strong>Índice</strong>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#qué-son-las-relaciones-polimórficas">¿Qué son las relaciones polimórficas?</a></li>
+    <li><a href="#el-problema">El problema</a></li>
+    <li><a href="#la-solución">La solución</a></li>
+    <li><a href="#conclusión">Conclusión</a></li>
+  </ul>
+</nav>
+    </nav>
+    
     <p>La verdad no se como empezar este post, ya que el tema es muy delicado en el mundo de RubyOnRails y algo en Java, no quiero ofender a la comunidad, sino ayudarlos hacer un buen modelo de datos dentro de un Manejador de Bases de Datos Relacionales (<a href="http://en.wikipedia.org/wiki/Relational_database_management_system">RDBMS</a>). Considero que primero debemos enterarnos que son las relaciones polimórficas, luego hablar de los problemas que conlleva y por último como podemos evitarlos.</p>
 <h2 id="qué-son-las-relaciones-polimórficas">¿Qué son las relaciones polimórficas?</h2>
 <p>Es una forma de relacionar muchas tablas con una sola mediante una única relación, esto se debe que programamos orientado a objetos y tratamos la base de datos de la misma forma, creando relaciones entre objetos, es una implementación de la librería (gema) ActiveRecord que compone el framework RubyOnRails. Depende del enfoque, esto nos puede traer un ahorro en el uso de tablas como mayor complicación del código.</p>

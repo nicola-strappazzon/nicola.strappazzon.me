@@ -127,6 +127,18 @@
       <span class="date"><em>20/01/2025</em></span>
       
     </div>
+    
+    <nav class="table-of-contents" aria-label="Índice">
+      <strong>Índice</strong>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#causas">Causas</a></li>
+    <li><a href="#solución-inmediata">Solución inmediata</a></li>
+    <li><a href="#solución-preventiva">Solución preventiva</a></li>
+  </ul>
+</nav>
+    </nav>
+    
     <p>En algún momento MySQL decide bloquear una IP por haber tenido problemas con las conexiones provenientes de un host. Te explico una forma simple, nativa, rápida y eficiente de controlar esta situación sin hacer sobre ingeniería.</p>
 <p>En la siguiente gráfica se puede apreciar un ejemplo:</p>
 <p><img src="incident20250120_02.png" alt="DBA"></p>
@@ -161,7 +173,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Considere que este nivel de verbosity es para uso temporal con el fin de detectar problemas recurrentes.</p>
-<h2 id="causas">Causas:</h2>
+<h2 id="causas">Causas</h2>
 <p>MySQL tiene un mecanismo de protección para las conexiones que se malforman del lado del cliente, o problemas de red. Al detectarlas se bloquea la IP, para tener más detalles debe hacer uso de la variable <code>log_error_verbosity</code> y verificar el <code>error_log</code>.</p>
 <p>En MySQL 5.6 en adelante puedes obtener información básica de los host&rsquo;s bloqueados haciendo la siguiente consulta:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
@@ -183,7 +195,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Es normal que pase una vez al año con uso medio.</p>
-<h2 id="solución-inmediata">Solución inmediata:</h2>
+<h2 id="solución-inmediata">Solución inmediata</h2>
 <p>La solución que se describe a continuación es de tipo reactiva, ideal para una situación de intervención ante una incidencia.</p>
 <p>Ejecutar el siguiente comando para versiones inferiores a MySQL 8.0:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
@@ -212,7 +224,7 @@
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysqladmin -h &lt;HOST&gt; -P &lt;PORT&gt; -u &lt;USER&gt; -p flush-hosts
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="solución-preventiva">Solución preventiva:</h2>
+</div><h2 id="solución-preventiva">Solución preventiva</h2>
 <p>La siguiente forma es automatizar el proceso indicado en la solución anterior, de esta forma es más de uso preventivo y aprovecha las características propias de MySQL.</p>
 <p>Primero deberá incrementar el valor de la variable <code>max_connect_errors</code> a un valor muy alto, por defecto es 100, y la incrementamos a 1000000, con el fin de crear un umbral de tolerancia entre la ejecución del evento <code>mysql.ev_flush_hosts</code>.</p>
 <p>Luego deberá crear un evento, el cual es la versión de un cronjob dentro del servicio de MySQL, con el fin de ejecutar el comando cada cierto tiempo.</p>

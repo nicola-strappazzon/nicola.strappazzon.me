@@ -13,7 +13,7 @@ Cómo dato curioso, el PWM entre las múltiples utilidades que tiene, se usa en 
 
 Los siguientes ejemplos no hacen uso del mismo pin que tratamos en este ejemplo del [blink](https://nicola.strappazzon.me/electronic/integrated-circuit/avr-dx/blink/) porque el `timer/counter A (TCA)` no tiene acceso al pin `PA6`, pero sí al `PA0` entre otros.
 
-## Primera forma:
+## Primera forma
 
 ```C
 #include <avr/io.h>
@@ -53,7 +53,7 @@ int main(void) {
 
 {{< mathjax "f_{PWM}=\frac{f_{CPU}}{prescaler \cdot (PER + 1)}=\frac{24000000}{64 \cdot (255 + 1)}=1464_{Hz}" >}}
 
-## Segunda forma:
+## Segunda forma
 
 Aquí se hace uso de las interrupciones.
 

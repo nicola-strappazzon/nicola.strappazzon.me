@@ -223,7 +223,7 @@ En caso de que haya un problema de conexión, se aconseja explorar los siguiente
 - /var/log/auth.log
 - /var/log/audit/audit.log
 
-## Herramientas alternativas:
+## Herramientas alternativas
 
 Esta es una lista de varias herramientas alternativas que se pueden usar junto al SSH.
 

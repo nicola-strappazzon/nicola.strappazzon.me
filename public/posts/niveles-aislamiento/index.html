@@ -127,6 +127,18 @@
       <span class="date"><em>24/01/2015</em></span>
       
     </div>
+    
+    <nav class="table-of-contents" aria-label="Índice">
+      <strong>Índice</strong>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#se-puede-evitar-el-nivel-de-aislamiento-serializable">Se puede evitar el nivel de aislamiento SERIALIZABLE</a></li>
+    <li><a href="#realicación-y-niveles-de-aislamiento">Realicación y Niveles de aislamiento</a></li>
+    <li><a href="#los-niveles-de-rendimiento-y-aislamiento">Los niveles de rendimiento y aislamiento</a></li>
+  </ul>
+</nav>
+    </nav>
+    
     <p>El aislamiento es una parte importante de la propiedad ACID que garantiza que las transacciones sean fiables. Esto permite que las transacciones que se ejecutan simultáneamente no interfieran con otras, <strong>garantizando la integridad de los datos</strong>, al no existir aislamiento en una transacción podría modificar los datos que otra transacción está leyendo, por lo que se crea una inconsistencia cuando se crean datos.</p>
 <p>Ahora que entendemos que es el aislamiento en términos generales, vamos a conocer cuales son los niveles de aislamiento, estos determinan como las transacciones se comportan con otras transacciones, es como ser más o menos restrictivo. Escoger cual es el mejor nivel depende de las necesidades de la aplicación, primero debe entender cuales son los beneficios y consecuencias de cada una de ellas.</p>
 <p>InnoDB soporta los cuatro niveles de aislamiento estándar, a continuación se describen los estándares usados en muchos maneadores de bases de datos relacionales, no solo se aplica para MySQL, sino para Oracle, SQL Server y PostgreSQL.</p>

@@ -7,7 +7,7 @@ Considero que es un clásico hacer el efecto Blink, equivale al “Hola Mundo”
 
 ![](minimal.png)
 
-## Primera forma:
+## Primera forma
 
 El siguiente código es para un blink indicando el encendido y el apagado del pin.
 
@@ -33,7 +33,7 @@ int main(void) {
 }
 ```
 
-## Segunda forma:
+## Segunda forma
 
 Podemos mejorar el código haciendo uso de un registro especial llamado `OUTTGL` que hace de toggle:
 
@@ -56,7 +56,7 @@ int main(void) {
 }
 ```
 
-## Tercera forma:
+## Tercera forma
 
 Usaremos el `timer/counter A (TCA)` para lograr el mismo efecto, esta funcionalidad **NO** tiene acceso al pin `PA6`, pero sí al pin `PA0`. No se usa la estructura `while`, ni tampoco la función `_delay_ms`. Los tiempos se calculan, ya lo verás.
 

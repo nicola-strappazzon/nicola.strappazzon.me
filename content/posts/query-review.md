@@ -13,7 +13,7 @@ Continuamente se están realizando cambios en el modelo de datos, esta es una li
 
 Posiblemente nosotros debamos hacer el cambio porque es una tabla muy grande, hay mucho tráfico y para prevenir degradación y/o caída del servicio debamos asumir el control. Y luego puede que debamos marcar en la tabla de migraciones que fue aplicada, esto último depende de la herramienta que usemos.
 
-## Generales:
+## Generales
 
 - Nombres en inglés, las tablas en plural porque contiene varios registros, y los campos en singular por que hace referencia a un registro.
 - No usar palabras reservadas para nombres de columnas o tablas o de cualquier otro objeto, por ejemplo: evitar usar password, status, user.
@@ -22,7 +22,7 @@ Posiblemente nosotros debamos hacer el cambio porque es una tabla muy grande, ha
 - Asegurarse que cualquier cambio sobre una tabla no supone un bloqueo mayor del tiempo considerable para comprometer el servicio.
 - Toda tabla debe tener una Primary Key (bigint unsigned) y un UUID de tipo UNIQUE que asignará la aplicación. La Primary Key es gestionada por la base de datos para uso interno, no debería ser usada para establecer relaciones, y el UUID es generado por la aplicación y es utilizado para hacer relaciones.
 
-## Tablas:
+## Tablas
 
 - Todas las tablas deben ser de tipo de engine InnoDB y por lo menos con las propiedades `CHARSET=UTF-8` y `COLLATE=utf8_unicode_ci`. El *COLLATE* puede variar dependiendo del criterio de búsqueda a implementar.
 - El `ROW_FORMAT` de cada tabla se recomienda para uso general que sea `DYNAMIC`.
@@ -31,7 +31,7 @@ Posiblemente nosotros debamos hacer el cambio porque es una tabla muy grande, ha
 - Tener columnas de auditoría, estas también implican para el eliminado lógico de los datos, por ejemplo: `created_at`, `updated_at`, `deleted_at`, `created_by`, `deleted_by`. Las que terminan en *_at* son de tipo TIMESTAMP y las que terminan en *_by* puede ser BIGINT que hace referencia para algún usuario de la aplicación.
 - Documentar las tablas con alguna descripción muy breve.
 
-## Columnas:
+## Columnas
 
 - Todas las columnas que son de tipo **Foreign Key** deben usar el siguiente tipo de dato si usa un valor entero: `BITINT UNSIGNED`. En caso de ser un **UUID** usar el tipo de dato `BINARY(16)` (No lo recomiendo) o `CHAR(24)`, el *CONSTRAINT* penaliza el performance.
 - Todas las columnas que son de tipo **Foreign Key** deben ser del mismo tipo de dato entre ambas tablas donde se define la relación.
@@ -39,23 +39,23 @@ Posiblemente nosotros debamos hacer el cambio porque es una tabla muy grande, ha
 - Documentar las columnas con alguna descripción muy breve y significativa.
 - Evitar nombres largos en las columnas, hay un límite.
 
-## Claves primarias:
+## Claves primarias
 
 - Se debe usar Primary Key `BIGINT UNSIGNET NOT NULL AUTO_INCREMENT` en todas las tablas.
 - Evitar la combinación de varias columnas.
 - Para columnas que contengan un **UUID** se recomienda usar el tipo de dato `BINARY(16)` o `CHAR(36)` (Preferiblemente char) y si es un **Primary Key hipotético** o de tipo único debe definirlas con el constraint UNIQUE.
 
-## Clave foráneas:
+## Clave foráneas
 
 - Tener una nomenclatura constante para nombrar columnas de tipo FOREIGN KEY, debe estar formado por el nombre de la tabla foránea en singular y el sufijo *_id*, por ejemplo: user_id, profile_id ó address_id.
 - Para aquellas columnas que hacen referencia a un valor foraneo fuera del modelo, como un token o code particular, definirlo con el nombre de la funcionalidad y un sufijo _token, _code por ejemplo: auth_token, publication_code. No debe usar el *_id* porque está reservado para las claves foráneas.
 - Evitar en lo posible usar FOREIGN KEY con la posibilidad de permitir NULL porque afecta al rendimiento.
 
-## Índices (**_idx**):
+## Índices (**_idx**)
 
 - No crear un índice exclusivo de una columna que tiene el CONSTRAINT del FOREIGN KEY, ya el CONSTRAINT define el índice. De igual forma pasa con los PRIMARY y UNIQUE KEY.
 
-## Consultas:
+## Consultas
 
 - Evitar el uso abusivo de IN con muchos valores, nos referimos a más de 100 cómo muchos valores.
 - Evitar el uso de GROUP BY, ORDER BY en consultas con muchos datos.

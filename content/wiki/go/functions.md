@@ -12,9 +12,7 @@ Al leer esta página, deberías poder entender:
 
 ---
 
-## Funciones
-
-No pertenece a ningún tipo. La definición de una función es casi la misma para un método, ambos tienen nombre, parámetros, argumentos al llamarse y valores de retorno. Entender esta primera parte es esencial.
+Las **funciones** no pertenece a ningún tipo. La definición de una función es casi la misma para un método, ambos tienen nombre, parámetros, argumentos al llamarse y valores de retorno. Entender esta primera parte es esencial.
 
 ```go
 package main
@@ -48,7 +46,7 @@ func main() {
 
 Podemos mejorar la declaración de la función `sum(a int, b int)` de la siguiente forma `sum(a, b int)` siempre y cuando el mismo tipo se repite.
 
-### Parámetros & argumentos
+## Parámetros & argumentos
 
 Los términos se usan para cosas distintas:
 
@@ -72,7 +70,7 @@ Podemos observar lo siguiente:
 
 De forma informal se dice "parámetros" para todo, pero técnicamente es diferente.
 
-### Retornar más valores
+## Retornar más valores
 
 ```go
 func Divide(a, b float64) (float64, error) {
@@ -84,15 +82,15 @@ func Divide(a, b float64) (float64, error) {
 }
 ```
 
-### Retornar valor por el parámetro
+## Retornar valor por el parámetro
 
 ...
 
-### Parámetro cómo funcion
+## Parámetro cómo funcion
 
 ...
 
-### Parámetros...
+## Parámetros...
 
 ...
 

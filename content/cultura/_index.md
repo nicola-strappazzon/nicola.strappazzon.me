@@ -7,7 +7,7 @@ Cualquier material que sirva de inspiración o conocimiento.
 
 ## Libros
 
-### Sobre base de datos:
+### Sobre base de datos
 
 - [The Art of Capacity Planning: Scaling Web Resources: Being Ready for the Big Growth Spurt](https://www.amazon.es/Art-Capacity-Planning-Scaling-Resources/dp/0596518579)
 - [Database Internals: A Deep-Dive Into How Distributed Data Systems Work](https://www.amazon.es/Database-Internals-deep-dive-distributed-systems/dp/1492040347)

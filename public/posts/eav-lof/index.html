@@ -127,6 +127,7 @@
       <span class="date"><em>30/10/2010</em></span>
       
     </div>
+    
     <p>Durante el diseño de un correcto modelo relacional de una base de datos, no cabe la duda la implementación de un modelo genérico de tablas llamado “Atributos &amp; Tipos” u otros lo llaman (EAV, Entity Attribute Value) en sus siglas en ingles, el cual aumenta la flexibilidad y robustez del mismo.</p>
 <p>La intención de este tipo de “patrón” de diseño por llamarlo de alguna forma, es que permite tener un dominio detallado sobre todos los atributos que podamos asignarle a cualquier elemento que es almacenado, en pocas palabras, cada registro habla por si solo y no tendrá libre interpretación, las aplicaciones que hacen uso de estos valores serán dominados directamente por el manejador de base de datos, y al final todo este proceso conlleva a una simple solución de auto-documentación e integridad de los datos.</p>
 <p>Implementar este patrón conlleva una serie de pasos, en primer lugar; tenemos las tablas que contendrán toda la clasificación de los atributos, en segundo lugar; cada tabla tendrá una relación sobre las tabla atributos, en tercer lugar; existirá una vista por cada tipo de atributo para ayudar a ser mas ordenados, por ultimo; se implementan una serie de trigger de control sobre las tablas relacionadas con los atributos, evitando cualquier confusión en su uso.</p>

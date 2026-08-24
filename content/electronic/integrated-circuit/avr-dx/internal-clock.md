@@ -18,7 +18,7 @@ De momento hay dos formas de configurarlo y te muestro cada una, seguramente ver
 - CLKCTRL_FRQSEL_20M_gc
 - CLKCTRL_FRQSEL_24M_gc
 
-## Primera forma:
+## Primera forma
 
 Funciona igual que la segunda, pero mucho más corta:
 
@@ -29,7 +29,7 @@ void clk_init(void) {
 }
 ```
 
-## Segunda forma:
+## Segunda forma
 
 Parece ser que esta es la forma recomendada de hacerlo:
 

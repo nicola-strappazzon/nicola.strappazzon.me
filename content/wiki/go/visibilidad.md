@@ -12,9 +12,7 @@ La visibilidad depende de la primera letra del nombre.
 
 Esto aplica a casi todo lo nombrado en el lenguaje: funciones, tipos, structs, interfaces, métodos, variables, constantes y campos de structs.
 
-## Ejemplo
-
-Imagina que tenemos un paquete llamado `foo`:
+Veamos con ejemplos para entender mejor, imagina que tenemos un paquete llamado `foo`:
 
 ```go
 package foo
