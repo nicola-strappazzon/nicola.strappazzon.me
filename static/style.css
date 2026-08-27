@@ -470,4 +470,6 @@ td {
 
 .highlight {
     line-height: normal;
+    max-width: 100%;
+    overflow-x: auto;
 }
