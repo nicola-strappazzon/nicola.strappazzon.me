@@ -2,7 +2,7 @@
 title = 'Go'
 +++
 
-[Go](https://go.dev) es un lenguaje de programación de alto nivel, de propósito general, tipado estático inspirado en `C`, y es un proyecto de [código abierto](https://github.com/golang/go) disponible en múltiples sistemas operativos. Si quieres saber más sobre el deberías consultar la [Wikipedia](https://en.wikipedia.org/wiki/Go_(programming_language)) o la [Wiki del proyecto](https://go.dev/wiki/).
+[Go](https://go.dev) es un lenguaje de programación de alto nivel, de propósito general, tipado estático inspirado en `C`, y es un proyecto de [código abierto](https://github.com/golang/go) disponible en múltiples sistemas operativos. Su gran ventaja a comparación de otros lenguajes es su simplicidad y que su binario funciona sin dependencias. Si quieres saber más sobre el deberías consultar la [Wikipedia](https://en.wikipedia.org/wiki/Go_(programming_language)) o la [Wiki del proyecto](https://go.dev/wiki/).
 
 ## Recursos
 
