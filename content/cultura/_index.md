@@ -30,18 +30,25 @@ Cualquier material que sirva de inspiración o conocimiento.
 ### Películas
 
 - [Antitrust](https://www.imdb.com/title/tt0218817)
-- [Hackers](https://www.imdb.com/title/tt0113243)
-- [Takedown](https://www.imdb.com/title/tt0159784)
+- [BlackBerry](https://www.imdb.com/title/tt21867434)
 - [Dark City](https://www.imdb.com/title/tt0118929)
+- [Hackers](https://www.imdb.com/title/tt0113243)
+- [Jobs](https://www.imdb.com/title/tt2357129)
+- [Pirates of Silicon Valley](https://www.imdb.com/title/tt0168122)
+- [Steve Jobs](https://www.imdb.com/title/tt2080374)
+- [Takedown](https://www.imdb.com/title/tt0159784)
+- [The Social Network](https://www.imdb.com/title/tt1285016)
 - [The Thirteenth Floor](https://www.imdb.com/title/tt0139809)
+- [WarGames](https://www.imdb.com/title/tt0086567)
+- [eXistenZ](https://www.imdb.com/title/tt0120907)
 
 ### Series de televisión
 
-- [The IT Crowd](https://www.imdb.com/title/tt0487831)
 - [Halt and Catch Fire](https://www.imdb.com/title/tt2543312)
-- [The Billion Dollar Code](https://www.imdb.com/title/tt15392100)
 - [How to Sell Drugs Online (Fast)](https://www.imdb.com/title/tt9184994)
 - [Mr. Robot](https://www.imdb.com/title/tt4158110)
 - [Silicon Valley](https://www.imdb.com/title/tt2575988/)
+- [The Billion Dollar Code](https://www.imdb.com/title/tt15392100)
+- [The IT Crowd](https://www.imdb.com/title/tt0487831)
 
 ## Música
