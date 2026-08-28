@@ -42,5 +42,6 @@ Cualquier material que sirva de inspiración o conocimiento.
 - [The Billion Dollar Code](https://www.imdb.com/title/tt15392100)
 - [How to Sell Drugs Online (Fast)](https://www.imdb.com/title/tt9184994)
 - [Mr. Robot](https://www.imdb.com/title/tt4158110)
+- [Silicon Valley](https://www.imdb.com/title/tt2575988/)
 
 ## Música
