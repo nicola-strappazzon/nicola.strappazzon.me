@@ -39,6 +39,7 @@ Cualquier material que sirva de inspiración o conocimiento.
 - [Takedown](https://www.imdb.com/title/tt0159784)
 - [The Social Network](https://www.imdb.com/title/tt1285016)
 - [The Thirteenth Floor](https://www.imdb.com/title/tt0139809)
+- [Tetris](https://www.imdb.com/title/tt12758060)
 - [WarGames](https://www.imdb.com/title/tt0086567)
 - [eXistenZ](https://www.imdb.com/title/tt0120907)
 
