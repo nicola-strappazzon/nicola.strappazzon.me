@@ -7,6 +7,19 @@
   </ul>
   {{ end }}
   {{ if not .IsHome }}
+    {{ if gt (len .Ancestors) 1 }}
+    <ul id="breadcrumbs">
+    {{- range .Ancestors.Reverse }}
+      <li><a href="{{ .RelPermalink }}">
+      {{- if .IsHome -}}
+        Inicio
+      {{- else -}}
+        {{ .Title }}
+      {{- end -}}
+      </a></li>
+    {{- end }}
+    </ul>
+    {{ end }}
     <div class="content-header">
       <h2 class="title">{{ .Title }}</h2>
       {{ if .Date }}

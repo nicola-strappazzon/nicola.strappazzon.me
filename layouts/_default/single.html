@@ -1,5 +1,6 @@
 {{- define "main" }}
   <article>
+    {{ if gt (len .Ancestors) 1 }}
     <ul id="breadcrumbs">
     {{- range .Ancestors.Reverse }}
       <li><a href="{{ .RelPermalink }}">
@@ -11,6 +12,7 @@
       </a></li>
     {{- end }}
     </ul>
+    {{ end }}
     <div class="content-header">
       <h2 class="title">{{ .Title }}</h2>
       {{ if .Date }}
