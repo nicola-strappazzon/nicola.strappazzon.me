@@ -28,3 +28,4 @@ Esta es una lista de medidas para construir tus propios cables, donde te indico 
 - Puntos:  8 = 1,7cm + (0,6cm)x2 = 2,9cm
 - Puntos:  9 = 2,0cm + (0,6cm)x2 = 3,2cm
 - Puntos: 10 = 2,2cm + (0,6cm)x2 = 3,4cm
+- Puntos: 12 = 2,7cm + (0,6cm)x2 = 3,9cm
