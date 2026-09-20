@@ -11,13 +11,13 @@ git config --list
 
 Configuración básica:
 
-```bash
+````bash
 git config --global init.defaultBranch main
 git config --global pull.rebase true
 git config --global push.autoSetupRemote true
-git config --global user.email nicola@strappazzon.me
-git config --global user.name "Nicola Strappazzon."
-```
+git config --global user.email user@domain.com
+git config --global user.name "Fulano Mengano"
+````
 
 Renombrar URL del repositorio:
 
@@ -25,6 +25,41 @@ Renombrar URL del repositorio:
 git remote -v
 git remote set-url origin <new_git_url>
 ```
+
+cambiar de rama
+
+git switch -c feature/foo
+
+
+
+Registrar cambios
+
+[Conventional Commits](https://www.conventionalcommits.org/es/v1.0.0/) https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
+
+- feat: Nueva funcionalidad.
+- fix: Corrección de un error.
+- refactor: Mejoras en el código sin alterar funcionalidad.
+- docs: Documentacíon.
+- test: Pruebas.
+- chore: Actividades rutinarias ... , Mantenimiento o configuración que no afecta al codigo fuente.
+- style: 
+- build: 
+- ops: Cambios en aspectos operacionales cómo IaC o CI/CD.
+
+- perf: 
+
+Un buen commit te ayuda a entender que cambió y por qué.
+
+
+Sincronizar el código
+
+git push y git pull
+
+Pull Request
+
+Revisar antes de integrar.
+
+
 
 Forzando a sobrescribir cambios:
 
@@ -106,3 +141,36 @@ git stash drop stash@{0}
 # Borrar todos
 git stash clear
 ```
+
+## Rebase
+
+
+
+```bash
+git checkout main
+git pull
+git checkout TICKET-123
+git rebase main --rebase-merges
+```
+
+Si muestra el mensaje `Successfully rebased and updated refs/heads/TICKET-123.` es que todo ha ido bien y podemos ejecutar el siguiente comando.
+
+```bash
+git push --force-with-lease origin KITT-518
+```
+
+Si hay conflictos verás un mensaje cómo `CONFLICT (content): Merge conflict in ...`
+
+... haces los cambios si hay conflicto ...
+
+git checkout --ours -- libs/agent/agent_brand_general.go
+git checkout --ours -- 
+
+... compilar y validar que todo esta bien es un paso adicional ...
+
+git add .
+git rebase --continue
+git push --force-with-lease
+
+
+git rebase --abort
