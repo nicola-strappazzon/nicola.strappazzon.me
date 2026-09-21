@@ -23,10 +23,16 @@ docker run -d --network=host \
 ```bash
 docker run -it --rm \
 	--name clickhouse-client \
-	--link clickhouse-server:clickhouse-server yandex/clickhouse-client --host clickhouse-server
+	--link clickhouse-server:clickhouse-server clickhouse/clickhouse-client --host clickhouse-server
 ```
 
-Si tienes el cliente de clickhouse instalado en el host, solo debes escribir `clickhouse client` en la terminal para poder entrar
+Si tienes el cliente de clickhouse instalado en el host, solo debes escribir `clickhouse client` en la terminal para poder entrar. También puedes usar el docker para conectarte a un host de la siguiente forma:
+
+```bash
+docker run -it --rm \
+	--name clickhouse-client \
+	clickhouse/clickhouse-client --host 1.1.1.1 --user user_name --password the_password
+```
 
 ## MySQL 5.7
 
