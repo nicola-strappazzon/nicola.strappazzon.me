@@ -1,176 +1,254 @@
 +++
-title = 'git'
+title = 'Git'
 tags = ["bash", "git"]
 +++
 
-Ver tu configuración:
+Git es un sistema de control de versiones. Esta página reúne los comandos que uso con más frecuencia y algunos flujos de trabajo seguros.
+
+## Configuración
+
+Ver la configuración efectiva:
 
 ```bash
 git config --list
 ```
 
-Configuración básica:
+Configuración básica para un equipo nuevo:
 
-````bash
+```bash
 git config --global init.defaultBranch main
 git config --global pull.rebase true
 git config --global push.autoSetupRemote true
-git config --global user.email user@domain.com
+git config --global user.email "user@domain.com"
 git config --global user.name "Fulano Mengano"
-````
+```
 
-Renombrar URL del repositorio:
+Cambiar la URL remota de un repositorio:
 
 ```bash
 git remote -v
-git remote set-url origin <new_git_url>
+git remote set-url origin <nueva_url_git>
 ```
 
-cambiar de rama
+## Ramas
 
+Consultar la rama actual y las ramas disponibles:
+
+```bash
+git branch
+git branch --all
+```
+
+Cambiar a una rama ya existente:
+
+```bash
+git switch main
+```
+
+Crear una rama y cambiarse a ella:
+
+```bash
 git switch -c feature/foo
-
-
-
-Registrar cambios
-
-[Conventional Commits](https://www.conventionalcommits.org/es/v1.0.0/) https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
-
-- feat: Nueva funcionalidad.
-- fix: Corrección de un error.
-- refactor: Mejoras en el código sin alterar funcionalidad.
-- docs: Documentacíon.
-- test: Pruebas.
-- chore: Actividades rutinarias ... , Mantenimiento o configuración que no afecta al codigo fuente.
-- style: 
-- build: 
-- ops: Cambios en aspectos operacionales cómo IaC o CI/CD.
-
-- perf: 
-
-Un buen commit te ayuda a entender que cambió y por qué.
-
-
-Sincronizar el código
-
-git push y git pull
-
-Pull Request
-
-Revisar antes de integrar.
-
-
-
-Forzando a sobrescribir cambios:
-
-```bash
-git add . && git commit --amend --no-edit && git push -f
 ```
 
-Git pull luego de hacer `forced update`:
+## Registrar cambios
+
+Antes de crear un commit, revisar qué se ha modificado:
 
 ```bash
-git fetch
-git reset origin/main --hard
+git status
+git diff
+```
+
+Añadir los cambios y confirmar el trabajo:
+
+```bash
+git add <archivo>
+git commit -m "feat: añadir búsqueda de usuarios"
+```
+
+Evitar `git add .` cuando no se haya revisado el estado: puede incluir archivos que no deberían formar parte del commit.
+
+### Conventional Commits
+
+[Conventional Commits](https://www.conventionalcommits.org/es/v1.0.0/) propone un formato consistente para los mensajes de commit:
+
+```text
+tipo(alcance opcional): descripción breve
+```
+
+- `feat`: nueva funcionalidad.
+- `fix`: corrección de un error.
+- `refactor`: mejora interna sin cambiar el comportamiento esperado.
+- `docs`: cambios en la documentación.
+- `test`: añadir o ajustar pruebas.
+- `chore`: tareas rutinarias, mantenimiento o configuración sin afectar al código fuente.
+- `style`: cambios de formato que no afectan a la lógica.
+- `build`: cambios en la construcción, dependencias o empaquetado.
+- `ops`: cambios operacionales, por ejemplo IaC o CI/CD.
+- `perf`: mejora de rendimiento.
+
+Un buen commit explica qué cambió y por qué. Para más ejemplos, consultar la [guía de tipos de commit](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13).
+
+## Sincronizar con el remoto
+
+Enviar la rama actual al remoto:
+
+```bash
+git push
+```
+
+Traer e integrar los cambios remotos. Con `pull.rebase=true`, configurado arriba, Git reubica los commits locales sobre la última versión remota:
+
+```bash
 git pull
 ```
 
-Unir los últimos 3 commits en uno reescribiendo el historial remoto:
+Una *pull request* permite revisar los cambios antes de integrarlos en otra rama. Conviene comprobar el diff, las pruebas y los comentarios antes de aprobarla.
+
+## Reescribir el último commit
+
+Para incluir cambios olvidados sin modificar el mensaje del último commit:
 
 ```bash
-git rebase -i HEAD~3
+git add <archivo>
+git commit --amend --no-edit
 ```
 
-Se abrira un editor de texto, deja el primero `pick` y el resto renombralos como `squash`, guarda y cierra. Luego git te pedirá editar el mensaje del nuevo commit unico, guarda y cierra. Ahora podrás hacer `git push --force`.
-
-Editar el mensaje del último commit.
+Para cambiar su mensaje:
 
 ```bash
 git commit --amend
 ```
 
-Se abrira un editor de texto para modificar el mensaje, guarda y cierra. Hahora podrás hacer `git push --force`.
+Si el commit ya se había publicado, habrá que actualizar el remoto. Preferir siempre `--force-with-lease`, que evita sobrescribir trabajo remoto que no tenemos localmente:
 
-Crear un tag
+```bash
+git push --force-with-lease
+```
+
+{{% blockquote type="warning" %}}
+Reescribir historial compartido puede complicar el trabajo de otras personas. Confirmar antes que nadie depende de esos commits.
+{{% /blockquote %}}
+
+## Unir commits con rebase interactivo
+
+Para unir los tres últimos commits en uno:
+
+```bash
+git rebase -i HEAD~3
+```
+
+En el editor, dejar el primer commit como `pick` y cambiar los siguientes a `squash` (o `s`). Guardar, cerrar y editar el mensaje del nuevo commit. Si esos commits ya estaban en el remoto, publicar el historial reescrito:
+
+```bash
+git push --force-with-lease
+```
+
+## Rebase de una rama sobre `main`
+
+Actualizar la rama base y reubicar una rama de trabajo sobre ella:
+
+```bash
+git switch main
+git pull
+git switch TICKET-123
+git rebase main --rebase-merges
+```
+
+Si termina con `Successfully rebased and updated refs/heads/TICKET-123.`, el rebase ha finalizado correctamente. Después se puede actualizar la rama remota:
+
+```bash
+git push --force-with-lease origin TICKET-123
+```
+
+Si aparecen conflictos, Git indicará los archivos afectados. Resolverlos, validar el resultado y continuar:
+
+```bash
+git status
+# editar los archivos en conflicto
+git add <archivos_resueltos>
+git rebase --continue
+```
+
+Para aceptar por completo una versión durante un rebase:
+
+```bash
+# La versión de la rama sobre la que se está aplicando el commit
+git checkout --ours -- <archivo>
+
+# La versión del commit que se está reaplicando
+git checkout --theirs -- <archivo>
+```
+
+En un rebase, el significado de `ours` y `theirs` puede resultar contraintuitivo: revisar siempre el contenido del archivo antes de añadirlo. Si se quiere cancelar todo el proceso y volver al estado anterior:
+
+```bash
+git rebase --abort
+```
+
+## Cambios temporales con stash
+
+Listar los cambios guardados:
+
+```bash
+git stash list
+```
+
+Guardar los cambios actuales, opcionalmente con un comentario:
+
+```bash
+git stash
+git stash push -m "descripción del cambio"
+```
+
+Aplicar el último stash, uno concreto, o aplicarlo y eliminarlo:
+
+```bash
+git stash apply
+git stash apply stash@{1}
+git stash pop
+```
+
+Eliminar un stash o todos los stashes:
+
+```bash
+git stash drop stash@{0}
+git stash clear
+```
+
+## Recuperar el estado remoto
+
+Tras un *force push* de otra persona, primero revisar qué cambiaría:
+
+```bash
+git fetch origin
+git log --oneline HEAD..origin/main
+```
+
+Si se quiere descartar los cambios locales de `main` y dejarla igual que el remoto:
+
+```bash
+git switch main
+git reset --hard origin/main
+```
+
+{{% blockquote type="warning" %}}
+`git reset --hard` descarta los cambios locales no confirmados. Guardarlos o usar `git stash` antes si se necesitan.
+{{% /blockquote %}}
+
+## Tags
+
+Crear y publicar un tag:
 
 ```bash
 git tag v0.1.0
 git push origin v0.1.0
 ```
 
-Eliminar un tag
+Eliminar un tag local y remoto:
 
 ```bash
 git push origin --delete v0.1.0
 git tag -d v0.1.0
 ```
-
-## Cambios temporales
-
-Listar
-
-```bash
-git stash list
-```
-
-Guardar
-
-```bash
-# Guarda
-git stash
-# Guardar con comentario
-git stash push -m "comment.."
-```
-
-Recuperar o aplicar
-
-```bash
-# Aplicar el último
-git stash apply
-# Aplicar uno en específico
-git stash apply stash@{1}
-# Aplicar y eliminar
-git stash pop
-```
-
-Eliminar
-
-```bash
-# Borrar uno en específico
-git stash drop stash@{0}
-# Borrar todos
-git stash clear
-```
-
-## Rebase
-
-
-
-```bash
-git checkout main
-git pull
-git checkout TICKET-123
-git rebase main --rebase-merges
-```
-
-Si muestra el mensaje `Successfully rebased and updated refs/heads/TICKET-123.` es que todo ha ido bien y podemos ejecutar el siguiente comando.
-
-```bash
-git push --force-with-lease origin KITT-518
-```
-
-Si hay conflictos verás un mensaje cómo `CONFLICT (content): Merge conflict in ...`
-
-... haces los cambios si hay conflicto ...
-
-git checkout --ours -- libs/agent/agent_brand_general.go
-git checkout --ours -- 
-
-... compilar y validar que todo esta bien es un paso adicional ...
-
-git add .
-git rebase --continue
-git push --force-with-lease
-
-
-git rebase --abort
