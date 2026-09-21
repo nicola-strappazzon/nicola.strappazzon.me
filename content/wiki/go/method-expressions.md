@@ -52,7 +52,7 @@ La misma función sirve para ambas personas porque recibe el receptor en cada ll
 
 ## Con `yield`
 
-Una expresión de método resulta especialmente útil cuando una función recibe qué operación aplicar y una función `yield` para entregar cada resultado:
+Una expresión de método resulta especialmente útil cuando una función recorre una colección y entrega cada elemento a una función `yield`:
 
 ```go
 package main
@@ -61,35 +61,41 @@ import "fmt"
 
 type Greeting struct{ Name string }
 
-func (g *Greeting) Say() string {
-	return "Hello, " + g.Name
+type People []*Greeting
+
+func (g *Greeting) Say() {
+	fmt.Println("Hello, " + g.Name)
 }
 
-func SayAll(
-	greetings []*Greeting,
-	say func(*Greeting) string,
-	yield func(string),
-) {
-	for _, greeting := range greetings {
-		yield(say(greeting))
+func (people People) SayAll(yield func(*Greeting)) {
+	for _, person := range people {
+		yield(person)
 	}
 }
 
 func main() {
-	greetings := []*Greeting{
+	people := People{
 		{Name: "Ana"},
 		{Name: "Luis"},
 	}
 
-	SayAll(greetings, (*Greeting).Say, func(message string) {
-		fmt.Println(message)
+	people.SayAll(func(person *Greeting) {
+		person.Say()
 	})
+
+	people.SayAll((*Greeting).Say)
 }
 ```
 
-`(*Greeting).Say` indica cómo convertir cada `Greeting` en texto. La función anónima es el `yield`: recibe cada texto producido por `SayAll`. La salida es:
+La primera llamada usa una función anónima. La segunda pasa `(*Greeting).Say` directamente. Ambas hacen lo mismo porque `(*Greeting).Say` tiene el tipo `func(*Greeting)`, que coincide con el tipo esperado por `yield`.
+
+`SayAll` decide qué persona pasa al callback en cada iteración. Por eso necesita una `method expression`, que recibe el receptor como argumento; `person.Say` no serviría porque ya quedaría asociada a una persona concreta.
+
+La salida es:
 
 ```text
+Hello, Ana
+Hello, Luis
 Hello, Ana
 Hello, Luis
 ```
