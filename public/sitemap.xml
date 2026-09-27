@@ -102,6 +102,8 @@
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/cdc/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/go/method-expressions/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/dht20/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/dac/</loc>
@@ -268,6 +270,8 @@
   </url><url>
     <loc>http://localhost:1313/wiki/macos/apps/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/arch/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/aws/</loc>
@@ -306,9 +310,9 @@
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/555/frequency/</loc>
   </url><url>
-    <loc>http://localhost:1313/wiki/git/</loc>
-  </url><url>
     <loc>http://localhost:1313/tags/git/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/git/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/github/</loc>
   </url><url>
@@ -336,6 +340,8 @@
   </url><url>
     <loc>http://localhost:1313/electronic/basic-lessons/lesson04/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+  </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/lm386/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/macos/m1ddc/</loc>
@@ -359,6 +365,10 @@
     <loc>http://localhost:1313/wiki/openpgp/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/yubikey/otp/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/package/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/arch/pacman/</loc>
   </url><url>
     <loc>http://localhost:1313/wiki/photorec/</loc>
   </url><url>
@@ -401,6 +411,10 @@
     <loc>http://localhost:1313/electronic/components/transistor/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/ch340/updi/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/wifi/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/arch/wifi/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/breadboard/wire-bundle/</loc>
   </url><url>

@@ -133,18 +133,79 @@
       <strong>Índice</strong>
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#circuito-principal">Circuito principal</a></li>
+    <li><a href="#tiempo-de-carga">Tiempo de carga</a></li>
     <li><a href="#circuito-completo">Circuito completo</a></li>
+    <li><a href="#estado-de-la-carga">Estado de la carga</a></li>
+    <li><a href="#descarga">Descarga</a></li>
   </ul>
 </nav>
     </nav>
     
-    <p><img src="breadboard.png" alt=""></p>
-<p>El <a href="datasheet.pdf">MCP73831</a> es un cargador de baterias de los tipos Li-Ion &amp; Li-Polymer de una sola celda, es muy simple de usar y muy popular. Permite diferentes configuraciónes por lo que te recomiendo que consultes el datasheet.</p>
+    <p>El <a href="datasheet.pdf">MCP73831</a> es un cargador de baterias de los tipos Li-Ion &amp; Li-Polymer de una sola celda, es muy simple de usar y muy popular. Permite diferentes configuraciónes por lo que te recomiendo que consultes el datasheet.</p>
+<p><img src="breadboard.png" alt=""></p>
+<p>Existen productor comerciales muy populares con este CI, entre ellos tenemos él <a href="https://www.adafruit.com/product/4410">Adafruit Micro-Lipo Charger for LiPoly Batt with USB Type C Jack</a> y en caso de interesar te dejo su <a href="schematic03.png">diagrama esquemático</a>.</p>
+<h2 id="circuito-principal">Circuito principal</h2>
+<p>El proceso de carga consta de tres etapas: primero una carga de pre-acondicionamiento, luego una carga rápida de corriente constante y, finalmente, una carga de mantenimiento a voltaje constante para mantener la batería a plena carga. La corriente de carga predeterminada es de 100 mA (10k), por lo que funciona con baterías y puertos USB de cualquier tamaño. Una vez cargado se apaga el LED.</p>
 <p><img src="schematic01.png" alt=""></p>
+<blockquote class="warning"><p class="title"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</p><p>Si conectas la batería al revés, verás chispas y humo. El daño en el CI es permanente.</p></blockquote>
+<h2 id="tiempo-de-carga">Tiempo de carga</h2>
+<p>Sí pones una resistencia de 10 kΩ en el ping de PROG en el MCP73831 para cargar una batería de 1100 mAh a solo ~100 mA, tardará un tiempo aproximado de 11h.</p>
+<div>$$ \frac{1100_{mAh}}{100_{mAh}}=11h $$</div>
+<p>Esto es en una situación ideal, si la batería está muy descargada se puede tardar entre 12 y 14 horas.</p>
+<table>
+	<thead>
+			<tr>
+					<th>RPROG</th>
+					<th>Corriente</th>
+					<th>Tiempo</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>10 kΩ</td>
+					<td>100 mA</td>
+					<td>12–14 h</td>
+			</tr>
+			<tr>
+					<td>5 kΩ</td>
+					<td>200 mA</td>
+					<td>6–7 h</td>
+			</tr>
+			<tr>
+					<td>3.3 kΩ</td>
+					<td>300 mA</td>
+					<td>4–5 h</td>
+			</tr>
+			<tr>
+					<td>2.2 kΩ</td>
+					<td>450 mA</td>
+					<td>~3 h</td>
+			</tr>
+			<tr>
+					<td>2 kΩ</td>
+					<td>500 mA</td>
+					<td>~2.5–3 h</td>
+			</tr>
+	</tbody>
+</table>
+<p>La corriente y el tiempo es orientativo.</p>
+<p>Si el circuito integrado llega a 150°C se suspende automaticamente la carga hasta enfriarse unos 10°C. (Sección 4.10 en el datasheet)</p>
 <h2 id="circuito-completo">Circuito completo</h2>
 <p>En la práctica necesitamos un circuito mucho más complejo que el anterior, necesitas un conector USB que se puede usar como alimentación de 5V, el circuito anterior que hace de cargador, un regulador de voltaje para tener 3.3v, un switch que conmuta entre el VCC del USB o el de la batería, y por último un circuito que permite medir el voltaje con un MCU. Todo junto es lo que se espera tener en un proyecto que use baterias de este tipo.</p>
 <p>Esta idea la obtuve de <a href="https://www.youtube.com/@cybercitycircuits/shorts">@cybercitycircuits</a> que hizo un video corto explicando <a href="https://www.youtube.com/shorts/hBdJ9uH2Yd4">USB-C and LiPo Battery Charging Design</a>.</p>
 <p><img src="schematic02.png" alt=""></p>
+<h2 id="estado-de-la-carga">Estado de la carga</h2>
+<p>La comprobación más sencilla es medir la batería con un multímetro sin el cargador conectado:</p>
+<ul>
+<li>~4,20 V → prácticamente cargada al 100%.</li>
+<li>4,10–4,20 V → muy cargada.</li>
+<li>~3,9–4,0 V → carga parcial.</li>
+<li>~3,7–3,8 V → carga media/baja (muy aproximadamente).</li>
+<li>&lt;3,5 V → bastante descargada.</li>
+</ul>
+<h2 id="descarga">Descarga</h2>
+<p>Para simular una descarga de la batería use una carga fantasma/dummy load de <a href="https://www.mouser.es/es/ProductDetail/284-HS150-8.0F">8Ω 1% 150W</a></p>
 
   </article></div>
             <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
