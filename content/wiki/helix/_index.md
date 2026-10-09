@@ -39,3 +39,4 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 |Space   | b       | Abrir ficheros abiertos.                                                |
 |Command | w       | Guardar cambios del fichero.                                            |
 |Command | bc      | Cierra un fichero sin guardar y sin salir.                              |
+|Command | reload  | Recarga el fichero abierto.                                             |
