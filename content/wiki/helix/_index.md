@@ -40,6 +40,7 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 |Normal  | f       | Abrir fichero.                                                          |
 |Space   | s       | List variables or functions on document.                                |
 |Space   | b       | Abrir ficheros abiertos.                                                |
+|Space   | y       | Copia en el portapapeles del SO.                                        |
 |Command | w       | Guardar cambios del fichero.                                            |
 |Command | bc      | Cierra un fichero sin guardar y sin salir.                              |
 |Command | reload  | Recarga el fichero abierto.                                             |
