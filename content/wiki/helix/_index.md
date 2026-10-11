@@ -15,11 +15,12 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 
 |Mode    |Key      |Description                                                              |
 |--------|---------|-------------------------------------------------------------------------|
+|Normal  | %       | Selecciona todo.                                                        |
 |Normal  | >       | Indent.                                                                 |
 |Normal  | <       | Unindent.                                                               |
 |Normal  | u       | Undo.                                                                   |
 |Normal  | x       | Selecciona una linea.                                                   |
-|Normal  | y       | Yunk (Copu).                                                            |
+|Normal  | y       | Yunk (Copy).                                                            |
 |Normal  | p       | Paste.                                                                  |
 |Normal  | r       | Replace char.                                                           |
 |Normal  | d       | Delete.                                                                 |
@@ -29,12 +30,14 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 |Normal  | ge      | Ir al final del fichero.                                                |
 |Normal  | gh      | Ir al inicio de la linea.                                               |
 |Normal  | gl      | Ir al final de la linea.                                                |
+|Normal  | gd      | Saltar a la definición de una función.                                  |
 |Normal  | mimd    | Eliminar un texto entre comillas.                                       |
 |Normal  | vged    | Selecciona y elimina todo.                                              |
 |Normal  | Ctrl-c  | Comentar/Descomentar.                                                   |
 |Normal  | Ctrl-b  | Page Up.                                                                |
 |Normal  | Ctrl-f  | Page Down.                                                              |
 |Normal  | Shift-C | Multiline, seleccionar e ir bajando, precionas la tecla `,` para salir. |
+|Normal  | f       | Abrir fichero.                                                          |
 |Space   | s       | List variables or functions on document.                                |
 |Space   | b       | Abrir ficheros abiertos.                                                |
 |Command | w       | Guardar cambios del fichero.                                            |
