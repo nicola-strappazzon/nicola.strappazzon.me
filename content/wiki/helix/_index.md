@@ -25,13 +25,14 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 |Normal  | r       | Replace char.                                                           |
 |Normal  | d       | Delete.                                                                 |
 |Normal  | i       | Insert mode.                                                            |
-|Normal  | xd      | Selecciona y elimina una linea.                                         |
+|Normal  | xd      | Selecciona, copia y elimina una linea.                                  |
 |Normal  | gg      | Ir al inicio del fichero.                                               |
 |Normal  | ge      | Ir al final del fichero.                                                |
 |Normal  | gh      | Ir al inicio de la linea.                                               |
 |Normal  | gl      | Ir al final de la linea.                                                |
 |Normal  | gd      | Saltar a la definición de una función.                                  |
 |Normal  | mimd    | Eliminar un texto entre comillas.                                       |
+|Normal  | miw     | Selecciona una palabra.                                                 |
 |Normal  | vged    | Selecciona y elimina todo.                                              |
 |Normal  | Ctrl-c  | Comentar/Descomentar.                                                   |
 |Normal  | Ctrl-b  | Page Up.                                                                |
@@ -44,3 +45,6 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 |Command | w       | Guardar cambios del fichero.                                            |
 |Command | bc      | Cierra un fichero sin guardar y sin salir.                              |
 |Command | reload  | Recarga el fichero abierto.                                             |
+|Command | q       | Cierra.                                                                 |
+|Command | wq      | Guarda y cierra.                                                        |
+|Command | q!      | Cierra descartando cambios.                                             |
