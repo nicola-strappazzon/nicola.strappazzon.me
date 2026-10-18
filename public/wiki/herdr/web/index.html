@@ -1,0 +1,595 @@
+<!doctype html>
+<html
+    lang="en"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Web UI | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+        <div class="container center">
+            <header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</header>
+            <div class="content">
+  <article>
+    
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/wiki/">Wiki</a></li>
+      <li><a href="/wiki/herdr/">Herdr</a></li>
+    </ul>
+    
+    <div class="content-header">
+      <h2 class="title">Web UI</h2>
+      
+      <span class="date"><em>18/10/2026</em></span>
+      
+    </div>
+    
+    <nav class="table-of-contents" aria-label="Índice">
+      <strong>Índice</strong>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#1-instalar">1. Instalar</a></li>
+    <li><a href="#2-configurar-el-acceso-desde-la-red">2. Configurar el acceso desde la red</a></li>
+    <li><a href="#3-configurar-autenticación-mediante-token">3. Configurar autenticación mediante token</a></li>
+    <li><a href="#4-configurar-ufw">4. Configurar UFW</a></li>
+    <li><a href="#5-reiniciar">5. Reiniciar</a></li>
+    <li><a href="#6-verificar">6. Verificar</a></li>
+    <li><a href="#7-verificar-la-autenticación">7. Verificar la autenticación</a></li>
+    <li><a href="#8-acceder-desde-el-navegador">8. Acceder desde el navegador</a>
+      <ul>
+        <li><a href="#desde-la-red-local">Desde la red local</a></li>
+        <li><a href="#desde-wireguard">Desde WireGuard</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-solución-de-problemas">9. Solución de problemas</a>
+      <ul>
+        <li><a href="#no-puedo-acceder-desde-otro-equipo">No puedo acceder desde otro equipo</a></li>
+        <li><a href="#la-página-responde-con-401-unauthorized">La página responde con 401 Unauthorized</a></li>
+        <li><a href="#el-navegador-tarda-en-cargar">El navegador tarda en cargar</a></li>
+        <li><a href="#comprobar-el-estado-del-plugin">Comprobar el estado del plugin</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusión">Conclusión</a>
+      <ul>
+        <li><a href="#referencias">Referencias</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+    
+    <h2 id="introducción">Introducción</h2>
+<p><a href="https://github.com/devswha/herdr-web-ui">Herdr Web UI</a> permite acceder desde un navegador a las sesiones de <a href="https://github.com/herdrdev/herdr">Herdr</a>, incluyendo agentes como Claude Code y Codex.</p>
+<p>En esta guía instalaremos Herdr Web UI en un servidor con <strong>Omarchy Linux</strong>, configurando:</p>
+<ul>
+<li>Acceso desde la red local.</li>
+<li>Acceso remoto mediante WireGuard.</li>
+<li>Autenticación mediante token.</li>
+<li>Reglas de firewall con UFW.</li>
+<li>Configuración persistente.</li>
+</ul>
+<h2 id="1-instalar">1. Instalar</h2>
+<p>Ejecutamos el instalador oficial:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://herdrweb.dev/install.sh | sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>El instalador comprueba las dependencias necesarias e instala Herdr Web UI como plugin de Herdr.</p>
+<p>Podemos comprobar que el plugin está disponible:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr plugin list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Una vez instalado, el servidor web utiliza por defecto:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>http://127.0.0.1:7317
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Esto significa que inicialmente solo acepta conexiones desde el propio servidor.</p>
+<h2 id="2-configurar-el-acceso-desde-la-red">2. Configurar el acceso desde la red</h2>
+<p>Herdr Web UI permite modificar la dirección de escucha mediante la variable de entorno <code>HOST</code>.</p>
+<p>Primero localizamos el directorio de configuración:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr plugin config-dir devswha.herdr-web-ui
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>En nuestro caso:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/home/nicola/.config/herdr/plugins/config/devswha.herdr-web-ui
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Editamos el archivo <code>env</code>, sin punto inicial:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hx ~/.config/herdr/plugins/config/devswha.herdr-web-ui/env
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Añadimos:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span>HOST<span style="color:#719e07">=</span><span style="color:#2aa198">0.0.0.0</span>
+</span></span><span style="display:flex;"><span>PORT<span style="color:#719e07">=</span><span style="color:#2aa198">7317</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Con <code>HOST=0.0.0.0</code>, el servidor escuchará en todas las interfaces de red.</p>
+<blockquote>
+<p><strong>Seguridad:</strong> no es recomendable habilitar el acceso desde la red sin configurar autenticación. Herdr Web UI permite interactuar con terminales y ejecutar comandos.</p>
+</blockquote>
+<h2 id="3-configurar-autenticación-mediante-token">3. Configurar autenticación mediante token</h2>
+<p>Generamos un token aleatorio:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl rand -hex <span style="color:#2aa198">32</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Copiamos el resultado y editamos nuevamente el archivo:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hx ~/.config/herdr/plugins/config/devswha.herdr-web-ui/env
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>La configuración final será:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span>HOST<span style="color:#719e07">=</span><span style="color:#2aa198">0.0.0.0</span>
+</span></span><span style="display:flex;"><span>PORT<span style="color:#719e07">=</span><span style="color:#2aa198">7317</span>
+</span></span><span style="display:flex;"><span>HERDR_WEB_TOKEN<span style="color:#719e07">=</span><span style="color:#2aa198">REEMPLAZAR_POR_TOKEN_GENERADO</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Protegemos el archivo:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#2aa198">600</span> ~/.config/herdr/plugins/config/devswha.herdr-web-ui/env
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>El token permite autenticar los navegadores que accedan a Herdr Web UI.</p>
+<p>Una vez iniciada la sesión, el navegador puede conservar la autenticación mediante una cookie.</p>
+<p><strong>No debemos publicar el token ni incluirlo en repositorios Git.</strong></p>
+<h2 id="4-configurar-ufw">4. Configurar UFW</h2>
+<p>Nuestro objetivo es permitir conexiones únicamente desde la red local y desde WireGuard.</p>
+<p>Permitimos el acceso desde la LAN:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw allow from 192.168.1.0/24 to any port <span style="color:#2aa198">7317</span> proto tcp
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Permitimos el acceso desde WireGuard:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw allow from 10.50.0.0/24 to any port <span style="color:#2aa198">7317</span> proto tcp
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Comprobamos las reglas:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw status
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Deberíamos encontrar:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>7317/tcp    ALLOW    192.168.1.0/24
+</span></span><span style="display:flex;"><span>7317/tcp    ALLOW    10.50.0.0/24
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>No necesitamos abrir el puerto <code>7317</code> en el router.</p>
+<p>El acceso remoto se realizará mediante WireGuard.</p>
+<h2 id="5-reiniciar">5. Reiniciar</h2>
+<p>Detenemos el plugin:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr plugin action invoke devswha.herdr-web-ui.stop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Lo iniciamos nuevamente:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr plugin action invoke devswha.herdr-web-ui.start
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Esto reinicia Herdr Web UI sin necesidad de detener el servidor principal de Herdr.</p>
+<blockquote>
+<p><strong>Nota:</strong> Herdr Web UI puede tardar unos segundos en estar disponible después del arranque.</p>
+</blockquote>
+<h2 id="6-verificar">6. Verificar</h2>
+<p>Ejecutamos:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ss -lntp | grep <span style="color:#2aa198">7317</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Antes de modificar la configuración, obteníamos:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>LISTEN 0 512 127.0.0.1:7317 0.0.0.0:*
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Después del cambio, esperamos:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>LISTEN 0 512 0.0.0.0:7317 0.0.0.0:*
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Esto confirma que el servicio acepta conexiones en las interfaces de red del servidor.</p>
+<h2 id="7-verificar-la-autenticación">7. Verificar la autenticación</h2>
+<p>Podemos comprobar que la API requiere autenticación:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -i http://127.0.0.1:7317/api/session
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>La respuesta esperada es:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#268bd2">HTTP</span><span style="color:#719e07">/</span><span style="color:#2aa198">1.1</span> <span style="color:#2aa198">401</span> <span style="color:#cb4b16">Unauthorized</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#719e07">:</span> application/json; charset=utf-8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#268bd2">&#34;error&#34;</span>:{<span style="color:#268bd2">&#34;code&#34;</span>:<span style="color:#2aa198">&#34;unauthorized&#34;</span>,<span style="color:#268bd2">&#34;message&#34;</span>:<span style="color:#2aa198">&#34;token required&#34;</span>}}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>El código <code>401</code> es correcto: significa que la aplicación está funcionando y exige un token.</p>
+<p>También podemos probar la autenticación mediante una cabecera HTTP:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -i <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#2aa198">&#34;Authorization: Bearer </span><span style="color:#2aa198">${</span><span style="color:#268bd2">HERDR_WEB_TOKEN</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#34;</span> <span style="color:#cb4b16">\
+</span></span></span><span style="display:flex;"><span>  http://127.0.0.1:7317/api/session
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Este ejemplo requiere que <code>HERDR_WEB_TOKEN</code> esté definida en la sesión actual de la terminal.</p>
+<p>El archivo <code>env</code> del plugin no carga automáticamente esa variable en nuestro shell.</p>
+<h2 id="8-acceder-desde-el-navegador">8. Acceder desde el navegador</h2>
+<h3 id="desde-la-red-local">Desde la red local</h3>
+<p>Abrimos:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>http://192.168.1.100:7317
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="desde-wireguard">Desde WireGuard</h3>
+<p>Con la VPN conectada:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>http://10.50.0.1:7317
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Herdr Web UI solicitará el token de autenticación.</p>
+<p>Una vez introducido, el navegador conservará la sesión.</p>
+<blockquote>
+<p><strong>Importante:</strong> HTTP no cifra las credenciales ni el contenido de la sesión. WireGuard protege el tráfico dentro del túnel VPN, pero para acceder de forma segura desde otros dispositivos de la LAN es recomendable utilizar HTTPS.</p>
+</blockquote>
+<h2 id="9-solución-de-problemas">9. Solución de problemas</h2>
+<h3 id="no-puedo-acceder-desde-otro-equipo">No puedo acceder desde otro equipo</h3>
+<p>Comprobamos la dirección de escucha:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ss -lntp | grep <span style="color:#2aa198">7317</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Si aparece:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>127.0.0.1:7317
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>El servicio únicamente acepta conexiones locales.</p>
+<p>Revisamos que el archivo <code>env</code> contenga:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span>HOST<span style="color:#719e07">=</span><span style="color:#2aa198">0.0.0.0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Y reiniciamos el plugin.</p>
+<h3 id="la-página-responde-con-401-unauthorized">La página responde con 401 Unauthorized</h3>
+<p>Si ejecutamos:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -i http://127.0.0.1:7317/api/session
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Y obtenemos:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>401 Unauthorized
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>El servidor está funcionando, pero requiere autenticación.</p>
+<p>No es un error de conectividad.</p>
+<h3 id="el-navegador-tarda-en-cargar">El navegador tarda en cargar</h3>
+<p>Después de reiniciar el plugin, esperamos unos segundos antes de volver a intentar acceder.</p>
+<p>Podemos comprobar si el servidor está escuchando:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ss -lntp | grep <span style="color:#2aa198">7317</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="comprobar-el-estado-del-plugin">Comprobar el estado del plugin</h3>
+<p>Ejecutamos:</p>
+<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr plugin action invoke devswha.herdr-web-ui.status
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Este comando invoca la acción de estado del plugin. Su respuesta inicial puede limitarse a confirmar que la acción se está ejecutando.</p>
+<h2 id="conclusión">Conclusión</h2>
+<p>Con esta configuración tenemos Herdr Web UI funcionando en nuestro servidor Omarchy Linux.</p>
+<p>Podemos acceder a nuestras sesiones de Claude Code y Codex desde cualquier equipo autorizado de la red local o mediante WireGuard.</p>
+<p>La instalación utiliza la configuración nativa del proyecto, sin necesidad de añadir proxies ni servicios adicionales.</p>
+<h3 id="referencias">Referencias</h3>
+<ul>
+<li><a href="https://github.com/devswha/herdr-web-ui">Herdr Web UI — GitHub</a></li>
+<li><a href="https://github.com/devswha/herdr-web-ui/blob/main/docs/guide.md">Herdr Web UI — Documentación</a></li>
+<li><a href="https://github.com/devswha/herdr-web-ui/blob/main/INSTALL.md">Herdr Web UI — Instalación</a></li>
+<li><a href="https://github.com/herdrdev/herdr">Herdr — GitHub</a></li>
+</ul>
+
+  </article></div>
+            <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
+
+            if (!btn || !menu) return;
+
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</html>

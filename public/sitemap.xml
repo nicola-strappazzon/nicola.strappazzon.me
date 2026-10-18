@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/wiki/herdr/install/</loc>
+    <lastmod>2026-10-18T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/electronic/repair/gameboy/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -27,6 +30,9 @@
     <loc>http://localhost:1313/wiki/raspberrypi/post-install/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/history/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/herdr/web/</loc>
+    <lastmod>2026-10-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki/mysql/queries/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
@@ -116,10 +122,16 @@
   </url><url>
     <loc>http://localhost:1313/electronic/integrated-circuit/avr-dx/nhd-1.8-160128ubc3/</loc>
   </url><url>
-    <loc>http://localhost:1313/electronic/</loc>
-    <lastmod>2026-01-16T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/wiki/herdr/</loc>
+    <lastmod>2026-10-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2026-10-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/wiki/</loc>
+    <lastmod>2026-10-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/electronic/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/bash/</loc>
@@ -156,9 +168,6 @@
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/electronic/resources/sellers/</loc>
-    <lastmod>2025-05-09T10:56:29+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/wiki/</loc>
     <lastmod>2025-05-09T10:56:29+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/mysql-host-blocked-many-connection-errors/</loc>

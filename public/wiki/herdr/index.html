@@ -1,0 +1,222 @@
+<!doctype html>
+<html
+    lang="en"
+    dir="ltr"
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Herdr | Nicola Strappazzon</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.png">
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </head>
+    <body>
+        <script src="/js/clipboard.min.4d75b6b383c38de46352f721d96601251b6b353bae03735bde4465e332a5f776.js"></script>
+        <div class="container center">
+            <header><header class="header">
+    <div class="header_inner">
+        <div class="header_logo">
+            <a href="http://localhost:1313/">
+                <div class="logo">Nicola Strappazzon</div>
+            </a>
+        </div>
+        <button
+            class="navigation-menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navigation-menu-toggle"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="header_social_navigation">
+        <div class="header_social">
+            <a href="http://localhost:1313/index.xml" target="_blank" title="RSS">
+                <i class="fa-solid fa-rss"></i>
+            </a>
+            <a
+                href="https://github.com/nicola-strappazzon/"
+                target="_blank"
+                title="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/nicola-strappazzon-carotenuto/"
+                target="_blank"
+                title="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://es.stackoverflow.com/users/74571/nicola-strappazzon/"
+                target="_blank"
+                title="stackoverflow"
+            >
+                <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a
+                href="https://medium.com/@nicola-strappazzon/"
+                target="_blank"
+                title="Medium"
+            >
+                <i class="fab fa-medium"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/nicola.strappazzon/"
+                target="_blank"
+                title="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="header_navigation">
+            <nav class="navigation-menu">
+                <ul class="navigation-menu-list" id="mainMenu">
+                    <li>
+                        <a
+                            href="/posts/"
+                            
+                            >Posts</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/wiki/"
+                            
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/electronic/"
+                            
+                            >Electrónica</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/cultura/"
+                            
+                            >Cultura</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/diccionary/"
+                            
+                            >Diccionario</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</header>
+            <div class="content">
+  
+  
+    
+    <ul id="breadcrumbs">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/wiki/">Wiki</a></li>
+    </ul>
+    
+    <div class="content-header">
+      <h2 class="title">Herdr</h2>
+      
+      <span class="date"><em>18/10/2026</em></span>
+      
+    </div>
+    
+    <nav class="table-of-contents" aria-label="Índice">
+      <strong>Índice</strong>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#qué-es-herdr">¿Qué es Herdr?</a></li>
+    <li><a href="#para-qué-sirve">¿Para qué sirve?</a></li>
+  </ul>
+</nav>
+    </nav>
+    
+  
+  <h2 id="qué-es-herdr">¿Qué es Herdr?</h2>
+<p><a href="https://herdr.dev/">Herdr</a> es un multiplexor de terminales diseñado especialmente para trabajar con agentes de programación como <strong>Claude Code, Codex y OpenCode</strong>.</p>
+<p>Podemos considerarlo una alternativa moderna a tmux, pero orientada a gestionar múltiples proyectos y agentes de inteligencia artificial.</p>
+<p>Su principal ventaja es que permite mantener las terminales ejecutándose en segundo plano, incluso cuando cerramos la aplicación o perdemos la conexión SSH.</p>
+<h2 id="para-qué-sirve">¿Para qué sirve?</h2>
+<p>Herdr permite:</p>
+<ul>
+<li><strong>Gestionar múltiples proyectos:</strong> organizar cada proyecto en su propio workspace.</li>
+<li><strong>Ejecutar varios agentes:</strong> utilizar Claude Code y Codex simultáneamente.</li>
+<li><strong>Mantener sesiones persistentes:</strong> desconectarnos sin detener los procesos.</li>
+<li><strong>Supervisar agentes:</strong> identificar cuáles están trabajando, esperando instrucciones o inactivos.</li>
+<li><strong>Organizar terminales:</strong> crear pestañas y dividir paneles.</li>
+<li><strong>Acceder remotamente:</strong> recuperar las sesiones desde otra terminal mediante SSH.</li>
+<li><strong>Extender funcionalidades:</strong> instalar plugins como Herdr Web UI.</li>
+</ul>
+<p>Además, Herdr está desarrollado en Rust y funciona directamente en la terminal, sin necesitar Electron.</p>
+
+  
+  <ul>
+    
+      <li><a href="/wiki/herdr/install/">Instalar</a></li>
+    
+      <li><a href="/wiki/herdr/web/">Web UI</a></li>
+    
+  </ul>
+  
+</div>
+            <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>
+        </div>
+    </body>
+    <script>
+        (function () {
+            const btn = document.getElementById("menuToggle");
+            const menu = document.getElementById("mainMenu");
+
+            if (!btn || !menu) return;
+
+            function openMenu() {
+                menu.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+                btn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+
+            function closeMenu() {
+                menu.classList.remove("is-open");
+                btn.setAttribute("aria-expanded", "false");
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            btn.addEventListener("click", () => {
+                if (menu.classList.toggle("is-open")) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            menu.addEventListener("click", (e) => {
+                if (e.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                if (
+                    window.innerWidth >
+                    parseInt(
+                        getComputedStyle(
+                            document.documentElement,
+                        ).getPropertyValue("--bp"),
+                    )
+                ) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+</html>

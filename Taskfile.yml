@@ -28,7 +28,7 @@ tasks:
   run:
     desc: Run hugo server in local
     cmds:
-      - hugo server --disableFastRender --noHTTPCache --ignoreCache --cleanDestinationDir
+      - hugo server --bind 0.0.0.0 --disableFastRender --noHTTPCache --ignoreCache --cleanDestinationDir
 
   clean:
     desc: Remove build files
