@@ -33,6 +33,7 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 |Normal  | gd      | Saltar a la definición de una función.                                  |
 |Normal  | mimd    | Eliminar un texto entre comillas.                                       |
 |Normal  | miw     | Selecciona una palabra.                                                 |
+|Normal  | vgl     | Selecciona desde donde estas hasta el final de la linea.                |
 |Normal  | vged    | Selecciona y elimina todo.                                              |
 |Normal  | Ctrl-c  | Comentar/Descomentar.                                                   |
 |Normal  | Ctrl-b  | Page Up.                                                                |
@@ -48,3 +49,16 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 |Command | q       | Cierra.                                                                 |
 |Command | wq      | Guarda y cierra.                                                        |
 |Command | q!      | Cierra descartando cambios.                                             |
+
+## Flujos
+
+Aqui explico brevemente como usar los shortcuts para hacer cosas en particular.
+
+### Buscar y reemplazar
+
+Supongamos que quiere buscar una palabra que se repite en todo el fichero, y luego reemplazar por otra. Debes hacer lo siguiente.
+
+1. `%` selecciona todo el archivo.
+2. `s` abre el prompt de selección. Escribe la palabra (acepta regex) y pulsa Enter. Ahora tienes un cursor en cada coincidencia.
+3. `c` escribe la palabra nueva y pulsa Esc.
+4. `,` para salir del modo de selección.

@@ -17,7 +17,7 @@ En esta guía instalaremos Herdr Web UI en un servidor con **Omarchy Linux**, co
 - Reglas de firewall con UFW.
 - Configuración persistente.
 
-## 1. Instalar
+## Instalar
 
 Ejecutamos el instalador oficial:
 
@@ -41,7 +41,7 @@ http://127.0.0.1:7317
 
 Esto significa que inicialmente solo acepta conexiones desde el propio servidor.
 
-## 2. Configurar el acceso desde la red
+## Configurar
 
 Herdr Web UI permite modificar la dirección de escucha mediante la variable de entorno `HOST`.
 
@@ -74,7 +74,7 @@ Con `HOST=0.0.0.0`, el servidor escuchará en todas las interfaces de red.
 
 > **Seguridad:** no es recomendable habilitar el acceso desde la red sin configurar autenticación. Herdr Web UI permite interactuar con terminales y ejecutar comandos.
 
-## 3. Configurar autenticación mediante token
+## Autenticación
 
 Generamos un token aleatorio:
 
@@ -108,7 +108,7 @@ Una vez iniciada la sesión, el navegador puede conservar la autenticación medi
 
 **No debemos publicar el token ni incluirlo en repositorios Git.**
 
-## 4. Configurar UFW
+## Firewall
 
 Nuestro objetivo es permitir conexiones únicamente desde la red local y desde WireGuard.
 
@@ -141,7 +141,7 @@ No necesitamos abrir el puerto `7317` en el router.
 
 El acceso remoto se realizará mediante WireGuard.
 
-## 5. Reiniciar
+## Reiniciar
 
 Detenemos el plugin:
 
@@ -159,7 +159,7 @@ Esto reinicia Herdr Web UI sin necesidad de detener el servidor principal de Her
 
 > **Nota:** Herdr Web UI puede tardar unos segundos en estar disponible después del arranque.
 
-## 6. Verificar
+## Verificar
 
 Ejecutamos:
 
