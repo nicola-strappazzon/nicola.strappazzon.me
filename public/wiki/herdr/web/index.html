@@ -136,12 +136,12 @@
       <nav id="TableOfContents">
   <ul>
     <li><a href="#introducción">Introducción</a></li>
-    <li><a href="#1-instalar">1. Instalar</a></li>
-    <li><a href="#2-configurar-el-acceso-desde-la-red">2. Configurar el acceso desde la red</a></li>
-    <li><a href="#3-configurar-autenticación-mediante-token">3. Configurar autenticación mediante token</a></li>
-    <li><a href="#4-configurar-ufw">4. Configurar UFW</a></li>
-    <li><a href="#5-reiniciar">5. Reiniciar</a></li>
-    <li><a href="#6-verificar">6. Verificar</a></li>
+    <li><a href="#instalar">Instalar</a></li>
+    <li><a href="#configurar">Configurar</a></li>
+    <li><a href="#autenticación">Autenticación</a></li>
+    <li><a href="#firewall">Firewall</a></li>
+    <li><a href="#reiniciar">Reiniciar</a></li>
+    <li><a href="#verificar">Verificar</a></li>
     <li><a href="#7-verificar-la-autenticación">7. Verificar la autenticación</a></li>
     <li><a href="#8-acceder-desde-el-navegador">8. Acceder desde el navegador</a>
       <ul>
@@ -176,7 +176,7 @@
 <li>Reglas de firewall con UFW.</li>
 <li>Configuración persistente.</li>
 </ul>
-<h2 id="1-instalar">1. Instalar</h2>
+<h2 id="instalar">Instalar</h2>
 <p>Ejecutamos el instalador oficial:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -206,7 +206,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Esto significa que inicialmente solo acepta conexiones desde el propio servidor.</p>
-<h2 id="2-configurar-el-acceso-desde-la-red">2. Configurar el acceso desde la red</h2>
+<h2 id="configurar">Configurar</h2>
 <p>Herdr Web UI permite modificar la dirección de escucha mediante la variable de entorno <code>HOST</code>.</p>
 <p>Primero localizamos el directorio de configuración:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
@@ -250,7 +250,7 @@
 <blockquote>
 <p><strong>Seguridad:</strong> no es recomendable habilitar el acceso desde la red sin configurar autenticación. Herdr Web UI permite interactuar con terminales y ejecutar comandos.</p>
 </blockquote>
-<h2 id="3-configurar-autenticación-mediante-token">3. Configurar autenticación mediante token</h2>
+<h2 id="autenticación">Autenticación</h2>
 <p>Generamos un token aleatorio:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -294,7 +294,7 @@
 </div><p>El token permite autenticar los navegadores que accedan a Herdr Web UI.</p>
 <p>Una vez iniciada la sesión, el navegador puede conservar la autenticación mediante una cookie.</p>
 <p><strong>No debemos publicar el token ni incluirlo en repositorios Git.</strong></p>
-<h2 id="4-configurar-ufw">4. Configurar UFW</h2>
+<h2 id="firewall">Firewall</h2>
 <p>Nuestro objetivo es permitir conexiones únicamente desde la red local y desde WireGuard.</p>
 <p>Permitimos el acceso desde la LAN:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
@@ -336,7 +336,7 @@
 </div>
 </div><p>No necesitamos abrir el puerto <code>7317</code> en el router.</p>
 <p>El acceso remoto se realizará mediante WireGuard.</p>
-<h2 id="5-reiniciar">5. Reiniciar</h2>
+<h2 id="reiniciar">Reiniciar</h2>
 <p>Detenemos el plugin:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -359,7 +359,7 @@
 <blockquote>
 <p><strong>Nota:</strong> Herdr Web UI puede tardar unos segundos en estar disponible después del arranque.</p>
 </blockquote>
-<h2 id="6-verificar">6. Verificar</h2>
+<h2 id="verificar">Verificar</h2>
 <p>Ejecutamos:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

@@ -238,6 +238,7 @@ article p > img,
 }
 
 blockquote {
+    display: flow-root;
     position: relative;
     padding: 16px;
     background-color: #272822;

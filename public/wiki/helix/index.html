@@ -135,6 +135,11 @@
   <ul>
     <li><a href="#modes">Modes</a></li>
     <li><a href="#shortcuts">Shortcuts</a></li>
+    <li><a href="#flujos">Flujos</a>
+      <ul>
+        <li><a href="#buscar-y-reemplazar">Buscar y reemplazar</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </nav>
@@ -249,6 +254,11 @@
 			</tr>
 			<tr>
 					<td>Normal</td>
+					<td>vgl</td>
+					<td>Selecciona desde donde estas hasta el final de la linea.</td>
+			</tr>
+			<tr>
+					<td>Normal</td>
 					<td>vged</td>
 					<td>Selecciona y elimina todo.</td>
 			</tr>
@@ -324,6 +334,16 @@
 			</tr>
 	</tbody>
 </table>
+<h2 id="flujos">Flujos</h2>
+<p>Aqui explico brevemente como usar los shortcuts para hacer cosas en particular.</p>
+<h3 id="buscar-y-reemplazar">Buscar y reemplazar</h3>
+<p>Supongamos que quiere buscar una palabra que se repite en todo el fichero, y luego reemplazar por otra. Debes hacer lo siguiente.</p>
+<ol>
+<li><code>%</code> selecciona todo el archivo.</li>
+<li><code>s</code> abre el prompt de selección. Escribe la palabra (acepta regex) y pulsa Enter. Ahora tienes un cursor en cada coincidencia.</li>
+<li><code>c</code> escribe la palabra nueva y pulsa Esc.</li>
+<li><code>,</code> para salir del modo de selección.</li>
+</ol>
 
   
   <ul>

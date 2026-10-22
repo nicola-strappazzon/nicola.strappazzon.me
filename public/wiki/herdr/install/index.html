@@ -135,58 +135,25 @@
       <strong>Índice</strong>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-instalar-herdr">1. Instalar Herdr</a>
-      <ul>
-        <li><a href="#comprobar-la-instalación">Comprobar la instalación</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-iniciar-herdr">2. Iniciar Herdr</a></li>
-    <li><a href="#3-crear-nuestro-primer-workspace">3. Crear nuestro primer workspace</a></li>
-    <li><a href="#4-desconectarnos-sin-detener-los-procesos">4. Desconectarnos sin detener los procesos</a></li>
-    <li><a href="#5-acceder-mediante-ssh">5. Acceder mediante SSH</a></li>
-    <li><a href="#6-comandos-útiles">6. Comandos útiles</a>
-      <ul>
-        <li><a href="#iniciar-o-recuperar-sesiones">Iniciar o recuperar sesiones</a></li>
-        <li><a href="#consultar-la-versión">Consultar la versión</a></li>
-        <li><a href="#comprobar-el-estado-del-servidor">Comprobar el estado del servidor</a></li>
-        <li><a href="#actualizar-herdr">Actualizar Herdr</a></li>
-        <li><a href="#consultar-los-plugins-instalados">Consultar los plugins instalados</a></li>
-        <li><a href="#consultar-la-ayuda">Consultar la ayuda</a></li>
-      </ul>
-    </li>
-    <li><a href="#7-actualizaciones">7. Actualizaciones</a></li>
-    <li><a href="#8-ampliar-herdr-con-herdr-web-ui">8. Ampliar Herdr con Herdr Web UI</a></li>
-    <li><a href="#conclusión">Conclusión</a></li>
-    <li><a href="#referencias">Referencias</a></li>
+    <li><a href="#instalar">Instalar</a></li>
+    <li><a href="#iniciar">Iniciar</a></li>
   </ul>
 </nav>
     </nav>
     
-    <h2 id="1-instalar-herdr">1. Instalar Herdr</h2>
-<p>La instalación en Linux es sencilla.</p>
-<p>Ejecutamos el instalador oficial:</p>
+    <h2 id="instalar">Instalar</h2>
+<p>Ejecutamos el instalador oficial y verificamos su versión:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://herdr.dev/install.sh | sh
+</span></span><span style="display:flex;"><span>herdr --version
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>El instalador descarga el binario correspondiente a nuestra arquitectura y lo instala en una ubicación disponible desde el <code>PATH</code>.</p>
-<p>Es compatible con distribuciones Linux como Arch Linux, Ubuntu y Debian.</p>
-<p>En nuestro caso utilizamos <strong>Omarchy Linux</strong>, basado en Arch Linux.</p>
-<h3 id="comprobar-la-instalación">Comprobar la instalación</h3>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr --version
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Si el comando no se encuentra, podemos cerrar y volver a abrir la terminal para actualizar el entorno.</p>
-<h2 id="2-iniciar-herdr">2. Iniciar Herdr</h2>
+</div><h2 id="iniciar">Iniciar</h2>
 <p>Para iniciar la aplicación:</p>
 <div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -200,251 +167,6 @@
 <p>Herdr utiliza una arquitectura cliente-servidor.</p>
 <p>El servidor mantiene las sesiones activas, mientras que el cliente proporciona la interfaz para interactuar con ellas.</p>
 <p>Esto permite cerrar el cliente sin finalizar los procesos que se están ejecutando.</p>
-<h2 id="3-crear-nuestro-primer-workspace">3. Crear nuestro primer workspace</h2>
-<p>Un workspace representa un espacio de trabajo, normalmente asociado a un proyecto.</p>
-<p>Por ejemplo, podemos organizar nuestros proyectos de esta manera:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Herdr
-</span></span><span style="display:flex;"><span>│
-</span></span><span style="display:flex;"><span>├── backend
-</span></span><span style="display:flex;"><span>│   ├── Claude Code
-</span></span><span style="display:flex;"><span>│   ├── Tests
-</span></span><span style="display:flex;"><span>│   └── Git
-</span></span><span style="display:flex;"><span>│
-</span></span><span style="display:flex;"><span>├── infrastructure
-</span></span><span style="display:flex;"><span>│   ├── Codex
-</span></span><span style="display:flex;"><span>│   └── Terminal
-</span></span><span style="display:flex;"><span>│
-</span></span><span style="display:flex;"><span>└── data-platform
-</span></span><span style="display:flex;"><span>    ├── Claude Code
-</span></span><span style="display:flex;"><span>    ├── ClickHouse
-</span></span><span style="display:flex;"><span>    └── Logs
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Cada workspace puede contener varias pestañas y paneles independientes.</p>
-<p>Podemos ejecutar diferentes herramientas en cada uno de ellos.</p>
-<p>Por ejemplo:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>O:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>codex
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Herdr no sustituye a estos agentes: simplemente administra las terminales donde se ejecutan.</p>
-<p>Los agentes deben estar instalados y configurados previamente.</p>
-<h2 id="4-desconectarnos-sin-detener-los-procesos">4. Desconectarnos sin detener los procesos</h2>
-<p>Una de las funcionalidades más interesantes de Herdr es la persistencia de las sesiones.</p>
-<p>Para desconectarnos del cliente utilizamos:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ctrl+b, q
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Primero pulsamos <code>Ctrl+b</code> y después <code>q</code>.</p>
-<p>Los procesos continúan ejecutándose en el servidor de Herdr.</p>
-<p>Para recuperar nuestras sesiones:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Volveremos a encontrar nuestros workspaces y terminales.</p>
-<blockquote>
-<p><strong>Importante:</strong> desconectarse del cliente no es lo mismo que reiniciar el ordenador. Después de reiniciar el sistema, Herdr puede restaurar la distribución de los paneles y reanudar sesiones compatibles de agentes, pero los procesos originales no sobreviven al reinicio.</p>
-</blockquote>
-<h2 id="5-acceder-mediante-ssh">5. Acceder mediante SSH</h2>
-<p>Herdr resulta especialmente interesante cuando lo instalamos en un servidor dedicado.</p>
-<p>Por ejemplo, podemos conectarnos desde nuestro Mac a un servidor Linux:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh nicola@192.168.1.100
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Una vez conectados:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>De esta manera podemos acceder a los proyectos y agentes que se ejecutan en el servidor.</p>
-<p>Si perdemos la conexión SSH, el servidor de Herdr mantiene los procesos activos.</p>
-<p>Al volver a conectarnos, podemos recuperar las sesiones.</p>
-<p>Esta arquitectura es especialmente útil para trabajar con agentes que realizan tareas largas.</p>
-<h2 id="6-comandos-útiles">6. Comandos útiles</h2>
-<h3 id="iniciar-o-recuperar-sesiones">Iniciar o recuperar sesiones</h3>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="consultar-la-versión">Consultar la versión</h3>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr --version
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="comprobar-el-estado-del-servidor">Comprobar el estado del servidor</h3>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr status server
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="actualizar-herdr">Actualizar Herdr</h3>
-<p>Si utilizamos el instalador oficial:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr update
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="consultar-los-plugins-instalados">Consultar los plugins instalados</h3>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr plugin list
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="consultar-la-ayuda">Consultar la ayuda</h3>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr --help
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="7-actualizaciones">7. Actualizaciones</h2>
-<p>Herdr dispone de un sistema de actualizaciones integrado.</p>
-<p>Para actualizar una instalación realizada mediante el script oficial:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr update
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>También podemos seleccionar el canal de actualizaciones.</p>
-<p>Canal estable:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr channel <span style="color:#b58900">set</span> stable
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Canal de versiones preliminares:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr channel <span style="color:#b58900">set</span> preview
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Para un entorno de trabajo habitual, es recomendable utilizar el canal estable.</p>
-<blockquote>
-<p>Las instalaciones realizadas mediante Homebrew, mise o Nix deben actualizarse utilizando su correspondiente gestor de paquetes.</p>
-</blockquote>
-<h2 id="8-ampliar-herdr-con-herdr-web-ui">8. Ampliar Herdr con Herdr Web UI</h2>
-<p>Una característica interesante de Herdr es su sistema de plugins.</p>
-<p>Uno de ellos es <a href="https://github.com/devswha/herdr-web-ui">Herdr Web UI</a>, que permite acceder a las sesiones desde un navegador.</p>
-<p>Podemos instalarlo mediante:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://herdrweb.dev/install.sh | sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>También podemos instalar directamente el plugin:</p>
-<div class="highlight"><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>herdr plugin install devswha/herdr-web-ui
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Herdr Web UI permite:</p>
-<ul>
-<li>Acceder desde un navegador.</li>
-<li>Utilizar Claude Code y Codex desde el móvil.</li>
-<li>Consultar las sesiones existentes.</li>
-<li>Interactuar con las terminales.</li>
-<li>Gestionar agentes remotamente.</li>
-</ul>
-<p>Con Herdr ejecutándose en nuestro servidor y WireGuard proporcionando acceso remoto, podemos trabajar desde distintos dispositivos sin exponer directamente las terminales a Internet.</p>
-<p>Herdr Web UI requiere configurar correctamente el acceso y la autenticación antes de permitir conexiones desde otros equipos.</p>
-<h2 id="conclusión">Conclusión</h2>
-<p>Herdr es una herramienta especialmente útil para quienes trabajan con múltiples proyectos y agentes de programación.</p>
-<p>En lugar de mantener numerosas ventanas de terminal abiertas, podemos organizar todo nuestro entorno de desarrollo en una única aplicación.</p>
-<p>Su arquitectura cliente-servidor permite mantener los procesos ejecutándose en segundo plano y recuperar nuestras sesiones desde diferentes equipos.</p>
-<p>Combinado con SSH, WireGuard y Herdr Web UI, resulta una solución muy interesante para montar un entorno de desarrollo remoto en nuestro propio homelab.</p>
-<h2 id="referencias">Referencias</h2>
-<ul>
-<li><a href="https://herdr.dev/">Herdr — Web oficial</a></li>
-<li><a href="https://github.com/herdrdev/herdr">Herdr — GitHub</a></li>
-<li><a href="https://herdr.dev/docs/install/">Herdr — Instalación</a></li>
-<li><a href="https://herdr.dev/docs/">Herdr — Documentación</a></li>
-<li><a href="https://github.com/devswha/herdr-web-ui">Herdr Web UI — GitHub</a></li>
-</ul>
 
   </article></div>
             <footer class="footer"><span><i class="fab fa-creative-commons"></i>&nbsp;<i class="fab fa-creative-commons-by"></i>&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> | Without cookies | Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/">GitHub</a>.</span></footer>

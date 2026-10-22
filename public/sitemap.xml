@@ -53,6 +53,9 @@
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/values/</loc>
   </url><url>
+    <loc>http://localhost:1313/wiki/herdr/remote/</loc>
+    <lastmod>2026-10-18T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/wiki/openpgp/backup/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/</loc>
@@ -68,6 +71,9 @@
     <loc>http://localhost:1313/wiki/terminal/prompt/</loc>
   </url><url>
     <loc>http://localhost:1313/electronic/components/display/ssd1353/</loc>
+  </url><url>
+    <loc>http://localhost:1313/wiki/herdr/shortcuts/</loc>
+    <lastmod>2026-10-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/electronic/components/resistor/dummy-load/</loc>
   </url><url>
