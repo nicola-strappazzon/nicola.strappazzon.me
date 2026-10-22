@@ -73,8 +73,10 @@ Estas son las puntas que recomiendo:
 
 ## Consumibles varios
 
+No todo se puede quitar con Alcohol Isopropílico 99,9%, por eso existen productos especializados que son ideales para remover flux sin esfuerzo:
+
 - [Kontakt MULTIFOAM 77](https://www.tme.eu/es/details/77_400/productos-de-limpieza-y-mantenimiento/kontakt-chemie/62713-005/) Limpiador a base de espuma.
-- [Kontakt PCC 400 Ml - 84013](https://www.tme.eu/es/details/pcc_400/preparados-de-limpieza/kontakt-chemie/84013-006/) Es un removedor de flux.
+- [Kontakt PCC 400 Ml - 84013](https://www.tme.eu/es/details/pcc_400/preparados-de-limpieza/kontakt-chemie/84013-006/) Es un removedor de flux (Excelente!).
 - [MG Chemicals - Alcohol Wipes for Electronics](https://mgchemicals.com/category/electronic-cleaning-products/alcohol-wipes/) Muy útil para limpiar aparatos electrónicos que se te entregan.
 
 ## Consumibles para soldar y desoldar
