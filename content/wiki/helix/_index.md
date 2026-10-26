@@ -40,6 +40,7 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 |Normal  | Ctrl-f  | Page Down.                                                              |
 |Normal  | Shift-C | Multiline, seleccionar e ir bajando, precionas la tecla `,` para salir. |
 |Normal  | f       | Abrir fichero.                                                          |
+|Space   | e       | Abre un explorador de ficheros.                                         |
 |Space   | s       | List variables or functions on document.                                |
 |Space   | b       | Abrir ficheros abiertos.                                                |
 |Space   | y       | Copia en el portapapeles del SO.                                        |
