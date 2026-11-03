@@ -33,7 +33,11 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 |Normal  | gd      | Saltar a la definición de una función.                                  |
 |Normal  | mimd    | Eliminar un texto entre comillas.                                       |
 |Normal  | miw     | Selecciona una palabra.                                                 |
+<<<<<<< HEAD
 |Normal  | vgl     | Selecciona desde donde estas hasta el final de la linea.                |
+=======
+|Normal  | miW     | Selecciona la palabra y también los espacios adyacentes.                |
+>>>>>>> ab17202 (Save changes at: 1793703631)
 |Normal  | vged    | Selecciona y elimina todo.                                              |
 |Normal  | Ctrl-c  | Comentar/Descomentar.                                                   |
 |Normal  | Ctrl-b  | Page Up.                                                                |
