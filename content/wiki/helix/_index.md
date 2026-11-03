@@ -26,18 +26,17 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 |Normal  | d       | Delete.                                                                 |
 |Normal  | i       | Insert mode.                                                            |
 |Normal  | xd      | Selecciona, copia y elimina una linea.                                  |
+|Normal  | xdp     | Mueve una lina hacia abajo.                                             |
+|Normal  | xdkp    | Mueve una lina hacia arriba.                                            |
 |Normal  | gg      | Ir al inicio del fichero.                                               |
-|Normal  | ge      | Ir al final del fichero.                                                |
 |Normal  | gh      | Ir al inicio de la linea.                                               |
+|Normal  | ge      | Ir al final del fichero.                                                |
 |Normal  | gl      | Ir al final de la linea.                                                |
 |Normal  | gd      | Saltar a la definición de una función.                                  |
 |Normal  | mimd    | Eliminar un texto entre comillas.                                       |
 |Normal  | miw     | Selecciona una palabra.                                                 |
-<<<<<<< HEAD
-|Normal  | vgl     | Selecciona desde donde estas hasta el final de la linea.                |
-=======
 |Normal  | miW     | Selecciona la palabra y también los espacios adyacentes.                |
->>>>>>> ab17202 (Save changes at: 1793703631)
+|Normal  | vgl     | Selecciona desde donde estas hasta el final de la linea.                |
 |Normal  | vged    | Selecciona y elimina todo.                                              |
 |Normal  | Ctrl-c  | Comentar/Descomentar.                                                   |
 |Normal  | Ctrl-b  | Page Up.                                                                |
