@@ -33,8 +33,8 @@ La lista de [shortcuts/keymap](https://docs.helix-editor.com/keymap.html) oficia
 |Normal  | ge      | Ir al final del fichero.                                                |
 |Normal  | gl      | Ir al final de la linea.                                                |
 |Normal  | gd      | Saltar a la definición de una función.                                  |
-|Normal  | mimd    | Eliminar un texto entre comillas.                                       |
-|Normal  | miw     | Selecciona una palabra.                                                 |
+|Normal  | mimd    | Eliminar un texto entre comillas. También `mi"d`, `mi'd`.               |
+|Normal  | miw     | Selecciona una palabra. También `mi"`, `mi'`.                           |
 |Normal  | miW     | Selecciona la palabra y también los espacios adyacentes.                |
 |Normal  | vgl     | Selecciona desde donde estas hasta el final de la linea.                |
 |Normal  | vged    | Selecciona y elimina todo.                                              |
